@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Crash report
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Crash%20report&In-Reply-To=%3C4E5A61DE.6000003%40wirklich.priv.at%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000675.html">
+   <LINK REL="Next"  HREF="000676.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Crash report</H1>
+    <B>Patrick Strasser</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Crash%20report&In-Reply-To=%3C4E5A61DE.6000003%40wirklich.priv.at%3E"
+       TITLE="Crash report">patrick at wirklich.priv.at
+       </A><BR>
+    <I>Sun Aug 28 17:42:22 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000675.html">[win-fldigi] eQsl and DX Cluster
+</A></li>
+        <LI>Next message: <A HREF="000676.html">[GIT] fldigi branch, master,	updated: ae579b49d1429f409e2d9ae070e2382893ab6da1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#674">[ date ]</a>
+              <a href="thread.html#674">[ thread ]</a>
+              <a href="subject.html#674">[ subject ]</a>
+              <a href="author.html#674">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+fldigi[0x50b5b0]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0xfc60)[0x7f1a06695c60]
+/lib/x86_64-linux-gnu/libc.so.6(+0x8ae4c)[0x7f1a02cfee4c]
+/lib/x86_64-linux-gnu/libc.so.6(memmove+0x192)[0x7f1a02cf8df2]
+fldigi[0x57f5ce]
+fldigi[0x57f9e0]
+fldigi[0x57a2ac]
+fldigi[0x528d38]
+/usr/lib/libfltk.so.1.1(_Z7fl_waitd+0x3e5)[0x7f1a0623fb65]
+/usr/lib/libfltk.so.1.1(_ZN2Fl4waitEd+0x130)[0x7f1a061fca30]
+/usr/lib/libfltk.so.1.1(_ZN2Fl3runEv+0x1d)[0x7f1a061fcb6d]
+fldigi[0x4bbfef]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xff)[0x7f1a02c92eff]
+fldigi[0x414d09]
+
+****** Version information:
+fldigi 3.21.8
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi
+Chateauneu, and others.
+License GPLv3+: GNU GPL version 3 or later
+&lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+  built          : Fri Apr 15 14:45:43 UTC 2011 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">buildd at yellow</A> on
+x86_64-pc-linux-gnu for x86_64-pc-linux-gnu
+
+  configure flags: '--build=x86_64-linux-gnu' '--prefix=/usr'
+'--includedir=${prefix}/include' '--mandir=${prefix}/share/man'
+'--infodir=${prefix}/share/info' '--sysconfdir=/etc'
+'--localstatedir=/var' '--libexecdir=${prefix}/lib/fldigi'
+'--disable-maintainer-mode' '--disable-dependency-tracking'
+'build_alias=x86_64-linux-gnu' 'CXXFLAGS=-g -O2'
+'LDFLAGS=-Wl,-Bsymbolic-functions' 'CPPFLAGS=' 'CFLAGS=-g -O2'
+
+  compiler       : gcc version 4.5.2 (Ubuntu/Linaro 4.5.2-8ubuntu3)
+
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+-I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -pthread
+-I/usr/include/freetype2 -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT
+-I/usr/include/libpng12 -I/usr/include -pipe -Wall -fexceptions -O2
+-ffast-math -finline-functions -DNDEBUG
+
+  linker flags   : -lportaudio -lasound -lm -lpthread
+-Wl,-Bsymbolic-functions -lfltk_images -lfltk
+-L/usr/lib/x86_64-linux-gnu -lX11 -lsndfile -lsamplerate -lpulse-simple
+-lpulse -lhamlib -lm -L/usr/lib/x86_64-linux-gnu -lpng12 -L/usr/lib
+-lxmlrpc_server_abyss++ -lxmlrpc_server++ -lxmlrpc_server_abyss
+-lxmlrpc_server -lxmlrpc_abyss -lpthread -lxmlrpc++ -lxmlrpc
+-lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -ldl -lrt -lpthread
+
+  libraries      : FLTK 1.1.10
+                   libsamplerate 0.1.7
+                   libsndfile 1.0.23
+                   PortAudio 19
+                   PulseAudio 0.9.22-24-g67d18
+                   Hamlib 1.2.13
+                   XMLRPC-C 1.16.32
+
+
+Runtime information:
+  system         : Linux corvusmons 2.6.38-11-generic #48-Ubuntu SMP Fri
+Jul 29 19:02:55 UTC 2011 x86_64
+
+  libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                   libsndfile-1.0.23
+                   PortAudio V19-devel (built Mar 18 2011 15:49:34) 1899
+                   Pulseaudio 0.9.22-24-g67d18
+                   Hamlib 1.2.13
+Speicherzugriffsfehler
+
+-- 
+Engineers motto: cheap, good, fast: choose any two
+Patrick Strasser &lt;patrick at wirklich priv at&gt;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000675.html">[win-fldigi] eQsl and DX Cluster
+</A></li>
+	<LI>Next message: <A HREF="000676.html">[GIT] fldigi branch, master,	updated: ae579b49d1429f409e2d9ae070e2382893ab6da1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#674">[ date ]</a>
+              <a href="thread.html#674">[ thread ]</a>
+              <a href="subject.html#674">[ subject ]</a>
+              <a href="author.html#674">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

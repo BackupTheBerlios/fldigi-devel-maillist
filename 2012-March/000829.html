@@ -1,0 +1,273 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.21,	updated: 5c48d0f4448ac0545f11a94e9022d3bbe5e99188
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%205c48d0f4448ac0545f11a94e9022d3bbe5e99188&In-Reply-To=%3C20120303141804.A784655B08%40scm.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000828.html">
+   <LINK REL="Next"  HREF="000830.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.21,	updated: 5c48d0f4448ac0545f11a94e9022d3bbe5e99188</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%205c48d0f4448ac0545f11a94e9022d3bbe5e99188&In-Reply-To=%3C20120303141804.A784655B08%40scm.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.21,	updated: 5c48d0f4448ac0545f11a94e9022d3bbe5e99188">herrfreese at scm.berlios.de
+       </A><BR>
+    <I>Sat Mar  3 15:18:03 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000828.html">NBEMS software suite and NBEMSham
+</A></li>
+        <LI>Next message: <A HREF="000830.html">[GIT] fldigi branch, maint/3.21,	updated: cd70e0c7d94a38613ba105dad028ffb73f3e493e
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#829">[ date ]</a>
+              <a href="thread.html#829">[ thread ]</a>
+              <a href="subject.html#829">[ subject ]</a>
+              <a href="author.html#829">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.21 has been updated
+       via  5c48d0f4448ac0545f11a94e9022d3bbe5e99188 (commit)
+       via  24c470e723d039b4619b97c3d3279d8a696c0671 (commit)
+       via  29ccdeb4e59702f7ec3641d0ab705b10b901fb84 (commit)
+       via  74da509e6a69d3f24d734d9c93c5de75b88262f3 (commit)
+       via  c2998dfaa4dd060baad273c15041d1ae89b1c221 (commit)
+       via  b7ff11527ecef1cdc05998f93a2e8e75052f21ff (commit)
+       via  bf8046dd26a48b08f52d983393dec9c4ae2d26d5 (commit)
+       via  1364186a8880324a84f59f0a76dd85e330abd1f5 (commit)
+      from  bb836f1dc31adf788ef25aac85f3920c4f49f61c (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=5c48d0f4448ac0545f11a94e9022d3bbe5e99188">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=5c48d0f4448ac0545f11a94e9022d3bbe5e99188</A>
+
+commit 5c48d0f4448ac0545f11a94e9022d3bbe5e99188
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Feb 28 21:25:45 2012 -0600
+
+    Version 3.21.39
+    
+      Maintenance release
+
+ 2 files changed, 14 insertions(+), 3 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=24c470e723d039b4619b97c3d3279d8a696c0671">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=24c470e723d039b4619b97c3d3279d8a696c0671</A>
+
+commit 24c470e723d039b4619b97c3d3279d8a696c0671
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Feb 12 13:30:28 2012 -0600
+
+    OSX Lion shutdown
+    
+      * close all dialogs except main dialog on close
+      * correct class FSEL instantiation on OS X
+      * this commit resolves the crash-on-exit on OS X Lion
+      * add configuration items
+        - SaveConfig : save fldigi_def.xml on exit (if changed)
+        - SaveMacros : save macro mdf file on exit (if changed)
+      * Normal shut down with prompts if File/Exit menu item selected
+      * Shut down without prompts for saved config, macros or log entry
+        if window decoration &quot;X&quot; is used to exit program.
+      * capture cmd-Q exit event to allow normal program shut down
+
+ 13 files changed, 288 insertions(+), 58 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=29ccdeb4e59702f7ec3641d0ab705b10b901fb84">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=29ccdeb4e59702f7ec3641d0ab705b10b901fb84</A>
+
+commit 29ccdeb4e59702f7ec3641d0ab705b10b901fb84
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Feb 26 08:45:06 2012 -0600
+
+    Win7 Open Logbook
+    
+      * Changes to accommodate Win7 random failure to read logbook on program
+        startup.
+
+ 1 files changed, 12 insertions(+), 3 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=74da509e6a69d3f24d734d9c93c5de75b88262f3">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=74da509e6a69d3f24d734d9c93c5de75b88262f3</A>
+
+commit 74da509e6a69d3f24d734d9c93c5de75b88262f3
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat Feb 25 17:46:29 2012 -0600
+
+    MFSK pic dnd
+    
+      * Fix drag-n-drop of file onto MFSK transmit pic dialog
+
+ 1 files changed, 3 insertions(+), 0 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=c2998dfaa4dd060baad273c15041d1ae89b1c221">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=c2998dfaa4dd060baad273c15041d1ae89b1c221</A>
+
+commit c2998dfaa4dd060baad273c15041d1ae89b1c221
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat Feb 25 09:13:16 2012 -0600
+
+    Merge record logic error
+    
+      * Corrected logic error in merge logbook function
+
+ 1 files changed, 5 insertions(+), 3 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=b7ff11527ecef1cdc05998f93a2e8e75052f21ff">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=b7ff11527ecef1cdc05998f93a2e8e75052f21ff</A>
+
+commit b7ff11527ecef1cdc05998f93a2e8e75052f21ff
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Feb 6 07:55:02 2012 -0600
+
+    Cyrillic-UTF8 chars
+    
+      * Added support for displaying, transmitting &amp; receiving
+        UTF-8 characters
+      * Modes which support UTF-8 characters:
+        - PSK31, PSK63, PSK125, PSK250, PSK500
+        - Olivia - must enable 8 bit extended characters
+        - MT63 - must enable 8 bit extended characters
+        - MFSK - all baudrates supported
+      * Modified &quot;clear_sent&quot; method in FTextRXTX to correct
+        behavior when TX buffer contains UTF-8 characters
+
+ 28 files changed, 653 insertions(+), 180 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=bf8046dd26a48b08f52d983393dec9c4ae2d26d5">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=bf8046dd26a48b08f52d983393dec9c4ae2d26d5</A>
+
+commit bf8046dd26a48b08f52d983393dec9c4ae2d26d5
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Feb 5 16:07:48 2012 -0600
+
+    QSK test
+    
+      * Added test for CW mode &amp;&amp; QSK_adjust to inhibit
+        display of Tx characters in Rx Panel.
+
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=1364186a8880324a84f59f0a76dd85e330abd1f5">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=1364186a8880324a84f59f0a76dd85e330abd1f5</A>
+
+commit 1364186a8880324a84f59f0a76dd85e330abd1f5
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Feb 1 15:50:37 2012 -0600
+
+    Weather report
+    
+      * Added return http document error tests
+      * Removed &quot;Weather:\n&quot; prefix from returned data string
+      * Corrected English / Metric conversions
+      * Added wind in Meters/Sec to MPH KPH conversion
+      * Added condition parsing from raw data string
+      * Added web lookup for METAR station of interest
+
+ 5 files changed, 328 insertions(+), 80 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                              |   15 +-
+ configure.ac                           |    2 +-
+ src/Makefile.am                        |    2 +
+ src/cw_rtty/view_rtty.cxx              |    3 +-
+ src/dialogs/confdialog.cxx             |  100 ++++++++-
+ src/dialogs/confdialog.fl              |   93 ++++++--
+ src/dialogs/fl_digi.cxx                |  228 ++++++++++++++-----
+ src/fileselector/fileselect_1_3.cxx    |   11 +-
+ src/include/FTextRXTX.h                |   20 ++-
+ src/include/FTextView.h                |    5 +-
+ src/include/Fl_Text_Buffer_mod_1_3.H   |   15 +-
+ src/include/confdialog.h               |    6 +
+ src/include/configuration.h            |    6 +
+ src/include/fl_digi.h                  |    4 +
+ src/include/macroedit.h                |    2 +
+ src/include/macros.h                   |    1 +
+ src/include/mfsk.h                     |    2 +-
+ src/include/psk_browser.h              |    5 +-
+ src/include/{Panel.h =&gt; utf8file_io.h} |   23 +--
+ src/include/weather.h                  |    1 +
+ src/include/wefax-pic.h                |    5 +
+ src/logbook/adif_io.cxx                |   17 +-
+ src/logbook/logsupport.cxx             |   10 +-
+ src/mfsk/mfsk.cxx                      |   17 +-
+ src/misc/arq_io.cxx                    |    4 +-
+ src/misc/macros.cxx                    |   54 ++++-
+ src/misc/utf8file_io.cxx               |  165 ++++++++++++++
+ src/misc/weather.cxx                   |  383 +++++++++++++++++++++++++-------
+ src/misc/xmlrpc.cxx                    |    4 +-
+ src/mt63/mt63.cxx                      |   65 +++++-
+ src/olivia/olivia.cxx                  |   41 +++-
+ src/psk/psk.cxx                        |    8 +-
+ src/psk/viewpsk.cxx                    |    6 +-
+ src/spot/notify.cxx                    |    6 +-
+ src/waterfall/waterfall.cxx            |    7 +-
+ src/wefax/wefax-pic.cxx                |    4 +-
+ src/widgets/FTextRXTX.cxx              |  103 +++++++---
+ src/widgets/FTextView.cxx              |    1 -
+ src/widgets/Fl_Text_Buffer_mod_1_3.cxx |   41 +++-
+ src/widgets/picture.cxx                |    3 +
+ src/widgets/psk_browser.cxx            |  128 +++++++----
+ 41 files changed, 1276 insertions(+), 340 deletions(-)
+  26.0% src/dialogs/
+   5.8% src/include/
+  37.7% src/misc/
+   4.0% src/mt63/
+  17.0% src/widgets/
+   8.1% src/
+  29.9% src/dialogs/
+   6.5% src/include/
+  34.0% src/misc/
+   4.4% src/mt63/
+  17.0% src/widgets/
+   7.2% src/
+ copy src/include/{Panel.h =&gt; utf8file_io.h} (71%)
+ create mode 100644 src/misc/utf8file_io.cxx
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000828.html">NBEMS software suite and NBEMSham
+</A></li>
+	<LI>Next message: <A HREF="000830.html">[GIT] fldigi branch, maint/3.21,	updated: cd70e0c7d94a38613ba105dad028ffb73f3e493e
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#829">[ date ]</a>
+              <a href="thread.html#829">[ thread ]</a>
+              <a href="subject.html#829">[ subject ]</a>
+              <a href="author.html#829">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> flrig-1.1.3 posted on main board
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20flrig-1.1.3%20posted%20on%20main%20board&In-Reply-To=%3C54923.192.168.2.101.1302789720.squirrel%40webmail.pa3gwh.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000621.html">
+   <LINK REL="Next"  HREF="000623.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>flrig-1.1.3 posted on main board</H1>
+    <B>pa3gwh at pa3gwh.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20flrig-1.1.3%20posted%20on%20main%20board&In-Reply-To=%3C54923.192.168.2.101.1302789720.squirrel%40webmail.pa3gwh.com%3E"
+       TITLE="flrig-1.1.3 posted on main board">pa3gwh at pa3gwh.com
+       </A><BR>
+    <I>Thu Apr 14 16:02:00 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000621.html">flrig-1.1.3 posted on main board
+</A></li>
+        <LI>Next message: <A HREF="000623.html">[GIT] fldigi branch, maint/3.21,	updated: ae13044626f5d4a1c347b0c082f0cf01b317bf2f
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#622">[ date ]</a>
+              <a href="thread.html#622">[ thread ]</a>
+              <a href="subject.html#622">[ subject ]</a>
+              <a href="author.html#622">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all,
+
+I recently updated from FLRig 1.0.1.1O to 1.1.3 and noticed that this
+version is no longer following the manual VFO changes on my TS-2000, went
+back to the old version and it is ok, compiled 1.1.2 and it exhibits the
+same behavior. Band changes or manual tuning of the vfo not visible and
+not followed by FLDigi also noticed that when FLRig comes up and for
+example the pre-amp is on, flrig does not follow (button not lit) pressing
+pre-amp on the rig (or NB) does not change the status in FLRig. Pressing
+the buttons in FLRig do however change the setting on the TS-2000, so do
+the frequency changes in FLRig, nicely followed by the TS-2000, just not
+the other way around....
+
+I have RTS/CTS set, as well as 2 stopbits (just as in the previous version).
+
+Anyone else seen this and perhaps knows where to look for a fix?
+
+I am running FLDigi 3.21.8, FLRig 1.1.3 on OpenSuse 11.2 64bit.
+
+73 de Richard PA3GWH
+
+&gt;<i> Version 1.1.3
+</I>&gt;<i>
+</I>&gt;<i>   Maintenance release
+</I>&gt;<i>
+</I>&gt;<i> IC7200 Vfo B
+</I>&gt;<i>
+</I>&gt;<i>   Modified Get/Set for VFO B
+</I>&gt;<i>
+</I>&gt;<i> TT550
+</I>&gt;<i>
+</I>&gt;<i>   * Hijacked Preamp button for use as Spot button on front panel
+</I>&gt;<i>   * Altered some first use initialization values
+</I>&gt;<i>   * Changed Model 302 stream parser ... works now with TT538/550
+</I>&gt;<i>   * Changed serial i/o interface to use PurgeComm method on win32
+</I>&gt;<i>   * Added F key support to M302 interface
+</I>&gt;<i>   * Added new controls to TT550 configuration dialog
+</I>&gt;<i>   * Fixed Restart/Version response display
+</I>&gt;<i>
+</I>&gt;<i> IC7600 RTTY fault
+</I>&gt;<i>
+</I>&gt;<i>   Removed check for digital setting for all but LSB/USB modes
+</I>&gt;<i>
+</I>&gt;<i> Adjust bandwidth
+</I>&gt;<i>
+</I>&gt;<i>   Added method to all rig classes for which not defined.
+</I>&gt;<i>
+</I>&gt;<i> IC7200 7600 TT550
+</I>&gt;<i>
+</I>&gt;<i>   * Corrections to mode set/get
+</I>&gt;<i>   * xml_rpc loop clean up
+</I>&gt;<i>   * TT550 init mods
+</I>&gt;<i>   * Select A/B mods
+</I>&gt;<i>
+</I>&gt;<i> FT100D ABA init
+</I>&gt;<i>
+</I>&gt;<i>   Fix to 100D ABA race condx on startup
+</I>&gt;<i>
+</I>&gt;<i> TS590S s/pwr meter
+</I>&gt;<i>
+</I>&gt;<i>   Added support methods for Smeter and Pout queries
+</I>&gt;<i>
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000621.html">flrig-1.1.3 posted on main board
+</A></li>
+	<LI>Next message: <A HREF="000623.html">[GIT] fldigi branch, maint/3.21,	updated: ae13044626f5d4a1c347b0c082f0cf01b317bf2f
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#622">[ date ]</a>
+              <a href="thread.html#622">[ thread ]</a>
+              <a href="subject.html#622">[ subject ]</a>
+              <a href="author.html#622">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

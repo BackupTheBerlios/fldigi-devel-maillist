@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> QRSS RX in fldigi: beginning a discussion
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20QRSS%20RX%20in%20fldigi%3A%20beginning%20a%20discussion&In-Reply-To=%3C7c5f59ba9b66d7809b68eb0a13e87ca7.squirrel%40graflex.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000825.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>QRSS RX in fldigi: beginning a discussion</H1>
+    <B>Leigh L. Klotz, Jr. WA5ZNU</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20QRSS%20RX%20in%20fldigi%3A%20beginning%20a%20discussion&In-Reply-To=%3C7c5f59ba9b66d7809b68eb0a13e87ca7.squirrel%40graflex.org%3E"
+       TITLE="QRSS RX in fldigi: beginning a discussion">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Wed Feb 29 23:47:07 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000825.html">RSA host key
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#826">[ date ]</a>
+              <a href="thread.html#826">[ thread ]</a>
+              <a href="subject.html#826">[ subject ]</a>
+              <a href="author.html#826">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Is anyone else interested in QRSS RX?
+
+QRSS is a collection of modes designed for QRPP weak-signal work where the
+RX is done by visual inspection of waterfall records.  The vast majority
+of QRSS work is done in the &lt;100mW range.
+
+TX is usually 5Hz FSK CW with a 6-second dit time, though there are faster
+and slower variants.  There are also a number of other modulation schemes
+in use, including Hellschreiber and a direct picture-like mode (like the
+Visual Mode ID) in fldigi, sending both text and simple graphics such as
+sawtooth and delta/nabla marks, followed by a faster CW id.
+
+While most of it is done on the ham bands, there are some people using it
+on the ISM bands such as 13 MHz and the various MF and LF allocations.  On
+the ham bands, QRSS TX is usually done with a &quot;MEPT&quot; (manned experimental
+propagation transmitter) instead of a beacon, due to regulations designed
+to prevent spectrum misuse and interference.  QRSS MEPT transmitters use
+little power or bandwidth, but are generally only on when they can be
+monitored by the TX licensee.
+
+The bands are narrow: on 30m the activity is in a 100Hz band centered on
+10.140 KHz.  The centers of activity are similarly narrow on other bands.
+
+The most popular RX program for QRSS is Argo.  Argo receives in a
+horizontal waterfall and has a very slow waterfall rate left-to-right
+across the screen, so that CW and writing may be read left-to-right after
+each 10-minute screenful.  Argo saves screenshots to a directory, where
+they can be uploaded to a server.  For samples, see here:
+<A HREF="http://digilander.libero.it/i2ndt/grabber/grabber-compendium-North_America.htm">http://digilander.libero.it/i2ndt/grabber/grabber-compendium-North_America.htm</A>
+
+I have two patches locally applied to fldigi to let me use it for QRSS RX,
+and some points of departure for the rest:
+
+1. waterfall height
+I patched the dialog to allow waterfall height up to 600px.
+You don't need actually to do this; you can edit fldigi_def.xml directly.
+Since the point of QRSS is to display 5-10 minutes of waterfall, this is
+critical.
+
+2. Waterfall Speed
+I added two new waterfall speeds beyond SLOW: QRSS3 and QRSS6.
+I have them in sequence only when mode==CW, just for my own sanity. If we
+had a QRSS mode then it would be conditioned on that mode.
+I didn't benchmark against ARGO to see the actual lengths, just doubled
+SLOW and doubled it again.  I believe (But am not sure) that the idea is
+for QRSS3 would display 5 minutes and QRSS6 would display 10 minutes of
+samples.
+This is critical as well, for the same reason as #1.
+
+3. waterfall direction
+No patch, but manual: I save the waterfall screen area and rotate it left
+90, then flip it vertically so that higher frequencies are at the top and
+time starts on the left.   Attempting to re-work the display code so that
+it could work in both the current and the QRSS-friendly orientation seems
+like a lot of work for not much benefit.  So, see #4 below.
+
+4. waterfall save
+It would be nice to have an XMLRPC command to fetch the waterfall image or
+to save it to a file and return the filename; then a simple script could
+do the rotations.
+
+4. FFT bins
+Since the signal bandwidth is 5Hz and the whole band is only 50 Hz wide,
+using smaller FFT bins helps. Argo uses very narrow bins; 328 mHz, in some
+examples I've seen.  Fidigi uses, I believe (someone correct me?) giving
+750 mHz bins, at 4x waterfall scale and then does decimation-in-frequency
+to display  2x and 1x.  It would be nice to offer smaller bins and a
+longer integration time for this very weak-signal work, but I haven't
+attempted it yet.
+
+Please take a look at a couple of the sample screen grabs here to get an
+idea of what I'm talking about above.
+
+<A HREF="http://digilander.libero.it/i2ndt/grabber/grabber-compendium-North_America.htm">http://digilander.libero.it/i2ndt/grabber/grabber-compendium-North_America.htm</A>
+
+
+Leigh/WA5ZNU
+
+
+
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000825.html">RSA host key
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#826">[ date ]</a>
+              <a href="thread.html#826">[ thread ]</a>
+              <a href="subject.html#826">[ subject ]</a>
+              <a href="author.html#826">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> CW Decoding
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20CW%20Decoding&In-Reply-To=%3CCE34B126-870A-4D02-91D8-87B9EAB3D9B2%40acudora.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000961.html">
+   <LINK REL="Next"  HREF="000963.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>CW Decoding</H1>
+    <B>David McClain</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20CW%20Decoding&In-Reply-To=%3CCE34B126-870A-4D02-91D8-87B9EAB3D9B2%40acudora.com%3E"
+       TITLE="CW Decoding">david at acudora.com
+       </A><BR>
+    <I>Fri Dec 28 07:16:49 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000961.html">[GIT] fldigi branch, maint/3.21,	updated: 51b719fb70af1d87f59ad979a4707c0b6e61dfea
+</A></li>
+        <LI>Next message: <A HREF="000963.html">New Modes and Extended RsID
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#962">[ date ]</a>
+              <a href="thread.html#962">[ thread ]</a>
+              <a href="subject.html#962">[ subject ]</a>
+              <a href="author.html#962">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi All,
+
+I spent the better part of the day with source in hand, and watching FLDigi in operation, decoding very cleanly generated Morse from W1AW. Several thoughts arise:
+
+1. The source code shows that the character boundaries are already decided before calling on the SOM matching routine. Deep fades can make a partial character appear to be something else followed by a break. So making that boundary decision ahead of calling on the SOM seems like you are giving up a lot of the power of SOM matching.
+
+BTW... I'm not a practicioner of Viterbi filtering, but isn't this an area where it could offer some benefits?
+
+2. The main benefits appear to accrue from using the &quot;Matched Filtering&quot; which appears to be a fixed 30 Hz wide FIR filter. That works very well in the code speed range from 15-25 WPM. But when W1AW switched to 35 WPM, I saw on the scope that we needed a wider filter, so I switched back to FIR 75-80 Hz wide.
+
+The key, apart from careful matching of the main lobe of the filter to the signal main lobe width, appears to be that you need an impulse response that is much shorter than the Dit-width allowed through by the filter. Widening the filter bandpass helps narrow that impulse response at the cost of increased noise floor. Some kind of compromise seems necessary.
+
+3. Setting the hysterical thresholds down low, just above the noise floor, e.g., 20% and 25% instead of mid-range 40%-60% seems to help a lot with QSB. And FLDigi appears to handle the resulting induced bias between mark durations and space durations well. 
+
+I have been racking my brains for weeks about how to deal more effectively with QSB, but can't come up with any brighter ideas than what you have, other than to severely complicate the decoder with Viterbi applied to long strings of Dits-and-Dahs, in the hopes of it recovering lost bits due to fading.
+
+4. There is a Hilbert filter initialized during CW init, that appears unused. Perhaps it is used in another part of the program, say for FIR or FFT Filtering? Or else you found, as I did some time ago, that it isn't really necessary to apply a Hilbert filter to get an analytic signal if all you are going to do is heterodyne the signal down to DC with a complex-valued carrier and then lowpass filter the result.
+
+Fun stuff!! It would be a lot of fun to experiment with the code, but I fear that getting the whole program to compile cleanly will take a huge diversion into GUI's, web-surfing capabilities, and all kinds of things unrelated to CW decoding. I haven't decided to bite that bullet just yet.... For now, I'll try little ideas on the side just using Lisp feeding off an MME audio stream in Windows.
+
+73 de Dave, N7AIG
+
+Dr. David McClain
+CTO &amp; Co-Founder
+Acudora (TM)
+e-mail: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">david at acudora.com</A>
+Tel: (+1) 520-529-2437
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000961.html">[GIT] fldigi branch, maint/3.21,	updated: 51b719fb70af1d87f59ad979a4707c0b6e61dfea
+</A></li>
+	<LI>Next message: <A HREF="000963.html">New Modes and Extended RsID
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#962">[ date ]</a>
+              <a href="thread.html#962">[ thread ]</a>
+              <a href="subject.html#962">[ subject ]</a>
+              <a href="author.html#962">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

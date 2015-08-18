@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Wefax detection using statistical correlation
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Wefax%20detection%20using%20statistical%20correlation&In-Reply-To=%3C4EB8E20E.5020801%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000712.html">
+   <LINK REL="Next"  HREF="000715.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Wefax detection using statistical correlation</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Wefax%20detection%20using%20statistical%20correlation&In-Reply-To=%3C4EB8E20E.5020801%40gmail.com%3E"
+       TITLE="Wefax detection using statistical correlation">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Tue Nov  8 09:02:22 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000712.html">fldigi hanging in debug::log ?
+</A></li>
+        <LI>Next message: <A HREF="000715.html">fldigi not working
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#713">[ date ]</a>
+              <a href="thread.html#713">[ thread ]</a>
+              <a href="subject.html#713">[ subject ]</a>
+              <a href="author.html#713">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+Just added a commit in my branch pu/rc which allows a much better 
+detection of images begin and end. For example, it avoids to read to 
+successive images into one just like in this ugly example:
+
+
+
+commit cd87f7df61a20d4ac3cce9d95b24c2b0c5072336
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt;
+Date:   Tue Nov 8 07:45:30 2011 +0000
+
+     Images absecne/presence detected also with line-to-line correlation.
+
+     * Continuously detects correlation between two successive samples 
+lines.
+     * Uses mobile average of the statistical correlation, computed over
+     several lines to detects if a fax is being sent or not.
+
+Cheers
+
+Remi
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: wefax_20100424_213823_4608100Hz_a_ok.very_small.png
+Type: image/png
+Size: 347554 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20111108/e80a6ef7/attachment.png">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20111108/e80a6ef7/attachment.png</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000712.html">fldigi hanging in debug::log ?
+</A></li>
+	<LI>Next message: <A HREF="000715.html">fldigi not working
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#713">[ date ]</a>
+              <a href="thread.html#713">[ thread ]</a>
+              <a href="subject.html#713">[ subject ]</a>
+              <a href="author.html#713">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

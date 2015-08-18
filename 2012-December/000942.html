@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi + doxygen
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20%2B%20doxygen&In-Reply-To=%3CCAPRqYUWTD%3DbEhu5tm7%3DDXhQqAXiMoPPUixjo-m2%3D_h3Gdk-FbQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000941.html">
+   <LINK REL="Next"  HREF="000943.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi + doxygen</H1>
+    <B>John Phelps</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20%2B%20doxygen&In-Reply-To=%3CCAPRqYUWTD%3DbEhu5tm7%3DDXhQqAXiMoPPUixjo-m2%3D_h3Gdk-FbQ%40mail.gmail.com%3E"
+       TITLE="Fldigi + doxygen">kl4yfd at gmail.com
+       </A><BR>
+    <I>Mon Dec  3 17:32:59 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000941.html">Fldigi + doxygen
+</A></li>
+        <LI>Next message: <A HREF="000943.html">fldigi aborts - will not open &quot;Caught signal 11&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#942">[ date ]</a>
+              <a href="thread.html#942">[ thread ]</a>
+              <a href="subject.html#942">[ subject ]</a>
+              <a href="author.html#942">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Doxygen assumes all comments are one-line-above a variable/function/macro
+
+To force inclusion of a comment at the end of a line one uses &quot; ///&lt; &quot; instead
+of  &quot; // &quot;
+Comments at the end of line are ignored unless this source-code
+modification is done.
+   Source :  <A HREF="http://www.stack.nl/~dimitri/doxygen/docblocks.html">http://www.stack.nl/~dimitri/doxygen/docblocks.html</A>
+
+Over time these small changes can be done as they are only comments (and
+therefore safe)
+
+Am working on a script here that others can use to easily generate these
+documents.
+Note though...
+   these docs are about 700MB in size (and that is per git-branch)
+   each branch takes quite a while to generate, longer than compiling fldigi
+   will keep the website as up-to-date as possible so everyone does not
+have to generate the docs.
+
+<A HREF="http://www.bitsandbytes.info/doxygen/3.22.0CH/&lt;http://www.bitsandbytes.info/doxygen/3.22.0CH/classfax__implementation.html">http://www.bitsandbytes.info/doxygen/3.22.0CH/&lt;http://www.bitsandbytes.info/doxygen/3.22.0CH/classfax__implementation.html</A>&gt;
+
+~ John
+kl4yfd
+
+==========================================
+
+Brillant idea.
+Apparently it was able to extract comments here for example:
+
+<A HREF="http://www.bitsandbytes.info/doxygen/3.22.0CH/classfax__implementation.html">http://www.bitsandbytes.info/doxygen/3.22.0CH/classfax__implementation.html</A>
+
+It might be possible to tune doxygen so it can extract more information.
+
+For example in wefax/wefax.cpp, there is a comment for this member of
+fax_implementation that doxygen could not detect.
+
+00312         int m_apt_trans;       // APT low-high transitions
+
+
+Excellent idea, many thanks !
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20121203/aac019f4/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20121203/aac019f4/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000941.html">Fldigi + doxygen
+</A></li>
+	<LI>Next message: <A HREF="000943.html">fldigi aborts - will not open &quot;Caught signal 11&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#942">[ date ]</a>
+              <a href="thread.html#942">[ thread ]</a>
+              <a href="subject.html#942">[ subject ]</a>
+              <a href="author.html#942">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

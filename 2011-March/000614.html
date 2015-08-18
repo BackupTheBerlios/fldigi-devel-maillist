@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Packet modem / High Baud rate DominoEX---THOR
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Packet%20modem%20/%20High%20Baud%20rate%20DominoEX---THOR&In-Reply-To=%3C4D8D58CE.5080409%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000613.html">
+   <LINK REL="Next"  HREF="000615.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Packet modem / High Baud rate DominoEX---THOR</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Packet%20modem%20/%20High%20Baud%20rate%20DominoEX---THOR&In-Reply-To=%3C4D8D58CE.5080409%40bellsouth.net%3E"
+       TITLE="Packet modem / High Baud rate DominoEX---THOR">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sat Mar 26 04:09:02 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000613.html">Wider FSK Decode
+</A></li>
+        <LI>Next message: <A HREF="000615.html">PacModem -&gt; PCMODE
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#614">[ date ]</a>
+              <a href="thread.html#614">[ thread ]</a>
+              <a href="subject.html#614">[ subject ]</a>
+              <a href="author.html#614">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Stelios Bounanos wrote:
+&gt;<i> Cool!  I'll do some reviewing over the weekend.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Stelios.
+</I>&gt;<i>   
+</I>pushed -f to pu/df above and beyond 3.22.0AA
+
+commit 659965a8f8dbdd97254bd17bba8947fabf2cf3df
+Author: John Phelps, KL4YFD &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">phjo1001 at stcloudstate.edu</A>&gt;
+Date:   Fri Mar 25 20:39:58 2011 -0500
+
+    High baud rate Dom/Thor
+   
+       * New high speed modem types based on dominoex / thor.
+         - dominoex at 85 baud
+         - dominoex at 125 baud
+         - Thor at 85 baud
+         - Thor at 125  baud
+           Thor85/125 use a convolutional encoder / viterbi
+           decoder constraint length of THOR_K=15 (NASA/Galileo)
+
+commit 3157ae0be70dafe00ff0ad1456164789db06ca7a
+Author: Chris Sylvain &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kb3cs at arrl.net</A>&gt;
+Date:   Fri Mar 25 19:45:29 2011 -0500
+
+    Packet Modem
+   
+      Merged 3.22.0 with berlios/pu/cs development work
+      on packet modem
+
+commit b74102f9c6d67aefeaa845b91e41a686da2b6eab
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Mar 23 06:36:12 2011 -0500
+
+    Config defaults
+   
+      Change true/false default for some  configuration items
+
+commit 485a6339bedd576260fe4bb04b3998b3befbd8ec
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Mar 22 19:33:13 2011 -0500
+
+    No rig mode selection
+   
+      Restored functionality of transceiver mode selector when no
+      transceiver is being controlled.
+
+commit f6bb40317adf5ac708ed4bbf708b041c8cff8992
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Mar 20 12:54:01 2011 -0500
+
+    wo save status
+   
+      Bug fix - segmentation fault during save status when executing
+      in waterfall only mode.
+
+commit e04d5f6a751883e6c0823dd4e8b864d7440372a3
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Mar 18 13:16:26 2011 -0500
+
+    flmsg auto start
+   
+      * Changed to allow both flmsg and browser to open valid
+        flmsg data stream
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000613.html">Wider FSK Decode
+</A></li>
+	<LI>Next message: <A HREF="000615.html">PacModem -&gt; PCMODE
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#614">[ date ]</a>
+              <a href="thread.html#614">[ thread ]</a>
+              <a href="subject.html#614">[ subject ]</a>
+              <a href="author.html#614">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> bug fix push to pu/df
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20bug%20fix%20push%20to%20pu/df&In-Reply-To=%3C4C1F54D3.6090004%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000316.html">
+   <LINK REL="Next"  HREF="000318.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>bug fix push to pu/df</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20bug%20fix%20push%20to%20pu/df&In-Reply-To=%3C4C1F54D3.6090004%40bellsouth.net%3E"
+       TITLE="bug fix push to pu/df">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Mon Jun 21 14:02:27 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000316.html">2 patches pushed to pu/df
+</A></li>
+        <LI>Next message: <A HREF="000318.html">[fldigi] #5: fldigi crash
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#317">[ date ]</a>
+              <a href="thread.html#317">[ thread ]</a>
+              <a href="subject.html#317">[ subject ]</a>
+              <a href="author.html#317">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>program was bombing when attempting to videoID ThrobX 4 .. missing 
+commas in globals.h have been
+supplied in one of the two new patches in pu/cs
+
+Fixed in 8e26ee4d0822
+
+Use &quot;git fetch -f berlios:pu/df&quot; to retrieve
+
+commit 62335f9afb61f0cbc08715d41b3fac85e2cff682
+Author: Chris Sylvain &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kb3cs at arrl.net</A>&gt;
+Date:   Mon Jun 21 06:06:16 2010 -0500
+
+    RTTY class
+   
+      Moved _BITS _BAUD _SHIFT into class definition to avoid
+      namespace conflicts with future similar modem types.
+
+commit 8e26ee4d0822ee88472f98a3ef3f6e0555bcd6bc
+Author: Chris Sylvain &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kb3cs at arrl.net</A>&gt;
+Date:   Mon Jun 21 06:06:03 2010 -0500
+
+    &lt;ID&gt; video text mod
+   
+      * Combined 3 patches from kb3cs, added value (W1HKJ)
+      * Expanded video ID text for Olivia, Contestia and RTTY
+      * Amended macro editor &lt;ID&gt; explanation
+      * Changed format of auto-generated video ID text.
+      * Increased number of characters to 8 for both font sizes
+      * Simplified video generation methods
+      * Added limit switches on video width
+        - 500 Hz for US HF compliance
+        - Mode bandwidth, video constrained to mode in use bw
+      * Added abbreviated video mode name strings
+      * Added FEC indicator for DominoEX FEC modes
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000316.html">2 patches pushed to pu/df
+</A></li>
+	<LI>Next message: <A HREF="000318.html">[fldigi] #5: fldigi crash
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#317">[ date ]</a>
+              <a href="thread.html#317">[ thread ]</a>
+              <a href="subject.html#317">[ subject ]</a>
+              <a href="author.html#317">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

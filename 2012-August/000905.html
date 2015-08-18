@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> compiling for win32
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20compiling%20for%20win32&In-Reply-To=%3C50266914.2020508%40stu2.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000904.html">
+   <LINK REL="Next"  HREF="000906.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>compiling for win32</H1>
+    <B>Stu</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20compiling%20for%20win32&In-Reply-To=%3C50266914.2020508%40stu2.net%3E"
+       TITLE="compiling for win32">stu at stu2.net
+       </A><BR>
+    <I>Sat Aug 11 16:15:48 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000904.html">[GIT] fldigi branch, maint/3.21,	updated: 37b03e33a887767b88a1f55634a9ad692d650e49
+</A></li>
+        <LI>Next message: <A HREF="000906.html">Compiling fldigi for Win32
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#905">[ date ]</a>
+              <a href="thread.html#905">[ thread ]</a>
+              <a href="subject.html#905">[ subject ]</a>
+              <a href="author.html#905">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+I'm attempting to following the instructions at: 
+<A HREF="https://fedorahosted.org/fldigi/wiki/Documentation/HOWTO/BuildOnMinGW">https://fedorahosted.org/fldigi/wiki/Documentation/HOWTO/BuildOnMinGW</A> 
+I'm using Ubuntu 12.04 32 bit and the mingw32 package. 
+(i586-mingw32msvc) [Thanks for the write up!]
+
+Aside from a few tweaks, all went well until I tried to compile fldigi 
+3.21.50. I pulled the source tarball, not the git repository.
+
+When I 'make', the compiler complains with several warnings regarding 
+FL_Image.H and finally breaks with an error related to 'gmtime_r'. See 
+the output below.
+
+At first, I installed the latest stable version of fltk (1.3.0), but 
+received similar errors. Figuring there may be substantial changes wtih 
+1.3.0, I installed 1.1.10 and applied the patch per the instructions. 
+Then installed 1.1.10 over 1.3.0. (make install)
+
+Do I need different versions of fltk or perhaps even switch to 
+mingw32-w64? (I actually started with mingw32-w64 in a 64 bit virutal 
+machine, but had to track down a lot of things - finally stalling on a 
+pthread problem building xmlrpc. This morning, I dropped back to mingw32 
+and the instructions worked well. Flying along until I started compiling 
+fldigi.)
+
+Thanks for any help/direction you might be able to provide.
+
+Stu2
+W7IY
+
+&lt;output&gt;
+In file included from /usr/local/win32/fltk/include/FL/Fl_Menu_Item.H:32,
+from ./include/FTextView.h:31,
+from ./include/FTextRXTX.h:28,
+from ./include/fl_digi.h:34,
+from dialogs/fl_digi.cxx:67:
+/usr/local/win32/fltk/include/FL/Fl_Image.H: In constructor 
+&#8216;Fl_RGB_Image::Fl_RGB_Image(const uchar*, int, int, int, int)&#8217;:
+/usr/local/win32/fltk/include/FL/Fl_Image.H:95: warning: dereferencing 
+type-punned pointer will break strict-aliasing rules
+dialogs/fl_digi.cxx: In function &#8216;void ztimer(void*)&#8217;:
+dialogs/fl_digi.cxx:2052: error: &#8216;gmtime_r&#8217; was not declared in this scope
+dialogs/fl_digi.cxx: In function &#8216;void note_qrg(bool, const char*, const 
+char*, trx_mode, long long int, int)&#8217;:
+dialogs/fl_digi.cxx:6540: error: &#8216;gmtime_r&#8217; was not declared in this scope
+make[2]: *** [fldigi-fl_digi.o] Error 1
+make[2]: Leaving directory `/usr/local/src/win32/fldigi-3.21.50/src'
+make[1]: *** [all] Error 2
+make[1]: Leaving directory `/usr/local/src/win32/fldigi-3.21.50/src'
+make: *** [all-recursive] Error 1
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000904.html">[GIT] fldigi branch, maint/3.21,	updated: 37b03e33a887767b88a1f55634a9ad692d650e49
+</A></li>
+	<LI>Next message: <A HREF="000906.html">Compiling fldigi for Win32
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#905">[ date ]</a>
+              <a href="thread.html#905">[ thread ]</a>
+              <a href="subject.html#905">[ subject ]</a>
+              <a href="author.html#905">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

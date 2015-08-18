@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> KISS interface for several modems ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20KISS%20interface%20for%20several%20modems%20%3F&In-Reply-To=%3C4FE25812.9040200%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000895.html">
+   <LINK REL="Next"  HREF="000896.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>KISS interface for several modems ?</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20KISS%20interface%20for%20several%20modems%20%3F&In-Reply-To=%3C4FE25812.9040200%40gmail.com%3E"
+       TITLE="KISS interface for several modems ?">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Thu Jun 21 01:09:06 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000895.html">KISS interface for several modems ?
+</A></li>
+        <LI>Next message: <A HREF="000896.html">[GIT] fldigi branch, maint/3.21,	updated: 4a686e7683d5d11237741a7a5feb4a1c84cd585d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#891">[ date ]</a>
+              <a href="thread.html#891">[ thread ]</a>
+              <a href="subject.html#891">[ subject ]</a>
+              <a href="author.html#891">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&quot;I proposed KISS to Phil Karn back in about 1987&quot;
+
+Did not do anything in the mean time ???
+
+Le 20.06.2012 23:55, Brian Lloyd a &#233;crit :
+&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Wed, Jun 20, 2012 at 4:50 PM, Charles Brabham &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">n5pvl at uspacket.org</A>
+</I>&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">n5pvl at uspacket.org</A>&gt;&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>     Ahoy Remi!
+</I>&gt;<i>
+</I>&gt;<i>     Strictly speaking, I was asking for more digital modes operating
+</I>&gt;<i>     under the Ax25 protocol - that allows several stations to share a
+</I>&gt;<i>     single frequency slot simultaneously, as Packet does.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> That requires some kind of media access control protocol (MAC). All KISS
+</I>&gt;<i> provides is an intelligent interface between an external device (modem,
+</I>&gt;<i> PAD) and the computer via a standard serial port. It is just a lot
+</I>&gt;<i> easier to interface to a device using the KISS protocol than something
+</I>&gt;<i> else.
+</I>&gt;<i>
+</I>&gt;<i> But KISS itself is just a very simple interface protocol and does not
+</I>&gt;<i> really do anything to 'help' the actual transmission protocol.
+</I>&gt;<i>
+</I>&gt;<i> I proposed KISS to Phil Karn back in about 1987 as a way to move the
+</I>&gt;<i> entire protocol stack into the PC and stop using the not-very-good AX.25
+</I>&gt;<i> code that was common in the TNCs of the day. PCs had serial ports but
+</I>&gt;<i> the actual USART and modem were in the TNC. KISS was a way to &quot;dumb
+</I>&gt;<i> down&quot; the TNC to where it became much more useful for experimentation.
+</I>&gt;<i> We just needed a way to assemble the SDLC frames for transmission and
+</I>&gt;<i> get the SDLC frames received by the TNC into the computer without any
+</I>&gt;<i> additional processing. That made our TCP/IP experimentation much easier.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>     I know that PSK modes for example can be utilized this way, as
+</I>&gt;<i>     Q15x25 is a psk mode, and also due to an Ax25 version of PSK31 that
+</I>&gt;<i>     I heard about a few years ago - but never found a copy to evaluate.
+</I>&gt;<i>     - Maybe they were talking about an early version of  FLARQ, I dunno.
+</I>&gt;<i>
+</I>&gt;<i>     As with FLARQ, Ax25's ARQ connected mode QSOs can be done with a
+</I>&gt;<i>     variety of digital modes. - I would guess that anything capable of
+</I>&gt;<i>     being used with FLARQ - could also be utilized with Ax25 protocol or
+</I>&gt;<i>     AMP.
+</I>&gt;<i>
+</I>&gt;<i>     Short of amateur multicast protocol ( AMP ) nothing else approaches
+</I>&gt;<i>     the spectal efficiency possible with the Ax25 protocol, and spectral
+</I>&gt;<i>     efficiency is of particular interest, here.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> AX.25 is not particularly efficient at anything. The bell 202 modem is
+</I>&gt;<i> suboptimal for anything serious over-the-air. AX.25's lack of adaptive
+</I>&gt;<i> timers makes it tend to collapse if there is any attempt to run two or
+</I>&gt;<i> more sessions over the same channel concurrently with each session
+</I>&gt;<i> offering traffic levels that saturate the channel. Also CSMA only works
+</I>&gt;<i> if all the stations can hear all the other stations, not something that
+</I>&gt;<i> happens on HF.
+</I>&gt;<i>
+</I>&gt;<i> So if you are serious, you really need to roll something new. I believe
+</I>&gt;<i> that CSMA/CA using slot reservation shows a lot of promise. As for the
+</I>&gt;<i> modem/waveform, I think that IFK is ideal, especially when running over
+</I>&gt;<i> NVIS channels.
+</I>&gt;<i>
+</I>&gt;<i> Also, ARQ on a per-packet basis is pretty inefficient. We have the
+</I>&gt;<i> ability to buffer huge amounts of data. No reason not to send large
+</I>&gt;<i> blocks of data and then later request retransmission of only damaged
+</I>&gt;<i> frames, i.e. selective reject as opposed to go-back-n.
+</I>&gt;<i>
+</I>&gt;<i> AX.25 was an interesting experiment in the 1980s. We learned a lot from
+</I>&gt;<i> it, mostly all the ways that it is broken. :-) Time for something new.
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Brian Lloyd, WB6RQN/J79BPL
+</I>&gt;<i> 3191 Western Dr.
+</I>&gt;<i> Cameron Park, CA 95682
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">brian at lloyd.com</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">brian at lloyd.com</A>&gt;
+</I>&gt;<i> +1.767.617.1365 (Dominica)
+</I>&gt;<i> +1.916.877.5067 (USA)
+</I>
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000895.html">KISS interface for several modems ?
+</A></li>
+	<LI>Next message: <A HREF="000896.html">[GIT] fldigi branch, maint/3.21,	updated: 4a686e7683d5d11237741a7a5feb4a1c84cd585d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#891">[ date ]</a>
+              <a href="thread.html#891">[ thread ]</a>
+              <a href="subject.html#891">[ subject ]</a>
+              <a href="author.html#891">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Fwd: [Fwd: Re: Translations for amateur radio apps]]
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BFwd%3A%20%5BFwd%3A%20Re%3A%20Translations%20for%20amateur%20radio%20apps%5D%5D&In-Reply-To=%3C20100608214949.GW17977%40charybde.local%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000309.html">
+   <LINK REL="Next"  HREF="000311.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Fwd: [Fwd: Re: Translations for amateur radio apps]]</H1>
+    <B>Stephane Fillod</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BFwd%3A%20%5BFwd%3A%20Re%3A%20Translations%20for%20amateur%20radio%20apps%5D%5D&In-Reply-To=%3C20100608214949.GW17977%40charybde.local%3E"
+       TITLE="[Fwd: [Fwd: Re: Translations for amateur radio apps]]">f8cfe at free.fr
+       </A><BR>
+    <I>Tue Jun  8 23:49:49 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000309.html">fldigi and QSK
+</A></li>
+        <LI>Next message: <A HREF="000311.html">[GIT] fldigi branch, maint/3.20,	updated: 5057f711f4b7045db7f3b4168753ef426874c221
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#310">[ date ]</a>
+              <a href="thread.html#310">[ thread ]</a>
+              <a href="subject.html#310">[ subject ]</a>
+              <a href="author.html#310">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi everyone, Dave, Steve, David, and Mostafa,
+
+I am the culprit who initiated the l10n of fldigi :-)
+Step 1&amp;2 of David's mail are done, and step 3 is done for fr and cs.
+
+There is an issue with the current version of FLTK (1.1.x) with languages
+not based on latin1, but I think Stelios started to prepare for the upgrade.
+
+Thanks to Mostafa (KA6MAL), fldigi can also be translated through
+the launchpad interface. I setup an automatic import of the POT.
+The contribution back to fldigi project of PO's will be manual.
+
+<A HREF="https://translations.launchpad.net/fldigi">https://translations.launchpad.net/fldigi</A>
+
+What do we need now? translators! ...and gettext-enabled Windows builds :-)
+
+73
+-- 
+Stephane - F8CFE
+
+&gt;<i> -------- Original Message --------
+</I>&gt;<i> Subject: 	[Fwd: Re: Translations for amateur radio apps]
+</I>&gt;<i> Date: 	Mon, 07 Jun 2010 15:57:54 -0500
+</I>&gt;<i> From: 	Steve Conklin &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">sconklin at canonical.com</A>&gt;
+</I>&gt;<i> To: 	<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>
+</I>&gt;<i> 
+</I>&gt;<i> Dave,
+</I>[...]
+&gt;<i> 
+</I>&gt;<i> Finally, I emailed the Ubuntu translations guy about translations in
+</I>&gt;<i> general for amateur apps, and got the following detailed response. I
+</I>&gt;<i> thought it might interest you. I'll be happy to help coordinate any
+</I>&gt;<i> interactions with the translations team if you want, but David Planella
+</I>&gt;<i> is very easy to work with and can be contacted directly if you wish.
+</I>&gt;<i> 
+</I>&gt;<i> Steve AI4QR
+</I>&gt;<i> 
+</I>&gt;<i> -------- Forwarded Message --------
+</I>&gt;<i> From: David Planella &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">david.planella at ubuntu.com</A>&gt;
+</I>&gt;<i> To: Steve Conklin &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">sconklin at canonical.com</A>&gt;
+</I>&gt;<i> Subject: Re: Translations for amateur radio apps
+</I>&gt;<i> Date: Mon, 07 Jun 2010 22:07:51 +0200
+</I>&gt;<i> 
+</I>&gt;<i> Hi Steve,
+</I>&gt;<i> 
+</I>&gt;<i> El dl 07 de 06 de 2010 a les 14:15 -0500, en/na Steve Conklin va
+</I>&gt;<i> escriure:
+</I>&gt;<i> &gt;David,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;At UDS, I took an action item to figure out how to get some of the
+</I>&gt;<i> &gt;amateur radio packages in line for translations. I really have very
+</I>&gt;<i> &gt;little idea of how it's done.
+</I>&gt;<i> &gt;
+</I>&gt;<i> 
+</I>&gt;<i> Basically, the high level view is:
+</I>&gt;<i> 
+</I>&gt;<i> 1. Set up the application for localization. This will include:
+</I>&gt;<i> integrating gettext (*) in the build system, initialize gettext in the
+</I>&gt;<i> code, mark the strings for translation.
+</I>&gt;<i> 
+</I>&gt;<i> 2. Extract the translatable strings from the code to make them available
+</I>&gt;<i> to translators. Generally running a make rule or a script that
+</I>&gt;<i> ultimately produces a POT template file (e.g. application.pot).
+</I>&gt;<i> Translators work from this file and create their own translations as PO
+</I>&gt;<i> files.
+</I>&gt;<i> 
+</I>&gt;<i> 3. Integrate translations in the code. This will generally mean
+</I>&gt;<i> committing the PO files containing the translations (e.g. ca.po, es.po,
+</I>&gt;<i> de.po, it.po, etc) and building them, that is, converting them to the
+</I>&gt;<i> binary format (MO files) that gettext understands and can load at
+</I>&gt;<i> runtime.
+</I>&gt;<i> 
+</I>&gt;<i> Once 1 and 2 are set up, it is fairly trivial to expose those
+</I>&gt;<i> translations in Launchpad (enable translations for the project, choose a
+</I>&gt;<i> translation policy -recommended: Restricted-, chose a translation group
+</I>&gt;<i> -recommended: Launchpad Translators-, enable automatic template imports
+</I>&gt;<i> and automatic translation exports).
+</I>&gt;<i> 
+</I>&gt;<i> I can provide more details on each step, but I didn't want to give too
+</I>&gt;<i> much info in an introductory e-mail to translations :)
+</I>&gt;<i> 
+</I>&gt;<i> &gt;I contacted the package maintainer of one of the most popular packages,
+</I>&gt;<i> &gt;fldigi and asked about his plans - he has people already working on
+</I>&gt;<i> &gt;translations, but not using any framework that we might have. So I'm
+</I>&gt;<i> &gt;also curious to know how Ubuntu translations might be of help to him.
+</I>&gt;<i> &gt;
+</I>&gt;<i> 
+</I>&gt;<i> I've had a quick look at the fldigi tarball. It seems that the package
+</I>&gt;<i> is already set up for translations, although I haven't tested if they
+</I>&gt;<i> work.
+</I>&gt;<i> 
+</I>&gt;<i> What _we_ can do to help them is let them know about the Launchpad
+</I>&gt;<i> Translations infrastructure and tell them how they can benefit from it.
+</I>&gt;<i> 
+</I>&gt;<i> What _they_ can do is to expose their translation templates in Launchpad
+</I>&gt;<i> to give them more visibility, use the existing pool of Launchpad
+</I>&gt;<i> translators and the nice online translation functionality. Here's an
+</I>&gt;<i> example of how an upstream such as Getting Things GNOME uses it:
+</I>&gt;<i> 
+</I>&gt;<i> <A HREF="https://translations.launchpad.net/gtg/trunk/+pots/gtg">https://translations.launchpad.net/gtg/trunk/+pots/gtg</A>
+</I>&gt;<i> 
+</I>&gt;<i> The important thing to notice here is that they can use Launchpad for
+</I>&gt;<i> translations without having to migrate their infrastructure to
+</I>&gt;<i> Launchpad. It would be nice and they'd benefit from bzr integration
+</I>&gt;<i> features if they did, but it's not a requisite.
+</I>&gt;<i> 
+</I>&gt;<i> &gt;Here are some lists of the packages that the amateur radio team works
+</I>&gt;<i> &gt;with: <A HREF="https://wiki.ubuntu.com/UbuntuHamsPackages">https://wiki.ubuntu.com/UbuntuHamsPackages</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;Can you point me to some starting information?
+</I>&gt;<i> 
+</I>&gt;<i> Sure, there is
+</I>&gt;<i> <A HREF="https://wiki.ubuntu.com/UbuntuDevelopment/Internationalisation,">https://wiki.ubuntu.com/UbuntuDevelopment/Internationalisation,</A> which
+</I>&gt;<i> also contains links to other resources. On this cycle I'll be trying to
+</I>&gt;<i> expand and reorganize that documentation to make it more useful for
+</I>&gt;<i> developers and maintainers.
+</I>&gt;<i> 
+</I>&gt;<i> I hope this helps for a start. For any further questions, I'll be happy
+</I>&gt;<i> to help. Feel free to ping me any time.
+</I>&gt;<i> 
+</I>&gt;<i> Regards,
+</I>&gt;<i> David.
+</I>&gt;<i> 
+</I>&gt;<i> (*) GNU gettext is the most used internationalization framework in the
+</I>&gt;<i> Open Source world, and Launchpad's approach to importing and exporting
+</I>&gt;<i> translations is also based on it. Here's the homepage:
+</I>&gt;<i> 
+</I>&gt;<i>  <A HREF="http://www.gnu.org/software/gettext/">http://www.gnu.org/software/gettext/</A>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000309.html">fldigi and QSK
+</A></li>
+	<LI>Next message: <A HREF="000311.html">[GIT] fldigi branch, maint/3.20,	updated: 5057f711f4b7045db7f3b4168753ef426874c221
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#310">[ date ]</a>
+              <a href="thread.html#310">[ thread ]</a>
+              <a href="subject.html#310">[ subject ]</a>
+              <a href="author.html#310">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

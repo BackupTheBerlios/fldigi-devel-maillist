@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> XML-RPC new functions for Wefax
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20XML-RPC%20new%20functions%20for%20Wefax&In-Reply-To=%3C4DC31BE5.3000500%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000630.html">
+   <LINK REL="Next"  HREF="000633.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>XML-RPC new functions for Wefax</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20XML-RPC%20new%20functions%20for%20Wefax&In-Reply-To=%3C4DC31BE5.3000500%40gmail.com%3E"
+       TITLE="XML-RPC new functions for Wefax">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Thu May  5 23:51:33 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000630.html">New yahoo group in French fldigi at yahoogroupes.fr
+</A></li>
+        <LI>Next message: <A HREF="000633.html">Fedora 15 issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#631">[ date ]</a>
+              <a href="thread.html#631">[ thread ]</a>
+              <a href="subject.html#631">[ subject ]</a>
+              <a href="author.html#631">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+here is a first draft of new XML-RPC functions for sending and receiving 
+faxes. (Extracted from the new html page).
+
+wefax.state_string	s:n	Returns Wefax engine state (tx and rx) for 
+information.	
+
+wefax.skip_apt	s:n	Skip APT during Wefax reception. Returns an empty 
+string if OK, or an error message.	
+
+wefax.skip_phasing	s:n	Skip phasing during Wefax reception. Returns an 
+empty string if OK, or an error message.	
+
+wefax.set_tx_abort_flag	s:n	Cancels Wefax image transmission. Returns an 
+empty string if OK, or an error message.	
+
+wefax.end_reception	s:n	End Wefax image reception. Returns an empty 
+string if OK, or an error message.	
+
+wefax.start_manual_reception	s:n	Starts fax image reception in manual 
+mode, so images will always have the maximum number of lines. Returns an 
+empty string if OK, or an error message.	
+
+wefax.set_adif_log	s:b	Set/reset logging to received/transmit images to 
+ADIF log file. The boolean parameter is a flag which is false by 
+default. Returns an empty string if OK, or an error message.	
+
+wefax.set_max_lines	s:i	Set maximum lines for fax image reception. No 
+files will have more lines, but may be shorter if the fax end is 
+automatically detected. Returns an empty string if OK, or an error message.	
+
+wefax.get_received_file	s:i	Waits for next received fax file, returns 
+its name with a delay in seconds. Empty string if timeout. Returns a 
+file name, or an empty string if all received files have been queried. 
+They are returned in chronological order.	
+
+wefax.send_file	s:si	Send file with a maximum delay in seconds. Returns 
+an empty string if OK otherwise an error message. Note that sending a 
+file take typically ten ,inutes. Progression can be followed on the GUI.
+
+Any remark welcome.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000630.html">New yahoo group in French fldigi at yahoogroupes.fr
+</A></li>
+	<LI>Next message: <A HREF="000633.html">Fedora 15 issue
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#631">[ date ]</a>
+              <a href="thread.html#631">[ thread ]</a>
+              <a href="subject.html#631">[ subject ]</a>
+              <a href="author.html#631">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

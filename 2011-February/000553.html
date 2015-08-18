@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi error - Linux - 20110210
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20error%20-%20Linux%20-%2020110210&In-Reply-To=%3CAANLkTimx_zAEwB%2BiUppjbBitmjP194V4h3SEpj2Nr8Fd%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000552.html">
+   <LINK REL="Next"  HREF="000554.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi error - Linux - 20110210</H1>
+    <B>Salim Hameed</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20error%20-%20Linux%20-%2020110210&In-Reply-To=%3CAANLkTimx_zAEwB%2BiUppjbBitmjP194V4h3SEpj2Nr8Fd%40mail.gmail.com%3E"
+       TITLE="fldigi error - Linux - 20110210">vu2lid at gmail.com
+       </A><BR>
+    <I>Fri Feb 11 01:17:40 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000552.html">[PATCH] Sync translation to 3.21.0BK * Shorten &quot;Enter Xcvr Freq&quot;	translation to fit the new smaller space.
+</A></li>
+        <LI>Next message: <A HREF="000554.html">FW: checksum failure tonight
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#553">[ date ]</a>
+              <a href="thread.html#553">[ thread ]</a>
+              <a href="subject.html#553">[ subject ]</a>
+              <a href="author.html#553">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">salim at kuyil</A>:~$ fldigi
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+fldigi[0x813615c]
+[0xb78ad400]
+fldigi[0x81fc62d]
+fldigi[0x80faaea]
+/lib/i686/cmov/libc.so.6(__libc_start_main+0xe6)[0xb714ec76]
+fldigi[0x8053291]
+
+****** Version information:
+fldigi 3.20.34
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, and
+others.
+License GPLv3+: GNU GPL version 3 or later &lt;
+<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+  built          : Mon Dec 27 19:04:52 CST 2010 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev</A> on
+i686-pc-linux-gnu for i686-pc-linux-gnu
+
+  configure flags: '--enable-static' '--without-asciidoc' '--disable-tls'
+'--prefix=/tmp/fldigi-build'
+
+  compiler       : gcc version 4.4.1 (Ubuntu 4.4.1-4ubuntu9)
+
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+-I$(srcdir)/fileselector -pthread -I/usr/local/include -I/usr/local/include
+-I/usr/include/freetype2 -D_THREAD_SAFE -D_REENTRANT -I/usr/local/include
+-I/usr/local/include -D_REENTRANT -I/usr/local/include
+-I/usr/include/libpng12 -I/usr/local/include -pipe -Wall -fexceptions -O2
+-ffast-math -finline-functions -DNDEBUG
+
+  linker flags   : -L/usr/local/lib -lportaudio -lasound -lm -lpthread
+/usr/local/lib/libfltk_images.a -lpng -lz -ljpeg /usr/local/lib/libfltk.a
+-lXft -lpthread -ldl -lm -lXext -lX11 -lX11 -L/usr/local/lib -lsndfile
+-L/usr/local/lib -lsamplerate -lpulse-simple -lpulse -L/usr/local/lib
+-lhamlib -lm -lpng12 -Wl,-Bstatic -L/usr/local/lib -lxmlrpc_server_abyss++
+-lxmlrpc_server++ -lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss
+-lpthread -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse
+-lxmlrpc_xmltok -Wl,-Bdynamic -ldl -lrt -lpthread
+
+  libraries      : FLTK 1.2.0
+                   libsamplerate 0.1.7
+                   libsndfile 1.0.21
+                   PortAudio 19
+                   PulseAudio 0.9.19
+                   Hamlib 1.2.12
+                   XMLRPC-C 1.06.31
+
+
+Runtime information:
+  system         : Linux kuyil 2.6.32-5-686 #1 SMP Wed Jan 12 04:01:41 UTC
+2011 i686
+
+  libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                   libsndfile-1.0.23
+                   PortAudio V19-devel (built Nov 25 2010) 1899
+                   Pulseaudio 0.9.21-rebootstrapped-dirty
+                   Hamlib 1.2.12
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">salim at kuyil</A>:~$
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20110210/e9f748b0/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20110210/e9f748b0/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000552.html">[PATCH] Sync translation to 3.21.0BK * Shorten &quot;Enter Xcvr Freq&quot;	translation to fit the new smaller space.
+</A></li>
+	<LI>Next message: <A HREF="000554.html">FW: checksum failure tonight
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#553">[ date ]</a>
+              <a href="thread.html#553">[ thread ]</a>
+              <a href="subject.html#553">[ subject ]</a>
+              <a href="author.html#553">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Proposed patch for QRZ lookup with slash prefix/suffix heuristic
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Proposed%20patch%20for%20QRZ%20lookup%20with%20slash%20prefix/suffix%20heuristic&In-Reply-To=%3C4ECB13AE.7030904%40WA5ZNU.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000739.html">
+   <LINK REL="Next"  HREF="000741.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Proposed patch for QRZ lookup with slash prefix/suffix heuristic</H1>
+    <B>Leigh L. Klotz, Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Proposed%20patch%20for%20QRZ%20lookup%20with%20slash%20prefix/suffix%20heuristic&In-Reply-To=%3C4ECB13AE.7030904%40WA5ZNU.org%3E"
+       TITLE="Proposed patch for QRZ lookup with slash prefix/suffix heuristic">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Tue Nov 22 04:14:54 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000739.html">[GIT] fldigi branch, master,	updated: fddec4225d0096f9f6550425b86cff1120461a68
+</A></li>
+        <LI>Next message: <A HREF="000741.html">[GIT] fldigi branch, master,	updated: ff6bd5c8482885a8b0fa4a4f536153bac480279e
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#740">[ date ]</a>
+              <a href="thread.html#740">[ thread ]</a>
+              <a href="subject.html#740">[ subject ]</a>
+              <a href="author.html#740">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Here's a proposed patch for testing for QRZ lookup.
+
+
+Description:
+If QRZ lookup soft-fails (we get back XML but there's an error) and the 
+callsign contains at least one '/', then tokenize the call by '/' and 
+try again with the single longest token.  Logs shortened lookups to DEBUG.
+
+
+
+Test cases:
+PA/WA5ZNU/6 -&gt; WA5ZNU
+WA5ZNU/6 -&gt; WA5ZNU
+WA5ZNU/M -&gt; WA5ZNU
+KH6/M0GLD/M -&gt; M0GLD
+W1T/KH6 -&gt; W1T
+
+Known failures:
+KH6/W1T/M -&gt; KH6, instead of W1T, since it takes the first longest token.
+Special callsigns aren't in QRZ anyway.
+
+Are there other such cases to be found worldwide, with multi-character 
+prefixes longer than some calls?
+
+Caveats:
+I haven't tried the other lookup services.  I don't know what REQ() is 
+eliding code for so I don't know how to test that.
+I haven't tested expired QRZ accounts to make sure the messages work.  I 
+may have made novice mistakes in C++ memory management.
+
+Leigh/WA5ZNU
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: lookupcall.patch
+Type: text/x-patch
+Size: 3518 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20111121/e851564c/attachment.bin">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20111121/e851564c/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000739.html">[GIT] fldigi branch, master,	updated: fddec4225d0096f9f6550425b86cff1120461a68
+</A></li>
+	<LI>Next message: <A HREF="000741.html">[GIT] fldigi branch, master,	updated: ff6bd5c8482885a8b0fa4a4f536153bac480279e
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#740">[ date ]</a>
+              <a href="thread.html#740">[ thread ]</a>
+              <a href="subject.html#740">[ subject ]</a>
+              <a href="author.html#740">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

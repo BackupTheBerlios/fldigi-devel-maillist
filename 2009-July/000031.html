@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: d54a2ca078353ef7cfbd36c452f282d6273b4d14
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20d54a2ca078353ef7cfbd36c452f282d6273b4d14&In-Reply-To=%3C200907061951.n66JpLuD018732%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000030.html">
+   <LINK REL="Next"  HREF="000032.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: d54a2ca078353ef7cfbd36c452f282d6273b4d14</H1>
+    <B>m0gld at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20d54a2ca078353ef7cfbd36c452f282d6273b4d14&In-Reply-To=%3C200907061951.n66JpLuD018732%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: d54a2ca078353ef7cfbd36c452f282d6273b4d14">m0gld at mail.berlios.de
+       </A><BR>
+    <I>Mon Jul  6 21:51:21 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000030.html">[GIT] fldigi branch, master,	updated: b83eea4445b64d5cb842bb58254c162b17e7b1d7
+</A></li>
+        <LI>Next message: <A HREF="000032.html">[GIT] fldigi branch, maint/3.11,	updated: 90e4fcf6cd81f3511a8753cefe89aeb9e588b309
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#31">[ date ]</a>
+              <a href="thread.html#31">[ thread ]</a>
+              <a href="subject.html#31">[ subject ]</a>
+              <a href="author.html#31">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  d54a2ca078353ef7cfbd36c452f282d6273b4d14 (commit)
+      from  b83eea4445b64d5cb842bb58254c162b17e7b1d7 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit d54a2ca078353ef7cfbd36c452f282d6273b4d14
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Mon Jul 6 03:20:08 2009 +0100
+
+    Fix compilation on glibc 2.10
+    
+    Fix some strchr calls which did not preserve const-ness.
+    See:  <A HREF="http://udrepper.livejournal.com/20948.html">http://udrepper.livejournal.com/20948.html</A>
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ src/include/qrzlib.h    |   28 ++++++++++++++--------------
+ src/misc/qrzlib.cxx     |    2 +-
+ src/widgets/picture.cxx |   17 +++++++++--------
+ 3 files changed, 24 insertions(+), 23 deletions(-)
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000030.html">[GIT] fldigi branch, master,	updated: b83eea4445b64d5cb842bb58254c162b17e7b1d7
+</A></li>
+	<LI>Next message: <A HREF="000032.html">[GIT] fldigi branch, maint/3.11,	updated: 90e4fcf6cd81f3511a8753cefe89aeb9e588b309
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#31">[ date ]</a>
+              <a href="thread.html#31">[ thread ]</a>
+              <a href="subject.html#31">[ subject ]</a>
+              <a href="author.html#31">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

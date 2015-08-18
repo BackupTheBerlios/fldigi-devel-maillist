@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.13BN
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13BN&In-Reply-To=%3C4B45E0A0.8060101%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000181.html">
+   <LINK REL="Next"  HREF="000183.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.13BN</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13BN&In-Reply-To=%3C4B45E0A0.8060101%40bellsouth.net%3E"
+       TITLE="fldigi 3.13BN">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Thu Jan  7 14:24:48 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000181.html">[GIT] fldigi branch, master,	updated: ab7dd93462232f88f7207f318aab24a5d5bd4a6a
+</A></li>
+        <LI>Next message: <A HREF="000183.html">[fldigi] #2: Possible bug in S/N calculation for Olivia (fldigi	3.12.5)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#182">[ date ]</a>
+              <a href="thread.html#182">[ thread ]</a>
+              <a href="subject.html#182">[ subject ]</a>
+              <a href="author.html#182">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Version 3.13BN
+    
+    Modem Initialization
+    
+        Removed duplicate invocations of init() for several
+        modem types.
+    
+    Carrier callback
+    
+        Corrected frequency limits computation in waterfall::opmode()
+        method.
+
+    CSV Export
+    
+        Error corrected in export MYXCHG field.
+
+The modem initialization and carrier callback bug's were noticed by 
+Fred, DL6XAZ,** and confirmed by others.  It was most noticeable when 
+using the scroll wheel to flip through the modem types.  It effected 
+modem initialization every time a new modem type was selected, but was 
+just not so easily discerned.  This was a grand slam report from the 
+testers as the offending code has been with us for quite some time.
+
+
+Source and executables for all OS is available at 
+<A HREF="http://www.w1hkj.com/alpha/">http://www.w1hkj.com/alpha/</A>
+
+73, Dave, W1HKJ
+for the development team
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20100107/0687391c/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20100107/0687391c/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000181.html">[GIT] fldigi branch, master,	updated: ab7dd93462232f88f7207f318aab24a5d5bd4a6a
+</A></li>
+	<LI>Next message: <A HREF="000183.html">[fldigi] #2: Possible bug in S/N calculation for Olivia (fldigi	3.12.5)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#182">[ date ]</a>
+              <a href="thread.html#182">[ thread ]</a>
+              <a href="subject.html#182">[ subject ]</a>
+              <a href="author.html#182">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

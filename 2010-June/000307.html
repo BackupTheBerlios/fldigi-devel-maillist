@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> new bug?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20new%20bug%3F&In-Reply-To=%3C1288701184.15378.1275993163715.JavaMail.fmail%40mwmweb073%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000306.html">
+   <LINK REL="Next"  HREF="000308.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>new bug?</H1>
+    <B>Rein Couperus</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20new%20bug%3F&In-Reply-To=%3C1288701184.15378.1275993163715.JavaMail.fmail%40mwmweb073%3E"
+       TITLE="new bug?">rein at couperus.com
+       </A><BR>
+    <I>Tue Jun  8 12:32:43 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000306.html">[GIT] fldigi branch, master,	updated: 3779b336a72df16aadf099bfb80c073b5d390720
+</A></li>
+        <LI>Next message: <A HREF="000308.html">[GIT] fldigi branch, maint/3.20,	updated: c80c28e238ad660c6bb8cf18c0f3b5ecfede00b4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#307">[ date ]</a>
+              <a href="thread.html#307">[ thread ]</a>
+              <a href="subject.html#307">[ subject ]</a>
+              <a href="author.html#307">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Caught signal 11Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.deor</A> file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+****** Stack trace:
+./fldigi[0x8133c21]
+[0x2bc400]
+/lib/tls/i686/cmov/libc.so.6(fputc+0x20)[0x4e94e0]
+./fldigi[0x8116837]
+./fldigi[0x80a44c2]
+./fldigi[0x80b8e19]
+./fldigi[0x814c392]
+./fldigi[0x81eeaa7]
+./fldigi[0x81c1076
+]./fldigi[0x81c10f3]
+./fldigi[0x80f94aa]
+/lib/tls/i686/cmov/libc.so.6(__libc_start_main+0xe6)[0x4a0bd6]
+./fldigi[0x8053071]
+****** Version information:
+fldigi 3.20.13
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, and others.
+License GPLv3+: GNU GPL version 3 or later 
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:Build information:
+  built          : Fri Jun  4 14:33:46 CDT 2010 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev</A> on i686-pc-linux-gnu for i686-pc-linux-gnu
+ configure flags: '--with-pulseaudio=no' '--enable-static' '--disable-tls' '--without-asciidoc' '--prefix=/tmp/fldigi-build'
+ compiler       : gcc version 4.3.3 (Ubuntu 4.3.3-5ubuntu4) 
+ compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml -I$(srcdir)/fileselector -pthread -I/usr/local/include -I/usr/local/include -I/usr/include/freetype2 -D_THREAD_SAFE -D_REENTRANT -I/usr/local/include -I/usr/local/include -I/usr/include/libpng12 -I/usr/local/include -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions -DNDEBUG
+
+ linker flags   : -L/usr/local/lib -lportaudio -lm -lpthread /usr/local/lib/libfltk_images.a -lpng -lz -ljpeg /usr/local/lib/libfltk.a -lXft -lpthread -ldl -lm -lXext -lX11 -lX11 -L/usr/local/lib -lsndfile -lsamplerate -L/usr/local/lib -lhamlib -lm -lpng12 -Wl,-Bstatic -L/usr/local/lib -lxmlrpc_server_abyss++ -lxmlrpc_server++ -lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss -lpthread -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -Wl,-Bdynamic -ldl -lrt -lpthread
+
+ libraries      : FLTK 1.2.0                   libsamplerate 0.1.4                   libsndfile 1.0.21                   PortAudio 19                   Hamlib 1.2.10                   XMLRPC-C 1.06.31
+
+Runtime information:  system         : Linux pskmail 2.6.32-22-generic #33-Ubuntu SMP Wed Apr 28 13:27:30 UTC 2010 i686
+ libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo                   libsndfile-1.0.21                   PortAudio V19-devel (built Feb 18 2010 22:31:30) 1899                   Hamlib 1.2.10
+
+73&#160;
+
+Rein PA0R
+--
+<A HREF="http://pa0r.blogspirit.com">http://pa0r.blogspirit.com</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000306.html">[GIT] fldigi branch, master,	updated: 3779b336a72df16aadf099bfb80c073b5d390720
+</A></li>
+	<LI>Next message: <A HREF="000308.html">[GIT] fldigi branch, maint/3.20,	updated: c80c28e238ad660c6bb8cf18c0f3b5ecfede00b4
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#307">[ date ]</a>
+              <a href="thread.html#307">[ thread ]</a>
+              <a href="subject.html#307">[ subject ]</a>
+              <a href="author.html#307">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

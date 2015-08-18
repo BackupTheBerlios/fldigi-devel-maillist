@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [fldigi] #4: Segfault info following fldigi 3.13BS crash after	running for approx 20 Hrs.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5Bfldigi%5D%20%234%3A%20Segfault%20info%20following%20fldigi%203.13BS%20crash%20after%0A%09running%20for%20approx%2020%20Hrs.&In-Reply-To=%3C066.4e71029dacfd481f08843099e327b6a7%40fedorahosted.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000197.html">
+   <LINK REL="Next"  HREF="000200.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[fldigi] #4: Segfault info following fldigi 3.13BS crash after	running for approx 20 Hrs.</H1>
+    <B>fldigi</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5Bfldigi%5D%20%234%3A%20Segfault%20info%20following%20fldigi%203.13BS%20crash%20after%0A%09running%20for%20approx%2020%20Hrs.&In-Reply-To=%3C066.4e71029dacfd481f08843099e327b6a7%40fedorahosted.org%3E"
+       TITLE="[fldigi] #4: Segfault info following fldigi 3.13BS crash after	running for approx 20 Hrs.">trac at fedorahosted.org
+       </A><BR>
+    <I>Mon Jan 25 21:13:37 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000197.html">[GIT] fldigi branch, master,	updated: 7956fbb8b42e3b50208ff5ef7b99cb642df511c4
+</A></li>
+        <LI>Next message: <A HREF="000200.html">[fldigi] #4: Segfault info following fldigi 3.13BS crash after	running for approx 20 Hrs.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#199">[ date ]</a>
+              <a href="thread.html#199">[ thread ]</a>
+              <a href="subject.html#199">[ subject ]</a>
+              <a href="author.html#199">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>#4: Segfault info following fldigi 3.13BS crash after running for approx 20
+Hrs.
+------------------------------------+---------------------------------------
+ Reporter:  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">linuxradio at giastar.com</A>  |        Type:  defect                                  
+   Status:  new                     |   Milestone:                                          
+Component:  general                 |     Version:  devel                                   
+ Severity:  important               |    Keywords:  segfault pa_atomic_load pulsecore ubuntu
+------------------------------------+---------------------------------------
+ I have experienced a number of crashes in both the stable and alpha
+ versions when fldigi has been left running for a long time (tens of hours,
+ or several days). Nothing appears in the status log. Most of these crashes
+ have occurred in my absence but I have noticed a possibly related tendency
+ for the cpu load due to fldigi to rise sharply up to the point of zero
+ idle time, followed by a crash. Yesterday I started running fldigi from
+ the command line and this is what appeared in the terminal window after
+ the first crash. It happened in my absence so I don't know whether the
+ increased processor load happened this time. Alpha version compiled from
+ scratch on Ubuntu 9.10, upgraded on 24th Jan 2010:
+
+ {{{
+ Assertion 'pa_atomic_load(&amp;b-&gt;pool-&gt;stat.allocated_size) &gt;= (int)
+ b-&gt;length'
+ failed at pulsecore/memblock.c:188, function stat_remove(). Aborting.
+
+ Caught signal 6
+ Aborting fldigi due to a fatal error.
+ Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+ or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+ ****** Stack trace:
+ fldigi[0x812379d]
+ [0xada400]
+ [0xada422]
+ /lib/tls/i686/cmov/libc.so.6(gsignal+0x51)[0xb5b4d1]
+ /lib/tls/i686/cmov/libc.so.6(abort+0x182)[0xb5e932]
+ /usr/lib/libpulsecommon-0.9.19.so(pa_memblock_unref+0x3da)[0x6fe0fa]
+ /usr/lib/libpulsecommon-0.9.19.so[0x70b256]
+ /usr/lib/libpulsecommon-0.9.19.so[0x6f611e]
+ /usr/lib/libpulse.so.0(pa_mainloop_dispatch+0x10b)[0x2f771b]
+ /usr/lib/libpulse.so.0(pa_mainloop_iterate+0x51)[0x2f7c31]
+ /usr/lib/libpulse.so.0(pa_mainloop_run+0x34)[0x2f7cf4]
+ /usr/lib/libpulse.so.0[0x308bc3]
+ /usr/lib/libpulsecommon-0.9.19.so[0x71aac2]
+ /lib/tls/i686/cmov/libpthread.so.0[0x11580e]
+ /lib/tls/i686/cmov/libc.so.6(clone+0x5e)[0xbfd8de]
+
+ ****** Version information:
+ fldigi 3.13BS
+ Copyright (C) 2008, 2009 Dave Freese, Stelios Bounanos, Leigh Klotz, and
+ others.
+ License GPLv2+: GNU GPL version 2 or later
+ &lt;<A HREF="http://www.gnu.org/licenses/gpl-2.0.html">http://www.gnu.org/licenses/gpl-2.0.html</A>&gt;
+ This is free software: you are free to change and redistribute it.
+ There is NO WARRANTY, to the extent permitted by law.
+
+ ****** Build information:
+ Build information:
+   built          : Sun Jan 24 18:45:18 GMT 2010 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">root at g4vlc</A> on
+ i686-pc-linux-gnu for i686-pc-linux-gnu
+
+   configure flags:
+
+   compiler       : gcc version 4.4.1 (Ubuntu 4.4.1-4ubuntu8)
+
+   compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+ -I$(srcdir)/fileselector -pthread -I/usr/include/freetype2 -D_THREAD_SAFE
+ -D_REENTRANT -D_REENTRANT -I/usr/include/libpng12 -I/usr/include -pipe
+ -Wall
+ --fexceptions -O2 -ffast-math -finline-functions -fomit-frame-pointer
+ -- -DNDEBUG
+
+   linker flags   : -lportaudio -lasound -lm -lpthread
+ -Wl,-Bsymbolic-functions -lfltk_images -lfltk -lX11 -lsndfile -lsamplerate
+ -lpulse-simple -lpulse -lhamlib -lm -lpng12 -L/usr/lib
+ --lxmlrpc_server_abyss++ -lxmlrpc_server++ -lxmlrpc_server_abyss
+ -- -lxmlrpc_server -lxmlrpc_abyss -lpthread -lxmlrpc++ -lxmlrpc
+ -- - -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -ldl -lrt -lpthread
+
+   libraries      : FLTK 1.1.9
+                    libsamplerate 0.1.7
+                    libsndfile 1.0.20
+                    PortAudio 19
+                    PulseAudio 0.9.19
+                    Hamlib 1.2.9
+                    XMLRPC-C 1.06.27
+
+
+ Runtime information:
+   system         : Linux g4vlc 2.6.31-17-generic #54-Ubuntu SMP Thu Dec 10
+ 16:20:31 UTC 2009 i686
+
+   libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                    libsndfile-1.0.20
+                    PortAudio V19-devel (built Jun 20 2009 13:28:51) 1899
+                    Pulseaudio 0.9.19
+                    Hamlib version 1.2.9
+ Segmentation fault
+
+
+ }}}
+
+-- 
+Ticket URL: &lt;<A HREF="https://fedorahosted.org/fldigi/ticket/4">https://fedorahosted.org/fldigi/ticket/4</A>&gt;
+fldigi &lt;<A HREF="http://www.w1hkj.com/Fldigi.html">http://www.w1hkj.com/Fldigi.html</A>&gt;
+Digital modem program for radio amateurs
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000197.html">[GIT] fldigi branch, master,	updated: 7956fbb8b42e3b50208ff5ef7b99cb642df511c4
+</A></li>
+	<LI>Next message: <A HREF="000200.html">[fldigi] #4: Segfault info following fldigi 3.13BS crash after	running for approx 20 Hrs.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#199">[ date ]</a>
+              <a href="thread.html#199">[ thread ]</a>
+              <a href="subject.html#199">[ subject ]</a>
+              <a href="author.html#199">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

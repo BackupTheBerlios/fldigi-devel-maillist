@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 070f84d487a7b93ecfb5eb2060587529f419c23c
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20070f84d487a7b93ecfb5eb2060587529f419c23c&In-Reply-To=%3C201001211854.o0LIs1rt017673%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000189.html">
+   <LINK REL="Next"  HREF="000191.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 070f84d487a7b93ecfb5eb2060587529f419c23c</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20070f84d487a7b93ecfb5eb2060587529f419c23c&In-Reply-To=%3C201001211854.o0LIs1rt017673%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 070f84d487a7b93ecfb5eb2060587529f419c23c">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Thu Jan 21 19:54:01 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000189.html">Commits pushed to pu/df for evaluation
+</A></li>
+        <LI>Next message: <A HREF="000191.html">[fldigi] #3: fldigi not signed by key 8E7306F5?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#190">[ date ]</a>
+              <a href="thread.html#190">[ thread ]</a>
+              <a href="subject.html#190">[ subject ]</a>
+              <a href="author.html#190">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  070f84d487a7b93ecfb5eb2060587529f419c23c (commit)
+       via  d84b060522c8862c9c56197ff7d43d38f7975b4f (commit)
+       via  93bedef1ca2fd0ae666b2d399c59e7d8d9064ede (commit)
+       via  afd3adcd58cd7335d6db07a82fdde27a4a776cce (commit)
+      from  b9e25d9500f93f06fc83881b648be4ab556a975d (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=070f84d487a7b93ecfb5eb2060587529f419c23c">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=070f84d487a7b93ecfb5eb2060587529f419c23c</A>
+
+commit 070f84d487a7b93ecfb5eb2060587529f419c23c
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Jan 21 12:53:25 2010 -0600
+
+    Version 3.13BR
+    
+        Alpha release
+
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ configure.ac                |    2 +-
+ src/Makefile.am             |    2 -
+ src/cw_rtty/rtty.cxx        |  105 ++++++-----
+ src/dialogs/confdialog.cxx  |   15 +-
+ src/dialogs/confdialog.fl   |    2 +-
+ src/feld/feld.cxx           |   46 +++--
+ src/include/feld.h          |    2 +
+ src/include/rsid.h          |    2 +
+ src/include/rtty.h          |    4 +
+ src/rsid/rsid.cxx           |   40 +++--
+ src/rsid/rsid_fft.cxx       |  430 -------------------------------------------
+ src/rsid/rsid_fft.h         |   12 --
+ src/waterfall/waterfall.cxx |   41 ++++-
+ 13 files changed, 168 insertions(+), 535 deletions(-)
+   9.5% src/cw_rtty/
+   3.7% src/dialogs/
+   4.5% src/feld/
+  75.1% src/rsid/
+   6.0% src/waterfall/
+ delete mode 100644 src/rsid/rsid_fft.cxx
+ delete mode 100644 src/rsid/rsid_fft.h
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000189.html">Commits pushed to pu/df for evaluation
+</A></li>
+	<LI>Next message: <A HREF="000191.html">[fldigi] #3: fldigi not signed by key 8E7306F5?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#190">[ date ]</a>
+              <a href="thread.html#190">[ thread ]</a>
+              <a href="subject.html#190">[ subject ]</a>
+              <a href="author.html#190">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

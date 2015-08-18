@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 3e32e4e2b98a929b83e3b401c745a75dda4954a4
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%203e32e4e2b98a929b83e3b401c745a75dda4954a4&In-Reply-To=%3C200909092351.n89NpC74007411%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000102.html">
+   <LINK REL="Next"  HREF="000104.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 3e32e4e2b98a929b83e3b401c745a75dda4954a4</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%203e32e4e2b98a929b83e3b401c745a75dda4954a4&In-Reply-To=%3C200909092351.n89NpC74007411%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 3e32e4e2b98a929b83e3b401c745a75dda4954a4">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Thu Sep 10 01:51:12 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000102.html">i8n updates
+</A></li>
+        <LI>Next message: <A HREF="000104.html">[GIT] fldigi branch, master,	updated: 4f25a4efe2e0c4aa0f81e5a5daee6999c6f8553a
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#103">[ date ]</a>
+              <a href="thread.html#103">[ thread ]</a>
+              <a href="subject.html#103">[ subject ]</a>
+              <a href="author.html#103">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  3e32e4e2b98a929b83e3b401c745a75dda4954a4 (commit)
+       via  9fa2a5a9f8b4ed976dd2602e25e92ce059bf452a (commit)
+       via  a06482d5f00cd824ace2c960c84f35be18302542 (commit)
+       via  4287bd0b70c242a1ace329bfdbee7aeaf32abba4 (commit)
+       via  d36b5ded28072c1a5ad8744c592936e63fe46f29 (commit)
+       via  b99ad8229790076bc096531bb155092dde73bce5 (commit)
+       via  85bf626275f2d1fd67563c472de1869755931005 (commit)
+       via  5e35ec0648ea3514ff82572d4e52ad6d2451acd3 (commit)
+       via  da2cc3bf689913a7152b55cac54a61619603f0c5 (commit)
+       via  df650031bd204109d946c3361899312ed0fde741 (commit)
+      from  db84e7f77ebfac63d4b1a1dc7e91a7e6ff60fef7 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit 3e32e4e2b98a929b83e3b401c745a75dda4954a4
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Sep 9 18:50:26 2009 -0500
+
+    Version 3.13AF
+    
+        Alpha test version 3.13AF
+
+commit 9fa2a5a9f8b4ed976dd2602e25e92ce059bf452a
+Merge: a06482d5f00cd824ace2c960c84f35be18302542 b99ad8229790076bc096531bb155092dde73bce5
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Sep 9 18:44:05 2009 -0500
+
+    Merge commit 'berlios/pu/sb'
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ INSTALL                      |    5 +-
+ README                       |   47 +-
+ configure.ac                 |    2 +-
+ m4/ax_boost_base.m4          |  223 ----
+ m4/bind.m4                   |   10 +-
+ m4/build.m4                  |    8 +-
+ po/POTFILES.in               |   14 +-
+ po/cs.po                     | 2697 +++++++++++++++++++++++++-----------------
+ po/fldigi.pot                | 2390 +++++++++++++++++++++++--------------
+ po/fr.po                     | 2567 +++++++++++++++++++++++++---------------
+ src/dialogs/confdialog.cxx   |   71 +-
+ src/dialogs/confdialog.fl    |   57 +-
+ src/dialogs/fl_digi.cxx      |  304 +++---
+ src/dialogs/font_browser.cxx |   17 +-
+ src/dialogs/notifydialog.cxx |   65 +-
+ src/dialogs/notifydialog.fl  |    3 +
+ src/include/confdialog.h     |    4 +-
+ src/include/configuration.h  |    3 +
+ src/include/fl_digi.h        |    9 +-
+ src/include/qrunner.h        |    5 +-
+ src/misc/arq_io.cxx          |   12 +-
+ src/misc/configuration.cxx   |    4 +-
+ src/misc/macroedit.cxx       |  102 +-
+ src/rigcontrol/rigdialog.cxx |    2 +-
+ src/rigcontrol/rigdialog.fl  |    2 +-
+ src/rsid/rsid.cxx            |   13 +-
+ 26 files changed, 5153 insertions(+), 3483 deletions(-)
+ delete mode 100644 m4/ax_boost_base.m4
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000102.html">i8n updates
+</A></li>
+	<LI>Next message: <A HREF="000104.html">[GIT] fldigi branch, master,	updated: 4f25a4efe2e0c4aa0f81e5a5daee6999c6f8553a
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#103">[ date ]</a>
+              <a href="thread.html#103">[ thread ]</a>
+              <a href="subject.html#103">[ subject ]</a>
+              <a href="author.html#103">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

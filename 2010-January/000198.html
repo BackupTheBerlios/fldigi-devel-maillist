@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 9b6a313cb2d658e036d5303cccf60741210ce92f
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%209b6a313cb2d658e036d5303cccf60741210ce92f&In-Reply-To=%3C201001252023.o0PKN9VD028712%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000209.html">
+   <LINK REL="Next"  HREF="000202.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 9b6a313cb2d658e036d5303cccf60741210ce92f</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%209b6a313cb2d658e036d5303cccf60741210ce92f&In-Reply-To=%3C201001252023.o0PKN9VD028712%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 9b6a313cb2d658e036d5303cccf60741210ce92f">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Mon Jan 25 21:23:09 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000209.html">[fldigi] #4: Segfault info following fldigi 3.13BS crash after	running for approx 20 Hrs.
+</A></li>
+        <LI>Next message: <A HREF="000202.html">[GIT] fldigi branch, master,	updated: be9dc0a3b67b9678f36064248ab7c3a6ec49e45a
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#198">[ date ]</a>
+              <a href="thread.html#198">[ thread ]</a>
+              <a href="subject.html#198">[ subject ]</a>
+              <a href="author.html#198">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  9b6a313cb2d658e036d5303cccf60741210ce92f (commit)
+       via  6354484e10004466274f6ec7dd61d8407f4d2eca (commit)
+       via  33075e386be820c92ead1812a1ca532b4a7ec399 (commit)
+      from  7956fbb8b42e3b50208ff5ef7b99cb642df511c4 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=9b6a313cb2d658e036d5303cccf60741210ce92f">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=9b6a313cb2d658e036d5303cccf60741210ce92f</A>
+
+commit 9b6a313cb2d658e036d5303cccf60741210ce92f
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Jan 25 14:22:24 2010 -0600
+
+    Version 3.13BT
+    
+        Alpha release
+
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=6354484e10004466274f6ec7dd61d8407f4d2eca">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=6354484e10004466274f6ec7dd61d8407f4d2eca</A>
+
+commit 6354484e10004466274f6ec7dd61d8407f4d2eca
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Jan 25 14:20:14 2010 -0600
+
+    RTTY mods
+    
+        * Restored status line display of shift.  Line now reads:
+        * [RTTY][45.45 / 170][s/n: -v.v][bandwidth adjustment]
+                 ^            ^- changes with signal
+                 |- baud / shift
+        * Changed s/n &amp; metric filter constants to reduce delay
+          in first character detection/display.
+        * Changed initial filter width to 1.3 x baud rate
+        * Added hard limiter to discriminator.
+
+ 2 files changed, 25 insertions(+), 36 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=33075e386be820c92ead1812a1ca532b4a7ec399">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=33075e386be820c92ead1812a1ca532b4a7ec399</A>
+
+commit 33075e386be820c92ead1812a1ca532b4a7ec399
+Author: John Douyere &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vk2eta at gmail.com</A>&gt;
+Date:   Mon Jan 25 05:29:48 2010 -0600
+
+    PSKR DCD detector
+    
+        Improved PSKR DCD handling and avoid false postamble detection
+
+ 1 files changed, 13 insertions(+), 3 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ configure.ac         |    2 +-
+ src/cw_rtty/rtty.cxx |   58 +++++++++++++++++++------------------------------
+ src/include/rtty.h   |    3 +-
+ src/psk/psk.cxx      |   16 +++++++++++--
+ 4 files changed, 39 insertions(+), 40 deletions(-)
+  77.7% src/cw_rtty/
+  17.4% src/psk/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000209.html">[fldigi] #4: Segfault info following fldigi 3.13BS crash after	running for approx 20 Hrs.
+</A></li>
+	<LI>Next message: <A HREF="000202.html">[GIT] fldigi branch, master,	updated: be9dc0a3b67b9678f36064248ab7c3a6ec49e45a
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#198">[ date ]</a>
+              <a href="thread.html#198">[ thread ]</a>
+              <a href="subject.html#198">[ subject ]</a>
+              <a href="author.html#198">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

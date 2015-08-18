@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-2.11C / sctest
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-2.11C%20/%20sctest&In-Reply-To=%3C80c12bc26b1117f1c56270688ab6bb8c.squirrel%40graflex.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000098.html">
+   <LINK REL="Next"  HREF="000100.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-2.11C / sctest</H1>
+    <B>Leigh L. Klotz, Jr. WA5ZNU</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-2.11C%20/%20sctest&In-Reply-To=%3C80c12bc26b1117f1c56270688ab6bb8c.squirrel%40graflex.org%3E"
+       TITLE="fldigi-2.11C / sctest">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Tue Sep  8 18:30:40 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000098.html">A happy user
+</A></li>
+        <LI>Next message: <A HREF="000100.html">fldigi-2.11C / sctest
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#99">[ date ]</a>
+              <a href="thread.html#99">[ thread ]</a>
+              <a href="subject.html#99">[ subject ]</a>
+              <a href="author.html#99">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dave,
+I went to get sctest for a Mac fldigi user who wants to compile it there
+but it's not at the old alphateam site anymore.  Do you still have the
+source?  He can't use the Windows exe that comes from MixW, because it's a
+Mac.  The WWV test in fldigi is good but it doesn't test transmit.
+
+Leigh/WA5ZNU
+
+
+&gt;<i> Leigh L. Klotz, Jr. wrote:
+</I>&gt;&gt;<i> Dave, this is just with sctest with a silver Griffin iMic USB puck,
+</I>&gt;&gt;<i> still hooked to the radio.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> These results with with Ubuntu (not setup for development) so whatever
+</I>&gt;&gt;<i> libs were there already worked.
+</I>&gt;&gt;<i> The fldigi in the Ubuntu repository is 1.3 vintage, though the next
+</I>&gt;&gt;<i> release has 2.10; I just can't install that on this laptop yet.
+</I>&gt;&gt;<i> So I'm running your alphateam bin.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Fedora Core 7 with fldigi and the same iMic device, WWV test showed
+</I>&gt;&gt;<i> RXCORR of -141; that's pretty close to the value obtained here for
+</I>&gt;&gt;<i> samplerate=8000 except that the sign is opposite! I can't rerun the
+</I>&gt;&gt;<i> test right now on FC6 as I've already moved the hardware, so I can't
+</I>&gt;&gt;<i> confirm, but it looks like there might be a sign error.
+</I>&gt;<i> Durn ... the default is 8000 and not 48000.  I'll fix that.
+</I>&gt;<i>
+</I>&gt;<i> sctest reports the measured ppm.  The entries in the Tx/Rx ppm boxes on
+</I>&gt;<i> the sound card configuration are correction values, so they need to be
+</I>&gt;<i> the opposite sign.  I guess that is confusing.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Also, as Roger G6CKR said, it might be useful to print the native
+</I>&gt;&gt;<i> samplerate here, or else integrate scrate into fldigi (a nobler task).
+</I>&gt;<i> Stelios also suggested integrating into fldigi (then the sign confusion
+</I>&gt;<i> can be taken care of).
+</I>&gt;<i>
+</I>&gt;<i> Here is an alternate sound card evaltion program.  It is more of the
+</I>&gt;<i> Swiss knife than the simple approach taken by sctest.
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://www.baudline.com/solutions/sample_rate/index.html">http://www.baudline.com/solutions/sample_rate/index.html</A>
+</I>&gt;<i>
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Leigh/WA5ZNU
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> $ ./sctest /dev/dsp1
+</I>&gt;&gt;<i> Testing soundcard on /dev/dsp1, samplerate = 8000, samplesize = 1024
+</I>&gt;&gt;<i> Total test time = 2 mins, 16 secs
+</I>&gt;&gt;<i> Measuring Rx ppm ... Tx ppm ...
+</I>&gt;&gt;<i> Nominal time for 1024 samples: 64000.000 usec
+</I>&gt;&gt;<i>     Rx time for 1024 samples: 63991.310 usec
+</I>&gt;&gt;<i>     Tx time for 1024 samples: 63991.309 usec
+</I>&gt;&gt;<i> Rx ppm = 135.9
+</I>&gt;&gt;<i> Tx ppm = 135.9
+</I>&gt;&gt;<i> $ ./sctest /dev/dsp1 48000
+</I>&gt;&gt;<i> Testing soundcard on /dev/dsp1, samplerate = 48000, samplesize = 1024
+</I>&gt;&gt;<i> Total test time = 23 secs
+</I>&gt;&gt;<i> Measuring Rx ppm ... Tx ppm ...
+</I>&gt;&gt;<i> Nominal time for 1024 samples: 10666.667 usec
+</I>&gt;&gt;<i>     Rx time for 1024 samples: 10665.554 usec
+</I>&gt;&gt;<i>     Tx time for 1024 samples: 10665.549 usec
+</I>&gt;&gt;<i> Rx ppm = 104.9
+</I>&gt;&gt;<i> Tx ppm = 105.3
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000098.html">A happy user
+</A></li>
+	<LI>Next message: <A HREF="000100.html">fldigi-2.11C / sctest
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#99">[ date ]</a>
+              <a href="thread.html#99">[ thread ]</a>
+              <a href="subject.html#99">[ subject ]</a>
+              <a href="author.html#99">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

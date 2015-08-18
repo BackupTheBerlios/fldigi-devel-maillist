@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> RigCAT serial i/o mods
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20RigCAT%20serial%20i/o%20mods&In-Reply-To=%3C4AC4D557.2090300%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000114.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>RigCAT serial i/o mods</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20RigCAT%20serial%20i/o%20mods&In-Reply-To=%3C4AC4D557.2090300%40bellsouth.net%3E"
+       TITLE="RigCAT serial i/o mods">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Thu Oct  1 18:14:15 CEST 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000114.html">[GIT] fldigi branch, master,	updated: 8c010b3a4dbf73ae98fd18d57a5f9d9219cf9d82
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#113">[ date ]</a>
+              <a href="thread.html#113">[ thread ]</a>
+              <a href="subject.html#113">[ subject ]</a>
+              <a href="author.html#113">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>commit 7fb9639ef8dbc718578337dd9c6b1ac6bf8f9461
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Oct 1 11:01:48 2009 -0500
+
+    RigCAT mods
+    
+        * on WIN32 platform - reinitialize commport when driver fails
+          to be responsive.  Associated with some cheap USB dongle
+          drivers on XP / Vista.
+        * Modified serial i/o to accommodate transceivers that send
+          unsolicited data streams - typical of Icom 7... series when
+          transceiver CI-V port is set to &quot;Transceive ON&quot;.
+        * Corrected computed read after write delay.
+
+Tested with my Icom-746PRO.  Code changes give excellent performance with
+
+Retries - 2
+Retry interval - 200
+Write delay - 0
+Baud rate - 19200
+Stopbits - 1
+Commands echoed - T
+CAT command for PTT - T
+
+Same performance whether Transceive is ON or OFF at the transceiver.  
+Pre mod code would cause fldigi to loose serial comms to the transceiver.
+
+73, Dave
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20091001/abcd9ad7/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20091001/abcd9ad7/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000114.html">[GIT] fldigi branch, master,	updated: 8c010b3a4dbf73ae98fd18d57a5f9d9219cf9d82
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#113">[ date ]</a>
+              <a href="thread.html#113">[ thread ]</a>
+              <a href="subject.html#113">[ subject ]</a>
+              <a href="author.html#113">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

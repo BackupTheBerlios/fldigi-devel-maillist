@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> ULS test
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20ULS%20test&In-Reply-To=%3C4AEF05CD.7080905%40WA5ZNU.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000141.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>ULS test</H1>
+    <B>Leigh L. Klotz, Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20ULS%20test&In-Reply-To=%3C4AEF05CD.7080905%40WA5ZNU.org%3E"
+       TITLE="ULS test">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Mon Nov  2 17:16:13 CET 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000141.html">[GIT] fldigi branch, master,	updated: ec7ef1eb3d5922d91894799e969bbe07e37564aa
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#140">[ date ]</a>
+              <a href="thread.html#140">[ thread ]</a>
+              <a href="subject.html#140">[ subject ]</a>
+              <a href="author.html#140">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I've got a snapshot of the FCC ULS database loaded into a Google App 
+Engine database and have a small Python script serving it up.    
+Attached is a hacky patch to 3.13AZ which uses it if you have specified 
+online QRZ.  There is no authorization required, so the main change is 
+to take out the auth request, mostly in order to reduce net traffic to 
+the GAE hosted site.
+
+Apply this diff in fldigi-3.13AZ/src/misc and recompile  It should work. 
+
+Note there is no geocode data, and that as it is ULS, it is FCC only.
+
+Problems Encountered:
+I had to massage the data with a GPL bash / MySQL script to join the 
+license class and &quot;Active&quot; flags to the callsigns, and then becasue I 
+couldn't figure it out in bash, I used Emacs to remove non-ASCII 
+characters (nonbreaking space, the &quot;1/2&quot; character, and for good 
+measure, all accented chars and one &quot;ae&quot; diglyph).
+
+It's difficult to delete data from a GAE hosted site.  I would up giving 
+up on the site I created and making a second one, hence the &quot;ulsham2&quot; name.
+
+Next steps:
+. automate the process of getting and applying weekly/daily FCC updates
+. look into geocoding
+
+I think the best possible outcome would be if other free providers of 
+ULS service adopt the same interface and then I don't need to keep this 
+site.
+
+Leigh/WA5ZNU
+
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: ulsham2-diff.txt
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20091102/2e9092b2/attachment.txt">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20091102/2e9092b2/attachment.txt</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000141.html">[GIT] fldigi branch, master,	updated: ec7ef1eb3d5922d91894799e969bbe07e37564aa
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#140">[ date ]</a>
+              <a href="thread.html#140">[ thread ]</a>
+              <a href="subject.html#140">[ subject ]</a>
+              <a href="author.html#140">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

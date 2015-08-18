@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Caught signal 11 error on fldigi build 3.13BV
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Caught%20signal%2011%20error%20on%20fldigi%20build%203.13BV&In-Reply-To=%3C2cce4ed61001300955v36cfd9eepaf50bd7932522388%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000210.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Caught signal 11 error on fldigi build 3.13BV</H1>
+    <B>Andrew Hart</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Caught%20signal%2011%20error%20on%20fldigi%20build%203.13BV&In-Reply-To=%3C2cce4ed61001300955v36cfd9eepaf50bd7932522388%40mail.gmail.com%3E"
+       TITLE="Caught signal 11 error on fldigi build 3.13BV">andylhart at gmail.com
+       </A><BR>
+    <I>Sat Jan 30 18:55:01 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000210.html">[GIT] fldigi branch, master,	updated: 0a10feee840c5106aeb37015610dfe43984c8cff
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#211">[ date ]</a>
+              <a href="thread.html#211">[ thread ]</a>
+              <a href="subject.html#211">[ subject ]</a>
+              <a href="author.html#211">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Had the following error: : caught signal 11 see below
+System was operating normally, and then I went away from computer and came
+back to find this event. Have not seen this on previous builds in same
+configuration.
+
+Andy - VE3NVK
+=====================================================
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">andy at andy-desktop</A>:~/bin$ ./fldigi &amp;
+[1] 13366
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">andy at andy-desktop</A>:~/bin$ I: testCommPorts: Found serial port /dev/ttyS0
+I: testCommPorts: Found serial port /dev/ttyS1
+I: testCommPorts: Found serial port /dev/ttyS2
+I: testCommPorts: Found serial port /dev/ttyS3
+I: testCommPorts: Found serial port /dev/ttyUSB0
+bt_audio_service_open: connect() failed: Connection refused (111)
+bt_audio_service_open: connect() failed: Connection refused (111)
+bt_audio_service_open: connect() failed: Connection refused (111)
+bt_audio_service_open: connect() failed: Connection refused (111)
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+./fldigi[0x4d9400]
+/lib/libpthread.so.0[0x7f41ce8bf190]
+/usr/lib/libfltk.so.1.1(_ZNK9Fl_Widget6windowEv+0x0)[0x7f41ce461890]
+./fldigi[0x45d3a0]
+/usr/lib/libfltk.so.1.1(_ZN2Fl6handleEiP9Fl_Window+0x6c2)[0x7f41ce41f832]
+/usr/lib/libfltk.so.1.1(_ZN2Fl6handleEiP9Fl_Window+0x1ee)[0x7f41ce41f35e]
+/usr/lib/libfltk.so.1.1(_Z9fl_handleRK7_XEvent+0x98)[0x7f41ce465b68]
+/usr/lib/libfltk.so.1.1[0x7f41ce466d83]
+/usr/lib/libfltk.so.1.1(_Z7fl_waitd+0x41b)[0x7f41ce46762b]
+/usr/lib/libfltk.so.1.1(_ZN2Fl4waitEd+0x118)[0x7f41ce420058]
+/usr/lib/libfltk.so.1.1(_ZN2Fl3runEv+0x1d)[0x7f41ce42017d]
+./fldigi[0x4a39ec]
+/lib/libc.so.6(__libc_start_main+0xfd)[0x7f41caee5abd]
+./fldigi[0x415a79]
+
+****** Version information:
+fldigi 3.13BV
+Copyright (C) 2008, 2009 Dave Freese, Stelios Bounanos, Leigh Klotz, and
+others.
+License GPLv2+: GNU GPL version 2 or later &lt;
+<A HREF="http://www.gnu.org/licenses/gpl-2.0.html">http://www.gnu.org/licenses/gpl-2.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+  built          : Sat Jan 30 12:25:32 EST 2010 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">andy at andy-desktop</A> on
+x86_64-unknown-linux-gnu for x86_64-unknown-linux-gnu
+
+  configure flags:
+
+  compiler       : gcc version 4.4.1 (Ubuntu 4.4.1-4ubuntu9)
+
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+-I$(srcdir)/fileselector -pthread -I/usr/include/freetype2 -D_THREAD_SAFE
+-D_REENTRANT -D_REENTRANT -I/usr/include/libpng12 -I/usr/include -pipe -Wall
+-fexceptions -O2 -ffast-math -finline-functions -fomit-frame-pointer
+-DNDEBUG
+
+  linker flags   : -lportaudio -lasound -lm -lpthread
+-Wl,-Bsymbolic-functions -lfltk_images -lfltk -lX11 -lsndfile -lsamplerate
+-lpulse-simple -lpulse -lhamlib -lm -lpng12 -L/usr/lib
+-lxmlrpc_server_abyss++ -lxmlrpc_server++ -lxmlrpc_server_abyss
+-lxmlrpc_server -lxmlrpc_abyss -lpthread -lxmlrpc++ -lxmlrpc -lxmlrpc_util
+-lxmlrpc_xmlparse -lxmlrpc_xmltok -ldl -lrt -lpthread
+
+  libraries      : FLTK 1.1.9
+                   libsamplerate 0.1.7
+                   libsndfile 1.0.20
+                   PortAudio 19
+                   PulseAudio 0.9.19
+                   Hamlib 1.2.9
+                   XMLRPC-C 1.06.27
+
+
+Runtime information:
+  system         : Linux andy-desktop 2.6.31-17-generic #54-Ubuntu SMP Thu
+Dec 10 17:01:44 UTC 2009 x86_64
+
+  libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                   libsndfile-1.0.20
+                   PortAudio V19-devel (built Jun 20 2009 13:30:07) 1899
+                   Pulseaudio 0.9.19
+                   Hamlib version 1.2.9
+
+[1]+  Exit 139                ./fldigi
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">andy at andy-desktop</A>:~/bin$
+
+
+-- 
+Andrew Hart - VE3NVK
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20100130/2f7870e0/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20100130/2f7870e0/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000210.html">[GIT] fldigi branch, master,	updated: 0a10feee840c5106aeb37015610dfe43984c8cff
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#211">[ date ]</a>
+              <a href="thread.html#211">[ thread ]</a>
+              <a href="subject.html#211">[ subject ]</a>
+              <a href="author.html#211">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

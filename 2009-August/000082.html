@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> 0.9.92 posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%200.9.92%20posted&In-Reply-To=%3C4A956C51.4050405%40WA5ZNU.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000081.html">
+   <LINK REL="Next"  HREF="000083.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>0.9.92 posted</H1>
+    <B>Leigh L. Klotz, Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%200.9.92%20posted&In-Reply-To=%3C4A956C51.4050405%40WA5ZNU.org%3E"
+       TITLE="0.9.92 posted">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Wed Aug 26 19:09:37 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000081.html">Out of office for at least a day.
+</A></li>
+        <LI>Next message: <A HREF="000083.html">back home
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#82">[ date ]</a>
+              <a href="thread.html#82">[ thread ]</a>
+              <a href="subject.html#82">[ subject ]</a>
+              <a href="author.html#82">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>It looks like the K3 problem I'm seeing here is that it gets out of sync.
+Maybe it can have a read-flush that reads up to a semicolon.
+
+I tried changing the command interval to 50ms and it works a little bit 
+but eventually it starts getting two replies back, or a partial reply, 
+and then gets out of sync because two replies come back from the 
+previous two FA; requests, but the fifo doesn't contain the whole reply 
+for the second one, so avail is 0 and then it returns, leaving the 
+second half of the second FA; response in queue, where it then screws up 
+the next request result.
+
+See attached debug console line output.
+
+Leigh/WA5ZNU
+&gt;<i> <A HREF="http://www.w1hkj.com/flrig-tests/flrig-0.9.92.tgz">http://www.w1hkj.com/flrig-tests/flrig-0.9.92.tgz</A>
+</I>&gt;<i> <A HREF="http://www.w1hkj.com/flrig-tests/flrig-0.9.92.bin.tgz">http://www.w1hkj.com/flrig-tests/flrig-0.9.92.bin.tgz</A>
+</I>&gt;<i> <A HREF="http://www.w1hkj.com/flrig-tests/flrig-0.9.92.zip">http://www.w1hkj.com/flrig-tests/flrig-0.9.92.zip</A>
+</I>&gt;<i>
+</I>&gt;<i> Long explanation: Changed xmlrpc client loop timing to avoid timeout 
+</I>&gt;<i> problems with the libcurl library on XP. 
+</I>&gt;<i> Short explanation:  flrig on XP keeps on working
+</I>&gt;<i>
+</I>&gt;<i> Dave
+</I>
+-------------- next part --------------
+An embedded and charset-unspecified text was scrubbed...
+Name: fail.txt
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20090826/a83933fb/attachment.txt">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20090826/a83933fb/attachment.txt</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000081.html">Out of office for at least a day.
+</A></li>
+	<LI>Next message: <A HREF="000083.html">back home
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#82">[ date ]</a>
+              <a href="thread.html#82">[ thread ]</a>
+              <a href="subject.html#82">[ subject ]</a>
+              <a href="author.html#82">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi 3.21.45AA &amp;&amp; FLTK Hell on Fedora Core 17
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%203.21.45AA%20%26%26%20FLTK%20Hell%20on%20Fedora%20Core%2017&In-Reply-To=%3CCAH-RX41meBGzqo5%2BXrBU%3DcyLm0Dz9TkxB9ctbR1oRghMANq_eA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000897.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi 3.21.45AA &amp;&amp; FLTK Hell on Fedora Core 17</H1>
+    <B>Josh Rovero</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%203.21.45AA%20%26%26%20FLTK%20Hell%20on%20Fedora%20Core%2017&In-Reply-To=%3CCAH-RX41meBGzqo5%2BXrBU%3DcyLm0Dz9TkxB9ctbR1oRghMANq_eA%40mail.gmail.com%3E"
+       TITLE="Fldigi 3.21.45AA &amp;&amp; FLTK Hell on Fedora Core 17">josh.rovero at gmail.com
+       </A><BR>
+    <I>Sat Jun 30 23:09:31 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000897.html">[GIT] fldigi branch, maint/3.21,	updated: 503205ad3789d6098fcdbb5635be4ac45a6798ec
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#898">[ date ]</a>
+              <a href="thread.html#898">[ thread ]</a>
+              <a href="subject.html#898">[ subject ]</a>
+              <a href="author.html#898">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>All,
+
+Summary:  fldigi compiles and runs fine on FC15 x86-64
+                 fldigi has tons of compile errors on FC17 x86-64
+
+FC15 uses fltk 1.1 and gcc 4.6.3;
+FC17 uses fltk 1.3 and gcc 4.7.0
+
+Details of the FC17 environment:
+
+The RPMs for fltk, fltk-devel, and fltk-fluid are installed:
+
+   rpm -q fltk fltk-devel fltk-fluid
+      fltk-1.3.0-4.fc17.x86_64
+      fltk-devel-1.3.0-4.fc17.x86_64
+      fltk-fluid-1.3.0-4.fc17.x86_64
+
+The fltk-config utility runs, and options return reasonable values...
+
+But the configure.log indicates that FLTK was not considered.....
+The environment, set prior to running &quot;./configure
+--enable-optimizations=sse2 --with-xmlrpc --enable-debug&quot;:
+
+FLTK_CONFIG=/usr/bin/fltk-config
+FLTK_LIBS=/usr/lib64 -lfltk-images -lpng -lz ljpeg -lfltk -lXext -lxft
+-lfontconfig -lXinerama -lpthread -ldl -lm -lX11
+FLTK_CFLAGS=-I/usr/include -I/usr/include/freetype2 -D_LARGEFILE_SOURCE
+-D_LARGEFILE64_SOURCE
+    -D_THREADSAFE -D_REENTRANT
+
+It matches the env for FC15, which gets set properly from ./configure
+
+But ./configure issues a &quot;not checking for FLTK&quot;
+at line 9801 of ./configure.
+
+Has anyone else successfully compiled fldigi on FC17 x86-64?
+
+Thanks,
+
+-- 
+P.J. &quot;Josh&quot; Rovero                   Ham Radio: KK1D
+<A HREF="http://www.roveroresearch.org">http://www.roveroresearch.org</A>   <A HREF="http://www.roveroresearch.info">http://www.roveroresearch.info</A>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120630/7bbf8fe1/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120630/7bbf8fe1/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000897.html">[GIT] fldigi branch, maint/3.21,	updated: 503205ad3789d6098fcdbb5635be4ac45a6798ec
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#898">[ date ]</a>
+              <a href="thread.html#898">[ thread ]</a>
+              <a href="subject.html#898">[ subject ]</a>
+              <a href="author.html#898">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

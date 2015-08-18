@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi crashreport
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20crashreport&In-Reply-To=%3C522B117D.4010407%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001088.html">
+   <LINK REL="Next"  HREF="001085.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi crashreport</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20crashreport&In-Reply-To=%3C522B117D.4010407%40bellsouth.net%3E"
+       TITLE="Fldigi crashreport">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sat Sep  7 13:43:57 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001088.html">Fldigi crashreport
+</A></li>
+        <LI>Next message: <A HREF="001085.html">fldigi-devel Digest, Vol 54, Issue 2
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1089">[ date ]</a>
+              <a href="thread.html#1089">[ thread ]</a>
+              <a href="subject.html#1089">[ subject ]</a>
+              <a href="author.html#1089">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thank you for keeping us up to date Mikolaj.  I will let my bug report 
+to Fltk.org remain in place.  That code should certainly be able to cope 
+with a corrupt font data base.
+
+Dave
+
+On 09/07/2013 06:21 AM, kayvax wrote:
+&gt;<i> Dear fldigi Devs,
+</I>&gt;<i> yesterday during debugging I have produced segfault results from 
+</I>&gt;<i> different fonts. I have managed to find few packages after searching 
+</I>&gt;<i> through what font files they contain where listed in backtrace log of 
+</I>&gt;<i> fldigi debug:
+</I>&gt;<i>
+</I>&gt;<i>   * media-fonts/intlfonts
+</I>&gt;<i>   * media-fonts/artwiz-aleczapka-en
+</I>&gt;<i>   * media-fonts/font-cursor-misc
+</I>&gt;<i>
+</I>&gt;<i> I have cleared my OS from them and purged all other fonts. That lead 
+</I>&gt;<i> to backtrace with file from my local ~/.fonts folder, which I purged.
+</I>&gt;<i>
+</I>&gt;<i> Today, to test this issue again I have reinstalled all fonts that I 
+</I>&gt;<i> have purged yesterday and run fldigi. There was no segfault. I have 
+</I>&gt;<i> moved ~/.fonts back in place and run fldigi again resulting with segfault.
+</I>&gt;<i>
+</I>&gt;<i> I am quite at lost now. I am certain that during yestarday debug I 
+</I>&gt;<i> have identified font files from listed above packages. I am certain 
+</I>&gt;<i> that one of my local fonts causes segfault. Today I can not reproduce 
+</I>&gt;<i> results from yesterday with any font package from OS repository (portage).
+</I>&gt;<i>
+</I>&gt;<i> It may be that I roused false alarm with my findings. I did not make a 
+</I>&gt;<i> copy of font files that came from repository so I can not test them 
+</I>&gt;<i> again. It may be that during some update they corrupted or even during 
+</I>&gt;<i> their installation some process went wrong and due to frequent updates 
+</I>&gt;<i> of font managing software it was resolved&#194;  but I have just not 
+</I>&gt;<i> reinstalled them to correct that issue.
+</I>&gt;<i>
+</I>&gt;<i> Please forgive my rapid assuptions that xft and fltk were source of 
+</I>&gt;<i> issue. And please forgive that I caused such a stir.
+</I>&gt;<i>
+</I>&gt;<i> Best regards
+</I>&gt;<i> Mikolaj
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130907/f91546d0/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130907/f91546d0/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001088.html">Fldigi crashreport
+</A></li>
+	<LI>Next message: <A HREF="001085.html">fldigi-devel Digest, Vol 54, Issue 2
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1089">[ date ]</a>
+              <a href="thread.html#1089">[ thread ]</a>
+              <a href="subject.html#1089">[ subject ]</a>
+              <a href="author.html#1089">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

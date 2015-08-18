@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: f0d43fe0d96caf3a744b36263f44d12a03237b7e
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20f0d43fe0d96caf3a744b36263f44d12a03237b7e&In-Reply-To=%3C200905262359.n4QNxXYB022987%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000008.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: f0d43fe0d96caf3a744b36263f44d12a03237b7e</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20f0d43fe0d96caf3a744b36263f44d12a03237b7e&In-Reply-To=%3C200905262359.n4QNxXYB022987%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: f0d43fe0d96caf3a744b36263f44d12a03237b7e">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Wed May 27 01:59:33 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000008.html">[GIT] fldigi branch, master,	updated: f4686cdc4d1f45c5b44a5236b11282a1cf21ff51
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9">[ date ]</a>
+              <a href="thread.html#9">[ thread ]</a>
+              <a href="subject.html#9">[ subject ]</a>
+              <a href="author.html#9">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  f0d43fe0d96caf3a744b36263f44d12a03237b7e (commit)
+       via  7690a1c652601239beeed93f7f1db0c252b0a377 (commit)
+       via  d4b1a038acf236618a01e162556108860d4de666 (commit)
+       via  91a1425e1dc37f379c4b58e1287b54f1b3443e2c (commit)
+       via  9543fa7b1c916a14c0f0e7d6bb6fea773fd9b8d8 (commit)
+       via  ada43f4a55311195b2e77759d5b7e7a4bbf0168d (commit)
+       via  bf6a2c3180f2d14994cf0e6261a1b12c29751177 (commit)
+       via  8207c62c7ecbc12009e751af6eab798368593944 (commit)
+       via  d04b780d72febe6f69986b9a8eb53e898c074a3b (commit)
+       via  4f90ecf5119d8f8c2562de4c88de2dea6fb005c1 (commit)
+      from  f4686cdc4d1f45c5b44a5236b11282a1cf21ff51 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit f0d43fe0d96caf3a744b36263f44d12a03237b7e
+Author: dave &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev.</A>(none)&gt;
+Date:   Tue May 26 18:56:49 2009 -0500
+
+    Version 3.12AG
+    
+    	fldigi and flarq versioning will be synced beginning with
+    	3.12AG; ie fldigi-3.12AG, flarq-4.2AG
+
+commit 7690a1c652601239beeed93f7f1db0c252b0a377
+Author: dave &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev.</A>(none)&gt;
+Date:   Tue May 26 18:55:31 2009 -0500
+
+    FLARQ
+    
+    	Changed beacon interval to 60 -&gt; 3600; 15 sec increments
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ Makefile.am                               |    2 +
+ configure.ac                              |   67 +-
+ data/flarq.desktop                        |    9 +
+ data/flarq.xpm                            |  975 +++++++++++++++
+ data/mac/flarq.icns                       |  Bin 0 -&gt; 40835 bytes
+ data/win32/flarq.ico                      |  Bin 0 -&gt; 12206 bytes
+ data/win32/fldigi.nsi                     |  181 +++-
+ doc/Makefile.am                           |   20 +-
+ doc/flarq.1.txt                           |  147 +++
+ m4/build.m4                               |   63 +-
+ m4/progs.m4                               |   21 +
+ scripts/mkappbundle.sh                    |  142 ++-
+ scripts/mkhamlibstatic.sh                 |    2 +-
+ scripts/mknsisinst.sh                     |   39 +-
+ scripts/tests/config-h.sh                 |    7 +-
+ scripts/tests/cr.sh                       |    2 +-
+ src/Makefile.am                           |  189 +++-
+ src/dialogs/Viewer.cxx                    |    1 +
+ src/dialogs/fl_digi.cxx                   |   91 +--
+ src/flarq-src/arq.cxx                     | 1460 ++++++++++++++++++++++
+ src/flarq-src/arqdialogs.cxx              |  732 +++++++++++
+ src/flarq-src/arqdialogs.fl               |  444 +++++++
+ src/flarq-src/arqhelp.cxx                 |  183 +++
+ src/flarq-src/b64.cxx                     |  225 ++++
+ src/flarq-src/flarq.cxx                   | 1924 +++++++++++++++++++++++++++++
+ src/flarq-src/flarqenv.cxx                |  301 +++++
+ src/{fldigirc.rc =&gt; flarq-src/flarqrc.rc} |   10 +-
+ src/flarq-src/include/arq.h               |  422 +++++++
+ src/flarq-src/include/arqdialogs.h        |   89 ++
+ src/flarq-src/include/b64.h               |   34 +
+ src/flarq-src/include/flarq.h             |   57 +
+ src/flarq-src/include/flarqenv.h          |   14 +
+ src/include/FTextRXTX.h                   |  104 ++
+ src/include/FTextView.h                   |  178 +---
+ src/include/Fl_Text_Display_mod.H         |    4 +-
+ src/include/Fl_Text_Editor_mod.H          |    4 +-
+ src/include/Fl_Tile_Check.h               |   32 +
+ src/include/fl_digi.h                     |   17 +-
+ src/include/flmisc.h                      |   19 +
+ src/include/pixmaps.h                     |    1 +
+ src/include/pkg.h                         |   24 +
+ src/include/threads.h                     |   11 +-
+ src/logger/logger.cxx                     |    2 +-
+ src/main.cxx                              |   39 +-
+ src/misc/debug.cxx                        |    5 +-
+ src/misc/icons.cxx                        |    3 +-
+ src/misc/macros.cxx                       |    2 +-
+ src/misc/nls.cxx                          |   39 +
+ src/misc/pixmaps.cxx                      |  965 +++++++++++++++
+ src/misc/stacktrace.cxx                   |   10 +-
+ src/misc/status.cxx                       |   24 +-
+ src/misc/threads.cxx                      |   13 +
+ src/rigcontrol/rigdialog.cxx              |    1 +
+ src/rigcontrol/rigdialog.fl               |    2 +
+ src/rigcontrol/rigio.cxx                  |    6 +-
+ src/soundcard/soundconf.cxx               |   39 +-
+ src/widgets/FTextRXTX.cxx                 | 1032 ++++++++++++++++
+ src/widgets/FTextView.cxx                 | 1064 ++---------------
+ src/widgets/Fl_Text_Display_mod.cxx       |    3 +-
+ src/widgets/Fl_Tile_Check.cxx             |   59 +
+ src/widgets/flmisc.cxx                    |   87 ++
+ 61 files changed, 10183 insertions(+), 1459 deletions(-)
+ create mode 100644 data/flarq.desktop
+ create mode 100644 data/flarq.xpm
+ create mode 100644 data/mac/flarq.icns
+ create mode 100644 data/win32/flarq.ico
+ create mode 100644 doc/flarq.1.txt
+ create mode 100644 m4/progs.m4
+ create mode 100644 src/flarq-src/arq.cxx
+ create mode 100644 src/flarq-src/arqdialogs.cxx
+ create mode 100644 src/flarq-src/arqdialogs.fl
+ create mode 100644 src/flarq-src/arqhelp.cxx
+ create mode 100644 src/flarq-src/b64.cxx
+ create mode 100644 src/flarq-src/flarq.cxx
+ create mode 100644 src/flarq-src/flarqenv.cxx
+ copy src/{fldigirc.rc =&gt; flarq-src/flarqrc.rc} (65%)
+ create mode 100644 src/flarq-src/include/arq.h
+ create mode 100644 src/flarq-src/include/arqdialogs.h
+ create mode 100644 src/flarq-src/include/b64.h
+ create mode 100644 src/flarq-src/include/flarq.h
+ create mode 100644 src/flarq-src/include/flarqenv.h
+ create mode 100644 src/include/FTextRXTX.h
+ create mode 100644 src/include/Fl_Tile_Check.h
+ create mode 100644 src/include/flmisc.h
+ create mode 100644 src/include/pkg.h
+ create mode 100644 src/misc/nls.cxx
+ create mode 100644 src/widgets/FTextRXTX.cxx
+ create mode 100644 src/widgets/Fl_Tile_Check.cxx
+ create mode 100644 src/widgets/flmisc.cxx
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000008.html">[GIT] fldigi branch, master,	updated: f4686cdc4d1f45c5b44a5236b11282a1cf21ff51
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9">[ date ]</a>
+              <a href="thread.html#9">[ thread ]</a>
+              <a href="subject.html#9">[ subject ]</a>
+              <a href="author.html#9">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

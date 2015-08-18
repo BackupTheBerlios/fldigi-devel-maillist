@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.21.10 - error
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.10%20-%20error&In-Reply-To=%3C11154EC6E0F4E144AE62184285C17E5101520C14E8%40MSXMBXNSPRD08.acct.upmchs.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000632.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.21.10 - error</H1>
+    <B>Conomikes, Steven</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.10%20-%20error&In-Reply-To=%3C11154EC6E0F4E144AE62184285C17E5101520C14E8%40MSXMBXNSPRD08.acct.upmchs.net%3E"
+       TITLE="fldigi 3.21.10 - error">conomikessj at upmc.edu
+       </A><BR>
+    <I>Tue May 31 03:17:44 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000632.html">[GIT] fldigi branch, maint/3.21,	updated: 68ee42280043c900a9d52860374bb4e20040b7a7
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#634">[ date ]</a>
+              <a href="thread.html#634">[ thread ]</a>
+              <a href="subject.html#634">[ subject ]</a>
+              <a href="author.html#634">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+My name is Steve Conomikes and I have been working with your wonderful program for quite a while.  I am part of the Western Pennsylvania Digital Emergency Communication Group.
+
+Recently, I have been working on getting the newest version of fldigi running on a beagleboard using the angstrom distribution.  I have been able to successfully compile all of the components.  However, when I execute fldigi I get an error and a stack trace.
+
+A little bit about my environment:
+BeagleBoard Rev C3
+Angstrom Demo Image from the following:
+<A HREF="http://www.angstrom-distribution.org/demo/beagleboard/Angstrom-Beagleboard-demo-image-glibc-ipk-2011.1-beagleboard.rootfs.tar.bz2">http://www.angstrom-distribution.org/demo/beagleboard/Angstrom-Beagleboard-demo-image-glibc-ipk-2011.1-beagleboard.rootfs.tar.bz2</A>
+
+
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">root at beagleboard</A>&lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">root at beagleboard</A>&gt;:~# fldigi
+E: getMenuItem: FIXME: could not find menu &quot;C&amp;ountries&quot;
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>&lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>&gt;
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+****** Stack trace:
+****** Version information:
+fldigi 3.21.10
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi Chateauneu, and others.
+License GPLv3+: GNU GPL version 3 or later &lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+****** Build information:
+Build information:
+  built          : Mon May 30 14:53:09 EDT 2011 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">steve at fc13</A>&lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">steve at fc13</A>&gt; on i686-pc-linux-gnu for arm-angstrom-linux-gnueabi
+  configure flags: '--host=arm-angstrom-linux-gnueabi' '--prefix=/home/steve/fldigiout' 'host_alias=arm-angstrom-linux-gnueabi'
+  compiler       : gcc version 4.3.3 (GCC)
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -I/usr/include/freetype2 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_THREAD_SAFE -D_REENTRANT -I/usr/local/angstrom/arm/arm-angstrom-linux-gnueabi/usr/include/libpng12 -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions -DNDEBUG
+  linker flags   : -lfltk_images -lpng -lz -ljpeg -lfltk -lX11 -lsndfile -lsamplerate -lpng12 -ldl -lrt -lpthread
+  libraries      : FLTK 1.1.10
+                   libsamplerate 0.1.7
+                   libsndfile 1.0.24
+Runtime information:
+  system         : Linux beagleboard 2.6.32 #3 PREEMPT Thu Jan 6 17:37:46 CET 2011 armv7l
+  libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                   libsndfile-1.0.21
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">root at beagleboard</A>&lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">root at beagleboard</A>&gt;:~#
+I would greatly appreciate any guidance you can provide.  I realize that you may need more information for troubleshooting.
+
+Thank you,
+
+-Steve Conomikes (KB3EYY)
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000632.html">[GIT] fldigi branch, maint/3.21,	updated: 68ee42280043c900a9d52860374bb4e20040b7a7
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#634">[ date ]</a>
+              <a href="thread.html#634">[ thread ]</a>
+              <a href="subject.html#634">[ subject ]</a>
+              <a href="author.html#634">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi TX text / macros bug with FLTK1.1
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20TX%20text%20/%20macros%20bug%20with%20FLTK1.1&In-Reply-To=%3C1338408798.4173.80.camel%40fourier%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000848.html">
+   <LINK REL="Next"  HREF="000850.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi TX text / macros bug with FLTK1.1</H1>
+    <B>Kamal Mostafa</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20TX%20text%20/%20macros%20bug%20with%20FLTK1.1&In-Reply-To=%3C1338408798.4173.80.camel%40fourier%3E"
+       TITLE="fldigi TX text / macros bug with FLTK1.1">kamal at whence.com
+       </A><BR>
+    <I>Wed May 30 22:13:18 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000848.html">[GIT] fldigi branch, master,	updated: b0b7b7fc0bc5efc1f8d349547c0c6a8415f5c7a9
+</A></li>
+        <LI>Next message: <A HREF="000850.html">[GIT] fldigi branch, maint/3.21,	updated: 92279e7a8d21690628cf9cd9088b551fac48e6d6
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#849">[ date ]</a>
+              <a href="thread.html#849">[ thread ]</a>
+              <a href="subject.html#849">[ subject ]</a>
+              <a href="author.html#849">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Dave, et. al-
+
+A user (jcglt) reported the following problem when using my PPA build of
+fldigi 3.21.42 on an older Ubuntu release:
+
+The TX text does not get cleared after its been transmitted, and so gets
+transmitted again the next time TX is initiated (over and over again).
+When macro buttons are used, this ends up making it appear as though
+fldigi gets &quot;stuck&quot; on the first macro you click -- it works fine, but
+then clicking a different macro which initiates TX just sends that first
+macro key text again.
+
+The problem is specific to FLTK1.1 builds, so the bug occurs in my
+Ubuntu PPA builds (but only for the older Ubuntu releases, before the
+advent of FLTK1.3).  The bug does not appear in the www.w1hkj.com
+tarball binary builds (which get built with FLTK1.3 statically?).
+
+I think I've identified the root cause of the problem -- a bug in
+FTextTX::clear_sent().  Patch attached for your review.  This fixes
+3.21.42 with FLTK1.1 in my brief testing.  (Also, I haven't checked
+whether or not the problem exists in 3.22)
+
+Dave, please advise whether a new 3.21.x release is likely to be
+imminent, or if I should go ahead and apply this patch to the official
+Debian and Ubuntu builds, or something else.
+
+73 de KA6MAL
+
+ -Kamal
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: fix-tx-text-clear-fltk1.1.patch
+Type: text/x-patch
+Size: 914 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120530/741c2f5d/attachment.bin">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120530/741c2f5d/attachment.bin</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120530/741c2f5d/attachment.pgp">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120530/741c2f5d/attachment.pgp</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000848.html">[GIT] fldigi branch, master,	updated: b0b7b7fc0bc5efc1f8d349547c0c6a8415f5c7a9
+</A></li>
+	<LI>Next message: <A HREF="000850.html">[GIT] fldigi branch, maint/3.21,	updated: 92279e7a8d21690628cf9cd9088b551fac48e6d6
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#849">[ date ]</a>
+              <a href="thread.html#849">[ thread ]</a>
+              <a href="subject.html#849">[ subject ]</a>
+              <a href="author.html#849">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Cross-compiling fldigi under Linux with mingw32
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Cross-compiling%20fldigi%20under%20Linux%20with%20mingw32&In-Reply-To=%3C5094394C.3030904%40isnix.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000931.html">
+   <LINK REL="Next"  HREF="000933.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Cross-compiling fldigi under Linux with mingw32</H1>
+    <B>Thomas 'tom' Malkus</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Cross-compiling%20fldigi%20under%20Linux%20with%20mingw32&In-Reply-To=%3C5094394C.3030904%40isnix.de%3E"
+       TITLE="Cross-compiling fldigi under Linux with mingw32">tom at isnix.de
+       </A><BR>
+    <I>Fri Nov  2 22:21:16 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000931.html">fldigi 3.21.59 won't build with fltk1.1  (was Re: [GIT] fldigi	branch, maint/3.21, updated: eaf28092e30dac47db7ad30a47f6f77412ec774e)
+</A></li>
+        <LI>Next message: <A HREF="000933.html">[GIT] fldigi branch, maint/3.21,	updated: 39bce3d6a328254e5de60c07e7064a42556f4332
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#932">[ date ]</a>
+              <a href="thread.html#932">[ thread ]</a>
+              <a href="subject.html#932">[ subject ]</a>
+              <a href="author.html#932">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Dave,
+
+Am 01.11.2012 00:08, schrieb w1hkj:
+
+ &gt;&gt; Go back to pthreads-w32 release 1.11 both functions are implemented. I
+ &gt;&gt; don't know, why that functions not present at the latest version of
+ &gt;&gt; pthread. The HOWTO should be corrected.
+ &gt; yes ... you can change the Wiki if you want to.
+
+Okay, at time. One question more:
+
+I use hamlib-1.2.15.2. On the Ubuntu machine I have no libusb
+installed and so hamlib compiles without that. fb.
+
+On my LMDE machine I have libusb-win32-bin-1.2.4.0 installed as
+mentioned in the readme of hamlib. There I get errors compiling
+fldigi:
+
+/usr/local/win32/hamlib/lib/libhamlib.a(libhamlib_la-usb_port.o): In
+function `usb_port_close':
+/usr/local/src/win32/hamlib-1.2.15.2/src/usb_port.c:295: undefined
+reference to `_usb_release_interface'
+
+[...]
+
+Okay, that's not a direct problem of fldigi, I think there is something
+wrong with my setup to compile hamlib with libusb as static libs.
+
+Do you use libusb for the Windows package of fldigi? If yes, do you use
+the binary package of libusb or have you compiled your own version? And
+last, which version of libusb and hamlib do you use?
+
+ &gt; There might be Tom, especially if the timing is correct.  There are
+ &gt; several reasons I do not include a h/w keyline output from fldigi (CW or
+ &gt; RTTY).  Gaining access to and tightly controlling the bit timing on
+ &gt; Windows, OS X, Free BSD, and Linux is worthy of a Master's Thesis.  18
+ &gt; WPM is not to difficult, but try 80 WPM or better yet 150 WPM.
+
+Indeed! Hardware ports and timing in a multiplattform environment could
+be difficult. I develop software for embedded devices (Linux with FLTK)
+and microcontrollers (AVR). For such a thing I would always use a small
+controller, which does the real timing.
+
+But the 'b' command of hamlib sends only the text to the trx and the trx
+sends with the internal keyer.
+
+Only if I send single characters there is a problem, because the pause
+between the characters over the serial connection is to long for fine
+cw keying. At first I will try it with words, after every space I will
+send the string to the trx. The word spacing should be long enough. The
+other alternative would be a carriage return typing by the user to send
+the string.
+
+73, Tom
+-- 
+DL7BJ * DL-QRP-AG #1186 * DARC OV I19 * ARRL * FISTS CW Club #15933
+<A HREF="http://www.dl7bj.de">http://www.dl7bj.de</A>        <A HREF="https://twitter.com/#!/dl7bj">https://twitter.com/#!/dl7bj</A>
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/pkcs7-signature
+Size: 3872 bytes
+Desc: S/MIME Kryptografische Unterschrift
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20121102/e823bbb9/attachment.bin">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20121102/e823bbb9/attachment.bin</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000931.html">fldigi 3.21.59 won't build with fltk1.1  (was Re: [GIT] fldigi	branch, maint/3.21, updated: eaf28092e30dac47db7ad30a47f6f77412ec774e)
+</A></li>
+	<LI>Next message: <A HREF="000933.html">[GIT] fldigi branch, maint/3.21,	updated: 39bce3d6a328254e5de60c07e7064a42556f4332
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#932">[ date ]</a>
+              <a href="thread.html#932">[ thread ]</a>
+              <a href="subject.html#932">[ subject ]</a>
+              <a href="author.html#932">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

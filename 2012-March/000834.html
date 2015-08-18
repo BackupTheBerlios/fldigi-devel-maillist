@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> push2talk race condition in relation to PSKMail ?? Another	scenario ????
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20push2talk%20race%20condition%20in%20relation%20to%20PSKMail%20%3F%3F%20Another%0A%09scenario%20%3F%3F%3F%3F&In-Reply-To=%3C4F6BCD26.9080705%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000832.html">
+   <LINK REL="Next"  HREF="000833.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>push2talk race condition in relation to PSKMail ?? Another	scenario ????</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20push2talk%20race%20condition%20in%20relation%20to%20PSKMail%20%3F%3F%20Another%0A%09scenario%20%3F%3F%3F%3F&In-Reply-To=%3C4F6BCD26.9080705%40gmail.com%3E"
+       TITLE="push2talk race condition in relation to PSKMail ?? Another	scenario ????">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Fri Mar 23 02:08:54 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000832.html">push2talk race condition in relation to PSKMail ??
+</A></li>
+        <LI>Next message: <A HREF="000833.html">Uninitialised variables  in fldigi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#834">[ date ]</a>
+              <a href="thread.html#834">[ thread ]</a>
+              <a href="subject.html#834">[ subject ]</a>
+              <a href="author.html#834">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>After more study of the code, I might have been wrong but there might 
+another beginning of a scenario explaining why fldigi sometimes freezes 
+with jPSKMail:
+
+Is it possible that fldigi receives a string containing a substring 
+similar to:
+
+&quot;&lt;mode&gt;PTTTUNExxxx&lt;/mode&gt;&quot; where xxxx would be an integer ? Or rather, 
+an INVALID integer ????
+
+And has anyone the slightest idea why ParseMode() calls push2talk-&gt;set 
+in the thread dedicated to FLTK display ?
+
+Thanks
+
+R
+
+Le 22.03.2012 23:15, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A> a &#233;crit :
+&gt;<i> Hi All,
+</I>&gt;<i>
+</I>&gt;<i> I try to chase a possible bug which might be related to the activation
+</I>&gt;<i> of the PTT in the context of the ARQ server, and I saw this:
+</I>&gt;<i>
+</I>&gt;<i> $ grep push2talk src/*/*cxx | grep -w set
+</I>&gt;<i>
+</I>&gt;<i> src/misc/arq_io.cxx:
+</I>&gt;<i> REQ_SYNC(&amp;PTT::set, push2talk, true);
+</I>&gt;<i> REQ_SYNC(&amp;PTT::set, push2talk, false);
+</I>&gt;<i>
+</I>&gt;<i> src/trx/trx.cxx:
+</I>&gt;<i> push2talk-&gt;set(true);
+</I>&gt;<i> push2talk-&gt;set(false);
+</I>&gt;<i> push2talk-&gt;set(true);
+</I>&gt;<i> push2talk-&gt;set(false);
+</I>&gt;<i>
+</I>&gt;<i> This means that the function PTT::set can be called in two different
+</I>&gt;<i> threads:
+</I>&gt;<i>
+</I>&gt;<i> - Transmit thread: functions trx_trx_transmit_loop and trx_tune_loop
+</I>&gt;<i> - ARQ thread, function ParseMode
+</I>&gt;<i>
+</I>&gt;<i> The function PTT::set calls hamlib_set_ptt which works basically this way:
+</I>&gt;<i>
+</I>&gt;<i> void hamlib_set_ptt(int ptt)
+</I>&gt;<i> {
+</I>&gt;<i> LockMutex
+</I>&gt;<i> setPtt
+</I>&gt;<i> IfErrorThenLeavesPttWithoutUnlocking
+</I>&gt;<i> UnlockingMutex
+</I>&gt;<i> }
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> A possible error is that:
+</I>&gt;<i> * If Hamlib had a problem setting the PTT then it will leave without
+</I>&gt;<i> unlocking the mutex.
+</I>&gt;<i> * If later on, a thread tries to set the PTT, it will just hang, waiting
+</I>&gt;<i> for the mutex to be unlocked.
+</I>&gt;<i>
+</I>&gt;<i> So I have two questions:
+</I>&gt;<i> * Could you please confirm than when the problem happens, one thread is
+</I>&gt;<i> frozen ?
+</I>&gt;<i> * Is it possible that for any reason, the PTT did not work, just once ?
+</I>&gt;<i> * Did someone saw in the logfile a message containing the string: &quot;Rig
+</I>&gt;<i> PTT&quot; ?
+</I>&gt;<i>
+</I>&gt;<i> Many thanks for any information.
+</I>&gt;<i>
+</I>&gt;<i> Whatever the answer is, I think this can be considered as a therotical
+</I>&gt;<i> bug at least, so I will suggest a fix.
+</I>&gt;<i>
+</I>&gt;<i> If someone is interested, a good way to prove this is to trigger a ptt
+</I>&gt;<i> problem (Unplugging the cable ? Manually setting the PTT ?)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Sincerely hope it helps.
+</I>&gt;<i>
+</I>&gt;<i> R
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000832.html">push2talk race condition in relation to PSKMail ??
+</A></li>
+	<LI>Next message: <A HREF="000833.html">Uninitialised variables  in fldigi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#834">[ date ]</a>
+              <a href="thread.html#834">[ thread ]</a>
+              <a href="subject.html#834">[ subject ]</a>
+              <a href="author.html#834">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

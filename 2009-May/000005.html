@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> 3.12AE rigcat popups
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%203.12AE%20rigcat%20popups&In-Reply-To=%3C4A01C915.7040401%40WA5ZNU.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000004.html">
+   <LINK REL="Next"  HREF="000006.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>3.12AE rigcat popups</H1>
+    <B>Leigh L. Klotz, Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%203.12AE%20rigcat%20popups&In-Reply-To=%3C4A01C915.7040401%40WA5ZNU.org%3E"
+       TITLE="3.12AE rigcat popups">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Wed May  6 19:29:57 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000004.html">3.12AE rigcat popups
+</A></li>
+        <LI>Next message: <A HREF="000006.html">3.12AE rigcat popups
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5">[ date ]</a>
+              <a href="thread.html#5">[ thread ]</a>
+              <a href="subject.html#5">[ subject ]</a>
+              <a href="author.html#5">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'll report it to Elecraft separately after I enable tracing and get the 
+actual bytes.
+
+I raise this here for fldigi, though, since I want to ask whether maybe 
+it shouldn't be using modal dialog boxes to report occasional, transient 
+errors in rig control.
+
+Ideally, every single RS232 command should be received error-free and 
+every rig respond correctly.  But my experience has been that they 
+occasionally go astray, and I think it ought to take more than an 
+occasional, stray failed response to trigger a modal dialog.
+
+./configure --with-hamlib=no --with-xmlrpc --with-portaudio 
+--with-pulseaudio=no --enable-optimizations=native
+
+E: rigCAT_getfreq: Hexout failed
+
+Leigh/WA5ZNU
+
+&gt;<i> Leigh L. Klotz, Jr WA5ZNU wrote:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Sometimes when I switch bands on my K3 with the front panel, I get a 
+</I>&gt;&gt;<i> popup warning from fldigi that it wasn't able to read.
+</I>&gt;&gt;<i> The k3.xml retries field is set to 4, but I don't know if that has an 
+</I>&gt;&gt;<i> effect.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The popup doesn't help me.  Perhaps it could do it after more persistent 
+</I>&gt;&gt;<i> failures?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Leigh/WA5ZNU
+</I>&gt;&gt;<i>   
+</I>&gt;&gt;<i>     
+</I>&gt;<i> What are your other settings Leigh?
+</I>&gt;<i>
+</I>&gt;<i> Check your K3 manual to see if says anything about the K3 not responding 
+</I>&gt;<i> immediately after a band change.  Some transceiver cpu's go silent if 
+</I>&gt;<i> things like auto-tuner is active etc.
+</I>&gt;<i>
+</I>&gt;<i> Dave
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>&gt;<i>   
+</I>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: k3.xml
+Type: text/xml
+Size: 5367 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20090506/76413eea/attachment.xml">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20090506/76413eea/attachment.xml</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: dialog.png
+Type: image/png
+Size: 8570 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20090506/76413eea/attachment.png">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20090506/76413eea/attachment.png</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000004.html">3.12AE rigcat popups
+</A></li>
+	<LI>Next message: <A HREF="000006.html">3.12AE rigcat popups
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#5">[ date ]</a>
+              <a href="thread.html#5">[ thread ]</a>
+              <a href="subject.html#5">[ subject ]</a>
+              <a href="author.html#5">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

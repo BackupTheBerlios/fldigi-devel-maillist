@@ -1,0 +1,168 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: ff6bd5c8482885a8b0fa4a4f536153bac480279e
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20ff6bd5c8482885a8b0fa4a4f536153bac480279e&In-Reply-To=%3C20111125143730.6F2C1481553%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000740.html">
+   <LINK REL="Next"  HREF="000742.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: ff6bd5c8482885a8b0fa4a4f536153bac480279e</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20ff6bd5c8482885a8b0fa4a4f536153bac480279e&In-Reply-To=%3C20111125143730.6F2C1481553%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: ff6bd5c8482885a8b0fa4a4f536153bac480279e">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Fri Nov 25 15:37:30 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000740.html">Proposed patch for QRZ lookup with slash prefix/suffix heuristic
+</A></li>
+        <LI>Next message: <A HREF="000742.html">[GIT] fldigi branch, master,	updated: 5c3c7f681630930651ca8531cc7d02a48975994d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#741">[ date ]</a>
+              <a href="thread.html#741">[ thread ]</a>
+              <a href="subject.html#741">[ subject ]</a>
+              <a href="author.html#741">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  ff6bd5c8482885a8b0fa4a4f536153bac480279e (commit)
+       via  7d95b7b39855a99f6b6594016e28f38dcd2a429e (commit)
+       via  fe626818575a64db0576ab030259aa38afa8de5b (commit)
+       via  e0bf1284f2f145dd8680ee17d3459aa84e50ac8d (commit)
+      from  fddec4225d0096f9f6550425b86cff1120461a68 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=ff6bd5c8482885a8b0fa4a4f536153bac480279e">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=ff6bd5c8482885a8b0fa4a4f536153bac480279e</A>
+
+commit ff6bd5c8482885a8b0fa4a4f536153bac480279e
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Nov 24 19:57:31 2011 -0600
+
+    Version 3.22.0BG
+    
+      * Alpha release
+      * update to es.po
+
+ 3 files changed, 1613 insertions(+), 1275 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=7d95b7b39855a99f6b6594016e28f38dcd2a429e">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=7d95b7b39855a99f6b6594016e28f38dcd2a429e</A>
+
+commit 7d95b7b39855a99f6b6594016e28f38dcd2a429e
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Nov 24 10:34:41 2011 -0600
+
+    Merge Logs
+    
+      * Added duplicate checking to log merger
+      * Save duplicates to an ADIF file and display results of
+        merger on the Rx panel.
+      * Save merged records to a merged rec file
+      * Altered read adif to accommodate LoTW peculiarities
+
+ 5 files changed, 164 insertions(+), 12 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=fe626818575a64db0576ab030259aa38afa8de5b">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=fe626818575a64db0576ab030259aa38afa8de5b</A>
+
+commit fe626818575a64db0576ab030259aa38afa8de5b
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Nov 23 09:42:44 2011 -0600
+
+    ADIF i/o tweaks
+    
+      * Changes to improve file i/o performance
+      * Removed &lt;ADIF_VER: check to allow importing from
+        non compliant ADIF files.
+
+ 8 files changed, 194 insertions(+), 244 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e0bf1284f2f145dd8680ee17d3459aa84e50ac8d">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e0bf1284f2f145dd8680ee17d3459aa84e50ac8d</A>
+
+commit e0bf1284f2f145dd8680ee17d3459aa84e50ac8d
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Nov 22 10:51:37 2011 -0600
+
+    Call lookup
+    
+      * Added ability to lookup calls with multiple slash
+        - KH6/W1HKJ/M
+        - W1HKJ/6
+        - M2/W1HKJ
+
+ 1 files changed, 6 insertions(+), 2 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                  |    5 +-
+ configure.ac               |    2 +-
+ po/es.po                   | 2881 ++++++++++++++++++++++++-------------------
+ src/globals/globals.cxx    |    2 +-
+ src/include/adif_def.h     |    2 +-
+ src/include/adif_io.h      |   14 +-
+ src/include/field_def.h    |   84 +-
+ src/include/qso_db.h       |    2 +
+ src/logbook/adif_io.cxx    |  320 +++---
+ src/logbook/logsupport.cxx |  142 +++-
+ src/logbook/qso_db.cxx     |   34 +-
+ src/logbook/textio.cxx     |    8 +-
+ src/logbook/xmlrpc_log.cxx |    4 +-
+ src/logger/logger.cxx      |    2 +-
+ src/misc/lookupcall.cxx    |    8 +-
+ 15 files changed, 1977 insertions(+), 1533 deletions(-)
+  82.0% po/
+  14.4% src/logbook/
+   3.2% src/
+  80.0% po/
+  17.7% src/logbook/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000740.html">Proposed patch for QRZ lookup with slash prefix/suffix heuristic
+</A></li>
+	<LI>Next message: <A HREF="000742.html">[GIT] fldigi branch, master,	updated: 5c3c7f681630930651ca8531cc7d02a48975994d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#741">[ date ]</a>
+              <a href="thread.html#741">[ thread ]</a>
+              <a href="subject.html#741">[ subject ]</a>
+              <a href="author.html#741">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

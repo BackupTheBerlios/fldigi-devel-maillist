@@ -1,0 +1,267 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [fldigi] #9: Failed exit, 3.12.5 Mac OS X 10.6.2
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5Bfldigi%5D%20%239%3A%20Failed%20exit%2C%203.12.5%20Mac%20OS%20X%2010.6.2&In-Reply-To=%3C063.f5862a0991052e7bb75b5ec53a81d09f%40fedorahosted.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000231.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[fldigi] #9: Failed exit, 3.12.5 Mac OS X 10.6.2</H1>
+    <B>fldigi</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5Bfldigi%5D%20%239%3A%20Failed%20exit%2C%203.12.5%20Mac%20OS%20X%2010.6.2&In-Reply-To=%3C063.f5862a0991052e7bb75b5ec53a81d09f%40fedorahosted.org%3E"
+       TITLE="[fldigi] #9: Failed exit, 3.12.5 Mac OS X 10.6.2">trac at fedorahosted.org
+       </A><BR>
+    <I>Mon Mar  1 11:59:12 CET 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000231.html">[GIT] fldigi branch, master,	updated: 590e04076bd4e76d12587eba050aab7e0343315d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#230">[ date ]</a>
+              <a href="thread.html#230">[ thread ]</a>
+              <a href="subject.html#230">[ subject ]</a>
+              <a href="author.html#230">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>#9: Failed exit, 3.12.5 Mac OS X 10.6.2
+---------------------------------+------------------------------------------
+ Reporter:  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">neil at drempel.org.uk</A>  |        Type:  defect
+   Status:  new                  |   Milestone:        
+Component:  general              |     Version:        
+ Severity:  critical             |    Keywords:        
+---------------------------------+------------------------------------------
+ Hi,
+
+ I thought I'd quit fldigi last night but when I looked this morning it was
+ still very much in evidence (though waiting, not churning the CPU
+ thankfully). sample tells me:
+
+ Analysis of sampling fldigi (pid 11183) every 1 millisecond
+ Call graph:
+     8221 Thread_2235242   DispatchQueue_1: com.apple.main-thread  (serial)
+       8221 pthread_join
+         8221 semaphore_wait_trap
+     8221 Thread_2235269   DispatchQueue_2: com.apple.libdispatch-manager
+ (serial)
+       8221 start_wqthread
+         8221 _pthread_wqthread
+           8221 _dispatch_worker_thread2
+             8221 _dispatch_queue_invoke
+               8221 _dispatch_mgr_invoke
+                 8220 kevent
+                 1 _dispatch_mgr_thread2
+                   1 _dispatch_drain_mach_messages
+                     1 _dispatch_source_merge_kevent
+                       1 _dispatch_wakeup
+                         1 _dispatch_queue_push_list_slow
+                           1 _dispatch_wakeup
+     8221 Thread_2235277
+       8221 Socket::accept()
+         8221 accept
+           8221 accept$NOCANCEL$UNIX2003
+     8221 Thread_2235278
+       8221 thread_start
+         8189 MilliSleep
+           8189 nanosleep
+             8189 mach_wait_until
+         32 arq_loop(void*)
+           30 arq_loop(void*)
+           2 pthread_mutex_lock
+     8221 Thread_2235279
+       8221 Socket::accept()
+         8221 accept
+           8221 accept$NOCANCEL$UNIX2003
+     8221 Thread_2237300
+       8221 thread_start
+         8221 _pthread_start
+           8221 PrivateMPEntryPoint
+             8221
+ TSystemNotificationTask::SystemNotificationTaskProc(void*)
+               8221 CFRunLoopRun
+                 8221 CFRunLoopRunSpecific
+                   8221 __CFRunLoopRun
+                     8221 mach_msg
+                       8221 mach_msg_trap
+     8221 Thread_2237313
+       8221 thread_start
+         8221 _pthread_start
+           8221 __CFSocketManager
+             8221 select$DARWIN_EXTSN
+     8147 Thread_2334047
+       8147 start_wqthread
+         8147 _pthread_wqthread
+           8147 __workq_kernreturn
+     6919 Thread_2333761
+       6919 start_wqthread
+         6919 _pthread_wqthread
+           6919 __workq_kernreturn
+     918 Thread_2334192
+       918 start_wqthread
+         918 _pthread_wqthread
+           918 __workq_kernreturn
+     918 Thread_2334193
+       918 start_wqthread
+         918 _pthread_wqthread
+           918 __workq_kernreturn
+     191 Thread_2333761   DispatchQueue_7771:
+ TFSVolumeInfo::GetSizingGCDQueue  (serial)
+       191 start_wqthread
+         191 _pthread_wqthread
+           191 _dispatch_worker_thread2
+             191 _dispatch_queue_invoke
+               191 _dispatch_queue_drain
+                 191 _dispatch_call_block_and_release
+                   191 __PostFolderSizingTaskRequest_block_invoke_5
+                     190 TNode::HandleFolderSizingRequests(TNodeTask*,
+ TFolderSizingThread*)
+                       190
+ TNode::HandleFolderSizingRequest(TCountedPtr&lt;TNodeTask&gt; const&amp;,
+ TFolderSizingThread*)
+                         190 TNode::RecalculateFreeSpace()
+                           190 TFSVolumeInfo::RecalculateFreeSpace()
+                             190
+ TFSVolumeInfo::RecalculateFreeSpaceAndCapacity() const
+                               190 TFSInfo::GetVolumeInfo(short, unsigned
+ long, FSVolumeInfo&amp;, TCountedPtr&lt;TFSInfo&gt;*)
+                                 190 FSGetVolumeInfo
+                                   190 _FSGetVolumeInfoWithFlags
+                                     190 FSMount::volumeattrs(unsigned
+ long, FSVolAttributeInfo*, unsigned long, unsigned char*)
+                                       190 FSMount::_volumeattrs(unsigned
+ long, FSVolAttributeInfo*, unsigned long, unsigned char*)
+                                         190 statfs64
+                     1 RemoveTaskPtrReference(TNodeTask*,
+ TFolderSizingThread*)
+                       1 TDSMutex::Acquire()
+                         1 pthread_mutex_lock
+                           1 semaphore_wait_signal_trap
+     75 Thread_&lt;multiple&gt;   DispatchQueue_35:
+ TFSVolumeInfo::GetSizingGCDQueue  (serial)
+       75 start_wqthread
+         75 _pthread_wqthread
+           75 _dispatch_worker_thread2
+             75 _dispatch_queue_invoke
+               75 _dispatch_queue_drain
+                 75 _dispatch_queue_invoke
+                   75 _dispatch_source_invoke
+                     75 _dispatch_source_latch_and_call
+                       75 __dispatch_source_mig_create_block_invoke_1
+                         75 dispatch_mig_server
+                           75 dispatch_rcv_msg
+                             75 FSEventsD2F_server
+                               75 _Xcallback_rpc
+                                 75 implementation_callback_rpc
+                                   75
+ TSystemNotificationTask::HandleFileChanged(__FSEventStream const*, void*,
+ unsigned long, void*, unsigned long const*, unsigned long long const*)
+                                     71 TDSMutex::Acquire()
+                                       71 pthread_mutex_lock
+                                         71 semaphore_wait_signal_trap
+                                     4 TNode::HandleChange(char*, unsigned
+ long, TCountedPtr&lt;TVolumeSyncThread&gt; const&amp;)
+                                       1
+ TNode::FindChildButDontSynchronize(TUString const&amp;) const
+                                         1 TChildrenList::Find(TUString
+ const&amp;)
+                                           1 TNode::LessThan(TUString
+ const&amp;) const
+                                             1 TNode::GetName() const
+                                       1 TNode::HandleRecursiveListeners()
+                                         1
+ TNode::PostFolderSizingTaskRequest(TCountedPtr&lt;TNodeTask&gt; const&amp;, bool)
+ const
+                                           1 TNode::GetVolumeInfo() const
+                                             1 TDSMutex::Acquire()
+                                               1 pthread_mutex_lock
+                                                 1
+ semaphore_wait_signal_trap
+                                       1 TUString::TUString(char const*,
+ unsigned long)
+                                         1 CFStringCreateWithCString
+                                           1
+ __CFStringCreateImmutableFunnel3
+                                       1 _FSGetVolumeForMountpoint
+                                         1 GetVRefNumByExactMountPointName
+                                           1 FSMount::FSMount(char const*,
+ FSMountStringType, long*)
+                                             1
+ FileIDTreeGetVRefNumFromMountPath
+                                               1
+ FileIDTreeGetVRefNumForMountPathBridge
+                                                 1
+ FileIDTree_GetVRefNumForMountPath_rpc
+                                                   1 mach_msg
+                                                     1 mach_msg_trap
+     1 Thread_2334047   DispatchQueue_237: TFSVolumeInfo::GetSizingGCDQueue
+ (serial)
+       1 start_wqthread
+         1 _pthread_wqthread
+           1 _dispatch_worker_thread2
+             1 _dispatch_queue_invoke
+               1 _dispatch_queue_drain
+                 1 _dispatch_queue_invoke
+                   1 _dispatch_queue_push_list_slow
+                     1 _dispatch_wakeup
+                       1 _dispatch_mgr_wakeup
+                         1 _dispatch_update_kq
+                           1 kevent
+
+ Total number in stack (recursive counted multiple, when &gt;=5):
+         8       _pthread_wqthread
+         8       start_wqthread
+         6       _dispatch_queue_invoke
+
+ Sort by top of stack, same collapsed (when &gt;= 5):
+         __workq_kernreturn        16902
+         accept$NOCANCEL$UNIX2003        16442
+         mach_msg_trap        8222
+         kevent        8221
+         select$DARWIN_EXTSN        8221
+         semaphore_wait_trap        8221
+         mach_wait_until        8189
+         statfs64        190
+         semaphore_wait_signal_trap        73
+         arq_loop(void*)        30
+
+ So then I right-click-force-quit it from the dock and was told that it had
+ crashed. I'll keep the report if anyone wants to see it (it's large).
+
+ Neil.
+
+-- 
+Ticket URL: &lt;<A HREF="https://fedorahosted.org/fldigi/ticket/9">https://fedorahosted.org/fldigi/ticket/9</A>&gt;
+fldigi &lt;<A HREF="http://www.w1hkj.com/Fldigi.html">http://www.w1hkj.com/Fldigi.html</A>&gt;
+Digital modem program for radio amateurs
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000231.html">[GIT] fldigi branch, master,	updated: 590e04076bd4e76d12587eba050aab7e0343315d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#230">[ date ]</a>
+              <a href="thread.html#230">[ thread ]</a>
+              <a href="subject.html#230">[ subject ]</a>
+              <a href="author.html#230">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

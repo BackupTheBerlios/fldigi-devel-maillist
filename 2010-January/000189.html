@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Commits pushed to pu/df for evaluation
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Commits%20pushed%20to%20pu/df%20for%20evaluation&In-Reply-To=%3C4B54BECF.2000605%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000188.html">
+   <LINK REL="Next"  HREF="000190.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Commits pushed to pu/df for evaluation</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Commits%20pushed%20to%20pu/df%20for%20evaluation&In-Reply-To=%3C4B54BECF.2000605%40bellsouth.net%3E"
+       TITLE="Commits pushed to pu/df for evaluation">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Mon Jan 18 21:04:31 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000188.html">[GIT] fldigi branch, master,	updated: b9e25d9500f93f06fc83881b648be4ab556a975d
+</A></li>
+        <LI>Next message: <A HREF="000190.html">[GIT] fldigi branch, master,	updated: 070f84d487a7b93ecfb5eb2060587529f419c23c
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#189">[ date ]</a>
+              <a href="thread.html#189">[ thread ]</a>
+              <a href="subject.html#189">[ subject ]</a>
+              <a href="author.html#189">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>commit bd27b284c70cfa9d23618a4e2eccfab23d989648
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Jan 18 13:59:22 2010 -0600
+
+    RSID s/n processing
+    
+        Corrected use of blackman prefilter used in RSID FFT
+        calculation.
+
+commit afd3adcd58cd7335d6db07a82fdde27a4a776cce
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Jan 18 09:30:22 2010 -0600
+
+    HELL AGC improvement
+    
+        Modified AGC and s/n detector for Feld Hell modes
+        Added AGC and s/n detector for FM-HELL modes
+
+
+John &amp; Stelios,
+
+The RSID s/n processing patch is an update the private diff file I sent 
+to you both earlier today.  I am able to detect RSID below the MFSK-16 
+decoding level on all of my test suites with this patch.
+
+The HELL patch is to provide better squelch control.  Rich mentioned 
+this several times and I finally got to look at it.
+
+While I was doing on air testing on 20 meters I had 3 quick MFSK16 qso's 
+in a row.  The fldigi users were lined up waiting to put me in their 
+logbook.  GNU publishing has it's advantages and rewards :-)
+
+73, Dave
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20100118/1a15ec35/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20100118/1a15ec35/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000188.html">[GIT] fldigi branch, master,	updated: b9e25d9500f93f06fc83881b648be4ab556a975d
+</A></li>
+	<LI>Next message: <A HREF="000190.html">[GIT] fldigi branch, master,	updated: 070f84d487a7b93ecfb5eb2060587529f419c23c
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#189">[ date ]</a>
+              <a href="thread.html#189">[ thread ]</a>
+              <a href="subject.html#189">[ subject ]</a>
+              <a href="author.html#189">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

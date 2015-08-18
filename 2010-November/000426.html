@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> force push to pu/df
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20force%20push%20to%20pu/df&In-Reply-To=%3C4CE572F7.8080307%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000425.html">
+   <LINK REL="Next"  HREF="000427.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>force push to pu/df</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20force%20push%20to%20pu/df&In-Reply-To=%3C4CE572F7.8080307%40bellsouth.net%3E"
+       TITLE="force push to pu/df">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Thu Nov 18 19:39:51 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000425.html">proposed 3.20.30
+</A></li>
+        <LI>Next message: <A HREF="000427.html">[GIT] fldigi branch, master,	updated: 16dbe6e74611d282000ecaa8de3cc9ccbe57100c
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#426">[ date ]</a>
+              <a href="thread.html#426">[ thread ]</a>
+              <a href="subject.html#426">[ subject ]</a>
+              <a href="author.html#426">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Commits include merge of recent submission by Stelios, M0GLD.
+
+73, Dave, W1HKJ
+
+commit 83f2952f7e600d6854a7b915c69d0f389d1d79ff
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Nov 18 11:20:03 2010 -0600
+
+    Log Client
+   
+      Connect to external xmlrpc log server
+
+commit 4e6082c41d7162613030ba05bd349e039c8d8499
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Thu Nov 18 10:50:23 2010 -0600
+
+    Embed xmlrpc++
+   
+    Bundle a copy of xmlrpc++ (CVS as of 20101026) to use as an easier 
+to build
+    (than libxmlrpc-c3) client on win32, and also as a server in the 
+near future.
+   
+    Upstream version modified as follows:
+   
+      * Added numerous required includes
+      * Fixed some sprintf format strings
+      * Added support for the nil type
+      * Included &lt;config.h&gt; in all .cpp files
+
+commit 46829566f18ec7f204aca97397a162b4697563b3
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Nov 18 10:49:57 2010 -0600
+
+    Reversion of commit 2a957966c1ebda93647a789a75f83aba6af5f98a
+   
+      Partial reversion of Multi-user-logbook commit
+      Preparation for introduction of client/server logbook
+
+commit bbfb5af0fd3913ae697b7d8a8a6e0581ab7a5f36
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Nov 16 01:22:23 2010 -0600
+
+    DigiTalk
+   
+      * Changed interface method to connect to DigiTalk
+        autostart no longer initiated unless so configured
+      * Changed Connect button on Misc tab to provide for
+        both connect and disconnect
+      * Added new macro tags to allow DigiTalk connect /
+        disconnect using function keys
+        - &lt;TALK:on|off|t&gt; start, stop, toggle
+          the connection to the DigiTalk socket server
+
+commit e17d7ef2208a2b3b44e46a934797e143ff03d925
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Nov 8 10:19:09 2010 -0600
+
+    QSO_DB sort order
+   
+      Corrected bug in date-time sorting of the logbook database.
+      Sort is now by DATE and TIME vice DATE and TIME_OFF
+
+commit 53038a5b254fff9dd0a4068934498ceb0e7bdf6e
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Nov 8 07:57:17 2010 -0600
+
+    Macros
+   
+      * Added CLEARLOG macro tag
+        - Inserts a ^C into the transmit text.  ^C can also be entered
+          manually.  Note that this is a two character sequence:
+          carat C, and not a control-C symbolism.
+      * Added CLRTX macro tag
+        - Inserts a ^X into the transmit text. Upon execution the entire
+          transmit buffer will be cleared.
+      * Added CLR2X macro tag
+        - Inserts a ^x into the transmit text. Upon execution the transmit
+          buffer will be cleared up to and including the current transmit
+          cursor position
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20101118/21045388/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20101118/21045388/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000425.html">proposed 3.20.30
+</A></li>
+	<LI>Next message: <A HREF="000427.html">[GIT] fldigi branch, master,	updated: 16dbe6e74611d282000ecaa8de3cc9ccbe57100c
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#426">[ date ]</a>
+              <a href="thread.html#426">[ thread ]</a>
+              <a href="subject.html#426">[ subject ]</a>
+              <a href="author.html#426">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

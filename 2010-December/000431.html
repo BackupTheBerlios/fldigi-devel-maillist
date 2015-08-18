@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Recent work on fldigi
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Recent%20work%20on%20fldigi&In-Reply-To=%3C4CFD966F.6010403%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000432.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Recent work on fldigi</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Recent%20work%20on%20fldigi&In-Reply-To=%3C4CFD966F.6010403%40bellsouth.net%3E"
+       TITLE="Recent work on fldigi">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Tue Dec  7 03:05:35 CET 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000432.html">Bug report
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#431">[ date ]</a>
+              <a href="thread.html#431">[ thread ]</a>
+              <a href="subject.html#431">[ subject ]</a>
+              <a href="author.html#431">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Pushed to pu/df (-f)
+
+commit 8a62a65a6568d593a88031942bdf762426e2e8e1
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Dec 6 19:31:47 2010 -0600
+
+    pskBrowser class
+   
+      * New Widget Class for psk viewer implementation.  Separates
+        the browser from the Viewer in preparation for an embedded
+        psk browser.
+      * New embedded channel browser - psk only for now
+      * Added horizontal tiling to RxText / Channel_browser
+      * Moved Channel / Psk_browser squelch / regular expression
+        widgets to pskviewer configuration tab.  Applies to both
+        main and floating psk viewers.
+
+commit 9b8fdd864fbd0448549d68ac03425a983c339407
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Nov 30 15:39:39 2010 -0600
+
+    Check for updates
+   
+      Changed re parser expression to follow recent change in w1hkj
+      web site organization
+
+commit 81ebe8173668ca0eedae9e34d0abc338132fb2fe
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Nov 29 19:50:12 2010 -0600
+
+    Carrier Squelch
+   
+      * Added pre-signal tone which allows triggering
+        carrier detect / amplifier enable.  Used primarily
+        for VHF/UHF power bricks.
+      * Reduced pre and post RsID silence periods to 1 RsID
+        symbol length (~0.0988 sec).
+
+commit eb0afbbc31b582e6112af231c9af6ff1d1bd79b8
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Nov 28 09:02:20 2010 -0600
+
+    Call Lookup
+   
+      Added code to convert uppercase operator name to
+      camel case for all lookups.
+
+Looks like:
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20101206/83ed46d3/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20101206/83ed46d3/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: Screenshot-Untitled Window.png
+Type: image/png
+Size: 104771 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20101206/83ed46d3/attachment.png">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20101206/83ed46d3/attachment.png</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000432.html">Bug report
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#431">[ date ]</a>
+              <a href="thread.html#431">[ thread ]</a>
+              <a href="subject.html#431">[ subject ]</a>
+              <a href="author.html#431">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

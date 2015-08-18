@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi and QSK
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20and%20QSK&In-Reply-To=%3C20100608212531.GV17977%40charybde.local%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000308.html">
+   <LINK REL="Next"  HREF="000310.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi and QSK</H1>
+    <B>Stephane Fillod</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20and%20QSK&In-Reply-To=%3C20100608212531.GV17977%40charybde.local%3E"
+       TITLE="fldigi and QSK">f8cfe at free.fr
+       </A><BR>
+    <I>Tue Jun  8 23:25:31 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000308.html">[GIT] fldigi branch, maint/3.20,	updated: c80c28e238ad660c6bb8cf18c0f3b5ecfede00b4
+</A></li>
+        <LI>Next message: <A HREF="000310.html">[Fwd: [Fwd: Re: Translations for amateur radio apps]]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#309">[ date ]</a>
+              <a href="thread.html#309">[ thread ]</a>
+              <a href="subject.html#309">[ subject ]</a>
+              <a href="author.html#309">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sun, Jun 06, 2010, w1hkj skribis:
+&gt;<i> &gt;&gt;&gt;BTW: It seems fldigi cannot use HAMLIB to control PTT via RTS.
+</I>&gt;<i> &gt;&gt;&gt;As a workaround I have fldigi control RTS directly, but it would be
+</I>
+&gt;<i> &gt;Stephane (F8CFE) seems to expect the problem to be solved on the
+</I>&gt;<i> &gt;fldigi-side (quote from the HAMLIB-developer mailing-list):
+</I>&gt;<i> &gt;  In fact, fldigi needs some fixing because the case where a hamlib
+</I>&gt;<i> &gt;  backend has RIG_PTT_SERIAL_RTS is not handled properly. Until
+</I>&gt;<i> &gt;  the fix is made available, you can set ptt_type to RIG_PTT_NONE,
+</I>&gt;<i> &gt;  and use the RTS PTT in fldigi as a temporary workaround.
+</I>
+&gt;<i> Interesting.  Stephane is a member of the fldigi developer group and
+</I>&gt;<i> has not reported that problem (or a possible solution) to me.
+</I>
+Sorry, I was very busy with the release of hamlib 1.2.11.
+
+I started to devise a patch addressing the FT-980 problem,
+but it's not ready yet. In fact, fldigi is assuming too much
+the hamlib rig is of serial type, and the RTS must be controlled.
+The patch should take care of that. It's simply not ready,
+I'm lacking some bandwidth, the I/Q hacking even ground to a halt.
+
+&gt;<i> &gt;Can you point me to a HAMLIB-backend with PTT-RTS control, that is none
+</I>&gt;<i> &gt;to cooperate with fldigi? I will have a closer look at the issue than.
+</I>
+&gt;<i> Sorry.  All of my transceivers use a CAT command for PTT.  Perhaps
+</I>&gt;<i> Stephane can provide you with that information.
+</I>
+The FT-980 is the only backend having a RIG_PTT_SERIAL_RTS in its caps.
+
+73
+-- 
+Stephane - F8CFE
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000308.html">[GIT] fldigi branch, maint/3.20,	updated: c80c28e238ad660c6bb8cf18c0f3b5ecfede00b4
+</A></li>
+	<LI>Next message: <A HREF="000310.html">[Fwd: [Fwd: Re: Translations for amateur radio apps]]
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#309">[ date ]</a>
+              <a href="thread.html#309">[ thread ]</a>
+              <a href="subject.html#309">[ subject ]</a>
+              <a href="author.html#309">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

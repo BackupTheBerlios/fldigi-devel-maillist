@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> flrig-1.0.1.1O posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20flrig-1.0.1.1O%20posted&In-Reply-To=%3C4D58360B.9050708%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000559.html">
+   <LINK REL="Next"  HREF="000561.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>flrig-1.0.1.1O posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20flrig-1.0.1.1O%20posted&In-Reply-To=%3C4D58360B.9050708%40bellsouth.net%3E"
+       TITLE="flrig-1.0.1.1O posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sun Feb 13 20:50:35 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000559.html">3.21.0BL macro bar number
+</A></li>
+        <LI>Next message: <A HREF="000561.html">fldigi-3.21.1 posted for your final review
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#560">[ date ]</a>
+              <a href="thread.html#560">[ thread ]</a>
+              <a href="subject.html#560">[ subject ]</a>
+              <a href="author.html#560">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha/flrig/">http://www.w1hkj.com/alpha/flrig/</A>
+
+  IC7000 auto notch
+    Added set_auto_notch method
+
+  FT100D
+    Added vfo A/B control methods
+    Corrections to bandwidth get / set methods
+    Added get_info
+
+  FT1000MP def bw
+    Added method def_bandwidth
+
+  IC series split
+    Added split method to base IC746 series
+    Corrected A/B vfo, mode, bandwidth reads
+
+  Default BW
+    Added default bandwidth method to all transceivers which support
+    filter selection as a function of operating mode.
+
+  IC7600 A/B mods
+    Changed access method for A/B selection
+    Added bandwidth tables and CAT for set/get bandwidth
+
+  FT1000MP swr/alc
+    Added query methods for swr and alc
+
+  RAY 152 smeter
+    Created U values to smeter based on measured values.
+    Measurements by Craig, WA8DRZ
+
+  FT1000MP power scale
+    Changed power scale to square law.  Expands scale below 25 watts.
+
+  IC7600 update
+    Added control methods for mode / bandwidth
+
+  FT1000MP Bandwidth
+    Implementation of full 8.2/455 filter selections
+
+  Button A/B
+    Removed A/B button
+    Changed A-B select buttons to lighted button
+
+  ICOM select race
+    * removed two_vfo capability for all IC746 derivatives
+    * added IC7600 CIV codes for vfo select
+    * added set/get BW, Mode for both vfo-A and vfo-B
+
+  RAY152 - vfo
+    Revert to 100 Hz resolution in CAT string
+
+Please report the good and the bad associated with specific 
+transceivers.  There have been many changes and it is easy to miss where 
+one change might interact with another.  If you need to observe 
+additional event logging you can start flrig from the command line with 
+the &quot;--rig_debug&quot; switch.  You accomplish the same thing on Windows by 
+adding the switch statement to the launch target (desktop icon properties).
+
+Thanks.
+
+Dave, W1HKJ
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20110213/1a4c6809/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20110213/1a4c6809/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000559.html">3.21.0BL macro bar number
+</A></li>
+	<LI>Next message: <A HREF="000561.html">fldigi-3.21.1 posted for your final review
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#560">[ date ]</a>
+              <a href="thread.html#560">[ thread ]</a>
+              <a href="subject.html#560">[ subject ]</a>
+              <a href="author.html#560">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi doxygen
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20doxygen&In-Reply-To=%3C51EF6990.2030002%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001041.html">
+   <LINK REL="Next"  HREF="001044.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi doxygen</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20doxygen&In-Reply-To=%3C51EF6990.2030002%40gmail.com%3E"
+       TITLE="Fldigi doxygen">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Wed Jul 24 07:43:44 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001041.html">Fldigi doxygen
+</A></li>
+        <LI>Next message: <A HREF="001044.html">Fldigi doxygen
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1043">[ date ]</a>
+              <a href="thread.html#1043">[ thread ]</a>
+              <a href="subject.html#1043">[ subject ]</a>
+              <a href="author.html#1043">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&quot;&gt; The gradual modification of existing Fldigi comments into Doxygen 
+format &quot;
+
+Not only modifying but also Adding comments: Too many functions and 
+variables are still not commented. Sometimes it's not that easy to 
+understand what they do.
+
+Thanks for your work John.
+
+Remi
+
+Le 22.07.2013 20:49, John Phelps a &#233;crit :
+&gt;<i>
+</I>&gt;<i> The gradual modification of existing Fldigi comments into Doxygen format
+</I>&gt;<i> would be very helpful, and a low-risk set of changes (being comments
+</I>&gt;<i> only). Am working on a &quot;quick Doxygen formatting help-page&quot; that will
+</I>&gt;<i> live in the Doxygen HTML docs and explain, with examples, how each
+</I>&gt;<i> comment-type acts.
+</I>&gt;<i>
+</I>&gt;<i> In order to make the modem classes appear higher up in the Doxygen docs,
+</I>&gt;<i> each header file needs a Doxygen comment with the keyword &quot;@class&quot; in
+</I>&gt;<i> it. Then Doxygen will generate a nice list of these now &quot;documented
+</I>&gt;<i> classes&quot;. As the code becomes more Doxygen-documented, the generated
+</I>&gt;<i> documentation will continue to improve. What exists currently is
+</I>&gt;<i> Doxygen's auto-generating from 99% undocumented code. (undocumented from
+</I>&gt;<i> Doxygen's perspective: no tags, etc...)
+</I>&gt;<i>
+</I>&gt;<i> Both the scripts really should have a &quot;clean&quot; action to safely cleanup
+</I>&gt;<i> after themselves. Will definitely add that feature to the scripts.
+</I>&gt;<i>
+</I>&gt;<i> Doxygen can do just about everything I am discovering, and the thickness
+</I>&gt;<i> of the manual reflects this. hi hi
+</I>&gt;<i> Will continue to work on implementing more comprehensive Doxygen into in
+</I>&gt;<i> the header files.
+</I>&gt;<i>
+</I>&gt;<i> Glad to see this is proving to be useful,
+</I>&gt;<i> John
+</I>&gt;<i> KL4YFD
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Mon, Jul 22, 2013 at 5:37 AM, w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>
+</I>&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>&gt;&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>     What is the next step John?  Should the developers go through the
+</I>&gt;<i>     individual files and add /// comments in the code to make the
+</I>&gt;<i>     Doxygen output richer?  How can the code be structured to put the
+</I>&gt;<i>     modem classes higher up in the Doxygen hierarchy?
+</I>&gt;<i>
+</I>&gt;<i>     The HTML Doxygen output is about 1.2 GB.  Do you think a remove
+</I>&gt;<i>     script should be added to the scripts/doxygen/ ?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>     Dave
+</I>&gt;<i>
+</I>&gt;<i>     On 07/21/2013 05:45 PM, John Phelps wrote:
+</I>&gt;&gt;<i>     Hi Dave,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     Have finished up testing all the Doxygen files for fldigi on both
+</I>&gt;&gt;<i>     linux and OSX, then pushed to my pu/jp branch. Am happy with how
+</I>&gt;&gt;<i>     it all turned out. :-)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     The diff does not affect the compiled binary in any way as the
+</I>&gt;&gt;<i>     added files are just comments and scripts. Also added a call to
+</I>&gt;&gt;<i>     the tool &quot;cppcheck&quot; which adds info to the Doxygen main-page. It
+</I>&gt;&gt;<i>     found a few errors / memory leaks (see attached).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     *_To Generate the Doxygen docs: _*
+</I>&gt;&gt;<i>     1) Apply or merge patch / diff
+</I>&gt;&gt;<i>     2) execute script &quot;fldigi/scripts/doxygen/gen_doxygen_docs.sh&quot;
+</I>&gt;&gt;<i>     3) When complete, the script opens a web browser to the main
+</I>&gt;&gt;<i>     Doxygen page
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     Feedback is appreciated. Scripts only tested here on Kubuntu and OSX.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     ~ John
+</I>&gt;&gt;<i>     KL4YFD
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001041.html">Fldigi doxygen
+</A></li>
+	<LI>Next message: <A HREF="001044.html">Fldigi doxygen
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1043">[ date ]</a>
+              <a href="thread.html#1043">[ thread ]</a>
+              <a href="subject.html#1043">[ subject ]</a>
+              <a href="author.html#1043">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

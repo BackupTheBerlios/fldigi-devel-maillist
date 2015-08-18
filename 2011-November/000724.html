@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> 3.21.26 fails to build in Debian
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%203.21.26%20fails%20to%20build%20in%20Debian&In-Reply-To=%3C1321395969.32358.23.camel%40fourier%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000723.html">
+   <LINK REL="Next"  HREF="000725.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>3.21.26 fails to build in Debian</H1>
+    <B>Kamal Mostafa</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%203.21.26%20fails%20to%20build%20in%20Debian&In-Reply-To=%3C1321395969.32358.23.camel%40fourier%3E"
+       TITLE="3.21.26 fails to build in Debian">kamal at whence.com
+       </A><BR>
+    <I>Tue Nov 15 23:26:09 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000723.html">3.21.26 fails to build in Debian
+</A></li>
+        <LI>Next message: <A HREF="000725.html">3.21.26 fails to build in Debian
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#724">[ date ]</a>
+              <a href="thread.html#724">[ thread ]</a>
+              <a href="subject.html#724">[ subject ]</a>
+              <a href="author.html#724">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tue, 2011-11-15 at 14:11 -0800, Kamal Mostafa wrote:
+&gt;<i> Hi Dave-
+</I>&gt;<i> 
+</I>&gt;<i> fldigi-3.21.26 fails to build in Debian unstable (3.21.24 was fine) due
+</I>&gt;<i> to a -Wformat violation in fldigi-wefax.cxx.
+</I>
+Attached patch fixes it (plus the &quot;format not a string literal&quot; errors).
+
+ -Kamal
+
+
+&gt;<i> g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI -DLOCALEDIR=\&quot;/usr/share/locale
+</I>&gt;<i> \&quot; -I. -I./include -I./irrxml -I./fileselector -I./xmlrpcpp  -pthread
+</I>&gt;<i> -I/usr/include/freetype2 -fstack-protector --param=ssp-buffer-size=4
+</I>&gt;<i> -Wformat -Wformat-security -Werror=format-security   -D_THREAD_SAFE
+</I>&gt;<i> -D_REENTRANT       -D_REENTRANT     -I/usr/include/libpng12
+</I>&gt;<i> -I/usr/include      -pipe -Wall -fexceptions -O2 -ffast-math
+</I>&gt;<i> -finline-functions  -DNDEBUG -g -O2 -c -o fldigi-wefax.o `test -f
+</I>&gt;<i> 'wefax/wefax.cxx' || echo './'`wefax/wefax.cxx
+</I>&gt;<i> 
+</I>&gt;<i> wefax/wefax.cxx: In member function 'void fax_implementation::correlation_calc() const':
+</I>&gt;<i> wefax/wefax.cxx:907:115: warning: format '%d' expects argument of type 'int', but argument 8 has type 'size_t {aka long unsigned int}' [-Wformat]
+</I>&gt;<i> wefax/wefax.cxx: In member function 'void fax_implementation::decode_apt(int, const fax_implementation::fax_signal&amp;)':
+</I>&gt;<i> wefax/wefax.cxx:1151:168: error: format not a string literal and no format arguments [-Werror=format-security]
+</I>&gt;<i> wefax/wefax.cxx:1160:168: error: format not a string literal and no format arguments [-Werror=format-security]
+</I>&gt;<i> wefax/wefax.cxx:1171:168: error: format not a string literal and no format arguments [-Werror=format-security]
+</I>&gt;<i> wefax/wefax.cxx:1179:168: error: format not a string literal and no format arguments [-Werror=format-security]
+</I>&gt;<i> cc1plus: some warnings being treated as errors
+</I>&gt;<i> 
+</I>&gt;<i> make[3]: *** [fldigi-wefax.o] Error 1
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: fix-wefax-build-failures.patch
+Type: text/x-patch
+Size: 1809 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20111115/75ea6e35/attachment.bin">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20111115/75ea6e35/attachment.bin</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20111115/75ea6e35/attachment.pgp">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20111115/75ea6e35/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000723.html">3.21.26 fails to build in Debian
+</A></li>
+	<LI>Next message: <A HREF="000725.html">3.21.26 fails to build in Debian
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#724">[ date ]</a>
+              <a href="thread.html#724">[ thread ]</a>
+              <a href="subject.html#724">[ subject ]</a>
+              <a href="author.html#724">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

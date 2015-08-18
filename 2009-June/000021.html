@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 419123c17e260f056d367ec30fe8ba865ce17937
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20419123c17e260f056d367ec30fe8ba865ce17937&In-Reply-To=%3C200906131244.n5DCiwVk012785%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000020.html">
+   <LINK REL="Next"  HREF="000022.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 419123c17e260f056d367ec30fe8ba865ce17937</H1>
+    <B>m0gld at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20419123c17e260f056d367ec30fe8ba865ce17937&In-Reply-To=%3C200906131244.n5DCiwVk012785%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 419123c17e260f056d367ec30fe8ba865ce17937">m0gld at mail.berlios.de
+       </A><BR>
+    <I>Sat Jun 13 14:44:58 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000020.html">[GIT] fldigi branch, master,	updated: b20e2b9b3534d85fe6e707623b64b2b82e047858
+</A></li>
+        <LI>Next message: <A HREF="000022.html">[GIT] fldigi branch, maint/3.11,	updated: b18bfb9850e355b825227bd3e719e2c1c80fa6e3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21">[ date ]</a>
+              <a href="thread.html#21">[ thread ]</a>
+              <a href="subject.html#21">[ subject ]</a>
+              <a href="author.html#21">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  419123c17e260f056d367ec30fe8ba865ce17937 (commit)
+       via  2a83da3c8bf0dc030dba19566845c147ab321b4e (commit)
+       via  7a87b0bc552d1074cfed912490b1e500ad672bbb (commit)
+      from  b20e2b9b3534d85fe6e707623b64b2b82e047858 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit 419123c17e260f056d367ec30fe8ba865ce17937
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Fri Jun 12 23:30:38 2009 +0100
+
+    Fix text echo functions
+    
+    Ensure that this code is called by the main thread
+
+commit 2a83da3c8bf0dc030dba19566845c147ab321b4e
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Fri Jun 12 22:29:26 2009 +0100
+
+    Remove FText text colour adjustment
+
+commit 7a87b0bc552d1074cfed912490b1e500ad672bbb
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Fri Jun 12 22:28:23 2009 +0100
+
+    Always set the FText cursor colour
+    
+    The cursor should be the same colour as the text to ensure good contrast
+    with the background.
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ src/dialogs/fl_digi.cxx   |   34 ++++++++++++++++++++++------------
+ src/include/FTextView.h   |    4 +---
+ src/widgets/FTextView.cxx |   16 +++++-----------
+ 3 files changed, 28 insertions(+), 26 deletions(-)
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000020.html">[GIT] fldigi branch, master,	updated: b20e2b9b3534d85fe6e707623b64b2b82e047858
+</A></li>
+	<LI>Next message: <A HREF="000022.html">[GIT] fldigi branch, maint/3.11,	updated: b18bfb9850e355b825227bd3e719e2c1c80fa6e3
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#21">[ date ]</a>
+              <a href="thread.html#21">[ thread ]</a>
+              <a href="subject.html#21">[ subject ]</a>
+              <a href="author.html#21">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

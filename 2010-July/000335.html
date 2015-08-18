@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: f6f9459650a411d8e9167a4fcf216ede07c8b778
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20f6f9459650a411d8e9167a4fcf216ede07c8b778&In-Reply-To=%3C20100714134359.2B83C480BDF%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000334.html">
+   <LINK REL="Next"  HREF="000336.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: f6f9459650a411d8e9167a4fcf216ede07c8b778</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20f6f9459650a411d8e9167a4fcf216ede07c8b778&In-Reply-To=%3C20100714134359.2B83C480BDF%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: f6f9459650a411d8e9167a4fcf216ede07c8b778">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Wed Jul 14 15:43:58 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000334.html">[fldigi] #17: MFSKpix use JPEG2000 JPWL
+</A></li>
+        <LI>Next message: <A HREF="000336.html">[GIT] fldigi branch, master,	updated: 4685221e4ff1801da8139e84d7123acc742df76e
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#335">[ date ]</a>
+              <a href="thread.html#335">[ thread ]</a>
+              <a href="subject.html#335">[ subject ]</a>
+              <a href="author.html#335">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  f6f9459650a411d8e9167a4fcf216ede07c8b778 (commit)
+       via  abafe0d42d5847ff7f52c0d3b5ee7d8bc297d504 (commit)
+       via  e6d23f6a1c79c70d9dbc8222e2101b2ad0c8cbcb (commit)
+       via  0faeecb0c87a068ec4b905f54fb1f5572125950d (commit)
+       via  e1cfec01c90bac4858ecdbdb2d085514e4bb0012 (commit)
+       via  9064f150a7466820908cfcded19f41943858e9ca (commit)
+      from  5f10e417a114e3c7ee3693c0336d55b46596ec2f (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=f6f9459650a411d8e9167a4fcf216ede07c8b778">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=f6f9459650a411d8e9167a4fcf216ede07c8b778</A>
+
+commit f6f9459650a411d8e9167a4fcf216ede07c8b778
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Jul 14 08:42:16 2010 -0500
+
+    Version 3.21.0AI
+    
+      Alpha release
+
+ 2 files changed, 5 insertions(+), 1 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=abafe0d42d5847ff7f52c0d3b5ee7d8bc297d504">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=abafe0d42d5847ff7f52c0d3b5ee7d8bc297d504</A>
+
+commit abafe0d42d5847ff7f52c0d3b5ee7d8bc297d504
+Author: Fer Maresca, LU2DFM &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">lu2dfm at gmail.com</A>&gt;
+Date:   Tue Jul 13 21:26:52 2010 -0500
+
+    &lt;LOG&gt; change
+    
+      Added new logging macro tag &lt;LNW&gt; (Log NoW), which places
+      the code pair &quot;^L&quot; into the transmit stream.  QSO logging
+      takes place when that pair occurs in the transmit sequence.
+      This guarantees that the time of log will concur with the
+      ^L occurance.
+    
+      Changed tag parsing to always place &lt;RX&gt; (^r) as last control
+      tag in the expanded text that is placed into the Tx buffer.
+
+ 3 files changed, 35 insertions(+), 0 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e6d23f6a1c79c70d9dbc8222e2101b2ad0c8cbcb">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e6d23f6a1c79c70d9dbc8222e2101b2ad0c8cbcb</A>
+
+commit e6d23f6a1c79c70d9dbc8222e2101b2ad0c8cbcb
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jul 2 15:26:59 2010 -0500
+
+    Version 3.21.0AH
+    
+      Alpha release
+
+ 2 files changed, 5 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=0faeecb0c87a068ec4b905f54fb1f5572125950d">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=0faeecb0c87a068ec4b905f54fb1f5572125950d</A>
+
+commit 0faeecb0c87a068ec4b905f54fb1f5572125950d
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jul 2 14:04:29 2010 -0500
+
+    RX-TX Select
+    
+      * Fixed text/background contrast for selected text in Rx Tx
+        panels
+      * Added color selector for hightlight (SEL) color used in
+        Rx Tx panels
+
+ 6 files changed, 90 insertions(+), 27 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e1cfec01c90bac4858ecdbdb2d085514e4bb0012">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e1cfec01c90bac4858ecdbdb2d085514e4bb0012</A>
+
+commit e1cfec01c90bac4858ecdbdb2d085514e4bb0012
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jul 2 07:29:53 2010 -0500
+
+    RTS-DTR ptt
+    
+      Allow both to be used simultaneously in RigCAT
+
+ 2 files changed, 13 insertions(+), 13 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=9064f150a7466820908cfcded19f41943858e9ca">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=9064f150a7466820908cfcded19f41943858e9ca</A>
+
+commit 9064f150a7466820908cfcded19f41943858e9ca
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Jul 1 23:24:59 2010 -0500
+
+    REPEAT Macro
+    
+      Added &lt;REPEAT&gt; macro tag - puts fldigi into infinite
+      transmit repeat of all text and tags preceeding &lt;REPEAT&gt;.
+      &lt;ESC&gt; terminates the loop
+
+ 6 files changed, 79 insertions(+), 8 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                               |    9 ++++-
+ configure.ac                            |    2 +-
+ src/dialogs/colorsfonts.cxx             |   50 +++++++++++++++++++----
+ src/dialogs/colorsfonts.fl              |   48 +++++++++++++++++-----
+ src/dialogs/confdialog.cxx              |    8 ++--
+ src/dialogs/confdialog.fl               |   18 ++++----
+ src/dialogs/fl_digi.cxx                 |   55 +++++++++++++++++++++++++-
+ src/include/colorsfonts.h               |    1 +
+ src/include/configuration.h             |    3 +
+ src/include/macros.h                    |    1 +
+ src/include/status.h                    |    2 +
+ src/misc/macroedit.cxx                  |    2 +
+ src/misc/macros.cxx                     |   66 +++++++++++++++++++++++++++----
+ src/misc/status.cxx                     |    2 +
+ src/widgets/Fl_Text_Display_mod_1_1.cxx |    9 ++--
+ 15 files changed, 226 insertions(+), 50 deletions(-)
+  69.5% src/dialogs/
+   4.4% src/include/
+  19.2% src/misc/
+   3.1% src/widgets/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000334.html">[fldigi] #17: MFSKpix use JPEG2000 JPWL
+</A></li>
+	<LI>Next message: <A HREF="000336.html">[GIT] fldigi branch, master,	updated: 4685221e4ff1801da8139e84d7123acc742df76e
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#335">[ date ]</a>
+              <a href="thread.html#335">[ thread ]</a>
+              <a href="subject.html#335">[ subject ]</a>
+              <a href="author.html#335">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

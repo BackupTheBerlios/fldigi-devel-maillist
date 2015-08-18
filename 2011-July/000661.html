@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Code cleanup suggestions in misc/macros.cxx
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Code%20cleanup%20suggestions%20in%20misc/macros.cxx&In-Reply-To=%3C4E1CE93F.8000405%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000660.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Code cleanup suggestions in misc/macros.cxx</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Code%20cleanup%20suggestions%20in%20misc/macros.cxx&In-Reply-To=%3C4E1CE93F.8000405%40gmail.com%3E"
+       TITLE="Code cleanup suggestions in misc/macros.cxx">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Wed Jul 13 02:39:27 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000660.html">FYI: Arduino Waterfall
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#661">[ date ]</a>
+              <a href="thread.html#661">[ thread ]</a>
+              <a href="subject.html#661">[ subject ]</a>
+              <a href="author.html#661">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+In misc/macros.cxx, there are two easy code cleanup possibilities:
+
+(1) The declaration of mtags could be done after the definition of all 
+the functions associated to macros:
+
+static pCALL(...) {}
+static pFREQ(...) {}
+static pLOC(...) {}
+
+MTAGS mtags[] = {
+{&quot;&lt;CALL&gt;&quot;,             pCALL},
+{&quot;&lt;FREQ&gt;&quot;,             pFREQ},
+{&quot;&lt;LOC&gt;&quot;,              pLOC},
+
+The consequence is that we do not need to forward declare these 
+functions, and they can also be static. The code is simpler, and the 
+link is a bit faster.
+
+(2) At the moment, all functions associated to macros have this signature:
+void pWAIT(string&amp;, size_t &amp;);
+void pSRCHUP(string&amp;, size_t&amp;);
+void pSRCHDN(string&amp;, size_t&amp;);
+
+- The parameter &quot;size_t &amp; i&quot; does not need to be passed by reference 
+because it is never changed.
+- We could pass the parameter &quot;end_bracket&quot; = s.find('&gt;') because it is 
+very often recalculated.
+
+If we replace these signatures by:
+static void pSRCHDN(string&amp;, size_t i, size_t end_bracket);
+
+... the code will a bit smaller, faster and simpler.
+
+Interested ? Should I do it ?
+
+Cheers
+
+R
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000660.html">FYI: Arduino Waterfall
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#661">[ date ]</a>
+              <a href="thread.html#661">[ thread ]</a>
+              <a href="subject.html#661">[ subject ]</a>
+              <a href="author.html#661">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

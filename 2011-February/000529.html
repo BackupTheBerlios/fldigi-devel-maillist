@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> MT-63 manual tune mod
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20MT-63%20manual%20tune%20mod&In-Reply-To=%3C4D48AC56.1040708%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000530.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>MT-63 manual tune mod</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20MT-63%20manual%20tune%20mod&In-Reply-To=%3C4D48AC56.1040708%40bellsouth.net%3E"
+       TITLE="MT-63 manual tune mod">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Wed Feb  2 01:59:02 CET 2011</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000530.html">MT-63 manual tune mod
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#529">[ date ]</a>
+              <a href="thread.html#529">[ thread ]</a>
+              <a href="subject.html#529">[ subject ]</a>
+              <a href="author.html#529">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Pushed to berlios/pu/df
+
+commit d4d5129a130acfe97b0f538382b9d85b61cbf498
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Feb 1 18:54:39 2011 -0600
+
+    MT63 manual tune mod
+   
+      * Modified mt63 base and supporting digital signal processing (dsp)
+        code to remove the fixed signal position restriction.
+      * User can select either fixed 500 Hz lower tone signal format or
+        to move the signal bandpass throughout the audio spectrum using
+        the normal waterfall point and click
+
+Please test and if you feel capable I would appreciate a technical 
+review of the changes I made to the mt63base.cxx/h,  mt63.cxx/h and 
+dsp.cxx/h source files.  I have asked Pawel Jalocha if he might want to 
+review these changes but have not heard from him yet.  The MT63 dsp code 
+is probably the most sophisticated of all the modem code that is in fldigi.
+
+73, Dave, W1HKJ
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20110201/d3055718/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20110201/d3055718/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000530.html">MT-63 manual tune mod
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#529">[ date ]</a>
+              <a href="thread.html#529">[ thread ]</a>
+              <a href="subject.html#529">[ subject ]</a>
+              <a href="author.html#529">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

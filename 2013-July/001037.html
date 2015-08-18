@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.21.72BM posted for testing
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.72BM%20posted%20for%20testing&In-Reply-To=%3CCAH-RX41LeNgSQ2f%2B_YN3HAHCZGAP0PCpOggT%3DgF_AtbkpH%3DNBw%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001036.html">
+   <LINK REL="Next"  HREF="001038.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.21.72BM posted for testing</H1>
+    <B>Josh Rovero</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.72BM%20posted%20for%20testing&In-Reply-To=%3CCAH-RX41LeNgSQ2f%2B_YN3HAHCZGAP0PCpOggT%3DgF_AtbkpH%3DNBw%40mail.gmail.com%3E"
+       TITLE="fldigi-3.21.72BM posted for testing">josh.rovero at gmail.com
+       </A><BR>
+    <I>Mon Jul  8 03:40:47 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001036.html">fldigi-3.21.72BM
+</A></li>
+        <LI>Next message: <A HREF="001038.html">fldigi-3.21.72BM posted for testing / FIX
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1037">[ date ]</a>
+              <a href="thread.html#1037">[ thread ]</a>
+              <a href="subject.html#1037">[ subject ]</a>
+              <a href="author.html#1037">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Spoke too soon..... after a period of time, 3.21.72BM punts on Sig 6 while
+doing something with the KML file:
+
+V: append: Added (call=&quot;K2VV&quot;, loc=&quot;&quot;, mode=&quot;PSK31&quot;, freq=14072999,
+time=1373246936, type=1)
+V: append: Added (call=&quot;WA5AMM&quot;, loc=&quot;&quot;, mode=&quot;PSK31&quot;, freq=14070915,
+time=1373246946, type=1)
+fldigi: misc/kmlserver.cxx:792: bool
+KmlSrvImpl::PlacesMapT::RewriteKmlFileOneCategory(const string&amp;, const
+string&amp;, int) const: Assertion `(*itNamBeg)-&gt;first != (*itNamLast)-&gt;first'
+failed.
+
+Caught signal 6
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+/usr/local/bin/fldigi(_Z9diediediev+0xcf)[0x774da7]
+/usr/local/bin/fldigi(_Z13handle_signali+0x1f)[0x774fd0]
+/lib64/libpthread.so.0[0x3b27e0efa0]
+/lib64/libc.so.6(gsignal+0x39)[0x3b27a35a19]
+/lib64/libc.so.6(abort+0x148)[0x3b27a37128]
+/lib64/libc.so.6[0x3b27a2e986]
+/lib64/libc.so.6[0x3b27a2ea32]
+/usr/local/bin/fldigi(_ZNK10KmlSrvImpl10PlacesMapT25RewriteKmlFileOneCategoryERKSsS2_i+0x374)[0x74277e]
+/usr/local/bin/fldigi(_ZN10KmlSrvImpl18RewriteKmlFileFullEv+0x167)[0x744b49]
+/usr/local/bin/fldigi(_ZN10KmlSrvImpl10ThreadFuncEv+0x3e8)[0x745022]
+/usr/local/bin/fldigi(_ZN10KmlSrvImpl10ThreadFuncEPv+0x18)[0x7450d5]
+/lib64/libpthread.so.0[0x3b27e07c53]
+/lib64/libc.so.6(clone+0x6d)[0x3b27af513d]
+
+****** Version information:
+fldigi 3.21.72BM
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi
+Chateauneu, and others.
+License GPLv3+: GNU GPL version 3 or later &lt;
+<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+  built          : Mon Jul  8 01:13:13 UTC 2013 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">josh at radio</A> on
+x86_64-unknown-linux-gnu for x86_64-unknown-linux-gnu
+
+  configure flags: '--enable-debug' '-enable-optimizations=sse2'
+
+  compiler       : gcc version 4.8.1 20130603 (Red Hat 4.8.1-1) (GCC)
+
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+-I$(srcdir)/libtiniconv -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp
+-pthread -I/usr/include/alsa -I/usr/include/freetype2 -D_LARGEFILE_SOURCE
+-D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT
+-I/usr/include/libpng15 -pipe -Wall -fexceptions -O2 -ffast-math
+-finline-functions -msse2 -mfpmath=sse -O0 -fno-inline-functions -ggdb3
+-Wall -UNDEBUG
+
+  linker flags   : -rdynamic -lportaudio -lm -lpthread -lasound
+-Wl,-z,relro -lfltk_images -lfltk -lX11 -lsamplerate -lpulse-simple -lpulse
+-lhamlib -lm -lpng15 -ldl -lpthread
+
+  libraries      : FLTK 1.3.0
+                   libsamplerate 0.1.8
+                   PortAudio 19
+                   PulseAudio 3.0
+                   Hamlib 1.2.15.3
+
+Runtime information:
+  system         : Linux radio 3.9.9-301.fc19.x86_64 #1 SMP Thu Jul 4
+15:10:36 UTC 2013 x86_64
+
+  libraries      : libsamplerate-0.1.8 (c) 2002-2008 Erik de Castro Lopo
+                   PortAudio V19-devel (built May  4 2013 13:59:07) 1899
+                   Pulseaudio 3.0.0
+                   Hamlib 1.2.15.3
+Segmentation fault (core dumped)
+
+
+-- 
+P.J. &quot;Josh&quot; Rovero                   Ham Radio: KK1D
+<A HREF="http://www.roveroresearch.org">http://www.roveroresearch.org</A>   <A HREF="http://www.roveroresearch.info">http://www.roveroresearch.info</A>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130708/3ab03c0b/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130708/3ab03c0b/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001036.html">fldigi-3.21.72BM
+</A></li>
+	<LI>Next message: <A HREF="001038.html">fldigi-3.21.72BM posted for testing / FIX
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1037">[ date ]</a>
+              <a href="thread.html#1037">[ thread ]</a>
+              <a href="subject.html#1037">[ subject ]</a>
+              <a href="author.html#1037">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

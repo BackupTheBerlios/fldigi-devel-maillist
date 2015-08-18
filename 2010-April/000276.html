@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Patches pushed to berlios/pu/df
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Patches%20pushed%20to%20berlios/pu/df&In-Reply-To=%3C4BD0AC5E.2010607%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000275.html">
+   <LINK REL="Next"  HREF="000277.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Patches pushed to berlios/pu/df</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Patches%20pushed%20to%20berlios/pu/df&In-Reply-To=%3C4BD0AC5E.2010607%40bellsouth.net%3E"
+       TITLE="Patches pushed to berlios/pu/df">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Thu Apr 22 22:06:54 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000275.html">[GIT] fldigi branch, master,	updated: 2bc610505537efdb0582004ea7870cae8a24a05c
+</A></li>
+        <LI>Next message: <A HREF="000277.html">4800 bps GMSK?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#276">[ date ]</a>
+              <a href="thread.html#276">[ thread ]</a>
+              <a href="subject.html#276">[ subject ]</a>
+              <a href="author.html#276">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>commit 3cca5a1836dc6c44344b1e25bd21152b147e7dab
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Apr 22 15:04:58 2010 -0500
+
+    Freq Control Font
+    
+      Modified Frequency Control widget to allow selection of font
+      Added configuration item and support to allow user to select
+      font used for the Frequency Control.
+
+commit 16345cfcd28727960d91f3f15046791c86d22b60
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Thu Apr 22 05:27:55 2010 -0500
+
+    Add preliminary support for FLTK-1.3
+    
+      * Bundle Fl_Text_Buffer from FLTK 1.1, renamed as Fl_Text_Buffer_mod.
+      * Bundle Fl_Text_{Buffer,Display,Editor} from FLTK 1.3, renamed as
+        above.  Apply most of Fl_Text_Display-&gt;Fl_Text_Display_mod changes
+        to the 1.3 Fl_Text_Display.
+      * Detect FLTK API at configure time and define macros to determine
+        version of the *Text* files will be built.
+
+commit ab092a6f1ee08ce56f7db04aea20fb0615f907b1
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Apr 16 19:01:32 2010 -0500
+
+    psk reporter mode
+    
+      Added mode specifier to spot_recv and viewaddchr
+      Allows continued correct psk31 reporting from pskviewer when
+      a mode such as QPSK or PSKR is being used in the primary
+      decoder channel.
+
+commit 6c15ddde0e552f0ed8a3768061d4f10ea226deca
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Apr 13 16:34:09 2010 -0500
+
+    Psk Viewer Min Width
+    
+      Changed initial default width to 30 for ease of viewing on
+      1024 x 800 screen.
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20100422/e9f2fe56/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20100422/e9f2fe56/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000275.html">[GIT] fldigi branch, master,	updated: 2bc610505537efdb0582004ea7870cae8a24a05c
+</A></li>
+	<LI>Next message: <A HREF="000277.html">4800 bps GMSK?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#276">[ date ]</a>
+              <a href="thread.html#276">[ thread ]</a>
+              <a href="subject.html#276">[ subject ]</a>
+              <a href="author.html#276">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

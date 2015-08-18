@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> LInux: fldigi-3.22.0AA: E: getMenuItem: FIXME: could not find menu	&quot;C&amp;ountries&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20LInux%3A%20fldigi-3.22.0AA%3A%20E%3A%20getMenuItem%3A%20FIXME%3A%20could%20not%20find%20menu%0A%09%22C%26ountries%22&In-Reply-To=%3C4DE71BE3.1080908%40hundstad.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000635.html">
+   <LINK REL="Next"  HREF="000637.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>LInux: fldigi-3.22.0AA: E: getMenuItem: FIXME: could not find menu	&quot;C&amp;ountries&quot;</H1>
+    <B>Jeffrey E. Hundstad</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20LInux%3A%20fldigi-3.22.0AA%3A%20E%3A%20getMenuItem%3A%20FIXME%3A%20could%20not%20find%20menu%0A%09%22C%26ountries%22&In-Reply-To=%3C4DE71BE3.1080908%40hundstad.net%3E"
+       TITLE="LInux: fldigi-3.22.0AA: E: getMenuItem: FIXME: could not find menu	&quot;C&amp;ountries&quot;">jeffrey at hundstad.net
+       </A><BR>
+    <I>Thu Jun  2 07:13:07 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000635.html">Odd behavior on Mac
+</A></li>
+        <LI>Next message: <A HREF="000637.html">Reporting fldigi Runtime Error with Fedora fc15
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#636">[ date ]</a>
+              <a href="thread.html#636">[ thread ]</a>
+              <a href="subject.html#636">[ subject ]</a>
+              <a href="author.html#636">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+I'm trying to diagnose a problem with the stock Debian/SID fldigi 
+package.  It give the error in the subject.  While doing this I've 
+started with the most recent version of your git archive 3.22.0AA and it 
+throws the same message.  The fltk library difference seems to be a 
+likely suspect.
+
+I have gotten YOUR precompiled version at 
+<A HREF="http://www.w1hkj.com/downloads/fldigi/fldigi-3.21.10.bin.tgz">http://www.w1hkj.com/downloads/fldigi/fldigi-3.21.10.bin.tgz</A> to work 
+just fine.  It appears you are using the fltk-1.2.0 library in this 
+version.  This library is not generally available.  It appears that the 
+latest version of the fltk-1.x version is fltk-1.1.10.
+<A HREF="http://www.fltk.org/articles.php?L825">http://www.fltk.org/articles.php?L825</A>
+<A HREF="http://www.fltk.org/software.php">http://www.fltk.org/software.php</A>
+
+fldigi throws a signal 11 during dialogs/fl_digi.cxx:4635
+     getMenuItem(COUNTRIES_MLABEL)-&gt;hide()
+
+This is the (non-cxx nuked) stack trace:
+     main () at main.cxx:285
+     create_fl_digi_main () at fl_digi.cxx:5162
+     create_fl_digi_main_primary () at fl_digi.cx:4635
+     Fl_Menu_Item::hide () at Fl_Menu_Item.H:104
+
+
+Here's the debug compiled version of 3.22.0AA's error report:
+
+----begin----
+E: getMenuItem: FIXME: could not find menu &quot;C&amp;ountries&quot;
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+./fldigi(_Z9diediediev+0xaa)[0x8277b36]
+./fldigi(_Z13handle_signali+0x19)[0x8277d5c]
+[0xb77e3400]
+./fldigi(_ZN12Fl_Menu_Item4hideEv+0x6)[0x81eac28]
+./fldigi(_Z27create_fl_digi_main_primaryv+0x693d)[0x81e201e]
+./fldigi(_Z19create_fl_digi_mainiPPc+0x1d)[0x81e611d]
+./fldigi(main+0x4b9)[0x822c61d]
+/lib/i686/cmov/libc.so.6(__libc_start_main+0xe6)[0xb6f58e46]
+./fldigi[0x81754bd]
+
+****** Version information:
+fldigi 3.22.0AA
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi 
+Chateauneu, and others.
+License GPLv3+: GNU GPL version 3 or later 
+&lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+   built          : Wed Jun  1 23:45:42 CDT 2011 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">j3gum at jeffrey</A> on 
+i686-pc-linux-gnu for i686-pc-linux-gnu
+
+   configure flags: '--enable-debug'
+
+   compiler       : gcc version 4.6.1 20110526 (prerelease) (Debian 
+4.6.0-10)
+
+   compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml 
+-I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -pthread 
+-I/usr/include/freetype2 -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT 
+-I/usr/include/libpng12 -I/usr/include -pipe -Wall -fexceptions -O2 
+-ffast-math -finline-functions -O0 -fno-inline-functions -ggdb3 -Wall 
+-UNDEBUG
+
+   linker flags   : -rdynamic -lportaudio -lasound -lm -lpthread 
+-lfltk_images -lfltk -lX11 -lsndfile -lsamplerate -lpulse-simple -lpulse 
+-lhamlib -lm -lpng12 -L/usr/lib -lxmlrpc_server_abyss++ 
+-lxmlrpc_server++ -lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss 
+-lpthread -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse 
+-lxmlrpc_xmltok -ldl -lrt -lpthread
+
+   libraries      : FLTK 1.1.10
+                    libsamplerate 0.1.7
+                    libsndfile 1.0.24
+                    PortAudio 19
+                    PulseAudio 0.9.21-rebootstrapped-dirty
+                    Hamlib 1.2.13.1
+                    XMLRPC-C 1.16.33
+
+
+Runtime information:
+   system         : Linux jeffrey 2.6.39-1-686-pae #1 SMP Fri May 20 
+20:40:05 UTC 2011 i686
+
+   libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                    libsndfile-1.0.24
+                    PortAudio V19-devel (built Apr 16 2011 19:01:27) 1899
+                    Pulseaudio 0.9.21-rebootstrapped-dirty
+                    Hamlib 1.2.13.1
+----END----
+
+If there's anything I can do to help diag. this please let me know.  I'd 
+be glad to help.
+
+-- 
+Jeffrey Hundstad
+ARS: WE0A
+Mankato, MN
+Grid: EN34ad
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000635.html">Odd behavior on Mac
+</A></li>
+	<LI>Next message: <A HREF="000637.html">Reporting fldigi Runtime Error with Fedora fc15
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#636">[ date ]</a>
+              <a href="thread.html#636">[ thread ]</a>
+              <a href="subject.html#636">[ subject ]</a>
+              <a href="author.html#636">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

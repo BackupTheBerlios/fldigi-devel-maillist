@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> PacModem -&gt; PCMODE
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20PacModem%20-%3E%20PCMODE&In-Reply-To=%3C08662EB3BCA112439F2E8561805925A103BBAB1435%40SCSU81.campus.stcloudstate.edu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000614.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>PacModem -&gt; PCMODE</H1>
+    <B>Phelps, John  . [phjo1001@stcloudstate.edu]</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20PacModem%20-%3E%20PCMODE&In-Reply-To=%3C08662EB3BCA112439F2E8561805925A103BBAB1435%40SCSU81.campus.stcloudstate.edu%3E"
+       TITLE="PacModem -&gt; PCMODE">phjo1001 at stcloudstate.edu
+       </A><BR>
+    <I>Wed Mar 30 01:37:40 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000614.html">Packet modem / High Baud rate DominoEX---THOR
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#615">[ date ]</a>
+              <a href="thread.html#615">[ thread ]</a>
+              <a href="subject.html#615">[ subject ]</a>
+              <a href="author.html#615">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Dave,
+
+Apologies for the delay, our entire household managed to get the flu. I have modified the patch you sent me and changed the names of the modes to match the conventions already used within Fldigi.
+
+Summary of the changes:
+* Name changed from Pacmodem to PCMODE to alleviate confusion. (Not really a modem, but a mode)
+* Modes now categorized by the baud rate rather than the bitrate.
+* Modes listed as &quot;R&quot; for robust instead if &quot;F&quot; for forward error correction.
+
+Still on my todo list:
+* Find a non-intrusive way to force FEC off when using PCMODE85 and PCMODE125 (DominoEX).
+* Is the current Interleaver length optimal for this baud rate? Currently 40 bits in PCMODE125R is 80ms.
+* Had a knowledgeable individual recommend adding scrambling/randomization to the modem to increase robustness with little extra overhead... opinions welcome. 
+
+Also, my account name for BerliOS is: KL4YFD
+
+
+
+Thank you for all your help, 
+~John Phelps
+KL4YFD
+
+
+
+
+
+
+
+
+
+
+________________________________________
+From: w1hkj [<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>]
+Sent: Friday, March 25, 2011 7:24 PM
+To: Phelps, John  . [<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">phjo1001 at stcloudstate.edu</A>]
+Subject: Re: New FlDigi Mode: PacModem  (patch included)
+
+John,
+
+I am merging some work by one of the developers (packet) with the
+development branch.  At the same time I want to introduce your modem
+work.  I think it might be best if your new modem's were named in the
+DOMINIO and THOR vernacular as that will avoid the appearance of being a
+&quot;packet&quot; type of mode.  It also will provide a better link to the
+existing modem types, i.e. the WF has the same appearance.
+
+
+Dave
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: pcmode-0.7.patch
+Type: text/x-patch
+Size: 9779 bytes
+Desc: pcmode-0.7.patch
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20110329/c097c822/attachment.bin">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20110329/c097c822/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000614.html">Packet modem / High Baud rate DominoEX---THOR
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#615">[ date ]</a>
+              <a href="thread.html#615">[ thread ]</a>
+              <a href="subject.html#615">[ subject ]</a>
+              <a href="author.html#615">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

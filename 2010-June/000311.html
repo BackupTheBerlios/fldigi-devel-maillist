@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.20,	updated: 5057f711f4b7045db7f3b4168753ef426874c221
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.20%2C%0A%09updated%3A%205057f711f4b7045db7f3b4168753ef426874c221&In-Reply-To=%3C201006101523.o5AFNjhk017927%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000310.html">
+   <LINK REL="Next"  HREF="000312.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.20,	updated: 5057f711f4b7045db7f3b4168753ef426874c221</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.20%2C%0A%09updated%3A%205057f711f4b7045db7f3b4168753ef426874c221&In-Reply-To=%3C201006101523.o5AFNjhk017927%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.20,	updated: 5057f711f4b7045db7f3b4168753ef426874c221">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Thu Jun 10 17:23:45 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000310.html">[Fwd: [Fwd: Re: Translations for amateur radio apps]]
+</A></li>
+        <LI>Next message: <A HREF="000312.html">fldigi crash in F13
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#311">[ date ]</a>
+              <a href="thread.html#311">[ thread ]</a>
+              <a href="subject.html#311">[ subject ]</a>
+              <a href="author.html#311">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.20 has been updated
+       via  5057f711f4b7045db7f3b4168753ef426874c221 (commit)
+       via  caff457f072d43bcc92d832bef85c99a60755875 (commit)
+       via  52dc87d3169b079adfba7f0191f39db0acc02280 (commit)
+      from  c80c28e238ad660c6bb8cf18c0f3b5ecfede00b4 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=5057f711f4b7045db7f3b4168753ef426874c221">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=5057f711f4b7045db7f3b4168753ef426874c221</A>
+
+commit 5057f711f4b7045db7f3b4168753ef426874c221
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Jun 10 09:06:25 2010 -0500
+
+    Version 3.20.15
+    
+      Maintenance release
+
+ 4 files changed, 2275 insertions(+), 2008 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=caff457f072d43bcc92d832bef85c99a60755875">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=caff457f072d43bcc92d832bef85c99a60755875</A>
+
+commit caff457f072d43bcc92d832bef85c99a60755875
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Jun 10 09:01:47 2010 -0500
+
+    RTTY 75 baud
+    
+      Removed RTTY-75 from menu structures
+      Added RTTY-75N, 75 baud, 5 bit, 170 Hz shift
+      Added RTTY-75W, 75 baud, 5 bit, 850 Hz shift
+
+ 1 files changed, 18 insertions(+), 5 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=52dc87d3169b079adfba7f0191f39db0acc02280">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=52dc87d3169b079adfba7f0191f39db0acc02280</A>
+
+commit 52dc87d3169b079adfba7f0191f39db0acc02280
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Jun 10 09:00:39 2010 -0500
+
+    Read Config
+    
+      Increased buffer size used for line input from file
+      fldigi_def.xml
+
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                  |    8 +-
+ configure.ac               |    2 +-
+ po/fldigi.pot              | 2112 +++++++++++++++++++++++--------------------
+ po/fr.po                   | 2161 +++++++++++++++++++++++---------------------
+ src/dialogs/fl_digi.cxx    |   23 +-
+ src/misc/configuration.cxx |    2 +-
+ 6 files changed, 2294 insertions(+), 2014 deletions(-)
+  99.0% po/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000310.html">[Fwd: [Fwd: Re: Translations for amateur radio apps]]
+</A></li>
+	<LI>Next message: <A HREF="000312.html">fldigi crash in F13
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#311">[ date ]</a>
+              <a href="thread.html#311">[ thread ]</a>
+              <a href="subject.html#311">[ subject ]</a>
+              <a href="author.html#311">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

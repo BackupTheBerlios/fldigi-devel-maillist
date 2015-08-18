@@ -1,0 +1,334 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [fldigi] #7: fldigi 3.13BY crash
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5Bfldigi%5D%20%237%3A%20fldigi%203.13BY%20crash&In-Reply-To=%3C068.dd52c28fa31aa49df2d209c4de310e12%40fedorahosted.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000219.html">
+   <LINK REL="Next"  HREF="000221.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[fldigi] #7: fldigi 3.13BY crash</H1>
+    <B>fldigi</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5Bfldigi%5D%20%237%3A%20fldigi%203.13BY%20crash&In-Reply-To=%3C068.dd52c28fa31aa49df2d209c4de310e12%40fedorahosted.org%3E"
+       TITLE="[fldigi] #7: fldigi 3.13BY crash">trac at fedorahosted.org
+       </A><BR>
+    <I>Fri Feb 19 05:15:35 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000219.html">[fldigi] #6: PTT is good, but no power on transmissions
+</A></li>
+        <LI>Next message: <A HREF="000221.html">[GIT] fldigi branch, master,	updated: 1c18ad2c7ba0a7b8f60dc5d364180938a436ac18
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#220">[ date ]</a>
+              <a href="thread.html#220">[ thread ]</a>
+              <a href="subject.html#220">[ subject ]</a>
+              <a href="author.html#220">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>#7: fldigi 3.13BY crash
+--------------------------------------+-------------------------------------
+ Reporter:  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">provero at ct.metrocast.net</A>  |        Type:  defect
+   Status:  new                       |   Milestone:        
+Component:  general                   |     Version:        
+ Severity:  normal                    |    Keywords:        
+--------------------------------------+-------------------------------------
+ Monitoring MT63, sent manual spotting report, crash.  Details:
+
+ V: append: Added (call=&quot;W1OER&quot;, loc=&quot;&quot;, mode=&quot;MT63&quot;, freq=3584710,
+ time=1266552696, type=3)
+ *** glibc detected *** fldigi: corrupted double-linked list:
+ 0x0000000003ccfd00 ***
+ ======= Backtrace: =========
+ /lib64/libc.so.6[0x376a077ec8]
+ /lib64/libc.so.6[0x376a07b543]
+ /lib64/libc.so.6[0x376a07bf24]
+ /lib64/libc.so.6(realloc+0x12e)[0x376a07cfbe]
+ /usr/lib64/libX11.so.6[0x324bc3c96b]
+ /usr/lib64/libX11.so.6[0x324bc3d122]
+ /usr/lib64/libX11.so.6(XUnionRegion+0xcf)[0x324bc3d4ef]
+ /usr/lib64/libX11.so.6(XUnionRectWithRegion+0x69)[0x324bc3d609]
+ /usr/lib64/libfltk.so.1.1(_ZN9Fl_Widget6damageEhiiii+0x10f)[0x324d42f97f]
+ /usr/lib64/libfltk.so.1.1(_ZN9Fl_Widget12redraw_labelEv+0x9d)[0x324d42fc9d]
+ fldigi[0x4352a2]
+ fldigi[0x44aa7c]
+ fldigi[0x4e0ec3]
+ /usr/lib64/libfltk.so.1.1(_Z7fl_waitd+0x404)[0x324d478574]
+ /usr/lib64/libfltk.so.1.1(_ZN2Fl4waitEd+0x118)[0x324d4310c8]
+ /usr/lib64/libfltk.so.1.1(_ZN2Fl3runEv+0x1d)[0x324d4311ed]
+ fldigi[0x4890b0]
+ /lib64/libc.so.6(__libc_start_main+0xe6)[0x376a01e576]
+ fldigi[0x4128e9]
+ ======= Memory map: ========
+ 00400000-005c8000 r-xp 00000000 08:03 3822775
+ /usr/local/bin/fldigi
+ 007c7000-007ff000 rw-p 001c7000 08:03 3822775
+ /usr/local/bin/fldigi
+ 007ff000-0082d000 rw-p 007ff000 00:00 0
+ 027a3000-03f2d000 rw-p 027a3000 00:00 0
+ [heap]
+ 324b400000-324b41b000 r-xp 00000000 08:03 3815142
+ /usr/lib64/libxcb.so.1.0.0
+ 324b41b000-324b61a000 ---p 0001b000 08:03 3815142
+ /usr/lib64/libxcb.so.1.0.0
+ 324b61a000-324b61b000 rw-p 0001a000 08:03 3815142
+ /usr/lib64/libxcb.so.1.0.0
+ 324b800000-324b801000 r-xp 00000000 08:03 3815144
+ /usr/lib64/libxcb-xlib.so.0.0.0
+ 324b801000-324ba00000 ---p 00001000 08:03 3815144
+ /usr/lib64/libxcb-xlib.so.0.0.0
+ 324ba00000-324ba01000 rw-p 00000000 08:03 3815144
+ /usr/lib64/libxcb-xlib.so.0.0.0
+ 324bc00000-324bd05000 r-xp 00000000 08:03 3815212
+ /usr/lib64/libX11.so.6.2.0
+ 324bd05000-324bf05000 ---p 00105000 08:03 3815212
+ /usr/lib64/libX11.so.6.2.0
+ 324bf05000-324bf0b000 rw-p 00105000 08:03 3815212
+ /usr/lib64/libX11.so.6.2.0
+ 324c000000-324c010000 r-xp 00000000 08:03 3813970
+ /usr/lib64/libXext.so.6.4.0
+ 324c010000-324c210000 ---p 00010000 08:03 3813970
+ /usr/lib64/libXext.so.6.4.0
+ 324c210000-324c211000 rw-p 00010000 08:03 3813970
+ /usr/lib64/libXext.so.6.4.0
+ 324c400000-324c427000 r-xp 00000000 08:03 3714116
+ /lib64/libexpat.so.1.5.2
+ 324c427000-324c626000 ---p 00027000 08:03 3714116
+ /lib64/libexpat.so.1.5.2
+ 324c626000-324c629000 rw-p 00026000 08:03 3714116
+ /lib64/libexpat.so.1.5.2
+ 324c800000-324c830000 r-xp 00000000 08:03 3821481
+ /usr/lib64/libfontconfig.so.1.3.0
+ 324c830000-324ca2f000 ---p 00030000 08:03 3821481
+ /usr/lib64/libfontconfig.so.1.3.0
+ 324ca2f000-324ca31000 rw-p 0002f000 08:03 3821481
+ /usr/lib64/libfontconfig.so.1.3.0
+ 324cc00000-324cc09000 r-xp 00000000 08:03 3815365
+ /usr/lib64/libXrender.so.1.3.0
+ 324cc09000-324ce08000 ---p 00009000 08:03 3815365
+ /usr/lib64/libXrender.so.1.3.0
+ 324ce08000-324ce09000 rw-p 00008000 08:03 3815365
+ /usr/lib64/libXrender.so.1.3.0
+ 324d000000-324d002000 r-xp 00000000 08:03 3821480
+ /usr/lib64/libXinerama.so.1.0.0
+ 324d002000-324d201000 ---p 00002000 08:03 3821480
+ /usr/lib64/libXinerama.so.1.0.0
+ 324d201000-324d202000 rw-p 00001000 08:03 3821480
+ /usr/lib64/libXinerama.so.1.0.0
+ 324d400000-324d4a1000 r-xp 00000000 08:03 3823185
+ /usr/lib64/libfltk.so.1.1
+ 324d4a1000-324d6a1000 ---p 000a1000 08:03 3823185
+ /usr/lib64/libfltk.so.1.1
+ 324d6a1000-324d6a9000 rw-p 000a1000 08:03 3823185
+ /usr/lib64/libfltk.so.1.1
+ 324d6a9000-324d6ae000 rw-p 324d6a9000 00:00 0
+ 324d800000-324d80f000 r-xp 00000000 08:03 3838411
+ /usr/lib64/libfltk_images.so.1.1
+ 324d80f000-324da0e000 ---p 0000f000 08:03 3838411
+ /usr/lib64/libfltk_images.so.1.1
+ 324da0e000-324da0f000 rw-p 0000e000 08:03 3838411
+ /usr/lib64/libfltk_images.so.1.1
+ 324dc00000-324dc2a000 r-xp 00000000 08:03 3838141
+ /usr/lib64/libportaudio.so.2.0.0
+ 324dc2a000-324de2a000 ---p 0002a000 08:03 3838141
+ /usr/lib64/libportaudio.so.2.0.0
+ 324de2a000-324de2b000 rw-p 0002a000 08:03 3838141
+ /usr/lib64/libportaudio.so.2.0.0
+ 324de2b000-324de2c000 rw-p 324de2b000 00:00 0
+ 3250600000-3250611000 r-xp 00000000 08:03 3832951
+ /usr/lib64/libjack.so.0.0.28
+ 3250611000-3250810000 ---p 00011000 08:03 3832951
+ /usr/lib64/libjack.so.0.0.28
+ 3250810000-3250812000 rw-p 00010000 08:03 3832951
+ /usr/lib64/libjack.so.0.0.28
+ 3250812000-325081a000 rw-p 3250812000 00:00 0
+ 3250a00000-3250a14000 r-xp 00000000 08:03 3820400
+ /usr/lib64/libXft.so.2.1.13
+ 3250a14000-3250c13000 ---p 00014000 08:03 3820400
+ /usr/lib64/libXft.so.2.1.13
+ 3250c13000-3250c14000 rw-p 00013000 08:03 3820400
+ /usr/lib64/libXft.so.2.1.13
+ 3708600000-37086dd000 r-xp 00000000 08:03 3713810
+ /lib64/libasound.so.2.0.0
+ 37086dd000-37088dc000 ---p 000dd000 08:03 3713810
+ /lib64/libasound.so.2.0.0
+ 37088dc000-37088e4000 rw-p 000dc000 08:03 3713810
+ /lib64/libasound.so.2.0.0
+ 3768c00000-3768c20000 r-xp 00000000 08:03 3713878
+ /lib64/ld-2.9.so
+ 3768e1f000-3768e20000 r--p 0001f000 08:03 3713878
+ /lib64/ld-2.9.so
+ 3768e20000-3768e21000 rw-p 00020000 08:03 3713878
+ /lib64/ld-2.9.so
+ 376a000000-376a168000 r-xp 00000000 08:03 3713987
+ /lib64/libc-2.9.so
+ 376a168000-376a368000 ---p 00168000 08:03 3713987
+ /lib64/libc-2.9.so
+ 376a368000-376a36c000 r--p 00168000 08:03 3713987
+ /lib64/libc-2.9.so
+ 376a36c000-376a36d000 rw-p 0016c000 08:03 3713987
+ /lib64/libc-2.9.so
+ 376a36d000-376a372000 rw-p 376a36d000 00:00 0
+ 376a400000-376a484000 r-xp 00000000 08:03 3714321
+ /lib64/libm-2.9.so
+ 376a484000-376a683000 ---p 00084000 08:03 3714321
+ /lib64/libm-2.9.so
+ 376a683000-376a684000 r--p 00083000 08:03 3714321
+ /lib64/libm-2.9.so
+ 376a684000-376a685000 rw-p 00084000 08:03 3714321
+ /lib64/libm-2.9.so
+ 376a800000-376a802000 r-xp 00000000 08:03 3713931
+ /lib64/libdl-2.9.so
+ 376a802000-376aa02000 ---p 00002000 08:03 3713931
+ /lib64/libdl-2.9.so
+ 376aa02000-376aa03000 r--p 00002000 08:03 3713931
+ /lib64/libdl-2.9.so
+ 376aa03000-376aa04000 rw-p 00003000 08:03 3713931
+ /lib64/libdl-2.9.so
+ 376ac00000-376ac17000 r-xp 00000000 08:03 3714318
+ /lib64/libpthread-2.9.so
+ 376ac17000-376ae16000 ---p 00017000 08:03 3714318
+ /lib64/libpthread-2.9.so
+ 376ae16000-376ae17000 r--p 00016000 08:03 3714318
+ /lib64/libpthread-2.9.so
+ 376ae17000-376ae18000 rw-p 00017000 08:03 3714318
+ /lib64/libpthread-2.9.so
+ 376ae18000-376ae1c000 rw-p 376ae18000 00:00 0
+ 376b000000-376b015000 r-xp 00000000 08:03 3713942
+ /lib64/libz.so.1.2.3
+ 376b015000-376b214000 ---p 00015000 08:03 3713942
+ /lib64/libz.so.1.2.3
+ 376b214000-376b215000 rw-p 00014000 08:03 3713942
+ /lib64/libz.so.1.2.3
+ 376b800000-376b808000 r-xp 00000000 08:03 3714319
+ /lib64/librt-2.9.so
+ 376b808000-376ba07000 ---p 00008000 08:03 3714319
+ /lib64/librt-2.9.so
+ 376ba07000-376ba08000 r--p 00007000 08:03 3714319
+ /lib64/librt-2.9.so
+ 376ba08000-376ba09000 rw-p 00008000 08:03 3714319
+ /lib64/librt-2.9.so
+ 376c800000-376c805000 r-xp 00000000 08:03 3816061
+ /usr/lib64/libXdmcp.so.6.0.0
+ 376c805000-376ca04000 ---p 00005000 08:03 3816061
+ /usr/lib64/libXdmcp.so.6.0.0
+ 376ca04000-376ca05000 rw-p 00004000 08:03 3816061
+ /usr/lib64/libXdmcp.so.6.0.0
+ 376cc00000-376cc02000 r-xp 00000000 08:03 3816040
+ /usr/lib64/libXau.so.6.0.0
+ 376cc02000-376ce01000 ---p 00002000 08:03 3816040
+ /usr/lib64/libXau.so.6.0.0
+ 376ce01000-376ce02000 rw-p 00001000 08:03 3816040
+ /usr/lib64/libXau.so.6.0.0
+ 376e000000-376e093000 r-xp 00000000 08:03 3815598
+ /usr/lib64/libfreetype.so.6.3.18
+ 376e093000-376e292000 ---p 00093000 08:03 3815598
+ /usr/lib64/libfreetype.so.6.3.18
+ 376e292000-376e298000 rw-p 00092000 08:03 3815598
+ Caught signal 6
+ Aborting fldigi due to a fatal error.
+ Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+ or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+ ****** Stack trace:
+ fldigi[0x4c0153]
+ /lib64/libpthread.so.0[0x376ac0f0f0]
+ /lib64/libc.so.6(gsignal+0x35)[0x376a032f05]
+ /lib64/libc.so.6(abort+0x183)[0x376a034a73]
+ /lib64/libc.so.6[0x376a072438]
+ /lib64/libc.so.6[0x376a077ec8]
+ /lib64/libc.so.6[0x376a07b543]
+ /lib64/libc.so.6[0x376a07bf24]
+ /lib64/libc.so.6(realloc+0x12e)[0x376a07cfbe]
+ /usr/lib64/libX11.so.6[0x324bc3c96b]
+ /usr/lib64/libX11.so.6[0x324bc3d122]
+ /usr/lib64/libX11.so.6(XUnionRegion+0xcf)[0x324bc3d4ef]
+ /usr/lib64/libX11.so.6(XUnionRectWithRegion+0x69)[0x324bc3d609]
+ /usr/lib64/libfltk.so.1.1(_ZN9Fl_Widget6damageEhiiii+0x10f)[0x324d42f97f]
+ /usr/lib64/libfltk.so.1.1(_ZN9Fl_Widget12redraw_labelEv+0x9d)[0x324d42fc9d]
+ fldigi[0x4352a2]
+ fldigi[0x44aa7c]
+ fldigi[0x4e0ec3]
+ /usr/lib64/libfltk.so.1.1(_Z7fl_waitd+0x404)[0x324d478574]
+ /usr/lib64/libfltk.so.1.1(_ZN2Fl4waitEd+0x118)[0x324d4310c8]
+ /usr/lib64/libfltk.so.1.1(_ZN2Fl3runEv+0x1d)[0x324d4311ed]
+ fldigi[0x4890b0]
+ /lib64/libc.so.6(__libc_start_main+0xe6)[0x376a01e576]
+ fldigi[0x4128e9]
+
+ ****** Version information:
+ fldigi 3.13BY
+ Copyright (C) 2008, 2009 Dave Freese, Stelios Bounanos, Leigh Klotz, and
+ others.
+ License GPLv2+: GNU GPL version 2 or later
+ &lt;<A HREF="http://www.gnu.org/licenses/gpl-2.0.html">http://www.gnu.org/licenses/gpl-2.0.html</A>&gt;
+ This is free software: you are free to change and redistribute it.
+ There is NO WARRANTY, to the extent permitted by law.
+
+ ****** Build information:
+ Build information:
+   built          : Thu Feb 18 07:10:18 EST 2010 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">josh at simoom.rovero.net</A>
+ on x86_64-unknown-linux-gnu for x86_64-unknown-linux-gnu
+
+   configure flags:
+
+   compiler       : gcc version 4.3.2 20081105 (Red Hat 4.3.2-7) (GCC)
+
+   compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+ -I$(srcdir)/fileselector -pthread -I/usr/include/freetype2
+ -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+ -I/usr/include/libpng12 -pipe -Wall -fexceptions -O2 -ffast-math -finline-
+ functions -DNDEBUG
+
+   linker flags   : -lportaudio -lm -lpthread -lfltk_images -lpng -lz
+ -ljpeg -lfltk -lX11 -lsamplerate -lhamlib -lm -lpng12 -ldl -lrt -lpthread
+
+   libraries      : FLTK 1.1.9
+                    libsamplerate 0.1.4
+                    PortAudio 19
+                    Hamlib 1.2.8
+
+ Runtime information:
+   system         : Linux simoom.rovero.net 2.6.27.41-170.2.117.fc10.x86_64
+ #1 SMP Thu Dec 10 10:36:29 EST 2009 x86_64
+
+   libraries      : libsamplerate-0.1.4 (c) 2002-2008 Erik de Castro Lopo
+                    PortAudio V19-devel (built Dec 10 2008) 1899
+                    Hamlib version 1.2.8
+
+-- 
+Ticket URL: &lt;<A HREF="https://fedorahosted.org/fldigi/ticket/7">https://fedorahosted.org/fldigi/ticket/7</A>&gt;
+fldigi &lt;<A HREF="http://www.w1hkj.com/Fldigi.html">http://www.w1hkj.com/Fldigi.html</A>&gt;
+Digital modem program for radio amateurs
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000219.html">[fldigi] #6: PTT is good, but no power on transmissions
+</A></li>
+	<LI>Next message: <A HREF="000221.html">[GIT] fldigi branch, master,	updated: 1c18ad2c7ba0a7b8f60dc5d364180938a436ac18
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#220">[ date ]</a>
+              <a href="thread.html#220">[ thread ]</a>
+              <a href="subject.html#220">[ subject ]</a>
+              <a href="author.html#220">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

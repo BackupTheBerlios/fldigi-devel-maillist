@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Proposal: Extension of QSY macro to several frequencies
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Proposal%3A%20Extension%20of%20QSY%20macro%20to%20several%20frequencies&In-Reply-To=%3C4E6B0F93.8080909%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000681.html">
+   <LINK REL="Next"  HREF="000684.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Proposal: Extension of QSY macro to several frequencies</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Proposal%3A%20Extension%20of%20QSY%20macro%20to%20several%20frequencies&In-Reply-To=%3C4E6B0F93.8080909%40gmail.com%3E"
+       TITLE="Proposal: Extension of QSY macro to several frequencies">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Sat Sep 10 09:19:47 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000681.html">[GIT] fldigi branch, master,	updated: 213b4b6d9d12a306c35702ffc0d96df83b556f2e
+</A></li>
+        <LI>Next message: <A HREF="000684.html">[PATCH 1/2] Sync italian translation to 3.22.0AL
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#682">[ date ]</a>
+              <a href="thread.html#682">[ thread ]</a>
+              <a href="subject.html#682">[ subject ]</a>
+              <a href="author.html#682">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+Here is the description of a small extension to the macro QSY:
+
+At the moment, here is what QSY does:
+
+&lt;QSY:FFF.F[:NNNN]&gt;      qsy to transceiver frequency kHz, optional water 
+frequency Hz
+
+The proposed fix is to add several frequencies and frequency ranges 
+instead of just one, like that:
+
+&lt;QSY:F1;F2;F3[:NNNN]&gt;
+
+... or, with frequency increments:
+&lt;QSY:F1+D1;F2+D2;F3[:NNNN]&gt;
+
+The increments D1, D2 ... represent frequency intervals, that is, a 
+shorter way to write:
+
+&lt;QSY:F1;F1+D2;F1+2*D1;F1+3*D1 ... F2;F2+D2;F2+2*D2 ... ;F3:NNNN&gt;
+
+Here is the new behaviour (Nothing being changed wrt NNNN):
+
+* If the current frequency is smaller that F1, jumps to F1.
+* If the current bigger is bigger that F3, jumps to F1.
+* If the current frequency is in the interval F1-F3, jumps to the next 
+frequency, strictly greater than the current one.
+
+That means:
+* If only one frequency is given like now, nothing is changed.
+* If there are several frequencies, it jumps to the next one each time 
+the macro is run. It allows to try a range of frequencies, and jumps 
+back to the beginning, simply by clicking the macro.
+* If a macro tag &lt;TIME:secs&gt; is added, the macro will automatically try 
+all the frequency range, in a loop. The loop stops when clicking on the 
+waterfall. But can restart at the last freq by rerunning the macro.
+
+What is it made for?
+
+Simple example: Wefax emitters have several frequencies, but one cannot 
+know in advance which one will emit something. Dialing all of them is a 
+pain. Here, just by clicking the macro, you can test all freqs. Here is 
+the macro, which iterates on all frequencies of London Weather fax, with 
+5 seconds tempo:
+
+&lt;RIGMODE:USB&gt;&lt;MODEM:WEFAX576&gt;&lt;QSY:3853.1;7878.1;2616.6;3287.6;4608.1;4780.1;8038.1&gt;&lt;TIME:5&gt;
+
+
+Another example: This macro tries all frequencies of the FM band. Now it 
+is possible to go from one station to the next just by clicking one 
+button (No temporisation):
+&lt;RIGMODE:FM&gt;&lt;QSY:88000+200;108000&gt;
+
+
+The necessary code change implies about 200 new lines in the function 
+pQSY (file misc/macros.cxx), and should not break anything.
+
+Any remark, idea or suggestion?
+
+Thanks
+
+Remi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000681.html">[GIT] fldigi branch, master,	updated: 213b4b6d9d12a306c35702ffc0d96df83b556f2e
+</A></li>
+	<LI>Next message: <A HREF="000684.html">[PATCH 1/2] Sync italian translation to 3.22.0AL
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#682">[ date ]</a>
+              <a href="thread.html#682">[ thread ]</a>
+              <a href="subject.html#682">[ subject ]</a>
+              <a href="author.html#682">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

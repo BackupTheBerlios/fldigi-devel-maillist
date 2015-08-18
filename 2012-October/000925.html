@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Pushed to pu/df on berlios
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Pushed%20to%20pu/df%20on%20berlios&In-Reply-To=%3C508F3E39.5010204%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000924.html">
+   <LINK REL="Next"  HREF="000926.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Pushed to pu/df on berlios</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Pushed%20to%20pu/df%20on%20berlios&In-Reply-To=%3C508F3E39.5010204%40bellsouth.net%3E"
+       TITLE="Pushed to pu/df on berlios">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Tue Oct 30 03:40:57 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000924.html">Compiling fldigi &gt;= 3.21.52 on LMDE with mingw32
+</A></li>
+        <LI>Next message: <A HREF="000926.html">[GIT] fldigi branch, maint/3.21,	updated: eaf28092e30dac47db7ad30a47f6f77412ec774e
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#925">[ date ]</a>
+              <a href="thread.html#925">[ thread ]</a>
+              <a href="subject.html#925">[ subject ]</a>
+              <a href="author.html#925">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Andrej:  I've combined all of your UTF-8 work into a single commit.  
+Also changed the location of the character set selector to the 
+Colors-Fonts dialog and added an entry in the configuration.h file.
+
+All:  You can also download a tarball of this work
+
+<A HREF="http://www.w1hkj.com/alpha/fldigi/v3.21/fldigi-3.21.59AB.tar.gz">http://www.w1hkj.com/alpha/fldigi/v3.21/fldigi-3.21.59AB.tar.gz</A> .. less 
+commit dd765f79f113f20f
+<A HREF="http://www.w1hkj.com/alpha/fldigi/v3.21/fldigi-3.21.59EXP05.tar.gz">http://www.w1hkj.com/alpha/fldigi/v3.21/fldigi-3.21.59EXP05.tar.gz</A> ... 
+with commit dd765f79f113f20f
+
+The thumb drive commit is primarily of use to Microsoft users.
+
+Dave, W1HKJ
+
+commit dd765f79f113f20f878f784ee2d96eef69750e7c
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Oct 29 23:02:52 2012 -0500
+
+     Experimental Modems
+
+       * High speed / Multi-Carrier modems
+         - This commit contributed to by:
+         - John Douyere &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vk2eta at gmail.com</A>&gt;
+         - Dave Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+         - John Phelps &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kl4yfd at gmail.com</A>&gt;
+         - Andrej Lajovic &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">s57ln at hamradio.si</A>&gt;
+       * New high speed and multi carrier modems
+         - psk, pskr
+         - DominoEX
+         - Thor
+       * Added separate modem initialization for
+         Olivia tone / bandwidth pairs:
+         - 4/250, 8/250
+         - 4/500, 8/500, 16/500
+         - 8/1000, 16/1000, 32/1000
+         - 64/2000
+       * RSID changes
+         - Changed RsID detector prefilter to Blackman
+         - Increased extended RsID detection timeout to 1 sec
+       * MFSK UTF-8 tx
+         - corrected transmit of two-byte UTF-8 characters
+       * PSK-UTF-8 tx
+         - corrected transmit of two-byte UTF-8 characters
+
+commit 1d6469f4d150407f53c1b2ab93633bb8fc90a19e
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Oct 26 21:36:36 2012 -0500
+
+     Thumbdrive
+
+       * discover application executable location
+       * if the directory in which &quot;fldigi&quot; / &quot;fldigi.exe&quot; resides
+         contains a file named NBEMS.DIR then base all NBEMS file
+         locations to that drive-folder
+       * this allows a fully portble NBEMS installation
+         to a thumbdrive (or other portable drive)
+       * it also allows a very easy way to install multiple NBEMS suites
+         for different target uses on a single hard drive
+
+commit 0c1f37148b65c183e6d2a303f65eef3f8f2612ff
+Author: Andrej Lajovic &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">s57ln at hamradio.si</A>&gt;
+Date:   Mon Oct 29 12:24:49 2012 -0500
+
+     UTF-8 overhaul
+
+       * Refactor get_tx_char()
+       * Reset to stock version, call byte_at()
+         The class Fl_Text_Buffer_mod (borrowed from FLTK) contained a 
+modified
+         version of the method char_at() that effectively made it behave as
+         byte_at(). Silently modifying a library-provided method not 
+only disables
+         the access to a certain functionality of the library, but can 
+also cause
+         other unforeseen consequences. The method was thus reverted to 
+the stock
+         version and the code that previously called the modified 
+version was
+         changed to call byte_at() instead.
+       * Remove unneeded code in FTextTX::nextChar()
+       * Libtiniconv
+         - Added libtiniconv (charset conversion library)
+         - Library Version 1.0.1 fetched from <A HREF="http://tiniconv.sf.net">http://tiniconv.sf.net</A>
+           A small fix made to change a misspelled macro name.
+           Build system adapted to fit into the fldigi build model.
+       * Added CharsetDistiller class
+         - Sanitize input data and convert it into UTF-8
+         - CharsetDistiller receives input data one byte at a time and 
+converts this
+           data stream from a particular character set into UTF-8. 
+Invalid input data
+           is treated as if it was encoded in CP1252. Character set 
+conversion is
+           performed as soon as possible, i.e., when enough input is 
+received to
+           constitute a valid character in the input character set, this 
+character is
+           immediatly converted into UTF-8 and made available at the output.
+       * Make put_rx_char_flmain() use charsetDistiller
+       * Make put_echo_char() use CharsetDistiller
+       * Make pskBrowser use CharsetDistiller
+       * Added OutputEncoder class
+         - Used for encoding transmitted data
+         - OutputEncoder accepts UTF-8 strings at input, converts them 
+to the
+           selected encoding and outputs them one byte at a time.
+       * TX character set conversion using OutputEncoder
+       * Fix backspace for &gt;2byte UTF-8 characters
+       * Global setting for RX/TX charset
+       * Cleanup modem UTF-8 code
+         - PSK, Olivia, MT63 and MFSK modems:
+           cleanup of unneeded UTF-8 handling code
+         - Everything that deals with output character set conversion 
+and data
+           sequencing is now done using OutputEncoder, so the modems can 
+become
+           completely agnostic about the character set used. As far as 
+they are
+           concerned, everything is just byte-sized data.
+       * Added an array of character set names and identifiers
+       * UTF-8 code cleanup
+         - Cleanup of unneeded UTF-8 handling code in add_rxtx_char() 
+and family
+       * Character set selection menu
+          - Add menu button to select the active TX/RX charset to the 
+colors-fonts
+            configure dialog.  The setting defaults to UTF-8 (selected 
+at program
+            startup).  The selection is saved to the program defaults 
+configuration
+            file when &quot;Config/Save&quot; is executed.
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000924.html">Compiling fldigi &gt;= 3.21.52 on LMDE with mingw32
+</A></li>
+	<LI>Next message: <A HREF="000926.html">[GIT] fldigi branch, maint/3.21,	updated: eaf28092e30dac47db7ad30a47f6f77412ec774e
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#925">[ date ]</a>
+              <a href="thread.html#925">[ thread ]</a>
+              <a href="subject.html#925">[ subject ]</a>
+              <a href="author.html#925">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Occasional spectral inversion of transmitted Olivia signal
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Occasional%20spectral%20inversion%20of%20transmitted%20Olivia%20signal&In-Reply-To=%3CCADoLJ1q2B%3DrfTb%2B9xwRWvh0uNrTrJrU3fee1MauOm2YKTXpU%2BQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001081.html">
+   <LINK REL="Next"  HREF="001083.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Occasional spectral inversion of transmitted Olivia signal</H1>
+    <B>Peter Hamilton</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Occasional%20spectral%20inversion%20of%20transmitted%20Olivia%20signal&In-Reply-To=%3CCADoLJ1q2B%3DrfTb%2B9xwRWvh0uNrTrJrU3fee1MauOm2YKTXpU%2BQ%40mail.gmail.com%3E"
+       TITLE="Occasional spectral inversion of transmitted Olivia signal">lists at g4vlc.net
+       </A><BR>
+    <I>Tue Sep  3 03:18:25 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001081.html">[GIT] fldigi branch, maint/3.21,	updated: 2fb302026be17108905e974a5297e1415f03903e
+</A></li>
+        <LI>Next message: <A HREF="001083.html">Occasional spectral inversion of transmitted Olivia signal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1082">[ date ]</a>
+              <a href="thread.html#1082">[ thread ]</a>
+              <a href="subject.html#1082">[ subject ]</a>
+              <a href="author.html#1082">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This has been seen in 3.21.73 onwards, but not in 3.71.72 and earlier:
+
+Occasionally (fewer than 10% of transmissions) the Olivia spectrum is
+inverted. Easily detected audibly as the usual &quot;dong-ding&quot; preamble is
+transmitted as a &quot;ding-dong&quot;. This is followed by garbage decode at the
+receive end. Simple spectral inversion is confirmed by the receiving
+station clicking the &quot;Rv&quot; button and getting correct decode.
+
+The signal was Olivia 16/500 with TXID enabled. I didn't try it with other
+modes or without TXID. 20 transmit/receive cycles was always enough to
+provoke it with 3.21.73 and 3.21.75, but 100 Tx/Rx cycles didn't cause it
+in 3.21.72.
+
+OS: Debian Wheezy i686
+
+Hardware: EeePC 901 netbook
+
+Compiled from source. Output from ./configure attached
+
+Several different sound devices were tried (onboard, Signalink USB and
+generic USB) without change.
+
+
+--
+
+Peter (G4VLC)
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130903/d4fed02f/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130903/d4fed02f/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: fldigi-75.cfg
+Type: application/octet-stream
+Size: 8113 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130903/d4fed02f/attachment.obj">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130903/d4fed02f/attachment.obj</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001081.html">[GIT] fldigi branch, maint/3.21,	updated: 2fb302026be17108905e974a5297e1415f03903e
+</A></li>
+	<LI>Next message: <A HREF="001083.html">Occasional spectral inversion of transmitted Olivia signal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1082">[ date ]</a>
+              <a href="thread.html#1082">[ thread ]</a>
+              <a href="subject.html#1082">[ subject ]</a>
+              <a href="author.html#1082">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

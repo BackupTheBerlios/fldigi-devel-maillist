@@ -1,0 +1,368 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.21.68synop posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.68synop%20posted&In-Reply-To=%3CCACMWOgsDj%3D5v3PPBR9P0hrp%2BPcXBhN1p%2BnG7YOJuDtmxf4KNKQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000997.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.21.68synop posted</H1>
+    <B>Remi Chateauneu</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.68synop%20posted&In-Reply-To=%3CCACMWOgsDj%3D5v3PPBR9P0hrp%2BPcXBhN1p%2BnG7YOJuDtmxf4KNKQ%40mail.gmail.com%3E"
+       TITLE="fldigi-3.21.68synop posted">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Wed Apr  3 16:51:06 CEST 2013</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000997.html">Fwd: [pskmail] Re: New Client 2.0.33 and server 2.0.17
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#996">[ date ]</a>
+              <a href="thread.html#996">[ thread ]</a>
+              <a href="subject.html#996">[ subject ]</a>
+              <a href="author.html#996">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i> Zipping up all of the synop data files in the data directory:
+</I>&gt;<i> -rw-rw-r-- 1 dave dave 492320 Apr  3 07:26 data/navtex.zip
+</I>&gt;<i> which is still about 10% of the parent binary, a considerable burden.
+</I>I'm guessing that
+&gt;<i> there will be a small number of users who will experiment with the synop
+</I>/ kml facility.
+
+Not a problem,. Forget about it.
+
+
+
+On Wed, Apr 3, 2013 at 1:38 PM, w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>&gt; wrote:
+
+&gt;<i>  You also might want to consider how those files will be made available to
+</I>&gt;<i> the end user, and where they need to be located in the file system.  I
+</I>&gt;<i> suggest they be placed in the fldigi home directory, as that is a
+</I>&gt;<i> controlled common environment on all of the OS.
+</I>&gt;<i>
+</I>&gt;<i> git push -f berlios HEAD:tmp/synop_kml
+</I>&gt;<i> Enter passphrase for key '/home/dave/.ssh/id_rsa':
+</I>&gt;<i> Counting objects: 222, done.
+</I>&gt;<i> Delta compression using up to 2 threads.
+</I>&gt;<i> Compressing objects: 100% (123/123), done.
+</I>&gt;<i> Writing objects: 100% (141/141), 605.43 KiB, done.
+</I>&gt;<i> Total 141 (delta 108), reused 31 (delta 13)
+</I>&gt;<i> remote: -Info-        This is not a fast-forward update.
+</I>&gt;<i> remote: -Info-        The user is: 'herrfreese'
+</I>&gt;<i> remote: -Info-        Found matching head pattern: 'refs/heads/tmp/.*'
+</I>&gt;<i> remote: -Info-        Checking user: 'herrfreese' against pattern: '.*'
+</I>&gt;<i> remote: -Grant-        Allowing user: 'herrfreese' with pattern: '.*'
+</I>&gt;<i> remote: -Grant-        Granting access based on ./info/acl
+</I>&gt;<i> To <A HREF="ssh://berlios-git/gitroot/fldigi">ssh://berlios-git/gitroot/fldigi</A>
+</I>&gt;<i>  + f39aeec...60d7276 HEAD -&gt; tmp/synop_kml (forced update)
+</I>&gt;<i> Enter passphrase for key '/home/dave/.ssh/id_rsa':
+</I>&gt;<i> Everything up-to-date
+</I>&gt;<i>
+</I>&gt;<i> Zipping up all of the synop data files in the data directory:
+</I>&gt;<i>
+</I>&gt;<i> -rw-rw-r-- 1 dave dave 492320 Apr  3 07:26 data/navtex.zip
+</I>&gt;<i>
+</I>&gt;<i> which is still about 10% of the parent binary, a considerable burden.  I'm
+</I>&gt;<i> guessing that there will be a small number of users who will experiment
+</I>&gt;<i> with the synop / kml facility.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Dave
+</I>&gt;<i>
+</I>&gt;<i> On 04/03/2013 06:40 AM, Remi Chateauneu wrote:
+</I>&gt;<i>
+</I>&gt;<i>   &gt; How often does the content of these files change?
+</I>&gt;<i>  Rarely and it does not matter of they are incomplete.
+</I>&gt;<i>
+</I>&gt;<i> &gt; Will be expect the user to update the files independent of a new or
+</I>&gt;<i> updated fldigi installation?
+</I>&gt;<i>  Both. What I planned is a tool to allow users to update their file.
+</I>&gt;<i>
+</I>&gt;<i> &gt; If the user will not alter the files locally then it might be better to
+</I>&gt;<i> incorporate the files (as compressed strings) into the fldigi binary.
+</I>&gt;<i> They are very big.
+</I>&gt;<i>
+</I>&gt;<i> &gt; Probably the simplest would be to disable the synop processing unless
+</I>&gt;<i> those files were present.
+</I>&gt;<i>
+</I>&gt;<i>  Make sense. So I will rework synop code. From which branch should I
+</I>&gt;<i> restart ? Should be done tomorrow.
+</I>&gt;<i>
+</I>&gt;<i>  Remi
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Wed, Apr 3, 2013 at 11:24 AM, w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On 04/03/2013 04:20 AM, Remi Chateauneu wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  Yes, agreed, it simply never happened to me that's why I did not think
+</I>&gt;&gt;<i> about the situation.
+</I>&gt;&gt;<i> At the moment it throws an exception which is not handled.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> What do you suggest ?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  Probably the simplest would be to disable the synop processing unless
+</I>&gt;&gt;<i> those files were present.  How often does the content of these files
+</I>&gt;&gt;<i> change?  Will be expect the user to update the files independent of a new
+</I>&gt;&gt;<i> or updated fldigi installation?  If the user will not alter the files
+</I>&gt;&gt;<i> locally then it might be better to incorporate the files (as compressed
+</I>&gt;&gt;<i> strings) into the fldigi binary.  That would certainly simplify the
+</I>&gt;&gt;<i> installation on the various OS.  Each has it's own set of boundary rules
+</I>&gt;&gt;<i> regarding where executable and data files can be located in the OS file
+</I>&gt;&gt;<i> system.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Dave
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  Remi
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Wed, Apr 3, 2013 at 10:16 AM, w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> The code needs to be able to adapt gracefully to the absence of those
+</I>&gt;&gt;&gt;<i> files.  Users have been known to modify, delete or otherwise corrupt files
+</I>&gt;&gt;&gt;<i> that are necessary for fldigi operation.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Dave
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> On 04/03/2013 01:56 AM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A> wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Might be. It exepcts that the files are stored in the directory
+</I>&gt;&gt;&gt;&gt;<i> PKGDATADIR:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> $ grep PKGDATADIR src/*/*cxx src/*/*.h
+</I>&gt;&gt;&gt;&gt;<i> src/cw_rtty/rtty.cxx: SynopDB::Init(PKGDATADIR);
+</I>&gt;&gt;&gt;&gt;<i> src/misc/kmlserver.cxx: std::string namSrc = PKGDATADIR &quot;/kml/&quot; +
+</I>&gt;&gt;&gt;&gt;<i> namStyles ;
+</I>&gt;&gt;&gt;&gt;<i> src/include/configuration.h: PKGDATADIR &quot;/NAVTEX_Stations.csv&quot;)
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Remi
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Le 02.04.2013 23:53, w1hkj a &#233;crit :
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> But ... those data files have to be installed on the target system by
+</I>&gt;&gt;&gt;&gt;&gt;<i> the install script / executable.
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> I'll work on it tomorrow Remi when my brain is fresh.
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> Dave
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i> On 04/02/2013 05:07 PM, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A> wrote:
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> Maybe it can also be fixed with this option of &quot;configure&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> --datadir=DIR read-only architecture-independent data [DATAROOTDIR]
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> Le 02.04.2013 19:32, w1hkj a &#233;crit :
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> All of the RTTY changes execute fine on Windows ... prior to your
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> kml-synop-rtty-navtex commit. I tested with the Windows launch icon
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> set to
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> --config-dir &quot;c:\Users\dave\fldigi.synop&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> to insure that there was not a problem in the fldigi_def.xm
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> configuration settings.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> Program fails as soon as the RTTY modem is selected.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> Can you build the mingw32 executable on your Linux system?
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> The error log on my Win8 system is:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> Q: main: fldigi 3.21.68 log started on Tue Apr 02 13:22:03 2013
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: appname: C:\Program Files (x86)\Fldigi-3.21.68\fldigi.exe
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: Test file 0
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: C:/Program Files (x86)/Fldigi-3.21.68/NBEMS.DIR not present
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: HomeDir: c:\Users\dave\fldigi.synop/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: RigsDir: c:\Users\dave\fldigi.synop/rigs/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: ScriptsDir: c:\Users\dave\fldigi.synop/scripts/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: PalettesDir: c:\Users\dave\fldigi.synop/palettes/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: LogsDir: c:\Users\dave\fldigi.synop/logs/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: PicsDir: c:\Users\dave\fldigi.synop/images/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: HelpDir: c:\Users\dave\fldigi.synop/help/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: MacrosDir: c:\Users\dave\fldigi.synop/macros/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: WrapDir: c:\Users\dave\fldigi.synop/wrap/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: TalkDir: c:\Users\dave\fldigi.synop/talk/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: TempDir: c:\Users\dave\fldigi.synop/temp/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: KmlDir: c:\Users\dave\fldigi.synop/kml/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: PskMailDir: C:/Users/Dave/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: NBEMS_dir: C:/Users/Dave/NBEMS.files/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: ARQ_dir: C:/Users/Dave/NBEMS.files/ARQ/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: ARQ_files_dir: C:/Users/Dave/NBEMS.files/ARQ/files/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: ARQ_recv_dir: C:/Users/Dave/NBEMS.files/ARQ/recv/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: ARQ_send: C:/Users/Dave/NBEMS.files/ARQ/send/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: WRAP_dir: C:/Users/Dave/NBEMS.files/WRAP/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: WRAP_recv_dir: C:/Users/Dave/NBEMS.files/WRAP/recv/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: WRAP_send_dir: C:/Users/Dave/NBEMS.files/WRAP/send/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: WRAP_auto_dir: C:/Users/Dave/NBEMS.files/WRAP/auto/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: ICS_dir: C:/Users/Dave/NBEMS.files/ICS/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: ICS_msg_dir: C:/Users/Dave/NBEMS.files/ICS/messages/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: ICS_tmp_dir: C:/Users/Dave/NBEMS.files/ICS/templates/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: FLMSG_dir: C:/Users/Dave/NBEMS.files/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: FLMSG_dir_default: C:/Users/Dave/NBEMS.files/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: FLMSG_WRAP_dir: C:/Users/Dave/NBEMS.files/WRAP/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: FLMSG_WRAP_recv_dir: C:/Users/Dave/NBEMS.files/WRAP/recv/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: FLMSG_WRAP_send_dir: C:/Users/Dave/NBEMS.files/WRAP/send/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: FLMSG_WRAP_auto_dir: C:/Users/Dave/NBEMS.files/WRAP/auto/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: FLMSG_ICS_dir: C:/Users/Dave/NBEMS.files/ICS/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: FLMSG_ICS_msg_dir: C:/Users/Dave/NBEMS.files/ICS/messages/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: FLMSG_ICS_tmp_dir: C:/Users/Dave/NBEMS.files/ICS/templates/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: main: CPU speed factor=170.659385: setting slowcpu=false,
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> sample_converter=&quot;Best Sinc Interpolator&quot;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: loadDefault: macro file name: macros.mdf
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: loadDefault: loading: c:\Users\dave\fldigi.synop/macros/macros.mdf
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: KmlSrvImpl: Creation
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: InitParams: dir=c:\Users\dave\fldigi.synop/kml/
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> merge_distance=0.000000 retention_delay=120 refresh_interval=2
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> balloon_style=43439952
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> E: InitParams: Caught exception:Cannot create
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> c:\Users\dave\fldigi.synop/kml/ No error
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: ReloadSingleKmlFile:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> kmlFilNam=c:\Users\dave\fldigi.synop/kml//User.kml
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> m_merge_dist=-0.000000
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> E: ReloadSingleKmlFile: Could not open
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> c:\Users\dave\fldigi.synop/kml//User.kml. Creating one.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: ReloadSingleKmlFile:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> kmlFilNam=c:\Users\dave\fldigi.synop/kml//Synop.kml
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> m_merge_dist=-0.000000
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> E: ReloadSingleKmlFile: Could not open
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> c:\Users\dave\fldigi.synop/kml//Synop.kml. Creating one.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: ReloadSingleKmlFile:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> kmlFilNam=c:\Users\dave\fldigi.synop/kml//Navtex.kml
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> m_merge_dist=-0.000000
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> E: ReloadSingleKmlFile: Could not open
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> c:\Users\dave\fldigi.synop/kml//Navtex.kml. Creating one.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: ReloadKmlFiles: Object ready
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: Broadcast: 'Toney, AL' sz=0 time=Permanent nb_broad=1
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> m_merge_dist=-0.000000
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: ADIF_RW_init: Starting logbook r/w thread
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: do_readfile: Reading c:\Users\dave\fldigi.synop/logs/logbook.adi
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: do_readfile: Cannot open
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> c:\Users\dave\fldigi.synop/logs/logbook.adi
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: Preset: Shaper::reset( 45.000000, 8000.000000 )
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: Preset: Shaper::m_table_size = 976
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: Preset: Shaper::reset( 45.000000, 8000.000000 )
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: Preset: Shaper::m_table_size = 976
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: Preset: Shaper::reset( 45.450000, 8000.000000 )
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: Preset: Shaper::m_table_size = 966
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: Preset: Shaper::reset( 45.450000, 8000.000000 )
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> I: Preset: Shaper::m_table_size = 966
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> *I: Load: Opening:/usr/local/share/fldigi/nsd_bbsss.txt
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> E: Load: Cannot open:/usr/local/share/fldigi/nsd_bbsss.txt
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> *
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> So I think that the nsis script is failing to install those text
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> files properly on the Windows system. They should never be pointing
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> to /usr/local/... on Windows.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> Do you want to try and fix or should I. I have several other
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> developers waiting for my merging and approval of their work. So I
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> may not get to it right away.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> You might want your Windows testers to install Oracle's VM
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> VirtualBox, and Lubuntu on their nasty windows computers :'(. They
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> could then run fldigi in the Virtual Machine. Works great on my Win8
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> computer.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> Dave
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> On 04/02/2013 08:08 AM, Remi Chateauneu wrote:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> Some complains on Windows that fldigi crashes ahen selecting RTTY45
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> as
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> modem. Waiting for details.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> Thanks
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> Remi
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> On Tue, Apr 2, 2013 at 12:31 PM, Remi Chateauneu
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt;&gt;
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> wrote:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> Thanks Dave,
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> Just sent to <A HREF="http://fr.groups.yahoo.com/group/fldigi/">http://fr.groups.yahoo.com/group/fldigi/</A> . It's a
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> small list (52 members at the moment) but needed because there is
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> a significant proportion of non-English speakers.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> Good thing to have this version, because some developers think
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> <A HREF="http://en.wikipedia.org/wiki/Release_early,_release_often">http://en.wikipedia.org/wiki/Release_early,_release_often</A> and
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> sometimes, it's good to show something which runs even if it is
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> not perfect:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> Remi
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> On Mon, Apr 1, 2013 at 7:19 PM, w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>&gt;&gt; wrote:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> <A HREF="http://www.w1hkj.com/synop/">http://www.w1hkj.com/synop/</A>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> tarball
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> linux binary
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> windows setup executable
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> All of the RTTY based modem types (except for the RTTY
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> browser) use the improved RTTY filter-decoder.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i> Dave
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130403/2a2bf321/attachment-0001.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130403/2a2bf321/attachment-0001.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000997.html">Fwd: [pskmail] Re: New Client 2.0.33 and server 2.0.17
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#996">[ date ]</a>
+              <a href="thread.html#996">[ thread ]</a>
+              <a href="subject.html#996">[ subject ]</a>
+              <a href="author.html#996">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

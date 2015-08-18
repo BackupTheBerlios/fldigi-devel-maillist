@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 5626e1c9015fdb3dd13f0f56332eb6fc44cf36ae
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%205626e1c9015fdb3dd13f0f56332eb6fc44cf36ae&In-Reply-To=%3C200909222251.n8MMp0hw014223%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000110.html">
+   <LINK REL="Next"  HREF="000112.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 5626e1c9015fdb3dd13f0f56332eb6fc44cf36ae</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%205626e1c9015fdb3dd13f0f56332eb6fc44cf36ae&In-Reply-To=%3C200909222251.n8MMp0hw014223%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 5626e1c9015fdb3dd13f0f56332eb6fc44cf36ae">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Wed Sep 23 00:51:00 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000110.html">[GIT] fldigi branch, master,	updated: 8aad147f9fe5bafe878355bea188803052828765
+</A></li>
+        <LI>Next message: <A HREF="000112.html">commit pushed to pu/df
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#111">[ date ]</a>
+              <a href="thread.html#111">[ thread ]</a>
+              <a href="subject.html#111">[ subject ]</a>
+              <a href="author.html#111">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  5626e1c9015fdb3dd13f0f56332eb6fc44cf36ae (commit)
+       via  8ae5b22256080220b035569677c0075474d787d9 (commit)
+       via  a318522100a3434f73ecf4e6b8bd3186103cf6f8 (commit)
+       via  d373c26c521e039fd2adce4b8b7484046e3efb82 (commit)
+       via  0f96bc714e71386fbcceafc22ab7c6ffc2299adf (commit)
+       via  07bf0c45d96962d9051b5530b93081eeedc93918 (commit)
+       via  67ff7210245834829cc7e9a601f4d3ede8413f7a (commit)
+      from  8aad147f9fe5bafe878355bea188803052828765 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit 5626e1c9015fdb3dd13f0f56332eb6fc44cf36ae
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Tue Sep 22 21:02:51 2009 +0100
+
+    Add silent build rules
+    
+    * Enable less verbose build output by default by calling the
+      AM_SILENT_RULES macro if available (automake &gt;= 1.11).  Verbose output
+      can be enabled by passing --disable-silent-rules to configure, or V=1
+      to make.
+    
+    * Add silent function for some custom Makefile rules
+
+commit 8ae5b22256080220b035569677c0075474d787d9
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Tue Sep 22 21:02:51 2009 +0100
+
+    Do not use -rdynamic on win32
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ Makefile.am                |    8 +-
+ configure.ac               |    3 +
+ doc/Makefile.am            |    9 +-
+ m4/build.m4                |   19 +
+ m4/debug.m4                |   15 +-
+ src/Makefile.am            |   20 +-
+ src/flarq-src/flarq.cxx    |    4 +-
+ src/logbook/adif_io.cxx    |  378 ++++++------
+ src/logbook/textio.cxx     |   60 +-
+ src/misc/arq_io.cxx        |    4 +-
+ src/misc/configuration.cxx |    4 +-
+ src/misc/qrzlib.cxx        | 1412 ++++++++++++++++++++++----------------------
+ src/rigcontrol/hamlib.cxx  |    2 +-
+ src/rigcontrol/rigio.cxx   |    2 +-
+ src/rsid/rsid_fft.cxx      |  218 +++++++-
+ src/spot/notify.cxx        |    4 +-
+ src/thor/thor.cxx          |    2 +-
+ 17 files changed, 1203 insertions(+), 961 deletions(-)
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000110.html">[GIT] fldigi branch, master,	updated: 8aad147f9fe5bafe878355bea188803052828765
+</A></li>
+	<LI>Next message: <A HREF="000112.html">commit pushed to pu/df
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#111">[ date ]</a>
+              <a href="thread.html#111">[ thread ]</a>
+              <a href="subject.html#111">[ subject ]</a>
+              <a href="author.html#111">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

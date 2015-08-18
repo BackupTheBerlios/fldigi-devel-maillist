@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Software License
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Software%20License&In-Reply-To=%3C4A8A1C9F.7040803%40WA5ZNU.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000066.html">
+   <LINK REL="Next"  HREF="000069.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Software License</H1>
+    <B>Leigh L. Klotz, Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Software%20License&In-Reply-To=%3C4A8A1C9F.7040803%40WA5ZNU.org%3E"
+       TITLE="Software License">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Tue Aug 18 05:14:39 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000066.html">Software License
+</A></li>
+        <LI>Next message: <A HREF="000069.html">Software License
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#67">[ date ]</a>
+              <a href="thread.html#67">[ thread ]</a>
+              <a href="subject.html#67">[ subject ]</a>
+              <a href="author.html#67">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sam,
+
+You may want to take a look at DM780, which took a fork of the fldigi 
+modem set, and PocketDigi, which copied the gMFSK modem set (which was 
+one of the GPL sources of some of fldigi's modems). Both are of course 
+GPL as well, but they are Windows-only packages and may be closer to 
+your coding requirements.  Vojtech Bubnik does do DSP work commercially, 
+so it may be that you can pay him to develop a headless, open-source 
+version of PocketDigi.  As for DM780, I doubt that Simon Brown would be 
+any more inclined to get involved with the actual development than I am, 
+but of course you may want to contact him directly.  Those two packages 
+may be closer to your goals, as DM780 has already been broken out into a 
+library, and PocketDigi has a minimal UI designed for Windows Mobile.  
+Again, I'm not suggesting that you simply use the DM780 DLL in your 
+proprietary product, as that wouldn't be allowed under GPL.
+
+The project you may be embarking on could potentially be useful, but in 
+order to meet the letter and spirit of the &quot;aggregation&quot; clause, I do 
+believe you must make a bona fide effort to make the package general and 
+well-documented; the GPL cautions specifically against deep, internal 
+interface data structures.
+
+Good luck,
+Leigh.
+
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> Thank you for your excellent response.
+</I>&gt;<i>
+</I>&gt;<i> Not that I want to argue the point, but no matter how many authors there
+</I>&gt;<i> are, if they all agree to license the code in a non-GPL way, they are free
+</I>&gt;<i> to do so. It's too bad, since we wanted to compensate the authors for their
+</I>&gt;<i> excellent work.
+</I>&gt;<i>
+</I>&gt;<i> We have considered the possibility that you suggest. We will probably go
+</I>&gt;<i> ahead and make a &quot;headless&quot; decoding suite as you suggest. We call the
+</I>&gt;<i> concept a &quot;decode server&quot;. What we envision is a stand-alone EXE that takes
+</I>&gt;<i> standard PCM audio as an input, and acts as a server for sockets. A client
+</I>&gt;<i> program will open a socket and send a request for a specific decode mode at
+</I>&gt;<i> a specific audio freq. The server would then fork a thread to do the
+</I>&gt;<i> decoding and service the socket.
+</I>&gt;<i> The decoded text would be sent back over the socket for the client to do
+</I>&gt;<i> whatever it wants. The request messages would be simple and defined in the
+</I>&gt;<i> interface documentation.
+</I>&gt;<i>
+</I>&gt;<i> I think that this approach would pass the aggregation test, since it would
+</I>&gt;<i> be generally useful and the interface documented. We would have no problem
+</I>&gt;<i> releasing it under GPL.
+</I>&gt;<i>
+</I>&gt;<i> To do this, I think we only need the decoders and the underlying DSP
+</I>&gt;<i> libraries. For our products we use the Intel Performance Primitives library,
+</I>&gt;<i> which implements FFT, FIR, IIR &amp; many other functions in assembly language
+</I>&gt;<i> using processor-specific floating vector instructions. It really screams,
+</I>&gt;<i> but we may not be able to use it in this project because of GPL.
+</I>&gt;<i>
+</I>&gt;<i> Once again, thanks for your comments and interest!
+</I>&gt;<i>
+</I>&gt;<i> -Sam-
+</I>&gt;<i>
+</I>&gt;<i> -----Original Message-----
+</I>&gt;<i> From: Leigh L. Klotz, Jr. WA5ZNU [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">Leigh at WA5ZNU.org</A>] 
+</I>&gt;<i> Sent: Monday, August 17, 2009 5:36 PM
+</I>&gt;<i> To: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>
+</I>&gt;<i> Cc: Sam Dunham; Hamish Moffatt; Tomi Manninen; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> Subject: Re: Software License
+</I>&gt;<i>
+</I>&gt;<i> Dave is of course correct that no individual can re-license the fldigi
+</I>&gt;<i> modem code under GPL, as it's the combined work of many dozen people, all
+</I>&gt;<i> released under GPL.
+</I>&gt;<i>
+</I>&gt;<i> I can't answer for dave, and I've got my IANAL hat on now, but there's one
+</I>&gt;<i> option I see by which SIGINT might be able to pursue using fldigi in their
+</I>&gt;<i> otherwise proprietary product.  I know this because I've been involved
+</I>&gt;<i> with similar issues before.
+</I>&gt;<i>
+</I>&gt;<i> See
+</I>&gt;<i>   <A HREF="http://www.gnu.org/licenses/gpl-faq.html#MereAggregation">http://www.gnu.org/licenses/gpl-faq.html#MereAggregation</A>
+</I>&gt;<i>
+</I>&gt;<i> It might be possible to develop a GPL-released standalone decoding program
+</I>&gt;<i> which accepts audio input and outputs decoding information via a network
+</I>&gt;<i> TCP/IP. fldigi currently includes a few such capabilities using an
+</I>&gt;<i> interface known as XML-RPC, but there is not a headless version, and I
+</I>&gt;<i> don't believe it outputs all decoded text (though I may be wrong on the
+</I>&gt;<i> last point).
+</I>&gt;<i>
+</I>&gt;<i> If the headless version and the network TCP/IP interface were sufficiently
+</I>&gt;<i> well-defined and generally useful, and not specific to SIGINT's products,
+</I>&gt;<i> then it would likely pass the &quot;aggregation&quot; test.   The resulting changes
+</I>&gt;<i> to fldigi would of course need to be released as GPL.
+</I>&gt;<i>
+</I>&gt;<i> If you need to send audio data into fldigi to accomplish this, there's
+</I>&gt;<i> likely already enough flexibility to do so using the PORTAUDIO and JACK
+</I>&gt;<i> interfaces (the latter only on Linux, I'm afraid).
+</I>&gt;<i>
+</I>&gt;<i> All this being said, while the headless &quot;build&quot; of fldigi with decoded
+</I>&gt;<i> data output may be of general utility and interest (and it must be in
+</I>&gt;<i> order to meet the &quot;mere aggregation&quot; test), it may not be a sufficiently
+</I>&gt;<i> interesting project for any of the present developers to undertake.  A
+</I>&gt;<i> paid developer (SIGINT, contractor) might be a good choice, but again, you
+</I>&gt;<i> would face the possibility that the current development team might not
+</I>&gt;<i> want to integrate the changes, particularly if they aren't well done or if
+</I>&gt;<i> the effort would be a major distraction.
+</I>&gt;<i>
+</I>&gt;<i> Leigh.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Sam Dunham wrote:
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> Hi,
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I just wanted to make you aware of this snippet from the GPL FAQ page
+</I>&gt;&gt;&gt;<i> you passed to me.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> *   *
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> * &quot;I would like to release a program I wrote under the GNU GPL, but I
+</I>&gt;&gt;&gt;<i> would like to use the same code in non-free programs. ** *
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> To release a non-free program is always ethically tainted, but legally
+</I>&gt;&gt;&gt;<i> there is no obstacle to your doing this. If you are the copyright
+</I>&gt;&gt;&gt;<i> holder for the code, you can release it under various different
+</I>&gt;&gt;&gt;<i> non-exclusive licenses at various times. &quot;
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> As a copyright holder, you and your co-authors are allowed to
+</I>&gt;&gt;&gt;<i> &quot;release&quot; your code any way you wish, it belongs to you.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> We are unable to use the GPL because we don't own all of the code in
+</I>&gt;&gt;&gt;<i> our product.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> We would like to support your efforts.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> -Sam-
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> Understood Sam, but the current decoder/encoder source represents
+</I>&gt;&gt;<i> several years of GPL development with several different authors
+</I>&gt;&gt;<i> contributing to the final product.  I am not free to re-license the
+</I>&gt;&gt;<i> source under any other agreement without the approval of the other
+</I>&gt;&gt;<i> contributors even if I were inclined to do so (which I am not).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thank you for your inquiry but I am not interested in any other
+</I>&gt;&gt;<i> licensing except for the GPL.  Please understand that I am retired with
+</I>&gt;&gt;<i> no need for additional income.  The appreciation of the fldigi user
+</I>&gt;&gt;<i> community and the good will of the other GPL developers is more than
+</I>&gt;&gt;<i> sufficient payment for my work.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Respectfully,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> David Freese
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> fldigi-devel mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000066.html">Software License
+</A></li>
+	<LI>Next message: <A HREF="000069.html">Software License
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#67">[ date ]</a>
+              <a href="thread.html#67">[ thread ]</a>
+              <a href="subject.html#67">[ subject ]</a>
+              <a href="author.html#67">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

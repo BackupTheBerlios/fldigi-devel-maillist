@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 2346bca6d51fb6047b372d3ddcbf9b7c84e72900
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%202346bca6d51fb6047b372d3ddcbf9b7c84e72900&In-Reply-To=%3C20111118165217.094D548135E%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000727.html">
+   <LINK REL="Next"  HREF="000729.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 2346bca6d51fb6047b372d3ddcbf9b7c84e72900</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%202346bca6d51fb6047b372d3ddcbf9b7c84e72900&In-Reply-To=%3C20111118165217.094D548135E%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 2346bca6d51fb6047b372d3ddcbf9b7c84e72900">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Fri Nov 18 17:52:16 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000727.html">SSB mode
+</A></li>
+        <LI>Next message: <A HREF="000729.html">FCC 60M changes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#728">[ date ]</a>
+              <a href="thread.html#728">[ thread ]</a>
+              <a href="subject.html#728">[ subject ]</a>
+              <a href="author.html#728">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  2346bca6d51fb6047b372d3ddcbf9b7c84e72900 (commit)
+       via  3e970b99ec6d3432a900f23144438d672de8240a (commit)
+       via  4103a072907632fcbe51552cd948d309b0c863e7 (commit)
+       via  ff34b3cdba9ba94564088d277329971d21afcac0 (commit)
+      from  c9233e2f77d430105ec3b3dddf255563120e4a76 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=2346bca6d51fb6047b372d3ddcbf9b7c84e72900">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=2346bca6d51fb6047b372d3ddcbf9b7c84e72900</A>
+
+commit 2346bca6d51fb6047b372d3ddcbf9b7c84e72900
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Nov 17 05:46:16 2011 -0600
+
+    Version 3.22.0BC
+    
+      Alpha release
+
+ 2 files changed, 7 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=3e970b99ec6d3432a900f23144438d672de8240a">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=3e970b99ec6d3432a900f23144438d672de8240a</A>
+
+commit 3e970b99ec6d3432a900f23144438d672de8240a
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Nov 17 07:37:07 2011 -0600
+
+    ADIF write_log
+    
+      * Created separate thread for writing database.  User with over
+        35,000 records was experiencing UI interruption of several
+        seconds on Windows XP system.
+
+ 10 files changed, 284 insertions(+), 88 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=4103a072907632fcbe51552cd948d309b0c863e7">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=4103a072907632fcbe51552cd948d309b0c863e7</A>
+
+commit 4103a072907632fcbe51552cd948d309b0c863e7
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt;
+Date:   Tue Nov 15 22:39:20 2011 +0000
+
+    WEFAX error logging fix
+    
+      * Fixed format compiler warnings and errors.
+
+ 1 files changed, 6 insertions(+), 6 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=ff34b3cdba9ba94564088d277329971d21afcac0">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=ff34b3cdba9ba94564088d277329971d21afcac0</A>
+
+commit ff34b3cdba9ba94564088d277329971d21afcac0
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Nov 15 15:47:04 2011 -0600
+
+    Restore Log Sort
+    
+      * After adding a record
+
+ 1 files changed, 0 insertions(+), 2 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                  |    7 +-
+ configure.ac               |    2 +-
+ src/dialogs/fl_digi.cxx    |    5 +
+ src/include/adif_io.h      |    4 +-
+ src/include/fl_digi.h      |   32 ++++---
+ src/include/logsupport.h   |    4 +-
+ src/include/qso_db.h       |    4 +
+ src/include/threads.h      |   12 +--
+ src/logbook/adif_io.cxx    |  221 +++++++++++++++++++++++++++++++++++++++-----
+ src/logbook/logbook.cxx    |   21 +++--
+ src/logbook/logsupport.cxx |   61 ++++++-------
+ src/logbook/qso_db.cxx     |   10 ++
+ src/wefax/wefax.cxx        |   12 +-
+ 13 files changed, 297 insertions(+), 98 deletions(-)
+  14.1% src/include/
+  79.2% src/logbook/
+   3.0% src/wefax/
+  19.8% src/include/
+  71.1% src/logbook/
+   5.4% src/wefax/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000727.html">SSB mode
+</A></li>
+	<LI>Next message: <A HREF="000729.html">FCC 60M changes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#728">[ date ]</a>
+              <a href="thread.html#728">[ thread ]</a>
+              <a href="subject.html#728">[ subject ]</a>
+              <a href="author.html#728">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

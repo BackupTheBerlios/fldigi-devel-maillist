@@ -1,0 +1,190 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi segfaults on startup
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20segfaults%20on%20startup&In-Reply-To=%3CCACMWOgv%2BSA8iFxtUoH-BceP%2B0fMX5zcJVyVgpa%3D-fTNXTTbTDA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000837.html">
+   <LINK REL="Next"  HREF="000841.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi segfaults on startup</H1>
+    <B>Remi Chateauneu</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20segfaults%20on%20startup&In-Reply-To=%3CCACMWOgv%2BSA8iFxtUoH-BceP%2B0fMX5zcJVyVgpa%3D-fTNXTTbTDA%40mail.gmail.com%3E"
+       TITLE="fldigi segfaults on startup">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Fri Mar 30 13:15:37 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000837.html">fldigi segfaults on startup
+</A></li>
+        <LI>Next message: <A HREF="000841.html">fldigi segfaults on startup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#838">[ date ]</a>
+              <a href="thread.html#838">[ thread ]</a>
+              <a href="subject.html#838">[ subject ]</a>
+              <a href="author.html#838">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Shawn,
+
+* Is it the first time you run this version ?
+* Does it always happen ?
+
+Thanks !
+
+R
+
+
+On Fri, Mar 30, 2012 at 5:57 AM, Shawn C. Powell &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">shawncp at kcnet.com</A>&gt; wrote:
+
+&gt;<i> --------------------------------------------
+</I>&gt;<i> $ fldigi
+</I>&gt;<i>
+</I>&gt;<i> Caught signal 11
+</I>&gt;<i> Aborting fldigi due to a fatal error.
+</I>&gt;<i> Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+</I>&gt;<i>
+</I>&gt;<i> ****** Stack trace:
+</I>&gt;<i> fldigi[0x4fa08e]
+</I>&gt;<i> /lib64/libpthread.so.0(+0xf000)[0x7f1d227dd000]
+</I>&gt;<i>
+</I>&gt;<i> /usr/lib64/fltk-1/libfltk.so.1.3(_ZN2Fl9set_fontsEPKc+0x256)[0x7f1d22a904e6]
+</I>&gt;<i> fldigi[0x4a2c54]
+</I>&gt;<i> /lib64/libc.so.6(__libc_start_main+0xfd)[0x7f1d20fd3bbd]
+</I>&gt;<i> fldigi[0x414b19]
+</I>&gt;<i>
+</I>&gt;<i> ****** Version information:
+</I>&gt;<i> fldigi 3.21.38
+</I>&gt;<i> Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi
+</I>&gt;<i> Chateauneu, and others.
+</I>&gt;<i> License GPLv3+: GNU GPL version 3 or later
+</I>&gt;<i> &lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+</I>&gt;<i> This is free software: you are free to change and redistribute it.
+</I>&gt;<i> There is NO WARRANTY, to the extent permitted by law.
+</I>&gt;<i>
+</I>&gt;<i> ****** Build information:
+</I>&gt;<i> Build information:
+</I>&gt;<i>  built          : Thu Mar 29 23:36:01 CDT 2012 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">root at s3</A> on
+</I>&gt;<i> x86_64-pc-linux-gnu for x86_64-pc-linux-gnu
+</I>&gt;<i>
+</I>&gt;<i>  configure flags: '--prefix=/usr' '--build=x86_64-pc-linux-gnu'
+</I>&gt;<i> '--host=x86_64-pc-linux-gnu' '--mandir=/usr/share/man'
+</I>&gt;<i> '--infodir=/usr/share/info' '--datadir=/usr/share' '--sysconfdir=/etc'
+</I>&gt;<i> '--localstatedir=/var/lib' '--libdir=/usr/lib64'
+</I>&gt;<i> '--disable-dependency-tracking' '--with-sndfile' '--without-portaudio'
+</I>&gt;<i> '--with-hamlib' '--enable-nls' '--without-pulseaudio' '--without-xmlrpc'
+</I>&gt;<i> '--without-asciidoc' 'build_alias=x86_64-pc-linux-gnu'
+</I>&gt;<i> 'host_alias=x86_64-pc-linux-gnu' 'CXXFLAGS=-O2 -pipe -march=nocona'
+</I>&gt;<i> 'LDFLAGS=-Wl,-O1 -Wl,--as-needed -Wl,-O1' 'CFLAGS=-O2 -pipe
+</I>&gt;<i> -march=nocona' 'PKG_CONFIG_PATH=/usr/qt/3/lib64/pkgconfig'
+</I>&gt;<i>
+</I>&gt;<i>  compiler       : gcc version 4.5.3 (Gentoo 4.5.3-r2 p1.1, pie-0.4.7)
+</I>&gt;<i>
+</I>&gt;<i>  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+</I>&gt;<i> -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -I/usr/include/fltk-1
+</I>&gt;<i> -DQT_SHARED -pthread -I/usr/include/cairo -I/usr/include/glib-2.0
+</I>&gt;<i> -I/usr/lib64/glib-2.0/include -I/usr/include/pixman-1
+</I>&gt;<i> -I/usr/include/freetype2 -I/usr/include/libpng15 -I/usr/include/qt4
+</I>&gt;<i> -I/usr/include/qt4/QtGui -I/usr/include/libdrm -I/usr/include/qt4/QtCore
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -I/usr/include/hamlib -I/usr/include/libpng15 -pipe -Wall -fexceptions
+</I>&gt;<i> -O2 -ffast-math -finline-functions -DNDEBUG
+</I>&gt;<i>
+</I>&gt;<i>  linker flags   : -L/usr/lib64/fltk-1 -Wl,-O1 -Wl,--as-needed -Wl,-O1
+</I>&gt;<i> -lfltk_images -lpng -lz -ljpeg -lfltk -lXext -lXft -lfontconfig
+</I>&gt;<i> -lXinerama -lpthread -ldl -lm -lX11 -lX11 -lsndfile -lsamplerate
+</I>&gt;<i> -L/usr/lib64/hamlib -lhamlib -lm -lpng15 -ldl -lrt -lpthread
+</I>&gt;<i>
+</I>&gt;<i>  libraries      : FLTK 1.3.0
+</I>&gt;<i>                   libsamplerate 0.1.7
+</I>&gt;<i>                   libsndfile 1.0.25
+</I>&gt;<i>                   Hamlib 1.2.14
+</I>&gt;<i>
+</I>&gt;<i> Runtime information:
+</I>&gt;<i>  system         : Linux s3 2.6.30-gentoo-r5 #3 SMP PREEMPT Sun Apr 3
+</I>&gt;<i> 16:23:44 CDT 2011 x86_64
+</I>&gt;<i>
+</I>&gt;<i>  libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+</I>&gt;<i>                   libsndfile-1.0.25
+</I>&gt;<i>                   Hamlib 1.2.14
+</I>&gt;<i>
+</I>&gt;<i> -----------------------------------------------------------------------------------
+</I>&gt;<i> $ gdb fldigi
+</I>&gt;<i> GNU gdb (Gentoo 7.2 p1) 7.2
+</I>&gt;<i> Copyright (C) 2010 Free Software Foundation, Inc.
+</I>&gt;<i> License GPLv3+: GNU GPL version 3 or later
+</I>&gt;<i> &lt;<A HREF="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</A>&gt;
+</I>&gt;<i> This is free software: you are free to change and redistribute it.
+</I>&gt;<i> There is NO WARRANTY, to the extent permitted by law.  Type &quot;show copying&quot;
+</I>&gt;<i> and &quot;show warranty&quot; for details.
+</I>&gt;<i> This GDB was configured as &quot;x86_64-pc-linux-gnu&quot;.
+</I>&gt;<i> For bug reporting instructions, please see:
+</I>&gt;<i> &lt;<A HREF="http://bugs.gentoo.org/">http://bugs.gentoo.org/</A>&gt;...
+</I>&gt;<i> Reading symbols from /usr/bin/fldigi...(no debugging symbols found)...done.
+</I>&gt;<i> (gdb) run
+</I>&gt;<i> Starting program: /usr/bin/fldigi
+</I>&gt;<i> [Thread debugging using libthread_db enabled]
+</I>&gt;<i>
+</I>&gt;<i> Program received signal SIGSEGV, Segmentation fault.
+</I>&gt;<i> 0x00007ffff772c4e6 in Fl::set_fonts(char const*) () from
+</I>&gt;<i> /usr/lib64/fltk-1/libfltk.so.1.3
+</I>&gt;<i> (gdb) bt
+</I>&gt;<i> #0  0x00007ffff772c4e6 in Fl::set_fonts(char const*) () from
+</I>&gt;<i> /usr/lib64/fltk-1/libfltk.so.1.3
+</I>&gt;<i> #1  0x00000000004a2c54 in ?? ()
+</I>&gt;<i> #2  0x00007ffff5c6fbbd in __libc_start_main () from /lib64/libc.so.6
+</I>&gt;<i> #3  0x0000000000414b19 in ?? ()
+</I>&gt;<i> #4  0x00007fffffffda78 in ?? ()
+</I>&gt;<i> #5  0x000000000000001c in ?? ()
+</I>&gt;<i> #6  0x0000000000000001 in ?? ()
+</I>&gt;<i> #7  0x00007fffffffddc9 in ?? ()
+</I>&gt;<i> #8  0x0000000000000000 in ?? ()
+</I>&gt;<i> (gdb)
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i> Shawn C. Powell
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120330/51d00abf/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120330/51d00abf/attachment.html</A>&gt;
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000837.html">fldigi segfaults on startup
+</A></li>
+	<LI>Next message: <A HREF="000841.html">fldigi segfaults on startup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#838">[ date ]</a>
+              <a href="thread.html#838">[ thread ]</a>
+              <a href="subject.html#838">[ subject ]</a>
+              <a href="author.html#838">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

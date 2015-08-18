@@ -1,0 +1,175 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi crashreport
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20crashreport&In-Reply-To=%3C522A2B85.6070201%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001086.html">
+   <LINK REL="Next"  HREF="001088.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi crashreport</H1>
+    <B>kayvax</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20crashreport&In-Reply-To=%3C522A2B85.6070201%40gmail.com%3E"
+       TITLE="Fldigi crashreport">kayvax at gmail.com
+       </A><BR>
+    <I>Fri Sep  6 21:22:45 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001086.html">Fldigi crashreport
+</A></li>
+        <LI>Next message: <A HREF="001088.html">Fldigi crashreport
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1087">[ date ]</a>
+              <a href="thread.html#1087">[ thread ]</a>
+              <a href="subject.html#1087">[ subject ]</a>
+              <a href="author.html#1087">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear Sir,
+thank you for your advice. I have narrowed issue to xft implementation
+in fltk library after following your suggestion.
+
+There is some kind of weird behaviour of fltk while using xft to manage
+fonts. As in backtrace here:
+
+    /Program received signal SIGSEGV, Segmentation fault./
+    /0x00000000009156cf in make_raw_name (raw=0x7fffffffd120 &quot; Zin&quot;, /
+    /    pretty=0xdf30e0 &quot;f3367536&quot;) at fl_set_fonts_xft.cxx:85/
+    /85      char *last = style + strlen(style) - 2;/
+    /(gdb) bt/
+    /#0  0x00000000009156cf in make_raw_name (raw=0x7fffffffd120 &quot; Zin&quot;, /
+    /    pretty=0xdf30e0 &quot;f3367536&quot;) at fl_set_fonts_xft.cxx:85/
+    /#1  0x0000000000915bc2 in Fl::set_fonts (pattern_name=0x0)/
+    /    at fl_set_fonts_xft.cxx:318/
+    /#2  0x0000000000720899 in main (argc=3, argv=0x7fffffffdc88) at
+    main.cxx:410/
+
+Fltk is using libXft in line 85 of /*fl_set_fonts_xft.cxx*. /There is
+partial font name/*pretty=0xdf30e0 &quot;f3367536&quot;*//. /I had such font in
+~/.fonts .// I have looked it up and there is hardcoded part:
+
+    /...
+    static void make_raw_name(char *raw, char *pretty)//
+    //{//
+    //  // Input name will be &quot;Some Name:style = Bold Italic&quot; or whatever//
+    //  // The plan is <A HREF="this://">this://</A>
+    //  // - the first char in the &quot;raw&quot; name becomes either I, B, P or
+    &quot; &quot; for//
+    //  //   italic, bold, bold italic or normal - this seems to be the
+    fltk way...//
+    //
+    //  char *style = strchr(pretty, ':');//
+    //  *char *last = style + strlen(style) - 2;*//*// line 85 from
+    upper backtrace*
+    //
+    //  if (style)//
+    //  {//
+    //    *style = 0; // Terminate &quot;name&quot; string//
+    //    style ++;   // point to start of style section//
+    //  }//
+    ...
+    /
+
+Which is not working when fonts in os are named in different way than
+stated. Developer of this code thought that every font will be named
+/&quot;Some Name:style = Bold Italic&quot;  /what is false. So, there has to be
+error in line 85 when such occurance happened.  Thus after removing all
+fonts from my os that do not comply with said code I have managed to run
+fldigi.
+
+The question is why fltk uses such unresponsible behaviour to discover
+OS fonts. None of my other software had ever an issue with fonts but for
+fldigi. I have read few more tickets on Fldigi site and some of them may
+have this origin as there is no clear indication that fltk has problems
+with font file - so segfault. Thanks to your suggestion I was able to
+spot partial font names in backtrace and after test of removing font
+file (another popped in backtrace), I discovered all I had wrote earlier
+
+Another issue is that fldigi users may want to have some other than core
+fonts on their system, what is just natural. I would have never imagined
+having such issue after getting some fancy fonts for LibreOffice. Making
+a list of &quot;allowed&quot; fonts for fltk seems hilarious.
+
+Best regards,
+Mikolaj
+
+W dniu 06.09.2013 16:49, w1hkj pisze:
+&gt;<i>
+</I>&gt;<i> On 09/06/2013 03:47 AM, kayvax wrote:
+</I>&gt;&gt;<i> Program received signal SIGSEGV, Segmentation fault.
+</I>&gt;&gt;<i> __strlen_sse2 () at ../sysdeps/x86_64/multiarch/../strlen.S:32
+</I>&gt;&gt;<i> 32	../sysdeps/x86_64/multiarch/../strlen.S: Nie ma takiego pliku ani katalogu.
+</I>&gt;&gt;<i> (gdb) bt
+</I>&gt;&gt;<i> #0  __strlen_sse2 () at ../sysdeps/x86_64/multiarch/../strlen.S:32
+</I>&gt;&gt;<i> #1  0x00007ffff6b79a36 in Fl::set_fonts(char const*) () from /usr/lib64/fltk-1/libfltk.so.1.3
+</I>&gt;&gt;<i> #2  0x00000000006fa239 in main (argc=1, argv=0x7fffffffdca8) at main.cxx:410
+</I>&gt;&gt;<i> (gdb) 
+</I>&gt;<i> Mikolaj,
+</I>&gt;<i>
+</I>&gt;<i> This seems to be an issue within the the Fast Light Toolkit itself.  I
+</I>&gt;<i> suggest that you rebuild the fltk-1.3.2 library using static vice shared.
+</I>&gt;<i>
+</I>&gt;<i> cd to your fltk-1.3.2 source tree
+</I>&gt;<i>
+</I>&gt;<i> $ ./configure --disable-shared --enable-debug
+</I>&gt;<i> $ make
+</I>&gt;<i> $ sudo make install
+</I>&gt;<i>
+</I>&gt;<i> Then rebuild the fldigi-3.21.75 source tree
+</I>&gt;<i>
+</I>&gt;<i> $ ./configure --enable-static
+</I>&gt;<i> $ make
+</I>&gt;<i> $ gdb src/fldigi
+</I>&gt;<i> $ r --config-dir font_test
+</I>&gt;<i>
+</I>&gt;<i> This will create a new fldigi files directory in the pwd.  If and when
+</I>&gt;<i> the seg fault occurs you should be able to back trace into the fltk
+</I>&gt;<i> library code.
+</I>&gt;<i>
+</I>&gt;<i> Let me know if this provides you with the needed assistance.
+</I>&gt;<i>
+</I>&gt;<i> Dave
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130906/94146e6f/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130906/94146e6f/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001086.html">Fldigi crashreport
+</A></li>
+	<LI>Next message: <A HREF="001088.html">Fldigi crashreport
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1087">[ date ]</a>
+              <a href="thread.html#1087">[ thread ]</a>
+              <a href="subject.html#1087">[ subject ]</a>
+              <a href="author.html#1087">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

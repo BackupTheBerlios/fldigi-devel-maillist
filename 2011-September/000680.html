@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: b4dad775d18fa40477a25c88485288cdb3ab2f7d
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20b4dad775d18fa40477a25c88485288cdb3ab2f7d&In-Reply-To=%3C20110907013534.BEF08481222%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000679.html">
+   <LINK REL="Next"  HREF="000681.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: b4dad775d18fa40477a25c88485288cdb3ab2f7d</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20b4dad775d18fa40477a25c88485288cdb3ab2f7d&In-Reply-To=%3C20110907013534.BEF08481222%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: b4dad775d18fa40477a25c88485288cdb3ab2f7d">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Wed Sep  7 03:35:33 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000679.html">[GIT] fldigi branch, maint/3.21,	updated: a776fe86626180df14860fe4d4aebd8ca72d7440
+</A></li>
+        <LI>Next message: <A HREF="000681.html">[GIT] fldigi branch, master,	updated: 213b4b6d9d12a306c35702ffc0d96df83b556f2e
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#680">[ date ]</a>
+              <a href="thread.html#680">[ thread ]</a>
+              <a href="subject.html#680">[ subject ]</a>
+              <a href="author.html#680">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  b4dad775d18fa40477a25c88485288cdb3ab2f7d (commit)
+       via  563d667ca235b25dd68cd5c987cc3052bd54fe2d (commit)
+       via  f9a459ab560792c9ca427ff0de812e6e9c014182 (commit)
+       via  1da9ed17eb30217e3e569534330210ee67f441d6 (commit)
+      from  bdd247aae95b6c691f0f911b3cfac73c6d461646 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=b4dad775d18fa40477a25c88485288cdb3ab2f7d">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=b4dad775d18fa40477a25c88485288cdb3ab2f7d</A>
+
+commit b4dad775d18fa40477a25c88485288cdb3ab2f7d
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Sep 6 20:06:40 2011 -0500
+
+    Version 3.22.0AK
+    
+      Alpha release
+
+ 2 files changed, 12 insertions(+), 3 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=563d667ca235b25dd68cd5c987cc3052bd54fe2d">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=563d667ca235b25dd68cd5c987cc3052bd54fe2d</A>
+
+commit 563d667ca235b25dd68cd5c987cc3052bd54fe2d
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Sep 5 16:08:24 2011 -0500
+
+    Inline macro tags
+    
+      * Created ability to delay execution of designated tags
+        until the time of occurance in the transmit character
+        stream.  These include:
+        - &lt;DTMF - dual tones
+        - &lt;!WPM - CW words per minute
+        - &lt;!POST - CW post delay
+        - &lt;!PRE  - CW pre delay
+        - &lt;!RISE - CW rise/decay time
+        - &lt;!MODEM: - change to specified modem
+      * The &lt;! tags use the same parameters as their non delayed
+        counterparts
+
+ 9 files changed, 5988 insertions(+), 4500 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog               |   13 +-
+ configure.ac            |    2 +-
+ po/es.po                | 2622 ++++++++++++++++++++++++++---------------------
+ po/fldigi.pot           | 2472 +++++++++++++++++++++++++--------------------
+ po/fr.po                | 2504 +++++++++++++++++++++++++--------------------
+ po/it.po                | 2592 ++++++++++++++++++++++++++--------------------
+ src/dialogs/fl_digi.cxx |   34 +-
+ src/dtmf/dtmf.cxx       |    2 -
+ src/include/fl_digi.h   |    2 +-
+ src/include/macros.h    |    3 +
+ src/include/modem.h     |    9 +-
+ src/misc/macros.cxx     |  257 +++++-
+ src/trx/modem.cxx       |    6 +
+ src/trx/trx.cxx         |    8 +-
+ src/wefax/wefax.cxx     |   21 +
+ 15 files changed, 6032 insertions(+), 4515 deletions(-)
+  96.6% po/
+   3.2% src/
+  97.0% po/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000679.html">[GIT] fldigi branch, maint/3.21,	updated: a776fe86626180df14860fe4d4aebd8ca72d7440
+</A></li>
+	<LI>Next message: <A HREF="000681.html">[GIT] fldigi branch, master,	updated: 213b4b6d9d12a306c35702ffc0d96df83b556f2e
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#680">[ date ]</a>
+              <a href="thread.html#680">[ thread ]</a>
+              <a href="subject.html#680">[ subject ]</a>
+              <a href="author.html#680">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

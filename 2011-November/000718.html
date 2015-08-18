@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> mods from DF and RC pushed to pu/df
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20mods%20from%20DF%20and%20RC%20pushed%20to%20pu/df&In-Reply-To=%3C4EC142B9.9090802%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000717.html">
+   <LINK REL="Next"  HREF="000719.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>mods from DF and RC pushed to pu/df</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20mods%20from%20DF%20and%20RC%20pushed%20to%20pu/df&In-Reply-To=%3C4EC142B9.9090802%40bellsouth.net%3E"
+       TITLE="mods from DF and RC pushed to pu/df">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Mon Nov 14 17:32:57 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000717.html">[GIT] fldigi branch, maint/3.21,	updated: ae91a9063bc11d9e9b46afb2f6a513366ff825d0
+</A></li>
+        <LI>Next message: <A HREF="000719.html">[GIT] fldigi branch, maint/3.21,	updated: a5be80f1c5a80b4d3f6ee9ec77c4d15d2d038628
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#718">[ date ]</a>
+              <a href="thread.html#718">[ thread ]</a>
+              <a href="subject.html#718">[ subject ]</a>
+              <a href="author.html#718">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Since 3.22.0BA - please &quot;git&quot; and test when convenient.
+
+commit dab85dc1385ad0118b4f97bffa43c888eae8950a
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt;
+Date:   Sat Nov 12 21:23:37 2011 +0000
+
+     Wefax enhancements.
+
+       * Adjustable carrier frequency. Can adjust the carrier frequency 
+from the GUI.
+       * All messages are now internationalised.
+       * Images absence/presence better detected also with line-to-line 
+statistic correlation.
+
+commit 21bcc183fd40d81762078a4920e077ed69a0402f
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt;
+Date:   Sat Nov 12 21:19:49 2011 +0000
+
+     Use Logbook record
+
+       * Added Dial button in logbook editor to set frequency / mode / 
+operator
+         to the the current record.
+         - allows easy retrieval of logged data to either continue a QSO or
+           set one up based on a log entry.
+
+commit 4aca1f1b5e527cb5fffe85ed27d4f31e5e44fbb6
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Nov 14 06:34:51 2011 -0600
+
+     eQSL update
+
+       * Added embedded tags to optional message
+         - {CALL} other operators callsign
+         - {NAME} other operators name
+         - {MODE} full mode / submode
+           eQSL.cc does not accept all submodes, i.e
+           MFSK11 must be logged at MFSK16
+           THROB4 must be logged as THRB etc.
+           This tag allows you to add specificity to the
+           eQSL record
+       * Added default message
+       * Added switch to enable sending eQSL when either
+         - log button is pressed
+         - &lt;LOG&gt; or &lt;LNW&gt; is encountered in macro
+         - logic to disallow duplicating eQSL submission
+
+commit 389ce71e95a907bcf522a8fd0a7e3785e2009017
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Nov 13 09:26:28 2011 -0600
+
+     eQSL thread
+
+       * Changed send URL to separate thread implementation
+         - prevents interruption to decoder / GUI while waiting
+           for eQSL.cc response
+         - removed popup messages
+         - added event logging
+
+commit 7f30f29125d2105f7ff92bf3ee08f2443b3b8a37
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat Nov 12 17:16:26 2011 -0600
+
+     eQSL
+
+       * Changed User Nickname to QTH Nickname on configuration tab
+
+73, Dave, W1HKJ
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20111114/d76d6961/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20111114/d76d6961/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000717.html">[GIT] fldigi branch, maint/3.21,	updated: ae91a9063bc11d9e9b46afb2f6a513366ff825d0
+</A></li>
+	<LI>Next message: <A HREF="000719.html">[GIT] fldigi branch, maint/3.21,	updated: a5be80f1c5a80b4d3f6ee9ec77c4d15d2d038628
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#718">[ date ]</a>
+              <a href="thread.html#718">[ thread ]</a>
+              <a href="subject.html#718">[ subject ]</a>
+              <a href="author.html#718">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

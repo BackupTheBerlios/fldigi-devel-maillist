@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.20,	updated: 81bde9f4abf67a58507537cbda1fa6340a3b9ba5
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.20%2C%0A%09updated%3A%2081bde9f4abf67a58507537cbda1fa6340a3b9ba5&In-Reply-To=%3C20101130190729.CCCF7480196%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000429.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.20,	updated: 81bde9f4abf67a58507537cbda1fa6340a3b9ba5</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.20%2C%0A%09updated%3A%2081bde9f4abf67a58507537cbda1fa6340a3b9ba5&In-Reply-To=%3C20101130190729.CCCF7480196%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.20,	updated: 81bde9f4abf67a58507537cbda1fa6340a3b9ba5">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Tue Nov 30 20:07:28 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000429.html">[GIT] fldigi branch, master,	updated: 2260b5f6ded580c4b2e4826490b6c1074d76c4fb
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#430">[ date ]</a>
+              <a href="thread.html#430">[ thread ]</a>
+              <a href="subject.html#430">[ subject ]</a>
+              <a href="author.html#430">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.20 has been updated
+       via  81bde9f4abf67a58507537cbda1fa6340a3b9ba5 (commit)
+       via  58cdf97be5f7f4288f2a847326917da20c5a937f (commit)
+       via  e72ec18d6a8227c1a2abb30905a250fb499a4b94 (commit)
+       via  c8d0747c6585b68a79d388f86624bfc6becfb78c (commit)
+       via  9a3259358a657c87e2d09e1d9ae322abcc14d66a (commit)
+       via  29f6fd9a0a94a3c956516c9de841d9138b9775d2 (commit)
+       via  734ddfd46f4ee855abd6951e85e5489e760d1356 (commit)
+       via  0232eed0b0dcc2cab1366dc7750383ea6951ee22 (commit)
+       via  8ae9ddd6f5573a045f1afcf4e4bb8395754b6cd3 (commit)
+       via  9258c106607f2e0ab6ed1fdb992d2a9ff374fbdd (commit)
+       via  3a51cef81a235a2fd98759fafc6de73883497e4c (commit)
+       via  36aa19100d18d6f61d97a602c6fc53097b227ad3 (commit)
+      from  c52ebfa9695263fe48c68ea22042cfa106f00947 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=81bde9f4abf67a58507537cbda1fa6340a3b9ba5">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=81bde9f4abf67a58507537cbda1fa6340a3b9ba5</A>
+
+commit 81bde9f4abf67a58507537cbda1fa6340a3b9ba5
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Nov 30 09:05:30 2010 -0600
+
+    Version 3.20.32
+    
+      Maintenance release
+
+ 2 files changed, 9 insertions(+), 3 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=58cdf97be5f7f4288f2a847326917da20c5a937f">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=58cdf97be5f7f4288f2a847326917da20c5a937f</A>
+
+commit 58cdf97be5f7f4288f2a847326917da20c5a937f
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Nov 30 08:22:26 2010 -0600
+
+    DATE_OFF update
+    
+      Added code to update DATE_OFF correctly when it is empty.
+      This will occur principally when opening an older logbook
+      adif data file.
+
+ 1 files changed, 16 insertions(+), 0 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e72ec18d6a8227c1a2abb30905a250fb499a4b94">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e72ec18d6a8227c1a2abb30905a250fb499a4b94</A>
+
+commit e72ec18d6a8227c1a2abb30905a250fb499a4b94
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Nov 29 19:50:12 2010 -0600
+
+    Carrier Squelch
+    
+      * Added pre-signal tone which allows triggering
+        carrier detect / amplifier enable.  Used primarily
+        for VHF/UHF power bricks.
+      * Reduced pre and post RsID silence periods to 1 RsID
+        symbol length (~0.0988 sec).
+
+ 7 files changed, 94 insertions(+), 31 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=c8d0747c6585b68a79d388f86624bfc6becfb78c">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=c8d0747c6585b68a79d388f86624bfc6becfb78c</A>
+
+commit c8d0747c6585b68a79d388f86624bfc6becfb78c
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Nov 28 13:44:56 2010 -0600
+
+    Version 3.20.31
+    
+      Maintenance release
+
+ 2 files changed, 14 insertions(+), 7 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=9a3259358a657c87e2d09e1d9ae322abcc14d66a">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=9a3259358a657c87e2d09e1d9ae322abcc14d66a</A>
+
+commit 9a3259358a657c87e2d09e1d9ae322abcc14d66a
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Nov 28 09:02:20 2010 -0600
+
+    Call Lookup
+    
+      Added code to convert uppercase operator name to
+      camel case for all lookups.
+
+ 1 files changed, 16 insertions(+), 0 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=29f6fd9a0a94a3c956516c9de841d9138b9775d2">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=29f6fd9a0a94a3c956516c9de841d9138b9775d2</A>
+
+commit 29f6fd9a0a94a3c956516c9de841d9138b9775d2
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat Nov 27 09:20:59 2010 -0600
+
+    RSID new mode
+    
+      Added Contestia 128-2000 RsID code
+
+ 1 files changed, 10 insertions(+), 0 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=734ddfd46f4ee855abd6951e85e5489e760d1356">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=734ddfd46f4ee855abd6951e85e5489e760d1356</A>
+
+commit 734ddfd46f4ee855abd6951e85e5489e760d1356
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Nov 28 13:36:32 2010 -0600
+
+    MODE logging
+    
+      Fixed bug introduced by 8ae9ddd6f5573a045f1afcf4e4bb8395754b6cd3
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=0232eed0b0dcc2cab1366dc7750383ea6951ee22">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=0232eed0b0dcc2cab1366dc7750383ea6951ee22</A>
+
+commit 0232eed0b0dcc2cab1366dc7750383ea6951ee22
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Nov 19 08:32:38 2010 -0600
+
+    Version 3.20.30
+    
+      Maintenance release
+
+ 2 files changed, 16 insertions(+), 1 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=8ae9ddd6f5573a045f1afcf4e4bb8395754b6cd3">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=8ae9ddd6f5573a045f1afcf4e4bb8395754b6cd3</A>
+
+commit 8ae9ddd6f5573a045f1afcf4e4bb8395754b6cd3
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Nov 19 08:30:31 2010 -0600
+
+    DATE_TIME sorting
+    
+      * Added user selection for date/time ON or OFF sorting
+      * Cabrillo &amp; ADIF exports follow the ON / OFF selection
+      * Logbook browser follows ON / OFF selection
+      * Added user selection to force DATE/TIME ON == DATE/TIME OFF
+
+ 11 files changed, 125 insertions(+), 56 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=9258c106607f2e0ab6ed1fdb992d2a9ff374fbdd">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=9258c106607f2e0ab6ed1fdb992d2a9ff374fbdd</A>
+
+commit 9258c106607f2e0ab6ed1fdb992d2a9ff374fbdd
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Nov 19 08:30:31 2010 -0600
+
+    DigiTalk
+    
+      * Changed interface method to connect to DigiTalk
+        autostart no longer initiated unless so configured
+      * Changed Connect button on Misc tab to provide for
+        both connect and disconnect
+      * Added new macro tags to allow DigiTalk connect /
+        disconnect using function keys
+        - &lt;TALK:on|off|t&gt; start, stop, toggle
+          the connection to the DigiTalk socket server
+
+ 9 files changed, 103 insertions(+), 25 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=3a51cef81a235a2fd98759fafc6de73883497e4c">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=3a51cef81a235a2fd98759fafc6de73883497e4c</A>
+
+commit 3a51cef81a235a2fd98759fafc6de73883497e4c
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Nov 19 08:30:31 2010 -0600
+
+    QSO_DB sort order
+    
+      Corrected bug in date-time sorting of the logbook database.
+      Sort is now by DATE and TIME vice DATE and TIME_OFF
+
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=36aa19100d18d6f61d97a602c6fc53097b227ad3">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=36aa19100d18d6f61d97a602c6fc53097b227ad3</A>
+
+commit 36aa19100d18d6f61d97a602c6fc53097b227ad3
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Nov 19 08:29:53 2010 -0600
+
+    Macros
+    
+      * Added CLEARLOG macro tag
+        - Inserts a ^C into the transmit text.  ^C can also be entered
+          manually.  Note that this is a two character sequence:
+          carat C, and not a control-C symbolism.
+
+ 4 files changed, 19 insertions(+), 4 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                   |   28 ++++++++++++
+ configure.ac                |    2 +-
+ src/dialogs/confdialog.cxx  |  102 +++++++++++++++++++++++++++++++------------
+ src/dialogs/confdialog.fl   |   82 +++++++++++++++++++++++-----------
+ src/dialogs/fl_digi.cxx     |   13 ++++-
+ src/include/confdialog.h    |    8 +++-
+ src/include/configuration.h |   12 +++++
+ src/include/logsupport.h    |    1 +
+ src/include/modem.h         |    1 +
+ src/include/qso_db.h        |    2 +-
+ src/include/speak.h         |    5 +-
+ src/logbook/adif_io.cxx     |   21 ++++++++-
+ src/logbook/logsupport.cxx  |   44 ++++++++++++-------
+ src/logbook/qso_db.cxx      |   36 +++++++++++----
+ src/logger/logger.cxx       |   14 +-----
+ src/logger/speak.cxx        |   26 ++++++++---
+ src/main.cxx                |    3 +-
+ src/misc/lookupcall.cxx     |   16 +++++++
+ src/misc/macroedit.cxx      |    6 +++
+ src/misc/macros.cxx         |   40 +++++++++++++++++
+ src/misc/status.cxx         |    2 +-
+ src/rsid/rsid.cxx           |   20 ++++++++-
+ src/trx/modem.cxx           |   42 ++++++++++++++++++
+ src/widgets/FTextView.cxx   |    2 +-
+ 24 files changed, 412 insertions(+), 116 deletions(-)
+  49.1% src/dialogs/
+   8.6% src/include/
+  18.3% src/logbook/
+   5.0% src/logger/
+   7.0% src/misc/
+   6.1% src/trx/
+   3.1% src/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000429.html">[GIT] fldigi branch, master,	updated: 2260b5f6ded580c4b2e4826490b6c1074d76c4fb
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#430">[ date ]</a>
+              <a href="thread.html#430">[ thread ]</a>
+              <a href="subject.html#430">[ subject ]</a>
+              <a href="author.html#430">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

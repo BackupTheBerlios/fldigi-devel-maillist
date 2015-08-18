@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fail
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fail&In-Reply-To=%3C4DF5DA8A.9030801%40wp.pl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000641.html">
+   <LINK REL="Next"  HREF="000643.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fail</H1>
+    <B>Igor Zaremba sq1fyi</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fail&In-Reply-To=%3C4DF5DA8A.9030801%40wp.pl%3E"
+       TITLE="fail">sq1fyi at wp.pl
+       </A><BR>
+    <I>Mon Jun 13 11:38:18 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000641.html">Howto edit the wiki?
+</A></li>
+        <LI>Next message: <A HREF="000643.html">[GIT] fldigi branch, maint/3.21,	updated: 251dda4dc6a5f14c2710421421be6f4a734464b1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#642">[ date ]</a>
+              <a href="thread.html#642">[ thread ]</a>
+              <a href="subject.html#642">[ subject ]</a>
+              <a href="author.html#642">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>****** Stack trace:
+fldigi[0x4fb2f6]
+fldigi[0x4fb499]
+/lib/libpthread.so.0(+0xf020)[0x7fc081e7d020]
+fldigi[0x4702c5]
+fldigi[0x473325]
+fldigi[0x417e5a]
+/lib/libc.so.6(__libc_start_main+0xfd)[0x7fc07e465ead]
+fldigi[0x41abdd]
+
+****** Version information:
+fldigi 3.21.10
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi 
+Chateauneu, and others.
+License GPLv3+: GNU GPL version 3 or later 
+&lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+   built          : Sun May 29 14:36:58 UTC 2011 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">pbuilder at fourier</A> on 
+x86_64-pc-linux-gnu for x86_64-pc-linux-gnu
+
+   configure flags: '--build=x86_64-linux-gnu' '--prefix=/usr' 
+'--includedir=${prefix}/include' '--mandir=${prefix}/share/man' 
+'--infodir=${prefix}/share/info' '--sysconfdir=/etc' 
+'--localstatedir=/var' '--libexecdir=${prefix}/lib/fldigi' 
+'--disable-maintainer-mode' '--disable-dependency-tracking' 
+'build_alias=x86_64-linux-gnu' 'CXXFLAGS=-g -O2' 'LDFLAGS=' 'CPPFLAGS=' 
+'CFLAGS=-g -O2'
+
+   compiler       : gcc version 4.6.1 20110526 (prerelease) (Debian 
+4.6.0-10)
+
+   compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml 
+-I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -pthread 
+-I/usr/include/freetype2 -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT 
+-I/usr/include/libpng12 -I/usr/include -pipe -Wall -fexceptions -O2 
+-ffast-math -finline-functions -DNDEBUG
+
+   linker flags   : -lportaudio -lasound -lm -lpthread -lfltk_images 
+-lfltk -lX11 -lsndfile -lsamplerate -lpulse-simple -lpulse -lhamlib -lm 
+-lpng12 -L/usr/lib -lxmlrpc_server_abyss++ -lxmlrpc_server++ 
+-lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss -lpthread 
+-lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -ldl 
+-lrt -lpthread
+
+   libraries      : FLTK 1.1.10
+                    libsamplerate 0.1.7
+                    libsndfile 1.0.24
+                    PortAudio 19
+                    PulseAudio 0.9.21
+                    Hamlib 1.2.13
+                    XMLRPC-C 1.16.33
+
+
+Runtime information:
+   system         : Linux radio 2.6.38-2-amd64 #1 SMP Sun May 8 13:51:57 
+UTC 2011 x86_64
+
+   libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                    libsndfile-1.0.24
+                    PortAudio V19-devel (built Apr 16 2011 18:31:04) 1899
+                    Pulseaudio 0.9.21
+                    Hamlib 1.2.13.1
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000641.html">Howto edit the wiki?
+</A></li>
+	<LI>Next message: <A HREF="000643.html">[GIT] fldigi branch, maint/3.21,	updated: 251dda4dc6a5f14c2710421421be6f4a734464b1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#642">[ date ]</a>
+              <a href="thread.html#642">[ thread ]</a>
+              <a href="subject.html#642">[ subject ]</a>
+              <a href="author.html#642">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

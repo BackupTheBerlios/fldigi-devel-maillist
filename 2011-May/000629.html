@@ -1,0 +1,182 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fatal error
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fatal%20error&In-Reply-To=%3C20110504210711.GA2424%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000628.html">
+   <LINK REL="Next"  HREF="000630.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fatal error</H1>
+    <B>Fernando M. Maresca</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fatal%20error&In-Reply-To=%3C20110504210711.GA2424%40gmail.com%3E"
+       TITLE="fatal error">fmaresca at gmail.com
+       </A><BR>
+    <I>Wed May  4 23:07:11 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000628.html">fatal error
+</A></li>
+        <LI>Next message: <A HREF="000630.html">New yahoo group in French fldigi at yahoogroupes.fr
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#629">[ date ]</a>
+              <a href="thread.html#629">[ thread ]</a>
+              <a href="subject.html#629">[ subject ]</a>
+              <a href="author.html#629">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi.
+This problem appears in newer versions of libfltk 1.10, as the current
+one on debian sid (unstable).
+The problem is the gettext call in globals/globals.cpp circa line 115:
+   { MODE_ANALYSIS, &amp;anal_modem, &quot;ANALYSIS&quot;, _(&quot;Freq Analysis&quot;), &quot;&quot;,     &quot;&quot;, &quot;&quot; }
+
+Remove the gettext call and try rebuilding.
+
+73 de Fer
+
+
+On Wed, May 04, 2011 at 10:03:05PM +0100, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A> wrote:
+&gt;<i> Hi,
+</I>&gt;<i> 
+</I>&gt;<i> Did you do something before getting this message or was it at startup ?
+</I>&gt;<i> 
+</I>&gt;<i> By the way the string
+</I>&gt;<i> #define COUNTRIES_MLABEL       _(&quot;C&amp;ountries&quot;)
+</I>&gt;<i> 
+</I>&gt;<i> ... occurs twice in fl_digi.cxx : Maybe we could do some cleanup.
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> Le 04.05.2011 08:59, Altti U. a &#233;crit :
+</I>&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">au at mynet</A> ~ $ fldigi
+</I>&gt;<i> &gt;E: getMenuItem: FIXME: could not find menu &quot;C&amp;ountries&quot;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;Caught signal 11
+</I>&gt;<i> &gt;Aborting fldigi due to a fatal error.
+</I>&gt;<i> &gt;Please report this to: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> &gt;or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;****** Stack trace:
+</I>&gt;<i> &gt;fldigi[0x50adc0]
+</I>&gt;<i> &gt;/lib/libpthread.so.0(+0xef60)[0x7f0ed957af60]
+</I>&gt;<i> &gt;fldigi[0x46f18a]
+</I>&gt;<i> &gt;fldigi[0x4729b5]
+</I>&gt;<i> &gt;fldigi[0x4bc0f5]
+</I>&gt;<i> &gt;/lib/libc.so.6(__libc_start_main+0xfd)[0x7f0ed5b8cc4d]
+</I>&gt;<i> &gt;fldigi[0x415dd9]
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;****** Version information:
+</I>&gt;<i> &gt;fldigi 3.21.9
+</I>&gt;<i> &gt;Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi
+</I>&gt;<i> &gt;Chateauneu, and others.
+</I>&gt;<i> &gt;License GPLv3+: GNU GPL version 3 or later
+</I>&gt;<i> &gt;&lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+</I>&gt;<i> &gt;This is free software: you are free to change and redistribute it.
+</I>&gt;<i> &gt;There is NO WARRANTY, to the extent permitted by law.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;****** Build information:
+</I>&gt;<i> &gt;Build information:
+</I>&gt;<i> &gt;built : Thu Apr 21 19:13:28 UTC 2011 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">pbuilder at fourier</A> on
+</I>&gt;<i> &gt;x86_64-pc-linux-gnu for x86_64-pc-linux-gnu
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;configure flags: '--build=x86_64-linux-gnu' '--prefix=/usr'
+</I>&gt;<i> &gt;'--includedir=${prefix}/include' '--mandir=${prefix}/share/man'
+</I>&gt;<i> &gt;'--infodir=${prefix}/share/info' '--sysconfdir=/etc'
+</I>&gt;<i> &gt;'--localstatedir=/var' '--libexecdir=${prefix}/lib/fldigi'
+</I>&gt;<i> &gt;'--disable-maintainer-mode' '--disable-dependency-tracking'
+</I>&gt;<i> &gt;'build_alias=x86_64-linux-gnu' 'CXXFLAGS=-g -O2' 'LDFLAGS=' 'CPPFLAGS='
+</I>&gt;<i> &gt;'CFLAGS=-g -O2'
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;compiler : gcc version 4.5.2 (Debian 4.5.2-10)
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+</I>&gt;<i> &gt;-I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -pthread
+</I>&gt;<i> &gt;-I/usr/include/freetype2 -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT
+</I>&gt;<i> &gt;-I/usr/include/libpng12 -I/usr/include -pipe -Wall -fexceptions -O2
+</I>&gt;<i> &gt;-ffast-math -finline-functions -DNDEBUG
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;linker flags : -lportaudio -lasound -lm -lpthread -lfltk_images -lfltk
+</I>&gt;<i> &gt;-lX11 -lsndfile -lsamplerate -lpulse-simple -lpulse -lhamlib -lm -lpng12
+</I>&gt;<i> &gt;-L/usr/lib -lxmlrpc_server_abyss++ -lxmlrpc_server++
+</I>&gt;<i> &gt;-lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss -lpthread
+</I>&gt;<i> &gt;-lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -ldl
+</I>&gt;<i> &gt;-lrt -lpthread
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;libraries : FLTK 1.1.10
+</I>&gt;<i> &gt;libsamplerate 0.1.7
+</I>&gt;<i> &gt;libsndfile 1.0.24
+</I>&gt;<i> &gt;PortAudio 19
+</I>&gt;<i> &gt;PulseAudio 0.9.21
+</I>&gt;<i> &gt;Hamlib 1.2.13
+</I>&gt;<i> &gt;XMLRPC-C 1.16.33
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;Runtime information:
+</I>&gt;<i> &gt;system : Linux mynet 2.6.32-5-amd64 #1 SMP Wed Jan 12 03:40:32 UTC 2011
+</I>&gt;<i> &gt;x86_64
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;libraries : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+</I>&gt;<i> &gt;libsndfile-1.0.23
+</I>&gt;<i> &gt;PortAudio V19-devel (built Apr 16 2011 18:31:04) 1899
+</I>&gt;<i> &gt;Pulseaudio 0.9.21
+</I>&gt;<i> &gt;Hamlib 1.2.13
+</I>&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">au at mynet</A> ~ $
+</I>&gt;<i> &gt;LinuxMint XFCE-2 3.5.2011
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;73 OH2HN
+</I>&gt;<i> &gt;_______________________________________________
+</I>&gt;<i> &gt;fldigi-devel mailing list
+</I>&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> &gt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> 
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>
+-- 
+Fernando M. Maresca
+- - - - - - - - - - - - -
+Cel: 221 15 545 8196
+Tel: 221 450 5378
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 198 bytes
+Desc: Digital signature
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20110504/69ffd8ca/attachment.pgp">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20110504/69ffd8ca/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000628.html">fatal error
+</A></li>
+	<LI>Next message: <A HREF="000630.html">New yahoo group in French fldigi at yahoogroupes.fr
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#629">[ date ]</a>
+              <a href="thread.html#629">[ thread ]</a>
+              <a href="subject.html#629">[ subject ]</a>
+              <a href="author.html#629">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

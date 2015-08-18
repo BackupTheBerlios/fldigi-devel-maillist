@@ -1,0 +1,2776 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-devel Digest, Vol 54, Issue 2
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-devel%20Digest%2C%20Vol%2054%2C%20Issue%202&In-Reply-To=%3CCAPRqYUVcBwquV9p_7kF%2BGiMPzCgr07_EgQHJ9yXmDAdTycJy%2Bw%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001089.html">
+   <LINK REL="Next"  HREF="001090.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-devel Digest, Vol 54, Issue 2</H1>
+    <B>John Phelps</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-devel%20Digest%2C%20Vol%2054%2C%20Issue%202&In-Reply-To=%3CCAPRqYUVcBwquV9p_7kF%2BGiMPzCgr07_EgQHJ9yXmDAdTycJy%2Bw%40mail.gmail.com%3E"
+       TITLE="fldigi-devel Digest, Vol 54, Issue 2">kl4yfd at gmail.com
+       </A><BR>
+    <I>Fri Sep  6 16:29:22 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001089.html">Fldigi crashreport
+</A></li>
+        <LI>Next message: <A HREF="001090.html">[GIT] fldigi branch, maint/3.21,	updated: 20c533f8a887e52a62988cc6ea5d69b66fca159d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1085">[ date ]</a>
+              <a href="thread.html#1085">[ thread ]</a>
+              <a href="subject.html#1085">[ subject ]</a>
+              <a href="author.html#1085">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Am currently installing AMD64 Gentoo to look into this issue.
+Hoping to have a minimal  running / debuggable system in a few hours. Will
+run fldigi through my personal debug-process here and see if I can find the
+bug or at least help narrow it down.
+
+John
+KL4YFD
+
+
+On Fri, Sep 6, 2013 at 1:47 AM, &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel-request at lists.berlios.de</A>&gt;wrote:
+
+&gt;<i> Send fldigi-devel mailing list submissions to
+</I>&gt;<i>         <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i>
+</I>&gt;<i> To subscribe or unsubscribe via the World Wide Web, visit
+</I>&gt;<i>         <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>&gt;<i> or, via email, send a message with subject or body 'help' to
+</I>&gt;<i>         <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel-request at lists.berlios.de</A>
+</I>&gt;<i>
+</I>&gt;<i> You can reach the person managing the list at
+</I>&gt;<i>         <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel-owner at lists.berlios.de</A>
+</I>&gt;<i>
+</I>&gt;<i> When replying, please edit your Subject line so it is more specific
+</I>&gt;<i> than &quot;Re: Contents of fldigi-devel digest...&quot;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Today's Topics:
+</I>&gt;<i>
+</I>&gt;<i>    1. Fldigi crashreport (kayvax)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> Message: 1
+</I>&gt;<i> Date: Fri, 06 Sep 2013 10:47:02 +0200
+</I>&gt;<i> From: kayvax &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kayvax at gmail.com</A>&gt;
+</I>&gt;<i> To: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> Subject: Fldigi crashreport
+</I>&gt;<i> Message-ID: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">52299686.9030206 at gmail.com</A>&gt;
+</I>&gt;<i> Content-Type: text/plain; charset=&quot;utf-8&quot;
+</I>&gt;<i>
+</I>&gt;<i> Dear fldigi Devs,
+</I>&gt;<i> I would like to present you an issue I have been trying to resolve for
+</I>&gt;<i> last few months. I was using fldigi some time ago, compiled from portage
+</I>&gt;<i> repository with no problems, but after some os updates it went broken -
+</I>&gt;<i> run ends with segfault.
+</I>&gt;<i>
+</I>&gt;<i> I have filled a ticket on <A HREF="https://fedorahosted.org/fldigi/ticket/47">https://fedorahosted.org/fldigi/ticket/47</A> and
+</I>&gt;<i> it seems to be dead. I am including same material as in said ticket here.
+</I>&gt;<i>
+</I>&gt;<i> I have consulted fellow funtoo user and managed to build glibc-2.15-r4
+</I>&gt;<i> and fldigi-3.21.75 using fltk-1.3.2 with debug enabled. I have run it
+</I>&gt;<i> with gdb and backtrace is in backtrace.log. Rest of logs are of earlier
+</I>&gt;<i> attempts to discover source of this issue.
+</I>&gt;<i>
+</I>&gt;<i> As for today, I have tested fldigi versions from 3.21.60 to 3.21.75 and
+</I>&gt;<i> binary version 3.21.73.
+</I>&gt;<i>
+</I>&gt;<i> I would appreicieate any help to resolve this issue. I can provide
+</I>&gt;<i> further information.
+</I>&gt;<i>
+</I>&gt;<i> Best regards,
+</I>&gt;<i> Mikolaj Pelka
+</I>&gt;<i> **
+</I>&gt;<i> -------------- next part --------------
+</I>&gt;<i> An HTML attachment was scrubbed...
+</I>&gt;<i> URL: &lt;
+</I>&gt;<i> <A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130906/bf8145a3/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130906/bf8145a3/attachment.html</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> -------------- next part --------------
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">necercis at Sylvania</A> ~/fldigi/3.21.75/fldigi-3.21.75_1 $ gdb src/fldigi
+</I>&gt;<i> GNU gdb (Gentoo 7.6.1 p1) 7.6.1
+</I>&gt;<i> Copyright (C) 2013 Free Software Foundation, Inc.
+</I>&gt;<i> License GPLv3+: GNU GPL version 3 or later &lt;
+</I>&gt;<i> <A HREF="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</A>&gt;
+</I>&gt;<i> This is free software: you are free to change and redistribute it.
+</I>&gt;<i> There is NO WARRANTY, to the extent permitted by law.  Type &quot;show copying&quot;
+</I>&gt;<i> and &quot;show warranty&quot; for details.
+</I>&gt;<i> This GDB was configured as &quot;x86_64-pc-linux-gnu&quot;.
+</I>&gt;<i> For bug reporting instructions, please see:
+</I>&gt;<i> &lt;<A HREF="http://bugs.gentoo.org/">http://bugs.gentoo.org/</A>&gt;...
+</I>&gt;<i> Reading symbols from
+</I>&gt;<i> /home/necercis/fldigi/3.21.75/fldigi-3.21.75_1/src/fldigi...done.
+</I>&gt;<i> (gdb) run
+</I>&gt;<i> Starting program: /home/necercis/fldigi/3.21.75/fldigi-3.21.75_1/src/fldigi
+</I>&gt;<i> warning: Could not load shared library symbols for linux-vdso.so.1.
+</I>&gt;<i> Do you need &quot;set solib-search-path&quot; or &quot;set sysroot&quot;?
+</I>&gt;<i> [Thread debugging using libthread_db enabled]
+</I>&gt;<i> Using host libthread_db library &quot;/lib64/libthread_db.so.1&quot;.
+</I>&gt;<i> Not using malloc debugging hooks
+</I>&gt;<i> I: main: appname: /home/necercis/fldigi/3.21.75/fldigi-3.21.75_1/src/fldigi
+</I>&gt;<i> I: main: /home/necercis/fldigi/3.21.75/fldigi-3.21.75_1/src/NBEMS.DIR not
+</I>&gt;<i> present
+</I>&gt;<i> I: main: HomeDir: /home/necercis/.fldigi/
+</I>&gt;<i> I: main: RigsDir: /home/necercis/.fldigi/rigs/
+</I>&gt;<i> I: main: ScriptsDir: /home/necercis/.fldigi/scripts/
+</I>&gt;<i> I: main: PalettesDir: /home/necercis/.fldigi/palettes/
+</I>&gt;<i> I: main: LogsDir: /home/necercis/.fldigi/logs/
+</I>&gt;<i> I: main: PicsDir: /home/necercis/.fldigi/images/
+</I>&gt;<i> I: main: HelpDir: /home/necercis/.fldigi/help/
+</I>&gt;<i> I: main: MacrosDir: /home/necercis/.fldigi/macros/
+</I>&gt;<i> I: main: WrapDir: /home/necercis/.fldigi/wrap/
+</I>&gt;<i> I: main: TalkDir: /home/necercis/.fldigi/talk/
+</I>&gt;<i> I: main: TempDir: /home/necercis/.fldigi/temp/
+</I>&gt;<i> I: main: KmlDir: /home/necercis/.fldigi/kml/
+</I>&gt;<i> I: main: PskMailDir: /home/necercis/
+</I>&gt;<i> I: main: DATA_dir: /home/necercis/.fldigi/data/
+</I>&gt;<i> I: main: NBEMS_dir: /home/necercis/.nbems/
+</I>&gt;<i> I: main: ARQ_dir: /home/necercis/.nbems/ARQ/
+</I>&gt;<i> I: main: ARQ_files_dir: /home/necercis/.nbems/ARQ/files/
+</I>&gt;<i> I: main: ARQ_recv_dir: /home/necercis/.nbems/ARQ/recv/
+</I>&gt;<i> I: main: ARQ_send: /home/necercis/.nbems/ARQ/send/
+</I>&gt;<i> I: main: WRAP_dir: /home/necercis/.nbems/WRAP/
+</I>&gt;<i> I: main: WRAP_recv_dir: /home/necercis/.nbems/WRAP/recv/
+</I>&gt;<i> I: main: WRAP_send_dir: /home/necercis/.nbems/WRAP/send/
+</I>&gt;<i> I: main: WRAP_auto_dir: /home/necercis/.nbems/WRAP/auto/
+</I>&gt;<i> I: main: ICS_dir: /home/necercis/.nbems/ICS/
+</I>&gt;<i> I: main: ICS_msg_dir: /home/necercis/.nbems/ICS/messages/
+</I>&gt;<i> I: main: ICS_tmp_dir: /home/necercis/.nbems/ICS/templates/
+</I>&gt;<i> I: main: FLMSG_dir: /home/necercis/.nbems/
+</I>&gt;<i> I: main: FLMSG_dir_default: /home/necercis/.nbems/
+</I>&gt;<i> I: main: FLMSG_WRAP_dir: /home/necercis/.nbems/WRAP/
+</I>&gt;<i> I: main: FLMSG_WRAP_recv_dir: /home/necercis/.nbems/WRAP/recv/
+</I>&gt;<i> I: main: FLMSG_WRAP_send_dir: /home/necercis/.nbems/WRAP/send/
+</I>&gt;<i> I: main: FLMSG_WRAP_auto_dir: /home/necercis/.nbems/WRAP/auto/
+</I>&gt;<i> I: main: FLMSG_ICS_dir: /home/necercis/.nbems/ICS/
+</I>&gt;<i> I: main: FLMSG_ICS_msg_dir: /home/necercis/.nbems/ICS/messages/
+</I>&gt;<i> I: main: FLMSG_ICS_tmp_dir: /home/necercis/.nbems/ICS/templates/
+</I>&gt;<i>
+</I>&gt;<i> Program received signal SIGSEGV, Segmentation fault.
+</I>&gt;<i> __strlen_sse2 () at ../sysdeps/x86_64/multiarch/../strlen.S:32
+</I>&gt;<i> 32      ../sysdeps/x86_64/multiarch/../strlen.S: Nie ma takiego pliku ani
+</I>&gt;<i> katalogu.
+</I>&gt;<i> (gdb) bt
+</I>&gt;<i> #0  __strlen_sse2 () at ../sysdeps/x86_64/multiarch/../strlen.S:32
+</I>&gt;<i> #1  0x00007ffff6b79a36 in Fl::set_fonts(char const*) () from
+</I>&gt;<i> /usr/lib64/fltk-1/libfltk.so.1.3
+</I>&gt;<i> #2  0x00000000006fa239 in main (argc=1, argv=0x7fffffffdca8) at
+</I>&gt;<i> main.cxx:410
+</I>&gt;<i> (gdb)
+</I>&gt;<i> -------------- next part --------------
+</I>&gt;<i> Calculating dependencies  ...... .. .. ... done!
+</I>&gt;<i>
+</I>&gt;<i> &gt;&gt;&gt; Verifying ebuild manifests
+</I>&gt;<i>
+</I>&gt;<i> &gt;&gt;&gt; Emerging (1 of 1) media-radio/fldigi-3.21.73
+</I>&gt;<i>  * fldigi-3.21.73.tar.gz SHA256 SHA512 WHIRLPOOL size ;-) ...            [
+</I>&gt;<i> ok ]
+</I>&gt;<i> &gt;&gt;&gt; Unpacking source...
+</I>&gt;<i> &gt;&gt;&gt; Unpacking fldigi-3.21.73.tar.gz to
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work
+</I>&gt;<i> &gt;&gt;&gt; Source unpacked in /var/tmp/portage/media-radio/fldigi-3.21.73/work
+</I>&gt;<i> &gt;&gt;&gt; Preparing source in
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73 ...
+</I>&gt;<i> &gt;&gt;&gt; Source prepared.
+</I>&gt;<i> &gt;&gt;&gt; Configuring source in
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73 ...
+</I>&gt;<i>  * econf: updating fldigi-3.21.73/build-aux/config.sub with
+</I>&gt;<i> /usr/share/gnuconfig/config.sub
+</I>&gt;<i>  * econf: updating fldigi-3.21.73/build-aux/config.guess with
+</I>&gt;<i> /usr/share/gnuconfig/config.guess
+</I>&gt;<i> ./configure --prefix=/usr --build=x86_64-pc-linux-gnu
+</I>&gt;<i> --host=x86_64-pc-linux-gnu --mandir=/usr/share/man
+</I>&gt;<i> --infodir=/usr/share/info --datadir=/usr/share --sysconfdir=/etc
+</I>&gt;<i> --localstatedir=/var/lib --libdir=/usr/lib64 --disable-dependency-tracking
+</I>&gt;<i> --with-sndfile --with-portaudio --with-hamlib --enable-nls
+</I>&gt;<i> --with-pulseaudio --disable-silent-rules --without-asciidoc
+</I>&gt;<i> checking build system type... x86_64-pc-linux-gnu
+</I>&gt;<i> checking host system type... x86_64-pc-linux-gnu
+</I>&gt;<i> checking target system type... x86_64-pc-linux-gnu
+</I>&gt;<i> checking for a BSD-compatible install... /usr/bin/install -c
+</I>&gt;<i> checking whether build environment is sane... yes
+</I>&gt;<i> checking for a thread-safe mkdir -p... /bin/mkdir -p
+</I>&gt;<i> checking for gawk... gawk
+</I>&gt;<i> checking whether make sets $(MAKE)... yes
+</I>&gt;<i> checking whether make supports nested variables... yes
+</I>&gt;<i> checking whether to enable maintainer-specific portions of Makefiles... no
+</I>&gt;<i> checking for x86_64-pc-linux-gnu-g++... x86_64-pc-linux-gnu-g++
+</I>&gt;<i> checking whether the C++ compiler works... yes
+</I>&gt;<i> checking for C++ compiler default output file name... a.out
+</I>&gt;<i> checking for suffix of executables...
+</I>&gt;<i> checking whether we are cross compiling... no
+</I>&gt;<i> checking for suffix of object files... o
+</I>&gt;<i> checking whether we are using the GNU C++ compiler... yes
+</I>&gt;<i> checking whether x86_64-pc-linux-gnu-g++ accepts -g... yes
+</I>&gt;<i> checking for style of include used by make... GNU
+</I>&gt;<i> checking dependency style of x86_64-pc-linux-gnu-g++... none
+</I>&gt;<i> checking for x86_64-pc-linux-gnu-gcc... x86_64-pc-linux-gnu-gcc
+</I>&gt;<i> checking whether we are using the GNU C compiler... yes
+</I>&gt;<i> checking whether x86_64-pc-linux-gnu-gcc accepts -g... yes
+</I>&gt;<i> checking for x86_64-pc-linux-gnu-gcc option to accept ISO C89... none
+</I>&gt;<i> needed
+</I>&gt;<i> checking dependency style of x86_64-pc-linux-gnu-gcc... none
+</I>&gt;<i> checking how to run the C preprocessor... x86_64-pc-linux-gnu-gcc -E
+</I>&gt;<i> checking for grep that handles long lines and -e... /bin/grep
+</I>&gt;<i> checking for egrep... /bin/grep -E
+</I>&gt;<i> checking for ANSI C header files... yes
+</I>&gt;<i> checking for sys/types.h... yes
+</I>&gt;<i> checking for sys/stat.h... yes
+</I>&gt;<i> checking for stdlib.h... yes
+</I>&gt;<i> checking for string.h... yes
+</I>&gt;<i> checking for memory.h... yes
+</I>&gt;<i> checking for strings.h... yes
+</I>&gt;<i> checking for inttypes.h... yes
+</I>&gt;<i> checking for stdint.h... yes
+</I>&gt;<i> checking for unistd.h... yes
+</I>&gt;<i> checking minix/config.h usability... no
+</I>&gt;<i> checking minix/config.h presence... no
+</I>&gt;<i> checking for minix/config.h... no
+</I>&gt;<i> checking whether it is safe to define __EXTENSIONS__... yes
+</I>&gt;<i> checking for ANSI C header files... (cached) yes
+</I>&gt;<i> checking for dirent.h that defines DIR... yes
+</I>&gt;<i> checking for library containing opendir... none required
+</I>&gt;<i> checking arpa/inet.h usability... yes
+</I>&gt;<i> checking arpa/inet.h presence... yes
+</I>&gt;<i> checking for arpa/inet.h... yes
+</I>&gt;<i> checking execinfo.h usability... yes
+</I>&gt;<i> checking execinfo.h presence... yes
+</I>&gt;<i> checking for execinfo.h... yes
+</I>&gt;<i> checking fcntl.h usability... yes
+</I>&gt;<i> checking fcntl.h presence... yes
+</I>&gt;<i> checking for fcntl.h... yes
+</I>&gt;<i> checking limits.h usability... yes
+</I>&gt;<i> checking limits.h presence... yes
+</I>&gt;<i> checking for limits.h... yes
+</I>&gt;<i> checking for memory.h... (cached) yes
+</I>&gt;<i> checking netdb.h usability... yes
+</I>&gt;<i> checking netdb.h presence... yes
+</I>&gt;<i> checking for netdb.h... yes
+</I>&gt;<i> checking netinet/in.h usability... yes
+</I>&gt;<i> checking netinet/in.h presence... yes
+</I>&gt;<i> checking for netinet/in.h... yes
+</I>&gt;<i> checking regex.h usability... yes
+</I>&gt;<i> checking regex.h presence... yes
+</I>&gt;<i> checking for regex.h... yes
+</I>&gt;<i> checking for stdint.h... (cached) yes
+</I>&gt;<i> checking for stdlib.h... (cached) yes
+</I>&gt;<i> checking for string.h... (cached) yes
+</I>&gt;<i> checking for strings.h... (cached) yes
+</I>&gt;<i> checking sys/ioctl.h usability... yes
+</I>&gt;<i> checking sys/ioctl.h presence... yes
+</I>&gt;<i> checking for sys/ioctl.h... yes
+</I>&gt;<i> checking sys/param.h usability... yes
+</I>&gt;<i> checking sys/param.h presence... yes
+</I>&gt;<i> checking for sys/param.h... yes
+</I>&gt;<i> checking sys/socket.h usability... yes
+</I>&gt;<i> checking sys/socket.h presence... yes
+</I>&gt;<i> checking for sys/socket.h... yes
+</I>&gt;<i> checking sys/time.h usability... yes
+</I>&gt;<i> checking sys/time.h presence... yes
+</I>&gt;<i> checking for sys/time.h... yes
+</I>&gt;<i> checking sys/utsname.h usability... yes
+</I>&gt;<i> checking sys/utsname.h presence... yes
+</I>&gt;<i> checking for sys/utsname.h... yes
+</I>&gt;<i> checking termios.h usability... yes
+</I>&gt;<i> checking termios.h presence... yes
+</I>&gt;<i> checking for termios.h... yes
+</I>&gt;<i> checking for unistd.h... (cached) yes
+</I>&gt;<i> checking values.h usability... yes
+</I>&gt;<i> checking values.h presence... yes
+</I>&gt;<i> checking for values.h... yes
+</I>&gt;<i> checking linux/ppdev.h usability... yes
+</I>&gt;<i> checking linux/ppdev.h presence... yes
+</I>&gt;<i> checking for linux/ppdev.h... yes
+</I>&gt;<i> checking dev/ppbus/ppi.h usability... no
+</I>&gt;<i> checking dev/ppbus/ppi.h presence... no
+</I>&gt;<i> checking for dev/ppbus/ppi.h... no
+</I>&gt;<i> checking for stdbool.h that conforms to C99... yes
+</I>&gt;<i> checking for _Bool... yes
+</I>&gt;<i> checking for an ANSI C-conforming const... yes
+</I>&gt;<i> checking for inline... inline
+</I>&gt;<i> checking for int16_t... yes
+</I>&gt;<i> checking for int32_t... yes
+</I>&gt;<i> checking for int64_t... yes
+</I>&gt;<i> checking for int8_t... yes
+</I>&gt;<i> checking for C/C++ restrict keyword... __restrict
+</I>&gt;<i> checking for size_t... yes
+</I>&gt;<i> checking whether time.h and sys/time.h may both be included... yes
+</I>&gt;<i> checking whether struct tm is in sys/time.h or time.h... time.h
+</I>&gt;<i> checking for uint16_t... yes
+</I>&gt;<i> checking for uint32_t... yes
+</I>&gt;<i> checking for uint64_t... yes
+</I>&gt;<i> checking for uint8_t... yes
+</I>&gt;<i> checking for working volatile... yes
+</I>&gt;<i> checking whether closedir returns void... no
+</I>&gt;<i> checking for error_at_line... yes
+</I>&gt;<i> checking whether x86_64-pc-linux-gnu-gcc needs -traditional... no
+</I>&gt;<i> checking sys/select.h usability... yes
+</I>&gt;<i> checking sys/select.h presence... yes
+</I>&gt;<i> checking for sys/select.h... yes
+</I>&gt;<i> checking for sys/socket.h... (cached) yes
+</I>&gt;<i> checking types of arguments for select... int,fd_set *,struct timeval *
+</I>&gt;<i> checking return type of signal handlers... void
+</I>&gt;<i> checking for strftime... yes
+</I>&gt;<i> checking for working strtod... yes
+</I>&gt;<i> checking for getaddrinfo... yes
+</I>&gt;<i> checking for gethostbyname... yes
+</I>&gt;<i> checking for hstrerror... yes
+</I>&gt;<i> checking for gmtime_r... yes
+</I>&gt;<i> checking for localtime_r... yes
+</I>&gt;<i> checking for memmove... yes
+</I>&gt;<i> checking for memset... yes
+</I>&gt;<i> checking for mkdir... yes
+</I>&gt;<i> checking for select... yes
+</I>&gt;<i> checking for setenv... yes
+</I>&gt;<i> checking for snprintf... yes
+</I>&gt;<i> checking for socket... yes
+</I>&gt;<i> checking for socketpair... yes
+</I>&gt;<i> checking for strcasecmp... yes
+</I>&gt;<i> checking for strcasestr... yes
+</I>&gt;<i> checking for strchr... yes
+</I>&gt;<i> checking for strdup... yes
+</I>&gt;<i> checking for strerror... yes
+</I>&gt;<i> checking for strlcpy... no
+</I>&gt;<i> checking for strncasecmp... yes
+</I>&gt;<i> checking for strrchr... yes
+</I>&gt;<i> checking for strstr... yes
+</I>&gt;<i> checking for strtol... yes
+</I>&gt;<i> checking for uname... yes
+</I>&gt;<i> checking for unsetenv... yes
+</I>&gt;<i> checking for vsnprintf... yes
+</I>&gt;<i> checking for O_CLOEXEC... yes
+</I>&gt;<i> checking whether NLS is requested... yes
+</I>&gt;<i> checking for msgfmt... /usr/bin/msgfmt
+</I>&gt;<i> checking for gmsgfmt... /usr/bin/gmsgfmt
+</I>&gt;<i> checking for xgettext... /usr/bin/xgettext
+</I>&gt;<i> checking for msgmerge... /usr/bin/msgmerge
+</I>&gt;<i> checking for ld used by GCC... /usr/x86_64-pc-linux-gnu/bin/ld
+</I>&gt;<i> checking if the linker (/usr/x86_64-pc-linux-gnu/bin/ld) is GNU ld... yes
+</I>&gt;<i> checking for shared library run path origin... done
+</I>&gt;<i> checking for CFPreferencesCopyAppValue... no
+</I>&gt;<i> checking for CFLocaleCopyCurrent... no
+</I>&gt;<i> checking for GNU gettext in libc... yes
+</I>&gt;<i> checking whether to use NLS... yes
+</I>&gt;<i> checking where the gettext function comes from... libc
+</I>&gt;<i> checking for library containing dlopen... -ldl
+</I>&gt;<i> checking for library containing clock_gettime... -lrt
+</I>&gt;<i> checking for library containing sem_unlink... -lpthread
+</I>&gt;<i> checking for library containing sem_timedwait... -lpthread
+</I>&gt;<i> checking for TLS support... yes
+</I>&gt;<i> checking for std::bind in &lt;functional&gt;... no
+</I>&gt;<i> checking for std::tr1::bind in &lt;tr1/functional&gt;... yes
+</I>&gt;<i> checking for fltk-config... /usr/bin/fltk-config
+</I>&gt;<i> checking for fluid... fluid
+</I>&gt;<i> checking sys/soundcard.h usability... yes
+</I>&gt;<i> checking sys/soundcard.h presence... yes
+</I>&gt;<i> checking for sys/soundcard.h... yes
+</I>&gt;<i> checking for x86_64-pc-linux-gnu-pkg-config... no
+</I>&gt;<i> checking for pkg-config... /usr/bin/pkg-config
+</I>&gt;<i> checking pkg-config is at least version 0.9.0... yes
+</I>&gt;<i> checking for PNG... yes
+</I>&gt;<i> checking for SAMPLERATE... yes
+</I>&gt;<i> checking for SNDFILE... yes
+</I>&gt;<i> checking for PORTAUDIO... yes
+</I>&gt;<i> checking for PULSEAUDIO... yes
+</I>&gt;<i> checking for HAMLIB... yes
+</I>&gt;<i> checking for X... yes
+</I>&gt;<i> configure: creating ./config.status
+</I>&gt;<i> config.status: creating Makefile
+</I>&gt;<i> config.status: creating src/Makefile
+</I>&gt;<i> config.status: creating po/Makefile.in
+</I>&gt;<i> config.status: creating doc/Makefile
+</I>&gt;<i> config.status: creating src/config.h
+</I>&gt;<i> config.status: executing depfiles commands
+</I>&gt;<i> config.status: executing po-directories commands
+</I>&gt;<i> config.status: creating po/POTFILES
+</I>&gt;<i> config.status: creating po/Makefile
+</I>&gt;<i>
+</I>&gt;<i> Configuration summary:
+</I>&gt;<i>
+</I>&gt;<i>   Version ..................... 3.21.73
+</I>&gt;<i>
+</I>&gt;<i>   Static linking .............. no
+</I>&gt;<i>   CPU optimizations ........... none
+</I>&gt;<i>   Debugging ................... no
+</I>&gt;<i>
+</I>&gt;<i>   fldigi ...................... yes
+</I>&gt;<i>   flarq ....................... yes
+</I>&gt;<i>
+</I>&gt;<i>   i18n ........................ yes
+</I>&gt;<i>
+</I>&gt;<i>  fldigi build options:
+</I>&gt;<i>
+</I>&gt;<i>   sndfile ..................... yes
+</I>&gt;<i>   oss ......................... yes
+</I>&gt;<i>   portaudio ................... yes
+</I>&gt;<i>   pulseaudio .................. yes
+</I>&gt;<i>
+</I>&gt;<i>   hamlib ...................... yes
+</I>&gt;<i>
+</I>&gt;<i> &gt;&gt;&gt; Source configured.
+</I>&gt;<i> &gt;&gt;&gt; Compiling source in
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73 ...
+</I>&gt;<i> make -j3
+</I>&gt;<i> Making all in po
+</I>&gt;<i> make[1]: Entering directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/po'
+</I>&gt;<i> make[1]: Leaving directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/po'
+</I>&gt;<i> Making all in doc
+</I>&gt;<i> make[1]: Entering directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/doc'
+</I>&gt;<i> make[1]: Nothing to be done for `all'.
+</I>&gt;<i> make[1]: Leaving directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/doc'
+</I>&gt;<i> Making all in src
+</I>&gt;<i> make[1]: Entering directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/src'
+</I>&gt;<i> make  all-recursive
+</I>&gt;<i> make[2]: Entering directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/src'
+</I>&gt;<i> make[3]: Entering directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/src'
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-xmlrpc.o
+</I>&gt;<i> `test -f 'misc/xmlrpc.cxx' || echo './'`misc/xmlrpc.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-hamlib.o
+</I>&gt;<i> `test -f 'rigcontrol/hamlib.cxx' || echo './'`rigcontrol/hamlib.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-rigclass.o `test -f 'rigcontrol/rigclass.cxx' || echo
+</I>&gt;<i> './'`rigcontrol/rigclass.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-nls.o
+</I>&gt;<i> `test -f 'misc/nls.cxx' || echo './'`misc/nls.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-combo.o
+</I>&gt;<i> `test -f 'combo/combo.cxx' || echo './'`combo/combo.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-cw.o
+</I>&gt;<i> `test -f 'cw_rtty/cw.cxx' || echo './'`cw_rtty/cw.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-morse.o
+</I>&gt;<i> `test -f 'cw_rtty/morse.cxx' || echo './'`cw_rtty/morse.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-rtty.o
+</I>&gt;<i> `test -f 'cw_rtty/rtty.cxx' || echo './'`cw_rtty/rtty.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-view_rtty.o `test -f 'cw_rtty/view_rtty.cxx' || echo
+</I>&gt;<i> './'`cw_rtty/view_rtty.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-contestia.o `test -f 'contestia/contestia.cxx' || echo
+</I>&gt;<i> './'`contestia/contestia.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-confdialog.o `test -f 'dialogs/confdialog.cxx' || echo
+</I>&gt;<i> './'`dialogs/confdialog.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-fl_digi.o
+</I>&gt;<i> `test -f 'dialogs/fl_digi.cxx' || echo './'`dialogs/fl_digi.cxx
+</I>&gt;<i> dialogs/fl_digi.cxx: In function ?void init_modem_sync(trx_mode, int)?:
+</I>&gt;<i> dialogs/fl_digi.cxx:1317:2: warning: format ?%d? expects argument of type
+</I>&gt;<i> ?int?, but argument 6 has type ?trx_mode {aka long int}? [-Wformat]
+</I>&gt;<i> dialogs/fl_digi.cxx: In function ?void populate_charset_menu()?:
+</I>&gt;<i> dialogs/fl_digi.cxx:1363:88: warning: cast to pointer from integer of
+</I>&gt;<i> different size [-Wint-to-pointer-cast]
+</I>&gt;<i> dialogs/fl_digi.cxx: In function ?void set_default_charset()?:
+</I>&gt;<i> dialogs/fl_digi.cxx:1371:47: warning: cast to pointer from integer of
+</I>&gt;<i> different size [-Wint-to-pointer-cast]
+</I>&gt;<i> dialogs/fl_digi.cxx: In function ?void create_fl_digi_main_primary()?:
+</I>&gt;<i> dialogs/fl_digi.cxx:5009:73: warning: cast to pointer from integer of
+</I>&gt;<i> different size [-Wint-to-pointer-cast]
+</I>&gt;<i> dialogs/fl_digi.cxx:5188:47: warning: cast to pointer from integer of
+</I>&gt;<i> different size [-Wint-to-pointer-cast]
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-font_browser.o `test -f 'dialogs/font_browser.cxx' || echo
+</I>&gt;<i> './'`dialogs/font_browser.cxx
+</I>&gt;<i> dialogs/font_browser.cxx: In member function ?void
+</I>&gt;<i> Font_Browser::FontNameSelect()?:
+</I>&gt;<i> dialogs/font_browser.cxx:107:39: warning: cast to pointer from integer of
+</I>&gt;<i> different size [-Wint-to-pointer-cast]
+</I>&gt;<i> dialogs/font_browser.cxx:113:32: warning: cast to pointer from integer of
+</I>&gt;<i> different size [-Wint-to-pointer-cast]
+</I>&gt;<i> dialogs/font_browser.cxx: In constructor ?Font_Browser::Font_Browser(int,
+</I>&gt;<i> int, int, int, const char*)?:
+</I>&gt;<i> dialogs/font_browser.cxx:172:34: warning: cast to pointer from integer of
+</I>&gt;<i> different size [-Wint-to-pointer-cast]
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-Viewer.o
+</I>&gt;<i> `test -f 'dialogs/Viewer.cxx' || echo './'`dialogs/Viewer.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-htmlstrings.o `test -f 'dialogs/htmlstrings.cxx' || echo
+</I>&gt;<i> './'`dialogs/htmlstrings.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-notifydialog.o `test -f 'dialogs/notifydialog.cxx' || echo
+</I>&gt;<i> './'`dialogs/notifydialog.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-record_browse.o `test -f 'dialogs/record_browse.cxx' || echo
+</I>&gt;<i> './'`dialogs/record_browse.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-dtmf.o
+</I>&gt;<i> `test -f 'dtmf/dtmf.cxx' || echo './'`dtmf/dtmf.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-thor.o
+</I>&gt;<i> `test -f 'thor/thor.cxx' || echo './'`thor/thor.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-thorvaricode.o `test -f 'thor/thorvaricode.cxx' || echo
+</I>&gt;<i> './'`thor/thorvaricode.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-dominoex.o `test -f 'dominoex/dominoex.cxx' || echo
+</I>&gt;<i> './'`dominoex/dominoex.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-dominovar.o `test -f 'dominoex/dominovar.cxx' || echo
+</I>&gt;<i> './'`dominoex/dominovar.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-feld.o
+</I>&gt;<i> `test -f 'feld/feld.cxx' || echo './'`feld/feld.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-feldfonts.o `test -f 'feld/feldfonts.cxx' || echo
+</I>&gt;<i> './'`feld/feldfonts.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-fft.o
+</I>&gt;<i> `test -f 'fft/fft.cxx' || echo './'`fft/fft.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-Native_File_Chooser.o `test -f
+</I>&gt;<i> 'fileselector/Native_File_Chooser.cxx' || echo
+</I>&gt;<i> './'`fileselector/Native_File_Chooser.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-fileselect.o `test -f 'fileselector/fileselect.cxx' || echo
+</I>&gt;<i> './'`fileselector/fileselect.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-fftfilt.o
+</I>&gt;<i> `test -f 'filters/fftfilt.cxx' || echo './'`filters/fftfilt.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-filters.o
+</I>&gt;<i> `test -f 'filters/filters.cxx' || echo './'`filters/filters.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-viterbi.o
+</I>&gt;<i> `test -f 'filters/viterbi.cxx' || echo './'`filters/viterbi.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-globals.o
+</I>&gt;<i> `test -f 'globals/globals.cxx' || echo './'`globals/globals.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-irrXML.o
+</I>&gt;<i> `test -f 'irrxml/irrXML.cpp' || echo './'`irrxml/irrXML.cpp
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-adif_io.o
+</I>&gt;<i> `test -f 'logbook/adif_io.cxx' || echo './'`logbook/adif_io.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-calendar.o `test -f 'logbook/calendar.cxx' || echo
+</I>&gt;<i> './'`logbook/calendar.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-date.o
+</I>&gt;<i> `test -f 'logbook/date.cxx' || echo './'`logbook/date.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-lgbook.o
+</I>&gt;<i> `test -f 'logbook/lgbook.cxx' || echo './'`logbook/lgbook.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-logbook.o
+</I>&gt;<i> `test -f 'logbook/logbook.cxx' || echo './'`logbook/logbook.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-logsupport.o `test -f 'logbook/logsupport.cxx' || echo
+</I>&gt;<i> './'`logbook/logsupport.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-lookupcall.o `test -f 'logbook/lookupcall.cxx' || echo
+</I>&gt;<i> './'`logbook/lookupcall.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-qrzlib.o
+</I>&gt;<i> `test -f 'logbook/qrzlib.cxx' || echo './'`logbook/qrzlib.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-qso_db.o
+</I>&gt;<i> `test -f 'logbook/qso_db.cxx' || echo './'`logbook/qso_db.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-table.o
+</I>&gt;<i> `test -f 'logbook/table.cxx' || echo './'`logbook/table.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-textio.o
+</I>&gt;<i> `test -f 'logbook/textio.cxx' || echo './'`logbook/textio.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-logger.o
+</I>&gt;<i> `test -f 'logger/logger.cxx' || echo './'`logger/logger.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-rx_extract.o `test -f 'logger/rx_extract.cxx' || echo
+</I>&gt;<i> './'`logger/rx_extract.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-speak.o
+</I>&gt;<i> `test -f 'logger/speak.cxx' || echo './'`logger/speak.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-main.o
+</I>&gt;<i> `test -f 'main.cxx' || echo './'`main.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-interleave.o `test -f 'mfsk/interleave.cxx' || echo
+</I>&gt;<i> './'`mfsk/interleave.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-mfsk.o
+</I>&gt;<i> `test -f 'mfsk/mfsk.cxx' || echo './'`mfsk/mfsk.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-mfskvaricode.o `test -f 'mfsk/mfskvaricode.cxx' || echo
+</I>&gt;<i> './'`mfsk/mfskvaricode.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-wefax.o
+</I>&gt;<i> `test -f 'wefax/wefax.cxx' || echo './'`wefax/wefax.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-wefax-pic.o `test -f 'wefax/wefax-pic.cxx' || echo
+</I>&gt;<i> './'`wefax/wefax-pic.cxx
+</I>&gt;<i> wefax/wefax.cxx: In member function ?std::string
+</I>&gt;<i> fax_implementation::send_file(const string&amp;, double)?:
+</I>&gt;<i> wefax/wefax.cxx:850:3: warning: format ?%ld? expects argument of type
+</I>&gt;<i> ?long int?, but argument 7 has type ?long long int? [-Wformat]
+</I>&gt;<i> wefax/wefax.cxx: In member function ?void
+</I>&gt;<i> fax_implementation::process_afc(bool) const?:
+</I>&gt;<i> wefax/wefax.cxx:1241:5: warning: format ?%ld? expects argument of type
+</I>&gt;<i> ?long int?, but argument 7 has type ?long long int? [-Wformat]
+</I>&gt;<i> wefax/wefax.cxx: In member function ?std::string
+</I>&gt;<i> fax_implementation::generate_filename(const char*) const?:
+</I>&gt;<i> wefax/wefax.cxx:1692:13: warning: format ?%ld? expects argument of type
+</I>&gt;<i> ?long int?, but argument 10 has type ?long long int? [-Wformat]
+</I>&gt;<i> wefax/wefax.cxx:1692:13: warning: format ?%ld? expects argument of type
+</I>&gt;<i> ?long int?, but argument 10 has type ?long long int? [-Wformat]
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-ascii.o
+</I>&gt;<i> `test -f 'misc/ascii.cxx' || echo './'`misc/ascii.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-charsetdistiller.o `test -f 'misc/charsetdistiller.cxx' || echo
+</I>&gt;<i> './'`misc/charsetdistiller.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-charsetlist.o `test -f 'misc/charsetlist.cxx' || echo
+</I>&gt;<i> './'`misc/charsetlist.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-configuration.o `test -f 'misc/configuration.cxx' || echo
+</I>&gt;<i> './'`misc/configuration.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-coordinate.o `test -f 'misc/coordinate.cxx' || echo
+</I>&gt;<i> './'`misc/coordinate.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-debug.o
+</I>&gt;<i> `test -f 'misc/debug.cxx' || echo './'`misc/debug.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-dxcc.o
+</I>&gt;<i> `test -f 'misc/dxcc.cxx' || echo './'`misc/dxcc.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-icons.o
+</I>&gt;<i> `test -f 'misc/icons.cxx' || echo './'`misc/icons.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-kmlserver.o `test -f 'misc/kmlserver.cxx' || echo
+</I>&gt;<i> './'`misc/kmlserver.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-log.o
+</I>&gt;<i> `test -f 'misc/log.cxx' || echo './'`misc/log.cxx
+</I>&gt;<i> misc/log.cxx: In member function ?void
+</I>&gt;<i> cLogfile::log_to_file(cLogfile::log_t, const string&amp;)?:
+</I>&gt;<i> misc/log.cxx:80:39: warning: format ?%ld? expects argument of type ?long
+</I>&gt;<i> int?, but argument 4 has type ?long long int? [-Wformat]
+</I>&gt;<i> misc/log.cxx:80:39: warning: format ?%ld? expects argument of type ?long
+</I>&gt;<i> int?, but argument 4 has type ?long long int? [-Wformat]
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-macroedit.o `test -f 'misc/macroedit.cxx' || echo
+</I>&gt;<i> './'`misc/macroedit.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-macros.o
+</I>&gt;<i> `test -f 'misc/macros.cxx' || echo './'`misc/macros.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-misc.o
+</I>&gt;<i> `test -f 'misc/misc.cxx' || echo './'`misc/misc.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-network.o
+</I>&gt;<i> `test -f 'misc/network.cxx' || echo './'`misc/network.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-newinstall.o `test -f 'misc/newinstall.cxx' || echo
+</I>&gt;<i> './'`misc/newinstall.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-outputencoder.o `test -f 'misc/outputencoder.cxx' || echo
+</I>&gt;<i> './'`misc/outputencoder.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-arq_io.o
+</I>&gt;<i> `test -f 'misc/arq_io.cxx' || echo './'`misc/arq_io.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-pixmaps.o
+</I>&gt;<i> `test -f 'misc/pixmaps.cxx' || echo './'`misc/pixmaps.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-pixmaps_tango.o `test -f 'misc/pixmaps_tango.cxx' || echo
+</I>&gt;<i> './'`misc/pixmaps_tango.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-re.o
+</I>&gt;<i> `test -f 'misc/re.cxx' || echo './'`misc/re.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-record_loader.o `test -f 'misc/record_loader.cxx' || echo
+</I>&gt;<i> './'`misc/record_loader.cxx
+</I>&gt;<i> misc/record_loader.cxx: In member function ?int
+</I>&gt;<i> RecordLoaderInterface::LoadAndRegister()?:
+</I>&gt;<i> misc/record_loader.cxx:96:2: warning: format ?%d? expects argument of type
+</I>&gt;<i> ?int?, but argument 7 has type ?size_t {aka long unsigned int}? [-Wformat]
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-socket.o
+</I>&gt;<i> `test -f 'misc/socket.cxx' || echo './'`misc/socket.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-stacktrace.o `test -f 'misc/stacktrace.cxx' || echo
+</I>&gt;<i> './'`misc/stacktrace.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-status.o
+</I>&gt;<i> `test -f 'misc/status.cxx' || echo './'`misc/status.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-strutil.o
+</I>&gt;<i> `test -f 'misc/strutil.cxx' || echo './'`misc/strutil.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-threads.o
+</I>&gt;<i> `test -f 'misc/threads.cxx' || echo './'`misc/threads.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-timeops.o
+</I>&gt;<i> `test -f 'misc/timeops.cxx' || echo './'`misc/timeops.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-utf8file_io.o `test -f 'misc/utf8file_io.cxx' || echo
+</I>&gt;<i> './'`misc/utf8file_io.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-util.o
+</I>&gt;<i> `test -f 'misc/util.cxx' || echo './'`misc/util.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-weather.o
+</I>&gt;<i> `test -f 'misc/weather.cxx' || echo './'`misc/weather.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-dsp.o
+</I>&gt;<i> `test -f 'mt63/dsp.cxx' || echo './'`mt63/dsp.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-mt63.o
+</I>&gt;<i> `test -f 'mt63/mt63.cxx' || echo './'`mt63/mt63.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-mt63base.o `test -f 'mt63/mt63base.cxx' || echo
+</I>&gt;<i> './'`mt63/mt63base.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-navtex.o
+</I>&gt;<i> `test -f 'navtex/navtex.cxx' || echo './'`navtex/navtex.cxx
+</I>&gt;<i> navtex/navtex.cxx: In member function ?void ccir_message::display(const
+</I>&gt;<i> string&amp;)?:
+</I>&gt;<i> navtex/navtex.cxx:695:4: warning: format ?%ld? expects argument of type
+</I>&gt;<i> ?long int?, but argument 8 has type ?long long int? [-Wformat]
+</I>&gt;<i> navtex/navtex.cxx:703:4: warning: format ?%ld? expects argument of type
+</I>&gt;<i> ?long int?, but argument 8 has type ?long long int? [-Wformat]
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-olivia.o
+</I>&gt;<i> `test -f 'olivia/olivia.cxx' || echo './'`olivia/olivia.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-psk.o
+</I>&gt;<i> `test -f 'psk/psk.cxx' || echo './'`psk/psk.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-pskcoeff.o `test -f 'psk/pskcoeff.cxx' || echo './'`psk/pskcoeff.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-pskvaricode.o `test -f 'psk/pskvaricode.cxx' || echo
+</I>&gt;<i> './'`psk/pskvaricode.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-viewpsk.o
+</I>&gt;<i> `test -f 'psk/viewpsk.cxx' || echo './'`psk/viewpsk.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-pskeval.o
+</I>&gt;<i> `test -f 'psk/pskeval.cxx' || echo './'`psk/pskeval.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-qrunner.o
+</I>&gt;<i> `test -f 'qrunner/qrunner.cxx' || echo './'`qrunner/qrunner.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-FreqControl.o `test -f 'rigcontrol/FreqControl.cxx' || echo
+</I>&gt;<i> './'`rigcontrol/FreqControl.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-ptt.o
+</I>&gt;<i> `test -f 'rigcontrol/ptt.cxx' || echo './'`rigcontrol/ptt.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-rigio.o
+</I>&gt;<i> `test -f 'rigcontrol/rigio.cxx' || echo './'`rigcontrol/rigio.cxx
+</I>&gt;<i> rigcontrol/FreqControl.cxx: In constructor
+</I>&gt;<i> ?cFreqControl::cFreqControl(int, int, int, int, const char*)?:
+</I>&gt;<i> rigcontrol/FreqControl.cxx:114:46: warning: cast to pointer from integer
+</I>&gt;<i> of different size [-Wint-to-pointer-cast]
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-rigsupport.o `test -f 'rigcontrol/rigsupport.cxx' || echo
+</I>&gt;<i> './'`rigcontrol/rigsupport.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-rigxml.o
+</I>&gt;<i> `test -f 'rigcontrol/rigxml.cxx' || echo './'`rigcontrol/rigxml.cxx
+</I>&gt;<i> rigcontrol/rigio.cxx: In function ?long long int rigCAT_getfreq(int,
+</I>&gt;<i> bool&amp;)?:
+</I>&gt;<i> rigcontrol/rigio.cxx:396:4: warning: format ?%ld? expects argument of type
+</I>&gt;<i> ?long int?, but argument 6 has type ?long long int? [-Wformat]
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-serial.o
+</I>&gt;<i> `test -f 'rigcontrol/serial.cxx' || echo './'`rigcontrol/serial.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-rsid.o
+</I>&gt;<i> `test -f 'rsid/rsid.cxx' || echo './'`rsid/rsid.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-mixer.o
+</I>&gt;<i> `test -f 'soundcard/mixer.cxx' || echo './'`soundcard/mixer.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-sound.o
+</I>&gt;<i> `test -f 'soundcard/sound.cxx' || echo './'`soundcard/sound.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-soundconf.o `test -f 'soundcard/soundconf.cxx' || echo
+</I>&gt;<i> './'`soundcard/soundconf.cxx
+</I>&gt;<i> soundcard/sound.cxx: In member function ?sf_count_t
+</I>&gt;<i> SoundBase::read_file(SNDFILE*, float*, size_t)?:
+</I>&gt;<i> soundcard/sound.cxx:253:13: warning: comparison between signed and
+</I>&gt;<i> unsigned integer expressions [-Wsign-compare]
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-notify.o
+</I>&gt;<i> `test -f 'spot/notify.cxx' || echo './'`spot/notify.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-pskrep.o
+</I>&gt;<i> `test -f 'spot/pskrep.cxx' || echo './'`spot/pskrep.cxx
+</I>&gt;<i> spot/pskrep.cxx: In member function ?void pskrep::append(std::string,
+</I>&gt;<i> const char*, long long int, trx_mode, time_t, rtype_t)?:
+</I>&gt;<i> spot/pskrep.cxx:407:3: warning: format ?%ld? expects argument of type
+</I>&gt;<i> ?long int?, but argument 9 has type ?long long int? [-Wformat]
+</I>&gt;<i> spot/pskrep.cxx:417:4: warning: format ?%ld? expects argument of type
+</I>&gt;<i> ?long int?, but argument 9 has type ?long long int? [-Wformat]
+</I>&gt;<i> spot/pskrep.cxx: In member function ?bool pskrep_sender::append(const
+</I>&gt;<i> string&amp;, const value_type&amp;)?:
+</I>&gt;<i> spot/pskrep.cxx:735:2: warning: format ?%ld? expects argument of type
+</I>&gt;<i> ?long int?, but argument 8 has type ?long long int? [-Wformat]
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-spot.o
+</I>&gt;<i> `test -f 'spot/spot.cxx' || echo './'`spot/spot.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-ssb.o
+</I>&gt;<i> `test -f 'ssb/ssb.cxx' || echo './'`ssb/ssb.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-synop.o
+</I>&gt;<i> `test -f 'synop-src/synop.cxx' || echo './'`synop-src/synop.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-throb.o
+</I>&gt;<i> `test -f 'throb/throb.cxx' || echo './'`throb/throb.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-modem.o
+</I>&gt;<i> `test -f 'trx/modem.cxx' || echo './'`trx/modem.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-nullmodem.o `test -f 'trx/nullmodem.cxx' || echo
+</I>&gt;<i> './'`trx/nullmodem.cxx
+</I>&gt;<i> synop-src/synop.cxx: In member function ?void
+</I>&gt;<i> synop_impl::Message::Publish()?:
+</I>&gt;<i> synop-src/synop.cxx:5207:5: warning: format ?%d? expects argument of type
+</I>&gt;<i> ?int?, but argument 6 has type ?size_t {aka long unsigned int}? [-Wformat]
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-trx.o
+</I>&gt;<i> `test -f 'trx/trx.cxx' || echo './'`trx/trx.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-colorbox.o `test -f 'waterfall/colorbox.cxx' || echo
+</I>&gt;<i> './'`waterfall/colorbox.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-digiscope.o `test -f 'waterfall/digiscope.cxx' || echo
+</I>&gt;<i> './'`waterfall/digiscope.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-raster.o
+</I>&gt;<i> `test -f 'waterfall/raster.cxx' || echo './'`waterfall/raster.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-waterfall.o `test -f 'waterfall/waterfall.cxx' || echo
+</I>&gt;<i> './'`waterfall/waterfall.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-FTextView.o `test -f 'widgets/FTextView.cxx' || echo
+</I>&gt;<i> './'`widgets/FTextView.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-FTextRXTX.o `test -f 'widgets/FTextRXTX.cxx' || echo
+</I>&gt;<i> './'`widgets/FTextRXTX.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-Fl_Text_Buffer_mod.o `test -f 'widgets/Fl_Text_Buffer_mod.cxx' ||
+</I>&gt;<i> echo './'`widgets/Fl_Text_Buffer_mod.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-Fl_Text_Display_mod.o `test -f 'widgets/Fl_Text_Display_mod.cxx' ||
+</I>&gt;<i> echo './'`widgets/Fl_Text_Display_mod.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-Fl_Text_Editor_mod.o `test -f 'widgets/Fl_Text_Editor_mod.cxx' ||
+</I>&gt;<i> echo './'`widgets/Fl_Text_Editor_mod.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-Panel.o
+</I>&gt;<i> `test -f 'widgets/Panel.cxx' || echo './'`widgets/Panel.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-flinput2.o `test -f 'widgets/flinput2.cxx' || echo
+</I>&gt;<i> './'`widgets/flinput2.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-flmisc.o
+</I>&gt;<i> `test -f 'widgets/flmisc.cxx' || echo './'`widgets/flmisc.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-flslider2.o `test -f 'widgets/flslider2.cxx' || echo
+</I>&gt;<i> './'`widgets/flslider2.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-picture.o
+</I>&gt;<i> `test -f 'widgets/picture.cxx' || echo './'`widgets/picture.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-progress.o `test -f 'widgets/progress.cxx' || echo
+</I>&gt;<i> './'`widgets/progress.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-psk_browser.o `test -f 'widgets/psk_browser.cxx' || echo
+</I>&gt;<i> './'`widgets/psk_browser.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -I. -c -o
+</I>&gt;<i> fldigi-missing_strings.o `test -f 'widgets/missing_strings.c' || echo
+</I>&gt;<i> './'`widgets/missing_strings.c
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-analysis.o `test -f 'wwv/analysis.cxx' || echo './'`wwv/analysis.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o fldigi-wwv.o
+</I>&gt;<i> `test -f 'wwv/wwv.cxx' || echo './'`wwv/wwv.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-xmlrpc_log.o `test -f 'logbook/xmlrpc_log.cxx' || echo
+</I>&gt;<i> './'`logbook/xmlrpc_log.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-XmlRpcClient.o `test -f 'xmlrpcpp/XmlRpcClient.cpp' || echo
+</I>&gt;<i> './'`xmlrpcpp/XmlRpcClient.cpp
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-XmlRpcDispatch.o `test -f 'xmlrpcpp/XmlRpcDispatch.cpp' || echo
+</I>&gt;<i> './'`xmlrpcpp/XmlRpcDispatch.cpp
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-XmlRpcMutex.o `test -f 'xmlrpcpp/XmlRpcMutex.cpp' || echo
+</I>&gt;<i> './'`xmlrpcpp/XmlRpcMutex.cpp
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-XmlRpcServer.o `test -f 'xmlrpcpp/XmlRpcServer.cpp' || echo
+</I>&gt;<i> './'`xmlrpcpp/XmlRpcServer.cpp
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-XmlRpcServerConnection.o `test -f
+</I>&gt;<i> 'xmlrpcpp/XmlRpcServerConnection.cpp' || echo
+</I>&gt;<i> './'`xmlrpcpp/XmlRpcServerConnection.cpp
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-XmlRpcServerMethod.o `test -f 'xmlrpcpp/XmlRpcServerMethod.cpp' ||
+</I>&gt;<i> echo './'`xmlrpcpp/XmlRpcServerMethod.cpp
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-XmlRpcSocket.o `test -f 'xmlrpcpp/XmlRpcSocket.cpp' || echo
+</I>&gt;<i> './'`xmlrpcpp/XmlRpcSocket.cpp
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-XmlRpcSource.o `test -f 'xmlrpcpp/XmlRpcSource.cpp' || echo
+</I>&gt;<i> './'`xmlrpcpp/XmlRpcSource.cpp
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-XmlRpcThread.o `test -f 'xmlrpcpp/XmlRpcThread.cpp' || echo
+</I>&gt;<i> './'`xmlrpcpp/XmlRpcThread.cpp
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-XmlRpcThreadedServer.o `test -f 'xmlrpcpp/XmlRpcThreadedServer.cpp'
+</I>&gt;<i> || echo './'`xmlrpcpp/XmlRpcThreadedServer.cpp
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-XmlRpcUtil.o `test -f 'xmlrpcpp/XmlRpcUtil.cpp' || echo
+</I>&gt;<i> './'`xmlrpcpp/XmlRpcUtil.cpp
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> fldigi-XmlRpcValue.o `test -f 'xmlrpcpp/XmlRpcValue.cpp' || echo
+</I>&gt;<i> './'`xmlrpcpp/XmlRpcValue.cpp
+</I>&gt;<i> x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -I. -c -o
+</I>&gt;<i> fldigi-tiniconv.o `test -f 'libtiniconv/tiniconv.c' || echo
+</I>&gt;<i> './'`libtiniconv/tiniconv.c
+</I>&gt;<i> x86_64-pc-linux-gnu-gcc -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml
+</I>&gt;<i> -I./libtiniconv -I./fileselector -I./xmlrpcpp
+</I>&gt;<i> -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -I. -c -o
+</I>&gt;<i> fldigi-tiniconv_desc.o `test -f 'libtiniconv/tiniconv_desc.c' || echo
+</I>&gt;<i> './'`libtiniconv/tiniconv_desc.c
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-nls.o
+</I>&gt;<i> `test -f 'misc/nls.cxx' || echo './'`misc/nls.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> flarq-font_browser.o `test -f 'dialogs/font_browser.cxx' || echo
+</I>&gt;<i> './'`dialogs/font_browser.cxx
+</I>&gt;<i> dialogs/font_browser.cxx: In member function ?void
+</I>&gt;<i> Font_Browser::FontNameSelect()?:
+</I>&gt;<i> dialogs/font_browser.cxx:107:39: warning: cast to pointer from integer of
+</I>&gt;<i> different size [-Wint-to-pointer-cast]
+</I>&gt;<i> dialogs/font_browser.cxx:113:32: warning: cast to pointer from integer of
+</I>&gt;<i> different size [-Wint-to-pointer-cast]
+</I>&gt;<i> dialogs/font_browser.cxx: In constructor ?Font_Browser::Font_Browser(int,
+</I>&gt;<i> int, int, int, const char*)?:
+</I>&gt;<i> dialogs/font_browser.cxx:172:34: warning: cast to pointer from integer of
+</I>&gt;<i> different size [-Wint-to-pointer-cast]
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-arq.o
+</I>&gt;<i> `test -f 'flarq-src/arq.cxx' || echo './'`flarq-src/arq.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> flarq-arqdialogs.o `test -f 'flarq-src/arqdialogs.cxx' || echo
+</I>&gt;<i> './'`flarq-src/arqdialogs.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-arqhelp.o
+</I>&gt;<i> `test -f 'flarq-src/arqhelp.cxx' || echo './'`flarq-src/arqhelp.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-b64.o
+</I>&gt;<i> `test -f 'flarq-src/b64.cxx' || echo './'`flarq-src/b64.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-flarq.o
+</I>&gt;<i> `test -f 'flarq-src/flarq.cxx' || echo './'`flarq-src/flarq.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-flarqenv.o
+</I>&gt;<i> `test -f 'flarq-src/flarqenv.cxx' || echo './'`flarq-src/flarqenv.cxx
+</I>&gt;<i> flarq-src/flarq.cxx: In function ?void saveEmailFile()?:
+</I>&gt;<i> flarq-src/flarq.cxx:1039:9: warning: variable ?fnum? set but not used
+</I>&gt;<i> [-Wunused-but-set-variable]
+</I>&gt;<i> flarq-src/flarq.cxx: In function ?void sendImageFile()?:
+</I>&gt;<i> flarq-src/flarq.cxx:1350:9: warning: variable ?txtsize? set but not used
+</I>&gt;<i> [-Wunused-but-set-variable]
+</I>&gt;<i> flarq-src/flarq.cxx: In function ?void sendBinaryFile()?:
+</I>&gt;<i> flarq-src/flarq.cxx:1399:9: warning: variable ?txtsize? set but not used
+</I>&gt;<i> [-Wunused-but-set-variable]
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-combo.o
+</I>&gt;<i> `test -f 'combo/combo.cxx' || echo './'`combo/combo.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> flarq-Native_File_Chooser.o `test -f 'fileselector/Native_File_Chooser.cxx'
+</I>&gt;<i> || echo './'`fileselector/Native_File_Chooser.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> flarq-fileselect.o `test -f 'fileselector/fileselect.cxx' || echo
+</I>&gt;<i> './'`fileselector/fileselect.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-table.o
+</I>&gt;<i> `test -f 'logbook/table.cxx' || echo './'`logbook/table.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-ascii.o
+</I>&gt;<i> `test -f 'misc/ascii.cxx' || echo './'`misc/ascii.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-debug.o
+</I>&gt;<i> `test -f 'misc/debug.cxx' || echo './'`misc/debug.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> flarq-stacktrace.o `test -f 'misc/stacktrace.cxx' || echo
+</I>&gt;<i> './'`misc/stacktrace.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-threads.o
+</I>&gt;<i> `test -f 'misc/threads.cxx' || echo './'`misc/threads.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-timeops.o
+</I>&gt;<i> `test -f 'misc/timeops.cxx' || echo './'`misc/timeops.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-flinput2.o
+</I>&gt;<i> `test -f 'widgets/flinput2.cxx' || echo './'`widgets/flinput2.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-flmisc.o
+</I>&gt;<i> `test -f 'widgets/flmisc.cxx' || echo './'`widgets/flmisc.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> flarq-flslider2.o `test -f 'widgets/flslider2.cxx' || echo
+</I>&gt;<i> './'`widgets/flslider2.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-icons.o
+</I>&gt;<i> `test -f 'misc/icons.cxx' || echo './'`misc/icons.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-pixmaps.o
+</I>&gt;<i> `test -f 'misc/pixmaps.cxx' || echo './'`misc/pixmaps.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> flarq-pixmaps_tango.o `test -f 'misc/pixmaps_tango.cxx' || echo
+</I>&gt;<i> './'`misc/pixmaps_tango.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-re.o `test
+</I>&gt;<i> -f 'misc/re.cxx' || echo './'`misc/re.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-socket.o
+</I>&gt;<i> `test -f 'misc/socket.cxx' || echo './'`misc/socket.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o flarq-util.o
+</I>&gt;<i> `test -f 'misc/util.cxx' || echo './'`misc/util.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> flarq-Fl_Text_Buffer_mod.o `test -f 'widgets/Fl_Text_Buffer_mod.cxx' ||
+</I>&gt;<i> echo './'`widgets/Fl_Text_Buffer_mod.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> flarq-Fl_Text_Display_mod.o `test -f 'widgets/Fl_Text_Display_mod.cxx' ||
+</I>&gt;<i> echo './'`widgets/Fl_Text_Display_mod.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> flarq-Fl_Text_Editor_mod.o `test -f 'widgets/Fl_Text_Editor_mod.cxx' ||
+</I>&gt;<i> echo './'`widgets/Fl_Text_Editor_mod.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLARQ
+</I>&gt;<i> -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./fileselector
+</I>&gt;<i> -I./flarq-src -I./flarq-src/include  -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1 -c -o
+</I>&gt;<i> flarq-FTextView.o `test -f 'widgets/FTextView.cxx' || echo
+</I>&gt;<i> './'`widgets/FTextView.cxx
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -pthread   -I/usr/include/fltk-1
+</I>&gt;<i> -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT   -I/usr/include/hamlib   -I/usr/include/libpng16        -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG
+</I>&gt;<i> -march=core2 -O2 -pipe -fomit-frame-pointer -msse4.1  -Wl,-O1
+</I>&gt;<i> -Wl,--sort-common -Wl,--as-needed -o fldigi fldigi-xmlrpc.o fldigi-hamlib.o
+</I>&gt;<i> fldigi-rigclass.o      fldigi-nls.o  fldigi-combo.o fldigi-cw.o
+</I>&gt;<i> fldigi-morse.o fldigi-rtty.o fldigi-view_rtty.o fldigi-contestia.o
+</I>&gt;<i> fldigi-confdialog.o fldigi-fl_digi.o fldigi-font_browser.o fldigi-Viewer.o
+</I>&gt;<i> fldigi-htmlstrings.o fldigi-notifydialog.o fldigi-record_browse.o
+</I>&gt;<i> fldigi-dtmf.o fldigi-thor.o fldigi-thorvaricode.o fldigi-dominoex.o
+</I>&gt;<i> fldigi-dominovar.o fldigi-feld.o fldigi-feldfonts.o fldigi-fft.o
+</I>&gt;<i> fldigi-Native_File_Chooser.o fldigi-fileselect.o fldigi-fftfilt.o
+</I>&gt;<i> fldigi-filters.o fldigi-viterbi.o fldigi-globals.o fldigi-irrXML.o
+</I>&gt;<i> fldigi-adif_io.o fldigi-calendar.o fldigi
+</I>&gt;<i>  -date.o fldigi-lgbook.o fldigi-logbook.o fldigi-logsupport.o
+</I>&gt;<i> fldigi-lookupcall.o fldigi-qrzlib.o fldigi-qso_db.o fldigi-table.o
+</I>&gt;<i> fldigi-textio.o fldigi-logger.o fldigi-rx_extract.o fldigi-speak.o
+</I>&gt;<i> fldigi-main.o fldigi-interleave.o fldigi-mfsk.o fldigi-mfskvaricode.o
+</I>&gt;<i> fldigi-wefax.o fldigi-wefax-pic.o fldigi-ascii.o fldigi-charsetdistiller.o
+</I>&gt;<i> fldigi-charsetlist.o fldigi-configuration.o fldigi-coordinate.o
+</I>&gt;<i> fldigi-debug.o fldigi-dxcc.o fldigi-icons.o fldigi-kmlserver.o fldigi-log.o
+</I>&gt;<i> fldigi-macroedit.o fldigi-macros.o fldigi-misc.o fldigi-network.o
+</I>&gt;<i> fldigi-newinstall.o fldigi-outputencoder.o fldigi-arq_io.o fldigi-pixmaps.o
+</I>&gt;<i> fldigi-pixmaps_tango.o fldigi-re.o fldigi-record_loader.o fldigi-socket.o
+</I>&gt;<i> fldigi-stacktrace.o fldigi-status.o fldigi-strutil.o fldigi-threads.o
+</I>&gt;<i> fldigi-timeops.o fldigi-utf8file_io.o fldigi-util.o fldigi-weather.o
+</I>&gt;<i> fldigi-dsp.o fldigi-mt63.o fldigi-mt63base.o fldigi-navtex.o
+</I>&gt;<i> fldigi-olivia.o fldigi-psk.o fldigi-pskcoeff.o fldigi-pskvaricode.o
+</I>&gt;<i> fldigi-viewpsk.o fldigi-p
+</I>&gt;<i>  skeval.o fldigi-qrunner.o fldigi-FreqControl.o fldigi-ptt.o
+</I>&gt;<i> fldigi-rigio.o fldigi-rigsupport.o fldigi-rigxml.o fldigi-serial.o
+</I>&gt;<i> fldigi-rsid.o fldigi-mixer.o fldigi-sound.o fldigi-soundconf.o
+</I>&gt;<i> fldigi-notify.o fldigi-pskrep.o fldigi-spot.o fldigi-ssb.o fldigi-synop.o
+</I>&gt;<i> fldigi-throb.o fldigi-modem.o fldigi-nullmodem.o fldigi-trx.o
+</I>&gt;<i> fldigi-colorbox.o fldigi-digiscope.o fldigi-raster.o fldigi-waterfall.o
+</I>&gt;<i> fldigi-FTextView.o fldigi-FTextRXTX.o fldigi-Fl_Text_Buffer_mod.o
+</I>&gt;<i> fldigi-Fl_Text_Display_mod.o fldigi-Fl_Text_Editor_mod.o fldigi-Panel.o
+</I>&gt;<i> fldigi-flinput2.o fldigi-flmisc.o fldigi-flslider2.o fldigi-picture.o
+</I>&gt;<i> fldigi-progress.o fldigi-psk_browser.o fldigi-missing_strings.o
+</I>&gt;<i> fldigi-analysis.o fldigi-wwv.o fldigi-xmlrpc_log.o fldigi-XmlRpcClient.o
+</I>&gt;<i> fldigi-XmlRpcDispatch.o fldigi-XmlRpcMutex.o fldigi-XmlRpcServer.o
+</I>&gt;<i> fldigi-XmlRpcServerConnection.o fldigi-XmlRpcServerMethod.o
+</I>&gt;<i> fldigi-XmlRpcSocket.o fldigi-XmlRpcSource.o fldigi-XmlRpcThread.o
+</I>&gt;<i> fldigi-XmlRpcThreadedServer.o fldigi-XmlRpcUtil.o fld
+</I>&gt;<i>  igi-XmlRpcValue.o fldigi-tiniconv.o fldigi-tiniconv_desc.o  -lportaudio
+</I>&gt;<i>  -lasound -lm -lpthread   -L/usr/lib64/fltk-1 -Wl,-O1 -Wl,--sort-common
+</I>&gt;<i> -Wl,--as-needed -lfltk_images -lpng -lz -ljpeg -lfltk -lXext -lXft
+</I>&gt;<i> -lfontconfig -lpthread -ldl -lm -lX11 -lX11   -lsndfile   -lsamplerate
+</I>&gt;<i> -lpulse-simple -lpulse   -L/usr/lib64/hamlib -lhamlib -lm   -lpng16
+</I>&gt;<i>  -ldl  -lrt  -lpthread
+</I>&gt;<i> x86_64-pc-linux-gnu-g++ -I/usr/include/fltk-1 -D_LARGEFILE_SOURCE
+</I>&gt;<i> -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT       -pipe -Wall
+</I>&gt;<i> -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG -march=core2 -O2
+</I>&gt;<i> -pipe -fomit-frame-pointer -msse4.1  -Wl,-O1 -Wl,--sort-common
+</I>&gt;<i> -Wl,--as-needed -o flarq    flarq-nls.o  flarq-font_browser.o flarq-arq.o
+</I>&gt;<i> flarq-arqdialogs.o flarq-arqhelp.o flarq-b64.o flarq-flarq.o
+</I>&gt;<i> flarq-flarqenv.o flarq-combo.o flarq-Native_File_Chooser.o
+</I>&gt;<i> flarq-fileselect.o flarq-table.o flarq-ascii.o flarq-debug.o
+</I>&gt;<i> flarq-stacktrace.o flarq-threads.o flarq-timeops.o flarq-flinput2.o
+</I>&gt;<i> flarq-flmisc.o flarq-flslider2.o flarq-icons.o flarq-pixmaps.o
+</I>&gt;<i> flarq-pixmaps_tango.o flarq-re.o flarq-socket.o flarq-util.o
+</I>&gt;<i> flarq-Fl_Text_Buffer_mod.o flarq-Fl_Text_Display_mod.o
+</I>&gt;<i> flarq-Fl_Text_Editor_mod.o flarq-FTextView.o -L/usr/lib64/fltk-1 -Wl,-O1
+</I>&gt;<i> -Wl,--sort-common -Wl,--as-needed -lfltk_images -lpng -lz -ljpeg -lfltk
+</I>&gt;<i> -lXext -lXft -lfontconfig -lpthread -ldl -lm -lX11 -lX11       -ldl  -l
+</I>&gt;<i>  rt  -lpthread
+</I>&gt;<i> make[3]: Leaving directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/src'
+</I>&gt;<i> make[2]: Leaving directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/src'
+</I>&gt;<i> make[1]: Leaving directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/src'
+</I>&gt;<i> make[1]: Entering directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73'
+</I>&gt;<i> make[1]: Nothing to be done for `all-am'.
+</I>&gt;<i> make[1]: Leaving directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73'
+</I>&gt;<i> &gt;&gt;&gt; Source compiled.
+</I>&gt;<i> &gt;&gt;&gt; Test phase [not enabled]: media-radio/fldigi-3.21.73
+</I>&gt;<i>
+</I>&gt;<i> &gt;&gt;&gt; Install fldigi-3.21.73 into
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image/ category media-radio
+</I>&gt;<i> make -j3 DESTDIR=/var/tmp/portage/media-radio/fldigi-3.21.73/image/ install
+</I>&gt;<i> Making install in po
+</I>&gt;<i> make[1]: Entering directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/po'
+</I>&gt;<i> /bin/mkdir -p /var/tmp/portage/media-radio/fldigi-3.21.73/image//usr/share
+</I>&gt;<i> installing pl.gmo as
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image//usr/share/locale/pl/LC_MESSAGES/fldigi.mo
+</I>&gt;<i> if test &quot;fldigi&quot; = &quot;gettext-tools&quot;; then \
+</I>&gt;<i>   /bin/mkdir -p
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image//usr/share/gettext/po; \
+</I>&gt;<i>   for file in Makefile.in.in remove-potcdate.sin quot.sed boldquot.sed
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">en at quot.header</A> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">en at boldquot.header</A> insert-header.sin Rules-quot
+</I>&gt;<i> Makevars.template; do \
+</I>&gt;<i>     /usr/bin/install -c -m 644 ./$file \
+</I>&gt;<i>
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image//usr/share/gettext/po/$file;
+</I>&gt;<i> \
+</I>&gt;<i>   done; \
+</I>&gt;<i>   for file in Makevars; do \
+</I>&gt;<i>     rm -f
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image//usr/share/gettext/po/$file;
+</I>&gt;<i> \
+</I>&gt;<i>   done; \
+</I>&gt;<i> else \
+</I>&gt;<i>   : ; \
+</I>&gt;<i> fi
+</I>&gt;<i> make[1]: Leaving directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/po'
+</I>&gt;<i> Making install in doc
+</I>&gt;<i> make[1]: Entering directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/doc'
+</I>&gt;<i> make[2]: Entering directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/doc'
+</I>&gt;<i> make[2]: Nothing to be done for `install-exec-am'.
+</I>&gt;<i> test -z &quot;/usr/share/man/man1&quot; || /bin/mkdir -p
+</I>&gt;<i> &quot;/var/tmp/portage/media-radio/fldigi-3.21.73/image//usr/share/man/man1&quot;
+</I>&gt;<i>  /usr/bin/install -c -m 644 fldigi.1 fldigi-shell.1 flarq.1
+</I>&gt;<i> '/var/tmp/portage/media-radio/fldigi-3.21.73/image//usr/share/man/man1'
+</I>&gt;<i> make[2]: Leaving directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/doc'
+</I>&gt;<i> make[1]: Leaving directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/doc'
+</I>&gt;<i> Making install in src
+</I>&gt;<i> make[1]: Entering directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/src'
+</I>&gt;<i> make  install-recursive
+</I>&gt;<i> make[2]: Entering directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/src'
+</I>&gt;<i> make[3]: Entering directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/src'
+</I>&gt;<i> make[4]: Entering directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/src'
+</I>&gt;<i> test -z &quot;/usr/bin&quot; || /bin/mkdir -p
+</I>&gt;<i> &quot;/var/tmp/portage/media-radio/fldigi-3.21.73/image//usr/bin&quot;
+</I>&gt;<i> if test -f ./../scripts/fldigi-shell; then \
+</I>&gt;<i>     /bin/sh
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/build-aux/install-sh
+</I>&gt;<i> -d /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/bin; \
+</I>&gt;<i>             /usr/bin/install -c ./../scripts/fldigi-shell
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/bin; \
+</I>&gt;<i>         fi
+</I>&gt;<i> if test -f ./../data/fldigi.xpm; then \
+</I>&gt;<i>     /bin/sh
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/build-aux/install-sh
+</I>&gt;<i> -d /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/pixmaps; \
+</I>&gt;<i>     /usr/bin/install -c -m 644 ./../data/fldigi.xpm
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/pixmaps; \
+</I>&gt;<i> fi
+</I>&gt;<i>   /usr/bin/install -c fldigi flarq
+</I>&gt;<i> '/var/tmp/portage/media-radio/fldigi-3.21.73/image//usr/bin'
+</I>&gt;<i> if test -f ./../scripts/ftp_kml_files.sh; then \
+</I>&gt;<i>     /bin/sh
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/build-aux/install-sh
+</I>&gt;<i> -d /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/bin; \
+</I>&gt;<i>         /usr/bin/install -c ./../scripts/ftp_kml_files.sh
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/bin; \
+</I>&gt;<i> fi
+</I>&gt;<i> if test -f ./../data/fldigi.desktop; then \
+</I>&gt;<i>     /bin/sh
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/build-aux/install-sh
+</I>&gt;<i> -d
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/applications;
+</I>&gt;<i> \
+</I>&gt;<i>     /usr/bin/install -c -m 644 ./../data/fldigi.desktop
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/applications;
+</I>&gt;<i> \
+</I>&gt;<i> fi
+</I>&gt;<i> if test -f ./../data/NAVTEX_Stations.csv; then \
+</I>&gt;<i>     /bin/sh
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/build-aux/install-sh
+</I>&gt;<i> -d /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/fldigi; \
+</I>&gt;<i>     /usr/bin/install -c -m 644 ./../data/NAVTEX_Stations.csv
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/fldigi; \
+</I>&gt;<i> fi
+</I>&gt;<i> if test -f ./../data/nsd_bbsss.txt; then \
+</I>&gt;<i>     /bin/sh
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/build-aux/install-sh
+</I>&gt;<i> -d /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/fldigi; \
+</I>&gt;<i>     /usr/bin/install -c -m 644 ./../data/nsd_bbsss.txt
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/fldigi; \
+</I>&gt;<i> fi
+</I>&gt;<i> if test -f ./../data/station_table.txt; then \
+</I>&gt;<i>     /bin/sh
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/build-aux/install-sh
+</I>&gt;<i> -d /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/fldigi; \
+</I>&gt;<i>     /usr/bin/install -c -m 644 ./../data/station_table.txt
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/fldigi; \
+</I>&gt;<i> fi
+</I>&gt;<i> if test -f ./../data/ToR-Stats-SHIP.csv; then \
+</I>&gt;<i>     /bin/sh
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/build-aux/install-sh
+</I>&gt;<i> -d /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/fldigi; \
+</I>&gt;<i>     /usr/bin/install -c -m 644 ./../data/ToR-Stats-SHIP.csv
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/fldigi; \
+</I>&gt;<i> fi
+</I>&gt;<i> if test -f ./../data/wmo_list.txt; then \
+</I>&gt;<i>     /bin/sh
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/build-aux/install-sh
+</I>&gt;<i> -d /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/fldigi; \
+</I>&gt;<i>     /usr/bin/install -c -m 644 ./../data/wmo_list.txt
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/fldigi; \
+</I>&gt;<i> fi
+</I>&gt;<i> if test -f ./../kml/styles.kml; then \
+</I>&gt;<i>     /bin/sh
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/build-aux/install-sh
+</I>&gt;<i> -d
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/fldigi/kml; \
+</I>&gt;<i>     /usr/bin/install -c -m 644 ./../kml/styles.kml
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/fldigi/kml; \
+</I>&gt;<i> fi
+</I>&gt;<i> if test -f ./../data/flarq.xpm; then \
+</I>&gt;<i>     /bin/sh
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/build-aux/install-sh
+</I>&gt;<i> -d /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/pixmaps; \
+</I>&gt;<i>     /usr/bin/install -c -m 644 ./../data/flarq.xpm
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/pixmaps; \
+</I>&gt;<i> fi
+</I>&gt;<i> if test -f ./../data/flarq.desktop; then \
+</I>&gt;<i>     /bin/sh
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/build-aux/install-sh
+</I>&gt;<i> -d
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/applications;
+</I>&gt;<i> \
+</I>&gt;<i>     /usr/bin/install -c -m 644 ./../data/flarq.desktop
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image///usr/share/applications;
+</I>&gt;<i> \
+</I>&gt;<i> fi
+</I>&gt;<i> make[4]: Leaving directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/src'
+</I>&gt;<i> make[3]: Leaving directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/src'
+</I>&gt;<i> make[2]: Leaving directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/src'
+</I>&gt;<i> make[1]: Leaving directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73/src'
+</I>&gt;<i> make[1]: Entering directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73'
+</I>&gt;<i> make[2]: Entering directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73'
+</I>&gt;<i> make[2]: Nothing to be done for `install-exec-am'.
+</I>&gt;<i> make[2]: Nothing to be done for `install-data-am'.
+</I>&gt;<i> make[2]: Leaving directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73'
+</I>&gt;<i> make[1]: Leaving directory
+</I>&gt;<i> `/var/tmp/portage/media-radio/fldigi-3.21.73/work/fldigi-3.21.73'
+</I>&gt;<i> &gt;&gt;&gt; Completed installing fldigi-3.21.73 into
+</I>&gt;<i> /var/tmp/portage/media-radio/fldigi-3.21.73/image/
+</I>&gt;<i>
+</I>&gt;<i> strip: x86_64-pc-linux-gnu-strip --strip-unneeded -R .comment -R
+</I>&gt;<i> .GCC.command.line -R .note.gnu.gold-version
+</I>&gt;<i>    usr/bin/fldigi
+</I>&gt;<i>    usr/bin/flarq
+</I>&gt;<i> ecompressdir: bzip2 -9 /usr/share/man
+</I>&gt;<i> ecompressdir: bzip2 -9 /usr/share/doc
+</I>&gt;<i>
+</I>&gt;<i> &gt;&gt;&gt; Installing (1 of 1) media-radio/fldigi-3.21.73
+</I>&gt;<i> &gt;&gt;&gt; Auto-cleaning packages...
+</I>&gt;<i>
+</I>&gt;<i> &gt;&gt;&gt; No outdated packages were found on your system.
+</I>&gt;<i>
+</I>&gt;<i>  * GNU info directory index is up-to-date.
+</I>&gt;<i>
+</I>&gt;<i> !!! existing preserved libs:
+</I>&gt;<i> &gt;&gt;&gt; package: lxde-base/menu-cache-0.3.3
+</I>&gt;<i>  *  - /usr/lib64/libmenu-cache.so.2
+</I>&gt;<i>  *  - /usr/lib64/libmenu-cache.so.2.0.0
+</I>&gt;<i>  *      used by /usr/bin/libfm-pref-apps (x11-libs/libfm-1.1.0-r1)
+</I>&gt;<i>  *      used by /usr/lib64/libfm-gtk.so.3.1.1 (x11-libs/libfm-1.1.0-r1)
+</I>&gt;<i>  *      used by /usr/lib64/libfm.so.3.1.1 (x11-libs/libfm-1.1.0-r1)
+</I>&gt;<i> &gt;&gt;&gt; package: media-libs/libjpeg-turbo-1.3.0-r2
+</I>&gt;<i>  *  - /usr/lib64/libjpeg.so.8
+</I>&gt;<i>  *  - /usr/lib64/libjpeg.so.8.0.2
+</I>&gt;<i>  *      used by /opt/icedtea-bin-7.2.3.9/jre/lib/amd64/libjavajpeg.so
+</I>&gt;<i> (dev-java/icedtea-bin-7.2.3.9)
+</I>&gt;<i>  *      used by /opt/icedtea-bin-7.2.3.9/jre/lib/amd64/libsplashscreen.so
+</I>&gt;<i> (dev-java/icedtea-bin-7.2.3.9)
+</I>&gt;<i>  *      used by /usr/lib64/libreoffice/program/libmergedlo.so
+</I>&gt;<i> (app-office/libreoffice-4.0.4.2)
+</I>&gt;<i> &gt;&gt;&gt; package: media-video/ffmpeg-1.2.2
+</I>&gt;<i>  *  - /usr/lib64/libavutil.so.51
+</I>&gt;<i>  *  - /usr/lib64/libavutil.so.51.73.101
+</I>&gt;<i>  *  - /usr/lib64/libavformat.so.53
+</I>&gt;<i>  *  - /usr/lib64/libavformat.so.53.32.100
+</I>&gt;<i>  *      used by
+</I>&gt;<i> /opt/oracle-jdk-bin-1.7.0.25/jre/lib/amd64/fxavcodecplugin-53.so
+</I>&gt;<i> (dev-java/oracle-jdk-bin-1.7.0.25)
+</I>&gt;<i>  *  - /usr/lib64/libavcodec.so.53
+</I>&gt;<i>  *  - /usr/lib64/libavcodec.so.53.61.100
+</I>&gt;<i>  *      used by
+</I>&gt;<i> /opt/oracle-jdk-bin-1.7.0.25/jre/lib/amd64/fxavcodecplugin-53.so
+</I>&gt;<i> (dev-java/oracle-jdk-bin-1.7.0.25)
+</I>&gt;<i> &gt;&gt;&gt; package: media-libs/openjpeg-1.5.1
+</I>&gt;<i>  *  - /usr/lib64/libopenjpeg.so.1
+</I>&gt;<i>  *  - /usr/lib64/libopenjpeg.so.1.5.0
+</I>&gt;<i>  *      used by /usr/lib64/libavcodec.so.53 (preserved)
+</I>&gt;<i>  *      used by /usr/lib64/libavcodec.so.53.61.100 (preserved)
+</I>&gt;<i> &gt;&gt;&gt; package: media-libs/x264-0.0.20130731
+</I>&gt;<i>  *  - /usr/lib64/libx264.so.125
+</I>&gt;<i>  *      used by /usr/lib64/libavcodec.so.53 (preserved)
+</I>&gt;<i>  *      used by /usr/lib64/libavcodec.so.53.61.100 (preserved)
+</I>&gt;<i> Use emerge @preserved-rebuild to rebuild packages using these libraries
+</I>&gt;<i> -------------- next part --------------
+</I>&gt;<i> ../fldigi-3.21.73.bin/bin/fldigi
+</I>&gt;<i> I: main: appname: ../fldigi-3.21.73.bin/bin/fldigi
+</I>&gt;<i> I: main:
+</I>&gt;<i> /media/win_storage/projekty/radio/programy/fldigi/sigfaultrep/NBEMS.DIR not
+</I>&gt;<i> present
+</I>&gt;<i> I: main: HomeDir: /home/necercis/.fldigi/
+</I>&gt;<i> I: main: RigsDir: /home/necercis/.fldigi/rigs/
+</I>&gt;<i> I: main: ScriptsDir: /home/necercis/.fldigi/scripts/
+</I>&gt;<i> I: main: PalettesDir: /home/necercis/.fldigi/palettes/
+</I>&gt;<i> I: main: LogsDir: /home/necercis/.fldigi/logs/
+</I>&gt;<i> I: main: PicsDir: /home/necercis/.fldigi/images/
+</I>&gt;<i> I: main: HelpDir: /home/necercis/.fldigi/help/
+</I>&gt;<i> I: main: MacrosDir: /home/necercis/.fldigi/macros/
+</I>&gt;<i> I: main: WrapDir: /home/necercis/.fldigi/wrap/
+</I>&gt;<i> I: main: TalkDir: /home/necercis/.fldigi/talk/
+</I>&gt;<i> I: main: TempDir: /home/necercis/.fldigi/temp/
+</I>&gt;<i> I: main: KmlDir: /home/necercis/.fldigi/kml/
+</I>&gt;<i> I: main: PskMailDir: /home/necercis/
+</I>&gt;<i> I: main: DATA_dir: /home/necercis/.fldigi/data/
+</I>&gt;<i> I: main: NBEMS_dir: /home/necercis/.nbems/
+</I>&gt;<i> I: main: ARQ_dir: /home/necercis/.nbems/ARQ/
+</I>&gt;<i> I: main: ARQ_files_dir: /home/necercis/.nbems/ARQ/files/
+</I>&gt;<i> I: main: ARQ_recv_dir: /home/necercis/.nbems/ARQ/recv/
+</I>&gt;<i> I: main: ARQ_send: /home/necercis/.nbems/ARQ/send/
+</I>&gt;<i> I: main: WRAP_dir: /home/necercis/.nbems/WRAP/
+</I>&gt;<i> I: main: WRAP_recv_dir: /home/necercis/.nbems/WRAP/recv/
+</I>&gt;<i> I: main: WRAP_send_dir: /home/necercis/.nbems/WRAP/send/
+</I>&gt;<i> I: main: WRAP_auto_dir: /home/necercis/.nbems/WRAP/auto/
+</I>&gt;<i> I: main: ICS_dir: /home/necercis/.nbems/ICS/
+</I>&gt;<i> I: main: ICS_msg_dir: /home/necercis/.nbems/ICS/messages/
+</I>&gt;<i> I: main: ICS_tmp_dir: /home/necercis/.nbems/ICS/templates/
+</I>&gt;<i> I: main: FLMSG_dir: /home/necercis/.nbems/
+</I>&gt;<i> I: main: FLMSG_dir_default: /home/necercis/.nbems/
+</I>&gt;<i> I: main: FLMSG_WRAP_dir: /home/necercis/.nbems/WRAP/
+</I>&gt;<i> I: main: FLMSG_WRAP_recv_dir: /home/necercis/.nbems/WRAP/recv/
+</I>&gt;<i> I: main: FLMSG_WRAP_send_dir: /home/necercis/.nbems/WRAP/send/
+</I>&gt;<i> I: main: FLMSG_WRAP_auto_dir: /home/necercis/.nbems/WRAP/auto/
+</I>&gt;<i> I: main: FLMSG_ICS_dir: /home/necercis/.nbems/ICS/
+</I>&gt;<i> I: main: FLMSG_ICS_msg_dir: /home/necercis/.nbems/ICS/messages/
+</I>&gt;<i> I: main: FLMSG_ICS_tmp_dir: /home/necercis/.nbems/ICS/templates/
+</I>&gt;<i>
+</I>&gt;<i> Caught signal 11
+</I>&gt;<i> Aborting fldigi due to a fatal error.
+</I>&gt;<i> Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+</I>&gt;<i>
+</I>&gt;<i> ****** Stack trace:
+</I>&gt;<i> ../fldigi-3.21.73.bin/bin/fldigi[0x818713b]
+</I>&gt;<i> ../fldigi-3.21.73.bin/bin/fldigi[0x818732a]
+</I>&gt;<i> linux-gate.so.1(__kernel_sigreturn+0x0)[0xf7748400]
+</I>&gt;<i> ../fldigi-3.21.73.bin/bin/fldigi[0x82aad3f]
+</I>&gt;<i> ../fldigi-3.21.73.bin/bin/fldigi[0x8056135]
+</I>&gt;<i> /lib32/libc.so.6(__libc_start_main+0xf3)[0xf6ffd943]
+</I>&gt;<i> ../fldigi-3.21.73.bin/bin/fldigi[0x805b8dd]
+</I>&gt;<i>
+</I>&gt;<i> ****** Version information:
+</I>&gt;<i> fldigi 3.21.73
+</I>&gt;<i> Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi
+</I>&gt;<i> Chateauneu, and others.
+</I>&gt;<i> License GPLv3+: GNU GPL version 3 or later &lt;
+</I>&gt;<i> <A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+</I>&gt;<i> This is free software: you are free to change and redistribute it.
+</I>&gt;<i> There is NO WARRANTY, to the extent permitted by law.
+</I>&gt;<i>
+</I>&gt;<i> ****** Build information:
+</I>&gt;<i> Build information:
+</I>&gt;<i>   built          : Mon Jul 29 13:38:15 CDT 2013 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at dave-acer</A> on
+</I>&gt;<i> i686-pc-linux-gnu for i686-pc-linux-gnu
+</I>&gt;<i>
+</I>&gt;<i>   configure flags: '--enable-static' '--without-asciidoc'
+</I>&gt;<i> '--prefix=/tmp/fldigi-build'
+</I>&gt;<i>
+</I>&gt;<i>   compiler       : gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5)
+</I>&gt;<i>
+</I>&gt;<i>   compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+</I>&gt;<i> -I$(srcdir)/libtiniconv -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp
+</I>&gt;<i> -pthread -I/usr/local/include -I/usr/include/freetype2 -D_LARGEFILE_SOURCE
+</I>&gt;<i> -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_THREAD_SAFE -D_REENTRANT
+</I>&gt;<i> -D_REENTRANT -I/home/dave/hl-static/include -I/usr/include/libpng12 -pipe
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions -DNDEBUG
+</I>&gt;<i>
+</I>&gt;<i>   linker flags   : -lportaudio -lasound -lm -lpthread
+</I>&gt;<i> /usr/local/lib/libfltk_images.a -lpng -lz -ljpeg /usr/local/lib/libfltk.a
+</I>&gt;<i> -lXft -lfontconfig -lpthread -ldl -lm -lX11 -lX11 -lsndfile -lsamplerate
+</I>&gt;<i> -lpulse-simple -lpulse -L/home/dave/hl-static/lib -lhamlib -lm -lpng12 -ldl
+</I>&gt;<i> -lrt -lpthread
+</I>&gt;<i>
+</I>&gt;<i>   libraries      : FLTK 1.3.1
+</I>&gt;<i>                    libsamplerate 0.1.8
+</I>&gt;<i>                    libsndfile 1.0.25
+</I>&gt;<i>                    PortAudio 19
+</I>&gt;<i>                    PulseAudio 1.1
+</I>&gt;<i>                    Hamlib 3.0~git
+</I>&gt;<i>
+</I>&gt;<i> Runtime information:
+</I>&gt;<i>   system         : Linux Sylvania 3.9.8-gentoo #4 SMP Thu Aug 1 17:16:06
+</I>&gt;<i> CEST 2013 x86_64
+</I>&gt;<i>
+</I>&gt;<i>   libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+</I>&gt;<i>                    libsndfile-1.0.25
+</I>&gt;<i>                    PortAudio V19-devel (built Feb 24 2013 19:55:46) 1899
+</I>&gt;<i>                    Pulseaudio 2.1.0
+</I>&gt;<i>                    Hamlib 3.0~git
+</I>&gt;<i> -------------- next part --------------
+</I>&gt;<i> I: main: appname: fldigi
+</I>&gt;<i> I: main: NBEMS.DIR not present
+</I>&gt;<i> I: main: HomeDir: /home/necercis/.fldigi/
+</I>&gt;<i> I: main: RigsDir: /home/necercis/.fldigi/rigs/
+</I>&gt;<i> I: main: ScriptsDir: /home/necercis/.fldigi/scripts/
+</I>&gt;<i> I: main: PalettesDir: /home/necercis/.fldigi/palettes/
+</I>&gt;<i> I: main: LogsDir: /home/necercis/.fldigi/logs/
+</I>&gt;<i> I: main: PicsDir: /home/necercis/.fldigi/images/
+</I>&gt;<i> I: main: HelpDir: /home/necercis/.fldigi/help/
+</I>&gt;<i> I: main: MacrosDir: /home/necercis/.fldigi/macros/
+</I>&gt;<i> I: main: WrapDir: /home/necercis/.fldigi/wrap/
+</I>&gt;<i> I: main: TalkDir: /home/necercis/.fldigi/talk/
+</I>&gt;<i> I: main: TempDir: /home/necercis/.fldigi/temp/
+</I>&gt;<i> I: main: KmlDir: /home/necercis/.fldigi/kml/
+</I>&gt;<i> I: main: PskMailDir: /home/necercis/
+</I>&gt;<i> I: main: DATA_dir: /home/necercis/.fldigi/data/
+</I>&gt;<i> I: main: NBEMS_dir: /home/necercis/.nbems/
+</I>&gt;<i> I: main: ARQ_dir: /home/necercis/.nbems/ARQ/
+</I>&gt;<i> I: main: ARQ_files_dir: /home/necercis/.nbems/ARQ/files/
+</I>&gt;<i> I: main: ARQ_recv_dir: /home/necercis/.nbems/ARQ/recv/
+</I>&gt;<i> I: main: ARQ_send: /home/necercis/.nbems/ARQ/send/
+</I>&gt;<i> I: main: WRAP_dir: /home/necercis/.nbems/WRAP/
+</I>&gt;<i> I: main: WRAP_recv_dir: /home/necercis/.nbems/WRAP/recv/
+</I>&gt;<i> I: main: WRAP_send_dir: /home/necercis/.nbems/WRAP/send/
+</I>&gt;<i> I: main: WRAP_auto_dir: /home/necercis/.nbems/WRAP/auto/
+</I>&gt;<i> I: main: ICS_dir: /home/necercis/.nbems/ICS/
+</I>&gt;<i> I: main: ICS_msg_dir: /home/necercis/.nbems/ICS/messages/
+</I>&gt;<i> I: main: ICS_tmp_dir: /home/necercis/.nbems/ICS/templates/
+</I>&gt;<i> I: main: FLMSG_dir: /home/necercis/.nbems/
+</I>&gt;<i> I: main: FLMSG_dir_default: /home/necercis/.nbems/
+</I>&gt;<i> I: main: FLMSG_WRAP_dir: /home/necercis/.nbems/WRAP/
+</I>&gt;<i> I: main: FLMSG_WRAP_recv_dir: /home/necercis/.nbems/WRAP/recv/
+</I>&gt;<i> I: main: FLMSG_WRAP_send_dir: /home/necercis/.nbems/WRAP/send/
+</I>&gt;<i> I: main: FLMSG_WRAP_auto_dir: /home/necercis/.nbems/WRAP/auto/
+</I>&gt;<i> I: main: FLMSG_ICS_dir: /home/necercis/.nbems/ICS/
+</I>&gt;<i> I: main: FLMSG_ICS_msg_dir: /home/necercis/.nbems/ICS/messages/
+</I>&gt;<i> I: main: FLMSG_ICS_tmp_dir: /home/necercis/.nbems/ICS/templates/
+</I>&gt;<i>
+</I>&gt;<i> Caught signal 11
+</I>&gt;<i> Aborting fldigi due to a fatal error.
+</I>&gt;<i> Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+</I>&gt;<i>
+</I>&gt;<i> ****** Stack trace:
+</I>&gt;<i> fldigi[0x541182]
+</I>&gt;<i> fldigi[0x541329]
+</I>&gt;<i> /lib64/libpthread.so.0(+0x10bf0)[0x7ffa75e22bf0]
+</I>&gt;<i> /lib64/libc.so.6(+0x86d91)[0x7ffa737dbd91]
+</I>&gt;<i>
+</I>&gt;<i> /usr/lib64/fltk-1/libfltk.so.1.3(_ZN2Fl9set_fontsEPKc+0x1e6)[0x7ffa75753a36]
+</I>&gt;<i> fldigi[0x41a74f]
+</I>&gt;<i> /lib64/libc.so.6(__libc_start_main+0xed)[0x7ffa7377960d]
+</I>&gt;<i> fldigi[0x41ef1d]
+</I>&gt;<i>
+</I>&gt;<i> ****** Version information:
+</I>&gt;<i> fldigi 3.21.73
+</I>&gt;<i> Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi
+</I>&gt;<i> Chateauneu, and others.
+</I>&gt;<i> Licencja GPLv3: GNU GPL wersja 3 lub nowsza&lt;
+</I>&gt;<i> <A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+</I>&gt;<i> To jest wolne oprogramowanie: mo?esz dowolnie modyfikowa? i
+</I>&gt;<i> rozpowszechnia? it.
+</I>&gt;<i> Nie ma ZADNEJ GWARANCJI, w zakresie dozwolonym przez prawo.
+</I>&gt;<i>
+</I>&gt;<i> ****** Build information:
+</I>&gt;<i> Build information:
+</I>&gt;<i>   built          : Tue Aug 13 16:59:50 CEST 2013 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">root at Sylvania</A> on
+</I>&gt;<i> x86_64-pc-linux-gnu for x86_64-pc-linux-gnu
+</I>&gt;<i>
+</I>&gt;<i>   configure flags: '--prefix=/usr' '--build=x86_64-pc-linux-gnu'
+</I>&gt;<i> '--host=x86_64-pc-linux-gnu' '--mandir=/usr/share/man'
+</I>&gt;<i> '--infodir=/usr/share/info' '--datadir=/usr/share' '--sysconfdir=/etc'
+</I>&gt;<i> '--localstatedir=/var/lib' '--libdir=/usr/lib64'
+</I>&gt;<i> '--disable-dependency-tracking' '--with-sndfile' '--with-portaudio'
+</I>&gt;<i> '--with-hamlib' '--enable-nls' '--with-pulseaudio' '--disable-silent-rules'
+</I>&gt;<i> '--without-asciidoc' 'build_alias=x86_64-pc-linux-gnu'
+</I>&gt;<i> 'host_alias=x86_64-pc-linux-gnu' 'CXXFLAGS=-march=core2 -O2 -pipe
+</I>&gt;<i> -fomit-frame-pointer -msse4.1' 'LDFLAGS=-Wl,-O1 -Wl,--sort-common
+</I>&gt;<i> -Wl,--as-needed' 'CFLAGS=-march=core2 -O2 -pipe -fomit-frame-pointer
+</I>&gt;<i> -msse4.1' 'PKG_CONFIG_PATH=/usr/local/lib/pkgconfig'
+</I>&gt;<i>
+</I>&gt;<i>   compiler       : gcc version 4.6.3 (Gentoo 4.6.3 p1.6, pie-0.5.2)
+</I>&gt;<i>
+</I>&gt;<i>   compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+</I>&gt;<i> -I$(srcdir)/libtiniconv -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp
+</I>&gt;<i> -pthread -I/usr/include/fltk-1 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
+</I>&gt;<i> -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT -I/usr/include/hamlib
+</I>&gt;<i> -I/usr/include/libpng16 -pipe -Wall -fexceptions -O2 -ffast-math
+</I>&gt;<i> -finline-functions -DNDEBUG
+</I>&gt;<i>
+</I>&gt;<i>   linker flags   : -lportaudio -lasound -lm -lpthread -L/usr/lib64/fltk-1
+</I>&gt;<i> -Wl,-O1 -Wl,--sort-common -Wl,--as-needed -lfltk_images -lpng -lz -ljpeg
+</I>&gt;<i> -lfltk -lXext -lXft -lfontconfig -lpthread -ldl -lm -lX11 -lX11 -lsndfile
+</I>&gt;<i> -lsamplerate -lpulse-simple -lpulse -L/usr/lib64/hamlib -lhamlib -lm
+</I>&gt;<i> -lpng16 -ldl -lrt -lpthread
+</I>&gt;<i>
+</I>&gt;<i>   libraries      : FLTK 1.3.1
+</I>&gt;<i>                    libsamplerate 0.1.8
+</I>&gt;<i>                    libsndfile 1.0.25
+</I>&gt;<i>                    PortAudio 19
+</I>&gt;<i>                    PulseAudio 4.0
+</I>&gt;<i>                    Hamlib 1.2.15.3
+</I>&gt;<i>
+</I>&gt;<i> Runtime information:
+</I>&gt;<i>   system         : Linux Sylvania 3.9.8-gentoo #4 SMP Thu Aug 1 17:16:06
+</I>&gt;<i> CEST 2013 x86_64
+</I>&gt;<i>
+</I>&gt;<i>   libraries      : libsamplerate-0.1.8 (c) 2002-2008 Erik de Castro Lopo
+</I>&gt;<i>                    libsndfile-1.0.25
+</I>&gt;<i>                    PortAudio V19-devel (built Aug  5 2013 12:56:03) 1899
+</I>&gt;<i>                    Pulseaudio 4.0.0
+</I>&gt;<i>                    Hamlib 1.2.15.3
+</I>&gt;<i> -------------- next part --------------
+</I>&gt;<i> gdb fldigi
+</I>&gt;<i> GNU gdb (Gentoo 7.6 p2) 7.6
+</I>&gt;<i> Copyright (C) 2013 Free Software Foundation, Inc.
+</I>&gt;<i> License GPLv3+: GNU GPL version 3 or later &lt;
+</I>&gt;<i> <A HREF="http://gnu.org/licenses/gpl.html">http://gnu.org/licenses/gpl.html</A>&gt;
+</I>&gt;<i> This is free software: you are free to change and redistribute it.
+</I>&gt;<i> There is NO WARRANTY, to the extent permitted by law.  Type &quot;show copying&quot;
+</I>&gt;<i> and &quot;show warranty&quot; for details.
+</I>&gt;<i> This GDB was configured as &quot;x86_64-pc-linux-gnu&quot;.
+</I>&gt;<i> For bug reporting instructions, please see:
+</I>&gt;<i> &lt;<A HREF="http://bugs.gentoo.org/">http://bugs.gentoo.org/</A>&gt;...
+</I>&gt;<i> Reading symbols from /usr/bin/fldigi...(no debugging symbols found)...done.
+</I>&gt;<i> (gdb) run
+</I>&gt;<i> Starting program: /usr/bin/fldigi
+</I>&gt;<i> warning: Could not load shared library symbols for linux-vdso.so.1.
+</I>&gt;<i> Do you need &quot;set solib-search-path&quot; or &quot;set sysroot&quot;?
+</I>&gt;<i> [Thread debugging using libthread_db enabled]
+</I>&gt;<i> Using host libthread_db library &quot;/lib64/libthread_db.so.1&quot;.
+</I>&gt;<i> I: main: appname: /usr/bin/fldigi
+</I>&gt;<i> I: main: /usr/bin/NBEMS.DIR not present
+</I>&gt;<i> I: main: HomeDir: /home/necercis/.fldigi/
+</I>&gt;<i> I: main: RigsDir: /home/necercis/.fldigi/rigs/
+</I>&gt;<i> I: main: ScriptsDir: /home/necercis/.fldigi/scripts/
+</I>&gt;<i> I: main: PalettesDir: /home/necercis/.fldigi/palettes/
+</I>&gt;<i> I: main: LogsDir: /home/necercis/.fldigi/logs/
+</I>&gt;<i> I: main: PicsDir: /home/necercis/.fldigi/images/
+</I>&gt;<i> I: main: HelpDir: /home/necercis/.fldigi/help/
+</I>&gt;<i> I: main: MacrosDir: /home/necercis/.fldigi/macros/
+</I>&gt;<i> I: main: WrapDir: /home/necercis/.fldigi/wrap/
+</I>&gt;<i> I: main: TalkDir: /home/necercis/.fldigi/talk/
+</I>&gt;<i> I: main: TempDir: /home/necercis/.fldigi/temp/
+</I>&gt;<i> I: main: KmlDir: /home/necercis/.fldigi/kml/
+</I>&gt;<i> I: main: PskMailDir: /home/necercis/
+</I>&gt;<i> I: main: DATA_dir: /home/necercis/.fldigi/data/
+</I>&gt;<i> I: main: NBEMS_dir: /home/necercis/.nbems/
+</I>&gt;<i> I: main: ARQ_dir: /home/necercis/.nbems/ARQ/
+</I>&gt;<i> I: main: ARQ_files_dir: /home/necercis/.nbems/ARQ/files/
+</I>&gt;<i> I: main: ARQ_recv_dir: /home/necercis/.nbems/ARQ/recv/
+</I>&gt;<i> I: main: ARQ_send: /home/necercis/.nbems/ARQ/send/
+</I>&gt;<i> I: main: WRAP_dir: /home/necercis/.nbems/WRAP/
+</I>&gt;<i> I: main: WRAP_recv_dir: /home/necercis/.nbems/WRAP/recv/
+</I>&gt;<i> I: main: WRAP_send_dir: /home/necercis/.nbems/WRAP/send/
+</I>&gt;<i> I: main: WRAP_auto_dir: /home/necercis/.nbems/WRAP/auto/
+</I>&gt;<i> I: main: ICS_dir: /home/necercis/.nbems/ICS/
+</I>&gt;<i> I: main: ICS_msg_dir: /home/necercis/.nbems/ICS/messages/
+</I>&gt;<i> I: main: ICS_tmp_dir: /home/necercis/.nbems/ICS/templates/
+</I>&gt;<i> I: main: FLMSG_dir: /home/necercis/.nbems/
+</I>&gt;<i> I: main: FLMSG_dir_default: /home/necercis/.nbems/
+</I>&gt;<i> I: main: FLMSG_WRAP_dir: /home/necercis/.nbems/WRAP/
+</I>&gt;<i> I: main: FLMSG_WRAP_recv_dir: /home/necercis/.nbems/WRAP/recv/
+</I>&gt;<i> I: main: FLMSG_WRAP_send_dir: /home/necercis/.nbems/WRAP/send/
+</I>&gt;<i> I: main: FLMSG_WRAP_auto_dir: /home/necercis/.nbems/WRAP/auto/
+</I>&gt;<i> I: main: FLMSG_ICS_dir: /home/necercis/.nbems/ICS/
+</I>&gt;<i> I: main: FLMSG_ICS_msg_dir: /home/necercis/.nbems/ICS/messages/
+</I>&gt;<i> I: main: FLMSG_ICS_tmp_dir: /home/necercis/.nbems/ICS/templates/
+</I>&gt;<i>
+</I>&gt;<i> Program received signal SIGSEGV, Segmentation fault.
+</I>&gt;<i> 0x00007ffff5352d91 in ?? () from /lib64/libc.so.6
+</I>&gt;<i> (gdb)
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>&gt;<i>
+</I>&gt;<i> End of fldigi-devel Digest, Vol 54, Issue 2
+</I>&gt;<i> *******************************************
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130906/215b36cb/attachment-0001.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130906/215b36cb/attachment-0001.html</A>&gt;
+</PRE>
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001089.html">Fldigi crashreport
+</A></li>
+	<LI>Next message: <A HREF="001090.html">[GIT] fldigi branch, maint/3.21,	updated: 20c533f8a887e52a62988cc6ea5d69b66fca159d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1085">[ date ]</a>
+              <a href="thread.html#1085">[ thread ]</a>
+              <a href="subject.html#1085">[ subject ]</a>
+              <a href="author.html#1085">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

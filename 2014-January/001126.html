@@ -1,0 +1,352 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 105811cdd7d8c0455ca40ab9450628bb95d9c3e6
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2014-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20105811cdd7d8c0455ca40ab9450628bb95d9c3e6&In-Reply-To=%3C20140131191412.5D31355B0C%40scm.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001125.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 105811cdd7d8c0455ca40ab9450628bb95d9c3e6</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20105811cdd7d8c0455ca40ab9450628bb95d9c3e6&In-Reply-To=%3C20140131191412.5D31355B0C%40scm.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 105811cdd7d8c0455ca40ab9450628bb95d9c3e6">herrfreese at scm.berlios.de
+       </A><BR>
+    <I>Fri Jan 31 20:14:11 CET 2014</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001125.html">[GIT] fldigi branch, maint/3.21,	updated: 9588a98a6f073fbac6efd176a78e11265706a38d
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1126">[ date ]</a>
+              <a href="thread.html#1126">[ thread ]</a>
+              <a href="subject.html#1126">[ subject ]</a>
+              <a href="author.html#1126">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  105811cdd7d8c0455ca40ab9450628bb95d9c3e6 (commit)
+       via  8a1d12f07028ba68e2cd326334bce05afabbc464 (commit)
+       via  5f7d5216452e1eaddaf36c60919d59603320dc90 (commit)
+       via  5754566f7ad363d6f5d3a206af1e9f9e71a1f901 (commit)
+       via  a1d20d55155e12c79b9f66bdf30315559a00a638 (commit)
+       via  86bffb95b080629273f143ac3dfe440e09e860a2 (commit)
+       via  678f66b4601b7eb0e12a0269b1026486aa85deb3 (commit)
+       via  2ca21dd9bb3074e8f799bdfff7c505e080fe4674 (commit)
+       via  1bcc31c5db508cd23fe5d2ce9b8d35ecef8dab43 (commit)
+       via  92ab4b61907ff87da146f1100cc3730b249a5322 (commit)
+       via  a987fe5ac915a94a2545f709c8a226956824887b (commit)
+       via  50018ff19a76472dbad66dd65bf30454d3cc96c8 (commit)
+       via  4cbabee12c53215f6b998dfc5c89494e1eb730d7 (commit)
+      from  071a60c6f56b0861c0f2cc47e05d60874a2b76e4 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=105811cdd7d8c0455ca40ab9450628bb95d9c3e6">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=105811cdd7d8c0455ca40ab9450628bb95d9c3e6</A>
+
+commit 105811cdd7d8c0455ca40ab9450628bb95d9c3e6
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jan 31 13:12:46 2014 -0600
+
+    Version 3.22.0CN
+    
+      * Alpha release
+
+ 2 files changed, 23 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=8a1d12f07028ba68e2cd326334bce05afabbc464">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=8a1d12f07028ba68e2cd326334bce05afabbc464</A>
+
+commit 8a1d12f07028ba68e2cd326334bce05afabbc464
+Author: Kamal Mostafa &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kamal at whence.com</A>&gt;
+Date:   Fri Jan 31 13:01:57 2014 -0600
+
+    Avoid nitems fltk kfreebsd collision
+    
+      * Avoid 'nitems' macro collision between FreeBSD's
+        sys/params.h and fltk's FL/Fl_Check_Browser.H
+        (<A HREF="http://www.fltk.org/str.php?L2984">http://www.fltk.org/str.php?L2984</A>)
+    
+      * This is version 2: Corrects upstream commit
+        &quot;51ead20 Avoid-nitems-fltk-kfreebsd-collision.patch&quot;,
+        which did not really fix it.
+
+ 2 files changed, 6 insertions(+), 7 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=5f7d5216452e1eaddaf36c60919d59603320dc90">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=5f7d5216452e1eaddaf36c60919d59603320dc90</A>
+
+commit 5f7d5216452e1eaddaf36c60919d59603320dc90
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jan 31 13:01:43 2014 -0600
+
+    XMLRPC seg fault
+    
+      * Segfault possible in xmlrpc execute function when calling
+        stopMacroTimer.  Needed to be contained with a REQ(...)
+        macro call.
+
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=5754566f7ad363d6f5d3a206af1e9f9e71a1f901">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=5754566f7ad363d6f5d3a206af1e9f9e71a1f901</A>
+
+commit 5754566f7ad363d6f5d3a206af1e9f9e71a1f901
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jan 31 12:59:02 2014 -0600
+
+    Mailing address
+    
+      * Allow user selection to populate logbook notes (comment)
+        with mailing address found by database lookup.
+
+ 5 files changed, 95 insertions(+), 64 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=a1d20d55155e12c79b9f66bdf30315559a00a638">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=a1d20d55155e12c79b9f66bdf30315559a00a638</A>
+
+commit a1d20d55155e12c79b9f66bdf30315559a00a638
+Author: John Phelps &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kl4yfd at gmail.com</A>&gt;
+Date:   Fri Jan 31 12:58:52 2014 -0600
+
+    64 bit stacktrace
+    
+      * Allow stacktrace on 64-bit OSX
+        - Only applies to compiling with ./configure --enable-debug
+
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=86bffb95b080629273f143ac3dfe440e09e860a2">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=86bffb95b080629273f143ac3dfe440e09e860a2</A>
+
+commit 86bffb95b080629273f143ac3dfe440e09e860a2
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jan 31 12:58:42 2014 -0600
+
+    Developer update
+    
+      * Update to callsign for Stefan Fendt
+
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=678f66b4601b7eb0e12a0269b1026486aa85deb3">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=678f66b4601b7eb0e12a0269b1026486aa85deb3</A>
+
+commit 678f66b4601b7eb0e12a0269b1026486aa85deb3
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jan 31 12:55:33 2014 -0600
+
+    modem timing test
+    
+      * read timing factors for string transmission by external
+        program using new xmlrpc query
+        - main.get_tx_timing
+          respone - #samples: samplerate: transmit_time (secs)
+      * read char rate table using external xmlrpc query
+        - main.get_char_rates
+          table structure
+          char, ascii-rep', #samples, samplerate, transmit_time (secs)
+      * added hidden macro &lt;CPS_TEST&gt; which simulates transmission
+        of test string and measures the character per second rate
+        for the modem in use.
+        - &lt;CPS_TEST&gt; uses internal &quot;Jabberwocky&quot; string
+        - &lt;CPS_FILE:[full pathname to file]&gt; uses external text file
+        - &lt;CPS_STRING:ascii text string...&gt;
+        - produces report similar to:
+          CPS test
+          text:         /home/dave/dev.git/all.git/pskr-tests/paris.txt
+          mode:         PSK-500R
+          # chars:      2400
+          xmt time:     56.580000
+          data time:    52.480000
+          data samples: 419840
+          sample rate:  8000
+          chars/sec:    45.731707
+          ~WPM:         457.317073
+      * Allow writing wav file during timing test
+      * High Speed WAV
+        - Add macros to enable writing WAV file in at maximum
+          character throughput.
+        - disables codec output
+        - use this for creating wav test files
+      * Suppress waterfall display for CPS and WAV tests
+      * Remove PSK printf debug statements
+      * Fix MFSK xmt 0x05 --&gt; 0x04 during CPS testing
+
+ 21 files changed, 999 insertions(+), 239 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=2ca21dd9bb3074e8f799bdfff7c505e080fe4674">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=2ca21dd9bb3074e8f799bdfff7c505e080fe4674</A>
+
+commit 2ca21dd9bb3074e8f799bdfff7c505e080fe4674
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jan 31 12:55:21 2014 -0600
+
+    CW timing
+    
+      * Corrected timing parameter computation
+
+ 1 file changed, 7 insertions(+), 7 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=1bcc31c5db508cd23fe5d2ce9b8d35ecef8dab43">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=1bcc31c5db508cd23fe5d2ce9b8d35ecef8dab43</A>
+
+commit 1bcc31c5db508cd23fe5d2ce9b8d35ecef8dab43
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jan 31 12:55:10 2014 -0600
+
+    SKED macro
+    
+      * Corrected macro editor hints for &lt;SKED:...
+      * Time of execution is specified as HHMMSS
+        where SS is optional and will be substituted as
+        &quot;00&quot; if omitted from the macro text.  Time is
+        is Zulu.
+      * Date of exection is specified as YYYYMMDD
+        where YYYY is year, MM month, and DD day.
+
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=92ab4b61907ff87da146f1100cc3730b249a5322">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=92ab4b61907ff87da146f1100cc3730b249a5322</A>
+
+commit 92ab4b61907ff87da146f1100cc3730b249a5322
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jan 31 12:54:58 2014 -0600
+
+    FreeBSD issues
+    
+      * std::complex&lt;&gt; usage
+        - Code change to comply with std::complex on FreeBSD
+
+ 2 files changed, 17 insertions(+), 11 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=a987fe5ac915a94a2545f709c8a226956824887b">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=a987fe5ac915a94a2545f709c8a226956824887b</A>
+
+commit a987fe5ac915a94a2545f709c8a226956824887b
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jan 31 12:54:45 2014 -0600
+
+    PSKR softbits
+    
+      * Correct softbit evaluator to function correctly
+        on arm processors.
+
+ 1 file changed, 15 insertions(+), 16 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=50018ff19a76472dbad66dd65bf30454d3cc96c8">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=50018ff19a76472dbad66dd65bf30454d3cc96c8</A>
+
+commit 50018ff19a76472dbad66dd65bf30454d3cc96c8
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jan 31 12:54:34 2014 -0600
+
+    WF max size
+    
+      * increased max height of waterfall to 250 pixels
+
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=4cbabee12c53215f6b998dfc5c89494e1eb730d7">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=4cbabee12c53215f6b998dfc5c89494e1eb730d7</A>
+
+commit 4cbabee12c53215f6b998dfc5c89494e1eb730d7
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Nov 20 13:30:46 2013 -0600
+
+    packet update
+
+ 1 file changed, 967 insertions(+), 968 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                   |   23 +-
+ configure.ac                |    2 +-
+ src/cw_rtty/cw.cxx          |   30 +-
+ src/cw_rtty/rtty.cxx        |   48 +-
+ src/dialogs/confdialog.cxx  |   18 +-
+ src/dialogs/confdialog.fl   |   19 +-
+ src/dialogs/fl_digi.cxx     |   16 +-
+ src/dialogs/htmlstrings.cxx |    2 +-
+ src/filters/fftfilt.cxx     |   10 +-
+ src/include/ascii.h         |    1 +
+ src/include/confdialog.h    |    1 +
+ src/include/configuration.h |    8 +-
+ src/include/lgbook.h        |    6 +
+ src/include/logsupport.h    |    7 -
+ src/include/macros.h        |    6 +
+ src/include/modem.h         |   18 +
+ src/include/psk.h           |    8 +-
+ src/include/rtty.h          |    2 +-
+ src/include/xmlrpc.h        |    7 +-
+ src/logbook/lookupcall.cxx  |  126 +--
+ src/mfsk/mfsk.cxx           |    9 +
+ src/misc/ascii.cxx          |  137 +--
+ src/misc/macroedit.cxx      |   20 +-
+ src/misc/macros.cxx         |  348 ++++++++
+ src/misc/stack.cxx          |    6 +-
+ src/misc/xmlrpc.cxx         |  397 ++++++---
+ src/packet/pkt.cxx          | 1935 +++++++++++++++++++++----------------------
+ src/psk/psk.cxx             |  159 ++--
+ src/soundcard/sound.cxx     |   37 +-
+ src/trx/modem.cxx           |   26 +-
+ src/trx/trx.cxx             |   16 +-
+ src/waterfall/waterfall.cxx |    8 +-
+ 32 files changed, 2136 insertions(+), 1320 deletions(-)
+   3.6% src/logbook/
+  26.2% src/misc/
+  55.9% src/packet/
+   4.6% src/psk/
+   8.7% src/
+   3.3% src/logbook/
+  27.3% src/misc/
+  54.7% src/packet/
+   4.1% src/psk/
+   9.8% src/
+
+
+hooks/post-receive
+-- 
+fldigi
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001125.html">[GIT] fldigi branch, maint/3.21,	updated: 9588a98a6f073fbac6efd176a78e11265706a38d
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1126">[ date ]</a>
+              <a href="thread.html#1126">[ thread ]</a>
+              <a href="subject.html#1126">[ subject ]</a>
+              <a href="author.html#1126">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-shell
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-shell&In-Reply-To=%3C87skfnl8wu.wl%40obsidian.enotty.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000072.html">
+   <LINK REL="Next"  HREF="000074.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-shell</H1>
+    <B>Stelios Bounanos</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-shell&In-Reply-To=%3C87skfnl8wu.wl%40obsidian.enotty.net%3E"
+       TITLE="fldigi-shell">m0gld at enotty.net
+       </A><BR>
+    <I>Thu Aug 20 00:45:53 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000072.html">[GIT] fldigi branch, master,	updated: 9bda6ed2aa40bf22d8c5bb22ac49d716d6a4da1c
+</A></li>
+        <LI>Next message: <A HREF="000074.html">fldigi-shell
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#73">[ date ]</a>
+              <a href="thread.html#73">[ thread ]</a>
+              <a href="subject.html#73">[ subject ]</a>
+              <a href="author.html#73">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Chris,
+
+&gt;&gt;&gt;&gt;&gt;<i> On Wed, 19 Aug 2009 11:51:01 -0400, Christopher Moore &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">christopher.h.moore at verizon.net</A>&gt; said:
+</I>
+&gt;<i> Hello Stelios,
+</I>&gt;<i> I have had some success using fldigi-shell connecting to a headless 
+</I>&gt;<i> fldigi running in a virtual frame buffer.  You probably haven't received 
+</I>&gt;<i> many comments since most fldigi users will be happy with the standard 
+</I>&gt;<i> windows-based UI.  
+</I>
+That is excellent news and I'm very pleased to hear that you have found
+fldigi-shell useful.
+
+&gt;<i> I am a blind operator and rely primarily on the text console to run 
+</I>&gt;<i> applications.  I was thus favorable impressed to discover fldigi-shell.  
+</I>&gt;<i> I've experiemented with it for only a few hours and only to receive 
+</I>&gt;<i> bpsk31.  Here are some initial observations.  
+</I>
+&gt;<i> 1. The program starts in bpsk31 mode which was fine for my testing.  I 
+</I>&gt;<i> assume you can change this using the modem.set_by_name command.  
+</I>
+Yes, the modem.set_by_name command will switch fldigi to any modem in
+the list returned by modem.get_names.
+
+&gt;<i> 2.  The modem.search_down and modem.search_up functions appeared to lock 
+</I>&gt;<i> on to signals in the receive spectrum.  Using the poll function was 
+</I>&gt;<i> quite helpful in determine whether the signal could be accurately 
+</I>&gt;<i> decoded.  In addition, the modem.get_quality function provided another 
+</I>&gt;<i> measure of the signal quality.  It would also be helpful to have a 
+</I>&gt;<i> modem.get_imd function to be able to provide imd measurements for 
+</I>&gt;<i> stations with distorted signals.
+</I>
+The main window has two status boxes that display modem-specific textual
+signal information.  The contents of the text boxes are returned by the
+commands main.get_status1 and main.get_status2.  For PSK, these are SNR
+and IMD respectively.  They are only available when the other station is
+transmitting an idle tone.
+
+&gt;<i> 3. Next, I switched the modem to cw. and attempted to decode a cw 
+</I>&gt;<i> signal.  This test was unsuccessful because I didn't have a way of 
+</I>&gt;<i> locking the carrier frequency tonto the cw signal.  Whereas the 
+</I>&gt;<i> search_up and search_down work for psk, I don't know what the 
+</I>&gt;<i> corresponding functions would be for cw, rtty or some of the other 
+</I>&gt;<i> modes.  Perhaps its just a matter of exposing existing methods within 
+</I>&gt;<i> the current fldigi code.
+</I>
+The search_up and search_down functions are only implemented for PSK and
+RTTY; in other modems they do nothing.  Perhaps some of the other modems
+could get this feature too -- Dave will know :)
+
+&gt;<i> 4.  When tuning in psk signals it would be handy to have an audible 
+</I>&gt;<i> indication of the carrier frequency.  I had my receive audio on so I 
+</I>&gt;<i> could hear the signals but I didn't know which signal was being decoded. 
+</I>&gt;<i> Because I am not currently transmitting I used the main.tune function to 
+</I>&gt;<i> generate a carrier through the soundcard to help me identify the current 
+</I>&gt;<i> carrier frequency.  This approach is just a hack until I begin 
+</I>&gt;<i> transmitting.  A better approach would be to generate a tone through the 
+</I>&gt;<i> soundcard without activating the ptt or send it to a different soundcard 
+</I>&gt;<i> or possibly to the pc speaker.
+</I>
+One generic way to implement something like this would be with an
+fldigi-shell command that calls a user-defined defined program and
+passes it the main operating parameters (e.g. modem, frequency).  Or
+even an option to run that program automatically every time the
+parameters change via the shell.  The external program would know what
+to do with the information, e.g. use text to speech to a second
+soundcard.  Would this work?
+
+&gt;<i> 5.  fldigi config files: Aside from running fldigi under a standard X 
+</I>&gt;<i> server and using the graphical UI to configure the program, are there 
+</I>&gt;<i> any utilities to create an xml config file which could be edited by 
+</I>&gt;<i> hand?  
+</I>
+The configuration file is named fldigi_def.xml and can be found under
+the ~/.fldigi directory.  It is generated with default values when
+fldigi is run for the first time.
+
+Although many of the xml tag names are self-documenting, some options
+have values that are impossible to guess without seeing the GUI or
+reading the source code.  In particular, some modem parameters are
+stored as the index of the menu item whose label describes the
+parameter.  For example, the Olivia bandwidth might be stored as
+&lt;OLIVIABW&gt;2&lt;/OLIVIABW&gt;, and this would be 500 Hz because &quot;500&quot; is the
+third number in the menu (starting from zero)!
+
+It would be difficult to fix this without breaking compatibility with
+earlier versions...  However, I think the config writer could be
+extended to include comment strings (which would be defined in
+configuration.h along with the other bits).  The XML reader ought to be
+able to ignore &lt;!-- comments --&gt;, I'm sure Leigh will know.
+
+&gt;<i> 6.  What additional fldigi functionality could be exposed to the shell?  
+</I>&gt;<i> My guess is quite a lot.  Clearly anything to do with clicking the mouse 
+</I>&gt;<i> in the waterfall display would have no simple counterpart in a shell, 
+</I>&gt;<i> but many of the other functions such as qrz call lookup, qso logging, 
+</I>&gt;<i> selection of macros and the like should be quite doable.  
+</I>
+Yes, there is plenty more that could be made available as shell
+commands.  I'd be more than happy to add new commands, maybe even
+w1gm. ones :-)  Please let us know what would be useful.
+
+&gt;<i> Again, you are to be congratulated for developing fldigi-shell as it 
+</I>&gt;<i> provides another important way to access fldigi.  From my comments it 
+</I>&gt;<i> should be clear that I welcome further development of fldigi and I would 
+</I>&gt;<i> be interested either in testing or in assisting with some of the coding.
+</I>
+Thank you for your kind words, Chris.  A good way to stay up to date
+with new test releases and development is to join the fldigi-alpha
+mailing list at BerliOS:
+
+  <A HREF="http://lists.berlios.de/mailman/listinfo/fldigi-alpha">http://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+
+The page above also links to the other lists/groups.
+
+And of course do let us know if you would like to join the project as a
+developer.
+
+
+PS.  I have copied <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A> so that the other
+developers can join the discussion.
+
+
+-- 
+
+73,
+Stelios, M0GLD.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000072.html">[GIT] fldigi branch, master,	updated: 9bda6ed2aa40bf22d8c5bb22ac49d716d6a4da1c
+</A></li>
+	<LI>Next message: <A HREF="000074.html">fldigi-shell
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#73">[ date ]</a>
+              <a href="thread.html#73">[ thread ]</a>
+              <a href="subject.html#73">[ subject ]</a>
+              <a href="author.html#73">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

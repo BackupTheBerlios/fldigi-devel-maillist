@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Peter Martinez on Distortion cancellation in PSK31 transmitters
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Peter%20Martinez%20on%20Distortion%20cancellation%20in%20PSK31%20transmitters&In-Reply-To=%3C4BB77E55.6020100%40WA5ZNU.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000272.html">
+   <LINK REL="Next"  HREF="000274.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Peter Martinez on Distortion cancellation in PSK31 transmitters</H1>
+    <B>Leigh L. Klotz, Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Peter%20Martinez%20on%20Distortion%20cancellation%20in%20PSK31%20transmitters&In-Reply-To=%3C4BB77E55.6020100%40WA5ZNU.org%3E"
+       TITLE="Peter Martinez on Distortion cancellation in PSK31 transmitters">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Sat Apr  3 19:43:49 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000272.html">several commits pushed to pu/df (-f)
+</A></li>
+        <LI>Next message: <A HREF="000274.html">[GIT] fldigi branch, master,	updated: de7c41bbe40181675246d440cba0e61de222d7c6
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#273">[ date ]</a>
+              <a href="thread.html#273">[ thread ]</a>
+              <a href="subject.html#273">[ subject ]</a>
+              <a href="author.html#273">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+-------- Original Message --------
+Subject: 	[psk31] Distortion cancellation in PSK31 transmitters
+Date: 	Sat, 3 Apr 2010 16:54:50 -0000
+From: 	Peter Martinez &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">peter.martinez at btinternet.com</A>&gt;
+To: 	Psk31 Users Mail list &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">psk31 at aintel.bi.ehu.es</A>&gt;
+
+
+
+&gt;<i> From G3PLX:
+</I>
+As an spin-off from something else I am doing, I came up with a promising
+idea which PSK31 experimenters may find interesting.
+
+The distortion in a typical transmitter can cause a PSK31 signal to become
+wider than we would like. I am now able to describe a reliable way to
+introduce equal-and-opposite distortion in the PSK31 audio tones fed to the
+transmitter, with the aim of cancelling the distortion at the transmitter
+output. In initial tests I have achieved 20-30dB improvement in the
+transmitted 3rd-order intermodulation products.
+
+Suppose my PSK modulation waveform (call it x) varies sinusoidally
+between -1 and +1. Normally this is double-sideband modulated onto a
+sinewave carrier tone, but in this technique I predistort it first by
+multiplying by (1+C*x*x)/(1+C).  This keeps the peaks at +/-1 but
+'backs-off' the valleys. Here C is the 'pre-distortion coefficient' and will
+be a constant for a given transmitter. This pre-distorted waveform them
+modulates the carrier tone as before.  I can calculate the value of C that I
+will need for a given transmitter if I know it's IP3 performance, but in
+practice it's easier to adjust C while watching the transmitter output on a
+spectrum display, aiming for the best result.  A 'perfect' transmitter will
+not need any pre-distortion and C will be zero, but a typical amateur
+transmitter will need a C value of around 0.1 to cancel the distortion.
+
+I had tried this idea a long time ago but it only gave a modest improvement
+of 10dB or so. The breakthrough came when I realised that typical
+transmitters also distort the output PHASE in a similar square-law fashion,
+so I now also apply a correction (D*x*x) to the phase of the carrier tone.
+Adjustment of D while watching the output spectrum completes the alignment
+process. I found a value of 0.07 (radians) gave a good null.  It's
+interesting to note that D must change sign when you change sidebands!
+
+This technique works because the worst distortion products are always the
+3rd-order IPs. Theory shows that square-law amplitude- or phase-modulation
+generates pure 3rd-order products too, which are on the same frequencies and
+vary in the same way with drive level as the unwanted products. If we get
+the signs right they do cancel completely at all modulation levels.
+
+So long as the transmitter is always run at the same power level as we used
+when aligning the two pre-distortion coefficients (e.g. at the onset of
+ALC), the cancellation should be stable even if the soundcard output level
+and the mike gain vary.  I didn't find much change in the optimum values of
+C and D as I changed between one band and another but I have only tried it
+on the one transmitter.
+
+I would be very interested to hear from anyone who might like to experiment
+with this idea.
+
+73
+Peter
+
+_______________________________________________
+Keep in mind that only registered email addresses can post in the list.
+Psk31 WWW Site at <A HREF="http://aintel.bi.ehu.es/psk31.html">http://aintel.bi.ehu.es/psk31.html</A>
+Psk31 list info at: <A HREF="http://aintel.bi.ehu.es/mailman/listinfo/psk31">http://aintel.bi.ehu.es/mailman/listinfo/psk31</A>
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20100403/8f1ae09e/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20100403/8f1ae09e/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000272.html">several commits pushed to pu/df (-f)
+</A></li>
+	<LI>Next message: <A HREF="000274.html">[GIT] fldigi branch, master,	updated: de7c41bbe40181675246d440cba0e61de222d7c6
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#273">[ date ]</a>
+              <a href="thread.html#273">[ thread ]</a>
+              <a href="subject.html#273">[ subject ]</a>
+              <a href="author.html#273">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

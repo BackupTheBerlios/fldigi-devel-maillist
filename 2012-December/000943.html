@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi aborts - will not open &quot;Caught signal 11&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20aborts%20-%20will%20not%20open%20%22Caught%20signal%2011%22&In-Reply-To=%3C1354806970.3176.1.camel%40lynn-Mint%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000942.html">
+   <LINK REL="Next"  HREF="000944.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi aborts - will not open &quot;Caught signal 11&quot;</H1>
+    <B>Lynn Chadbourne</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20aborts%20-%20will%20not%20open%20%22Caught%20signal%2011%22&In-Reply-To=%3C1354806970.3176.1.camel%40lynn-Mint%3E"
+       TITLE="fldigi aborts - will not open &quot;Caught signal 11&quot;">lynnchadbourne at earthlink.net
+       </A><BR>
+    <I>Thu Dec  6 16:16:10 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000942.html">Fldigi + doxygen
+</A></li>
+        <LI>Next message: <A HREF="000944.html">fldigi aborts - will not open &quot;Caught signal 11&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#943">[ date ]</a>
+              <a href="thread.html#943">[ thread ]</a>
+              <a href="subject.html#943">[ subject ]</a>
+              <a href="author.html#943">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">lynn at lynn-Mint</A> ~ $ fldigi
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+fldigi[0x81447e2]
+fldigi[0x81449ca]
+[0xd85400]
+fldigi[0x811bdec]
+fldigi[0x8059228]
+/lib/i386-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0xac2113]
+fldigi[0x805c91d]
+
+****** Version information:
+fldigi 3.21.13
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi
+Chateauneu, and others.
+License GPLv3+: GNU GPL version 3 or later
+&lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+  built          : Thu Aug 11 12:54:30 UTC 2011 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">buildd at palmer</A> on
+i686-pc-linux-gnu for i686-pc-linux-gnu
+
+  configure flags: '--build=i686-linux-gnu' '--prefix=/usr'
+'--includedir=${prefix}/include' '--mandir=${prefix}/share/man'
+'--infodir=${prefix}/share/info' '--sysconfdir=/etc'
+'--localstatedir=/var' '--libexecdir=${prefix}/lib/fldigi'
+'--disable-maintainer-mode' '--disable-dependency-tracking'
+'build_alias=i686-linux-gnu' 'CXXFLAGS=-g -O2'
+'LDFLAGS=-Wl,-Bsymbolic-functions' 'CPPFLAGS=' 'CFLAGS=-g -O2'
+
+  compiler       : gcc version 4.6.1 (Ubuntu/Linaro 4.6.1-6ubuntu2) 
+
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml -I
+$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -pthread
+-I/usr/include/freetype2 -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT
+-I/usr/include/libpng12 -I/usr/include -pipe -Wall -fexceptions -O2
+-ffast-math -finline-functions -DNDEBUG
+
+  linker flags   : -lportaudio -lasound -lm -lpthread
+-L/usr/lib/i386-linux-gnu -Wl,-Bsymbolic-functions -lfltk_images -lfltk
+-lX11 -lsndfile -lsamplerate -lpulse-simple -lpulse -lhamlib -lm -lpng12
+-L/usr/lib -lxmlrpc_server_abyss++ -lxmlrpc_server++
+-lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss -lxmlrpc++ -lxmlrpc
+-lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -ldl -lrt -lpthread
+
+  libraries      : FLTK 1.1.10
+                   libsamplerate 0.1.7
+                   libsndfile 1.0.24
+                   PortAudio 19
+                   PulseAudio 0.9.23
+                   Hamlib 1.2.14
+                   XMLRPC-C 1.16.32
+
+
+Runtime information:
+  system         : Linux lynn-Mint 3.0.0-12-generic #20-Ubuntu SMP Fri
+Oct 7 14:50:42 UTC 2011 i686
+
+  libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                   libsndfile-1.0.24
+                   PortAudio V19-devel (built Jul 27 2011 11:30:44) 1899
+                   Pulseaudio 1.0.0
+                   Hamlib 1.2.14
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">lynn at lynn-Mint</A> ~ $ ^C
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000942.html">Fldigi + doxygen
+</A></li>
+	<LI>Next message: <A HREF="000944.html">fldigi aborts - will not open &quot;Caught signal 11&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#943">[ date ]</a>
+              <a href="thread.html#943">[ thread ]</a>
+              <a href="subject.html#943">[ subject ]</a>
+              <a href="author.html#943">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

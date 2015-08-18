@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi for VHF/UHF FM data
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20for%20VHF/UHF%20FM%20data&In-Reply-To=%3C6a96e14c432a4fcde5320b9d93c32461.squirrel%40webmail.nyc-arecs.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001049.html">
+   <LINK REL="Next"  HREF="001051.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi for VHF/UHF FM data</H1>
+    <B>Charles J. Hargrove</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20for%20VHF/UHF%20FM%20data&In-Reply-To=%3C6a96e14c432a4fcde5320b9d93c32461.squirrel%40webmail.nyc-arecs.org%3E"
+       TITLE="Fldigi for VHF/UHF FM data">n2nov at nyc-arecs.org
+       </A><BR>
+    <I>Sat Jul 27 01:19:33 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001049.html">Fldigi for VHF/UHF FM data
+</A></li>
+        <LI>Next message: <A HREF="001051.html">Fldigi for VHF/UHF FM data
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1052">[ date ]</a>
+              <a href="thread.html#1052">[ thread ]</a>
+              <a href="subject.html#1052">[ subject ]</a>
+              <a href="author.html#1052">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Count the NYC-ARECS organization as being interested. We encourage members
+to use FLdigi on all bands along with other modes like packet, SSTV, etc.
+It's better to have more available tools in the toolbox!
+
+&gt;<i> Hello all,
+</I>&gt;<i> Apologies for the number of mailing-lists this touches, but am taking a bit
+</I>&gt;<i> of a survey:
+</I>&gt;<i>
+</I>&gt;<i> Want see how many people would be interested in using, developing, and/or
+</I>&gt;<i> testing Fldigi for &quot;high speed&quot; data over FM audio and/or FM-audio
+</I>&gt;<i> repeaters. In my testing so far, it appears the speed would be somewhere in
+</I>&gt;<i> the 3 Kb/s to 4 Kb/s range, possibly higher.
+</I>&gt;<i>
+</I>&gt;<i> Since the goal is fast data, audio coupling is out: faster speeds simply
+</I>&gt;<i> require a direct-audio connection. My inexpensive solution here was to
+</I>&gt;<i> interface a Baofeng UV-5R to a soundcard: see attached file for details
+</I>&gt;<i> (for good engineering practice, 1:1 isolation transformers should be added
+</I>&gt;<i> to isolate the radio form the soundcard).
+</I>&gt;<i> Conveniently, Baofeng and other radios contain an inbuilt VOX circuit to
+</I>&gt;<i> control PTT. No additional interface needed (I recently purchased 3 for
+</I>&gt;<i> this project, hihi)
+</I>&gt;<i>
+</I>&gt;<i> I saw some testing months ago for a mode that could be used over FM
+</I>&gt;<i> repeaters.
+</I>&gt;<i> Here I am proposing a new digital mode: NBEMS-FM
+</I>&gt;<i> This not a mode that I am making, but rather one I think we all should
+</I>&gt;<i> contribute to and discuss together. This will result in a better overall
+</I>&gt;<i> design.
+</I>&gt;<i>
+</I>&gt;<i> The details of the NBEMS-FM mode should be, in my opinion:
+</I>&gt;<i>  * 2 Speeds: one for Uplink / Reliability, one for Downlink / Backhaul
+</I>&gt;<i>  * No options to accidentally mis-configure
+</I>&gt;<i>  * Modem uses a set-frequency (no AFC to be mis-adjusted)
+</I>&gt;<i>  * Little-to-no FEC overhead
+</I>&gt;<i>  * Use PSK instead of QAM, to better allow for drastic audio-level
+</I>&gt;<i> mis-adjustments to still decode
+</I>&gt;<i>  * Common-sense balance of speed and reliability
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> In my testing here, it appears 8PSK is the highest constellation that is
+</I>&gt;<i> reliable over FM audio. I have tested on-air patches for fldigi that
+</I>&gt;<i> reliably transmitted data using two 8PSK carriers at 500 Baud, for a
+</I>&gt;<i> datarate (raw and net) of 3Kbps. Will work on porting those patches forward
+</I>&gt;<i> to the recent Fldigi versions.
+</I>&gt;<i>
+</I>&gt;<i> First thing that is required is the common audio upper and lower &quot;cutoff
+</I>&gt;<i> frequencies&quot; of amateur repeaters and radios.
+</I>&gt;<i> From the previous testing, what was the consensus?
+</I>&gt;<i>
+</I>&gt;<i> Responses and opinions  appreciated at: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kl4yfd at gmail.com</A>, or on the mailing
+</I>&gt;<i> list.
+</I>&gt;<i>
+</I>&gt;<i> John
+</I>&gt;<i> KL4YFD
+</I>
+
+--
+Charles J. Hargrove - N2NOV
+NYC ARECS/RACES Citywide Radio Officer/Skywarn Coord.
+
+NYC-ARECS/RACES Net Mon. @ 8:30PM 147.360/107.2 PL
+<A HREF="http://www.nyc-arecs.org">http://www.nyc-arecs.org</A> and <A HREF="http://www.nyc-skywarn.org">http://www.nyc-skywarn.org</A>
+
+NYDXA SWL &amp; Scanner Net Wed. @ 9PM 147.360/107.2 PL
+<A HREF="http://www.n2nov.net">http://www.n2nov.net</A>
+
+&quot;Information is the oxygen of the modern age. It seeps through the walls topped
+by barbed wire, it wafts across the electrified borders.&quot; - Ronald Reagan
+
+&quot;The more corrupt the state, the more it legislates.&quot; - Tacitus
+
+&quot;Molann an obair an fear&quot; - Irish Saying
+(The work praises the man.)
+
+&quot;No matter how big and powerful government gets, and the many services it
+provides, it can never take the place of volunteers.&quot; - Ronald Reagan
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001049.html">Fldigi for VHF/UHF FM data
+</A></li>
+	<LI>Next message: <A HREF="001051.html">Fldigi for VHF/UHF FM data
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1052">[ date ]</a>
+              <a href="thread.html#1052">[ thread ]</a>
+              <a href="subject.html#1052">[ subject ]</a>
+              <a href="author.html#1052">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

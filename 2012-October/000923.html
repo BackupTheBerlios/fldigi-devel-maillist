@@ -1,0 +1,250 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi suite faults when changing fonts
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20suite%20faults%20when%20changing%20fonts&In-Reply-To=%3CCABFyee3g9xqNK1F%3DKdvDPYaC2rqdt%3DessWm1Gszv280JNYqvhg%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000922.html">
+   <LINK REL="Next"  HREF="000924.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi suite faults when changing fonts</H1>
+    <B>Andy Cooper</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20suite%20faults%20when%20changing%20fonts&In-Reply-To=%3CCABFyee3g9xqNK1F%3DKdvDPYaC2rqdt%3DessWm1Gszv280JNYqvhg%40mail.gmail.com%3E"
+       TITLE="fldigi suite faults when changing fonts">andy at coolioh.com
+       </A><BR>
+    <I>Sat Oct 27 00:05:28 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000922.html">[GIT] fldigi branch, maint/3.21,	updated: 2b5d56828f4e3f8ccaaaee02d7d29efaa8d769b2
+</A></li>
+        <LI>Next message: <A HREF="000924.html">Compiling fldigi &gt;= 3.21.52 on LMDE with mingw32
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#923">[ date ]</a>
+              <a href="thread.html#923">[ thread ]</a>
+              <a href="subject.html#923">[ subject ]</a>
+              <a href="author.html#923">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I just recompiled all the fldigi programs on my Ubuntu 12.04 system and I
+see a common issue
+
+1) the screens look bad
+2) trying to select a new font instantly crashes the applications, it
+doesn't get to the &quot;reading fonts&quot; dialog
+
+I have attached a text file of the debug output.
+
+I have been compiling fldigi for a while with no problems but prior to the
+last time I updated some development libraries which might be a clue.
+
+I downloaded the fldigi binary and it runs fine.
+
+Thanks for all you do
+
+Andy, K3JSE
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20121026/4f684356/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20121026/4f684356/attachment.html</A>&gt;
+-------------- next part --------------
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">acooper at leela</A>:~/.nbems$ fldigi
+I: main: HomeDir: /home/acooper/.fldigi/
+I: main: RigsDir: /home/acooper/.fldigi/rigs/
+I: main: ScriptsDir: /home/acooper/.fldigi/scripts/
+I: main: PalettesDir: /home/acooper/.fldigi/palettes/
+I: main: LogsDir: /home/acooper/.fldigi/logs/
+I: main: PicsDir: /home/acooper/.fldigi/images/
+I: main: HelpDir: /home/acooper/.fldigi/help/
+I: main: MacrosDir: /home/acooper/.fldigi/macros/
+I: main: WrapDir: /home/acooper/.fldigi/wrap/
+I: main: TalkDir: /home/acooper/.fldigi/talk/
+I: main: TempDir: /home/acooper/.fldigi/temp/
+I: main: PskMailDir: /home/acooper/
+I: main: NBEMS_dir: /home/acooper/.nbems/
+I: main: ARQ_dir: /home/acooper/.nbems/ARQ/
+I: main: ARQ_files_dir: /home/acooper/.nbems/ARQ/files/
+I: main: ARQ_recv_dir: /home/acooper/.nbems/ARQ/recv/
+I: main: ARQ_send: /home/acooper/.nbems/ARQ/send/
+I: main: WRAP_dir: /home/acooper/.nbems/WRAP/
+I: main: WRAP_recv_dir: /home/acooper/.nbems/WRAP/recv/
+I: main: WRAP_send_dir: /home/acooper/.nbems/WRAP/send/
+I: main: WRAP_auto_dir: /home/acooper/.nbems/WRAP/auto/
+I: main: ICS_dir: /home/acooper/.nbems/ICS/
+I: main: ICS_msg_dir: /home/acooper/.nbems/ICS/messages/
+I: main: ICS_tmp_dir: /home/acooper/.nbems/ICS/templates/
+I: main: FLMSG_dir: /home/acooper/.nbems/
+I: main: FLMSG_dir_default: /home/acooper/.nbems/
+I: main: FLMSG_WRAP_dir: /home/acooper/.nbems/WRAP/
+I: main: FLMSG_WRAP_recv_dir: /home/acooper/.nbems/WRAP/recv/
+I: main: FLMSG_WRAP_send_dir: /home/acooper/.nbems/WRAP/send/
+I: main: FLMSG_WRAP_auto_dir: /home/acooper/.nbems/WRAP/auto/
+I: main: FLMSG_ICS_dir: /home/acooper/.nbems/ICS/
+I: main: FLMSG_ICS_msg_dir: /home/acooper/.nbems/ICS/messages/
+I: main: FLMSG_ICS_tmp_dir: /home/acooper/.nbems/ICS/templates/
+I: testCommPorts: Found serial port /dev/ttyS0
+I: testCommPorts: Found serial port /dev/ttyS1
+I: testCommPorts: Found serial port /dev/ttyS2
+I: testCommPorts: Found serial port /dev/ttyS3
+I: testCommPorts: Found serial port /dev/ttyS4
+I: testCommPorts: Found serial port /dev/ttyS5
+I: testCommPorts: Found serial port /dev/ttyS6
+I: testCommPorts: Found serial port /dev/ttyS7
+I: testCommPorts: Found serial port /dev/ttyS8
+I: testCommPorts: Found serial port /dev/ttyS9
+I: testCommPorts: Found serial port /dev/ttyS10
+I: testCommPorts: Found serial port /dev/ttyS11
+I: testCommPorts: Found serial port /dev/ttyS12
+I: testCommPorts: Found serial port /dev/ttyS13
+I: testCommPorts: Found serial port /dev/ttyS14
+I: testCommPorts: Found serial port /dev/ttyS15
+I: testCommPorts: Found serial port /dev/ttyS16
+I: testCommPorts: Found serial port /dev/ttyS17
+I: testCommPorts: Found serial port /dev/ttyS18
+I: testCommPorts: Found serial port /dev/ttyS19
+I: testCommPorts: Found serial port /dev/ttyS20
+I: testCommPorts: Found serial port /dev/ttyS21
+I: testCommPorts: Found serial port /dev/ttyS22
+I: testCommPorts: Found serial port /dev/ttyS23
+I: testCommPorts: Found serial port /dev/ttyS24
+I: testCommPorts: Found serial port /dev/ttyS25
+I: testCommPorts: Found serial port /dev/ttyS26
+I: testCommPorts: Found serial port /dev/ttyS27
+I: testCommPorts: Found serial port /dev/ttyS28
+I: testCommPorts: Found serial port /dev/ttyS29
+I: testCommPorts: Found serial port /dev/ttyS30
+I: testCommPorts: Found serial port /dev/ttyS31
+I: testCommPorts: Found serial port /dev/ttyUSB0
+I: testCommPorts: Found serial port /dev/ttyUSB1
+I: loadDefault: macro file name: /home/acooper/.fldigi/macros/macros.mdf
+I: loadDefault: loading: /home/acooper/.fldigi/macros/macros.mdf
+ALSA lib pcm.c:2217:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.side
+ALSA lib confmisc.c:1286:(snd_func_refer) Unable to find definition 'cards.EMU10K1.pcm.surround71.0:CARD=0'
+ALSA lib conf.c:4241:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:4720:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2217:(snd_pcm_open_noupdate) Unknown PCM surround71
+ALSA lib confmisc.c:1286:(snd_func_refer) Unable to find definition 'cards.EMU10K1.pcm.hdmi.0:CARD=0,AES0=4,AES1=130,AES2=0,AES3=2'
+ALSA lib conf.c:4241:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:4720:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2217:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib confmisc.c:1286:(snd_func_refer) Unable to find definition 'cards.EMU10K1.pcm.hdmi.0:CARD=0,AES0=4,AES1=130,AES2=0,AES3=2'
+ALSA lib conf.c:4241:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:4720:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2217:(snd_pcm_open_noupdate) Unknown PCM hdmi
+ALSA lib confmisc.c:1286:(snd_func_refer) Unable to find definition 'cards.EMU10K1.pcm.modem.0:CARD=0'
+ALSA lib conf.c:4241:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:4720:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2217:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline:CARD=0,DEV=0
+ALSA lib confmisc.c:1286:(snd_func_refer) Unable to find definition 'cards.EMU10K1.pcm.modem.0:CARD=0'
+ALSA lib conf.c:4241:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:4720:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2217:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.phoneline:CARD=0,DEV=0
+ALSA lib confmisc.c:1286:(snd_func_refer) Unable to find definition 'cards.EMU10K1.pcm.modem.0:CARD=0'
+ALSA lib conf.c:4241:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:4720:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2217:(snd_pcm_open_noupdate) Unknown PCM phoneline
+ALSA lib confmisc.c:1286:(snd_func_refer) Unable to find definition 'cards.EMU10K1.pcm.modem.0:CARD=0'
+ALSA lib conf.c:4241:(_snd_config_evaluate) function snd_func_refer returned error: No such file or directory
+ALSA lib conf.c:4720:(snd_config_expand) Evaluate error: No such file or directory
+ALSA lib pcm.c:2217:(snd_pcm_open_noupdate) Unknown PCM phoneline
+ALSA lib audio/pcm_bluetooth.c:1614:(audioservice_expect) BT_GET_CAPABILITIES failed : Input/output error(5)
+ALSA lib audio/pcm_bluetooth.c:1614:(audioservice_expect) BT_GET_CAPABILITIES failed : Input/output error(5)
+ALSA lib audio/pcm_bluetooth.c:1614:(audioservice_expect) BT_GET_CAPABILITIES failed : Input/output error(5)
+ALSA lib audio/pcm_bluetooth.c:1614:(audioservice_expect) BT_GET_CAPABILITIES failed : Input/output error(5)
+ALSA lib pcm_dmix.c:957:(snd_pcm_dmix_open) The dmix plugin supports only playback stream
+E: show_error: Get Mode: Communication timed out
+E: show_error: Set Ptt: Feature not available
+I: ADIF_RW_init: Starting logbook r/w thread
+I: do_readfile: Reading /home/acooper/.fldigi/logs/logbook.adif
+I: do_readfile: Reading 5383 bytes from logbook.adif
+I: do_readfile: Read 24 records in 0.00 seconds
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+fldigi[0x814751b]
+fldigi[0x814770a]
+[0xe83400]
+fldigi[0x80ad4fe]
+fldigi[0x806d729]
+fldigi[0x8238702]
+fldigi[0x820fb9d]
+fldigi[0x820ffd7]
+fldigi[0x820b2db]
+fldigi[0x820bd5c]
+fldigi[0x823cfc1]
+fldigi[0x823d03e]
+fldigi[0x823d239]
+fldigi[0x820c8d4]
+fldigi[0x820c953]
+fldigi[0x8054875]
+/lib/i386-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0x5204d3]
+fldigi[0x8058ffd]
+
+****** Version information:
+fldigi 3.21.58
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi Chateauneu, and others.
+License GPLv3+: GNU GPL version 3 or later &lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+  built          : Thu Oct 25 19:59:15 EDT 2012 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">acooper at leela</A> on i686-pc-linux-gnu for i686-pc-linux-gnu
+
+  configure flags: 
+
+  compiler       : gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5) 
+
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -pthread -I/usr/local/include -I/usr/local/include -I/usr/local/include/FL/images -I/usr/include/freetype2 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT -I/usr/include/libpng12 -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions -DNDEBUG
+
+  linker flags   : -L/usr/local/lib -lportaudio -lasound -lm -lpthread -L/usr/local/lib -lfltk_images -lpng -lz -lfltk_jpeg -lfltk -lXext -lfontconfig -lpthread -ldl -lm -lX11 -lX11 -lsamplerate -lpulse-simple -lpulse -lhamlib -lm -lpng12 -ldl -lrt -lpthread
+
+  libraries      : FLTK 1.3.0
+                   libsamplerate 0.1.8
+                   PortAudio 19
+                   PulseAudio 1.1
+                   Hamlib 1.2.15.1
+
+Runtime information:
+  system         : Linux leela 3.2.0-32-generic #51-Ubuntu SMP Wed Sep 26 21:32:50 UTC 2012 i686
+
+  libraries      : libsamplerate-0.1.8 (c) 2002-2008 Erik de Castro Lopo
+                   PortAudio V19-devel (built Dec 10 2011 11:43:21) 1899
+                   Pulseaudio 1.1.0
+                   Hamlib 1.2.15.1
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000922.html">[GIT] fldigi branch, maint/3.21,	updated: 2b5d56828f4e3f8ccaaaee02d7d29efaa8d769b2
+</A></li>
+	<LI>Next message: <A HREF="000924.html">Compiling fldigi &gt;= 3.21.52 on LMDE with mingw32
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#923">[ date ]</a>
+              <a href="thread.html#923">[ thread ]</a>
+              <a href="subject.html#923">[ subject ]</a>
+              <a href="author.html#923">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

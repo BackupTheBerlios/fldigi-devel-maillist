@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Trying to compile flmsg 2.1.13 on Fedora 14
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Trying%20to%20compile%20flmsg%202.1.13%20on%20Fedora%2014&In-Reply-To=%3C20120330175833.5f9d8b10%40w3nr%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000839.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Trying to compile flmsg 2.1.13 on Fedora 14</H1>
+    <B>Ed</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Trying%20to%20compile%20flmsg%202.1.13%20on%20Fedora%2014&In-Reply-To=%3C20120330175833.5f9d8b10%40w3nr%3E"
+       TITLE="Trying to compile flmsg 2.1.13 on Fedora 14">autek2 at gmail.com
+       </A><BR>
+    <I>Fri Mar 30 23:58:33 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000839.html">Trying to compile flmsg 2.1.13 on Fedora 14
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#840">[ date ]</a>
+              <a href="thread.html#840">[ thread ]</a>
+              <a href="subject.html#840">[ subject ]</a>
+              <a href="author.html#840">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, 30 Mar 2012 15:00:06 -0500 (CDT)
+Jim Haynes &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">jhhaynes at earthlink.net</A>&gt; wrote:
+
+&gt;<i> 
+</I>&gt;<i> Making all in src
+</I>&gt;<i> make[1]: Entering directory `/home/haynes/radio/flmsg-1.1.13/src'
+</I>&gt;<i> make  all-am
+</I>&gt;<i> make[2]: Entering directory `/home/haynes/radio/flmsg-1.1.13/src'
+</I>&gt;<i> g++ -DHAVE_CONFIG_H -I.  -I. -I./include  -I/usr/local/include
+</I>&gt;<i> -I/usr/include/freetype2 -D_THREAD_SAFE -D_REENTRANT   -pipe -Wall
+</I>&gt;<i> -fexceptions -O2 -ffast-math -finline-functions
+</I>&gt;<i> -fomit-frame-pointer   -DNDEBUG -g -O2 -MT flmsg-FTextView.o -MD -MP
+</I>&gt;<i> -MF .deps/flmsg-FTextView.Tpo -c -o flmsg-FTextView.o `test -f
+</I>&gt;<i> './widgets/FTextView.cxx' || echo
+</I>&gt;<i> './'`./widgets/FTextView.cxx ./widgets/FTextView.cxx: In constructor
+</I>&gt;<i> &#8216;FTextBase::FTextBase(int, int, int, int, const
+</I>&gt;<i> char*)&#8217;: ./widgets/FTextView.cxx:66:16: error: &#8216;WRAP_AT_BOUNDS&#8217; was
+</I>&gt;<i> not declared in this scope ./widgets/FTextView.cxx: In member
+</I>&gt;<i> function &#8216;void
+</I>&gt;<i> FTextBase::set_word_wrap(bool)&#8217;: ./widgets/FTextView.cxx:144:28:
+</I>&gt;<i> error: &#8216;WRAP_AT_BOUNDS&#8217; was not declared in this
+</I>&gt;<i> scope ./widgets/FTextView.cxx:145:17: error: &#8216;WRAP_NONE&#8217; was not
+</I>&gt;<i> declared in this scope make[2]: *** [flmsg-FTextView.o] Error 1
+</I>&gt;<i> make[2]: Leaving directory `/home/haynes/radio/flmsg-1.1.13/src'
+</I>&gt;<i> make[1]: *** [all] Error 2 make[1]: Leaving directory
+</I>&gt;<i> `/home/haynes/radio/flmsg-1.1.13/src' make: *** [all-recursive] Error
+</I>&gt;<i> 1
+</I>
+You have a problem with fltk. How did you install fltk ?
+
+Ed W3NR
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000839.html">Trying to compile flmsg 2.1.13 on Fedora 14
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#840">[ date ]</a>
+              <a href="thread.html#840">[ thread ]</a>
+              <a href="subject.html#840">[ subject ]</a>
+              <a href="author.html#840">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> SIMD
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20SIMD&In-Reply-To=%3C87eiovokwa.wl%40logrus.enotty.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000130.html">
+   <LINK REL="Next"  HREF="000132.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>SIMD</H1>
+    <B>Stelios Bounanos</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20SIMD&In-Reply-To=%3C87eiovokwa.wl%40logrus.enotty.net%3E"
+       TITLE="SIMD">m0gld at enotty.net
+       </A><BR>
+    <I>Thu Oct 22 11:09:09 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000130.html">SIMD
+</A></li>
+        <LI>Next message: <A HREF="000132.html">[GIT] fldigi branch, master,	updated: 9ec650ca55315d210442eb82af36a6593ff51f32
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#131">[ date ]</a>
+              <a href="thread.html#131">[ thread ]</a>
+              <a href="subject.html#131">[ subject ]</a>
+              <a href="author.html#131">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;&gt;&gt;&gt;&gt;<i> On Thu, 22 Oct 2009 09:53:45 +0200, Stephane Fillod &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">f8cfe at free.fr</A>&gt; said:
+</I>
+&gt;<i> Thu, Oct 22, 2009 at 02:42:03AM +0100, Stelios Bounanos skribis:
+</I>&gt;&gt;<i> &gt;&gt;&gt;&gt;&gt; On Mon, 19 Oct 2009 05:31:30 -0500, w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>&gt; said:
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> &gt; Stelios Bounanos wrote:
+</I>&gt;&gt;<i> &gt;&gt; I wonder if you have done any SIMD programming?  If not, you may find
+</I>&gt;&gt;<i> &gt;&gt; the potential SIMD speedups surprising.  Attached is a small program
+</I>&gt;&gt;<i> &gt;&gt; that compares a scalar to a vectorised loop for a really simple
+</I>&gt;&gt;<i> &gt;&gt; algorithm (finding the maximum value in an array of doubles).
+</I>&gt;&gt;<i> &gt;&gt; 
+</I>&gt;&gt;<i> &gt; That is an impressive speedup.  I will look at your sample and try the 
+</I>&gt;&gt;<i> &gt; compilation in a bit.
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> &gt; I think that the waterfall widget and it's fft would be a suitable 
+</I>&gt;&gt;<i> &gt; target.  I would start with the fft.
+</I>
+&gt;<i> Don't assume, measure instead :-) You know the saying about optimization
+</I>&gt;<i> by Donald Knuth.
+</I>
+&gt;<i> The tool you're going to be fond of is *OProfile*.
+</I>&gt;<i> Just don't forget to compile fldigi with optimization level enabled (-O2)
+</I>&gt;<i> along with debugging symbols on, for the magic to happen.
+</I>
+Thanks for your comments Stephane.  As it happens I've been using
+valgrind --tool=callgrind and the very nice kcachegrind tool (which I
+understand can also display oprofile's output), and fldigi was indeed
+built with -O2 -g.  The waterfall fft processing is certainly a hotspot,
+in fact it's hotter than some modems :-)
+
+As for the SIMD stuff, I have only tested it in microbenchmarks which
+are of course not the same as the real thing.  Once fftw3 is in place
+(doing ffts out of place :) I will see if there are any easy to
+vectorise hotspots.  And fldigi has a useful build switch
+(--enable-benchmark) to test decoding speed with.
+
+
+-- 
+
+73,
+Stelios, M0GLD.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000130.html">SIMD
+</A></li>
+	<LI>Next message: <A HREF="000132.html">[GIT] fldigi branch, master,	updated: 9ec650ca55315d210442eb82af36a6593ff51f32
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#131">[ date ]</a>
+              <a href="thread.html#131">[ thread ]</a>
+              <a href="subject.html#131">[ subject ]</a>
+              <a href="author.html#131">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

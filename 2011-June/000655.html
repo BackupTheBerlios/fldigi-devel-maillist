@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [PATCH 3/3] Make CW Offset optional in the waterfall * Computation of	CW offset optional and independent of BFO sideband selection *	tested on K3 only
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BPATCH%203/3%5D%20Make%20CW%20Offset%20optional%20in%20the%20waterfall%20%2A%20Computation%20of%0A%09CW%20offset%20optional%20and%20independent%20of%20BFO%20sideband%20selection%20%2A%0A%09tested%20on%20K3%20only&In-Reply-To=%3C1309331573-22255-4-git-send-email-pf%40tippete.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000653.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[PATCH 3/3] Make CW Offset optional in the waterfall * Computation of	CW offset optional and independent of BFO sideband selection *	tested on K3 only</H1>
+    <B>Pierfrancesco Caci</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BPATCH%203/3%5D%20Make%20CW%20Offset%20optional%20in%20the%20waterfall%20%2A%20Computation%20of%0A%09CW%20offset%20optional%20and%20independent%20of%20BFO%20sideband%20selection%20%2A%0A%09tested%20on%20K3%20only&In-Reply-To=%3C1309331573-22255-4-git-send-email-pf%40tippete.net%3E"
+       TITLE="[PATCH 3/3] Make CW Offset optional in the waterfall * Computation of	CW offset optional and independent of BFO sideband selection *	tested on K3 only">pf at tippete.net
+       </A><BR>
+    <I>Wed Jun 29 09:12:53 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000653.html">[PATCH 2/3] This is the effect of 'make flgen' after the previous	commit
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#655">[ date ]</a>
+              <a href="thread.html#655">[ thread ]</a>
+              <a href="subject.html#655">[ subject ]</a>
+              <a href="author.html#655">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>---
+ src/include/configuration.h |    3 +++
+ src/waterfall/waterfall.cxx |    8 ++++----
+ 2 files changed, 7 insertions(+), 4 deletions(-)
+
+diff --git a/src/include/configuration.h b/src/include/configuration.h
+index 04943a1..f6a65ac 100644
+--- a/src/include/configuration.h
++++ b/src/include/configuration.h
+@@ -163,6 +163,9 @@
+         ELEM_(bool, StartAtSweetSpot, &quot;STARTATSWEETSPOT&quot;,                               \
+               &quot;Always start new modems at sweet spot frequencies&quot;,                      \
+               false)                                                                    \
++        ELEM_(bool, CWOffset, &quot;CWOFFSET&quot;,                                                 \
++              &quot;Select if waterfall should compensate for BFO offset in CW&quot;,                        \
++              false)                                                                    \
+         ELEM_(bool, CWIsLSB, &quot;CWISLSB&quot;,                                                 \
+               &quot;Select if BFO is injected as LSB instead of USB&quot;,                        \
+               false)                                                                    \
+diff --git a/src/waterfall/waterfall.cxx b/src/waterfall/waterfall.cxx
+index 6669031..acfd3d0 100644
+--- a/src/waterfall/waterfall.cxx
++++ b/src/waterfall/waterfall.cxx
+@@ -597,8 +597,8 @@ update_freq:
+ 	    int cwoffset = 0;
+ 	    string testmode = qso_opMODE-&gt;value();
+ 	    if (testmode == &quot;CW&quot; or testmode == &quot;CWR&quot;) {
+-		cwoffset = progdefaults.CWsweetspot;
+-		usb = ! (progdefaults.CWIsLSB ^ (testmode == &quot;CWR&quot;));
++			cwoffset = (progdefaults.CWOffset ? progdefaults.CWsweetspot : 0 );
++			usb = ! (progdefaults.CWIsLSB ^ (testmode == &quot;CWR&quot;));
+ 	    }
+ 		if (usb)
+ 			dfreq = rfc + active_modem-&gt;get_txfreq() -cwoffset;
+@@ -737,8 +737,8 @@ void WFdisp::drawScale() {
+ 		    int cwoffset = 0;
+ 		    string testmode = qso_opMODE-&gt;value();
+ 		    if (testmode == &quot;CW&quot; or testmode == &quot;CWR&quot;) {
+-			cwoffset = progdefaults.CWsweetspot;
+-			usb = ! (progdefaults.CWIsLSB ^ (testmode == &quot;CWR&quot;)); 
++				cwoffset = ( progdefaults.CWOffset ? progdefaults.CWsweetspot : 0 );
++				usb = ! (progdefaults.CWIsLSB ^ (testmode == &quot;CWR&quot;)); 
+ 		    }
+ 			if (usb)
+ 				fr = (rfc - (rfc%500))/1000.0 + 0.5*i - cwoffset/1000.0;
+-- 
+1.7.0.4
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000653.html">[PATCH 2/3] This is the effect of 'make flgen' after the previous	commit
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#655">[ date ]</a>
+              <a href="thread.html#655">[ thread ]</a>
+              <a href="subject.html#655">[ subject ]</a>
+              <a href="author.html#655">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

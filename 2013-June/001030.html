@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Hamlib-developer] A proposal for a Hamlib++
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BHamlib-developer%5D%20A%20proposal%20for%20a%20Hamlib%2B%2B&In-Reply-To=%3CCAOctvfU5oLHUxvDtoYUgXk-iZ-7v3f7uQqHBuy%3DVoXmfK0qFFQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001029.html">
+   <LINK REL="Next"  HREF="001032.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Hamlib-developer] A proposal for a Hamlib++</H1>
+    <B>Dave Wright</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BHamlib-developer%5D%20A%20proposal%20for%20a%20Hamlib%2B%2B&In-Reply-To=%3CCAOctvfU5oLHUxvDtoYUgXk-iZ-7v3f7uQqHBuy%3DVoXmfK0qFFQ%40mail.gmail.com%3E"
+       TITLE="[Hamlib-developer] A proposal for a Hamlib++">hfradiopro at gmail.com
+       </A><BR>
+    <I>Sat Jun 22 05:17:29 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001029.html">[Hamlib-developer] A proposal for a Hamlib++
+</A></li>
+        <LI>Next message: <A HREF="001032.html">[Hamlib-developer] A proposal for a Hamlib++
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1030">[ date ]</a>
+              <a href="thread.html#1030">[ thread ]</a>
+              <a href="subject.html#1030">[ subject ]</a>
+              <a href="author.html#1030">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Nate,
+
+Thanks for the explanation...I know it helps me understand the issue
+better.  It was a very clear explanation of all of the background. I can
+see how this is a difficult and contentious decision.
+
+I use RigCAT to control my rigs and have never used hamlib even on Linux,
+and I am NOT a developer, so perhaps I'm a bit bias, but I think that
+anything that saves development resources (time or otherwise) for more
+focus on Fldigi is a good thing.
+
+Thanks again!
+
+Dave
+
+Dave
+K3DCW
+www.k3dcw.net
+
+&quot;Real radio bounces off the sky&quot;
+
+
+On Fri, Jun 21, 2013 at 11:10 PM, Nate Bargmann &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">n0nb at n0nb.us</A>&gt; wrote:
+
+&gt;<i> * On 2013 21 Jun 21:30 -0500, Dave Wright wrote:
+</I>&gt;<i> &gt; Ultimately, if hamlib can't easily be made to work with Fldigi and the
+</I>&gt;<i> &gt; hamlib community is not willing to make changes to make building easier,
+</I>&gt;<i> &gt; then dropping support for hamlib seems to be the only course of action;
+</I>&gt;<i> &gt; anything else requires too much effort that could be better focused on
+</I>&gt;<i> &gt; Fldigi development.
+</I>&gt;<i>
+</I>&gt;<i> Hi Dave.
+</I>&gt;<i>
+</I>&gt;<i> The issue is a structural one.  The present design of Hamlib is such
+</I>&gt;<i> that the &quot;front end&quot; library is loaded when the program, such as Fldigi
+</I>&gt;<i> or CQRlog or many more, starts.  The program will at some point
+</I>&gt;<i> initialize Hamlib and tell Hamlib which radio to load.  At that point
+</I>&gt;<i> the front end loads the needed &quot;back end&quot; library.  Normally this is
+</I>&gt;<i> done using shared libraries of a &quot;plugin&quot; nature for the backends and a
+</I>&gt;<i> given backend is loaded on demand.  This has the advantage of not
+</I>&gt;<i> wasting uneeded memory.  This is probably not too much of an issue today
+</I>&gt;<i> when many GB of RAM is the norm, but Hamlib was originally designed when
+</I>&gt;<i> RAM was at more of a premium, and memory savings are still important on
+</I>&gt;<i> older computers often used by hams and on small computers such as the
+</I>&gt;<i> Raspberry Pi.
+</I>&gt;<i>
+</I>&gt;<i> To do this loading we rely on a tool from the GNU project, Libtool,
+</I>&gt;<i> which includes a dynamic loader library.  The good thing about Libtool
+</I>&gt;<i> is that it handles the details between loading a library on Linux versus
+</I>&gt;<i> MS Windows, for example.  As the packaging maintainer for Hamlib, I am
+</I>&gt;<i> thankful for the ease it brings to my life.  Unfortunately, it seems to
+</I>&gt;<i> fail only in the case where Hamlib is statically linked into Fldigi.  In
+</I>&gt;<i> this instance the loader library is &quot;faking it&quot; (for lack of a better
+</I>&gt;<i> term--hey, if tuners can &quot;fool&quot; a radio...) and presenting a normal
+</I>&gt;<i> dynamic loading sequence to the program.  Somewhere in all that it falls
+</I>&gt;<i> down and the Libtool folks don't seem too concerned about it.  Perhaps
+</I>&gt;<i> I've yet to present them with a good demonstration.
+</I>&gt;<i>
+</I>&gt;<i> The reason Hamlib versions later than 1.2.12 no longer work for Dave is
+</I>&gt;<i> due to a security advisory against the version of Libtool included in
+</I>&gt;<i> that release and older releases.  Now we rely on newer versions provided
+</I>&gt;<i> by the Linux distribution I build the Hamlib releases on.
+</I>&gt;<i>
+</I>&gt;<i> To get away from the current design of Hamlib would require a complete
+</I>&gt;<i> rethink of its current architecture.  Perhaps a good way to accomplish
+</I>&gt;<i> this is to start over with a fresh design that more mirrors the way
+</I>&gt;<i> RigCAT works with flat text definition files for radio and other device
+</I>&gt;<i> models so that no knowledge of programming languages or programming
+</I>&gt;<i> would be required to contribute.  I am not the guy to do that, however,
+</I>&gt;<i> I am a self-taught hobbyist programmer and my skill set doesn't go too
+</I>&gt;<i> far.
+</I>&gt;<i>
+</I>&gt;<i> All that said, I have been building and making available a binary
+</I>&gt;<i> release for MS Windows that includes the front end and all the back ends
+</I>&gt;<i> as DLLs.  Perhaps there is a technical issue why these DLLs could not be
+</I>&gt;<i> included with and linked from Fldigi.  I don't know.
+</I>&gt;<i>
+</I>&gt;<i> I hope this helps everyone understand the issues involved.
+</I>&gt;<i>
+</I>&gt;<i> 73, de Nate &gt;&gt;
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i>
+</I>&gt;<i> &quot;The optimist proclaims that we live in the best of all
+</I>&gt;<i> possible worlds.  The pessimist fears this is true.&quot;
+</I>&gt;<i>
+</I>&gt;<i> Ham radio, Linux, bikes, and more: <A HREF="http://www.n0nb.us">http://www.n0nb.us</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130621/473e9c88/attachment-0001.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130621/473e9c88/attachment-0001.html</A>&gt;
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001029.html">[Hamlib-developer] A proposal for a Hamlib++
+</A></li>
+	<LI>Next message: <A HREF="001032.html">[Hamlib-developer] A proposal for a Hamlib++
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1030">[ date ]</a>
+              <a href="thread.html#1030">[ thread ]</a>
+              <a href="subject.html#1030">[ subject ]</a>
+              <a href="author.html#1030">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

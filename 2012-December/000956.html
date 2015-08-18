@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> (gcc-4.7) g++: unrecognized option '-pthread-lrt'.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%28gcc-4.7%29%20g%2B%2B%3A%20unrecognized%20option%20%27-pthread-lrt%27.&In-Reply-To=%3Cyfmfw2t2duv.wl%25makoto%40ki.nu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000955.html">
+   <LINK REL="Next"  HREF="000959.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>(gcc-4.7) g++: unrecognized option '-pthread-lrt'.</H1>
+    <B>Makoto JA1XMS Fujiwara</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%28gcc-4.7%29%20g%2B%2B%3A%20unrecognized%20option%20%27-pthread-lrt%27.&In-Reply-To=%3Cyfmfw2t2duv.wl%25makoto%40ki.nu%3E"
+       TITLE="(gcc-4.7) g++: unrecognized option '-pthread-lrt'.">makoto at ki.nu
+       </A><BR>
+    <I>Wed Dec 26 13:32:24 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000955.html">(gcc-4.7) g++: unrecognized option '-pthread-lrt'.
+</A></li>
+        <LI>Next message: <A HREF="000959.html">(gcc-4.7) g++: unrecognized option '-pthread-lrt'.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#956">[ date ]</a>
+              <a href="thread.html#956">[ thread ]</a>
+              <a href="subject.html#956">[ subject ]</a>
+              <a href="author.html#956">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+|<i> &gt;&gt; sed -e 's/^-lpthread$//' \
+</I>|<i> &gt;&gt;      -e 's/^-lpthread / /' \
+</I>|<i> &gt;&gt;      -e 's/ -lpthread$//' \
+</I>|<i> &gt;&gt;      -e 's/ -lpthread / /'
+</I>|<i> Makoto:  Is Greg's solution satisfactory for you?
+</I>
+Yes, sure it is fine. I've tested the patch attached.
+Thank you,
+---
+de JA1XMS
+Makoto Fujiwara, 
+Chiba, Japan, Narita Airport and Disneyland prefecture.
+
+--- configure.orig	2012-12-07 02:02:18.000000000 +0900
++++ configure	2012-12-26 18:46:51.876902000 +0900
+@@ -9972,7 +9972,11 @@
+ 
+           test &quot;x$XMLRPC_CFLAGS&quot; = &quot;x&quot; &amp;&amp; XMLRPC_CFLAGS=`$XMLRPC_C_CONFIG c++2 abyss-server --cflags`
+           if test &quot;x$XMLRPC_LIBS&quot; = &quot;x&quot;; then
+-              XMLRPC_LIBS=`$XMLRPC_C_CONFIG c++2 abyss-server --ldadd | sed s/.-lpthread.//`
++              XMLRPC_LIBS=`$XMLRPC_C_CONFIG c++2 abyss-server --ldadd | \
++		sed -e 's/^-lpthread$//'  \
++		    -e 's/^-lpthread / /' \
++		    -e 's/ -lpthread$//'  \
++		    -e 's/ -lpthread / /' `
+               test &quot;$ac_cv_static&quot; = &quot;yes&quot; &amp;&amp; XMLRPC_LIBS=&quot;-Wl,-Bstatic $XMLRPC_LIBS -Wl,-Bdynamic&quot;
+           fi
+       fi
+
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000955.html">(gcc-4.7) g++: unrecognized option '-pthread-lrt'.
+</A></li>
+	<LI>Next message: <A HREF="000959.html">(gcc-4.7) g++: unrecognized option '-pthread-lrt'.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#956">[ date ]</a>
+              <a href="thread.html#956">[ thread ]</a>
+              <a href="subject.html#956">[ subject ]</a>
+              <a href="author.html#956">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

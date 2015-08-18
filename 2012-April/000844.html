@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Debugging flrig for TS-870S on Mac OS X
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Debugging%20flrig%20for%20TS-870S%20on%20Mac%20OS%20X&In-Reply-To=%3C14121457-A7DB-45DE-A486-3D6027EC650D%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000843.html">
+   <LINK REL="Next"  HREF="000845.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Debugging flrig for TS-870S on Mac OS X</H1>
+    <B>BRIAN MIEZEJEWSKI</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Debugging%20flrig%20for%20TS-870S%20on%20Mac%20OS%20X&In-Reply-To=%3C14121457-A7DB-45DE-A486-3D6027EC650D%40gmail.com%3E"
+       TITLE="Debugging flrig for TS-870S on Mac OS X">fmcane at gmail.com
+       </A><BR>
+    <I>Mon Apr 30 05:12:16 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000843.html">[GIT] fldigi branch, master,	updated: 4986fcd8682b4513cb9a252cfb911b00ca0375fd
+</A></li>
+        <LI>Next message: <A HREF="000845.html">Debugging flrig for TS-870S on Mac OS X
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#844">[ date ]</a>
+              <a href="thread.html#844">[ thread ]</a>
+              <a href="subject.html#844">[ subject ]</a>
+              <a href="author.html#844">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all,
+
+I would like to start looking at the flrig code to get it working on OS X 64 Lion with my TS-870S. I may also want to add rig for my PCR1000 if I can find the energy.  
+
+I have been looking at the code and my first thought is to add some more instrumentation to better debug the traffic between flrig and the rig. I would like to extend the current debug object and send the output to the status_log.txt file. My thoughts were to:
+
+1) Replace the current variable based synchronization with a pthread mutex.
+2) Modify the --debug parameter to include --debug=N were N is a number indicating the level of debug.
+3) Adding the instrumentation.
+
+Does this sound like a good approach? Is there something in the fldigi code that would be better and make this more consistent across the suite? I have only looked at the flrig code in detail.   
+
+If this makes sense, is there any particular functions I should instrument based on the experiences of the group? 
+
+I am currently disabled so I probably will not get this done too fast, but I have been doing C++ for 25 years so I have a little experience. 
+
+Cheers,
+Brian 
+k5hfi
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000843.html">[GIT] fldigi branch, master,	updated: 4986fcd8682b4513cb9a252cfb911b00ca0375fd
+</A></li>
+	<LI>Next message: <A HREF="000845.html">Debugging flrig for TS-870S on Mac OS X
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#844">[ date ]</a>
+              <a href="thread.html#844">[ thread ]</a>
+              <a href="subject.html#844">[ subject ]</a>
+              <a href="author.html#844">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

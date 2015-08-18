@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Synop + KML
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Synop%20%2B%20KML&In-Reply-To=%3C504BE198.70605%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000910.html">
+   <LINK REL="Next"  HREF="000912.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Synop + KML</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Synop%20%2B%20KML&In-Reply-To=%3C504BE198.70605%40gmail.com%3E"
+       TITLE="Synop + KML">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Sun Sep  9 02:23:52 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000910.html">fldigi-devel Digest, Vol 42, Issue 1
+</A></li>
+        <LI>Next message: <A HREF="000912.html">[GIT] fldigi branch, maint/3.21,	updated: 8c97f909816d4db38cf292052db8117f1efbc16d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#911">[ date ]</a>
+              <a href="thread.html#911">[ thread ]</a>
+              <a href="subject.html#911">[ subject ]</a>
+              <a href="author.html#911">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+Synop decoding is progressing well, I am polishing the code at the moment.
+
+The decoding is done at three places:
+* The RTTY modem now has a tick box in its config tab, which makes that 
+all SYNOP tags (five-digits groups) are decoded.
+* Because SYNOP messages are entities spanning several lines, with 
+coordinates, this logic is a bit difficultto render accurately in the 
+outptu window (Which is line and char oriented). Therefore, when a SYNOP 
+message is completely validated, it is written with its coordinates and 
+timestamp, in a KML file which can be viewed with Google Earth of Google 
+Maps. This is not costly (It optionnaly writes data in a text file of 
+the right format) but is extremely convenient to check that SYNOP 
+messages are at the right place, from the right destination.
+* A new &quot;flsynop&quot; program has been introduced which takes any text file 
+as input and generates an output where all the SYNOP tags have been 
+replaced. it uses the sale code as fldigi and is very helpful to debug 
+things, but also to decode any text file.
+
+In terms of implementation:
+* Small add to rtty.cxx for diplaying the decoded result.
+* New tock box in the rtty config tab.
+* A couple of new text files (One of them very big but it makes things 
+simpler, instead of splitting it for no reason).
+* A couple of new config files for the buoys, weather statoins and ships 
+definitions.
+
+Later on, we can reuse the KML file creation, then for Navtex data 
+(Which also comes with coordinates).
+
+Any opinion or remark, please ?
+
+Thanks
+
+R
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000910.html">fldigi-devel Digest, Vol 42, Issue 1
+</A></li>
+	<LI>Next message: <A HREF="000912.html">[GIT] fldigi branch, maint/3.21,	updated: 8c97f909816d4db38cf292052db8117f1efbc16d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#911">[ date ]</a>
+              <a href="thread.html#911">[ thread ]</a>
+              <a href="subject.html#911">[ subject ]</a>
+              <a href="author.html#911">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

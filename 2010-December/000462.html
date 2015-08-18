@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.21.0AS posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.0AS%20posted&In-Reply-To=%3C29284.1293508646%40ct.metrocast.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000443.html">
+   <LINK REL="Next"  HREF="000444.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.21.0AS posted</H1>
+    <B>P.J. Rovero</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.0AS%20posted&In-Reply-To=%3C29284.1293508646%40ct.metrocast.net%3E"
+       TITLE="fldigi-3.21.0AS posted">provero at ct.metrocast.net
+       </A><BR>
+    <I>Tue Dec 28 04:57:26 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000443.html">fldigi-3.21.0AS posted
+</A></li>
+        <LI>Next message: <A HREF="000444.html">fldigi-3.21.0AS posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#462">[ date ]</a>
+              <a href="thread.html#462">[ thread ]</a>
+              <a href="subject.html#462">[ subject ]</a>
+              <a href="author.html#462">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Builds clean on FC14 x86_64, but gets sig11 on startup.
+If I start it under ddd, it runs.
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+./fldigi(_Z9diediediev+0x9b)[0x651ddf]
+./fldigi(_Z13handle_signali+0x1f)[0x651ffd]
+/lib64/libpthread.so.0[0x3494a0f3c0]
+./fldigi(_ZN7pskeval5clearEv+0x20)[0x6743ba]
+./fldigi(_ZN7viewpsk4initEv+0x441)[0x670f6f]
+./fldigi(_ZN7viewpsk7restartEl+0x3c9)[0x67134d]
+./fldigi(_ZN7viewpskC1EP7pskevall+0xdc)[0x670a2c]
+./fldigi(_ZN3pskC1El+0x1014)[0x66d3da]
+./fldigi(_Z10init_modemli+0x6b4)[0x59ea1b]
+./fldigi(_Z15init_modem_syncli+0x1b3)[0x59f477]
+./fldigi(_ZN6status13initLastStateEv+0x482)[0x6547a8]
+./fldigi(main+0x76b)[0x600ec3]
+/lib64/libc.so.6(__libc_start_main+0xfd)[0x349421ee7d]
+./fldigi[0x538799]
+
+****** Version information:
+fldigi 3.21.0AS
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, and others.
+License GPLv3+: GNU GPL version 3 or later &lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+  built          : Mon Dec 27 22:45:04 EST 2010 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">josh at radio.rovero.net</A> on x86_64-unknown-linux-gnu for x86_64-unknown-linux-gnu
+
+  configure flags: '--enable-optimizations=sse2' '--with-xmlrpc' '--enable-debug'
+
+  compiler       : gcc version 4.5.1 20100924 (Red Hat 4.5.1-4) (GCC) 
+
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -pthread -I/usr/include/freetype2 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT -I/usr/include/libpng12 -I/usr/include/libxml2 -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions -msse2 -mfpmath=sse -O0 -fno-inline-functions -ggdb3 -Wall -UNDEBUG
+
+  linker flags   : -rdynamic -lportaudio -lm -lpthread -lfltk_images -lpng -lz -ljpeg -lfltk -lX11 -lsamplerate -lhamlib -lm -lpng12 -lxmlrpc_server_abyss++ -ldl -lrt -lpthread
+
+  libraries      : FLTK 1.1.10
+                   libsamplerate 0.1.7
+                   PortAudio 19
+                   Hamlib 1.2.12
+                   XMLRPC-C 1.23.03
+
+
+Runtime information:
+  system         : Linux radio.rovero.net 2.6.35.10-74.fc14.x86_64 #1 SMP Thu Dec 23 16:04:50 UTC 2010 x86_64
+
+P.J. &quot;Josh&quot; Rovero        Ham Radio:  KK1D
+ABC:  9277                   1985 BMW R80RT
+Web:     <A HREF="http://www.roveroresearch.org">http://www.roveroresearch.org</A>
+
+ On Mon 12/27/10 19:58 , w1hkj <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A> sent:
+&gt;<i> <A HREF="http://www.w1hkj.com/alpha/fldigi/">http://www.w1hkj.com/alpha/fldigi/</A>
+</I>&gt;<i> for Linux, OS X, Win and Puppy
+</I>&gt;<i> Known problem reported on 3.20 branch but applicable.  Do not exceed
+</I>&gt;<i> 100 characters (including end-of-line chars) in the logbook Notes
+</I>&gt;<i> field or you will crash.  I am testing a fix on the 3.20 branch and
+</I>&gt;<i> will forward port when testing concluded.
+</I>&gt;<i> 3.21.0 development continues on Signal Browser.  Note that the
+</I>&gt;<i> configuration tab for the browser has been moved to the UI area. 
+</I>&gt;<i> Under UI/General there is a new check button that will allow you to
+</I>&gt;<i> restore the mouse wheel behavior to the macro buttons.  The default is
+</I>&gt;<i> OFF.
+</I>&gt;<i> Ed, W3NR, has done some pre-testing on the RTTY signal browser.  It
+</I>&gt;<i> seems to work pretty well, but the upcoming RTTY contest should prove
+</I>&gt;<i> whether it has any value.
+</I>&gt;<i> I am still chasing the PSK signal browser rainbow.  This version may
+</I>&gt;<i> (or may not) work better for you.  Be sure to try various settings of
+</I>&gt;<i> your audio input level and the browser squelch level and let me know
+</I>&gt;<i> if you see interaction between the two.
+</I>&gt;<i> Changes from AR
+</I>&gt;<i> PSK browser update
+</I>&gt;<i> * Changed linking of WF select to browser select
+</I>&gt;<i> * Added logic to allow squelch on/off button control of
+</I>&gt;<i> character updates to browser
+</I>&gt;<i> * Fixed --wfall-only seg fault
+</I>&gt;<i> RTTY viewer
+</I>&gt;<i> Signal processing for multi-channel RTTY decoding
+</I>&gt;<i> Macro Button Bars
+</I>&gt;<i> * Corrected button label updates after edit
+</I>&gt;<i> * Restored &quot;macro set&quot; buttons on button bar
+</I>&gt;<i> * Restored mouse-wheel action on button bars
+</I>&gt;<i> added configuration option to turn enable
+</I>&gt;<i> this feature
+</I>&gt;<i> CONTESTIA
+</I>&gt;<i> Shortened ADIF reporting name to CONTESTI.
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000443.html">fldigi-3.21.0AS posted
+</A></li>
+	<LI>Next message: <A HREF="000444.html">fldigi-3.21.0AS posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#462">[ date ]</a>
+              <a href="thread.html#462">[ thread ]</a>
+              <a href="subject.html#462">[ subject ]</a>
+              <a href="author.html#462">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

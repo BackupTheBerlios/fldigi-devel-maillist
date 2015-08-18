@@ -1,0 +1,295 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.21.76AU posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.76AU%20posted&In-Reply-To=%3CDE5F9DAE2D35429794EB6C4D016537D3%40DadPC%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001098.html">
+   <LINK REL="Next"  HREF="001099.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.21.76AU posted</H1>
+    <B>Charles Brabham</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.76AU%20posted&In-Reply-To=%3CDE5F9DAE2D35429794EB6C4D016537D3%40DadPC%3E"
+       TITLE="fldigi-3.21.76AU posted">n5pvl at uspacket.org
+       </A><BR>
+    <I>Thu Oct 31 12:38:11 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001098.html">fldigi-3.21.76AU posted
+</A></li>
+        <LI>Next message: <A HREF="001099.html">[GIT] fldigi branch, maint/3.21,	updated: cd1939df3d1647c4570111dabcb620cbccbff399
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1100">[ date ]</a>
+              <a href="thread.html#1100">[ thread ]</a>
+              <a href="subject.html#1100">[ subject ]</a>
+              <a href="author.html#1100">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I would be interested in a narrower version of MFSK with the long 
+interleave, maybe MFSK22?
+
+&gt;<i>From what I understand, there may be some point of diminishing returns with 
+</I>narrower modes and a long interleave. If this is the case, then - Never 
+mind!
+
+73 DE Charles, N5PVL
+
+
+----- Original Message ----- 
+From: &quot;w1hkj&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>&gt;
+To: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>&gt;; &quot;fldigi-alpha&quot; 
+&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-alpha at lists.berlios.de</A>&gt;
+Sent: Tuesday, October 29, 2013 9:50 AM
+Subject: fldigi-3.21.76AU posted
+
+
+&gt;<i> at <A HREF="http://www.w1hkj.com/alpha/fldigi/v3.21/">http://www.w1hkj.com/alpha/fldigi/v3.21/</A>
+</I>&gt;<i>
+</I>&gt;<i> and pushed (-f) to berlios/tmp/df/fldigi-3.21
+</I>&gt;<i>
+</I>&gt;<i> Includes following commits post 3.21.76
+</I>&gt;<i>
+</I>&gt;<i> commit 51f2818bb47f58dc675a2942efb54a167ce83423
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Tue Sep 10 14:01:13 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     Version 3.21.76 alpha
+</I>&gt;<i>
+</I>&gt;<i> commit 665f1959b4cd9121738f0473d06ec74b5a7e0a4c
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Mon Oct 28 07:25:39 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     Load preferences
+</I>&gt;<i>
+</I>&gt;<i>       * Changed get preferences string usage from
+</I>&gt;<i>           get(const char * key,
+</I>&gt;<i>               char *&amp; text,
+</I>&gt;<i>               const char * defval)
+</I>&gt;<i>         to
+</I>&gt;<i>           get(const char * key,
+</I>&gt;<i>               char * text,
+</I>&gt;<i>               const char * defval,
+</I>&gt;<i>               int max chars)
+</I>&gt;<i>       * Suggested change from fldigi developer, Remi
+</I>&gt;<i>
+</I>&gt;<i> commit 0b8143b46665ca5b7f070a02024fe170adda5f74
+</I>&gt;<i> Author: John Phelps &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kl4yfd at gmail.com</A>&gt;
+</I>&gt;<i> Date:   Tue Oct 22 05:05:35 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     MFSK HF Long Modes
+</I>&gt;<i>      * Added MFSK64L and MFSL128L new modes
+</I>&gt;<i>      * 6.25 Second interleaver for very-robust HF reception
+</I>&gt;<i>      * Assigned new RSIDs
+</I>&gt;<i>       * Mode MFSK-64L : 1026
+</I>&gt;<i>       * Mode MFSK-128L : 1029
+</I>&gt;<i>
+</I>&gt;<i> commit 7dcfc50610370fd45d73e85cacb4c2a9b321da64
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Thu Oct 24 08:42:42 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     Waterfall race condition
+</I>&gt;<i>
+</I>&gt;<i>       * Some methods in waterfall are being called
+</I>&gt;<i>         before a modem has been instantiated.  Possibly
+</I>&gt;<i>         due to threads being assigned to separate cpu
+</I>&gt;<i>         processors.  This cannot happen on h/w with a
+</I>&gt;<i>         single cpu thread implementation.
+</I>&gt;<i>
+</I>&gt;<i> commit e0d91cb04037fb17a4df80a4c68b3f51973e7bc3
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Sun Oct 20 19:30:02 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     Waterfall improvements
+</I>&gt;<i>
+</I>&gt;<i>       * remove unnecessary code
+</I>&gt;<i>       * remove latency processing
+</I>&gt;<i>       * alter average processing
+</I>&gt;<i>
+</I>&gt;<i> commit a32287579a6fc370502592da4db6f84cc49bbe22
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Tue Oct 15 15:32:20 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     fldigi.pot update
+</I>&gt;<i>
+</I>&gt;<i>       * Added newinstall.cxx to POTFILES.in
+</I>&gt;<i>       * Added new translation file de.po
+</I>&gt;<i>         - thank you Marc Richter, DF2MR
+</I>&gt;<i>
+</I>&gt;<i> commit 1e3950185b1a7bf669673548e49f9a25db7e694f
+</I>&gt;<i> Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt;
+</I>&gt;<i> Date:   Sat Oct 19 10:00:18 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     Fix test_process on MacOS
+</I>&gt;<i>
+</I>&gt;<i> commit fb5c891d61d210b4606fcbcdc7f804acd04c4b22
+</I>&gt;<i> Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt;
+</I>&gt;<i> Date:   Sat Oct 19 09:53:52 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     Various speed-ups, fixes and cleanups
+</I>&gt;<i>
+</I>&gt;<i>     * decay_avg
+</I>&gt;<i>     * Member modem must be initialised.
+</I>&gt;<i>
+</I>&gt;<i> commit adc612843e633ed73a68a540ed5a204202d7719d
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Tue Oct 15 17:32:31 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     Multi-channel decode
+</I>&gt;<i>
+</I>&gt;<i>       * Changed text and default value for disabling
+</I>&gt;<i>         multi-channel decoding when no viewer is
+</I>&gt;<i>         visible
+</I>&gt;<i>
+</I>&gt;<i> commit d56a7f449fa92d6aa622b2ae7993926def9b3a86
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Wed Oct 16 07:15:57 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     Cfft removal
+</I>&gt;<i>
+</I>&gt;<i>       * removed source files for Cfft, the original fast fourier
+</I>&gt;<i>         transform used in fldigi.  Cfft has been replaced by
+</I>&gt;<i>         g_fft, the fast fourier transform C++ template based on
+</I>&gt;<i>         public domain code by
+</I>&gt;<i>         John Green &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">green_jt at vsdec.npt.nuwc.navy.mil</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> commit 267b91499c12def987dde7da09514c065bbad590
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Tue Oct 8 14:28:53 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     fft filter
+</I>&gt;<i>
+</I>&gt;<i>       * Changed fftfilt implementation to use g_fft class vice
+</I>&gt;<i>         Cfft class.
+</I>&gt;<i>       * Removed multi-channel decoding when not visible or configured
+</I>&gt;<i>         for decoding when not visible.
+</I>&gt;<i>
+</I>&gt;<i> commit 6d79e5563dd1f0ce5c29fd53535a4e3152565783
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Sat Sep 28 07:58:30 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     rsid fft
+</I>&gt;<i>
+</I>&gt;<i>       * Changed rsid fft from Cfft to g_fft
+</I>&gt;<i>
+</I>&gt;<i> commit 9b62e1b313f3f269378eb086bd6cbb8c027e2a02
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Sun Sep 29 13:56:14 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     WF fft
+</I>&gt;<i>
+</I>&gt;<i>       * Changed Waterfall fft from Cfft to g_fft
+</I>&gt;<i>
+</I>&gt;<i> commit 1bad52f8529c3b070ba9ee842736fdebb43d2add
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Mon Sep 30 05:45:00 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     g_fft
+</I>&gt;<i>
+</I>&gt;<i>       * Added new fft class template g_fft
+</I>&gt;<i>       * Modified class complex to be based on std::complex
+</I>&gt;<i>         - required changes in all modem implementations
+</I>&gt;<i>
+</I>&gt;<i> commit d600d0231d1de78b46993259c8ec6da3ea06d5df
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Mon Sep 23 15:25:16 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     Wefax Config tab
+</I>&gt;<i>
+</I>&gt;<i>       * Cosmetic changes
+</I>&gt;<i>
+</I>&gt;<i> commit 683b3642eec8832198440245728c1ac25dd9985f
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Sat Sep 21 07:49:54 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     Autostart programs
+</I>&gt;<i>
+</I>&gt;<i>       * Add the ability to autostart various programs when fldigi is
+</I>&gt;<i>         first started.
+</I>&gt;<i>
+</I>&gt;<i> commit 51ead20417cb1000e554382f7b21aa9df6d6e8ac
+</I>&gt;<i> Author: Kamal Mostafa &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kamal at whence.com</A>&gt;
+</I>&gt;<i> Date:   Tue Sep 17 18:54:38 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     Avoid-nitems-fltk-kfreebsd-collision.patch
+</I>&gt;<i>
+</I>&gt;<i>       * Bug: <A HREF="http://www.fltk.org/str.php?L2984">http://www.fltk.org/str.php?L2984</A>
+</I>&gt;<i>         - Avoid 'nitems' macro collision between FreeBSD's
+</I>&gt;<i>           sys/params.h and fltk's FL/Fl_Check_Browser.H
+</I>&gt;<i>           (<A HREF="http://www.fltk.org/str.php?L2984">http://www.fltk.org/str.php?L2984</A>)
+</I>&gt;<i>
+</I>&gt;<i> commit bb91898b6a40516f777a990da272dbcb8ba239a0
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Thu Sep 19 12:48:20 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     RsID Error Control
+</I>&gt;<i>
+</I>&gt;<i>       * Changed from slider to 3 position selector
+</I>&gt;<i>         to avoid confusion among the users
+</I>&gt;<i>
+</I>&gt;<i> commit 1eaba46bc6603bb8d3ce30141ee84e770ddd2b66
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Wed Sep 18 07:26:17 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     Macro tag Image
+</I>&gt;<i>
+</I>&gt;<i>       * Added macro tag for sending image.  Similar to &lt;File:xxx&gt;
+</I>&gt;<i>         &lt;IMAGE:[full pathname to image file]&gt;
+</I>&gt;<i>         A file finder will open for image file selection when the
+</I>&gt;<i>         macro tag is selected from the pick list.
+</I>&gt;<i>
+</I>&gt;<i> commit 8159199998c56cde2da4b81b968b1460569ef630
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Sat Sep 14 04:15:39 2013 -0500
+</I>&gt;<i>
+</I>&gt;<i>     MFSKpic improvements
+</I>&gt;<i>
+</I>&gt;<i>       *  Fine tuned MFSK pic decoding delays for various
+</I>&gt;<i>          MFSK baud rates.  MFSK pic now functional for
+</I>&gt;<i>          - MFSK-16
+</I>&gt;<i>          - MFSK-32
+</I>&gt;<i>          - MFSK-64
+</I>&gt;<i>          - MFSK-128
+</I>&gt;<i>       * Corrected vertical displacement of Tx picture dialog
+</I>&gt;<i>         controls.
+</I>&gt;<i>       * Added bandpass filtering to transmitted signal
+</I>&gt;<i>
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A> 
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001098.html">fldigi-3.21.76AU posted
+</A></li>
+	<LI>Next message: <A HREF="001099.html">[GIT] fldigi branch, maint/3.21,	updated: cd1939df3d1647c4570111dabcb620cbccbff399
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1100">[ date ]</a>
+              <a href="thread.html#1100">[ thread ]</a>
+              <a href="subject.html#1100">[ subject ]</a>
+              <a href="author.html#1100">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

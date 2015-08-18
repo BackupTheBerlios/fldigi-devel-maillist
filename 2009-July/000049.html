@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: e1daa1dba37e3cdc299ccd96860a8bed3eabacfd
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20e1daa1dba37e3cdc299ccd96860a8bed3eabacfd&In-Reply-To=%3C200907261920.n6QJKFXC030285%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000048.html">
+   <LINK REL="Next"  HREF="000050.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: e1daa1dba37e3cdc299ccd96860a8bed3eabacfd</H1>
+    <B>m0gld at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20e1daa1dba37e3cdc299ccd96860a8bed3eabacfd&In-Reply-To=%3C200907261920.n6QJKFXC030285%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: e1daa1dba37e3cdc299ccd96860a8bed3eabacfd">m0gld at mail.berlios.de
+       </A><BR>
+    <I>Sun Jul 26 21:20:15 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000048.html">Macro Variable patch
+</A></li>
+        <LI>Next message: <A HREF="000050.html">[GIT] fldigi branch, maint/3.12,	updated: a43547ec99c3a1f10d6025a9b3a80f794338d989
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#49">[ date ]</a>
+              <a href="thread.html#49">[ thread ]</a>
+              <a href="subject.html#49">[ subject ]</a>
+              <a href="author.html#49">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  e1daa1dba37e3cdc299ccd96860a8bed3eabacfd (commit)
+       via  5925ec30de0c64e4a7cb41441cbcab9c93232253 (commit)
+       via  ce4c179fb231123f74d4c8b4b3dbfd000ccf80e6 (commit)
+       via  5f1658c875d7d45dd4907379b480c1815a409075 (commit)
+      from  15c6553904788bf38b6b518f59239af74197e97a (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit e1daa1dba37e3cdc299ccd96860a8bed3eabacfd
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Sun Jul 26 18:37:02 2009 +0100
+
+    Fix DnD file insert on OS X
+
+commit 5925ec30de0c64e4a7cb41441cbcab9c93232253
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Sun Jul 26 18:36:59 2009 +0100
+
+    Fix sound file selector
+    
+    * Correctly handle the Default save-as type on OS X
+    * Check for supported formats by attempting to open a file for writing
+
+commit ce4c179fb231123f74d4c8b4b3dbfd000ccf80e6
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Sun Jul 26 13:15:36 2009 +0100
+
+    Correctly populate RigCAT menu on OS X
+
+commit 5f1658c875d7d45dd4907379b480c1815a409075
+Author: Leigh L. Klotz, Jr &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">Leigh at WA5ZNU.org</A>&gt;
+Date:   Sun Jul 26 10:36:26 2009 -0500
+
+    Macro variable bug fix
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ src/misc/configuration.cxx |    5 ++++-
+ src/misc/macros.cxx        |    3 +++
+ src/soundcard/sound.cxx    |   23 ++++++++++++++++-------
+ src/widgets/FTextView.cxx  |    2 +-
+ 4 files changed, 24 insertions(+), 9 deletions(-)
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000048.html">Macro Variable patch
+</A></li>
+	<LI>Next message: <A HREF="000050.html">[GIT] fldigi branch, maint/3.12,	updated: a43547ec99c3a1f10d6025a9b3a80f794338d989
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#49">[ date ]</a>
+              <a href="thread.html#49">[ thread ]</a>
+              <a href="subject.html#49">[ subject ]</a>
+              <a href="author.html#49">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

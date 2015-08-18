@@ -1,0 +1,233 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.21,	updated: a776fe86626180df14860fe4d4aebd8ca72d7440
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%20a776fe86626180df14860fe4d4aebd8ca72d7440&In-Reply-To=%3C20110904122448.81A5D481212%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000678.html">
+   <LINK REL="Next"  HREF="000680.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.21,	updated: a776fe86626180df14860fe4d4aebd8ca72d7440</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%20a776fe86626180df14860fe4d4aebd8ca72d7440&In-Reply-To=%3C20110904122448.81A5D481212%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.21,	updated: a776fe86626180df14860fe4d4aebd8ca72d7440">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Sun Sep  4 14:24:47 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000678.html">[GIT] fldigi branch, master,	updated: bdd247aae95b6c691f0f911b3cfac73c6d461646
+</A></li>
+        <LI>Next message: <A HREF="000680.html">[GIT] fldigi branch, master,	updated: b4dad775d18fa40477a25c88485288cdb3ab2f7d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#679">[ date ]</a>
+              <a href="thread.html#679">[ thread ]</a>
+              <a href="subject.html#679">[ subject ]</a>
+              <a href="author.html#679">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.21 has been updated
+       via  a776fe86626180df14860fe4d4aebd8ca72d7440 (commit)
+       via  166fe5931fe45cce838a15e72185938f3567fd3f (commit)
+       via  49e2dd288942d9fd6c383bd09004dbfeaa8b542b (commit)
+       via  ff185628bf2608e0559bcfc5e488d4ef86134ff7 (commit)
+       via  74364eed6844e3058f1da363dd2623ed7de1963a (commit)
+       via  5af9f3a824d4f47c646c94bcda1db72b3cb63a69 (commit)
+       via  39fe31b14730b0ba1fac82e4494849016bbe44cb (commit)
+      from  3ba1e991a938fe36a15d281cc2b2be3e388020a1 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=a776fe86626180df14860fe4d4aebd8ca72d7440">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=a776fe86626180df14860fe4d4aebd8ca72d7440</A>
+
+commit a776fe86626180df14860fe4d4aebd8ca72d7440
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Sep 4 05:46:40 2011 -0500
+
+    Version 3.21.14
+    
+      Maintenance release
+
+ 2 files changed, 20 insertions(+), 1 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=166fe5931fe45cce838a15e72185938f3567fd3f">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=166fe5931fe45cce838a15e72185938f3567fd3f</A>
+
+commit 166fe5931fe45cce838a15e72185938f3567fd3f
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat Sep 3 15:18:57 2011 -0500
+
+    DTMF decoder
+    
+      * Added decoder to cDTMF
+      * Changed Delay parameters to &lt;DTMF: tag to avoid parse
+        conflict with tone specifier 'D'
+        - &lt;DTMF:W500:L250:1-256-828-3105&gt;
+        -       |    |    |_phone #
+        -       |    |_250 msec pulse length, 50 msec default
+        -       |_500 msec wait before first tone, 0 default
+
+ 11 files changed, 228 insertions(+), 148 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=49e2dd288942d9fd6c383bd09004dbfeaa8b542b">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=49e2dd288942d9fd6c383bd09004dbfeaa8b542b</A>
+
+commit 49e2dd288942d9fd6c383bd09004dbfeaa8b542b
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat Sep 3 10:48:33 2011 -0500
+
+    CW Prosign defaults
+    
+      * Changed Morse table to comply with configuration.h
+        defaults
+
+ 1 files changed, 6 insertions(+), 6 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=ff185628bf2608e0559bcfc5e488d4ef86134ff7">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=ff185628bf2608e0559bcfc5e488d4ef86134ff7</A>
+
+commit ff185628bf2608e0559bcfc5e488d4ef86134ff7
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt;
+Date:   Tue Aug 30 18:32:41 2011 -0500
+
+    Macros code cleanup
+    
+      * Removed useless extern definition.
+      * Pass string index as value.
+      * Calc closing bracket position once only.
+
+ 2 files changed, 185 insertions(+), 293 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=74364eed6844e3058f1da363dd2623ed7de1963a">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=74364eed6844e3058f1da363dd2623ed7de1963a</A>
+
+commit 74364eed6844e3058f1da363dd2623ed7de1963a
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Aug 30 14:09:00 2011 -0500
+
+    DTMF class
+    
+      * Changed implementation to separate class, similar to RsID
+        implementation
+      * Added Delay and Tone Pulse Length parameters to &lt;DTMF: tag
+        - &lt;DTMF:D500:L250:1-256-828-3105&gt;
+        -       |    |    |_phone #
+        -       |    |_250 msec pulse duration, 50 msec default
+        -       |_500 msec wait before first tone, 0 default
+      * Decoder under development
+
+ 7 files changed, 320 insertions(+), 97 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=5af9f3a824d4f47c646c94bcda1db72b3cb63a69">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=5af9f3a824d4f47c646c94bcda1db72b3cb63a69</A>
+
+commit 5af9f3a824d4f47c646c94bcda1db72b3cb63a69
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Aug 29 19:50:24 2011 -0500
+
+    DTMF encoder
+    
+      * Added DTMF encoder accessible as a macro tag
+        - &lt;DTMF:string of chars&gt; where string of chars can
+          contain 0..9,space,-,comma,*,#,A..D
+        - space, hyphen and comma insert a 50 msec silent
+          period in the transmissions
+
+ 6 files changed, 107 insertions(+), 0 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=39fe31b14730b0ba1fac82e4494849016bbe44cb">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=39fe31b14730b0ba1fac82e4494849016bbe44cb</A>
+
+commit 39fe31b14730b0ba1fac82e4494849016bbe44cb
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Aug 14 09:11:44 2011 -0500
+
+    Wide Cursor Tracks
+    
+      * Added user configurable item for 2x track widths
+
+ 5 files changed, 152 insertions(+), 52 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                   |   19 ++
+ configure.ac                |    2 +-
+ src/Makefile.am             |    2 +
+ src/cw_rtty/morse.cxx       |   12 +-
+ src/dialogs/confdialog.cxx  |  103 +++++++--
+ src/dialogs/confdialog.fl   |   87 ++++++---
+ src/dialogs/fl_digi.cxx     |    6 +
+ src/dtmf/dtmf.cxx           |  276 +++++++++++++++++++++++++
+ src/include/confdialog.h    |    5 +
+ src/include/configuration.h |   13 ++
+ src/include/dtmf.h          |   62 ++++++
+ src/include/fl_digi.h       |    1 +
+ src/include/macros.h        |    2 +-
+ src/include/modem.h         |    1 +
+ src/misc/macroedit.cxx      |    1 +
+ src/misc/macros.cxx         |  477 +++++++++++++++++--------------------------
+ src/soundcard/sound.cxx     |   10 +
+ src/trx/modem.cxx           |    2 -
+ src/trx/trx.cxx             |    8 +
+ src/waterfall/waterfall.cxx |   38 +++-
+ 20 files changed, 774 insertions(+), 353 deletions(-)
+  17.3% src/dialogs/
+  24.4% src/dtmf/
+   7.4% src/include/
+  42.4% src/misc/
+   3.3% src/waterfall/
+   3.0% src/
+  28.6% src/dialogs/
+  20.3% src/dtmf/
+   8.1% src/include/
+  35.7% src/misc/
+   3.4% src/waterfall/
+ create mode 100644 src/dtmf/dtmf.cxx
+ create mode 100644 src/include/dtmf.h
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000678.html">[GIT] fldigi branch, master,	updated: bdd247aae95b6c691f0f911b3cfac73c6d461646
+</A></li>
+	<LI>Next message: <A HREF="000680.html">[GIT] fldigi branch, master,	updated: b4dad775d18fa40477a25c88485288cdb3ab2f7d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#679">[ date ]</a>
+              <a href="thread.html#679">[ thread ]</a>
+              <a href="subject.html#679">[ subject ]</a>
+              <a href="author.html#679">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

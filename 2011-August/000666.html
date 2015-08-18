@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi bug
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20bug&In-Reply-To=%3CCAAR8udgoQ81Bw%2B5qSN94JKnLk17zU7UGmUeubHzvCFOd3xXYkQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000665.html">
+   <LINK REL="Next"  HREF="000667.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi bug</H1>
+    <B>Max Ozinsky</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20bug&In-Reply-To=%3CCAAR8udgoQ81Bw%2B5qSN94JKnLk17zU7UGmUeubHzvCFOd3xXYkQ%40mail.gmail.com%3E"
+       TITLE="Fldigi bug">ozinsky at gmail.com
+       </A><BR>
+    <I>Sat Aug  6 00:42:21 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000665.html">fldigi callsign length limits
+</A></li>
+        <LI>Next message: <A HREF="000667.html">[GIT] fldigi branch, maint/3.21,	updated: 3ba1e991a938fe36a15d281cc2b2be3e388020a1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#666">[ date ]</a>
+              <a href="thread.html#666">[ thread ]</a>
+              <a href="subject.html#666">[ subject ]</a>
+              <a href="author.html#666">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+fldigi[0x814b80c]
+[0xb7737400]
+fldigi[0x81a12a0]
+fldigi[0x81aa39f]
+fldigi[0x816f18b]
+/lib/tls/i686/cmov/libpthread.so.0(+0x596e)[0xb761496e]
+/lib/tls/i686/cmov/libc.so.6(clone+0x5e)[0xb7069a4e]
+
+****** Version information:
+fldigi 3.21.12
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz,
+Remi Chateauneu, and others.
+License GPLv3+: GNU GPL version 3 or later
+&lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+  built          : Mon Jun 27 07:56:56 CDT 2011 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev</A> on
+i686-pc-linux-gnu for i686-pc-linux-gnu
+
+  configure flags: '--enable-static' '--without-asciidoc'
+'--prefix=/tmp/fldigi-build'
+
+  compiler       : gcc version 4.4.5 (Ubuntu/Linaro 4.4.4-14ubuntu5)
+
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+-I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -pthread
+-I/usr/local/include -I/usr/local/include -I/usr/include/freetype2
+-D_THREAD_SAFE -D_REENTRANT -I/usr/local/include -I/usr/local/include
+-D_REENTRANT -I/usr/local/include -I/usr/include/libpng12
+-I/usr/local/include -pipe -Wall -fexceptions -O2 -ffast-math
+-finline-functions -DNDEBUG
+
+  linker flags   : -L/usr/local/lib -lportaudio -lasound -lm -lpthread
+/usr/local/lib/libfltk_images.a -lpng -lz -ljpeg
+/usr/local/lib/libfltk.a -lXft -lpthread -ldl -lm -lXext -lX11 -lX11
+-L/usr/local/lib -lsndfile -L/usr/local/lib -lsamplerate
+-lpulse-simple -lpulse -L/usr/local/lib -lhamlib -lm -lpng12
+-Wl,-Bstatic -L/usr/local/lib -lxmlrpc_server_abyss++
+-lxmlrpc_server++ -lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss
+-lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok
+-Wl,-Bdynamic -ldl -lrt -lpthread
+
+  libraries      : FLTK 1.1.10
+                   libsamplerate 0.1.7
+                   libsndfile 1.0.21
+                   PortAudio 19
+                   PulseAudio 0.9.21-63-gd3efa-dirty
+                   Hamlib 1.2.13.1
+                   XMLRPC-C 1.06.31
+
+
+Runtime information:
+  system         : Linux max-laptop 2.6.32-33-generic-pae #71-Ubuntu
+SMP Wed Jul 20 18:46:41 UTC 2011 i686
+
+  libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                   libsndfile-1.0.21
+                   PortAudio V19-devel (built Feb 18 2010 22:31:30) 1899
+                   Pulseaudio 0.9.21-63-gd3efa-dirty
+                   Hamlib 1.2.10
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">max at max-laptop</A>:~$
+
+****************
+Max Ozinsky
+Cape Town, South Africa
++27 82 4 147 147
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">ozinsky at gmail.com</A>
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">maxo at anc.org.za</A>
+ZS1MO
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000665.html">fldigi callsign length limits
+</A></li>
+	<LI>Next message: <A HREF="000667.html">[GIT] fldigi branch, maint/3.21,	updated: 3ba1e991a938fe36a15d281cc2b2be3e388020a1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#666">[ date ]</a>
+              <a href="thread.html#666">[ thread ]</a>
+              <a href="subject.html#666">[ subject ]</a>
+              <a href="author.html#666">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

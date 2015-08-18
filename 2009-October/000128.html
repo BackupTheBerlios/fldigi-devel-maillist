@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: cfd526dbac7bd5b87f94014ec31ed152abd54ad0
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20cfd526dbac7bd5b87f94014ec31ed152abd54ad0&In-Reply-To=%3C200910201951.n9KJpU3H017689%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000127.html">
+   <LINK REL="Next"  HREF="000129.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: cfd526dbac7bd5b87f94014ec31ed152abd54ad0</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20cfd526dbac7bd5b87f94014ec31ed152abd54ad0&In-Reply-To=%3C200910201951.n9KJpU3H017689%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: cfd526dbac7bd5b87f94014ec31ed152abd54ad0">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Tue Oct 20 21:51:30 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000127.html">[GIT] fldigi branch, master,	updated: 824d65833a6d7656696ce59aef5e1680319d1bb5
+</A></li>
+        <LI>Next message: <A HREF="000129.html">SIMD
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#128">[ date ]</a>
+              <a href="thread.html#128">[ thread ]</a>
+              <a href="subject.html#128">[ subject ]</a>
+              <a href="author.html#128">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  cfd526dbac7bd5b87f94014ec31ed152abd54ad0 (commit)
+       via  c9560eaf8a606ff7463ae7a577f71b15f39e4cb0 (commit)
+       via  ff7d941523d51ac32f347ce2337d9bdc5b8de843 (commit)
+      from  824d65833a6d7656696ce59aef5e1680319d1bb5 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit cfd526dbac7bd5b87f94014ec31ed152abd54ad0
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Oct 20 14:50:51 2009 -0500
+
+    Version 3.13AU
+    
+        Alpha release 3.13AU
+
+commit c9560eaf8a606ff7463ae7a577f71b15f39e4cb0
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Oct 20 14:45:31 2009 -0500
+
+    Macro Timer
+    
+        * commit e62b52f1 reintroduced to the stop timer bug that was
+          corrected by commit 0ecc89915; fix now captures event FL_HIDE
+          within the callsign callback handler.
+
+commit ff7d941523d51ac32f347ce2337d9bdc5b8de843
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Oct 20 14:43:08 2009 -0500
+
+    Flarq mods
+    
+        * Removed sylpheed support code
+        * Fixed Save/Open email set fault
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ configure.ac                       |    4 +-
+ src/dialogs/fl_digi.cxx            |    2 +-
+ src/flarq-src/arqdialogs.cxx       |   13 ------
+ src/flarq-src/arqdialogs.fl        |   30 +++++--------
+ src/flarq-src/flarq.cxx            |   79 +++++++++---------------------------
+ src/flarq-src/include/arqdialogs.h |    2 -
+ src/flarq-src/include/flarq.h      |    1 -
+ 7 files changed, 35 insertions(+), 96 deletions(-)
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000127.html">[GIT] fldigi branch, master,	updated: 824d65833a6d7656696ce59aef5e1680319d1bb5
+</A></li>
+	<LI>Next message: <A HREF="000129.html">SIMD
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#128">[ date ]</a>
+              <a href="thread.html#128">[ thread ]</a>
+              <a href="subject.html#128">[ subject ]</a>
+              <a href="author.html#128">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

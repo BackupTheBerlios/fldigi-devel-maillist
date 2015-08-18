@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: ead3514e224cb5cbc35920f85debcdd26d8dfe2f
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20ead3514e224cb5cbc35920f85debcdd26d8dfe2f&In-Reply-To=%3C201002122045.o1CKjO13020238%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000213.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: ead3514e224cb5cbc35920f85debcdd26d8dfe2f</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20ead3514e224cb5cbc35920f85debcdd26d8dfe2f&In-Reply-To=%3C201002122045.o1CKjO13020238%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: ead3514e224cb5cbc35920f85debcdd26d8dfe2f">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Fri Feb 12 21:45:24 CET 2010</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000213.html">patches pushed to pu/df
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#212">[ date ]</a>
+              <a href="thread.html#212">[ thread ]</a>
+              <a href="subject.html#212">[ subject ]</a>
+              <a href="author.html#212">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  ead3514e224cb5cbc35920f85debcdd26d8dfe2f (commit)
+       via  3f3ddc0c5a14352190f7b5f75b3fa6e0ebf76c9c (commit)
+       via  3acb7f25ef340007f68221e16b2f7fbf294fb468 (commit)
+       via  e74201b8fc232c6b92af66fd811f4dd531cb1d4e (commit)
+       via  872f52ccafa5764603f5f07dc199457d25c33131 (commit)
+       via  64b192197e1e10fbdf28539df152b0771ff7ebfe (commit)
+       via  e0ff1f2a380957023d796bd904041ec504b243a4 (commit)
+       via  617f4590ec992d869e64208c22428da4f3bd2556 (commit)
+       via  96419d75ed01ac17f864d76398c784b9c2c8abc5 (commit)
+       via  bb37cc1c6ba86c3b507a0710784715223fb59002 (commit)
+       via  75e0eba8c0f62cfe127f28d74e2ffef1579e3611 (commit)
+       via  2c55a62fea910b88e4e4df049f5b70df61bcebe7 (commit)
+       via  0467a4183b9e545dfb05f10eb7eb016e05c9915e (commit)
+       via  bde818b1853dc973cc937ad04c0146250fb8b2e5 (commit)
+       via  b8d160d338cd6ea4b72913409ae4a2a6944fc9e9 (commit)
+       via  7ac0fd5687e075f3743b030e75eaf2da61ab0e5c (commit)
+       via  c5ca09a241b48d5ca86d8af5dbb72eb0f7bb3aa5 (commit)
+       via  03eedc4abf83cc8015caa931b038756052f1bf2e (commit)
+      from  0a10feee840c5106aeb37015610dfe43984c8cff (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+-----------------------------------------------------------------------
+
+Summary of changes:
+ configure.ac                |    2 +-
+ doc/fldigi.1.txt            |   91 +++++++++++++++++++++++++++++++-----------
+ m4/debug.m4                 |    2 +-
+ m4/opt.m4                   |    2 +-
+ src/dialogs/confdialog.cxx  |    8 ----
+ src/dialogs/confdialog.fl   |   16 ++++----
+ src/dialogs/fl_digi.cxx     |   74 +++++++++++++++-------------------
+ src/feld/feld.cxx           |   14 +++++--
+ src/flarq-src/flarq.cxx     |    2 +-
+ src/include/configuration.h |    2 +-
+ src/include/fl_digi.h       |    4 +-
+ src/include/flmisc.h        |    2 +-
+ src/include/sound.h         |    1 +
+ src/main.cxx                |   34 ++++++++++++++--
+ src/misc/arq_io.cxx         |   30 +++++++-------
+ src/misc/newinstall.cxx     |    2 +-
+ src/olivia/olivia.cxx       |    2 +-
+ src/psk/psk.cxx             |    2 +-
+ src/soundcard/sound.cxx     |   85 +++++++++++++++++++++++-----------------
+ src/soundcard/soundconf.cxx |   61 ++++++++++++++++++++++++++--
+ src/widgets/flmisc.cxx      |    4 +-
+ 21 files changed, 282 insertions(+), 158 deletions(-)
+  20.2% doc/
+  22.4% src/dialogs/
+   3.4% src/feld/
+  36.0% src/soundcard/
+  15.5% src/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000213.html">patches pushed to pu/df
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#212">[ date ]</a>
+              <a href="thread.html#212">[ thread ]</a>
+              <a href="subject.html#212">[ subject ]</a>
+              <a href="author.html#212">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

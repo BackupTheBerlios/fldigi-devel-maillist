@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 16dbe6e74611d282000ecaa8de3cc9ccbe57100c
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%2016dbe6e74611d282000ecaa8de3cc9ccbe57100c&In-Reply-To=%3C20101120122819.CA5EC480C2F%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000426.html">
+   <LINK REL="Next"  HREF="000428.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 16dbe6e74611d282000ecaa8de3cc9ccbe57100c</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%2016dbe6e74611d282000ecaa8de3cc9ccbe57100c&In-Reply-To=%3C20101120122819.CA5EC480C2F%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 16dbe6e74611d282000ecaa8de3cc9ccbe57100c">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Sat Nov 20 13:28:18 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000426.html">force push to pu/df
+</A></li>
+        <LI>Next message: <A HREF="000428.html">fldigi runtime error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#427">[ date ]</a>
+              <a href="thread.html#427">[ thread ]</a>
+              <a href="subject.html#427">[ subject ]</a>
+              <a href="author.html#427">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  16dbe6e74611d282000ecaa8de3cc9ccbe57100c (commit)
+       via  49cae5f9c52f9542b6d4489ac47633fec6bf609f (commit)
+       via  a5f2f7f1c4464929c94fe84c657f1cd1a0840201 (commit)
+       via  ca7d30f792550cac82dcd29b96eda151884bcdc0 (commit)
+       via  f2b39b1ede58e2447eafbe49845c19b4194bb918 (commit)
+       via  afeccbb9afa5b7ef502157fdc4dac8c142d9e534 (commit)
+       via  ef188fd7369c0aa5f1e837c0f92403d917a5e7e8 (commit)
+       via  c372640fa9c74edee88c2c1ca53e9746ffc25189 (commit)
+      from  5614a0abd5b545e773dce758856d46e6dc366d7a (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                               |   16 +
+ configure.ac                            |    2 +-
+ m4/build.m4                             |    2 +-
+ m4/win32.m4                             |    1 +
+ src/Makefile.am                         |   30 ++-
+ src/dialogs/confdialog.cxx              |   62 +++-
+ src/dialogs/confdialog.fl               |   55 ++-
+ src/dialogs/fl_digi.cxx                 |  103 ++++--
+ src/include/adif_io.h                   |   12 +-
+ src/include/base64.h                    |  377 +++++++++++++++++
+ src/include/confdialog.h                |    6 +-
+ src/include/configuration.h             |    9 +
+ src/include/fl_digi.h                   |    6 +
+ src/include/logsupport.h                |    2 +-
+ src/include/qso_db.h                    |    2 +-
+ src/include/speak.h                     |    5 +-
+ src/include/status.h                    |    3 +
+ src/include/threads.h                   |   12 +-
+ src/logbook/adif_io.cxx                 |  108 ++----
+ src/logbook/logbook.cxx                 |   45 +--
+ src/logbook/logsupport.cxx              |   94 +++--
+ src/logbook/qso_db.cxx                  |   36 ++-
+ src/logbook/textio.cxx                  |    8 +-
+ src/logbook/xmlrpc_log.cxx              |  238 +++++++++++
+ src/logger/logger.cxx                   |   20 +-
+ src/logger/speak.cxx                    |   26 +-
+ src/main.cxx                            |    9 +-
+ src/misc/macroedit.cxx                  |    6 +
+ src/misc/macros.cxx                     |   40 ++
+ src/misc/status.cxx                     |    9 +-
+ src/widgets/FTextView.cxx               |    2 +-
+ src/xmlrpcpp/XmlRpc.h                   |   95 +++++
+ src/xmlrpcpp/XmlRpcClient.cpp           |  532 ++++++++++++++++++++++++
+ src/xmlrpcpp/XmlRpcClient.h             |  135 ++++++
+ src/xmlrpcpp/XmlRpcDispatch.cpp         |  272 +++++++++++++
+ src/xmlrpcpp/XmlRpcDispatch.h           |   92 +++++
+ src/xmlrpcpp/XmlRpcException.h          |   42 ++
+ src/xmlrpcpp/XmlRpcMutex.cpp            |   62 +++
+ src/xmlrpcpp/XmlRpcMutex.h              |   46 +++
+ src/xmlrpcpp/XmlRpcServer.cpp           |  507 +++++++++++++++++++++++
+ src/xmlrpcpp/XmlRpcServer.h             |  157 +++++++
+ src/xmlrpcpp/XmlRpcServerConnection.cpp |  219 ++++++++++
+ src/xmlrpcpp/XmlRpcServerConnection.h   |   80 ++++
+ src/xmlrpcpp/XmlRpcServerMethod.cpp     |   26 ++
+ src/xmlrpcpp/XmlRpcServerMethod.h       |   45 ++
+ src/xmlrpcpp/XmlRpcSocket.cpp           |  226 +++++++++++
+ src/xmlrpcpp/XmlRpcSocket.h             |   81 ++++
+ src/xmlrpcpp/XmlRpcSource.cpp           |  206 ++++++++++
+ src/xmlrpcpp/XmlRpcSource.h             |   84 ++++
+ src/xmlrpcpp/XmlRpcThread.cpp           |   76 ++++
+ src/xmlrpcpp/XmlRpcThread.h             |   60 +++
+ src/xmlrpcpp/XmlRpcThreadedServer.cpp   |   28 ++
+ src/xmlrpcpp/XmlRpcThreadedServer.h     |   67 +++
+ src/xmlrpcpp/XmlRpcUtil.cpp             |  319 +++++++++++++++
+ src/xmlrpcpp/XmlRpcUtil.h               |   65 +++
+ src/xmlrpcpp/XmlRpcValue.cpp            |  675 +++++++++++++++++++++++++++++++
+ src/xmlrpcpp/XmlRpcValue.h              |  277 +++++++++++++
+ src/xmlrpcpp/base64.h                   |  377 +++++++++++++++++
+ 58 files changed, 5932 insertions(+), 265 deletions(-)
+   4.9% src/dialogs/
+   6.1% src/include/
+   8.9% src/logbook/
+  77.7% src/xmlrpcpp/
+ create mode 100644 src/include/base64.h
+ create mode 100644 src/logbook/xmlrpc_log.cxx
+ create mode 100644 src/xmlrpcpp/XmlRpc.h
+ create mode 100644 src/xmlrpcpp/XmlRpcClient.cpp
+ create mode 100644 src/xmlrpcpp/XmlRpcClient.h
+ create mode 100644 src/xmlrpcpp/XmlRpcDispatch.cpp
+ create mode 100644 src/xmlrpcpp/XmlRpcDispatch.h
+ create mode 100644 src/xmlrpcpp/XmlRpcException.h
+ create mode 100644 src/xmlrpcpp/XmlRpcMutex.cpp
+ create mode 100644 src/xmlrpcpp/XmlRpcMutex.h
+ create mode 100644 src/xmlrpcpp/XmlRpcServer.cpp
+ create mode 100644 src/xmlrpcpp/XmlRpcServer.h
+ create mode 100644 src/xmlrpcpp/XmlRpcServerConnection.cpp
+ create mode 100644 src/xmlrpcpp/XmlRpcServerConnection.h
+ create mode 100644 src/xmlrpcpp/XmlRpcServerMethod.cpp
+ create mode 100644 src/xmlrpcpp/XmlRpcServerMethod.h
+ create mode 100644 src/xmlrpcpp/XmlRpcSocket.cpp
+ create mode 100644 src/xmlrpcpp/XmlRpcSocket.h
+ create mode 100644 src/xmlrpcpp/XmlRpcSource.cpp
+ create mode 100644 src/xmlrpcpp/XmlRpcSource.h
+ create mode 100644 src/xmlrpcpp/XmlRpcThread.cpp
+ create mode 100644 src/xmlrpcpp/XmlRpcThread.h
+ create mode 100644 src/xmlrpcpp/XmlRpcThreadedServer.cpp
+ create mode 100644 src/xmlrpcpp/XmlRpcThreadedServer.h
+ create mode 100644 src/xmlrpcpp/XmlRpcUtil.cpp
+ create mode 100644 src/xmlrpcpp/XmlRpcUtil.h
+ create mode 100644 src/xmlrpcpp/XmlRpcValue.cpp
+ create mode 100644 src/xmlrpcpp/XmlRpcValue.h
+ create mode 100644 src/xmlrpcpp/base64.h
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000426.html">force push to pu/df
+</A></li>
+	<LI>Next message: <A HREF="000428.html">fldigi runtime error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#427">[ date ]</a>
+              <a href="thread.html#427">[ thread ]</a>
+              <a href="subject.html#427">[ subject ]</a>
+              <a href="author.html#427">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

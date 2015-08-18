@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: a87724d077917a33f6bc223cd28a7052986558f4
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20a87724d077917a33f6bc223cd28a7052986558f4&In-Reply-To=%3C20110711124818.43DAB4813CA%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000658.html">
+   <LINK REL="Next"  HREF="000660.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: a87724d077917a33f6bc223cd28a7052986558f4</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20a87724d077917a33f6bc223cd28a7052986558f4&In-Reply-To=%3C20110711124818.43DAB4813CA%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: a87724d077917a33f6bc223cd28a7052986558f4">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Mon Jul 11 14:48:17 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000658.html">FW: Consider Adding MIL-STD Modes To FLDigi
+</A></li>
+        <LI>Next message: <A HREF="000660.html">FYI: Arduino Waterfall
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#659">[ date ]</a>
+              <a href="thread.html#659">[ thread ]</a>
+              <a href="subject.html#659">[ subject ]</a>
+              <a href="author.html#659">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  a87724d077917a33f6bc223cd28a7052986558f4 (commit)
+       via  07c12e07a505f57a92aa4510d7918d33d64e6c17 (commit)
+       via  12714ebe04e3aa5c391935c8f04d819eadb60c91 (commit)
+       via  c2d0b93c62526a2f27a9cf1c6738f9f8342ba451 (commit)
+       via  dc9edc10b49ac5f7686364b36b6287254f671c12 (commit)
+      from  8dd630c9f67eb00decd768fea204bcc803bd1f10 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=a87724d077917a33f6bc223cd28a7052986558f4">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=a87724d077917a33f6bc223cd28a7052986558f4</A>
+
+commit a87724d077917a33f6bc223cd28a7052986558f4
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Jul 11 06:23:03 2011 -0500
+
+    Version 3.22.0AF
+    
+      alpha release
+
+ 2 files changed, 15 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=07c12e07a505f57a92aa4510d7918d33d64e6c17">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=07c12e07a505f57a92aa4510d7918d33d64e6c17</A>
+
+commit 07c12e07a505f57a92aa4510d7918d33d64e6c17
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Jul 10 14:08:19 2011 -0500
+
+    TX Attenuator
+    
+      * This is a fix to commit 64406547b
+      * Added Tx attenuator control to Audio configuration tab
+      * Added main dialog short cut keys for tx attenuator control
+        alt - ==&gt; decrease by 0.1 dB (Command key &quot;-&quot; on OS X)
+        alt = ==&gt; increase by 0.1 dB (Command key &quot;=&quot; on OS X)
+      * Modify two-tone generator in Olivia / Contestia to avoid
+        remultiplication by txlevel
+
+ 6 files changed, 75 insertions(+), 70 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                   |   15 ++++++++++++++-
+ configure.ac                |    2 +-
+ src/contestia/contestia.cxx |   37 +++++++++++++++++++------------------
+ src/dialogs/confdialog.cxx  |   31 ++++++++++++++++++++++---------
+ src/dialogs/confdialog.fl   |   40 +++++++++++++++++++++++-----------------
+ src/dialogs/fl_digi.cxx     |    2 ++
+ src/include/confdialog.h    |    1 +
+ src/include/configuration.h |    3 +++
+ src/olivia/olivia.cxx       |   37 +++++++++++++++++++------------------
+ src/packet/pkt.cxx          |    2 +-
+ src/trx/modem.cxx           |   11 +++++++----
+ src/waterfall/waterfall.cxx |    8 ++++----
+ src/wefax/wefax-pic.cxx     |    6 +++---
+ 13 files changed, 119 insertions(+), 76 deletions(-)
+  18.9% src/contestia/
+  37.4% src/dialogs/
+  18.9% src/olivia/
+   5.6% src/trx/
+   4.1% src/waterfall/
+   3.0% src/wefax/
+   3.0% src/
+  15.0% src/contestia/
+  49.0% src/dialogs/
+   4.4% src/include/
+  15.0% src/olivia/
+   6.2% src/waterfall/
+   4.1% src/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000658.html">FW: Consider Adding MIL-STD Modes To FLDigi
+</A></li>
+	<LI>Next message: <A HREF="000660.html">FYI: Arduino Waterfall
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#659">[ date ]</a>
+              <a href="thread.html#659">[ thread ]</a>
+              <a href="subject.html#659">[ subject ]</a>
+              <a href="author.html#659">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

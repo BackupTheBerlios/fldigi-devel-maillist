@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fwd: DSC Mode Specifications For FLDIGI -- Part 2
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fwd%3A%20DSC%20Mode%20Specifications%20For%20FLDIGI%20--%20Part%202&In-Reply-To=%3CCAMfT%2BCNsBFh_FEt22J1zSNZY%3DbQdjC7rB1%3DUyUu2pS45CwusAQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001076.html">
+   <LINK REL="Next"  HREF="001078.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fwd: DSC Mode Specifications For FLDIGI -- Part 2</H1>
+    <B>John Douyere</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fwd%3A%20DSC%20Mode%20Specifications%20For%20FLDIGI%20--%20Part%202&In-Reply-To=%3CCAMfT%2BCNsBFh_FEt22J1zSNZY%3DbQdjC7rB1%3DUyUu2pS45CwusAQ%40mail.gmail.com%3E"
+       TITLE="Fwd: DSC Mode Specifications For FLDIGI -- Part 2">vk2eta at gmail.com
+       </A><BR>
+    <I>Sun Aug 18 07:35:20 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001076.html">[GIT] fldigi branch, maint/3.21,	updated: 4a7c26e739874f1740c2b34c0a5c6c55303629cc
+</A></li>
+        <LI>Next message: <A HREF="001078.html">Fl_Table / Fltk-1.1.10
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1077">[ date ]</a>
+              <a href="thread.html#1077">[ thread ]</a>
+              <a href="subject.html#1077">[ subject ]</a>
+              <a href="author.html#1077">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Re-sent with smaller attachments to resolve send failure.
+
+To use, replace files in Fldigi 3.13.
+
+Regards, John
+On Aug 18, 2013 7:08 AM, &quot;John Douyere&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vk2eta at gmail.com</A>&gt; wrote:
+
+&gt;<i> Hello Dave and team,
+</I>&gt;<i>
+</I>&gt;<i> I realised a Codan Sellcall decoder some years ago based on a modified
+</I>&gt;<i> RTTY Fldigi modem.
+</I>&gt;<i>
+</I>&gt;<i> It does not contain much in terms of message presentation as it simply
+</I>&gt;<i> outputs the decoded bytes on the screen, but all the bits decoding,
+</I>&gt;<i> checksum handling and redundancy checking is there.
+</I>&gt;<i>
+</I>&gt;<i> From memory the CODAN selcall is very close to the ITU specification with
+</I>&gt;<i> maybe only the &quot;mark&quot; and &quot;space&quot; audio frequencies being different.
+</I>&gt;<i>
+</I>&gt;<i> So the code should be quite usable.
+</I>&gt;<i>
+</I>&gt;<i> I have attached an archive if interested.
+</I>&gt;<i>
+</I>&gt;<i> The code documentation is limited but I can help if there are questions.
+</I>&gt;<i>
+</I>&gt;<i> I will be in and out of  internet for a while (&quot;lost&quot; in national parks in
+</I>&gt;<i> Northern Australia) but will check my email as I get mobile reception.
+</I>&gt;<i>
+</I>&gt;<i> From memory, in the rtty modem settings, only the baud rate had to be set
+</I>&gt;<i> (at 100 in that case).
+</I>&gt;<i>
+</I>&gt;<i> Hope that helps.
+</I>&gt;<i>
+</I>&gt;<i> 73, John (VK2ETA)
+</I>&gt;<i> On Aug 10, 2013 7:04 PM, &quot;w1hkj&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>  I have received a request to incorporate a Digital Selective Calling
+</I>&gt;<i> decoder (no encoder) into fldigi.  The request has come from the U.S. Coast
+</I>&gt;<i> Guard Auxiliary, a civilian organization that provides assistance to the
+</I>&gt;<i> U.S. Coast Guard.  The email trail is included below.  I have posted the
+</I>&gt;<i> specification documents referred to at
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://www.w1hkj.com/DSC/">http://www.w1hkj.com/DSC/</A>
+</I>&gt;<i>
+</I>&gt;<i> Please let me know if you are interested in working on this worthwhile
+</I>&gt;<i> addition to fldigi.
+</I>&gt;<i>
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>&gt;<i>
+</I>&gt;<i> ---------snip
+</I>&gt;<i>
+</I>&gt;<i> Dear Dave,
+</I>&gt;<i>
+</I>&gt;<i> I believe I found the DSC specs you requested by searching the
+</I>&gt;<i> International Telecommunications Union (ITU) website.
+</I>&gt;<i>
+</I>&gt;<i> The DSC is a synchronous system using characters composed from a ten-bit
+</I>&gt;<i> error-detecting code. The bits are encoded using frequency shift keying at
+</I>&gt;<i> 100 Baud.  For High Frequency and Medium Frequency, two tones 170 Hz
+</I>&gt;<i> apart on either side of the allocated frequency are used.  For VHF, the two
+</I>&gt;<i> frequencies used are 1300 and 2100 Hz. Each character is transmitted twice
+</I>&gt;<i> with a time delay.  The detailed specification for DSC is published in the
+</I>&gt;<i> 56-page International Telecommunications Union&lt;<A HREF="http://www.itu.int/en/Pages/default.aspx">http://www.itu.int/en/Pages/default.aspx</A>&gt;Recommendation
+</I>&gt;<i> ITU-R M.493-12, which I have attached for your review.
+</I>&gt;<i>
+</I>&gt;<i> Will this work for you and your open-source programming team?
+</I>&gt;<i>
+</I>&gt;<i> Jason
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> -------- Original Message --------  Subject: DSC Mode Specifications For
+</I>&gt;<i> FLDIGI -- Part 2  Date: Tue, 6 Aug 2013 14:02:56 -0700  From: JASON GANT
+</I>&gt;<i> W6AUX &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w6aux at arrl.net</A>&gt; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w6aux at arrl.net</A>&gt;  Reply-To: JASON GANT W6AUX
+</I>&gt;<i> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w6aux at arrl.net</A>&gt; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w6aux at arrl.net</A>&gt;  Organization: W6AUX Amateur Radio  To: W.H.
+</I>&gt;<i> Scholz &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hijcw at aol.com</A>&gt; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hijcw at aol.com</A>&gt;  CC: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>  Dear Dave,
+</I>&gt;<i>
+</I>&gt;<i> I have obtained a copy of the ITU Recommendation ITU-R M.493-13 for you,
+</I>&gt;<i> which Bill spoke of in his last email.  For your review and reference, I
+</I>&gt;<i> have also attached the ITU Operational Procedure Guide for using DSC radio
+</I>&gt;<i> equipment.
+</I>&gt;<i>
+</I>&gt;<i> Bill manages and is the Net Control for our weekly West Coast Region
+</I>&gt;<i> Contingency Comms Net on HF.  He is also our Auxiliary Coordinator,
+</I>&gt;<i> supporting the U.S. Coast Guard in HF emergency contingency communications
+</I>&gt;<i> (both voice &amp; digital), radio systems monitoring, and the upcoming
+</I>&gt;<i> GMDSS/DSC monitoring program.
+</I>&gt;<i>
+</I>&gt;<i> Thank you for your understanding, Dave, in the Auxiliary&#8217;s efforts to
+</I>&gt;<i> support the Coast Guard in monitoring DSC, NAVTEX, weather broadcasts, and
+</I>&gt;<i> emergency message-handling support.  Your FLDIGI software is not only a
+</I>&gt;<i> helpful tool in these efforts, but it also gives us a platform for teaching
+</I>&gt;<i> and motivating our Telecommunications Specialists (TCO) and Watchstanders
+</I>&gt;<i> to learn new technical skills and &#8220;spread their wings&#8221; by practicing the
+</I>&gt;<i> most recent developments in emergency comms.
+</I>&gt;<i>
+</I>&gt;<i> Please feel free to contact either Bill or me, should you have any
+</I>&gt;<i> questions.  We look forward to hearing from you soon, Dave!
+</I>&gt;<i>
+</I>&gt;<i> Semper Paratus!
+</I>&gt;<i>
+</I>&gt;<i> Jason
+</I>&gt;<i>
+</I>&gt;<i> _________________
+</I>&gt;<i>
+</I>&gt;<i> Jason Gant W6AUX
+</I>&gt;<i> Division 5 Staff Communications Officer
+</I>&gt;<i> U.S. Coast Guard Auxiliary District 11SR
+</I>&gt;<i> P.O. Box 92662
+</I>&gt;<i> Long Beach CA 90809-2662
+</I>&gt;<i>
+</I>&gt;<i> 562-986-1491 Home
+</I>&gt;<i> 562-726-1199 Fax
+</I>&gt;<i> 714-403-2488 Cellphone
+</I>&gt;<i>
+</I>&gt;<i> Email: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">jgant at uscgauxiliary.org</A>
+</I>&gt;<i> Blog: www.w6aux.com
+</I>&gt;<i>
+</I>&gt;<i>  ------------------------------
+</I>&gt;<i>
+</I>&gt;<i> -----Original Message-----
+</I>&gt;<i> From: W.H. Scholz
+</I>&gt;<i> Sent: Tuesday, August 06, 2013 06:39
+</I>&gt;<i> To:  JASON GANT W6AUX
+</I>&gt;<i> Cc:  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>
+</I>&gt;<i> Subject: Re: DSC Mode Specifications For FLDIGI
+</I>&gt;<i>
+</I>&gt;<i> Dave and Jason,
+</I>&gt;<i>
+</I>&gt;<i> The document that Jason sent you is the proper one for the details of the
+</I>&gt;<i> HF and VHF DSC protocol. Note however, that there is a later version
+</I>&gt;<i> (493-13) which contains some changes. That is not available to the public
+</I>&gt;<i> on the ITU website, but needs to be purchased.
+</I>&gt;<i>
+</I>&gt;<i> One other caution I would add, is that I believe that there is no need for
+</I>&gt;<i> a transmit capability, only receive. In fact, I think that transmit would
+</I>&gt;<i> be somewhat risky since it could be used to &quot;spoof&quot; transmissions which
+</I>&gt;<i> might potentially be a security risk.  Also, transmit requires the issuance
+</I>&gt;<i> of an MMSI number so that the source of any transmissions can be traced.
+</I>&gt;<i>
+</I>&gt;<i> I've been working on a product for the recreational boater that
+</I>&gt;<i> accomplishes the same end and it is about 90 days from release. It will not
+</I>&gt;<i> be a &quot;free&quot; product, but will have a reasonable price tag.
+</I>&gt;<i>
+</I>&gt;<i> Nice to hear that you retired as an O-5. Did you serve on the comms side?
+</I>&gt;<i>
+</I>&gt;<i> v/r,
+</I>&gt;<i>
+</I>&gt;<i> Bill Scholz
+</I>&gt;<i>
+</I>&gt;<i> William Scholz, USCGAUX
+</I>&gt;<i> Auxiliary Unit Coordinator, USCG CAMSPAC &amp; HF/DSC SME
+</I>&gt;<i> Manager, West Coast Region Contingency Comms Net
+</I>&gt;<i> 909-608-9181 COMMSTA &amp; Office
+</I>&gt;<i> 714-292-4271 Mobile
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">William.H.Scholz at uscg.mil</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130818/03b2fe51/attachment-0001.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130818/03b2fe51/attachment-0001.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rtty.cxx
+Type: text/x-c++src
+Size: 24473 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130818/03b2fe51/attachment-0001.cxx">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130818/03b2fe51/attachment-0001.cxx</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rtty.h
+Type: text/x-chdr
+Size: 4140 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130818/03b2fe51/attachment-0001.h">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130818/03b2fe51/attachment-0001.h</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001076.html">[GIT] fldigi branch, maint/3.21,	updated: 4a7c26e739874f1740c2b34c0a5c6c55303629cc
+</A></li>
+	<LI>Next message: <A HREF="001078.html">Fl_Table / Fltk-1.1.10
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1077">[ date ]</a>
+              <a href="thread.html#1077">[ thread ]</a>
+              <a href="subject.html#1077">[ subject ]</a>
+              <a href="author.html#1077">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

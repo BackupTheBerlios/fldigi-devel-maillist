@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 622bd2974f209fd3cafdda333dac6d421421a671
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20622bd2974f209fd3cafdda333dac6d421421a671&In-Reply-To=%3C20110204000101.9FB0848135D%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000531.html">
+   <LINK REL="Next"  HREF="000533.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 622bd2974f209fd3cafdda333dac6d421421a671</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20622bd2974f209fd3cafdda333dac6d421421a671&In-Reply-To=%3C20110204000101.9FB0848135D%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 622bd2974f209fd3cafdda333dac6d421421a671">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Fri Feb  4 01:01:01 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000531.html">MT-63 manual tune mod
+</A></li>
+        <LI>Next message: <A HREF="000533.html">fldigi-3.21.0BH posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#532">[ date ]</a>
+              <a href="thread.html#532">[ thread ]</a>
+              <a href="subject.html#532">[ subject ]</a>
+              <a href="author.html#532">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  622bd2974f209fd3cafdda333dac6d421421a671 (commit)
+       via  7cf8bcd4c13ba4b6e04b2cf67d5dc78d126f862b (commit)
+      from  3e2d629c46e9c4a6ad57e94c7b0ea39ead29462e (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=622bd2974f209fd3cafdda333dac6d421421a671">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=622bd2974f209fd3cafdda333dac6d421421a671</A>
+
+commit 622bd2974f209fd3cafdda333dac6d421421a671
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Feb 3 17:59:30 2011 -0600
+
+    Version 3.21.0BH
+    
+      Alpha release
+
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=7cf8bcd4c13ba4b6e04b2cf67d5dc78d126f862b">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=7cf8bcd4c13ba4b6e04b2cf67d5dc78d126f862b</A>
+
+commit 7cf8bcd4c13ba4b6e04b2cf67d5dc78d126f862b
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Feb 2 13:27:05 2011 -0600
+
+    MT63 manual tune mod
+    
+      * Modified mt63 base and supporting digital signal processing (dsp)
+        code to remove the fixed signal position restriction.
+      * User can select either fixed 500 Hz lower tone signal format or
+        to move the signal bandpass throughout the audio spectrum using
+        the normal waterfall point and click
+      * Moved upper tone of two-tone pre-cursor up one tone space to
+        correspond with the waterfall bandwidth markers.
+
+ 9 files changed, 3403 insertions(+), 2402 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                   |    3 +-
+ configure.ac                |    2 +-
+ src/dialogs/confdialog.cxx  |   14 +-
+ src/dialogs/confdialog.fl   |   11 +-
+ src/include/confdialog.h    |    1 +
+ src/include/configuration.h |    3 +
+ src/include/dsp.h           |   29 +-
+ src/include/mt63base.h      |  430 ++++---
+ src/mt63/dsp.cxx            | 2992 ++++++++++++++++++++++++++++---------------
+ src/mt63/mt63.cxx           |   34 +-
+ src/mt63/mt63base.cxx       | 2291 +++++++++++++++++----------------
+ 11 files changed, 3406 insertions(+), 2404 deletions(-)
+  11.4% src/include/
+  87.8% src/mt63/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000531.html">MT-63 manual tune mod
+</A></li>
+	<LI>Next message: <A HREF="000533.html">fldigi-3.21.0BH posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#532">[ date ]</a>
+              <a href="thread.html#532">[ thread ]</a>
+              <a href="subject.html#532">[ subject ]</a>
+              <a href="author.html#532">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

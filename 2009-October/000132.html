@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 9ec650ca55315d210442eb82af36a6593ff51f32
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%209ec650ca55315d210442eb82af36a6593ff51f32&In-Reply-To=%3C200910221818.n9MIIMY0016827%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000131.html">
+   <LINK REL="Next"  HREF="000133.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 9ec650ca55315d210442eb82af36a6593ff51f32</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%209ec650ca55315d210442eb82af36a6593ff51f32&In-Reply-To=%3C200910221818.n9MIIMY0016827%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 9ec650ca55315d210442eb82af36a6593ff51f32">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Thu Oct 22 20:18:22 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000131.html">SIMD
+</A></li>
+        <LI>Next message: <A HREF="000133.html">3.13AV fuzz above waterfall
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#132">[ date ]</a>
+              <a href="thread.html#132">[ thread ]</a>
+              <a href="subject.html#132">[ subject ]</a>
+              <a href="author.html#132">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  9ec650ca55315d210442eb82af36a6593ff51f32 (commit)
+       via  856b5ed2d6da072b3109e9436efca7254051d90f (commit)
+       via  abedc7c1b51b597204683306371aa6c0de5d3436 (commit)
+       via  df226c9e139a2540ee1708aca5c10e726974bb17 (commit)
+      from  cfd526dbac7bd5b87f94014ec31ed152abd54ad0 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit 9ec650ca55315d210442eb82af36a6593ff51f32
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Oct 22 13:17:06 2009 -0500
+
+    Version 3.13AV
+    
+        Alpha test release 3.13AV
+
+commit 856b5ed2d6da072b3109e9436efca7254051d90f
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Oct 22 13:14:37 2009 -0500
+
+    Rx/Tx Menu
+    
+        * Removed all alt-key access from said menus.  Alt-key access
+          incompatible with icon style menus.
+        * Restored the &quot;quick&quot; menu item to the Rx popup menu when
+          used with rig-contest short menu.
+
+commit abedc7c1b51b597204683306371aa6c0de5d3436
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Oct 22 12:54:49 2009 -0500
+
+    Waterfall background
+    
+        * small change to add the palett[0] color to the waterfall
+          as the default background.
+
+commit df226c9e139a2540ee1708aca5c10e726974bb17
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Oct 22 12:53:37 2009 -0500
+
+    Min-Rig-Log Panel
+    
+        * fixed the width resize problem.
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ configure.ac                |    2 +-
+ src/dialogs/fl_digi.cxx     |   52 ++++++++++++++++++---------------
+ src/include/waterfall.h     |    3 ++
+ src/waterfall/waterfall.cxx |    6 ++-
+ src/widgets/FTextRXTX.cxx   |   66 +++++++++++++++++++++---------------------
+ src/widgets/FTextView.cxx   |   20 ++++++------
+ 6 files changed, 79 insertions(+), 70 deletions(-)
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000131.html">SIMD
+</A></li>
+	<LI>Next message: <A HREF="000133.html">3.13AV fuzz above waterfall
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#132">[ date ]</a>
+              <a href="thread.html#132">[ thread ]</a>
+              <a href="subject.html#132">[ subject ]</a>
+              <a href="author.html#132">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

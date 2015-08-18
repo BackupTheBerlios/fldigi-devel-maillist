@@ -1,0 +1,246 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.21.43AH &amp; CQRLog Conflict
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.43AH%20%26%20CQRLog%20Conflict&In-Reply-To=%3C1339011284.27304.52.camel%40kanga%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000860.html">
+   <LINK REL="Next"  HREF="000862.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.21.43AH &amp; CQRLog Conflict</H1>
+    <B>David Kjellquist</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.43AH%20%26%20CQRLog%20Conflict&In-Reply-To=%3C1339011284.27304.52.camel%40kanga%3E"
+       TITLE="fldigi-3.21.43AH &amp; CQRLog Conflict">dave at kjellquist.com
+       </A><BR>
+    <I>Wed Jun  6 21:34:44 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000860.html">fldigi-3.21.43AH &amp; flrig-1.3.03AB posted
+</A></li>
+        <LI>Next message: <A HREF="000862.html">fldigi-3.21.43AH &amp; CQRLog Conflict
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#861">[ date ]</a>
+              <a href="thread.html#861">[ thread ]</a>
+              <a href="subject.html#861">[ subject ]</a>
+              <a href="author.html#861">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dave;
+	Found a conflict with AH version of fldigi and CQRLog.  When operating
+with CQRLog in remote mode (ctl-M) I tried to save a QSO. The time
+fields were written with hours, minutes and seconds. Fldigi displayed
+1922, saved 19:22:32 and CQRLog receives 192232!! Current version
+(1.4.1) of CQRLog looks for only hours and minutes.
+
+Seems we need some coordination with these 2 excellent programs hi hi.
+
+
+
+On Wed, 2012-06-06 at 09:31 -0500, w1hkj wrote:
+&gt;<i> <A HREF="http://www.w1hkj.com/alpha/fldigi/v3.21/">http://www.w1hkj.com/alpha/fldigi/v3.21/</A>
+</I>&gt;<i> 
+</I>&gt;<i> <A HREF="http://www.w1hkj.com/alpha/flrig/">http://www.w1hkj.com/alpha/flrig/</A>
+</I>&gt;<i> 
+</I>&gt;<i> Neither have been pushed to Berlios git repository.
+</I>&gt;<i> 
+</I>&gt;<i> 73, Dave, W1HKJ
+</I>&gt;<i> 
+</I>&gt;<i> ==================================
+</I>&gt;<i> flrig: change summary from 1.3.03
+</I>&gt;<i> 
+</I>&gt;<i> commit 44663b1ebc19e1c77a5381f9d317f1fc36aa9ae2
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Tue Jun 5 13:40:07 2012 -0500
+</I>&gt;<i> 
+</I>&gt;<i>     TS570 series
+</I>&gt;<i>     
+</I>&gt;<i>       * Added rf gain control
+</I>&gt;<i>       * Added squelch control
+</I>&gt;<i>       * Modified / corrected split control
+</I>&gt;<i> 
+</I>&gt;<i> ==================================
+</I>&gt;<i> fldigi: change summary from 3.21.43
+</I>&gt;<i> 
+</I>&gt;<i> commit ec3f068ab647894412e1d53139cc87d73a2c2c30
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Tue Jun 5 07:04:15 2012 -0500
+</I>&gt;<i> 
+</I>&gt;<i>     WEFAX/NAVTEX config
+</I>&gt;<i>     
+</I>&gt;<i>       * Added links to open correct config tabs.
+</I>&gt;<i> 
+</I>&gt;<i> commit 7191196012baf3fe3fa28d465087c05ed9ba7cd2
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Mon Jun 4 16:18:20 2012 -0500
+</I>&gt;<i> 
+</I>&gt;<i>     Log Entries
+</I>&gt;<i>     
+</I>&gt;<i>       * Change position and size of fields to make better use
+</I>&gt;<i>         of the space in logging panel
+</I>&gt;<i>       * Country &amp; Notes resize with horizontal resize of main dialog
+</I>&gt;<i>       * No labels on these two fields - tooltips identify use
+</I>&gt;<i>       * Added button shape to the &quot;On&quot; label for Time On
+</I>&gt;<i>         - hiding the shape was confusing to new users
+</I>&gt;<i> 
+</I>&gt;<i> commit a28eb607ff2b27fb3b953bc3f3a749a557c46d82
+</I>&gt;<i> Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt;
+</I>&gt;<i> Date:   Thu May 31 09:19:42 2012 -0500
+</I>&gt;<i> 
+</I>&gt;<i>     WEFAX update
+</I>&gt;<i>     
+</I>&gt;<i>       * Ported from branch 3.22.0
+</I>&gt;<i>       * The tx and rx windows can be displayed separately as now, or
+</I>&gt;<i> embedded in the main window.
+</I>&gt;<i>       * Added wefax tab in configuration menu.
+</I>&gt;<i>       * Max rows number, and adif log flag now stored in
+</I>&gt;<i> configuration.
+</I>&gt;<i>       * Destination directory can be set in configuration menu with
+</I>&gt;<i> Fl_File_Chooser.
+</I>&gt;<i>       * Added option for opening tx window from main menu (Like the rx
+</I>&gt;<i> window).
+</I>&gt;<i>       * Shift can ba changed, default 800. Can be set to 850 Hz for
+</I>&gt;<i> Deutsche Wetterdienst.
+</I>&gt;<i>       * Wefax adif log flag now in configuration (And is memorized).
+</I>&gt;<i>       * When clicking on a received file, the image is displayed in
+</I>&gt;<i> the tx window.
+</I>&gt;<i>       * Internationalization.
+</I>&gt;<i>       * Transmit image can be zoomed. Default zoom 50% like rx image.
+</I>&gt;<i>       * Suppressed duplicate info messages.
+</I>&gt;<i>       * The generated image is now really back and white.
+</I>&gt;<i>       * Display speedup.
+</I>&gt;<i>       * Fax can be saved in monochrome, takes less disk space.
+</I>&gt;<i>       * New option to reduce noise on images.
+</I>&gt;<i>       * Changed RX interface: Non-stop reception is now easier.
+</I>&gt;<i>       * Image RX starts ten lines earlier when high correlation
+</I>&gt;<i> detected.
+</I>&gt;<i>       * Display speed-up when zoomed.
+</I>&gt;<i>       * Cleaner indexing of correlation buffer
+</I>&gt;<i>       * Automatic Frequency Control.
+</I>&gt;<i>       * LPM default value for Wefax288.
+</I>&gt;<i>       * Set compression flag for PNG images.
+</I>&gt;<i>       * Refined AFC (Stable frquency once an image is loaded).
+</I>&gt;<i>       * Adjusted widgets size.
+</I>&gt;<i>       * Lowered max image height.
+</I>&gt;<i>       * Added image binarization.
+</I>&gt;<i>       * Changed default image mode to monochrome.
+</I>&gt;<i>       * Smoother slant correction
+</I>&gt;<i>       * Adjustment to constant frequency detection (Hamburg).
+</I>&gt;<i>       * Changed max image size.
+</I>&gt;<i>       * Added variable threshold for binary image.
+</I>&gt;<i>       * Added erosion/dilatation for fax enhancement (Experimental,
+</I>&gt;<i> disabled).
+</I>&gt;<i>       * More information when cannot load playback WAV file.
+</I>&gt;<i>       * Speedup waterfall display.
+</I>&gt;<i>       * Changed wefax AFC logic for setting frequency
+</I>&gt;<i> (Median/average).
+</I>&gt;<i>       * Fixed filenames list which was not scrollable.
+</I>&gt;<i>       * Save more information in images metadata.
+</I>&gt;<i>       * Change selected band for AFC detection.
+</I>&gt;<i>       * Changed level for APT start/stop detection. Now checks several
+</I>&gt;<i> lines.
+</I>&gt;<i>       * Added strformat for C-style string formatting.
+</I>&gt;<i>       * Better AFC.
+</I>&gt;<i>       * Default max image size is increased.
+</I>&gt;<i>       * More information saved with fax images.
+</I>&gt;<i>       * More filtering of empty blank images based on correlation
+</I>&gt;<i> etc...
+</I>&gt;<i>       * Change to use phasing information to stop images.
+</I>&gt;<i>       * Phase inversion flag is now constant.
+</I>&gt;<i>       * Detection of apt start on four successive lines instead of
+</I>&gt;<i> three only.
+</I>&gt;<i>       * Detection of apt stop on three successive lines instead of two
+</I>&gt;<i> only.
+</I>&gt;<i>       * Removed apt stop frequency detection (Too many false stops).
+</I>&gt;<i>       * Fixed bad proportion of sent faxes (They were vertically
+</I>&gt;<i> stretched).
+</I>&gt;<i> 
+</I>&gt;<i> commit cb392e471cfdf1b2885751ed9a9eba3b17fb0479
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Fri Jun 1 10:26:30 2012 -0500
+</I>&gt;<i> 
+</I>&gt;<i>     Fork open file descriptors
+</I>&gt;<i>     
+</I>&gt;<i>       * Add O_CLOEXEC to all open(...) calls
+</I>&gt;<i>       * Add &quot;e&quot; to all fopen(...) calls
+</I>&gt;<i>       * Prevents passing open file descriptors to child
+</I>&gt;<i>         processes.  Leaving psid's available to the child
+</I>&gt;<i>         could cause unwanted i/o problems and possibly a
+</I>&gt;<i>         security leak.
+</I>&gt;<i> 
+</I>&gt;<i> commit 81a9f43e67717d1faa4deb40e952c465e1219edc
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Thu May 31 14:44:34 2012 -0500
+</I>&gt;<i> 
+</I>&gt;<i>     Logbook Update
+</I>&gt;<i>     
+</I>&gt;<i>       * Time ON/OFF
+</I>&gt;<i>         - Added seconds to logged time
+</I>&gt;<i>         - Update older records to use seconds, default 0
+</I>&gt;<i>         - Add seconds to time sort
+</I>&gt;<i>       * QRZ query notes
+</I>&gt;<i>         - removed '\n' character if field returns empty
+</I>&gt;<i> 
+</I>&gt;<i> commit ed638a564a74d6b143712d8442e57372845789b4
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Wed May 30 09:13:22 2012 -0500
+</I>&gt;<i> 
+</I>&gt;<i>     Navtex
+</I>&gt;<i>     
+</I>&gt;<i>       Port of navtex modem from 3.22 branch
+</I>&gt;<i> 
+</I>&gt;<i> commit c7f11f471abd944789e2414955f5cd7445f58c93
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Mon May 28 18:11:14 2012 -0500
+</I>&gt;<i> 
+</I>&gt;<i>     CW decoder update
+</I>&gt;<i>     
+</I>&gt;<i>       * Cooperative programming effort, W1HKJ and AG1LE
+</I>&gt;<i>       * Added matched filter implementation using FFT convolution
+</I>&gt;<i> filter
+</I>&gt;<i>       * Added Self Organizing Map decoding.
+</I>&gt;<i>       * Added adjustable upper/lower detection levels
+</I>&gt;<i>       * Added level indicators on CW digiscope
+</I>&gt;<i>       * combined new fft-convolution filter, SOM decoder &amp; FIR filter
+</I>&gt;<i>       * added configure controls for filter selection
+</I>&gt;<i>       * modified CW digiscope display to show 9 dot intervals
+</I>&gt;<i> independent
+</I>&gt;<i>         if WPM setting
+</I>&gt;<i>       * increased CW_FIR length to 512
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000860.html">fldigi-3.21.43AH &amp; flrig-1.3.03AB posted
+</A></li>
+	<LI>Next message: <A HREF="000862.html">fldigi-3.21.43AH &amp; CQRLog Conflict
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#861">[ date ]</a>
+              <a href="thread.html#861">[ thread ]</a>
+              <a href="subject.html#861">[ subject ]</a>
+              <a href="author.html#861">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

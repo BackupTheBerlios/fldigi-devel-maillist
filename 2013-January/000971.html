@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Starting a Shell command, testing if a process is running
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Starting%20a%20Shell%20command%2C%20testing%20if%20a%20process%20is%20running&In-Reply-To=%3CCACMWOgu6Y6sCk%2B0yK6wb-%3Da5cQor4isRk7%2B04YWF6Am1dB%2BBrQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000970.html">
+   <LINK REL="Next"  HREF="000972.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Starting a Shell command, testing if a process is running</H1>
+    <B>Remi Chateauneu</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Starting%20a%20Shell%20command%2C%20testing%20if%20a%20process%20is%20running&In-Reply-To=%3CCACMWOgu6Y6sCk%2B0yK6wb-%3Da5cQor4isRk7%2B04YWF6Am1dB%2BBrQ%40mail.gmail.com%3E"
+       TITLE="Starting a Shell command, testing if a process is running">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Mon Jan 14 13:52:37 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000970.html">Starting a Shell command, testing if a process is running
+</A></li>
+        <LI>Next message: <A HREF="000972.html">fldigi-3.21.66TTY posted for testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#971">[ date ]</a>
+              <a href="thread.html#971">[ thread ]</a>
+              <a href="subject.html#971">[ subject ]</a>
+              <a href="author.html#971">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Merci Stephane,
+
+Well done, it's POSIX so it should work for Linux, BSD and Apple IOS.
+
+Btw my solution would not have worked with Linux 2.2 but it was easy
+to setup on the short-term.
+
+I will probably go for kill(0) to start with, because the needs are simple:
+- Start a simple shell session such as google-earth or ftp.
+- Check if it has properly finished.
+
+Indeed it might be cool to be able to restart a crashed google-earth,
+but it is a bit out of scope.
+
+Next step is to do the same on MingW !
+
+Thanks again Stephane.
+
+Remi
+
+On 1/14/13, Stephane Fillod &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">f8cfe at free.fr</A>&gt; wrote:
+&gt;<i> Salut Remi,
+</I>&gt;<i>
+</I>&gt;<i> dim, Jan 13, 2013, Remi Chateauneu skribis:
+</I>&gt;&gt;<i> While working of the SYNOP decoder, I need to start a process with a
+</I>&gt;&gt;<i> given Shell command, returning its process id. I need also to test if
+</I>&gt;&gt;<i> a process with a given PID is running or not, and created for this a
+</I>&gt;&gt;<i> function which works on Linux only:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> <A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commit;h=4de01c3b2f0108d563b47f6cd8124f894bc61eb0">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commit;h=4de01c3b2f0108d563b47f6cd8124f894bc61eb0</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Any idea is warmly welcome about the most appropriate way to properly
+</I>&gt;&gt;<i> port these two functions on other operating systems.
+</I>&gt;<i>
+</I>&gt;<i> You might also want to look at this solution, less Linux centric,
+</I>&gt;<i> based on kill(2) system call with 0 as the signal.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://stackoverflow.com/questions/9152979/check-if-process-exists-given-its-pid">http://stackoverflow.com/questions/9152979/check-if-process-exists-given-its-pid</A>
+</I>&gt;<i>
+</I>&gt;<i> Note this method is not safe to watch for child lifespan.
+</I>&gt;<i> In this case, waitpid(2) is your friend, or playing with SIGCHLD.
+</I>&gt;<i> --
+</I>&gt;<i> Stephane - F8CFE
+</I>&gt;<i>
+</I></PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000970.html">Starting a Shell command, testing if a process is running
+</A></li>
+	<LI>Next message: <A HREF="000972.html">fldigi-3.21.66TTY posted for testing
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#971">[ date ]</a>
+              <a href="thread.html#971">[ thread ]</a>
+              <a href="subject.html#971">[ subject ]</a>
+              <a href="author.html#971">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

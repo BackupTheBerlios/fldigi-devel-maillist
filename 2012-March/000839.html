@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Trying to compile flmsg 2.1.13 on Fedora 14
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Trying%20to%20compile%20flmsg%202.1.13%20on%20Fedora%2014&In-Reply-To=%3Calpine.LFD.2.02.1203301459480.2358%40Frances.localdomain%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000841.html">
+   <LINK REL="Next"  HREF="000840.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Trying to compile flmsg 2.1.13 on Fedora 14</H1>
+    <B>Jim Haynes</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Trying%20to%20compile%20flmsg%202.1.13%20on%20Fedora%2014&In-Reply-To=%3Calpine.LFD.2.02.1203301459480.2358%40Frances.localdomain%3E"
+       TITLE="Trying to compile flmsg 2.1.13 on Fedora 14">jhhaynes at earthlink.net
+       </A><BR>
+    <I>Fri Mar 30 22:00:06 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000841.html">fldigi segfaults on startup
+</A></li>
+        <LI>Next message: <A HREF="000840.html">Trying to compile flmsg 2.1.13 on Fedora 14
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#839">[ date ]</a>
+              <a href="thread.html#839">[ thread ]</a>
+              <a href="subject.html#839">[ subject ]</a>
+              <a href="author.html#839">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Making all in src
+make[1]: Entering directory `/home/haynes/radio/flmsg-1.1.13/src'
+make  all-am
+make[2]: Entering directory `/home/haynes/radio/flmsg-1.1.13/src'
+g++ -DHAVE_CONFIG_H -I.  -I. -I./include  -I/usr/local/include -I/usr/include/freetype2 -D_THREAD_SAFE -D_REENTRANT   -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions -fomit-frame-pointer   -DNDEBUG -g -O2 -MT flmsg-FTextView.o -MD -MP -MF .deps/flmsg-FTextView.Tpo -c -o flmsg-FTextView.o `test -f './widgets/FTextView.cxx' || echo './'`./widgets/FTextView.cxx
+./widgets/FTextView.cxx: In constructor &#8216;FTextBase::FTextBase(int, int, int, int, const char*)&#8217;:
+./widgets/FTextView.cxx:66:16: error: &#8216;WRAP_AT_BOUNDS&#8217; was not declared in this scope
+./widgets/FTextView.cxx: In member function &#8216;void FTextBase::set_word_wrap(bool)&#8217;:
+./widgets/FTextView.cxx:144:28: error: &#8216;WRAP_AT_BOUNDS&#8217; was not declared in this scope
+./widgets/FTextView.cxx:145:17: error: &#8216;WRAP_NONE&#8217; was not declared in this scope
+make[2]: *** [flmsg-FTextView.o] Error 1
+make[2]: Leaving directory `/home/haynes/radio/flmsg-1.1.13/src'
+make[1]: *** [all] Error 2
+make[1]: Leaving directory `/home/haynes/radio/flmsg-1.1.13/src'
+make: *** [all-recursive] Error 1
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000841.html">fldigi segfaults on startup
+</A></li>
+	<LI>Next message: <A HREF="000840.html">Trying to compile flmsg 2.1.13 on Fedora 14
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#839">[ date ]</a>
+              <a href="thread.html#839">[ thread ]</a>
+              <a href="subject.html#839">[ subject ]</a>
+              <a href="author.html#839">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,262 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.21,	updated: eaf28092e30dac47db7ad30a47f6f77412ec774e
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%20eaf28092e30dac47db7ad30a47f6f77412ec774e&In-Reply-To=%3C20121031145311.D169955B0C%40scm.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000925.html">
+   <LINK REL="Next"  HREF="000927.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.21,	updated: eaf28092e30dac47db7ad30a47f6f77412ec774e</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%20eaf28092e30dac47db7ad30a47f6f77412ec774e&In-Reply-To=%3C20121031145311.D169955B0C%40scm.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.21,	updated: eaf28092e30dac47db7ad30a47f6f77412ec774e">herrfreese at scm.berlios.de
+       </A><BR>
+    <I>Wed Oct 31 15:53:10 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000925.html">Pushed to pu/df on berlios
+</A></li>
+        <LI>Next message: <A HREF="000927.html">Cross-compiling fldigi under Linux with mingw32
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#926">[ date ]</a>
+              <a href="thread.html#926">[ thread ]</a>
+              <a href="subject.html#926">[ subject ]</a>
+              <a href="author.html#926">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.21 has been updated
+       via  eaf28092e30dac47db7ad30a47f6f77412ec774e (commit)
+       via  1d6469f4d150407f53c1b2ab93633bb8fc90a19e (commit)
+       via  0c1f37148b65c183e6d2a303f65eef3f8f2612ff (commit)
+      from  2b5d56828f4e3f8ccaaaee02d7d29efaa8d769b2 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=eaf28092e30dac47db7ad30a47f6f77412ec774e">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=eaf28092e30dac47db7ad30a47f6f77412ec774e</A>
+
+commit eaf28092e30dac47db7ad30a47f6f77412ec774e
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Oct 31 07:10:19 2012 -0500
+
+    Version 3.21.59
+    
+      * Maintenance release
+
+ 2 files changed, 12 insertions(+), 3 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                                  |   13 +-
+ configure.ac                               |    2 +-
+ m4/build.m4                                |    7 +-
+ po/es.po                                   | 2555 ++++++++---------
+ po/fldigi.pot                              | 2492 +++++++++--------
+ po/fr.po                                   | 2508 +++++++++--------
+ po/it.po                                   | 2554 ++++++++---------
+ po/pl.po                                   | 2550 ++++++++---------
+ src/Makefile.am                            |   65 +-
+ src/dialogs/colorsfonts.cxx                |   10 +
+ src/dialogs/colorsfonts.fl                 |   11 +-
+ src/dialogs/fl_digi.cxx                    |  419 +--
+ src/flarq-src/flarq.cxx                    |   47 +-
+ src/include/FTextRXTX.h                    |    2 +-
+ src/include/charsetdistiller.h             |   55 +
+ src/include/charsetlist.h                  |   13 +
+ src/include/colorsfonts.h                  |    3 +
+ src/include/configuration.h                |    3 +
+ src/include/fl_digi.h                      |    8 +
+ src/include/main.h                         |    1 +
+ src/include/{weather.h =&gt; outputencoder.h} |   29 +-
+ src/include/psk_browser.h                  |    7 +-
+ src/libtiniconv/AUTHORS                    |    1 +
+ COPYING =&gt; src/libtiniconv/COPYING         |    0
+ src/libtiniconv/COPYING.LIB                |  482 ++++
+ src/libtiniconv/ChangeLog                  |    7 +
+ src/libtiniconv/Makefile.am                |   56 +
+ src/libtiniconv/README                     |    7 +
+ src/libtiniconv/encdec/ascii.h             |   44 +
+ src/libtiniconv/encdec/big5.h              | 4160 ++++++++++++++++++++++++++++
+ src/libtiniconv/encdec/ces_big5.h          |   70 +
+ src/libtiniconv/encdec/ces_gbk.h           |   65 +
+ src/libtiniconv/encdec/cp1250.h            |  139 +
+ src/libtiniconv/encdec/cp1251.h            |  131 +
+ src/libtiniconv/encdec/cp1252.h            |  103 +
+ src/libtiniconv/encdec/cp1253.h            |  122 +
+ src/libtiniconv/encdec/cp1254.h            |  146 +
+ src/libtiniconv/encdec/cp1255.h            |  380 +++
+ src/libtiniconv/encdec/cp1256.h            |  153 +
+ src/libtiniconv/encdec/cp1257.h            |  139 +
+ src/libtiniconv/encdec/cp1258.h            |  288 ++
+ src/libtiniconv/encdec/cp866.h             |  125 +
+ src/libtiniconv/encdec/cp936.h             |  126 +
+ src/libtiniconv/encdec/cp936ext.h          |   99 +
+ src/libtiniconv/encdec/euc_cn.h            |   72 +
+ src/libtiniconv/encdec/flushwc.h           |   37 +
+ src/libtiniconv/encdec/gb2312.h            | 2571 +++++++++++++++++
+ src/libtiniconv/encdec/gbk.h               |  169 ++
+ src/libtiniconv/encdec/gbkext1.h           |  853 ++++++
+ src/libtiniconv/encdec/gbkext2.h           | 1174 ++++++++
+ src/libtiniconv/encdec/gbkext_inv.h        | 2343 ++++++++++++++++
+ src/libtiniconv/encdec/iso2022_jp.h        |  212 ++
+ src/libtiniconv/encdec/iso8859_1.h         |   41 +
+ src/libtiniconv/encdec/iso8859_10.h        |  106 +
+ src/libtiniconv/encdec/iso8859_11.h        |   52 +
+ src/libtiniconv/encdec/iso8859_13.h        |  109 +
+ src/libtiniconv/encdec/iso8859_14.h        |  127 +
+ src/libtiniconv/encdec/iso8859_15.h        |   81 +
+ src/libtiniconv/encdec/iso8859_16.h        |  116 +
+ src/libtiniconv/encdec/iso8859_2.h         |  112 +
+ src/libtiniconv/encdec/iso8859_3.h         |  118 +
+ src/libtiniconv/encdec/iso8859_4.h         |  112 +
+ src/libtiniconv/encdec/iso8859_5.h         |   95 +
+ src/libtiniconv/encdec/iso8859_6.h         |   98 +
+ src/libtiniconv/encdec/iso8859_7.h         |  111 +
+ src/libtiniconv/encdec/iso8859_8.h         |  107 +
+ src/libtiniconv/encdec/iso8859_9.h         |   85 +
+ src/libtiniconv/encdec/jisx0201.h          |   66 +
+ src/libtiniconv/encdec/jisx0208.h          | 2415 ++++++++++++++++
+ src/libtiniconv/encdec/koi8_r.h            |  153 +
+ src/libtiniconv/encdec/koi8_ru.h           |  159 ++
+ src/libtiniconv/encdec/koi8_u.h            |  161 ++
+ src/libtiniconv/encdec/mac_cyrillic.h      |  136 +
+ src/libtiniconv/encdec/ucs2.h              |   67 +
+ src/libtiniconv/encdec/utf7.h              |  360 +++
+ src/libtiniconv/encdec/utf8.h              |  128 +
+ src/libtiniconv/encdec/vietcomb.h          |  467 ++++
+ src/libtiniconv/tiniconv.c                 |  133 +
+ src/libtiniconv/tiniconv.h                 |  159 ++
+ src/libtiniconv/tiniconv_desc.c            |  118 +
+ src/libtiniconv/tiniconv_int.h             |   43 +
+ src/logger/rx_extract.cxx                  |    6 +
+ src/main.cxx                               |   35 +
+ src/mfsk/mfsk.cxx                          |   17 +-
+ src/misc/charsetdistiller.cxx              |  262 ++
+ src/misc/charsetlist.cxx                   |   48 +
+ src/misc/outputencoder.cxx                 |  131 +
+ src/mt63/mt63.cxx                          |   75 +-
+ src/olivia/olivia.cxx                      |   33 +-
+ src/psk/psk.cxx                            |    6 +-
+ src/widgets/FTextRXTX.cxx                  |   40 +-
+ src/widgets/Fl_Text_Buffer_mod_1_3.cxx     |   16 +-
+ src/widgets/psk_browser.cxx                |   51 +-
+ 93 files changed, 27857 insertions(+), 6526 deletions(-)
+  36.8% po/
+  56.1% src/libtiniconv/encdec/
+   6.9% src/
+  26.5% po/
+  68.0% src/libtiniconv/encdec/
+   5.3% src/
+ create mode 100644 src/include/charsetdistiller.h
+ create mode 100644 src/include/charsetlist.h
+ copy src/include/{weather.h =&gt; outputencoder.h} (61%)
+ create mode 100644 src/libtiniconv/AUTHORS
+ copy COPYING =&gt; src/libtiniconv/COPYING (100%)
+ create mode 100644 src/libtiniconv/COPYING.LIB
+ create mode 100644 src/libtiniconv/ChangeLog
+ create mode 100644 src/libtiniconv/Makefile.am
+ create mode 100644 src/libtiniconv/README
+ create mode 100644 src/libtiniconv/encdec/ascii.h
+ create mode 100644 src/libtiniconv/encdec/big5.h
+ create mode 100644 src/libtiniconv/encdec/ces_big5.h
+ create mode 100644 src/libtiniconv/encdec/ces_gbk.h
+ create mode 100644 src/libtiniconv/encdec/cp1250.h
+ create mode 100644 src/libtiniconv/encdec/cp1251.h
+ create mode 100644 src/libtiniconv/encdec/cp1252.h
+ create mode 100644 src/libtiniconv/encdec/cp1253.h
+ create mode 100644 src/libtiniconv/encdec/cp1254.h
+ create mode 100644 src/libtiniconv/encdec/cp1255.h
+ create mode 100644 src/libtiniconv/encdec/cp1256.h
+ create mode 100644 src/libtiniconv/encdec/cp1257.h
+ create mode 100644 src/libtiniconv/encdec/cp1258.h
+ create mode 100644 src/libtiniconv/encdec/cp866.h
+ create mode 100644 src/libtiniconv/encdec/cp936.h
+ create mode 100644 src/libtiniconv/encdec/cp936ext.h
+ create mode 100644 src/libtiniconv/encdec/euc_cn.h
+ create mode 100644 src/libtiniconv/encdec/flushwc.h
+ create mode 100644 src/libtiniconv/encdec/gb2312.h
+ create mode 100644 src/libtiniconv/encdec/gbk.h
+ create mode 100644 src/libtiniconv/encdec/gbkext1.h
+ create mode 100644 src/libtiniconv/encdec/gbkext2.h
+ create mode 100644 src/libtiniconv/encdec/gbkext_inv.h
+ create mode 100644 src/libtiniconv/encdec/iso2022_jp.h
+ create mode 100644 src/libtiniconv/encdec/iso8859_1.h
+ create mode 100644 src/libtiniconv/encdec/iso8859_10.h
+ create mode 100644 src/libtiniconv/encdec/iso8859_11.h
+ create mode 100644 src/libtiniconv/encdec/iso8859_13.h
+ create mode 100644 src/libtiniconv/encdec/iso8859_14.h
+ create mode 100644 src/libtiniconv/encdec/iso8859_15.h
+ create mode 100644 src/libtiniconv/encdec/iso8859_16.h
+ create mode 100644 src/libtiniconv/encdec/iso8859_2.h
+ create mode 100644 src/libtiniconv/encdec/iso8859_3.h
+ create mode 100644 src/libtiniconv/encdec/iso8859_4.h
+ create mode 100644 src/libtiniconv/encdec/iso8859_5.h
+ create mode 100644 src/libtiniconv/encdec/iso8859_6.h
+ create mode 100644 src/libtiniconv/encdec/iso8859_7.h
+ create mode 100644 src/libtiniconv/encdec/iso8859_8.h
+ create mode 100644 src/libtiniconv/encdec/iso8859_9.h
+ create mode 100644 src/libtiniconv/encdec/jisx0201.h
+ create mode 100644 src/libtiniconv/encdec/jisx0208.h
+ create mode 100644 src/libtiniconv/encdec/koi8_r.h
+ create mode 100644 src/libtiniconv/encdec/koi8_ru.h
+ create mode 100644 src/libtiniconv/encdec/koi8_u.h
+ create mode 100644 src/libtiniconv/encdec/mac_cyrillic.h
+ create mode 100644 src/libtiniconv/encdec/ucs2.h
+ create mode 100644 src/libtiniconv/encdec/utf7.h
+ create mode 100644 src/libtiniconv/encdec/utf8.h
+ create mode 100644 src/libtiniconv/encdec/vietcomb.h
+ create mode 100644 src/libtiniconv/tiniconv.c
+ create mode 100644 src/libtiniconv/tiniconv.h
+ create mode 100644 src/libtiniconv/tiniconv_desc.c
+ create mode 100644 src/libtiniconv/tiniconv_int.h
+ create mode 100644 src/misc/charsetdistiller.cxx
+ create mode 100644 src/misc/charsetlist.cxx
+ create mode 100644 src/misc/outputencoder.cxx
+
+
+hooks/post-receive
+-- 
+fldigi
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000925.html">Pushed to pu/df on berlios
+</A></li>
+	<LI>Next message: <A HREF="000927.html">Cross-compiling fldigi under Linux with mingw32
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#926">[ date ]</a>
+              <a href="thread.html#926">[ thread ]</a>
+              <a href="subject.html#926">[ subject ]</a>
+              <a href="author.html#926">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

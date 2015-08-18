@@ -1,0 +1,196 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.20,	updated: 12c69ddbdd8d7a2b9d80cd11c6bd9a90f6ac8eb4
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.20%2C%0A%09updated%3A%2012c69ddbdd8d7a2b9d80cd11c6bd9a90f6ac8eb4&In-Reply-To=%3C20100903122648.DDE3C481002%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000350.html">
+   <LINK REL="Next"  HREF="000352.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.20,	updated: 12c69ddbdd8d7a2b9d80cd11c6bd9a90f6ac8eb4</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.20%2C%0A%09updated%3A%2012c69ddbdd8d7a2b9d80cd11c6bd9a90f6ac8eb4&In-Reply-To=%3C20100903122648.DDE3C481002%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.20,	updated: 12c69ddbdd8d7a2b9d80cd11c6bd9a90f6ac8eb4">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Fri Sep  3 14:26:48 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000350.html">[fldigi] #19: Add DV mode - codec2
+</A></li>
+        <LI>Next message: <A HREF="000352.html">[GIT] fldigi branch, master,	updated: c6409f3852d03da5106056ac4ca1b21ccf9373bf
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#351">[ date ]</a>
+              <a href="thread.html#351">[ thread ]</a>
+              <a href="subject.html#351">[ subject ]</a>
+              <a href="author.html#351">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.20 has been updated
+       via  12c69ddbdd8d7a2b9d80cd11c6bd9a90f6ac8eb4 (commit)
+       via  7b483df0a1ff45ee96609fb64fa7f83a1be3d340 (commit)
+       via  6b78f2fc0591bcd290ed74886fb85bdcedb6ae60 (commit)
+       via  e293a334b48b7ed9088061736bb226f69988f97d (commit)
+       via  e9c6fe8d4208e0fbe9dceef4935ad243a999cf87 (commit)
+       via  ba2306bdf8f71f9fa4ea80c3b2e752b9810c53e1 (commit)
+       via  dd7ff81b85f3c4fdc2cacd6ba27c2ab4e544db82 (commit)
+      from  e3b587760509b94f0fe0ad6ba88dfbec8762ad39 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=12c69ddbdd8d7a2b9d80cd11c6bd9a90f6ac8eb4">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=12c69ddbdd8d7a2b9d80cd11c6bd9a90f6ac8eb4</A>
+
+commit 12c69ddbdd8d7a2b9d80cd11c6bd9a90f6ac8eb4
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Sep 2 20:23:58 2010 -0500
+
+    Version 3.20.27
+    
+      Maintenance release
+
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=7b483df0a1ff45ee96609fb64fa7f83a1be3d340">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=7b483df0a1ff45ee96609fb64fa7f83a1be3d340</A>
+
+commit 7b483df0a1ff45ee96609fb64fa7f83a1be3d340
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Sep 2 20:23:49 2010 -0500
+
+    Abort ARQ
+    
+      Added call to Abort_ARQ when double ESC pressed (panic)
+      Added supporting code in modem class.
+
+ 7 files changed, 35 insertions(+), 19 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=6b78f2fc0591bcd290ed74886fb85bdcedb6ae60">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=6b78f2fc0591bcd290ed74886fb85bdcedb6ae60</A>
+
+commit 6b78f2fc0591bcd290ed74886fb85bdcedb6ae60
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Aug 30 14:55:23 2010 -0500
+
+    Version 3.20.26
+    
+      Maintenance release
+
+ 2 files changed, 10 insertions(+), 4 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e293a334b48b7ed9088061736bb226f69988f97d">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e293a334b48b7ed9088061736bb226f69988f97d</A>
+
+commit e293a334b48b7ed9088061736bb226f69988f97d
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Aug 30 14:53:09 2010 -0500
+
+    CONFIG dialog
+    
+      Set to Non-modal for Windows.
+
+ 2 files changed, 7 insertions(+), 5 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e9c6fe8d4208e0fbe9dceef4935ad243a999cf87">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e9c6fe8d4208e0fbe9dceef4935ad243a999cf87</A>
+
+commit e9c6fe8d4208e0fbe9dceef4935ad243a999cf87
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Aug 29 15:37:25 2010 -0500
+
+    BAND field
+    
+       Adif band field restored to band in meters etc.
+
+ 1 files changed, 3 insertions(+), 4 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=ba2306bdf8f71f9fa4ea80c3b2e752b9810c53e1">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=ba2306bdf8f71f9fa4ea80c3b2e752b9810c53e1</A>
+
+commit ba2306bdf8f71f9fa4ea80c3b2e752b9810c53e1
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Aug 29 07:33:56 2010 -0500
+
+    Version 3.20.25
+    
+      Maintenance release
+
+ 2 files changed, 1736 insertions(+), 5 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=dd7ff81b85f3c4fdc2cacd6ba27c2ab4e544db82">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=dd7ff81b85f3c4fdc2cacd6ba27c2ab4e544db82</A>
+
+commit dd7ff81b85f3c4fdc2cacd6ba27c2ab4e544db82
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Aug 29 07:33:51 2010 -0500
+
+    DXKEEPER bug fix
+    
+      Fix to bug introduced by 4eb79a4b516
+      adif field name changed from char* to string.
+
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                   | 1750 ++++++++++++++++++++++++++++++++++++++++++-
+ configure.ac                |    2 +-
+ src/dialogs/confdialog.cxx  |    2 +
+ src/dialogs/confdialog.fl   |   10 +-
+ src/dialogs/fl_digi.cxx     |    6 +-
+ src/include/modem.h         |    1 +
+ src/logbook/qso_db.cxx      |    7 +-
+ src/logger/logger.cxx       |    2 +-
+ src/misc/arq_io.cxx         |   23 +-
+ src/mt63/mt63.cxx           |    1 +
+ src/trx/modem.cxx           |    1 +
+ src/waterfall/waterfall.cxx |    2 +-
+ src/widgets/FTextRXTX.cxx   |   20 +-
+ 13 files changed, 1793 insertions(+), 34 deletions(-)
+   3.8% src/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000350.html">[fldigi] #19: Add DV mode - codec2
+</A></li>
+	<LI>Next message: <A HREF="000352.html">[GIT] fldigi branch, master,	updated: c6409f3852d03da5106056ac4ca1b21ccf9373bf
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#351">[ date ]</a>
+              <a href="thread.html#351">[ thread ]</a>
+              <a href="subject.html#351">[ subject ]</a>
+              <a href="author.html#351">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

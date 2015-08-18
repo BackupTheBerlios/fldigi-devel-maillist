@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> (gcc-4.7) g++: unrecognized option '-pthread-lrt'.
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%28gcc-4.7%29%20g%2B%2B%3A%20unrecognized%20option%20%27-pthread-lrt%27.&In-Reply-To=%3CCACMWOgvSxMOWrQFcje%2BUgAvWo%2BA7jJNu966TmQ9RQfcjBiH3AA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000953.html">
+   <LINK REL="Next"  HREF="000955.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>(gcc-4.7) g++: unrecognized option '-pthread-lrt'.</H1>
+    <B>Remi Chateauneu</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%28gcc-4.7%29%20g%2B%2B%3A%20unrecognized%20option%20%27-pthread-lrt%27.&In-Reply-To=%3CCACMWOgvSxMOWrQFcje%2BUgAvWo%2BA7jJNu966TmQ9RQfcjBiH3AA%40mail.gmail.com%3E"
+       TITLE="(gcc-4.7) g++: unrecognized option '-pthread-lrt'.">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Wed Dec 26 08:26:35 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000953.html">(gcc-4.7) g++: unrecognized option '-pthread-lrt'.
+</A></li>
+        <LI>Next message: <A HREF="000955.html">(gcc-4.7) g++: unrecognized option '-pthread-lrt'.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#954">[ date ]</a>
+              <a href="thread.html#954">[ thread ]</a>
+              <a href="subject.html#954">[ subject ]</a>
+              <a href="author.html#954">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>By the way, I have noticed a similar error message when compiling on MINGW.
+
+On Wed, Dec 26, 2012 at 3:10 AM, Greg Troxel &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">gdt at work.lexort.com</A>&gt; wrote:
+&gt;<i>
+</I>&gt;<i>   [patches that avoid eating the space following -lpthread]
+</I>&gt;<i>
+</I>&gt;<i> I have two further questions.
+</I>&gt;<i>
+</I>&gt;<i> 1) Why is it ok/desirable to remove -lpthread?  Is it a bug in
+</I>&gt;<i> xmlrpc-c-config to have placed it there?  It would be nice to have a
+</I>&gt;<i> comment in xmlrpc.m4 to explain.
+</I>&gt;<i>
+</I>&gt;<i> 2) The sed pattern seems like it will not match &quot;-lpthread$&quot;, and it
+</I>&gt;<i> will match &quot;-lpthreadfoo&quot;.
+</I>&gt;<i>
+</I>&gt;<i> I would be tempted to suggest the following
+</I>&gt;<i>   sed -E 's/(^| )-lpthread($| )/\1\2/
+</I>&gt;<i> but unfortunately POSIX does not require that sed handle extended
+</I>&gt;<i> regular expressions:
+</I>&gt;<i>   <A HREF="http://pubs.opengroup.org/onlinepubs/9699919799/utilities/sed.html">http://pubs.opengroup.org/onlinepubs/9699919799/utilities/sed.html</A>
+</I>&gt;<i> and it seems | is missing in BREs, so the best I can come up with is
+</I>&gt;<i>
+</I>&gt;<i> sed -e 's/^-lpthread$//' \
+</I>&gt;<i>     -e 's/^-lpthread / /' \
+</I>&gt;<i>     -e 's/ -lpthread$//' \
+</I>&gt;<i>     -e 's/ -lpthread / /'
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I></PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000953.html">(gcc-4.7) g++: unrecognized option '-pthread-lrt'.
+</A></li>
+	<LI>Next message: <A HREF="000955.html">(gcc-4.7) g++: unrecognized option '-pthread-lrt'.
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#954">[ date ]</a>
+              <a href="thread.html#954">[ thread ]</a>
+              <a href="subject.html#954">[ subject ]</a>
+              <a href="author.html#954">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

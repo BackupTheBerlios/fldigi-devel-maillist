@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> A proposal for a Hamlib++
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20A%20proposal%20for%20a%20Hamlib%2B%2B&In-Reply-To=%3C51C4B401.4060302%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001025.html">
+   <LINK REL="Next"  HREF="001027.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>A proposal for a Hamlib++</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20A%20proposal%20for%20a%20Hamlib%2B%2B&In-Reply-To=%3C51C4B401.4060302%40gmail.com%3E"
+       TITLE="A proposal for a Hamlib++">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Fri Jun 21 22:13:53 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001025.html">Bug report
+</A></li>
+        <LI>Next message: <A HREF="001027.html">A proposal for a Hamlib++
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1026">[ date ]</a>
+              <a href="thread.html#1026">[ thread ]</a>
+              <a href="subject.html#1026">[ subject ]</a>
+              <a href="author.html#1026">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Robert,
+
+Thanks for your email and for your work.
+
+I make this conversation open to anyone because others might be 
+interested. This is an open-source project after all.
+
+Several remarks and ideas:
+
+* When I started to use MXE, I insisted that only Hamlib3 worked out of 
+the box. (Hamlib 1.x made libltdl problems) I could build fldigi without 
+serious difficulty. This is why I suggested to use it. I would have been 
+happy to help, instead of seeing hamlib removed.
+
+* I understand that MacOS with Hamlib makes problems, but MacOS makes 
+about 5% of fldigi users maximum. Hard to believe that 95% of users must 
+suffer for Macintoshes.
+
+* There is a fldigi configure option which completely avoids Hamlib. It 
+would have been a simple choice for Windows and OsMac users.
+
+* I understand that token_t is also defined in MacIntosh, but again it 
+is 3% of users; and it is perfectly possible to make a version of Hamlib 
+where this type is renamed. Indeed, the Hamlib development team should 
+react immediately to fix this problem. But if we were stuck, we could 
+have our own temporary version of hamlib. After all, this was done with 
+xmlrpc_c during years, because this library is not supported at all 
+(This is why I removed it). Please see the wiki, xmlrpc_c had to be 
+deeply patched. So why not doing that temporarily with Hamlib ?
+
+You and Dave have taken the decision to remove Hamlib, and I am not 
+convinced by the reasons you give. Naively, this is not what I expect 
+from an open-source development team, but I respect your choice, and 
+wish you good luck and much fun!
+
+Remi
+
+
+
+
+Le 21.06.2013 16:59, Robert Stiles a &#233;crit :
+&gt;<i> Remi,
+</I>&gt;<i> The three issues that precipitated this event are (at least on my side):
+</I>&gt;<i>
+</I>&gt;<i> MacOSX libltdl is broken when searching for dynamic libs in non standard
+</I>&gt;<i> places, The attached patch allow me to search directly for the .so files.
+</I>&gt;<i>
+</I>&gt;<i> Setting ALL environment variable related to Library search fails on the
+</I>&gt;<i> Macintosh. Because libltdl is renaming the file extensions from the load
+</I>&gt;<i> path to .dylib. Which is what you want in most cases, but not in our
+</I>&gt;<i> case. The initial assigned search path is unaltered by libltdl.
+</I>&gt;<i>
+</I>&gt;<i> The token_t variable used in hamlib is in conflict with system header
+</I>&gt;<i> files on the Macintosh since version 10.7. Changing all of the token_t
+</I>&gt;<i> variables to r_token_t in hamlib would fix this issue.
+</I>&gt;<i>
+</I>&gt;<i> I have made it work on the macintosh when the DLL and .so file are
+</I>&gt;<i> stored in the Application bundle by #ifdef the system header files , and
+</I>&gt;<i> apply the patch to register.c file.
+</I>&gt;<i>
+</I>&gt;<i> So far I'm unable to create DLL using MXE on the windows side. The build
+</I>&gt;<i> system is messing withlibltdl creation.
+</I>&gt;<i>
+</I>&gt;<i> Since we have to use DLL's (current hamlib) I'm currently unable to
+</I>&gt;<i> create a windows version.
+</I>&gt;<i>
+</I>&gt;<i> Robert
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i> *From:* Nate Bargmann &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">n0nb at n0nb.us</A>&gt;
+</I>&gt;<i> *To:* &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt;
+</I>&gt;<i> *Cc:* w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>&gt;; Stephane Fillod &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">f8cfe at free.fr</A>&gt;;
+</I>&gt;<i> Kamal Mostafa &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kamal at whence.com</A>&gt;; Robert Stiles &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kk5vd at yahoo.com</A>&gt;
+</I>&gt;<i> *Sent:* Thursday, June 20, 2013 9:04 PM
+</I>&gt;<i> *Subject:* Re: A proposal for a Hamlib++
+</I>&gt;<i>
+</I>&gt;<i> * On 2013 20 Jun 16:49 -0500, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>
+</I>&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt; wrote:
+</I>&gt;<i>  &gt; Oh, big change.
+</I>&gt;<i>  &gt;
+</I>&gt;<i>  &gt; Sorry for that, but I am not interested to work this way on this project.
+</I>&gt;<i>
+</I>&gt;<i> Hi Remi.
+</I>&gt;<i>
+</I>&gt;<i> As always, your efforts for both Hamlib and Fldigi have been appreciated.
+</I>&gt;<i> Please don't end your work with either project. This was a technical
+</I>&gt;<i> problem that we have been unable to resolve. Dave's decision is based
+</I>&gt;<i> on the technical merits of the issue and I respect that. There are no
+</I>&gt;<i> hard feelings on my part, so everyone please continue to write good
+</I>&gt;<i> software that benefits the amateur radio community.
+</I>&gt;<i>
+</I>&gt;<i> 73, de Nate &gt;&gt;
+</I>&gt;<i>
+</I>&gt;<i> --
+</I>&gt;<i>
+</I>&gt;<i> &quot;The optimist proclaims that we live in the best of all
+</I>&gt;<i> possible worlds. The pessimist fears this is true.&quot;
+</I>&gt;<i>
+</I>&gt;<i> Ham radio, Linux, bikes, and more: <A HREF="http://www.n0nb.us">http://www.n0nb.us</A> &lt;<A HREF="http://www.n0nb.us/">http://www.n0nb.us/</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001025.html">Bug report
+</A></li>
+	<LI>Next message: <A HREF="001027.html">A proposal for a Hamlib++
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1026">[ date ]</a>
+              <a href="thread.html#1026">[ thread ]</a>
+              <a href="subject.html#1026">[ subject ]</a>
+              <a href="author.html#1026">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Linux Mint 16 Petra and FlDigi 3.21.77
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Linux%20Mint%2016%20Petra%20and%20FlDigi%203.21.77&In-Reply-To=%3C52A1B1CB.1040703%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001111.html">
+   <LINK REL="Next"  HREF="001113.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Linux Mint 16 Petra and FlDigi 3.21.77</H1>
+    <B>kayvax</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Linux%20Mint%2016%20Petra%20and%20FlDigi%203.21.77&In-Reply-To=%3C52A1B1CB.1040703%40gmail.com%3E"
+       TITLE="Linux Mint 16 Petra and FlDigi 3.21.77">kayvax at gmail.com
+       </A><BR>
+    <I>Fri Dec  6 12:15:23 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001111.html">Linux Mint 16 Petra and FlDigi 3.21.77
+</A></li>
+        <LI>Next message: <A HREF="001113.html">Can't start FLDIGI
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1112">[ date ]</a>
+              <a href="thread.html#1112">[ thread ]</a>
+              <a href="subject.html#1112">[ subject ]</a>
+              <a href="author.html#1112">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>W dniu 06.12.2013 10:08, Thomas 'tom' Malkus pisze:
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> I think, the problem is the same as here, FLTK Bug STR #2976:
+</I>&gt;<i> <A HREF="http://www.fltk.org/str.php?L2976+P0+S-2+C0+I0+E0+Q">http://www.fltk.org/str.php?L2976+P0+S-2+C0+I0+E0+Q</A>
+</I>&gt;<i>
+</I>&gt;<i> If I remove the .fonts directory in my $HOME fldigi will be start.
+</I>&gt;<i> There were some fonts for a desktop like OS X, I don't need that.
+</I>&gt;<i>
+</I>&gt;<i> Am 06.12.2013 02:44, schrieb Ed:
+</I>&gt;&gt;<i> On 12/05/2013 06:57 PM, Thomas 'tom' Malkus wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Looks like you do not have all the fltk installed. libxft-dev and
+</I>&gt;&gt;<i> libjpeg-dev make sure they are installed.
+</I>&gt;<i>
+</I>&gt;<i> I use fltk for years and it is complete installed.
+</I>&gt;<i>
+</I>&gt;&gt;<i> What error messages do you see when starting fldigi from a terminal ?
+</I>&gt;<i>
+</I>&gt;<i> I attached this log yesterday to:
+</I>&gt;<i>
+</I>&gt;<i> Caught signal 11
+</I>&gt;<i> Aborting fldigi due to a fatal error.
+</I>&gt;<i> Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+</I>&gt;<i>
+</I>&gt;<i> ****** Stack trace:
+</I>&gt;<i> ./fldigi[0x819a326]
+</I>&gt;<i> ./fldigi[0x819a54c]
+</I>&gt;<i> [0xb7754400]
+</I>&gt;<i> /lib/i386-linux-gnu/libc.so.6(+0x857d6)[0xb71527d6]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(_ZN2Fl9set_fontsEPKc+0x206)[0xb766c556]
+</I>&gt;<i>
+</I>&gt;<i> ./fldigi[0x805a082]
+</I>&gt;<i> /lib/i386-linux-gnu/libc.so.6(__libc_start_main+0xf5)[0xb70e6905]
+</I>&gt;<i> ./fldigi[0x805f923]
+</I>&gt;<i>
+</I>&gt;<i> ****** Version information:
+</I>&gt;<i> fldigi 3.21.77
+</I>&gt;<i> Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi
+</I>&gt;<i> Chateauneu, and others.
+</I>&gt;<i> License GPLv3+: GNU GPL version 3 or later
+</I>&gt;<i> &lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+</I>&gt;<i> This is free software: you are free to change and redistribute it.
+</I>&gt;<i> There is NO WARRANTY, to the extent permitted by law.
+</I>&gt;<i>
+</I>&gt;<i> ****** Build information:
+</I>&gt;<i> Build information:
+</I>&gt;<i>    built          : Fri Dec  6 00:17:41 CET 2013 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">tom at marconi</A> on
+</I>&gt;<i> i686-pc-linux-gnu for i686-pc-linux-gnu
+</I>&gt;<i>
+</I>&gt;<i>    configure flags:
+</I>&gt;<i>
+</I>&gt;<i>    compiler       : gcc version 4.8.1 (Ubuntu/Linaro 4.8.1-10ubuntu9)
+</I>&gt;<i>
+</I>&gt;<i>    compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+</I>&gt;<i> -I$(srcdir)/libtiniconv -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp
+</I>&gt;<i> -I/usr/local/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
+</I>&gt;<i> -D_FILE_OFFSET_BITS=64 -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT
+</I>&gt;<i> -I/usr/include/libpng12 -pipe -Wall -fexceptions -O2 -ffast-math
+</I>&gt;<i> -finline-functions -DNDEBUG
+</I>&gt;<i>
+</I>&gt;<i>    linker flags   : -L/usr/local/lib -lfltk_images -lpng -lz -ljpeg
+</I>&gt;<i> -lfltk -lXext -lpthread -ldl -lm -lX11 -lsamplerate -lpulse-simple
+</I>&gt;<i> -lpulse -lhamlib -lm -lpng12 -ldl -lpthread
+</I>&gt;<i>
+</I>&gt;<i>    libraries      : FLTK 1.3.1
+</I>&gt;<i>                     libsamplerate 0.1.8
+</I>&gt;<i>                     PulseAudio 4.0
+</I>&gt;<i>                     Hamlib 1.2.15.3
+</I>&gt;<i>
+</I>&gt;<i> Runtime information:
+</I>&gt;<i>    system         : Linux marconi 3.11.0-12-generic #19-Ubuntu SMP Wed
+</I>&gt;<i> Oct 9 16:12:00 UTC 2013 i686
+</I>&gt;<i>
+</I>&gt;<i>    libraries      : libsamplerate-0.1.8 (c) 2002-2008 Erik de Castro Lopo
+</I>&gt;<i>                     Pulseaudio 4.0.0
+</I>&gt;<i>                     Hamlib 1.2.15.3
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> 73 de Tom
+</I>Hi Tom,
+I had similar problems with font files preventing fldigi usage.
+Have a look at
+<A HREF="../2013-September/001084.html">http://lists.berlios.de/pipermail/fldigi-devel/2013-September/001084.html</A> thread.
+I could not find any other way to make fldigi work than removing
+corrupted font files.
+
+Said FLTK Bug you have brought was filled by /Dave w1hkj/ after my report.
+
+To sum up, that issue comes from FLTK and was not resolved, in meantime
+keeping ~/.fonts/ clear and clean is only way to workaround it.
+
+Best regards,
+Mikolaj
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20131206/bcfa2789/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20131206/bcfa2789/attachment.html</A>&gt;
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001111.html">Linux Mint 16 Petra and FlDigi 3.21.77
+</A></li>
+	<LI>Next message: <A HREF="001113.html">Can't start FLDIGI
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1112">[ date ]</a>
+              <a href="thread.html#1112">[ thread ]</a>
+              <a href="subject.html#1112">[ subject ]</a>
+              <a href="author.html#1112">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> SIMD
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20SIMD&In-Reply-To=%3C87fx9cnr10.wl%40logrus.enotty.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000128.html">
+   <LINK REL="Next"  HREF="000130.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>SIMD</H1>
+    <B>Stelios Bounanos</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20SIMD&In-Reply-To=%3C87fx9cnr10.wl%40logrus.enotty.net%3E"
+       TITLE="SIMD">m0gld at enotty.net
+       </A><BR>
+    <I>Thu Oct 22 03:42:03 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000128.html">[GIT] fldigi branch, master,	updated: cfd526dbac7bd5b87f94014ec31ed152abd54ad0
+</A></li>
+        <LI>Next message: <A HREF="000130.html">SIMD
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#129">[ date ]</a>
+              <a href="thread.html#129">[ thread ]</a>
+              <a href="subject.html#129">[ subject ]</a>
+              <a href="author.html#129">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;&gt;&gt;&gt;&gt;<i> On Mon, 19 Oct 2009 05:31:30 -0500, w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>&gt; said:
+</I>
+&gt;<i> Stelios Bounanos wrote:
+</I>&gt;&gt;<i> I wonder if you have done any SIMD programming?  If not, you may find
+</I>&gt;&gt;<i> the potential SIMD speedups surprising.  Attached is a small program
+</I>&gt;&gt;<i> that compares a scalar to a vectorised loop for a really simple
+</I>&gt;&gt;<i> algorithm (finding the maximum value in an array of doubles).
+</I>&gt;&gt;<i> 
+</I>&gt;<i> That is an impressive speedup.  I will look at your sample and try the 
+</I>&gt;<i> compilation in a bit.
+</I>
+&gt;<i> I think that the waterfall widget and it's fft would be a suitable 
+</I>&gt;<i> target.  I would start with the fft.
+</I>
+The waterfall does some processing that could be vectorised, but it's
+mostly a drop in the ocean compared to the rdft.  I've looked at Ooura's
+fft code and I can tell you I won't be trying to vectorise *that*
+anytime soon :-)
+
+However, the windowing and scaling in Cfft::rdft are simple vector
+multiplications and could be vectorised with trivial effort using gcc's
+vector extensions, and without resorting to SSE2 intrinsics.  GCC will
+then emit SSE2 vector code automagically (about half the instructions
+for half the loop iterations if using a v2df) if sse2 is available, and
+scalar code otherwise.
+
+I will try to change Cfft to use fftw3.  Here are some things that stand
+out when comparing fftw3 to Ooura's fft code:
+
+* fftw3 is (significantly) faster [1] and (slightly) more accurate
+* it already supports SIMD
+* it has better support for threads
+
+In particular, the number of threads is not a compile-time constant in
+fftw3, and the wisdom generator can automatically check for multithreaded
+speedup in &quot;patient&quot; mode.  The waterfall fft size *may* just be long
+enough for threads to be beneficial, especially on Linux where thread
+creation is so fast.
+
+If this experiment is successful I will add a new Cfft_fftw class and a
+configure switch to enable it.  It could become the default in 3.14 or
+3.15 if all goes well.
+
+
+Stelios.
+
+[1] <A HREF="http://www.fftw.org/speed/">http://www.fftw.org/speed/</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000128.html">[GIT] fldigi branch, master,	updated: cfd526dbac7bd5b87f94014ec31ed152abd54ad0
+</A></li>
+	<LI>Next message: <A HREF="000130.html">SIMD
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#129">[ date ]</a>
+              <a href="thread.html#129">[ thread ]</a>
+              <a href="subject.html#129">[ subject ]</a>
+              <a href="author.html#129">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

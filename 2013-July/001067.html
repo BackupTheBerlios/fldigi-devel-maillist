@@ -1,0 +1,178 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi for VHF/UHF FM data
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20for%20VHF/UHF%20FM%20data&In-Reply-To=%3CCAMMRkMCx5_K3mxvVeV8VbR2DsrB-YnGvKG9BoKwveR_rxKiXRA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001058.html">
+   <LINK REL="Next"  HREF="001072.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi for VHF/UHF FM data</H1>
+    <B>Guy Story KC5GOI</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20for%20VHF/UHF%20FM%20data&In-Reply-To=%3CCAMMRkMCx5_K3mxvVeV8VbR2DsrB-YnGvKG9BoKwveR_rxKiXRA%40mail.gmail.com%3E"
+       TITLE="Fldigi for VHF/UHF FM data">kc5goi at gmail.com
+       </A><BR>
+    <I>Tue Jul 30 03:38:31 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001058.html">Fldigi for VHF/UHF FM data
+</A></li>
+        <LI>Next message: <A HREF="001072.html">Fldigi for VHF/UHF FM data
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1067">[ date ]</a>
+              <a href="thread.html#1067">[ thread ]</a>
+              <a href="subject.html#1067">[ subject ]</a>
+              <a href="author.html#1067">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Here is the plot I took about a year ago.  Not exactly scientific but it
+gets the point across.  I think I mis-spoke earlier.  Lower frequencies are
+getting more emphasis than higher frequencies.
+
+The blue plot is the baseline.  It was established by sending white noise
+(command line switch option) from one laptop to another.  Pretty flat
+response.  The spike around 4.4kHz I suspect is internal noise.
+
+Red plot is Kenwood TM-V7A to a Kenwood TM-271A on simplex.  1200 baud port
+to 1200 baud port.
+
+Purple is same radio setup but on the TM-271A 9k6 port.
+
+Green is V7A through a repeater and received on the 271A.  It is a current
+Kenwood repeater.  We upgraded from older MFS Motorola repeaters last year.
+
+Keep a repeater setup in mind.  Technically you have 4 radios touching all
+of the audio tx radio, receiver at the repeater, transmitter at the
+repeater then the receiving radio.
+
+Talking to our repeater operator the curve from the repeater being in the
+loop did not surprise him.  You can see the notch for the PL tone.
+
+NOTE:  there was no attempt to normalize the audio levels.  Do not take the
+baseline amplitude and compare it directly to the radio levels.  It is
+there just to show the curve.  I do consider the radio levels normalized.
+There was not adjusting of the output and it was done in the same 30 minute
+period.  Audacity was used to capture a 30 second tx period, analyzed the
+spit out as CSV data.  It was then plotted in Libre Office.
+
+Being a control operator for the DCARA repeaters has is privileges.
+
+[image: Inline image 2]
+
+73
+
+Guy
+KC5GOI
+
+
+On Fri, Jul 26, 2013 at 12:47 PM, John Phelps &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kl4yfd at gmail.com</A>&gt; wrote:
+
+&gt;<i> Hello all,
+</I>&gt;<i> Apologies for the number of mailing-lists this touches, but am taking a
+</I>&gt;<i> bit of a survey:
+</I>&gt;<i>
+</I>&gt;<i> Want see how many people would be interested in using, developing, and/or
+</I>&gt;<i> testing Fldigi for &quot;high speed&quot; data over FM audio and/or FM-audio
+</I>&gt;<i> repeaters. In my testing so far, it appears the speed would be somewhere in
+</I>&gt;<i> the 3 Kb/s to 4 Kb/s range, possibly higher.
+</I>&gt;<i>
+</I>&gt;<i> Since the goal is fast data, audio coupling is out: faster speeds simply
+</I>&gt;<i> require a direct-audio connection. My inexpensive solution here was to
+</I>&gt;<i> interface a Baofeng UV-5R to a soundcard: see attached file for details
+</I>&gt;<i> (for good engineering practice, 1:1 isolation transformers should be added
+</I>&gt;<i> to isolate the radio form the soundcard).
+</I>&gt;<i> Conveniently, Baofeng and other radios contain an inbuilt VOX circuit to
+</I>&gt;<i> control PTT. No additional interface needed (I recently purchased 3 for
+</I>&gt;<i> this project, hihi)
+</I>&gt;<i>
+</I>&gt;<i> I saw some testing months ago for a mode that could be used over FM
+</I>&gt;<i> repeaters.
+</I>&gt;<i> Here I am proposing a new digital mode: NBEMS-FM
+</I>&gt;<i> This not a mode that I am making, but rather one I think we all should
+</I>&gt;<i> contribute to and discuss together. This will result in a better overall
+</I>&gt;<i> design.
+</I>&gt;<i>
+</I>&gt;<i> The details of the NBEMS-FM mode should be, in my opinion:
+</I>&gt;<i>  * 2 Speeds: one for Uplink / Reliability, one for Downlink / Backhaul
+</I>&gt;<i>  * No options to accidentally mis-configure
+</I>&gt;<i>  * Modem uses a set-frequency (no AFC to be mis-adjusted)
+</I>&gt;<i>  * Little-to-no FEC overhead
+</I>&gt;<i>  * Use PSK instead of QAM, to better allow for drastic audio-level
+</I>&gt;<i> mis-adjustments to still decode
+</I>&gt;<i>  * Common-sense balance of speed and reliability
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> In my testing here, it appears 8PSK is the highest constellation that is
+</I>&gt;<i> reliable over FM audio. I have tested on-air patches for fldigi that
+</I>&gt;<i> reliably transmitted data using two 8PSK carriers at 500 Baud, for a
+</I>&gt;<i> datarate (raw and net) of 3Kbps. Will work on porting those patches forward
+</I>&gt;<i> to the recent Fldigi versions.
+</I>&gt;<i>
+</I>&gt;<i> First thing that is required is the common audio upper and lower &quot;cutoff
+</I>&gt;<i> frequencies&quot; of amateur repeaters and radios.
+</I>&gt;<i> From the previous testing, what was the consensus?
+</I>&gt;<i>
+</I>&gt;<i> Responses and opinions  appreciated at: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kl4yfd at gmail.com</A>, or on the
+</I>&gt;<i> mailing list.
+</I>&gt;<i>
+</I>&gt;<i> John
+</I>&gt;<i> KL4YFD
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>
+
+
+-- 
+73
+
+Guy Story KC5GOI
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kc5goi at gmail.com</A>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130729/97b65194/attachment-0001.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130729/97b65194/attachment-0001.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: BaselineSimplexRepeaterDataPort.png
+Type: image/png
+Size: 175130 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130729/97b65194/attachment-0001.png">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130729/97b65194/attachment-0001.png</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001058.html">Fldigi for VHF/UHF FM data
+</A></li>
+	<LI>Next message: <A HREF="001072.html">Fldigi for VHF/UHF FM data
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1067">[ date ]</a>
+              <a href="thread.html#1067">[ thread ]</a>
+              <a href="subject.html#1067">[ subject ]</a>
+              <a href="author.html#1067">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

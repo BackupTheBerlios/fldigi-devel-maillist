@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi + doxygen
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20%2B%20doxygen&In-Reply-To=%3CCACMWOgvE3Y7PHMHBHm7Z5QtS-gThFw0DSMHO2cN0x%3DadPAq_SQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000940.html">
+   <LINK REL="Next"  HREF="000942.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi + doxygen</H1>
+    <B>Remi Chateauneu</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20%2B%20doxygen&In-Reply-To=%3CCACMWOgvE3Y7PHMHBHm7Z5QtS-gThFw0DSMHO2cN0x%3DadPAq_SQ%40mail.gmail.com%3E"
+       TITLE="Fldigi + doxygen">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Mon Dec  3 10:30:37 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000940.html">Fldigi + doxygen
+</A></li>
+        <LI>Next message: <A HREF="000942.html">Fldigi + doxygen
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#941">[ date ]</a>
+              <a href="thread.html#941">[ thread ]</a>
+              <a href="subject.html#941">[ subject ]</a>
+              <a href="author.html#941">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Brillant idea.
+Apparently it was able to extract comments here for example:
+
+<A HREF="http://www.bitsandbytes.info/doxygen/3.22.0CH/classfax__implementation.html">http://www.bitsandbytes.info/doxygen/3.22.0CH/classfax__implementation.html</A>
+
+It might be possible to tune doxygen so it can extract more information.
+
+For example in wefax/wefax.cpp, there is a comment for this member of
+fax_implementation that doxygen could not detect.
+
+00312         int m_apt_trans;       // APT low-high transitions
+
+
+Excellent idea, many thanks !
+
+
+On 12/2/12, John Phelps &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kl4yfd at gmail.com</A>&gt; wrote:
+&gt;<i> Hello to all the fldigi developers. :-)
+</I>&gt;<i>
+</I>&gt;<i> In trying to understand the inner-workings of fldigi I have been generating
+</I>&gt;<i> Doxygen documents at home for a little while.... They have proven to be
+</I>&gt;<i> very useful.
+</I>&gt;<i>
+</I>&gt;<i> These are now available for all to use at
+</I>&gt;<i> <A HREF="http://www.bitsandbytes.info/doxygen/3.22.0CH/">http://www.bitsandbytes.info/doxygen/3.22.0CH/</A>
+</I>&gt;<i>   * Note: The only file to contain Doxygen comments is irrXML... so this is
+</I>&gt;<i> the main page.
+</I>&gt;<i>     * Please ignore this for now, will fix later.
+</I>&gt;<i>
+</I>&gt;<i> Some of the more impressive highlights of the documentation:
+</I>&gt;<i>
+</I>&gt;<i>    - <A HREF="http://www.bitsandbytes.info/doxygen/3.22.0CH/classmodem.html">http://www.bitsandbytes.info/doxygen/3.22.0CH/classmodem.html</A>
+</I>&gt;<i>    - <A HREF="http://www.bitsandbytes.info/doxygen/3.22.0CH/psk_8cxx.html">http://www.bitsandbytes.info/doxygen/3.22.0CH/psk_8cxx.html</A>
+</I>&gt;<i>    -
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://www.bitsandbytes.info/doxygen/3.22.0CH/waterfall_8cxx_a0038debf066473c0db695697318263f4.html#a0038debf066473c0db695697318263f4">http://www.bitsandbytes.info/doxygen/3.22.0CH/waterfall_8cxx_a0038debf066473c0db695697318263f4.html#a0038debf066473c0db695697318263f4</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Hopefully others find this documentation useful.
+</I>&gt;<i> Will also generate for 3.21Latest and 3.21EXP then post online.
+</I>&gt;<i>
+</I>&gt;<i> Feedback is appreciated.
+</I>&gt;<i>
+</I>&gt;<i> ~ John
+</I>&gt;<i> KL4YFD
+</I>&gt;<i>
+</I></PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000940.html">Fldigi + doxygen
+</A></li>
+	<LI>Next message: <A HREF="000942.html">Fldigi + doxygen
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#941">[ date ]</a>
+              <a href="thread.html#941">[ thread ]</a>
+              <a href="subject.html#941">[ subject ]</a>
+              <a href="author.html#941">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

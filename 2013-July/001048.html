@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fwd: &quot;error: Using $(srcdir) in tests is currently broken&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fwd%3A%20%22error%3A%20Using%20%24%28srcdir%29%20in%20tests%20is%20currently%20broken%22&In-Reply-To=%3CCAPRqYUU6z%3DNiBxXQyW5MSCaARr1sLPs9Ock70%2BQo5YUaJAWHYA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001047.html">
+   <LINK REL="Next"  HREF="001049.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fwd: &quot;error: Using $(srcdir) in tests is currently broken&quot;</H1>
+    <B>John Phelps</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fwd%3A%20%22error%3A%20Using%20%24%28srcdir%29%20in%20tests%20is%20currently%20broken%22&In-Reply-To=%3CCAPRqYUU6z%3DNiBxXQyW5MSCaARr1sLPs9Ock70%2BQo5YUaJAWHYA%40mail.gmail.com%3E"
+       TITLE="Fwd: &quot;error: Using $(srcdir) in tests is currently broken&quot;">kl4yfd at gmail.com
+       </A><BR>
+    <I>Thu Jul 25 16:24:54 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001047.html">&quot;error: Using $(srcdir) in tests is currently broken&quot;
+</A></li>
+        <LI>Next message: <A HREF="001049.html">Fldigi for VHF/UHF FM data
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1048">[ date ]</a>
+              <a href="thread.html#1048">[ thread ]</a>
+              <a href="subject.html#1048">[ subject ]</a>
+              <a href="author.html#1048">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>---------- Forwarded message ----------
+From: John Phelps &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kl4yfd at gmail.com</A>&gt;
+Date: Wed, Jul 24, 2013 at 5:43 PM
+Subject: Re: &quot;error: Using $(srcdir) in tests is currently broken&quot;
+To: Greg Troxel &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">gdt at work.lexort.com</A>&gt;
+
+Forgot to CC the mailing list. Oops.
+---------------------------------------------------
+
+To be honest, I do not completely understand either.
+
+What I do know is:
+* There are a few changes upcoming in newest versions of automake that
+break backwards compatibility
+* Certain macros have been changed or removed
+* Something about these automake changes affected the parsing of &quot;
+$(srcdir) &quot; specifically on the &quot; TESTS= &quot; line
+* Perhaps this a temporary bug in automake, maybe a persistent change.
+
+Also see :
+<A HREF="https://lists.gnu.org/archive/html/automake/2012-12/msg00038.html">https://lists.gnu.org/archive/html/automake/2012-12/msg00038.html</A>
+
+
+On Wed, Jul 24, 2013 at 5:31 PM, Greg Troxel &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">gdt at work.lexort.com</A>&gt; wrote:
+
+&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>   -TESTS = $(srcdir)/../scripts/tests/config-h.sh
+</I>&gt;<i> $(srcdir)/../scripts/tests/cr.sh
+</I>&gt;<i>   +
+</I>&gt;<i>   +tmp_srcdir_var=$(srcdir)
+</I>&gt;<i>   +TESTS = $(tmp_srcdir_var)/../scripts/tests/config-h.sh
+</I>&gt;<i> $(tmp_srcdir_var)/../scripts/tests/cr.sh
+</I>&gt;<i>
+</I>&gt;<i> This seems very odd to me.  I'd expect TESTS to be relative to srcdir.
+</I>&gt;<i> But ../scripts is not under srcdir at all.   The patch seems to work
+</I>&gt;<i> around a warning, but I don't understand how it avoids the problem being
+</I>&gt;<i> warned about.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130725/4f28664f/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130725/4f28664f/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001047.html">&quot;error: Using $(srcdir) in tests is currently broken&quot;
+</A></li>
+	<LI>Next message: <A HREF="001049.html">Fldigi for VHF/UHF FM data
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1048">[ date ]</a>
+              <a href="thread.html#1048">[ thread ]</a>
+              <a href="subject.html#1048">[ subject ]</a>
+              <a href="author.html#1048">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

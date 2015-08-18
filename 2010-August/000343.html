@@ -1,0 +1,132 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.20,	updated: aa519897adea4d6819feb390280063d82e898ee7
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.20%2C%0A%09updated%3A%20aa519897adea4d6819feb390280063d82e898ee7&In-Reply-To=%3C20100811121512.5B9B7480E8C%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000342.html">
+   <LINK REL="Next"  HREF="000344.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.20,	updated: aa519897adea4d6819feb390280063d82e898ee7</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.20%2C%0A%09updated%3A%20aa519897adea4d6819feb390280063d82e898ee7&In-Reply-To=%3C20100811121512.5B9B7480E8C%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.20,	updated: aa519897adea4d6819feb390280063d82e898ee7">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Wed Aug 11 14:15:11 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000342.html">[fldigi] #18: Please add support for ZL2AFP's CMSK mode
+</A></li>
+        <LI>Next message: <A HREF="000344.html">Fldigi 3.20.xx problems on ubuntu 10.04 LTS
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#343">[ date ]</a>
+              <a href="thread.html#343">[ thread ]</a>
+              <a href="subject.html#343">[ subject ]</a>
+              <a href="author.html#343">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.20 has been updated
+       via  aa519897adea4d6819feb390280063d82e898ee7 (commit)
+       via  d513ee8628ce6e084e2e5bf373745209eabf6b64 (commit)
+       via  b7b3eb344924e7fb8d4b3aa6ef029b4b0cfbe057 (commit)
+      from  08e94e36c75d97c9c163f2fbb28d77ed88181dee (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=aa519897adea4d6819feb390280063d82e898ee7">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=aa519897adea4d6819feb390280063d82e898ee7</A>
+
+commit aa519897adea4d6819feb390280063d82e898ee7
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Aug 11 06:59:36 2010 -0500
+
+    Version 3.20.23
+    
+      Maintenance release
+
+ 2 files changed, 9 insertions(+), 4 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=d513ee8628ce6e084e2e5bf373745209eabf6b64">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=d513ee8628ce6e084e2e5bf373745209eabf6b64</A>
+
+commit d513ee8628ce6e084e2e5bf373745209eabf6b64
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Aug 11 06:36:17 2010 -0500
+
+    Macro Mode Change
+    
+      Change init_modem_sync(...) to init_modem(...) call in macro
+      execute.  Macros are executed from main fltk thread.  The
+      sem_wait call in _sync caused main thread to lock up.
+
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=b7b3eb344924e7fb8d4b3aa6ef029b4b0cfbe057">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=b7b3eb344924e7fb8d4b3aa6ef029b4b0cfbe057</A>
+
+commit b7b3eb344924e7fb8d4b3aa6ef029b4b0cfbe057
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat Jul 31 15:56:34 2010 -0500
+
+    Combo Widget
+    
+      Changed size computation for popup browser
+
+ 1 files changed, 3 insertions(+), 2 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog           |   11 ++++++++---
+ configure.ac        |    2 +-
+ src/combo/combo.cxx |    5 +++--
+ src/misc/macros.cxx |    6 +++---
+ 4 files changed, 15 insertions(+), 9 deletions(-)
+  28.0% src/combo/
+  32.5% src/misc/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000342.html">[fldigi] #18: Please add support for ZL2AFP's CMSK mode
+</A></li>
+	<LI>Next message: <A HREF="000344.html">Fldigi 3.20.xx problems on ubuntu 10.04 LTS
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#343">[ date ]</a>
+              <a href="thread.html#343">[ thread ]</a>
+              <a href="subject.html#343">[ subject ]</a>
+              <a href="author.html#343">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

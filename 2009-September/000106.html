@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> I/Q signals in fldigi
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20I/Q%20signals%20in%20fldigi&In-Reply-To=%3C20090914211441.GC5166%40charybde.local%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000105.html">
+   <LINK REL="Next"  HREF="000107.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>I/Q signals in fldigi</H1>
+    <B>Stephane Fillod</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20I/Q%20signals%20in%20fldigi&In-Reply-To=%3C20090914211441.GC5166%40charybde.local%3E"
+       TITLE="I/Q signals in fldigi">f8cfe at free.fr
+       </A><BR>
+    <I>Mon Sep 14 23:14:41 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000105.html">commits pushed to pu/df
+</A></li>
+        <LI>Next message: <A HREF="000107.html">I/Q signals in fldigi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#106">[ date ]</a>
+              <a href="thread.html#106">[ thread ]</a>
+              <a href="subject.html#106">[ subject ]</a>
+              <a href="author.html#106">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I hope Stelios won't mind if I unearth a message a year old
+about I/Q. Some french fellow did ask me again for such
+support, and I have some interest in too, but I'm still
+somewhat busy with brick-and-mortar work ongoing in my home.
+
+BTW, I've recently received congratulation from a french-only speaking
+ham who is fond of the simplicity yet powerfulness of fldigi,
+depicting the other pieces of software as gas factories :-)
+Here it is shared with you, because the joy of the others
+makes also your joy :-)
+
+Mon, Nov 03, 2008 at 03:52:55AM +0000, Stelios Bounanos skribis:
+&gt;<i> &gt;&gt;&gt;&gt;&gt; On Sun, 2 Nov 2008 10:53:07 +0100, Stephane Fillod &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">f8cfe at free.fr</A>&gt; said:
+</I>[...]
+&gt;<i> &gt; * I/Q input/output: thanks to SDR, more and more devices offer I/Q
+</I>&gt;<i> &gt;   signals. I, for myself, own a SDR1K and an Elektor SDR-USB.
+</I>&gt;<i> &gt;   For fldigi, that would mean turning the soundcard to stereo,
+</I>&gt;<i> &gt;   and dealing with complex signals from that point on. Feasible?
+</I>&gt;<i> &gt;   Configuration items would certainly be added to select 
+</I>&gt;<i> &gt;   the kind of audio input and output (mono, I/Q, reverse I/Q, etc.).
+</I>&gt;<i> &gt;   The Dream DRM project (GPL'd) has a similar approach:
+</I>&gt;<i> &gt; 	0: left channel
+</I>&gt;<i> &gt; 	1: right channel
+</I>&gt;<i> &gt; 	2: mix both channels (default)
+</I>&gt;<i> &gt; 	3: I/Q input positive
+</I>&gt;<i> &gt; 	4: I/Q input negative
+</I>&gt;<i> &gt; 	5: I/Q input positive (0 Hz IF)
+</I>&gt;<i> &gt; 	6: I/Q input negative (0 Hz IF)
+</I>&gt;<i> 
+</I>&gt;<i> We used to have stereo input until we found out that one of the popular
+</I>&gt;<i> USB soundcard/radio interface gizmos only has a single capture channel
+</I>&gt;<i> -- I think it was a SignaLink.  Before then, the right audio channel was
+</I>&gt;<i> simply discarded as there was is nothing in fldigi that can use it.
+</I>
+Then a new configuration choice must be proposed and it should 
+be the default:
+
+    	0b:mono (default)
+
+&gt;<i> Playback is still stereo, but for modem data we only use the left
+</I>&gt;<i> channel.  The exceptions are RTTY with the pseudo-FSK option, and CW
+</I>&gt;<i> with the QSK option.  In these two cases we also generate a separate
+</I>&gt;<i> signal on the right channel.
+</I>
+This is quite good, for complex signals, we can make use of
+SoundBase::Write_stereo().
+
+&gt;<i> Fldigi can work with SDR, and in fact I have used it with a Softrock
+</I>&gt;<i> RXTXv6.1 kit that I built some time ago.  The I/Q signals were
+</I>&gt;<i> demodulated by sdr-core (dttsp), which was managed by a frontend like
+</I>&gt;<i> java-sdr.  Fldigi received the demodulated audio from dttsp via JACK.
+</I>
+IMHO, we can do away with the sdr-core. Not to say that sdr-core has no
+game to play with fldigi (it is fact quite impressive), but its setup
+is too complicated for no added value when you just want to do digi modes.
+
+FYI, I've just integrated Si570 AVR-USB support in Hamlib...
+
+&gt;<i> It would be feasible to add stereo back, but I don't think we have
+</I>&gt;<i> anything in fldigi that can receive or generate quadrature signals.
+</I>&gt;<i> How do you envision using the 2-channel audio?
+</I>
+The Dream DRM[1] is quite interesting. This GPL project has sample code[2]
+which does complex-&gt;real signals on input and real-&gt;complex on output. 
+Code of interest is in CReceiveData::ProcessDataInternal() (~line 240),
+in the &quot;switch(eInChanSelection)&quot;. The transmit side is in 
+CTransmitData::ProcessDataInternal(), begining of the file.
+
+Back to fldigi, I was thinking about doing the conversion in
+src/trx/trx.cxx: trx_trx_receive_loop() upon the call to scard-&gt;Read()
+and in src/trx/modem.cxx: modem::ModulateXmtr() on the output way.
+Wrapping the conversion in a class might be a good idea.
+
+Now, while I can whip up a patch for the conversion, I'm missing 
+the stereo input, unless that was the purpose of this mysterious
+commit ecf1f101a2011695e642a105897e451ec893b47c, back in july...
+
+[1] <A HREF="http://drm.sourceforge.net">http://drm.sourceforge.net</A>
+[2] <A HREF="http://drm.svn.sourceforge.net/viewvc/drm/dream/src/DRMSignalIO.cpp?view=markup">http://drm.svn.sourceforge.net/viewvc/drm/dream/src/DRMSignalIO.cpp?view=markup</A>
+[3] <A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=ecf1f101a2011695e642a105897e451ec893b47c">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=ecf1f101a2011695e642a105897e451ec893b47c</A>
+
+Comments, thoughts, feedback welcome.
+
+Amicalement
+-- 
+Stephane - F8CFE
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000105.html">commits pushed to pu/df
+</A></li>
+	<LI>Next message: <A HREF="000107.html">I/Q signals in fldigi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#106">[ date ]</a>
+              <a href="thread.html#106">[ thread ]</a>
+              <a href="subject.html#106">[ subject ]</a>
+              <a href="author.html#106">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

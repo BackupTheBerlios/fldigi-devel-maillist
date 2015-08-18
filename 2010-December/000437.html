@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 4f6c4aae40ee37fe5342f57a2a06d0ea8c78b6ae
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%204f6c4aae40ee37fe5342f57a2a06d0ea8c78b6ae&In-Reply-To=%3C20101224125314.ACBC6480270%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000436.html">
+   <LINK REL="Next"  HREF="000438.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 4f6c4aae40ee37fe5342f57a2a06d0ea8c78b6ae</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%204f6c4aae40ee37fe5342f57a2a06d0ea8c78b6ae&In-Reply-To=%3C20101224125314.ACBC6480270%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 4f6c4aae40ee37fe5342f57a2a06d0ea8c78b6ae">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Fri Dec 24 13:53:13 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000436.html">3.21.0AR pushed to berlios/pu/df
+</A></li>
+        <LI>Next message: <A HREF="000438.html">[GIT] fldigi branch, maint/3.20,	updated: 040d42ba5fb0f56d81278787ec15f80a42f77800
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#437">[ date ]</a>
+              <a href="thread.html#437">[ thread ]</a>
+              <a href="subject.html#437">[ subject ]</a>
+              <a href="author.html#437">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  4f6c4aae40ee37fe5342f57a2a06d0ea8c78b6ae (commit)
+       via  99f977cd28073a92394d2de5b166c709fa9efe55 (commit)
+       via  685ffc38c475e4b320f89c6df6eb5690841fb790 (commit)
+       via  425c6bf4cf5ca5825080c7021e94c2285e8536d9 (commit)
+       via  09c9569b4ef5455245fc90ef96eacff0357a9493 (commit)
+       via  fa165cc768d22c24b8840ac3c1ccbb45601828e2 (commit)
+       via  9b8fdd864fbd0448549d68ac03425a983c339407 (commit)
+       via  81ebe8173668ca0eedae9e34d0abc338132fb2fe (commit)
+       via  eb0afbbc31b582e6112af231c9af6ff1d1bd79b8 (commit)
+      from  2260b5f6ded580c4b2e4826490b6c1074d76c4fb (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=4f6c4aae40ee37fe5342f57a2a06d0ea8c78b6ae">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=4f6c4aae40ee37fe5342f57a2a06d0ea8c78b6ae</A>
+
+commit 4f6c4aae40ee37fe5342f57a2a06d0ea8c78b6ae
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Dec 24 06:51:26 2010 -0600
+
+    Version 3.21.0AR
+    
+      Alpha release
+
+ 2 files changed, 16 insertions(+), 2 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                               |   16 +-
+ configure.ac                            |    2 +-
+ doc/fldigi.1.txt                        |    4 +-
+ doc/guide.txt                           |    9 +-
+ src/Makefile.am                         |    2 +
+ src/dialogs/Viewer.cxx                  |  430 ++++++++---------------------
+ src/dialogs/confdialog.cxx              |  269 +++++++++++--------
+ src/dialogs/confdialog.fl               |  257 ++++++++++--------
+ src/dialogs/fl_digi.cxx                 |  455 ++++++++++++++++++++++---------
+ src/dialogs/guide.cxx                   |    2 +-
+ src/dialogs/notifydialog.cxx            |    2 +-
+ src/dialogs/notifydialog.fl             |   23 +-
+ src/include/Fl_Tile_Check.h             |   13 +-
+ src/include/Viewer.h                    |   20 +-
+ src/include/confdialog.h                |    4 +-
+ src/include/configuration.h             |   15 +-
+ src/include/fl_digi.h                   |   15 +-
+ src/include/fldigi-config.h             |    2 +-
+ src/include/globals.h                   |    3 +
+ src/include/macros.h                    |    5 +-
+ src/include/modem.h                     |    1 +
+ src/include/psk_browser.h               |   68 +++++
+ src/include/pskeval.h                   |    5 +-
+ src/include/status.h                    |    4 +
+ src/include/viewpsk.h                   |   97 ++++---
+ src/misc/lookupcall.cxx                 |   16 +
+ src/misc/macros.cxx                     |   23 +-
+ src/misc/status.cxx                     |   60 ++++-
+ src/psk/psk.cxx                         |    8 +-
+ src/psk/pskeval.cxx                     |   67 ++++-
+ src/psk/viewpsk.cxx                     |  323 +++++++++++++----------
+ src/rsid/rsid.cxx                       |   10 +-
+ src/spot/pskrep.cxx                     |    2 +-
+ src/trx/modem.cxx                       |   42 +++
+ src/waterfall/waterfall.cxx             |   29 +--
+ src/widgets/FTextRXTX.cxx               |   29 ++-
+ src/widgets/Fl_Text_Display_mod_1_1.cxx |    5 +-
+ src/widgets/Fl_Text_Display_mod_1_3.cxx |    5 +-
+ src/widgets/Fl_Tile_Check.cxx           |  210 ++++++++++++++-
+ src/widgets/psk_browser.cxx             |  298 ++++++++++++++++++++
+ 40 files changed, 1895 insertions(+), 955 deletions(-)
+  58.9% src/dialogs/
+   6.7% src/include/
+  12.8% src/psk/
+  14.8% src/widgets/
+   5.1% src/
+ create mode 100644 src/include/psk_browser.h
+ create mode 100644 src/widgets/psk_browser.cxx
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000436.html">3.21.0AR pushed to berlios/pu/df
+</A></li>
+	<LI>Next message: <A HREF="000438.html">[GIT] fldigi branch, maint/3.20,	updated: 040d42ba5fb0f56d81278787ec15f80a42f77800
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#437">[ date ]</a>
+              <a href="thread.html#437">[ thread ]</a>
+              <a href="subject.html#437">[ subject ]</a>
+              <a href="author.html#437">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

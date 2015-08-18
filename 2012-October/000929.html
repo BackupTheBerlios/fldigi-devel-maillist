@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Cross-compiling fldigi under Linux with mingw32
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Cross-compiling%20fldigi%20under%20Linux%20with%20mingw32&In-Reply-To=%3C50919CB5.4090401%40isnix.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000928.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Cross-compiling fldigi under Linux with mingw32</H1>
+    <B>Thomas 'tom' Malkus</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Cross-compiling%20fldigi%20under%20Linux%20with%20mingw32&In-Reply-To=%3C50919CB5.4090401%40isnix.de%3E"
+       TITLE="Cross-compiling fldigi under Linux with mingw32">tom at isnix.de
+       </A><BR>
+    <I>Wed Oct 31 22:48:37 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000928.html">Cross-compiling fldigi under Linux with mingw32
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#929">[ date ]</a>
+              <a href="thread.html#929">[ thread ]</a>
+              <a href="subject.html#929">[ subject ]</a>
+              <a href="author.html#929">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Dave,
+
+Am 31.10.2012 17:35, schrieb w1hkj:
+&gt;<i> A small bulb ... I build on Ubuntu 11.10 ... no change in mingw32
+</I>&gt;<i> environment since change to fltk-1.3.0
+</I>
+I installed Ubuntu 11.10 and all the stuff from 
+<A HREF="https://fedorahosted.org/fldigi/wiki/Documentation/HOWTO/BuildOnMinGW">https://fedorahosted.org/fldigi/wiki/Documentation/HOWTO/BuildOnMinGW</A>
+
+All the settings are the same, but ...
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">tom at ubuntu</A>:~/projects/linux/fl/fldigi$ make [...]
+
+dialogs/fl_digi.cxx: In function &#8216;void ztimer(void*)&#8217;:
+dialogs/fl_digi.cxx:2101: error: &#8216;gmtime_r&#8217; was not declared in this scope
+dialogs/fl_digi.cxx: In function &#8216;void note_qrg(bool, const char*, const 
+char*, trx_mode, long long int, int)&#8217;:
+dialogs/fl_digi.cxx:6659: error: &#8216;gmtime_r&#8217; was not declared in this scope
+
+Okay, I have found the problem:
+
+The 'BuildOnMinGW' says to use the latest pthread lib. The latest 
+version is pthread-w32-2.9.1, created at 5/27/12. This lib has no 
+gmtime_r and localtime_r.
+
+Go back to pthreads-w32 release 1.11 both functions are implemented. I 
+don't know, why that functions not present at the latest version of 
+pthread. The HOWTO should be corrected.
+
+The Linux version never has a problem to compile, now I can create also 
+windows executable. Fldigi 3.22.0CH compiles fine!
+
+I added a quick and dirty hack to fldigi to use the hamlib/rigctld 
+command 'b' to send morse code. At the moment, I send char after char, 
+this results in spaces between every sending char, that's not good. So I 
+think, I have to use a message buffer and send after a CR or so. I will 
+try this next days, if I have time ;-)
+
+Could this be interesting for other users?
+
+73, Tom, DL7BJ
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/pkcs7-signature
+Size: 3872 bytes
+Desc: S/MIME Kryptografische Unterschrift
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20121031/2ea6737e/attachment-0001.bin">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20121031/2ea6737e/attachment-0001.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000928.html">Cross-compiling fldigi under Linux with mingw32
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#929">[ date ]</a>
+              <a href="thread.html#929">[ thread ]</a>
+              <a href="subject.html#929">[ subject ]</a>
+              <a href="author.html#929">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

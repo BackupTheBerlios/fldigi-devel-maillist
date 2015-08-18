@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.21.35AA posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.35AA%20posted&In-Reply-To=%3C4F04C243.5020606%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000779.html">
+   <LINK REL="Next"  HREF="000792.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.21.35AA posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.35AA%20posted&In-Reply-To=%3C4F04C243.5020606%40bellsouth.net%3E"
+       TITLE="fldigi-3.21.35AA posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Wed Jan  4 22:18:59 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000779.html">Special test request
+</A></li>
+        <LI>Next message: <A HREF="000792.html">fldigi-3.21.35AA posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#791">[ date ]</a>
+              <a href="thread.html#791">[ thread ]</a>
+              <a href="subject.html#791">[ subject ]</a>
+              <a href="author.html#791">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>source, windows setup, and os x dmg files posted at
+
+<A HREF="http://www.w1hkj.com/trials-1.3.0/src/">http://www.w1hkj.com/trials-1.3.0/src/</A>
+
+<A HREF="http://www.w1hkj.com/trials-1.3.0/win/">http://www.w1hkj.com/trials-1.3.0/win/</A>
+
+<A HREF="http://www.w1hkj.com/trials-1.3.0/osx/">http://www.w1hkj.com/trials-1.3.0/osx/</A>
+
+Includes the following changes:
+
+   Text visible
+     * Test for bottom of text visibility when adding characters
+       to a text view or edit buffer (Rx/Tx) but not from keyboard
+
+   Text edit dnd
+     * Corrected faulty logic in handle_dnd for dragging file from
+       file manager view to editor widget
+       - SHIFT-dnd places object name into target widget
+       - dnd places object contents into target widget
+       - dnd multiple objects concatenates contents into target widget
+
+   Text top-bottom margins
+     * Added 1_3 margin adjuster
+     * Removed horizontal scroll when word wrap enabled
+     * Set vertical scroll to always visible - prevents
+       unnecessary reformating of text when scroll bar
+       goes from hidden to visible
+
+   Tune abort
+     * Added code to restore tune button to off / colors when
+       sound card right channel change interrupts transmit cycle
+
+   Align compiler warning
+     * Added conditional compilation for 1_3 widget library
+
+This version is running about 4 to 6 % cpu usage on my dual core Intel 
+(not a very fast cpu).  DnD now successfully allows dragging multiple 
+files from a file explorer to the Tx box.  Tested on Linux, Vista and OS X
+
+In windows
+Dave
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120104/34e7095a/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120104/34e7095a/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000779.html">Special test request
+</A></li>
+	<LI>Next message: <A HREF="000792.html">fldigi-3.21.35AA posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#791">[ date ]</a>
+              <a href="thread.html#791">[ thread ]</a>
+              <a href="subject.html#791">[ subject ]</a>
+              <a href="author.html#791">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi notifications/alerts
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20notifications/alerts&In-Reply-To=%3C873a9i4zgc.wl%40obsidian.enotty.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000025.html">
+   <LINK REL="Next"  HREF="000027.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi notifications/alerts</H1>
+    <B>Stelios Bounanos</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20notifications/alerts&In-Reply-To=%3C873a9i4zgc.wl%40obsidian.enotty.net%3E"
+       TITLE="Fldigi notifications/alerts">m0gld at enotty.net
+       </A><BR>
+    <I>Mon Jun 29 21:22:43 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000025.html">xmlrpc mods pushed to pu/df
+</A></li>
+        <LI>Next message: <A HREF="000027.html">forced commit to pu/df
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#26">[ date ]</a>
+              <a href="thread.html#26">[ thread ]</a>
+              <a href="subject.html#26">[ subject ]</a>
+              <a href="author.html#26">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;&gt;&gt;&gt;&gt;<i> On Mon, 29 Jun 2009 08:23:51 -0400, Ed &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">autek2 at gmail.com</A>&gt; said:
+</I>
+&gt;<i> 1. Is there a way to grab the information from an external application,
+</I>&gt;<i> such as a DXcluster ?  In other words if I select DXCC entity and Not
+</I>&gt;<i> worked before, if a DX spot for an entity not in my log is spotted on
+</I>&gt;<i> the cluster, can that trigger the alert ?
+</I>
+There is currently no way to receive this information from external
+applications, only decoded signals.
+
+To implement this, I would probably add a new XML-RPC call that external
+programs can use to send callsigns to fldigi.  Fldigi would then pretend
+that it heard the callsign on the air and notify the user, but of course
+_not_ send anything to psk reporter or any other external services.
+
+On the other hand, an external program that listens to the DX cluster
+could also do the rest of the work by accessing the adif logbook and
+cty.dat (etc.) files.  And then fldigi could limit itself to filtering
+duplicates and send the &quot;spots&quot; to that program for processing and
+notification.  Even better if that program did its own dup filtering,
+then we'd just feed it callsigns as they came in.
+
+The other way of course is for fldigi to do everything itself.  I
+personally know very little about DX clusters and likely won't have
+time to write any kind of cluster access code for fldigi in the near
+future, even if we decide that it's a good idea and not &quot;feature creep&quot;
+:<i>-)
+</I>
+
+I think we need an generic aggregator/notifier suited to hamradio
+(hamgregator? :) that can do at least the following:
+
+1) Interface with fldigi (and maybe also other programs) to receive
+   callsigns.  Also other sources like DX clusters.
+
+2) Access the user's logbook, either directly or via some kind of
+   RPC.  Also the cty.dat, lotw, eqsl databases.
+
+3) Notify the user when something interesting happens.
+
+It might also be capable of doing other things with the information.
+For example, send it to a DX cluster (if it didn't originate from that
+type of source), or PSK reporter, or twitter, or... see bad ASCII art
+below.
+
+And of course it should be free software and run on POSIX systems!
+
+If we wrote a helper program like that to distribute with fldigi, it
+would probably have to be written in FLTK and C++, given that on some
+systems (ahem) there are usually no scripting languages installed.  But
+a separate program could easily require a perl or python runtime, or
+even be a web service.
+
+
+
+	   +--------+	     +------------+      +---------------+
+           | fldigi |        | dx cluster |      | other sources |
+	   +--------+	     +------------+      +---------------+
+		 .		       .       		   .
+		 ...................   .       		   .
+				   .   .       		   .
+	  +---------+		   .   .       		   .
+          | logbook |.........	   .   .       		   .
+	  +---------+	     .	   +------------+	   .
+			     ......| aggregator	|...........
+	  +---------+	     ......| notifier  	|
+          | cty.dat |.........     +------------+--------------+
+          | lotw    |		    |	      |		       |
+          | eqsl    |		    |	      |		       |
+          | ...     |		    |	      |		       |
+	  +---------+		    |	      |		       |
+				    v	      v		       v
+                         +--------------+   +-----------+   +-------+
+                         | psk reporter |   | dx cluster|   | alert |
+                         +--------------+   +-----------+   +-------+
+
+
+Stelios.
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000025.html">xmlrpc mods pushed to pu/df
+</A></li>
+	<LI>Next message: <A HREF="000027.html">forced commit to pu/df
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#26">[ date ]</a>
+              <a href="thread.html#26">[ thread ]</a>
+              <a href="subject.html#26">[ subject ]</a>
+              <a href="author.html#26">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

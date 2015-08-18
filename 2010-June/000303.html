@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi and QSK
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20and%20QSK&In-Reply-To=%3C1275806344.4367.13.camel%40linuxpc9.mylocaldomain.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000302.html">
+   <LINK REL="Next"  HREF="000304.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi and QSK</H1>
+    <B>Wolfgang Buesser</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20and%20QSK&In-Reply-To=%3C1275806344.4367.13.camel%40linuxpc9.mylocaldomain.com%3E"
+       TITLE="fldigi and QSK">wolfgang.buesser at web.de
+       </A><BR>
+    <I>Sun Jun  6 08:39:04 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000302.html">[GIT] fldigi branch, master,	updated: 6b9be6d96683da6f8a9cfb7c79bd95776b92b95f
+</A></li>
+        <LI>Next message: <A HREF="000304.html">fldigi error ubuntu 10.04
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#303">[ date ]</a>
+              <a href="thread.html#303">[ thread ]</a>
+              <a href="subject.html#303">[ subject ]</a>
+              <a href="author.html#303">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I have some progress:
+
+&gt;&gt;<i> 2) In order to use the CW-filters of my RIG I need to modify the
+</I>&gt;&gt;<i> modes-menu (the FT980 has a single knob controling modes and filters)
+</I>&gt;&gt;<i>   
+</I>&gt;<i>You will need to modify either the hamlib.cxx or rigio.cxx (and the 
+</I>&gt;<i>FT980 xml file)
+</I>
+In fact I reactivated the PBwidth control which I found to be prepared
+in the code but look strangely abandoned to me.
+
+&gt;&gt;<i>You will need to modify either the hamlib.cxx or rigio.cxx (and the 
+</I>&gt;&gt;<i>FT980 xml file)
+</I>
+Are these xml-files also relevant to HAMLIB or only RIGCAT?
+
+&gt;<i>Do you want to use machine generated CW?  You might want to consider 
+</I>&gt;<i>interfacing fldigi to the cw demon that is available for linux.
+</I>&gt;<i>Unless 
+</I>&gt;<i>you are running a real time linux kernal you will find that is 
+</I>&gt;<i>impossible to create accurate timing for the QSK keying.  That is the 
+</I>&gt;<i>reason that fldigi uses the J2A approach to CW. 
+</I>
+I still do not quite understand the problem:
+On the scope the envelope of right-channel audio and left-channel audio
+look pretty much the same. When I activate QSK, right channel audio
+sticks to 1kHz, while left channel audio changes according to the
+RX-setting.
+So to me the only difference between A1A and J2A should be in the
+transformation audio-envelope-&gt;keying. This is purley a hardware issue
+of my interface and the xcvr. What do I miss?
+
+&gt;&gt;<i> BTW: It seems fldigi cannot use HAMLIB to control PTT via RTS.
+</I>&gt;&gt;<i> As a workaround I have fldigi control RTS directly, but it would be
+</I>more
+&gt;&gt;<i> logical to entirly control the hardware via HAMLIB. Is there a
+</I>&gt;&gt;<i> fundamental reason for this?
+</I>&gt;&gt;<i>   
+</I>&gt;<i>You will need to take a look at the hamlib backend for the FT980.  PTT 
+</I>&gt;<i>via RTS does work with either hamlib or rigcat so long as it is not 
+</I>&gt;<i>prohibited by the transceiver backend code.
+</I>
+Stephane (F8CFE) seems to expect the problem to be solved on the
+fldigi-side (quote from the HAMLIB-developer mailing-list):
+  In fact, fldigi needs some fixing because the case where a hamlib
+  backend has RIG_PTT_SERIAL_RTS is not handled properly. Until
+  the fix is made available, you can set ptt_type to RIG_PTT_NONE,
+  and use the RTS PTT in fldigi as a temporary workaround.
+
+Can you point me to a HAMLIB-backend with PTT-RTS control, that is none
+to cooperate with fldigi? I will have a closer look at the issue than.
+
+Thanks 
+
+Wolfgang (DK1BW)
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000302.html">[GIT] fldigi branch, master,	updated: 6b9be6d96683da6f8a9cfb7c79bd95776b92b95f
+</A></li>
+	<LI>Next message: <A HREF="000304.html">fldigi error ubuntu 10.04
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#303">[ date ]</a>
+              <a href="thread.html#303">[ thread ]</a>
+              <a href="subject.html#303">[ subject ]</a>
+              <a href="author.html#303">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

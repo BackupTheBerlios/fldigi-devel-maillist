@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [fldigi] #14: crash
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5Bfldigi%5D%20%2314%3A%20crash&In-Reply-To=%3C065.9b3502cecf2281be08151bc45dc8ac86%40fedorahosted.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000280.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[fldigi] #14: crash</H1>
+    <B>fldigi</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5Bfldigi%5D%20%2314%3A%20crash&In-Reply-To=%3C065.9b3502cecf2281be08151bc45dc8ac86%40fedorahosted.org%3E"
+       TITLE="[fldigi] #14: crash">trac at fedorahosted.org
+       </A><BR>
+    <I>Fri Apr 30 04:51:43 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000280.html">pushed to pu/df
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#281">[ date ]</a>
+              <a href="thread.html#281">[ thread ]</a>
+              <a href="subject.html#281">[ subject ]</a>
+              <a href="author.html#281">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>#14: crash
+-----------------------------------+----------------------------------------
+ Reporter:  <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">shaneblaser at gmail.com</A>  |        Type:  defect
+   Status:  new                    |   Milestone:        
+Component:  general                |     Version:        
+ Severity:  normal                 |    Keywords:        
+-----------------------------------+----------------------------------------
+ could be from a newer version of libc ...
+
+ ****** Stack trace:
+ ./fldigi[0x8133a81]
+ [0xb787b400]
+ ./fldigi[0x81fb19d]
+ ./fldigi[0x80f935f]
+ /lib/tls/i686/cmov/libc.so.6(__libc_start_main+0xe6)[0xb71c8b56]
+ ./fldigi[0x8053551]
+
+ ****** Version information:
+ fldigi 3.20.0bB
+ Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, and
+ others.
+ License GPLv3+: GNU GPL version 3 or later
+ &lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+ This is free software: you are free to change and redistribute it.
+ There is NO WARRANTY, to the extent permitted by law.
+
+ ****** Build information:
+ Build information:
+   built          : Tue Apr 27 08:41:58 CDT 2010 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev</A> on i686
+ -pc-linux-gnu for i686-pc-linux-gnu
+
+   configure flags: '--enable-static' '--without-asciidoc' '--disable-tls'
+ '--prefix=/tmp/fldigi-build'
+
+   compiler       : gcc version 4.3.3 (Ubuntu 4.3.3-5ubuntu4)
+
+   compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+ -I$(srcdir)/fileselector -pthread -I/usr/local/include
+ -I/usr/local/include -I/usr/include/freetype2 -D_THREAD_SAFE -D_REENTRANT
+ -I/usr/local/include -D_REENTRANT -I/usr/local/include
+ -I/usr/include/libpng12 -I/usr/local/include -pipe -Wall -fexceptions -O2
+ -ffast-math -finline-functions -DNDEBUG
+
+   linker flags   : -L/usr/local/lib -lportaudio -lm -lpthread
+ /usr/local/lib/libfltk_images.a -lpng -lz -ljpeg /usr/local/lib/libfltk.a
+ -lXft -lpthread -ldl -lm -lXext -lX11 -lX11 -L/usr/local/lib -lsndfile
+ -lsamplerate -lpulse-simple -lpulse -L/usr/local/lib -lhamlib -lm -lpng12
+ -Wl,-Bstatic -L/usr/local/lib -lxmlrpc_server_abyss++ -lxmlrpc_server++
+ -lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss -lpthread -lxmlrpc++
+ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -Wl,-Bdynamic
+ -ldl -lrt -lpthread
+
+   libraries      : FLTK 1.2.0
+                    libsamplerate 0.1.4
+                    libsndfile 1.0.21
+                    PortAudio 19
+                    PulseAudio 0.9.14
+                    Hamlib 1.2.10
+                    XMLRPC-C 1.06.31
+
+
+ Runtime information:
+   system         : Linux serverone 2.6.31-20-generic-pae #58-Ubuntu SMP
+ Fri Mar 12 06:25:51 UTC 2010 i686
+
+   libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                    libsndfile-1.0.20
+                    PortAudio V19-devel (built Jun 20 2009 13:28:51) 1899
+                    Pulseaudio 0.9.19
+                    Hamlib version 1.2.9
+
+-- 
+Ticket URL: &lt;<A HREF="https://fedorahosted.org/fldigi/ticket/14">https://fedorahosted.org/fldigi/ticket/14</A>&gt;
+fldigi &lt;<A HREF="http://www.w1hkj.com/Fldigi.html">http://www.w1hkj.com/Fldigi.html</A>&gt;
+Digital modem program for radio amateurs
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000280.html">pushed to pu/df
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#281">[ date ]</a>
+              <a href="thread.html#281">[ thread ]</a>
+              <a href="subject.html#281">[ subject ]</a>
+              <a href="author.html#281">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

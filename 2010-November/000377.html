@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> changes for consideration pushed to berlios/pu/df
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20changes%20for%20consideration%20pushed%20to%20berlios/pu/df&In-Reply-To=%3C4CD82791.8040100%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000376.html">
+   <LINK REL="Next"  HREF="000380.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>changes for consideration pushed to berlios/pu/df</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20changes%20for%20consideration%20pushed%20to%20berlios/pu/df&In-Reply-To=%3C4CD82791.8040100%40bellsouth.net%3E"
+       TITLE="changes for consideration pushed to berlios/pu/df">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Mon Nov  8 17:38:41 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000376.html">notes from Sweepstakes for fldigi
+</A></li>
+        <LI>Next message: <A HREF="000380.html">changes for consideration pushed to berlios/pu/df
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#377">[ date ]</a>
+              <a href="thread.html#377">[ thread ]</a>
+              <a href="subject.html#377">[ subject ]</a>
+              <a href="author.html#377">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>commit e17d7ef2208a2b3b44e46a934797e143ff03d925
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Nov 8 10:19:09 2010 -0600
+
+    QSO_DB sort order
+    
+      Corrected bug in date-time sorting of the logbook database.
+      Sort is now by DATE and TIME vice DATE and TIME_OFF
+
+commit 53038a5b254fff9dd0a4068934498ceb0e7bdf6e
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Nov 8 07:57:17 2010 -0600
+
+    Macros
+    
+      * Added CLEARLOG macro tag
+        - Inserts a ^C into the transmit text.  ^C can also be entered
+          manually.  Note that this is a two character sequence:
+          carat C, and not a control-C symbolism.
+      * Added CLRTX macro tag
+        - Inserts a ^X into the transmit text. Upon execution the entire
+          transmit buffer will be cleared.
+      * Added CLR2X macro tag
+        - Inserts a ^x into the transmit text. Upon execution the transmit
+          buffer will be cleared up to and including the current transmit
+          cursor position
+
+commit 5614a0abd5b545e773dce758856d46e6dc366d7a
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Nov 5 16:05:27 2010 -0500
+
+    Version 3.21.0AN
+
+These will also be applied to the maint/3.20 branch
+
+73, Dave, W1HKJ
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20101108/98d5c573/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20101108/98d5c573/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000376.html">notes from Sweepstakes for fldigi
+</A></li>
+	<LI>Next message: <A HREF="000380.html">changes for consideration pushed to berlios/pu/df
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#377">[ date ]</a>
+              <a href="thread.html#377">[ thread ]</a>
+              <a href="subject.html#377">[ subject ]</a>
+              <a href="author.html#377">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

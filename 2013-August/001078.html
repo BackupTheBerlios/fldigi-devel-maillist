@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fl_Table / Fltk-1.1.10
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fl_Table%20/%20Fltk-1.1.10&In-Reply-To=%3CCAPRqYUVuB1Y%2BVZg67SVn66QPkp3%2B9uB47h%2BfscusKjePSuKhxQ%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001077.html">
+   <LINK REL="Next"  HREF="001079.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fl_Table / Fltk-1.1.10</H1>
+    <B>John Phelps</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fl_Table%20/%20Fltk-1.1.10&In-Reply-To=%3CCAPRqYUVuB1Y%2BVZg67SVn66QPkp3%2B9uB47h%2BfscusKjePSuKhxQ%40mail.gmail.com%3E"
+       TITLE="Fl_Table / Fltk-1.1.10">kl4yfd at gmail.com
+       </A><BR>
+    <I>Mon Aug 19 20:28:08 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001077.html">Fwd: DSC Mode Specifications For FLDIGI -- Part 2
+</A></li>
+        <LI>Next message: <A HREF="001079.html">fldigi 3.21.74AE posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1078">[ date ]</a>
+              <a href="thread.html#1078">[ thread ]</a>
+              <a href="subject.html#1078">[ subject ]</a>
+              <a href="author.html#1078">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Dave,
+
+For testing the MFSK and THOR soft-decoder improvements on my origin/pu/jp
+branch I placed a few Test WAV files at <A HREF="http://www.bitsandbytes.info/audio/">http://www.bitsandbytes.info/audio/</A>
+
+The test files used in testing were generated using Linsim (snr) or
+Audacity (fades/CWI).
+
+The MFSK summary:
+* MFSK decoder sensitivity improved noticeably with these code-changes,
+especially when using acoustic-coupling.
+* MFSK16   -- decode at -14db snr, or with one CWI
+* MFSK128L -- decode at -6db snr, or with 1 CWI, or with multiple 3-second
+complete-fades
+* MFSK64L -- decode at -8db snr, or with 1 CWI, or with multiple 3-second
+complete-fades
+
+The THOR summary:
+* The THOR 25,50,100 FEC generator change noticeably improved
+error-correction capabilities.
+* THOR100 with New generators can correct 2 CWI carriers of interference
+* THOR100 with Old generators and 2 CWI carriers is no-decode
+* The THOR soft-doppler change provided only slight soft-decoding gains.
+
+Other Files:
+randomtext.txt -- the ASCII input to generate the WAV files
+generate-* .wav     -- the raw/perfect WAV files from fldigi before running
+through linsim/audacity
+
+Feedback and additional testing is appreciated on these changes. Hope to
+make into the next release if possible.
+
+Apologies on the upload delay, was locked out of my webserver account until
+yesterday evening.
+~ John
+KL4YFD
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130819/ee2b4782/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130819/ee2b4782/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001077.html">Fwd: DSC Mode Specifications For FLDIGI -- Part 2
+</A></li>
+	<LI>Next message: <A HREF="001079.html">fldigi 3.21.74AE posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1078">[ date ]</a>
+              <a href="thread.html#1078">[ thread ]</a>
+              <a href="subject.html#1078">[ subject ]</a>
+              <a href="author.html#1078">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

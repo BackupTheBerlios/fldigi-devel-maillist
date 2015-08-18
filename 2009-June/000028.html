@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 2cb3874555e4307f873c0b3bbafa22de6ee7f13c
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%202cb3874555e4307f873c0b3bbafa22de6ee7f13c&In-Reply-To=%3C200906301925.n5UJPLif006108%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000027.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 2cb3874555e4307f873c0b3bbafa22de6ee7f13c</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%202cb3874555e4307f873c0b3bbafa22de6ee7f13c&In-Reply-To=%3C200906301925.n5UJPLif006108%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 2cb3874555e4307f873c0b3bbafa22de6ee7f13c">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Tue Jun 30 21:25:21 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000027.html">forced commit to pu/df
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#28">[ date ]</a>
+              <a href="thread.html#28">[ thread ]</a>
+              <a href="subject.html#28">[ subject ]</a>
+              <a href="author.html#28">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  2cb3874555e4307f873c0b3bbafa22de6ee7f13c (commit)
+       via  c07ec21fc1fc1cf05f6083c7e5a607bdbd95bb73 (commit)
+       via  88bedac61f3e72a97a06539f82ca3f202164af8c (commit)
+       via  757a8f8d08d8d8cf5b07ea86db0668d1bc7512ee (commit)
+       via  cbf0d871aefb5bdaacae66c515c0414af4e83c11 (commit)
+       via  53a2820a20e697e355759fbef3cbacc552270598 (commit)
+       via  9648c3036e2fc866bcd33f0378a107bf23c4bc0b (commit)
+       via  1b474a236d5e13f24a1c1ded99826e32be7c9163 (commit)
+       via  d6d597477c5baa0943c8f325468d9ae1fc18c38e (commit)
+       via  bf4cea41ec5b73d92acd1848b3569e19939f4d0e (commit)
+       via  e803fcd82eb54b332a8e7e6fee3e128856cbe74a (commit)
+       via  ec26eb633451f4c5cd8f65c6c35857c05e96d922 (commit)
+       via  8283833124a96823fccd99922855814b53795dd2 (commit)
+       via  d70ea69254947ddd770fb16c69b0c611e6b6b06c (commit)
+       via  f25b5d1c728c4d37abbab5416914fa938d6310a2 (commit)
+       via  d11f6fe0eee72857e2c903f55d59c26e69fe5df6 (commit)
+       via  3bad2d4b7f294908659f68ba52e1c1cb70f07450 (commit)
+      from  3c53fe548df63e431dd69df033b8d19a6a1df08b (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit 2cb3874555e4307f873c0b3bbafa22de6ee7f13c
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Jun 30 14:24:29 2009 -0500
+
+    Version 3.12AL
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ configure.ac                        |    8 +-
+ src/Makefile.am                     |    9 +-
+ src/dialogs/confdialog.cxx          |   22 +
+ src/dialogs/confdialog.fl           |   29 +-
+ src/dialogs/fl_digi.cxx             |   21 +-
+ src/dialogs/notifydialog.cxx        |  321 ++++++++
+ src/dialogs/notifydialog.fl         |  199 +++++
+ src/include/FTextView.h             |    3 +-
+ src/include/Fl_Text_Display_mod.H   |    6 +
+ src/include/dxcc.h                  |    5 +
+ src/include/flmisc.h                |   27 +
+ src/include/icons.h                 |    1 +
+ src/include/logsupport.h            |    3 +
+ src/include/macroedit.h             |    3 +-
+ src/include/macros.h                |    2 +
+ src/include/notify.h                |   10 +
+ src/include/notifydialog.h          |   55 ++
+ src/include/pixmaps.h               |    5 +
+ src/include/pskrep.h                |    7 +
+ src/include/re.h                    |   39 +-
+ src/include/rigsupport.h            |    1 +
+ src/include/spot.h                  |    6 +-
+ src/include/strutil.h               |  119 +++
+ src/include/util.h                  |   11 +
+ src/logbook/logsupport.cxx          |   84 ++-
+ src/logbook/table.cxx               |   26 +-
+ src/main.cxx                        |   16 +-
+ src/misc/dxcc.cxx                   |   68 ++-
+ src/misc/locator.c                  |    2 +-
+ src/misc/macroedit.cxx              |  105 ++--
+ src/misc/macros.cxx                 |   26 +-
+ src/misc/pixmaps.cxx                |  375 +++++++++-
+ src/misc/re.cxx                     |   21 +-
+ src/misc/stacktrace.cxx             |   10 +-
+ src/misc/strutil.cxx                |   41 +
+ src/misc/util.cxx                   |   65 ++
+ src/misc/xmlrpc.cxx                 |  273 +++++++-
+ src/rigcontrol/FreqControl.cxx      |   15 +-
+ src/rigcontrol/rigsupport.cxx       |   18 +-
+ src/spot/notify.cxx                 | 1461 +++++++++++++++++++++++++++++++++++
+ src/spot/pskrep.cxx                 |   46 +-
+ src/spot/spot.cxx                   |  147 +++--
+ src/widgets/FTextRXTX.cxx           |   49 +-
+ src/widgets/FTextView.cxx           |  107 ++-
+ src/widgets/Fl_Text_Display_mod.cxx |   15 +-
+ src/widgets/Fl_Tile_Check.cxx       |    4 +-
+ src/widgets/flinput2.cxx            |   11 +
+ src/widgets/flmisc.cxx              |  121 +++
+ 48 files changed, 3714 insertions(+), 304 deletions(-)
+ create mode 100644 src/dialogs/notifydialog.cxx
+ create mode 100644 src/dialogs/notifydialog.fl
+ create mode 100644 src/include/notify.h
+ create mode 100644 src/include/notifydialog.h
+ create mode 100644 src/include/strutil.h
+ create mode 100644 src/misc/strutil.cxx
+ create mode 100644 src/spot/notify.cxx
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000027.html">forced commit to pu/df
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#28">[ date ]</a>
+              <a href="thread.html#28">[ thread ]</a>
+              <a href="subject.html#28">[ subject ]</a>
+              <a href="author.html#28">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

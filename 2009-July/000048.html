@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Macro Variable patch
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Macro%20Variable%20patch&In-Reply-To=%3C4A6C328F.3080001%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000047.html">
+   <LINK REL="Next"  HREF="000049.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Macro Variable patch</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Macro%20Variable%20patch&In-Reply-To=%3C4A6C328F.3080001%40bellsouth.net%3E"
+       TITLE="Macro Variable patch">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Sun Jul 26 12:40:15 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000047.html">3.13AA macro variables off by one (or more)
+</A></li>
+        <LI>Next message: <A HREF="000049.html">[GIT] fldigi branch, master,	updated: e1daa1dba37e3cdc299ccd96860a8bed3eabacfd
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#48">[ date ]</a>
+              <a href="thread.html#48">[ thread ]</a>
+              <a href="subject.html#48">[ subject ]</a>
+              <a href="author.html#48">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Pushed to berlios/pu/df
+
+commit ebcbbe93446e058e7f78fc36ae4b54be4efb076c
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Jul 26 05:36:26 2009 -0500
+
+    Macro Variable bug fix
+   
+        submitted by Leigh Klotz, WA5ZNU
+
+diff --git a/src/misc/macros.cxx b/src/misc/macros.cxx
+index d9d386d..27eda6a 100644
+--- a/src/misc/macros.cxx
++++ b/src/misc/macros.cxx
+@@ -544,6 +544,9 @@ void set_macro_env(void)
+ #ifndef __WOE32__
+               PATH, FLDIGI_RX_IPC_KEY, FLDIGI_TX_IPC_KEY,
+ #endif
++              FLDIGI_XMLRPC_ADDRESS, FLDIGI_XMLRPC_PORT,
++              FLDIGI_ARQ_ADDRESS, FLDIGI_ARQ_PORT,
++
+               FLDIGI_VERSION_ENVVAR, FLDIGI_PID, FLDIGI_CONFIG_DIR,
+ 
+               FLDIGI_MY_CALL, FLDIGI_MY_NAME, FLDIGI_MY_LOCATOR,
+
+I did not cherry pick to maint/3.12
+
+Dave
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20090726/b6c6fcfd/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20090726/b6c6fcfd/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000047.html">3.13AA macro variables off by one (or more)
+</A></li>
+	<LI>Next message: <A HREF="000049.html">[GIT] fldigi branch, master,	updated: e1daa1dba37e3cdc299ccd96860a8bed3eabacfd
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#48">[ date ]</a>
+              <a href="thread.html#48">[ thread ]</a>
+              <a href="subject.html#48">[ subject ]</a>
+              <a href="author.html#48">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

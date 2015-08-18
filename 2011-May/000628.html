@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fatal error
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fatal%20error&In-Reply-To=%3C4DC1BF09.9020508%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000627.html">
+   <LINK REL="Next"  HREF="000629.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fatal error</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fatal%20error&In-Reply-To=%3C4DC1BF09.9020508%40gmail.com%3E"
+       TITLE="fatal error">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Wed May  4 23:03:05 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000627.html">fatal error
+</A></li>
+        <LI>Next message: <A HREF="000629.html">fatal error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#628">[ date ]</a>
+              <a href="thread.html#628">[ thread ]</a>
+              <a href="subject.html#628">[ subject ]</a>
+              <a href="author.html#628">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+Did you do something before getting this message or was it at startup ?
+
+By the way the string
+#define COUNTRIES_MLABEL       _(&quot;C&amp;ountries&quot;)
+
+... occurs twice in fl_digi.cxx : Maybe we could do some cleanup.
+
+
+Le 04.05.2011 08:59, Altti U. a &#233;crit :
+&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">au at mynet</A> ~ $ fldigi
+</I>&gt;<i> E: getMenuItem: FIXME: could not find menu &quot;C&amp;ountries&quot;
+</I>&gt;<i>
+</I>&gt;<i> Caught signal 11
+</I>&gt;<i> Aborting fldigi due to a fatal error.
+</I>&gt;<i> Please report this to: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+</I>&gt;<i>
+</I>&gt;<i> ****** Stack trace:
+</I>&gt;<i> fldigi[0x50adc0]
+</I>&gt;<i> /lib/libpthread.so.0(+0xef60)[0x7f0ed957af60]
+</I>&gt;<i> fldigi[0x46f18a]
+</I>&gt;<i> fldigi[0x4729b5]
+</I>&gt;<i> fldigi[0x4bc0f5]
+</I>&gt;<i> /lib/libc.so.6(__libc_start_main+0xfd)[0x7f0ed5b8cc4d]
+</I>&gt;<i> fldigi[0x415dd9]
+</I>&gt;<i>
+</I>&gt;<i> ****** Version information:
+</I>&gt;<i> fldigi 3.21.9
+</I>&gt;<i> Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi
+</I>&gt;<i> Chateauneu, and others.
+</I>&gt;<i> License GPLv3+: GNU GPL version 3 or later
+</I>&gt;<i> &lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+</I>&gt;<i> This is free software: you are free to change and redistribute it.
+</I>&gt;<i> There is NO WARRANTY, to the extent permitted by law.
+</I>&gt;<i>
+</I>&gt;<i> ****** Build information:
+</I>&gt;<i> Build information:
+</I>&gt;<i> built : Thu Apr 21 19:13:28 UTC 2011 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">pbuilder at fourier</A> on
+</I>&gt;<i> x86_64-pc-linux-gnu for x86_64-pc-linux-gnu
+</I>&gt;<i>
+</I>&gt;<i> configure flags: '--build=x86_64-linux-gnu' '--prefix=/usr'
+</I>&gt;<i> '--includedir=${prefix}/include' '--mandir=${prefix}/share/man'
+</I>&gt;<i> '--infodir=${prefix}/share/info' '--sysconfdir=/etc'
+</I>&gt;<i> '--localstatedir=/var' '--libexecdir=${prefix}/lib/fldigi'
+</I>&gt;<i> '--disable-maintainer-mode' '--disable-dependency-tracking'
+</I>&gt;<i> 'build_alias=x86_64-linux-gnu' 'CXXFLAGS=-g -O2' 'LDFLAGS=' 'CPPFLAGS='
+</I>&gt;<i> 'CFLAGS=-g -O2'
+</I>&gt;<i>
+</I>&gt;<i> compiler : gcc version 4.5.2 (Debian 4.5.2-10)
+</I>&gt;<i>
+</I>&gt;<i> compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+</I>&gt;<i> -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -pthread
+</I>&gt;<i> -I/usr/include/freetype2 -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT
+</I>&gt;<i> -I/usr/include/libpng12 -I/usr/include -pipe -Wall -fexceptions -O2
+</I>&gt;<i> -ffast-math -finline-functions -DNDEBUG
+</I>&gt;<i>
+</I>&gt;<i> linker flags : -lportaudio -lasound -lm -lpthread -lfltk_images -lfltk
+</I>&gt;<i> -lX11 -lsndfile -lsamplerate -lpulse-simple -lpulse -lhamlib -lm -lpng12
+</I>&gt;<i> -L/usr/lib -lxmlrpc_server_abyss++ -lxmlrpc_server++
+</I>&gt;<i> -lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss -lpthread
+</I>&gt;<i> -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -ldl
+</I>&gt;<i> -lrt -lpthread
+</I>&gt;<i>
+</I>&gt;<i> libraries : FLTK 1.1.10
+</I>&gt;<i> libsamplerate 0.1.7
+</I>&gt;<i> libsndfile 1.0.24
+</I>&gt;<i> PortAudio 19
+</I>&gt;<i> PulseAudio 0.9.21
+</I>&gt;<i> Hamlib 1.2.13
+</I>&gt;<i> XMLRPC-C 1.16.33
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Runtime information:
+</I>&gt;<i> system : Linux mynet 2.6.32-5-amd64 #1 SMP Wed Jan 12 03:40:32 UTC 2011
+</I>&gt;<i> x86_64
+</I>&gt;<i>
+</I>&gt;<i> libraries : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+</I>&gt;<i> libsndfile-1.0.23
+</I>&gt;<i> PortAudio V19-devel (built Apr 16 2011 18:31:04) 1899
+</I>&gt;<i> Pulseaudio 0.9.21
+</I>&gt;<i> Hamlib 1.2.13
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">au at mynet</A> ~ $
+</I>&gt;<i> LinuxMint XFCE-2 3.5.2011
+</I>&gt;<i>
+</I>&gt;<i> 73 OH2HN
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>&gt;<i>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000627.html">fatal error
+</A></li>
+	<LI>Next message: <A HREF="000629.html">fatal error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#628">[ date ]</a>
+              <a href="thread.html#628">[ thread ]</a>
+              <a href="subject.html#628">[ subject ]</a>
+              <a href="author.html#628">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

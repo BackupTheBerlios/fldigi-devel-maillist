@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: b8d5fa4363221c350018fcbe81e719784b53d70e
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20b8d5fa4363221c350018fcbe81e719784b53d70e&In-Reply-To=%3C20110107003717.E4FCC480A18%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000501.html">
+   <LINK REL="Next"  HREF="000502.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: b8d5fa4363221c350018fcbe81e719784b53d70e</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20b8d5fa4363221c350018fcbe81e719784b53d70e&In-Reply-To=%3C20110107003717.E4FCC480A18%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: b8d5fa4363221c350018fcbe81e719784b53d70e">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Fri Jan  7 01:37:16 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000501.html">fldigi-3.21.0BA posted
+</A></li>
+        <LI>Next message: <A HREF="000502.html">[GIT] fldigi branch, master,	updated: aa6106299f61f34436c34a33f5cfb3d9180b90a9
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#496">[ date ]</a>
+              <a href="thread.html#496">[ thread ]</a>
+              <a href="subject.html#496">[ subject ]</a>
+              <a href="author.html#496">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  b8d5fa4363221c350018fcbe81e719784b53d70e (commit)
+       via  141218737f27959e03f9f062b81523657074aef0 (commit)
+       via  12f0f4be48c62cb5ac31cffda58893827e5d4140 (commit)
+       via  9ec791a8a7a2fbd946d75f4832277b1d8e787307 (commit)
+       via  6a24e154c1b13fce8c1c2269fe9564c73ce34a1f (commit)
+       via  f97218bdefc98639518c122dd5195c8d37a0d89a (commit)
+      from  0dd4cec5e38a5a0d08933de4641837c135433f3f (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=b8d5fa4363221c350018fcbe81e719784b53d70e">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=b8d5fa4363221c350018fcbe81e719784b53d70e</A>
+
+commit b8d5fa4363221c350018fcbe81e719784b53d70e
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Jan 6 15:14:34 2011 -0600
+
+    Version 3.21.0BA
+    
+      Alpha release
+
+ 2 files changed, 7 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=141218737f27959e03f9f062b81523657074aef0">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=141218737f27959e03f9f062b81523657074aef0</A>
+
+commit 141218737f27959e03f9f062b81523657074aef0
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Jan 6 15:13:44 2011 -0600
+
+    Signal Browser Cosmetic
+    
+      Corrected missing 1/2 character in browser frequency / channel
+      field.
+
+ 2 files changed, 46 insertions(+), 58 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                     |    7 ++-
+ configure.ac                  |    2 +-
+ src/dialogs/confdialog.cxx    |   57 ++++++++++++++++++-----
+ src/dialogs/confdialog.fl     |   46 +++++++++++++-----
+ src/dialogs/fl_digi.cxx       |   20 ++++++--
+ src/include/confdialog.h      |    2 +
+ src/include/configuration.h   |    8 +++-
+ src/include/psk_browser.h     |    2 +-
+ src/include/status.h          |    3 +-
+ src/logbook/logsupport.cxx    |   23 +++++----
+ src/logbook/xmlrpc_log.cxx    |   35 ++++++++------
+ src/logger/logger.cxx         |    8 ++--
+ src/main.cxx                  |    4 +-
+ src/misc/status.cxx           |    8 ++--
+ src/psk/psk.cxx               |    3 +-
+ src/psk/viewpsk.cxx           |   10 ++++-
+ src/widgets/Fl_Tile_Check.cxx |    1 -
+ src/widgets/psk_browser.cxx   |  102 ++++++++++++++++++-----------------------
+ 18 files changed, 207 insertions(+), 134 deletions(-)
+  46.7% src/dialogs/
+   7.0% src/include/
+  10.7% src/logbook/
+   4.4% src/psk/
+  24.0% src/widgets/
+   4.4% src/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000501.html">fldigi-3.21.0BA posted
+</A></li>
+	<LI>Next message: <A HREF="000502.html">[GIT] fldigi branch, master,	updated: aa6106299f61f34436c34a33f5cfb3d9180b90a9
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#496">[ date ]</a>
+              <a href="thread.html#496">[ thread ]</a>
+              <a href="subject.html#496">[ subject ]</a>
+              <a href="author.html#496">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

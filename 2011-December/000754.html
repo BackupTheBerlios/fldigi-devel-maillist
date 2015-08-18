@@ -1,0 +1,220 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.21,	updated: e797bc3aec405cc1fcba435c7ff80803888edf72
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%20e797bc3aec405cc1fcba435c7ff80803888edf72&In-Reply-To=%3C20111211001232.8A41D481165%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000753.html">
+   <LINK REL="Next"  HREF="000755.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.21,	updated: e797bc3aec405cc1fcba435c7ff80803888edf72</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%20e797bc3aec405cc1fcba435c7ff80803888edf72&In-Reply-To=%3C20111211001232.8A41D481165%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.21,	updated: e797bc3aec405cc1fcba435c7ff80803888edf72">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Sun Dec 11 01:12:30 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000753.html">[GIT] fldigi branch, maint/3.21,	updated: 9e4c2fa20122f4eb0b22fee1d0ac5d5ed8fa1916
+</A></li>
+        <LI>Next message: <A HREF="000755.html">[GIT] fldigi branch, master,	updated: e37c3e42d8758a1a3e9a15cefec2842eab0fe18e
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#754">[ date ]</a>
+              <a href="thread.html#754">[ thread ]</a>
+              <a href="subject.html#754">[ subject ]</a>
+              <a href="author.html#754">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.21 has been updated
+       via  e797bc3aec405cc1fcba435c7ff80803888edf72 (commit)
+       via  a68d917066584cef38ab08bb8f88acfe18f1668f (commit)
+       via  00d4308ef94e297b1061ed39a2d818bf8c26415c (commit)
+       via  e7d5ccf0260d8cbfe7e6cdee646a116901928dde (commit)
+       via  38112d829e5ff104778118abd3288d148be25d54 (commit)
+       via  96188fa59113e74aca99a889da117b825762781c (commit)
+      from  9e4c2fa20122f4eb0b22fee1d0ac5d5ed8fa1916 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e797bc3aec405cc1fcba435c7ff80803888edf72">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e797bc3aec405cc1fcba435c7ff80803888edf72</A>
+
+commit e797bc3aec405cc1fcba435c7ff80803888edf72
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat Dec 10 15:53:33 2011 -0600
+
+    Version 3.21.33
+    
+      Maintenance release
+
+ 2 files changed, 17 insertions(+), 1 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=a68d917066584cef38ab08bb8f88acfe18f1668f">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=a68d917066584cef38ab08bb8f88acfe18f1668f</A>
+
+commit a68d917066584cef38ab08bb8f88acfe18f1668f
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Dec 9 03:41:13 2011 -0600
+
+    Right Channel audio
+    
+      * Write silence stream to right channel if not enabled
+      * Added separate tab for right channel configuration items
+      * Replicated right channel control items on the new tab.
+        Original controls on PTT, CW and RTTY tabs or the
+        replicants may be toggled to control right channel
+        operation
+      * Added check button to enable reversal of left-right audio
+        channels
+
+ 7 files changed, 336 insertions(+), 104 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=00d4308ef94e297b1061ed39a2d818bf8c26415c">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=00d4308ef94e297b1061ed39a2d818bf8c26415c</A>
+
+commit 00d4308ef94e297b1061ed39a2d818bf8c26415c
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Dec 8 08:02:34 2011 -0600
+
+    WEFAX update
+    
+      * When changing wefax slant, prompts to save configuration on exit.
+      * Changed wefaxNNN to wefaxNNN_modem
+      * Changed sample rate initialization
+      * Fixed prototype for wefax::getfile
+      * Fixed logging of fax images.
+
+ 6 files changed, 26 insertions(+), 62 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e7d5ccf0260d8cbfe7e6cdee646a116901928dde">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e7d5ccf0260d8cbfe7e6cdee646a116901928dde</A>
+
+commit e7d5ccf0260d8cbfe7e6cdee646a116901928dde
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt;
+Date:   Sat Dec 3 10:07:02 2011 +0000
+
+    Modem class update
+    
+      * get_xxx methods declared const where appropriate
+      * Simple get_xxx methods inlined for better performances and smaller code.
+
+ 2 files changed, 18 insertions(+), 47 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=38112d829e5ff104778118abd3288d148be25d54">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=38112d829e5ff104778118abd3288d148be25d54</A>
+
+commit 38112d829e5ff104778118abd3288d148be25d54
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt;
+Date:   Sat Dec 3 10:10:08 2011 +0000
+
+    QsoRec comparisons
+    
+      * Added cQsoRec::setDateTime and setFrequency with specific format.
+      * compareTimes, compareDates and compareModes twice faster.
+
+ 3 files changed, 88 insertions(+), 77 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=96188fa59113e74aca99a889da117b825762781c">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=96188fa59113e74aca99a889da117b825762781c</A>
+
+commit 96188fa59113e74aca99a889da117b825762781c
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Dec 6 09:11:17 2011 -0600
+
+    WARN status colors
+    
+      * Added user selectable colors for level indicator (diamond below wf)
+        - Low    - nominal BLACK, signal &lt; 0.05
+        - Normal - nominal GREEN, 0.05 &lt;= signal &lt; 0.9
+        - High   - nominal YELLOW, 0.9 &lt;= 0.9 &lt; 0.98
+        - Over   - nominal RED, signal &gt;= 0.98
+        signal is the peak audio value % of maximium for the sound
+        card in use.
+      * Note that this level is for the composite of all signals within the
+        passband and not just for signal being decoded.
+
+ 5 files changed, 265 insertions(+), 106 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                   |   16 ++++
+ configure.ac                |    2 +-
+ src/dialogs/colorsfonts.cxx |  178 +++++++++++++++++++++++++++++++------------
+ src/dialogs/colorsfonts.fl  |  159 ++++++++++++++++++++++++++------------
+ src/dialogs/confdialog.cxx  |  173 ++++++++++++++++++++++++++++++++++--------
+ src/dialogs/confdialog.fl   |  153 +++++++++++++++++++++++++++++--------
+ src/dialogs/fl_digi.cxx     |   14 ++--
+ src/globals/globals.cxx     |    4 +-
+ src/include/colorsfonts.h   |    8 ++
+ src/include/confdialog.h    |    7 ++-
+ src/include/configuration.h |   21 +++++-
+ src/include/modem.h         |   34 +++++----
+ src/include/qso_db.h        |    8 +-
+ src/include/soundconf.h     |    1 -
+ src/include/wefax.h         |    6 +-
+ src/logbook/logsupport.cxx  |   20 ++---
+ src/logbook/qso_db.cxx      |  137 ++++++++++++++++++---------------
+ src/soundcard/sound.cxx     |   83 +++++++++++++++-----
+ src/soundcard/soundconf.cxx |   14 ----
+ src/trx/modem.cxx           |   39 +---------
+ src/wefax/wefax-pic.cxx     |    5 +-
+ src/wefax/wefax.cxx         |   65 ++++------------
+ 22 files changed, 750 insertions(+), 397 deletions(-)
+  59.0% src/dialogs/
+   7.4% src/include/
+  13.6% src/logbook/
+   8.4% src/soundcard/
+   3.4% src/trx/
+   6.1% src/wefax/
+  62.9% src/dialogs/
+   9.5% src/include/
+  10.4% src/logbook/
+   8.8% src/soundcard/
+   5.2% src/wefax/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000753.html">[GIT] fldigi branch, maint/3.21,	updated: 9e4c2fa20122f4eb0b22fee1d0ac5d5ed8fa1916
+</A></li>
+	<LI>Next message: <A HREF="000755.html">[GIT] fldigi branch, master,	updated: e37c3e42d8758a1a3e9a15cefec2842eab0fe18e
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#754">[ date ]</a>
+              <a href="thread.html#754">[ thread ]</a>
+              <a href="subject.html#754">[ subject ]</a>
+              <a href="author.html#754">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

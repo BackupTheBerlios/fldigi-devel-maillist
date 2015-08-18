@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.13... patches pushed to pu/df
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13...%20patches%20pushed%20to%20pu/df&In-Reply-To=%3C4B390551.1070302%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000172.html">
+   <LINK REL="Next"  HREF="000174.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.13... patches pushed to pu/df</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13...%20patches%20pushed%20to%20pu/df&In-Reply-To=%3C4B390551.1070302%40bellsouth.net%3E"
+       TITLE="fldigi 3.13... patches pushed to pu/df">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Mon Dec 28 20:21:53 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000172.html">[GIT] fldigi branch, master,	updated: b2fa58f34d7f96ad29e2a06518cb49abf4121423
+</A></li>
+        <LI>Next message: <A HREF="000174.html">[fldigi] #1: Improved CW decoder
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#173">[ date ]</a>
+              <a href="thread.html#173">[ thread ]</a>
+              <a href="subject.html#173">[ subject ]</a>
+              <a href="author.html#173">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>commit a87bb1eace568bc7c03841abaa8b915758e8e51e
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Dec 28 13:03:52 2009 -0600
+
+    Olivia Mods
+    
+        * Added integration period default settings iaw the number
+          of tones and the bandwidth for the specific Olivia mode.
+        * Modified squelch detection using SyncSNR value generated
+          by Pawel's MFSK C++ template.
+
+commit 43b2cd78919649aa676edf690cd99f9ea963e980
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Dec 27 20:52:37 2009 -0600
+
+    XMLRPC fixes
+    
+        Amended bug fix created in
+        commit 087b4aa2b01836e9d201eba97f8d5d967dbcbb4c
+        which did not satisfy DBLog set frequency requirement.
+        Bug fixes for Win32:
+          * main.set_frequency
+          * main.inc_frequency
+          * modem.set_frequency
+          * modem.inc_frequency
+
+commit b751b9d496d56a0093c90e2489049ad651129f50
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat Dec 26 19:57:04 2009 -0600
+
+    THOR soft decoding
+    
+        Removed soft decoding.  The implementation gave questionable
+        signal processing s/n gain.
+
+Gary,
+
+Please take a look at the Olivia Mod to make sure that it is in 
+compliance with your recommended integration periods.
+
+73, Dave
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20091228/d8d0f93b/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20091228/d8d0f93b/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000172.html">[GIT] fldigi branch, master,	updated: b2fa58f34d7f96ad29e2a06518cb49abf4121423
+</A></li>
+	<LI>Next message: <A HREF="000174.html">[fldigi] #1: Improved CW decoder
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#173">[ date ]</a>
+              <a href="thread.html#173">[ thread ]</a>
+              <a href="subject.html#173">[ subject ]</a>
+              <a href="author.html#173">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

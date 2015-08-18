@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> resize crash in fldigi-3.21.67 on ubuntu 11.10
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20resize%20crash%20in%20fldigi-3.21.67%20on%20ubuntu%2011.10&In-Reply-To=%3C51128A4E.1000302%40WA5ZNU.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000977.html">
+   <LINK REL="Next"  HREF="000979.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>resize crash in fldigi-3.21.67 on ubuntu 11.10</H1>
+    <B>Leigh L. Klotz, Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20resize%20crash%20in%20fldigi-3.21.67%20on%20ubuntu%2011.10&In-Reply-To=%3C51128A4E.1000302%40WA5ZNU.org%3E"
+       TITLE="resize crash in fldigi-3.21.67 on ubuntu 11.10">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Wed Feb  6 17:52:30 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000977.html">[GIT] fldigi branch, master,	updated: 8917c866875cec401c2f2f48dc71d0d365d7e142
+</A></li>
+        <LI>Next message: <A HREF="000979.html">resize crash in fldigi-3.21.67 on ubuntu 11.10
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#978">[ date ]</a>
+              <a href="thread.html#978">[ thread ]</a>
+              <a href="subject.html#978">[ subject ]</a>
+              <a href="author.html#978">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Resize fldigi smaller X and Y than the waterfall.
+
+In the dist binary it hangs and has to be kill -9.  In the one I 
+compiled and ran under gdb, it gets a segfault.
+I can provide my compilation options and fldigi_def.xml if necessary; I 
+compiled without hamlib.
+
+    [Thread 0xb0a23b70 (LWP 8598) exited]
+
+    Program received signal SIGSEGV, Segmentation fault.
+    0xb782c9ca in _int_free (av=0xb7939400, p=0x865b510) at malloc.c:4964
+    4964    malloc.c: No such file or directory.
+         in malloc.c
+    (gdb) where
+    #0  0xb782c9ca in _int_free (av=0xb7939400, p=0x865b510) at
+    malloc.c:4964
+    #1  0xb782ff2d in __GI___libc_free (mem=0x86722b0) at malloc.c:3738
+    #2  0xb7a3280f in operator delete(void*) ()
+        from /usr/lib/i386-linux-gnu/libstdc++.so.6
+    #3  0xb7a3286b in operator delete[](void*) ()
+        from /usr/lib/i386-linux-gnu/libstdc++.so.6
+    #4  0x081e8a13 in Raster::resize (this=0x84937a8, x=0, y=98, w=645,
+    h=20)
+         at waterfall/raster.cxx:152
+    #5  0x08206c7c in Panel::resize (this=0x8495390, X=0, Y=98, W=645, H=80)
+         at widgets/Panel.cxx:174
+    #6  0xb7e77f06 in Fl_Group::resize(int, int, int, int) ()
+        from /usr/lib/i386-linux-gnu/libfltk.so.1.3
+    #7  0xb7ec3d48 in Fl_Window::resize(int, int, int, int) ()
+        from /usr/lib/i386-linux-gnu/libfltk.so.1.3
+    #8  0xb7e6f774 in Fl_Double_Window::resize(int, int, int, int) ()
+        from /usr/lib/i386-linux-gnu/libfltk.so.1.3
+    #9  0xb7ec26bb in fl_handle(_XEvent const&amp;) ()
+        from /usr/lib/i386-linux-gnu/libfltk.so.1.3
+    #10 0xb7ec35a6 in ?? () from /usr/lib/i386-linux-gnu/libfltk.so.1.3
+    #11 0xb7ec37e1 in fl_wait(double) ()
+        from /usr/lib/i386-linux-gnu/libfltk.so.1.3
+    ---Type &lt;return&gt; to continue, or q &lt;return&gt; to quit---
+    #12 0xb7e607f8 in Fl::wait(double) ()
+        from /usr/lib/i386-linux-gnu/libfltk.so.1.3
+    #13 0xb7e6094e in Fl::run() () from
+    /usr/lib/i386-linux-gnu/libfltk.so.1.3
+    #14 0x0805a60e in main (argc=1, argv=0xbffff314) at main.cxx:533
+    (gdb) quit
+
+Leigh/WA5ZNU
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130206/e123c36e/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130206/e123c36e/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000977.html">[GIT] fldigi branch, master,	updated: 8917c866875cec401c2f2f48dc71d0d365d7e142
+</A></li>
+	<LI>Next message: <A HREF="000979.html">resize crash in fldigi-3.21.67 on ubuntu 11.10
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#978">[ date ]</a>
+              <a href="thread.html#978">[ thread ]</a>
+              <a href="subject.html#978">[ subject ]</a>
+              <a href="author.html#978">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

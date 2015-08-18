@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> 3.21.26 fails to build in Debian
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%203.21.26%20fails%20to%20build%20in%20Debian&In-Reply-To=%3C1321395115.32358.21.camel%40fourier%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000722.html">
+   <LINK REL="Next"  HREF="000724.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>3.21.26 fails to build in Debian</H1>
+    <B>Kamal Mostafa</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%203.21.26%20fails%20to%20build%20in%20Debian&In-Reply-To=%3C1321395115.32358.21.camel%40fourier%3E"
+       TITLE="3.21.26 fails to build in Debian">kamal at whence.com
+       </A><BR>
+    <I>Tue Nov 15 23:11:55 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000722.html">git failure
+</A></li>
+        <LI>Next message: <A HREF="000724.html">3.21.26 fails to build in Debian
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#723">[ date ]</a>
+              <a href="thread.html#723">[ thread ]</a>
+              <a href="subject.html#723">[ subject ]</a>
+              <a href="author.html#723">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Dave-
+
+fldigi-3.21.26 fails to build in Debian unstable (3.21.24 was fine) due
+to a -Wformat violation in fldigi-wefax.cxx.
+
+ -Kamal
+
+g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI -DLOCALEDIR=\&quot;/usr/share/locale
+\&quot; -I. -I./include -I./irrxml -I./fileselector -I./xmlrpcpp  -pthread
+-I/usr/include/freetype2 -fstack-protector --param=ssp-buffer-size=4
+-Wformat -Wformat-security -Werror=format-security   -D_THREAD_SAFE
+-D_REENTRANT       -D_REENTRANT     -I/usr/include/libpng12
+-I/usr/include      -pipe -Wall -fexceptions -O2 -ffast-math
+-finline-functions  -DNDEBUG -g -O2 -c -o fldigi-wefax.o `test -f
+'wefax/wefax.cxx' || echo './'`wefax/wefax.cxx
+
+wefax/wefax.cxx: In member function 'void fax_implementation::correlation_calc() const':
+wefax/wefax.cxx:907:115: warning: format '%d' expects argument of type 'int', but argument 8 has type 'size_t {aka long unsigned int}' [-Wformat]
+wefax/wefax.cxx: In member function 'void fax_implementation::decode_apt(int, const fax_implementation::fax_signal&amp;)':
+wefax/wefax.cxx:1151:168: error: format not a string literal and no format arguments [-Werror=format-security]
+wefax/wefax.cxx:1160:168: error: format not a string literal and no format arguments [-Werror=format-security]
+wefax/wefax.cxx:1171:168: error: format not a string literal and no format arguments [-Werror=format-security]
+wefax/wefax.cxx:1179:168: error: format not a string literal and no format arguments [-Werror=format-security]
+cc1plus: some warnings being treated as errors
+
+make[3]: *** [fldigi-wefax.o] Error 1
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20111115/bccef892/attachment.pgp">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20111115/bccef892/attachment.pgp</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000722.html">git failure
+</A></li>
+	<LI>Next message: <A HREF="000724.html">3.21.26 fails to build in Debian
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#723">[ date ]</a>
+              <a href="thread.html#723">[ thread ]</a>
+              <a href="subject.html#723">[ subject ]</a>
+              <a href="author.html#723">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

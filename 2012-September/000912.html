@@ -1,0 +1,186 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.21,	updated: 8c97f909816d4db38cf292052db8117f1efbc16d
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%208c97f909816d4db38cf292052db8117f1efbc16d&In-Reply-To=%3C20120919201128.BCC4055B0C%40scm.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000911.html">
+   <LINK REL="Next"  HREF="000913.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.21,	updated: 8c97f909816d4db38cf292052db8117f1efbc16d</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%208c97f909816d4db38cf292052db8117f1efbc16d&In-Reply-To=%3C20120919201128.BCC4055B0C%40scm.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.21,	updated: 8c97f909816d4db38cf292052db8117f1efbc16d">herrfreese at scm.berlios.de
+       </A><BR>
+    <I>Wed Sep 19 22:11:27 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000911.html">Synop + KML
+</A></li>
+        <LI>Next message: <A HREF="000913.html">[GIT] fldigi branch, maint/3.21,	updated: 19fc8867abff1b757f60399cec944be67cde46dd
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#912">[ date ]</a>
+              <a href="thread.html#912">[ thread ]</a>
+              <a href="subject.html#912">[ subject ]</a>
+              <a href="author.html#912">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.21 has been updated
+       via  8c97f909816d4db38cf292052db8117f1efbc16d (commit)
+       via  638a3c2cb4f35c512b4bae5d7cd7641ea785b21a (commit)
+       via  8a41aadbb452b57f9d9f3334db9dc00836b68282 (commit)
+       via  de95906f1d4ba382475c80f36d9463783a70a9df (commit)
+       via  8fdb2ca89e5003d0c1bfaac86d5a793f88063859 (commit)
+       via  8d38260e8c3a941ea6cd06d58a3c9aa5546bbcb0 (commit)
+       via  29c9c6a403a6eb84955992611c0615be610a11e7 (commit)
+       via  e765c4ed43fc5100bacdac06d2984749d5d16aec (commit)
+       via  a30ad3434197414b6ff978c288a978322a5e1cf2 (commit)
+       via  72865127c656328ba847c80efaee175316763615 (commit)
+       via  8ab2f6e7a5aa161de974ae176f1ac8652bf3e86f (commit)
+      from  37b03e33a887767b88a1f55634a9ad692d650e49 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=8c97f909816d4db38cf292052db8117f1efbc16d">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=8c97f909816d4db38cf292052db8117f1efbc16d</A>
+
+commit 8c97f909816d4db38cf292052db8117f1efbc16d
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Sep 19 15:01:24 2012 -0500
+
+    Version 3.21.51
+    
+      Maintenance release
+
+ 2 files changed, 35 insertions(+), 1 deletion(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=638a3c2cb4f35c512b4bae5d7cd7641ea785b21a">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=638a3c2cb4f35c512b4bae5d7cd7641ea785b21a</A>
+
+commit 638a3c2cb4f35c512b4bae5d7cd7641ea785b21a
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Sep 11 15:55:17 2012 -0500
+
+    flmsg/flamp stream processing
+    
+      * added parsing of cmd line parameters when opening flmsg
+        upon completion of wrap file extraction
+      * added parsing of flamp text streams
+      * modified socket arq to separate socket i/o from both
+        signal processing and main thread.
+
+ 9 files changed, 287 insertions(+), 159 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=8a41aadbb452b57f9d9f3334db9dc00836b68282">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=8a41aadbb452b57f9d9f3334db9dc00836b68282</A>
+
+commit 8a41aadbb452b57f9d9f3334db9dc00836b68282
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Sep 4 08:33:16 2012 -0500
+
+    DominoEX varicode
+    
+      * Correct table entries for { }
+        - values incorrect in original gmfsk implementation
+
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=de95906f1d4ba382475c80f36d9463783a70a9df">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=de95906f1d4ba382475c80f36d9463783a70a9df</A>
+
+commit de95906f1d4ba382475c80f36d9463783a70a9df
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Sep 2 22:45:46 2012 -0500
+
+    WRAP binary files
+    
+      * Add character handling in Rx for both received and transmit echo
+        characters when sending binary data.
+
+ 3 files changed, 75 insertions(+), 23 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                   |  34 +++++
+ configure.ac                |   2 +-
+ src/combo/combo.cxx         |  79 +++++++-----
+ src/dialogs/confdialog.cxx  |  78 ++++++++----
+ src/dialogs/confdialog.fl   |  75 ++++++-----
+ src/dialogs/fl_digi.cxx     |  91 ++++++++++----
+ src/dominoex/dominovar.cxx  |   4 +-
+ src/flarq-src/arqhelp.cxx   |   2 +-
+ src/include/FTextRXTX.h     |   1 +
+ src/include/ascii.h         |   1 +
+ src/include/combo.h         | 104 +++++++--------
+ src/include/confdialog.h    |   6 +-
+ src/include/configuration.h |   6 +
+ src/include/main.h          |   4 +
+ src/include/rx_extract.h    |   3 +
+ src/logger/logger.cxx       |  20 +--
+ src/logger/rx_extract.cxx   | 301 ++++++++++++++++++++++++++++++++------------
+ src/main.cxx                |  13 --
+ src/misc/arq_io.cxx         |  98 ++++++++++-----
+ src/misc/ascii.cxx          |  60 +++++++++
+ src/misc/socket.cxx         |  45 +++++--
+ src/misc/xmlrpc.cxx         |   2 +-
+ src/widgets/FTextRXTX.cxx   |  75 ++++++++++-
+ 23 files changed, 790 insertions(+), 314 deletions(-)
+   7.1% src/combo/
+  22.1% src/dialogs/
+  11.3% src/include/
+  29.0% src/logger/
+  18.5% src/misc/
+   6.7% src/widgets/
+   5.6% src/combo/
+  26.9% src/dialogs/
+  10.1% src/include/
+  28.4% src/logger/
+  19.5% src/misc/
+   4.3% src/widgets/
+
+
+hooks/post-receive
+-- 
+fldigi
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000911.html">Synop + KML
+</A></li>
+	<LI>Next message: <A HREF="000913.html">[GIT] fldigi branch, maint/3.21,	updated: 19fc8867abff1b757f60399cec944be67cde46dd
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#912">[ date ]</a>
+              <a href="thread.html#912">[ thread ]</a>
+              <a href="subject.html#912">[ subject ]</a>
+              <a href="author.html#912">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

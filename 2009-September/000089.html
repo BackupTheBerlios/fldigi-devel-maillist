@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: db84e7f77ebfac63d4b1a1dc7e91a7e6ff60fef7
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20db84e7f77ebfac63d4b1a1dc7e91a7e6ff60fef7&In-Reply-To=%3C200909010148.n811m8pm003567%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000090.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: db84e7f77ebfac63d4b1a1dc7e91a7e6ff60fef7</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20db84e7f77ebfac63d4b1a1dc7e91a7e6ff60fef7&In-Reply-To=%3C200909010148.n811m8pm003567%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: db84e7f77ebfac63d4b1a1dc7e91a7e6ff60fef7">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Tue Sep  1 03:48:08 CEST 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000090.html">Additional RSID mod
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#89">[ date ]</a>
+              <a href="thread.html#89">[ thread ]</a>
+              <a href="subject.html#89">[ subject ]</a>
+              <a href="author.html#89">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  db84e7f77ebfac63d4b1a1dc7e91a7e6ff60fef7 (commit)
+       via  e39fc6a1ce0ddd7cbd030aec5fb7974d908ffbfa (commit)
+       via  b09cea25ff565157cfbaee4d943159f8864d9fec (commit)
+       via  4de96c9b34adbae5ddf5332d16a0ddbf26a3d2e4 (commit)
+       via  a434afb9762258e3bbf3ec062cbc18d29c0d7da4 (commit)
+       via  85480351234a8cce2b61089a47e0031731566f14 (commit)
+       via  78d87d74481a6c855eb47243db35bdd6051982bc (commit)
+       via  b862f1ac4510e98bd7e41c3da0298bcbbbeb777b (commit)
+       via  a3edac857a8618256ad129884c5989a016579b8d (commit)
+       via  779bf23162b33b70e49335b24dc158d720cf5b4c (commit)
+      from  ac1e686f1173c991b3b43d8439024ef0e30ec533 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit db84e7f77ebfac63d4b1a1dc7e91a7e6ff60fef7
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Aug 31 20:47:05 2009 -0500
+
+    Version 3.13AE
+    
+        Alpha release
+
+commit e39fc6a1ce0ddd7cbd030aec5fb7974d908ffbfa
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Tue Sep 1 02:27:35 2009 +0100
+
+    Improve RSID notifications
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ configure.ac                |    2 +-
+ src/dialogs/confdialog.cxx  |   23 +++-
+ src/dialogs/confdialog.fl   |   19 +++-
+ src/dialogs/fl_digi.cxx     |   19 +---
+ src/globals/globals.cxx     |    1 +
+ src/include/confdialog.h    |    1 +
+ src/include/configuration.h |    3 +
+ src/include/qrunner.h       |    1 +
+ src/include/rsid.h          |   68 ++++++----
+ src/include/sound.h         |   13 +-
+ src/misc/xmlrpc.cxx         |   70 ++++++++--
+ src/psk/psk.cxx             |   11 +--
+ src/qrunner/qrunner.cxx     |   16 ++-
+ src/rsid/rsid.cxx           |  309 ++++++++++++++++++++++++++-----------------
+ src/soundcard/sound.cxx     |   68 ++++++----
+ src/spot/notify.cxx         |   93 ++++++++-----
+ src/spot/spot.cxx           |   10 +-
+ src/trx/trx.cxx             |   78 +++---------
+ src/waterfall/waterfall.cxx |   33 +++--
+ 19 files changed, 498 insertions(+), 340 deletions(-)
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000090.html">Additional RSID mod
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#89">[ date ]</a>
+              <a href="thread.html#89">[ thread ]</a>
+              <a href="subject.html#89">[ subject ]</a>
+              <a href="author.html#89">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

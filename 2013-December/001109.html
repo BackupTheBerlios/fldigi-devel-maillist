@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Linux Mint 16 Petra and FlDigi 3.21.77
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Linux%20Mint%2016%20Petra%20and%20FlDigi%203.21.77&In-Reply-To=%3C52A112F8.5040803%40dl7bj.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001108.html">
+   <LINK REL="Next"  HREF="001110.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Linux Mint 16 Petra and FlDigi 3.21.77</H1>
+    <B>Thomas 'tom' Malkus</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Linux%20Mint%2016%20Petra%20and%20FlDigi%203.21.77&In-Reply-To=%3C52A112F8.5040803%40dl7bj.de%3E"
+       TITLE="Linux Mint 16 Petra and FlDigi 3.21.77">tom at dl7bj.de
+       </A><BR>
+    <I>Fri Dec  6 00:57:44 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001108.html">fldigi stack trace
+</A></li>
+        <LI>Next message: <A HREF="001110.html">Linux Mint 16 Petra and FlDigi 3.21.77
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1109">[ date ]</a>
+              <a href="thread.html#1109">[ thread ]</a>
+              <a href="subject.html#1109">[ subject ]</a>
+              <a href="author.html#1109">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I've installed Mint 16 Petra and tried:
+
+- Install fldigi from repository   - crash
+- Install fldigi from Kamal's PPA  - crash
+- Compile it myself without errors - crash
+
+Here is the log:
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+./fldigi[0x819a326]
+./fldigi[0x819a54c]
+[0xb7754400]
+/lib/i386-linux-gnu/libc.so.6(+0x857d6)[0xb71527d6]
+/usr/lib/i386-linux-gnu/libfltk.so.1.3(_ZN2Fl9set_fontsEPKc+0x206)[0xb766c556]
+./fldigi[0x805a082]
+/lib/i386-linux-gnu/libc.so.6(__libc_start_main+0xf5)[0xb70e6905]
+./fldigi[0x805f923]
+
+****** Version information:
+fldigi 3.21.77
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi 
+Chateauneu, and others.
+License GPLv3+: GNU GPL version 3 or later 
+&lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+   built          : Fri Dec  6 00:17:41 CET 2013 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">tom at marconi</A> on 
+i686-pc-linux-gnu for i686-pc-linux-gnu
+
+   configure flags:
+
+   compiler       : gcc version 4.8.1 (Ubuntu/Linaro 4.8.1-10ubuntu9)
+
+   compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml 
+-I$(srcdir)/libtiniconv -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp 
+-I/usr/local/include -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE 
+-D_FILE_OFFSET_BITS=64 -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT 
+-I/usr/include/libpng12 -pipe -Wall -fexceptions -O2 -ffast-math 
+-finline-functions -DNDEBUG
+
+   linker flags   : -L/usr/local/lib -lfltk_images -lpng -lz -ljpeg 
+-lfltk -lXext -lpthread -ldl -lm -lX11 -lsamplerate -lpulse-simple 
+-lpulse -lhamlib -lm -lpng12 -ldl -lpthread
+
+   libraries      : FLTK 1.3.1
+                    libsamplerate 0.1.8
+                    PulseAudio 4.0
+                    Hamlib 1.2.15.3
+
+Runtime information:
+   system         : Linux marconi 3.11.0-12-generic #19-Ubuntu SMP Wed 
+Oct 9 16:12:00 UTC 2013 i686
+
+   libraries      : libsamplerate-0.1.8 (c) 2002-2008 Erik de Castro Lopo
+                    Pulseaudio 4.0.0
+                    Hamlib 1.2.15.3
+
+Any idea, what the error could be?
+
+73, Tom
+-- 
+DL7BJ|DL-QRP-AG #1186|DARC OV I18|FISTS #15933|AGCW-DL #2737|ARRL
+<A HREF="http://www.dl7bj.org">http://www.dl7bj.org</A> <A HREF="https://twitter.com/dl7bj">https://twitter.com/dl7bj</A>
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001108.html">fldigi stack trace
+</A></li>
+	<LI>Next message: <A HREF="001110.html">Linux Mint 16 Petra and FlDigi 3.21.77
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1109">[ date ]</a>
+              <a href="thread.html#1109">[ thread ]</a>
+              <a href="subject.html#1109">[ subject ]</a>
+              <a href="author.html#1109">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

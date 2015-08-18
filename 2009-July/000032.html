@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.11,	updated: 90e4fcf6cd81f3511a8753cefe89aeb9e588b309
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.11%2C%0A%09updated%3A%2090e4fcf6cd81f3511a8753cefe89aeb9e588b309&In-Reply-To=%3C200907061951.n66Jpc8n018848%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000031.html">
+   <LINK REL="Next"  HREF="000033.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.11,	updated: 90e4fcf6cd81f3511a8753cefe89aeb9e588b309</H1>
+    <B>m0gld at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.11%2C%0A%09updated%3A%2090e4fcf6cd81f3511a8753cefe89aeb9e588b309&In-Reply-To=%3C200907061951.n66Jpc8n018848%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.11,	updated: 90e4fcf6cd81f3511a8753cefe89aeb9e588b309">m0gld at mail.berlios.de
+       </A><BR>
+    <I>Mon Jul  6 21:51:38 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000031.html">[GIT] fldigi branch, master,	updated: d54a2ca078353ef7cfbd36c452f282d6273b4d14
+</A></li>
+        <LI>Next message: <A HREF="000033.html">commit pushed to pu/df
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#32">[ date ]</a>
+              <a href="thread.html#32">[ thread ]</a>
+              <a href="subject.html#32">[ subject ]</a>
+              <a href="author.html#32">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.11 has been updated
+       via  90e4fcf6cd81f3511a8753cefe89aeb9e588b309 (commit)
+       via  296473029cb14408e573e4660a1bace23ce6b1f3 (commit)
+       via  e2eff92be6f65fd0d32d4ee4de7f6853d5ea4b45 (commit)
+       via  c37b395899bc195f15315baec7a4ba05c199e4cf (commit)
+       via  d977919042ecdd271fcb09d5e6b449ddbaf1965d (commit)
+       via  5c963a1bbb8dd2d546e3130be268038c66feda17 (commit)
+      from  b18bfb9850e355b825227bd3e719e2c1c80fa6e3 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit 90e4fcf6cd81f3511a8753cefe89aeb9e588b309
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Mon Jul 6 04:18:33 2009 +0100
+
+    Version 3.11.6
+
+commit 296473029cb14408e573e4660a1bace23ce6b1f3
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Mon Jul 6 03:20:08 2009 +0100
+
+    Fix compilation on glibc 2.10
+    
+    Fix some strchr calls which did not preserve const-ness.
+    See:  <A HREF="http://udrepper.livejournal.com/20948.html">http://udrepper.livejournal.com/20948.html</A>
+    
+    (adapted from commit d54a2ca078353ef7cfbd36c452f282d6273b4d14)
+
+commit e2eff92be6f65fd0d32d4ee4de7f6853d5ea4b45
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Jul 1 16:02:13 2009 -0500
+
+    Logbook bug fix
+    
+      Read ADIF function did not correctly distinguish between the
+        SRX and SRX_STRING fields in the saved adif file format.
+    
+    (adapted from commit 07a01b1555deac2c8a343d42bb2ac3b5355b9806)
+
+commit c37b395899bc195f15315baec7a4ba05c199e4cf
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Wed Jul 1 13:58:10 2009 +0100
+
+    Fix socket fd leak
+    
+    (adapted from commit 42b638df60f7b6ace155744943155ad8dcd27a09)
+
+commit d977919042ecdd271fcb09d5e6b449ddbaf1965d
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Wed Jul 1 13:58:10 2009 +0100
+
+    Fix compilation warnings on 64bit archs
+    
+    (adapted from commit 58c2f8b0fd747bc38a66cbf7ce7c3ecca5c97ca8)
+
+commit 5c963a1bbb8dd2d546e3130be268038c66feda17
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Tue Jun 30 16:26:07 2009 +0100
+
+    Fix azimuth_long_path
+    
+    * Return the correct long path azimuth (thanks P.J. Rovero, KK1D)
+    * Update configure.ac to use our fixed locator.c if hamlib &lt;= 1.2.9
+    
+    (adapted from commit f25b5d1c728c4d37abbab5416914fa938d6310a2)
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog               |   16 ++++++++++++++++
+ configure.ac            |    6 +++---
+ po/cs.po                |    2 +-
+ po/fldigi.pot           |    4 ++--
+ po/fr.po                |    2 +-
+ src/include/qrzlib.h    |   28 ++++++++++++++--------------
+ src/include/threads.h   |    2 +-
+ src/logbook/adif_io.cxx |   24 ++++++++----------------
+ src/misc/arq_io.cxx     |    1 +
+ src/misc/locator.c      |    2 +-
+ src/misc/qrzlib.cxx     |    2 +-
+ src/misc/xmlrpc.cxx     |   11 ++++++++---
+ src/widgets/picture.cxx |   18 ++++++++++--------
+ 13 files changed, 67 insertions(+), 51 deletions(-)
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000031.html">[GIT] fldigi branch, master,	updated: d54a2ca078353ef7cfbd36c452f282d6273b4d14
+</A></li>
+	<LI>Next message: <A HREF="000033.html">commit pushed to pu/df
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#32">[ date ]</a>
+              <a href="thread.html#32">[ thread ]</a>
+              <a href="subject.html#32">[ subject ]</a>
+              <a href="author.html#32">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

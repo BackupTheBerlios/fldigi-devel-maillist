@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.21.74AE posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.74AE%20posted&In-Reply-To=%3C521E79A0.6030303%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001078.html">
+   <LINK REL="Next"  HREF="001080.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.21.74AE posted</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.74AE%20posted&In-Reply-To=%3C521E79A0.6030303%40bellsouth.net%3E"
+       TITLE="fldigi 3.21.74AE posted">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Thu Aug 29 00:28:48 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001078.html">Fl_Table / Fltk-1.1.10
+</A></li>
+        <LI>Next message: <A HREF="001080.html">crashreport
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1079">[ date ]</a>
+              <a href="thread.html#1079">[ thread ]</a>
+              <a href="subject.html#1079">[ subject ]</a>
+              <a href="author.html#1079">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE><A HREF="http://www.w1hkj.com/alpha/fldigi/v3.21/">http://www.w1hkj.com/alpha/fldigi/v3.21/</A>
+
+and also pushed (-f) to berlios/tmp/df/fldigi-3.21
+
+If you are assisting in VOARadiogram testing this version should provide 
+much improved RsID detection for this weekend's broadcasts.
+
+List of commits (changes) from 74 to 74AE:
+
+commit 221baec9852f93e5e4fe20793f49395c6891a4a7
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Aug 22 18:00:00 2013 -0500
+
+     Version 3.21 alpha
+
+       * 3.21.74AE
+
+commit 45ff72b7dd1e5194a79b511fc80eb9c1d4a255ed
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Aug 27 14:20:29 2013 -0500
+
+     xmlrpcpp method faults
+
+       * fix several remaining xmlrpc-c to xmlrpcpp port issues.
+         - text.get_rx
+         - modem.set_bandwidth
+         - modem.inc_bandwidth
+         - modem.get_bandwidth
+
+commit fce76543ac2c8048dab7cd9d4abfc29726e243d6
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat Aug 24 06:51:17 2013 -0500
+
+     Error exit
+
+       * These changes are an attempt to catch and/or document start
+         up failures on Windows systems.
+       * Standardized the fatal exit process and message handling
+       * Changed system calls in util function create_directory(...)
+       * Changed name of DATA.files to &quot;data&quot; and placed directory in
+         the home directory for specific target OS.
+         - Added creation of data directory to main()
+         - This effects the location of Synop data files!
+
+commit 7037ad69343efc3ed6756d0b2088b5072dc90666
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Aug 26 12:13:15 2013 -0500
+
+     RSID update
+
+       * Changes needed to improve double RsID detection
+       * Removed resample test and dependent code
+       * Reimplemented FFT bucket array
+         - removed array pointer arithmetic
+         - memory copy and initializers used to update
+           the bucket array
+         - modified search routine to insure that all elements
+           of FFT bucket array are tested.
+       * Deprecated use of hash tables for initial RsID search
+         - search sensitivity and hash table use were incompatible
+
+commit 433ec860447f72f229c7a971943f6e4b7445c3f9
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Aug 15 13:40:35 2013 -0500
+
+     Sound File
+
+       * Changed recording to selectable
+         - 22050, 24000, 44100, 48000 samples / sec
+       * Change to allow playback at any sample rate
+       * Record and playback are monophonic
+         - left channel active
+
+commit 263f540aa082eeb090d2d2fda637fb93b02fcd39
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Aug 20 12:38:52 2013 -0500
+
+     fltk 1.1.x
+
+       * Remove all code elements specifically in support
+         of the Fast Light Toolkit version 1.1.x
+
+
+73, Dave, W1HKJ
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001078.html">Fl_Table / Fltk-1.1.10
+</A></li>
+	<LI>Next message: <A HREF="001080.html">crashreport
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1079">[ date ]</a>
+              <a href="thread.html#1079">[ thread ]</a>
+              <a href="subject.html#1079">[ subject ]</a>
+              <a href="author.html#1079">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

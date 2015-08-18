@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> notes from Sweepstakes for fldigi
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20notes%20from%20Sweepstakes%20for%20fldigi&In-Reply-To=%3C4CD79B03.60204%40WA5ZNU.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000374.html">
+   <LINK REL="Next"  HREF="000376.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>notes from Sweepstakes for fldigi</H1>
+    <B>Leigh L. Klotz, Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20notes%20from%20Sweepstakes%20for%20fldigi&In-Reply-To=%3C4CD79B03.60204%40WA5ZNU.org%3E"
+       TITLE="notes from Sweepstakes for fldigi">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Mon Nov  8 07:38:59 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000374.html">[GIT] fldigi branch, master,	updated: 5614a0abd5b545e773dce758856d46e6dc366d7a
+</A></li>
+        <LI>Next message: <A HREF="000376.html">notes from Sweepstakes for fldigi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#375">[ date ]</a>
+              <a href="thread.html#375">[ thread ]</a>
+              <a href="subject.html#375">[ subject ]</a>
+              <a href="author.html#375">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I used fldigi to operate in the ARRL CW sweepstakes and here are some 
+notes in the form of bugs and feature/enhancement requests.
+
+1. BUG: When all fields and contest fields are enabled AZ doesn't show.
+I have rotor control macros which pass in $FLDIGI_AZ and if it's not 
+display I don't know if my rotor control macros will work.
+I had to switch out of fldigi or toggle the contest fields see.
+When the menu says show all fields, it ought to show them all.
+So I request that AZ show when Show All is set and Contest Fields is 
+checked.
+
+2. FER: &lt;clearlog&gt; macro
+I'd like to clear the log after &lt;log&gt; without setting that optionally 
+globally in config.  I'd like &lt;clearlog&gt; macro so I can do &lt;log&gt;&lt;clearlog&gt;.
+
+3. BUG: intermittent right mouse copy-to-log behavior #1
+I've had consistent problems with right mouse selection over the years 
+and I suspect it's because there's something about it at odds with fltk 
+and the workaround keeps getting broken.  So perhaps I should retrain 
+myself.  But the symptom is that I right mouse on a callsign and select 
+CALL and it fails to copy.  The heuristic click-and-auto-insert for call 
+never fails.
+
+4. BUG: intermittent right mouse copy-to-log behavior #2
+Another intermittent failure is the same with highlighted region: I 
+left-drag to highlight the RX exchange and get a red highlight.  Right 
+mouse on Exchange then does nothing.  If I do the right mouse Exchange 
+again, the highlighting turns pink and it works.  I don't know what the 
+operation model is here but I'm not understanding it, or it's not 
+consistent.
+
+5. FER: two lines of macro buttons
+I'd like to be able to select two lines of macros, for example:
+
+ANS  / EXCHANGE /  Log QSO / CQ       NR! / PRC! / CK! / SEC!       
+CALL! / AGN! / Stepper / ROTOR
+                                       NR? / PRC? / CK? / SEC?       
+CALL? / AGN? / QSL
+
+In this example, line 1 is used mostly for hunt and pounce (NR! re-sends 
+my serial number, for example).  Line 2 is used for asking for fills 
+myself and responding QSL when done.
+
+I took a look at it but the static fltk layout would have to change to 
+allow this so it's not easily done as an option or a startup option.
+I doubt most people want two lines of macros for normal operation, but 
+for this SS contest with its many-part exchange, it would have been useful.
+Perhaps there are other needs for more visible macros as well, at least 
+temporarily.
+
+6. Bug or FER: Spaces in macros
+The &lt;exec&gt; call seems to insert a space in the TX buffer after use.  
+Perhaps it's &lt;exec&gt;'s fault, but I'd still like a way to clear the TX 
+buffer in macros.
+We have RX clear but not TX clear. That way ANS, EXCHANGE, etc, would 
+start with TX Clear.  The spaces introduce delays after you press one of 
+the macros and that can disturb contest timing.
+
+7. Bug: View Logbook
+If I have just entered a log entry and do View Logbook it shows at the 
+bottom.
+Other times if I do View Logbook it show the most recent entry at the top.
+It seems the sort order of View Log sometimes reverses.
+
+7. Bug: Logbook out of order in logbook.adif
+A QSO which started at 2359 and ended at 0001 showed up in the logbook 
+in the wrong spot.  It was qso #71, and appeared between #19 and #20.
+There was a gap between #70 and #72 where the W4RM qso belonged.  The 
+QSO started on 20101107 2359 and ended at 20101108 000.   It improperly 
+sorted as if it had started at 20101107 0001.
+
+...
+&lt;BAND:3&gt;15m&lt;CALL:4&gt;n4uc&lt;FREQ:9&gt;21.050802&lt;MODE:2&gt;CW&lt;STX_STRING:23&gt;n4uc 18 
+U wa5znu 69 SCV&lt;QSO_DATE:8&gt;20101106&lt;STX:3&gt; 
+*19*&lt;TIME_OFF:4&gt;2355&lt;TIME_ON:4&gt;2353&lt;SRX_STRING:15&gt;11 a n4uc 67 al&lt;EOR&gt;
+&lt;BAND:3&gt;40m&lt;CALL:4&gt;w4rm&lt;FREQ:8&gt;7.009535&lt;MODE:2&gt;CW&lt;STX_STRING:23&gt;w4rm 70 
+U wa5znu 69 SCV&lt;QSO_DATE:8&gt;20101107&lt;STX:3&gt; 
+*71*&lt;TIME_OFF:4&gt;0001&lt;TIME_ON:4&gt;2359&lt;SRX_STRING:16&gt;114 b w4rm 76 va&lt;EOR&gt;
+&lt;BAND:3&gt;40m&lt;CALL:4&gt;k9jm&lt;FREQ:8&gt;7.008620&lt;MODE:2&gt;CW&lt;STX_STRING:23&gt;k9jm 19 
+U wa5znu 69 SCV&lt;QSO_DATE:8&gt;20101107&lt;STX:3&gt; 
+*20*&lt;TIME_OFF:4&gt;0003&lt;TIME_ON:4&gt;0001&lt;SRX_STRING:16&gt;178 b k9jm 65 sv&lt;EOR&gt;
+...
+&lt;BAND:3&gt;40m&lt;CALL:5&gt;vy2zm&lt;FREQ:8&gt;7.007357&lt;MODE:2&gt;CW&lt;STX_STRING:24&gt;vy2zm 
+69 U wa5znu 69 SCV&lt;QSO_DATE:8&gt;20101107&lt;STX:3&gt; 
+*70*&lt;TIME_OFF:4&gt;2353&lt;TIME_ON:4&gt;2351&lt;SRX_STRING:19&gt;1280 b vy2zm 55 mar&lt;EOR&gt;
+&lt;BAND:3&gt;40m&lt;CALL:5&gt;ve7xf&lt;FREQ:8&gt;7.009992&lt;MODE:2&gt;CW&lt;STX_STRING:24&gt;ve7xf 
+71 U wa5znu 69 SCV&lt;QSO_DATE:8&gt;20101108&lt;STX:3&gt; 
+*72*&lt;TIME_OFF:4&gt;0008&lt;TIME_ON:4&gt;0004&lt;SRX_STRING:17&gt;989 u ve7xf 54 bc&lt;EOR&gt;
+...
+
+
+Leigh/WA5ZNU
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20101107/e7d2fb85/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20101107/e7d2fb85/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000374.html">[GIT] fldigi branch, master,	updated: 5614a0abd5b545e773dce758856d46e6dc366d7a
+</A></li>
+	<LI>Next message: <A HREF="000376.html">notes from Sweepstakes for fldigi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#375">[ date ]</a>
+              <a href="thread.html#375">[ thread ]</a>
+              <a href="subject.html#375">[ subject ]</a>
+              <a href="author.html#375">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

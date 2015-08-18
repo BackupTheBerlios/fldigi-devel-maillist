@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 483b53735f35c70e9d2746a66a46478fdae71093
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20483b53735f35c70e9d2746a66a46478fdae71093&In-Reply-To=%3C200911190830.nAJ8UWJl017033%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000157.html">
+   <LINK REL="Next"  HREF="000159.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 483b53735f35c70e9d2746a66a46478fdae71093</H1>
+    <B>m0gld at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20483b53735f35c70e9d2746a66a46478fdae71093&In-Reply-To=%3C200911190830.nAJ8UWJl017033%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 483b53735f35c70e9d2746a66a46478fdae71093">m0gld at mail.berlios.de
+       </A><BR>
+    <I>Thu Nov 19 09:30:32 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000157.html">[GIT] fldigi branch, master,	updated: f7acb91cfcada0a71ce26c2f9b1a692785af2924
+</A></li>
+        <LI>Next message: <A HREF="000159.html">[GIT] fldigi branch, maint/3.12,	updated: 26f325b30220ac1b55e197897cddcfc1332c1979
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#158">[ date ]</a>
+              <a href="thread.html#158">[ thread ]</a>
+              <a href="subject.html#158">[ subject ]</a>
+              <a href="author.html#158">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  483b53735f35c70e9d2746a66a46478fdae71093 (commit)
+       via  7e3959921a18c0accbd4c43f2786c8088f5b88c6 (commit)
+       via  b06339d2445a9d86cf1d1625d506950b01bb9177 (commit)
+       via  c226978a105de3cd5f8edbecebc4e5812750498c (commit)
+      from  f7acb91cfcada0a71ce26c2f9b1a692785af2924 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit 483b53735f35c70e9d2746a66a46478fdae71093
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Thu Nov 19 05:28:52 2009 +0000
+
+    Fix LDFLAGS
+    
+    Link with all needed libraries. Required when linking with
+    --no-add-needed or the experimental gold linker, which has this
+    behaviour by default.
+    
+      * Add -lpthread switch (needed by flarq)
+      * On X11 platforms we should explicitly link with libX11 because we
+        use XCreatePixmap via the FLTK fl_create_offscreen macro
+
+commit 7e3959921a18c0accbd4c43f2786c8088f5b88c6
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Thu Nov 19 05:25:10 2009 +0000
+
+    Fix custom pkg-config macro
+    
+    AC_FLDIGI_PKG_CHECK([pkg], [pkg], [no], ...) should check for pkg
+    despite no help being shown
+
+commit b06339d2445a9d86cf1d1625d506950b01bb9177
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Thu Nov 19 05:23:15 2009 +0000
+
+    Fix conditional pkg check
+    
+    Correctly skip checks for libsamplerate and libpng when
+    --disable-fldigi is used
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ configure.ac               |   16 +++++-
+ m4/build.m4                |   10 ++--
+ m4/np-compat.m4            |    2 +-
+ m4/pkg-config.m4           |    1 +
+ src/dialogs/confdialog.cxx |    2 +
+ src/dialogs/confdialog.fl  |    6 ++-
+ src/dialogs/fl_digi.cxx    |  124 ++++++++++++++++++++++++++++++++++----------
+ src/widgets/flmisc.cxx     |    2 +-
+ 8 files changed, 124 insertions(+), 39 deletions(-)
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000157.html">[GIT] fldigi branch, master,	updated: f7acb91cfcada0a71ce26c2f9b1a692785af2924
+</A></li>
+	<LI>Next message: <A HREF="000159.html">[GIT] fldigi branch, maint/3.12,	updated: 26f325b30220ac1b55e197897cddcfc1332c1979
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#158">[ date ]</a>
+              <a href="thread.html#158">[ thread ]</a>
+              <a href="subject.html#158">[ subject ]</a>
+              <a href="author.html#158">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,164 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.21,	updated: 320ab1bd4b37a82a5f87b1b76d307e015aea8cf7
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%20320ab1bd4b37a82a5f87b1b76d307e015aea8cf7&In-Reply-To=%3C20111120122814.41A38481531%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000730.html">
+   <LINK REL="Next"  HREF="000732.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.21,	updated: 320ab1bd4b37a82a5f87b1b76d307e015aea8cf7</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%20320ab1bd4b37a82a5f87b1b76d307e015aea8cf7&In-Reply-To=%3C20111120122814.41A38481531%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.21,	updated: 320ab1bd4b37a82a5f87b1b76d307e015aea8cf7">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Sun Nov 20 13:28:14 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000730.html">[GIT] fldigi branch, master,	updated: 8215cac4bb80bf7b5acc2dfc5284d29957ae0fd0
+</A></li>
+        <LI>Next message: <A HREF="000732.html">[GIT] fldigi branch, maint/3.21,	updated: fd296b9a25c074ecef3f191a38ee092c7fda5c09
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#731">[ date ]</a>
+              <a href="thread.html#731">[ thread ]</a>
+              <a href="subject.html#731">[ subject ]</a>
+              <a href="author.html#731">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.21 has been updated
+       via  320ab1bd4b37a82a5f87b1b76d307e015aea8cf7 (commit)
+       via  a2184aa4be88248117883a91d9f83bb27267ef81 (commit)
+       via  b3a89c7e9e70237e09be7a80596e8f90705e8359 (commit)
+       via  9269c9a06a6b7f9a4224e29d37b36aa0830220f8 (commit)
+      from  a5be80f1c5a80b4d3f6ee9ec77c4d15d2d038628 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=320ab1bd4b37a82a5f87b1b76d307e015aea8cf7">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=320ab1bd4b37a82a5f87b1b76d307e015aea8cf7</A>
+
+commit 320ab1bd4b37a82a5f87b1b76d307e015aea8cf7
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Nov 18 20:08:19 2011 -0600
+
+    Version 3.21.27
+    
+      Maintenance release
+
+ 2 files changed, 19 insertions(+), 6 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=a2184aa4be88248117883a91d9f83bb27267ef81">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=a2184aa4be88248117883a91d9f83bb27267ef81</A>
+
+commit a2184aa4be88248117883a91d9f83bb27267ef81
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Nov 18 19:53:40 2011 -0600
+
+    Log r/w improvements
+    
+      * Created separate thread for writing database.  User with over
+        35,000 records was experiencing UI interruption of several
+        seconds on Windows XP system.
+      * Removed compatibility code from log r/w.  Logs prior to 3.1 will
+        read but some fields will be ignored.
+      * Added new method &quot;newrec&quot; to CQsoDb class.
+      * Modified logbook read and write behavior to eliminate duplication
+        and employ faster string lookup algorithm in matching ADIF tags
+        to internal database entries.
+
+ 10 files changed, 407 insertions(+), 142 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=b3a89c7e9e70237e09be7a80596e8f90705e8359">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=b3a89c7e9e70237e09be7a80596e8f90705e8359</A>
+
+commit b3a89c7e9e70237e09be7a80596e8f90705e8359
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt;
+Date:   Tue Nov 15 22:39:20 2011 +0000
+
+    WEFAX error logging fix
+    
+      * Fixed format compiler warnings and errors.
+
+ 1 files changed, 6 insertions(+), 6 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=9269c9a06a6b7f9a4224e29d37b36aa0830220f8">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=9269c9a06a6b7f9a4224e29d37b36aa0830220f8</A>
+
+commit 9269c9a06a6b7f9a4224e29d37b36aa0830220f8
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Nov 15 15:47:04 2011 -0600
+
+    Restore Log Sort
+    
+      * After adding a record
+
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                  |   23 ++-
+ configure.ac               |    2 +-
+ src/dialogs/fl_digi.cxx    |    5 +
+ src/include/adif_io.h      |    6 +-
+ src/include/fl_digi.h      |   32 ++--
+ src/include/logsupport.h   |    4 +-
+ src/include/qso_db.h       |    5 +
+ src/include/threads.h      |   12 +--
+ src/logbook/adif_io.cxx    |  376 +++++++++++++++++++++++++++++++++++---------
+ src/logbook/logbook.cxx    |   21 ++-
+ src/logbook/logsupport.cxx |   61 ++++----
+ src/logbook/qso_db.cxx     |   29 +++-
+ src/wefax/wefax.cxx        |   12 +-
+ 13 files changed, 433 insertions(+), 155 deletions(-)
+  10.0% src/include/
+  82.8% src/logbook/
+  13.8% src/include/
+  78.2% src/logbook/
+   3.7% src/wefax/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000730.html">[GIT] fldigi branch, master,	updated: 8215cac4bb80bf7b5acc2dfc5284d29957ae0fd0
+</A></li>
+	<LI>Next message: <A HREF="000732.html">[GIT] fldigi branch, maint/3.21,	updated: fd296b9a25c074ecef3f191a38ee092c7fda5c09
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#731">[ date ]</a>
+              <a href="thread.html#731">[ thread ]</a>
+              <a href="subject.html#731">[ subject ]</a>
+              <a href="author.html#731">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

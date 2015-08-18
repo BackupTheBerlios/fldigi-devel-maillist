@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.21.44
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.44&In-Reply-To=%3CCAH-RX43VJvoz-pL83BnEHfASXA-0mMPdBjtnw1FE6NM6aTg0ng%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000874.html">
+   <LINK REL="Next"  HREF="000876.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.21.44</H1>
+    <B>Josh Rovero</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.44&In-Reply-To=%3CCAH-RX43VJvoz-pL83BnEHfASXA-0mMPdBjtnw1FE6NM6aTg0ng%40mail.gmail.com%3E"
+       TITLE="fldigi 3.21.44">josh.rovero at gmail.com
+       </A><BR>
+    <I>Thu Jun 14 00:13:26 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000874.html">fldigi 3.21.44
+</A></li>
+        <LI>Next message: <A HREF="000876.html">[GIT] fldigi branch, master,	updated: a7e112269ea32550b73bce71a919bdb85e82a667
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#875">[ date ]</a>
+              <a href="thread.html#875">[ thread ]</a>
+              <a href="subject.html#875">[ subject ]</a>
+              <a href="author.html#875">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Wed, Jun 13, 2012 at 5:26 PM, w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>&gt; wrote:
+
+&gt;<i>  Posted the pre-release 3.21.44 version of fldigi for your testing.
+</I>&gt;<i>
+</I>
+No problems compiling and running on Fedora Core 15 x86_64
+which is using fltk 1.1.10....  two instances chugging along
+under xmlrpc control
+
+Compile error on Fedora Core 16 x86_64 using fltk-1.3.0,
+early:
+
+In file included from ./include/waterfall.h:36:0,
+                 from ./include/configuration.h:31,
+                 from rigcontrol/hamlib.cxx:33:
+./include/flslider2.h:89:3: error: &#8216;Fl_Fontsize&#8217; does not name a type
+./include/flslider2.h:139:3: error: &#8216;Fl_Fontsize&#8217; does not name a type
+./include/flslider2.h:141:17: error: &#8216;Fl_Fontsize&#8217; has not been declared
+./include/flslider2.h: In member function &#8216;void My_Counter::textsize(int)&#8217;:
+./include/flslider2.h:141:33: error: &#8216;textsize_&#8217; was not declared in this
+scope
+In file included from ./include/Fl_Text_Display_mod.H:6:0,
+                 from ./include/Fl_Text_Editor_mod_1_3.H:37,
+                 from ./include/Fl_Text_Editor_mod.H:6,
+                 from ./include/FTextView.h:34,
+                 from ./include/FTextRXTX.h:28,
+                 from ./include/fl_digi.h:34,
+                 from rigcontrol/hamlib.cxx:41:
+./include/Fl_Text_Display_mod_1_3.H: At global scope:
+./include/Fl_Text_Display_mod_1_3.H:111:5: error: &#8216;Fl_Fontsize&#8217; does not
+name a type
+./include/Fl_Text_Display_mod_1_3.H:262:3: error: &#8216;Fl_Fontsize&#8217; does not
+name a type
+./include/Fl_Text_Display_mod_1_3.H:268:17: error: &#8216;Fl_Fontsize&#8217; has not
+been declared
+./include/Fl_Text_Display_mod_1_3.H:477:3: error: &#8216;Fl_Fontsize&#8217; does not
+name a type
+./include/Fl_Text_Display_mod_1_3.H: In member function &#8216;void
+Fl_Text_Display_mod::textsize(int)&#8217;:
+./include/Fl_Text_Display_mod_1_3.H:268:33: error: &#8216;textsize_&#8217; was not
+declared in this scope
+
+I'll try regressing FC16 back to fltk-1.1.10 from source....
+
+-- 
+P.J. &quot;Josh&quot; Rovero                   Ham Radio: KK1D
+<A HREF="http://www.roveroresearch.org">http://www.roveroresearch.org</A>   <A HREF="http://www.roveroresearch.info">http://www.roveroresearch.info</A>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120613/af0135c6/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120613/af0135c6/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000874.html">fldigi 3.21.44
+</A></li>
+	<LI>Next message: <A HREF="000876.html">[GIT] fldigi branch, master,	updated: a7e112269ea32550b73bce71a919bdb85e82a667
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#875">[ date ]</a>
+              <a href="thread.html#875">[ thread ]</a>
+              <a href="subject.html#875">[ subject ]</a>
+              <a href="author.html#875">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

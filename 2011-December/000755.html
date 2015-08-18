@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: e37c3e42d8758a1a3e9a15cefec2842eab0fe18e
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20e37c3e42d8758a1a3e9a15cefec2842eab0fe18e&In-Reply-To=%3C20111211231046.A16FD48297E%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000754.html">
+   <LINK REL="Next"  HREF="000756.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: e37c3e42d8758a1a3e9a15cefec2842eab0fe18e</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20e37c3e42d8758a1a3e9a15cefec2842eab0fe18e&In-Reply-To=%3C20111211231046.A16FD48297E%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: e37c3e42d8758a1a3e9a15cefec2842eab0fe18e">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Mon Dec 12 00:10:46 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000754.html">[GIT] fldigi branch, maint/3.21,	updated: e797bc3aec405cc1fcba435c7ff80803888edf72
+</A></li>
+        <LI>Next message: <A HREF="000756.html">my compilation of fldigi v3.22.0BK
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#755">[ date ]</a>
+              <a href="thread.html#755">[ thread ]</a>
+              <a href="subject.html#755">[ subject ]</a>
+              <a href="author.html#755">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  e37c3e42d8758a1a3e9a15cefec2842eab0fe18e (commit)
+       via  773c413e4d8af74546b5cad470304e65ee243d4a (commit)
+       via  8d54e2886915aeb56d0514dc3d2fc0e5f5abf308 (commit)
+       via  0c064c64a436fe9ef89d578c2f4c267a9cc6dc5a (commit)
+       via  ee1ab43ae4910b32e22a313dbbca603baee75aaf (commit)
+       via  8d647fc315522a9b058786f5722e47855ecbe83a (commit)
+       via  b8ccd770f67b38d23186e9e0710150bb7bf7bd22 (commit)
+       via  87cc9d43a3b2980ba397650c2db7ebd91a289bc4 (commit)
+       via  6ac3b345b62e71827c89264d3134d86a8f26f2af (commit)
+      from  56f902002fdd394c55f64592709a708df2e0254a (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e37c3e42d8758a1a3e9a15cefec2842eab0fe18e">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e37c3e42d8758a1a3e9a15cefec2842eab0fe18e</A>
+
+commit e37c3e42d8758a1a3e9a15cefec2842eab0fe18e
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Dec 11 13:31:26 2011 -0600
+
+    Version 3.22.0BK
+    
+      Alpha release
+
+ 2 files changed, 15 insertions(+), 1 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                   |   14 +
+ configure.ac                |    2 +-
+ src/Makefile.am             |    2 +
+ src/dialogs/colorsfonts.cxx |  178 +++++--
+ src/dialogs/colorsfonts.fl  |  159 ++++--
+ src/dialogs/confdialog.cxx  | 1323 ++++++++++++++++++++++++-------------------
+ src/dialogs/confdialog.fl   |  860 ++++++++++++++++------------
+ src/dialogs/fl_digi.cxx     |   31 +-
+ src/globals/globals.cxx     |    6 +-
+ src/include/colorsfonts.h   |    8 +
+ src/include/confdialog.h    |   93 ++--
+ src/include/configuration.h |   30 +-
+ src/include/dxcc.h          |    4 +
+ src/include/globals.h       |    2 +
+ src/include/modem.h         |   36 +-
+ src/include/navtex.h        |   33 ++
+ src/include/qso_db.h        |    8 +-
+ src/include/soundconf.h     |    1 -
+ src/include/wefax.h         |    6 +-
+ src/logbook/logsupport.cxx  |   20 +-
+ src/logbook/qso_db.cxx      |  122 ++--
+ src/main.cxx                |   11 +-
+ src/misc/dxcc.cxx           |   40 ++
+ src/misc/xmlrpc.cxx         |   34 ++
+ src/navtex/navtex.cxx       | 1017 +++++++++++++++++++++++++++++++++
+ src/soundcard/sound.cxx     |   83 ++-
+ src/soundcard/soundconf.cxx |   14 -
+ src/trx/modem.cxx           |   41 +--
+ src/wefax/wefax-pic.cxx     |    5 +-
+ src/wefax/wefax.cxx         |   65 +--
+ 30 files changed, 2927 insertions(+), 1321 deletions(-)
+  60.0% src/dialogs/
+   5.2% src/include/
+   3.3% src/logbook/
+  23.9% src/navtex/
+   7.0% src/
+  44.6% src/dialogs/
+   6.3% src/include/
+   4.5% src/logbook/
+  33.0% src/navtex/
+   4.1% src/soundcard/
+   6.8% src/
+ create mode 100644 src/include/navtex.h
+ create mode 100644 src/navtex/navtex.cxx
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000754.html">[GIT] fldigi branch, maint/3.21,	updated: e797bc3aec405cc1fcba435c7ff80803888edf72
+</A></li>
+	<LI>Next message: <A HREF="000756.html">my compilation of fldigi v3.22.0BK
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#755">[ date ]</a>
+              <a href="thread.html#755">[ thread ]</a>
+              <a href="subject.html#755">[ subject ]</a>
+              <a href="author.html#755">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

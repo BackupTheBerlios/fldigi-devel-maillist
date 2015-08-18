@@ -1,0 +1,665 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [PATCH 1/2] Sync italian translation to 3.22.0AL
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BPATCH%201/2%5D%20Sync%20italian%20translation%20to%203.22.0AL&In-Reply-To=%3C1315656056-19262-1-git-send-email-pf%40tippete.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000682.html">
+   <LINK REL="Next"  HREF="000683.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[PATCH 1/2] Sync italian translation to 3.22.0AL</H1>
+    <B>Pierfrancesco Caci</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BPATCH%201/2%5D%20Sync%20italian%20translation%20to%203.22.0AL&In-Reply-To=%3C1315656056-19262-1-git-send-email-pf%40tippete.net%3E"
+       TITLE="[PATCH 1/2] Sync italian translation to 3.22.0AL">pf at tippete.net
+       </A><BR>
+    <I>Sat Sep 10 14:00:55 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000682.html">Proposal: Extension of QSY macro to several frequencies
+</A></li>
+        <LI>Next message: <A HREF="000683.html">[PATCH 2/2] Files automatically modified by make maintainer-clean
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#684">[ date ]</a>
+              <a href="thread.html#684">[ thread ]</a>
+              <a href="subject.html#684">[ subject ]</a>
+              <a href="author.html#684">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>---
+ po/it.po |  200 +++++++++++++++++++++++++++----------------------------------
+ 1 files changed, 89 insertions(+), 111 deletions(-)
+
+diff --git a/po/it.po b/po/it.po
+index 0030649..c7c38d4 100644
+--- a/po/it.po
++++ b/po/it.po
+@@ -7,14 +7,14 @@ msgid &quot;&quot;
+ msgstr &quot;&quot;
+ &quot;Project-Id-Version: fldigi 3.21.0BG\n&quot;
+ &quot;Report-Msgid-Bugs-To: w1hkj AT w1hkj DOT com\n&quot;
+-&quot;POT-Creation-Date: 2011-09-06 05:46-0500\n&quot;
+-&quot;PO-Revision-Date: 2011-02-18 21:57+0100\n&quot;
++&quot;POT-Creation-Date: 2011-09-10 13:50+0200\n&quot;
++&quot;PO-Revision-Date: 2011-09-10 13:51+0200\n&quot;
+ &quot;Last-Translator: Pierfrancesco Caci &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">pf at tippete.net</A>&gt;\n&quot;
+ &quot;Language-Team: Italian\n&quot;
+-&quot;Language: \n&quot;
+ &quot;MIME-Version: 1.0\n&quot;
+ &quot;Content-Type: text/plain; charset=UTF-8\n&quot;
+ &quot;Content-Transfer-Encoding: 8bit\n&quot;
++&quot;Language: \n&quot;
+ &quot;Plural-Forms: nplurals=2; plural=(n != 1);\n&quot;
+ 
+ #: src/main.cxx:248
+@@ -24,8 +24,8 @@ msgstr &quot;%s log iniziato il %s&quot;
+ 
+ #: src/main.cxx:889
+ msgid &quot;&quot;
+-&quot;License GPLv3+: GNU GPL version 3 or later &lt;<A HREF="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</A>&quot;
+-&quot;gpl-3.0.html&gt;\n&quot;
++&quot;License GPLv3+: GNU GPL version 3 or later &lt;<A HREF="http://www.gnu.org/licenses/gpl-">http://www.gnu.org/licenses/gpl-</A>&quot;
++&quot;3.0.html&gt;\n&quot;
+ &quot;This is free software: you are free to change and redistribute it.\n&quot;
+ &quot;There is NO WARRANTY, to the extent permitted by law.\n&quot;
+ msgstr &quot;&quot;
+@@ -119,7 +119,7 @@ msgstr &quot;Mostra canali&quot;
+ 
+ #: src/dialogs/fl_digi.cxx:171
+ msgid &quot;Connect to server&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Collegati al server&quot;
+ 
+ #: src/dialogs/fl_digi.cxx:542 src/dialogs/fl_digi.cxx:556
+ #: src/dialogs/fl_digi.cxx:565 src/dialogs/fl_digi.cxx:2942
+@@ -912,7 +912,6 @@ msgid &quot;Create cabrillo report&quot;
+ msgstr &quot;Crea il log in formato cabrillo&quot;
+ 
+ #: src/logger/rx_extract.cxx:48
+-#, fuzzy
+ msgid &quot;&quot;
+ &quot;Detect the occurance of [WRAP:beg] and [WRAP:end]\n&quot;
+ &quot;Save tags and all enclosed text to date-time stamped file, ie:\n&quot;
+@@ -924,7 +923,6 @@ msgstr &quot;&quot;
+ &quot;     NBEMS.files\\WRAP\\recv\\extract-20090127-092515.wrap&quot;
+ 
+ #: src/logger/rx_extract.cxx:53
+-#, fuzzy
+ msgid &quot;&quot;
+ &quot;Detect the occurance of [WRAP:beg] and [WRAP:end]\n&quot;
+ &quot;Save tags and all enclosed text to date-time stamped file, ie:\n&quot;
+@@ -937,20 +935,20 @@ msgstr &quot;&quot;
+ 
+ #: src/logger/rx_extract.cxx:164
+ msgid &quot;Could not start flmsg&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Impossibile avviare flmsg&quot;
+ 
+ #: src/logger/rx_extract.cxx:187 src/logger/rx_extract.cxx:190
+ #: src/dialogs/confdialog.cxx:6434
+ msgid &quot;Locate flmsg executable&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Trova l'eseguibile di flmsg&quot;
+ 
+ #: src/logger/rx_extract.cxx:187
+ msgid &quot;flmsg.exe\t*.exe&quot;
+-msgstr &quot;&quot;
++msgstr &quot;flmsg.exe\t*.exe&quot;
+ 
+ #: src/logger/rx_extract.cxx:190
+ msgid &quot;flmsg\t*&quot;
+-msgstr &quot;&quot;
++msgstr &quot;flmsg\t*&quot;
+ 
+ #: src/logger/speak.cxx:42
+ msgid &quot;&quot;
+@@ -1125,9 +1123,8 @@ msgid &quot;&lt;CLRRX&gt;\tclear RX pane&quot;
+ msgstr &quot;&lt;CLRRX&gt;\tcancella la finestra di ricezione&quot;
+ 
+ #: src/misc/macroedit.cxx:95
+-#, fuzzy
+ msgid &quot;&lt;CLRTX&gt;\tclear TX pane&quot;
+-msgstr &quot;&lt;CLRRX&gt;\tcancella la finestra di ricezione&quot;
++msgstr &quot;&lt;CLRTX&gt;\tcancella la finestra di trasmissione&quot;
+ 
+ #: src/misc/macroedit.cxx:98
+ msgid &quot;&lt;GET&gt;\ttext to NAME/QTH&quot;
+@@ -1198,9 +1195,8 @@ msgid &quot;&lt;INCR&gt;\tincrement counter&quot;
+ msgstr &quot;&lt;INCR&gt;\tincrementa il contatore&quot;
+ 
+ #: src/misc/macroedit.cxx:125
+-#, fuzzy
+ msgid &quot;&lt;XIN&gt;\texchange in&quot;
+-msgstr &quot;&lt;XEND&gt;\tfine rapporto&quot;
++msgstr &quot;&lt;XIN&gt;\trapporto ricevuto&quot;
+ 
+ #: src/misc/macroedit.cxx:126
+ msgid &quot;&lt;XOUT&gt;\texchange out&quot;
+@@ -1248,11 +1244,11 @@ msgstr &quot;&lt;GOFREQ:NNNN&gt;\tvai alla freq NNNN&quot;
+ 
+ #: src/misc/macroedit.cxx:139
+ msgid &quot;&lt;QSYTO&gt;\tleft-clk QSY button&quot;
+-msgstr &quot;&quot;
++msgstr &quot;&lt;QSYTO&gt;\tclick sinistro sul pulsante QSY&quot;
+ 
+ #: src/misc/macroedit.cxx:140
+ msgid &quot;&lt;QSYFM&gt;\tright-clk QSY button&quot;
+-msgstr &quot;&quot;
++msgstr &quot;&lt;QSYFM&gt;\tclick destro sul pulsante QSY&quot;
+ 
+ #: src/misc/macroedit.cxx:143
+ msgid &quot;&lt;QSY:FFF.F[:NNNN]&gt;\tqsy to kHz, Hz&quot;
+@@ -1312,7 +1308,7 @@ msgstr &quot;&lt;RXRSID:on|off|t&gt;\tRx RSID on,off,toggle&quot;
+ 
+ #: src/misc/macroedit.cxx:161
+ msgid &quot;&lt;DTMF:[Wn:][Ln:]chrs&gt;\t[Wait][Len](ms)&quot;
+-msgstr &quot;&quot;
++msgstr &quot;&lt;DTMF:[Wn:][Ln:]chrs&gt;\t[Wait][Len](ms)&quot;
+ 
+ #: src/misc/macroedit.cxx:164
+ msgid &quot;&lt;POST:+/-nn.n&gt;\tCW QSK post-timing&quot;
+@@ -1351,9 +1347,8 @@ msgid &quot;Change to Macro file&quot;
+ msgstr &quot;Modifica al file delle macro&quot;
+ 
+ #: src/misc/macroedit.cxx:302
+-#, fuzzy
+ msgid &quot;Executable file to insert&quot;
+-msgstr &quot;File di testo da inserire&quot;
++msgstr &quot;File eseguibile da inserire&quot;
+ 
+ #: src/misc/macroedit.cxx:320
+ msgid &quot;Text:&quot;
+@@ -1371,15 +1366,15 @@ msgstr &quot;Etichetta sul Pulsante Macro:&quot;
+ msgid &quot;Macro editor - &quot;
+ msgstr &quot;Editor delle macro - &quot;
+ 
+-#: src/misc/macros.cxx:1422
++#: src/misc/macros.cxx:1617
+ msgid &quot;Open macro file&quot;
+ msgstr &quot;Apri file delle macro&quot;
+ 
+-#: src/misc/macros.cxx:1422 src/misc/macros.cxx:1434
++#: src/misc/macros.cxx:1617 src/misc/macros.cxx:1629
+ msgid &quot;Fldigi macro definition file\t*.mdf&quot;
+ msgstr &quot;File di definizione delle macro per Fldigi\t*.mdf&quot;
+ 
+-#: src/misc/macros.cxx:1434
++#: src/misc/macros.cxx:1629
+ msgid &quot;Save macro file&quot;
+ msgstr &quot;Salva file delle macro&quot;
+ 
+@@ -2057,7 +2052,7 @@ msgstr &quot;Aspetto&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3233
+ msgid &quot;Gen'&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Gen.&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3236
+ msgid &quot;Show tooltips&quot;
+@@ -2502,7 +2497,6 @@ msgid &quot;Left click to select dup color&quot;
+ msgstr &quot;Tasto sinistro per cambiare il colore dei duplicati&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3694
+-#, fuzzy
+ msgid &quot;WF Ctrls&quot;
+ msgstr &quot;Controlli WF&quot;
+ 
+@@ -2567,36 +2561,32 @@ msgid &quot;Print CW / RTTY / THROB / CONTESTIA in lowercase&quot;
+ msgstr &quot;Stampa CW / RTTY / THROB / CONTESTIA in minuscolo&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3787
+-#, fuzzy
+ msgid &quot;Log server&quot;
+-msgstr &quot;Origine dei log&quot;
++msgstr &quot;Server di log&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3789
+ msgid &quot;Client/Server Logbook&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Logbook Client/Server&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3792
+-#, fuzzy
+ msgid &quot;Server Address:&quot;
+-msgstr &quot;Nome del server&quot;
++msgstr &quot;Indirizzo del server:&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3793
+ msgid &quot;Enter URL address of server&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Inserisci l'URL del server&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3797
+-#, fuzzy
+ msgid &quot;Server Port:&quot;
+-msgstr &quot;Nome del server&quot;
++msgstr &quot;Porta del server:&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3798
+-#, fuzzy
+ msgid &quot;Enter Port # assigned to server&quot;
+-msgstr &quot;Usa un server Port Audio&quot;
++msgstr &quot;Inserisci il numero di porta assegnata al server&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3802
+ msgid &quot;Reconnect&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Riconnetti&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3818
+ msgid &quot;Display&quot;
+@@ -2608,7 +2598,7 @@ msgstr &quot;Colori e cursori&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3822
+ msgid &quot;aa&quot;
+-msgstr &quot;&quot;
++msgstr &quot;aa&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3837 src/dialogs/confdialog.cxx:3841
+ #: src/dialogs/confdialog.cxx:3845 src/dialogs/confdialog.cxx:3849
+@@ -2670,19 +2660,16 @@ msgid &quot;Tracks color&quot;
+ msgstr &quot;Colore tracce&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3919
+-#, fuzzy
+ msgid &quot;Wide tracks&quot;
+-msgstr &quot;Tracce largh. banda&quot;
++msgstr &quot;Tracce spesse&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3925
+-#, fuzzy
+ msgid &quot;Wide center line&quot;
+-msgstr &quot;Linea centrale&quot;
++msgstr &quot;Linea centrale spessa&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3931
+-#, fuzzy
+ msgid &quot;Wide cursor&quot;
+-msgstr &quot;Larghezza di banda&quot;
++msgstr &quot;Cursore largo&quot;
+ 
+ #: src/dialogs/confdialog.cxx:3939
+ msgid &quot;Frequency scale&quot;
+@@ -3097,9 +3084,8 @@ msgid &quot;&lt;VE&gt;&quot;
+ msgstr &quot;&lt;VE&gt;&quot;
+ 
+ #: src/dialogs/confdialog.cxx:4621
+-#, fuzzy
+ msgid &quot;Dom&quot;
+-msgstr &quot;DomEX&quot;
++msgstr &quot;Dom&quot;
+ 
+ #: src/dialogs/confdialog.cxx:4625 src/dialogs/confdialog.cxx:5228
+ msgid &quot;Secondary Text&quot;
+@@ -3147,7 +3133,7 @@ msgstr &quot;Paths (hidden)&quot;
+ 
+ #: src/dialogs/confdialog.cxx:4713
+ msgid &quot;FH&quot;
+-msgstr &quot;&quot;
++msgstr &quot;FH&quot;
+ 
+ #: src/dialogs/confdialog.cxx:4717
+ msgid &quot;Transmit font&quot;
+@@ -3405,18 +3391,16 @@ msgid &quot;TX&quot;
+ msgstr &quot;TX&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5136
+-#, fuzzy
+ msgid &quot;Log RTTY frequency&quot;
+-msgstr &quot;Frequenza audio&quot;
++msgstr &quot;Metti a log la frequenza RTTY&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5139
+ msgid &quot;Use MARK freq'&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Usa freq. di MARK&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5145
+-#, fuzzy
+ msgid &quot;track clr&quot;
+-msgstr &quot;Colore tracce&quot;
++msgstr &quot;Colore&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5154
+ msgid &quot;Use cross hair scope&quot;
+@@ -3466,102 +3450,101 @@ msgstr &quot;Abilita il DSP prima del decodificatore&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5310
+ msgid &quot;Packet&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Packet&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5315
+-#, fuzzy
+ msgid &quot;Select packet baudrate&quot;
+-msgstr &quot;Seleziona la velocit&#195;&#161; in baud della portante&quot;
++msgstr &quot;Seleziona la velocit&#195;&#161; in baud del packet&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5323
+ msgid &quot;RX Low Freq Gain&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Guadagno RX tono basso&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5324 src/dialogs/confdialog.cxx:5362
+ msgid &quot;Processing gain to apply to lower tone (in dB)&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Guadagno da applicare al tono di frequenza pi&#195;&#186; bassa (in dB)&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5342
+ msgid &quot;RX High Freq Gain&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Guadagno RX tono alto&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5343 src/dialogs/confdialog.cxx:5381
+ msgid &quot;Processing gain to apply to higher tone (in dB)&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Guadagno da applicare al tono di frequenza pi&#195;&#186; alta (in dB)&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5361
+ msgid &quot;TX Low Freq Gain&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Guadagno TX tono basso&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5380
+ msgid &quot;TX High Freq Gain&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Guadagno TX tono alto&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5399
+ msgid &quot;add RX timestamps&quot;
+-msgstr &quot;&quot;
++msgstr &quot;aggiunti l'orario di RX&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5400
+ msgid &quot;Prepend timestamp to each RX packet&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Precedi ogni pacchetto ricevuto con l'orario&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5405
+ msgid &quot;decode Compressed data&quot;
+-msgstr &quot;&quot;
++msgstr &quot;decodifica dati compressi&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5406
+ msgid &quot;Decode received Compressed Position data&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Decodifica i pacchetti di posizione compressi ricevuti&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5411
+ msgid &quot;decode Mic-E data&quot;
+-msgstr &quot;&quot;
++msgstr &quot;decodifica dati Mic-E&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5412
+ msgid &quot;Decode received Mic-E data&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Decodifica i dati Mic-E ricevuti&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5417
+ msgid &quot;decode PHG data&quot;
+-msgstr &quot;&quot;
++msgstr &quot;decodifica dati PHG&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5418
+ msgid &quot;Decode received PHG data&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Decodifica i dati PHG ricevuti&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5423
+ msgid &quot;use SI units&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Usa unit&#195;&#161; SI&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5424
+ msgid &quot;Display decoded data values in SI units&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Mostra i valori decodificati in unit&#195;&#161; SI&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5429
+ msgid &quot;use English units&quot;
+-msgstr &quot;&quot;
++msgstr &quot;usa unit&#195;&#161; imperiali&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5430
+ msgid &quot;Display decoded data in English units&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Mostra i dati decodificati in unit&#195;&#161; imperiali&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5435
+-#, fuzzy
+ msgid &quot;Use cross-hair scope&quot;
+ msgstr &quot;Usa oscilloscopio a croce&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5436
+ msgid &quot;Defaults to syncscope instead of phase (cross-hair) scope&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Usa l'oscilloscopio di sincronia invece che quello di fase (a croce)&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5441
+-#, fuzzy
+ msgid &quot;boost Audio input&quot;
+-msgstr &quot;Dispositivo audio d'ingresso&quot;
++msgstr &quot;amplifica l'ingresso audio&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5442
+ msgid &quot;add additional gain to audio input for low-output interfaces&quot;
+ msgstr &quot;&quot;
++&quot;aggiungi ulteriore guadango all'ingresso audio nel caso di interfacce con &quot;
++&quot;basso livello d'uscita&quot;
+ 
+ #: src/dialogs/confdialog.cxx:5455
+ msgid &quot;Rig&quot;
+@@ -4095,9 +4078,8 @@ msgid &quot;OSS mixer&quot;
+ msgstr &quot;Mixer OSS&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6126
+-#, fuzzy
+ msgid &quot;Manage mixers&quot;
+-msgstr &quot;Gestisci il mixer&quot;
++msgstr &quot;Gestisci i mixer&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6127
+ msgid &quot;Add mixer controls to main dialog&quot;
+@@ -4133,15 +4115,15 @@ msgstr &quot;Imposta il livello PCM della scheda audio&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6167
+ msgid &quot;TxLevel&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Livello TX&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6169
+ msgid &quot;Tx Attenuator&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Attenuatore TX&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6172
+ msgid &quot;Tx Atten (dB)&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Attenuazione TX (dB)&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6188
+ msgid &quot;ID&quot;
+@@ -4331,64 +4313,59 @@ msgstr &quot;Abilita se il tuo computer non decodifica correttamente&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6391
+ msgid &quot;NBEMS&quot;
+-msgstr &quot;&quot;
++msgstr &quot;NBEMS&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6393
+ msgid &quot;NBEMS data file interface&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Interfaccia per i file di dati NBEMS&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6396
+-#, fuzzy
+ msgid &quot;Enable&quot;
+-msgstr &quot;Abilitato&quot;
++msgstr &quot;Abilita&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6397
+-#, fuzzy
+ msgid &quot;Extract files for use with external \&quot;wrap / flmsg\&quot; program&quot;
+-msgstr &quot;Estrai i file per l'uso con il programma esterno \&quot;wrap\&quot;&quot;
++msgstr &quot;Estrai i file per l'uso con il programma esterno \&quot;wrap\&quot; o \&quot;flmsg\&quot;&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6402
+-#, fuzzy
+ msgid &quot;Open message folder&quot;
+-msgstr &quot;Apri file delle macro&quot;
++msgstr &quot;Apri la cartella dei messaggi&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6403
+ msgid &quot;Opens NBEMS file folder upon successful capture&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Apre la cartella con i file NBEMS in seguito a ricezione corretta&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6410
+ msgid &quot;Reception of flmsg file&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Ricezione di file flmsg&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6413
+ msgid &quot;Open with flmsg&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Apri con flmsg&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6414
+-#, fuzzy
+ msgid &quot;Open message with flmsg&quot;
+-msgstr &quot;Un messaggio e` stato loggato&quot;
++msgstr &quot;Apri il messaggio con flmsg&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6419
+ msgid &quot;flmsg:&quot;
+-msgstr &quot;&quot;
++msgstr &quot;flmsg:&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6420
+ msgid &quot;Enter full path-filename for flmsg&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Inserisci il percorso completo per flmsg&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6433
+ msgid &quot;Locate flmsg&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Trova flmsg&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6437
+-#, fuzzy
+ msgid &quot;Open in browser&quot;
+-msgstr &quot;Navigatore segnali&quot;
++msgstr &quot;Apri nel browser&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6438
+ msgid &quot;Open file with default browser&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Apri il file con il browser di sistema&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6447
+ msgid &quot;Pskmail&quot;
+@@ -4525,34 +4502,36 @@ msgstr &quot;&quot;
+ &quot;OFF - mantieni la posizione attuale del cursore sul waterfall&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6690
+-#, fuzzy
+ msgid &quot;A1A offset configuration&quot;
+-msgstr &quot;Configurazione avanzata:&quot;
++msgstr &quot;Configurazione scostamento A1A&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6693
+ msgid &quot;CW is LSB&quot;
+-msgstr &quot;&quot;
++msgstr &quot;CW usa LSB&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6694
+ msgid &quot;&quot;
+ &quot;Select this for Elecraft K3\n&quot;
+ &quot;Other radios should not need it.&quot;
+ msgstr &quot;&quot;
++&quot;Seleziona questa opzione per Elecraft K3.\n&quot;
++&quot;Le altre radio non dovrebbero averne bisogno.&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6699
+ msgid &quot;Display true frequency in the waterfall&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Mostra la frequenza vera nel waterfall&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6700
+ msgid &quot;&quot;
+ &quot;Enable to show the true transmit frequency on the waterfall when the radio &quot;
+ &quot;is in CW (A1A) mode&quot;
+ msgstr &quot;&quot;
++&quot;Seleziona questa opzione per mostrare la vera frequenza di trasmissione nel &quot;
++&quot;waterfall quando la radio e` in modo CW (A1A).&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6710
+-#, fuzzy
+ msgid &quot;Text i/o&quot;
+-msgstr &quot;Testo:&quot;
++msgstr &quot;I/O testo:&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6712
+ msgid &quot;Talker Socket (MS only)&quot;
+@@ -4585,11 +4564,11 @@ msgstr &quot;Invia il testo ricevuto al file: textout.txt&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6742
+ msgid &quot;DTMF&quot;
+-msgstr &quot;&quot;
++msgstr &quot;DTMF&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6744
+ msgid &quot;Decode DTMF tones&quot;
+-msgstr &quot;&quot;
++msgstr &quot;Decodifica i toni DTMF&quot;
+ 
+ #: src/dialogs/confdialog.cxx:6756
+ msgid &quot;Callsign DB&quot;
+@@ -4886,9 +4865,8 @@ msgstr &quot;Seriale trasmesso&quot;
+ 
+ #: src/logbook/lgbook.cxx:484 src/logbook/lgbook.cxx:735
+ #: src/logbook/lgbook.cxx:736
+-#, fuzzy
+ msgid &quot;County&quot;
+-msgstr &quot;Paese&quot;
++msgstr &quot;Contea&quot;
+ 
+ #: src/logbook/lgbook.cxx:490 src/logbook/lgbook.cxx:759
+ msgid &quot;CQZ&quot;
+-- 
+1.7.0.4
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000682.html">Proposal: Extension of QSY macro to several frequencies
+</A></li>
+	<LI>Next message: <A HREF="000683.html">[PATCH 2/2] Files automatically modified by make maintainer-clean
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#684">[ date ]</a>
+              <a href="thread.html#684">[ thread ]</a>
+              <a href="subject.html#684">[ subject ]</a>
+              <a href="author.html#684">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

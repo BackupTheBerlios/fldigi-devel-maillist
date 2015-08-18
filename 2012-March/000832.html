@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> push2talk race condition in relation to PSKMail ??
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20push2talk%20race%20condition%20in%20relation%20to%20PSKMail%20%3F%3F&In-Reply-To=%3C4F6BB299.7040003%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000831.html">
+   <LINK REL="Next"  HREF="000834.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>push2talk race condition in relation to PSKMail ??</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20push2talk%20race%20condition%20in%20relation%20to%20PSKMail%20%3F%3F&In-Reply-To=%3C4F6BB299.7040003%40gmail.com%3E"
+       TITLE="push2talk race condition in relation to PSKMail ??">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Fri Mar 23 00:15:37 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000831.html">fldigi-devel Digest, Vol 32, Issue 12
+</A></li>
+        <LI>Next message: <A HREF="000834.html">push2talk race condition in relation to PSKMail ?? Another	scenario ????
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#832">[ date ]</a>
+              <a href="thread.html#832">[ thread ]</a>
+              <a href="subject.html#832">[ subject ]</a>
+              <a href="author.html#832">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi All,
+
+I try to chase a possible bug which might be related to the activation 
+of the PTT in the context of the ARQ server, and I saw this:
+
+$ grep push2talk src/*/*cxx | grep -w set
+
+src/misc/arq_io.cxx:	
+		REQ_SYNC(&amp;PTT::set, push2talk, true);
+		REQ_SYNC(&amp;PTT::set, push2talk, false);
+
+src/trx/trx.cxx:
+push2talk-&gt;set(true);
+push2talk-&gt;set(false);
+push2talk-&gt;set(true);
+push2talk-&gt;set(false);
+
+This means that the function PTT::set can be called in two different 
+threads:
+
+- Transmit thread: functions trx_trx_transmit_loop and trx_tune_loop
+- ARQ thread, function ParseMode
+
+The function PTT::set calls hamlib_set_ptt which works basically this way:
+
+void hamlib_set_ptt(int ptt)
+{
+     LockMutex
+              setPtt
+              IfErrorThenLeavesPttWithoutUnlocking
+     UnlockingMutex
+}
+
+
+A possible error is that:
+* If Hamlib had a problem setting the PTT then it will leave without 
+unlocking the mutex.
+* If later on, a thread tries to set the PTT, it will just hang, waiting 
+for the mutex to be unlocked.
+
+So I have two questions:
+* Could you please confirm than when the problem happens, one thread is 
+frozen ?
+* Is it possible that for any reason, the PTT did not work, just once ?
+* Did someone saw in the logfile a message containing the string: &quot;Rig 
+PTT&quot; ?
+
+Many thanks for any information.
+
+Whatever the answer is, I think this can be considered as a therotical 
+bug at least, so I will suggest a fix.
+
+If someone is interested, a good way to prove this is to trigger a ptt 
+problem (Unplugging the cable ? Manually setting the PTT ?)
+
+
+Sincerely hope it helps.
+
+R
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000831.html">fldigi-devel Digest, Vol 32, Issue 12
+</A></li>
+	<LI>Next message: <A HREF="000834.html">push2talk race condition in relation to PSKMail ?? Another	scenario ????
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#832">[ date ]</a>
+              <a href="thread.html#832">[ thread ]</a>
+              <a href="subject.html#832">[ subject ]</a>
+              <a href="author.html#832">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

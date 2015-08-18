@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Hamlib-developer] A proposal for a Hamlib++
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BHamlib-developer%5D%20A%20proposal%20for%20a%20Hamlib%2B%2B&In-Reply-To=%3C20130622024119.GP20860%40n0nb.us%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001033.html">
+   <LINK REL="Next"  HREF="001034.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Hamlib-developer] A proposal for a Hamlib++</H1>
+    <B>Nate Bargmann</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BHamlib-developer%5D%20A%20proposal%20for%20a%20Hamlib%2B%2B&In-Reply-To=%3C20130622024119.GP20860%40n0nb.us%3E"
+       TITLE="[Hamlib-developer] A proposal for a Hamlib++">n0nb at n0nb.us
+       </A><BR>
+    <I>Sat Jun 22 04:41:19 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001033.html">[Hamlib-developer] A proposal for a Hamlib++
+</A></li>
+        <LI>Next message: <A HREF="001034.html">[Hamlib-developer] A proposal for a Hamlib++
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1031">[ date ]</a>
+              <a href="thread.html#1031">[ thread ]</a>
+              <a href="subject.html#1031">[ subject ]</a>
+              <a href="author.html#1031">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>* On 2013 21 Jun 21:30 -0500, Dick Kriss wrote:
+&gt;<i> It is unfortunate the format of updates to hamlib cannot be compiled
+</I>&gt;<i> for use in fldigi and I understand the decision to remove hamlib in
+</I>&gt;<i> future fldigi updates. 
+</I>
+Hi Dick.
+
+Actually, I think the breakage comes from a tool we rely on from the GNU
+Libtool package.  Around the time the breakage occured, we were forced
+to update to a newer version of Libtool due to the version we were
+including with Hamlib was the subject of a security advisory.  Had we
+not made the change, Hamlib would not have been allowed to remain in
+Debian and other Linux distributions.  At least that is where I have
+been able to pin point the source of the issue.  
+
+Unfortunately, I cannot tell anyone for certain that the 1.2.12 version 
+of Hamlib included in Fldigi for other platforms is not a security issue
+on other platforms.  As for adding new backends since 1.2.12, that has
+not changed.  The programming interface for backends has remained stable
+for all releases from 1.2.0 to the current 1.2.15.3.
+
+73, de Nate &gt;&gt;
+
+-- 
+
+&quot;The optimist proclaims that we live in the best of all
+possible worlds.  The pessimist fears this is true.&quot;
+
+Ham radio, Linux, bikes, and more: <A HREF="http://www.n0nb.us">http://www.n0nb.us</A>
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001033.html">[Hamlib-developer] A proposal for a Hamlib++
+</A></li>
+	<LI>Next message: <A HREF="001034.html">[Hamlib-developer] A proposal for a Hamlib++
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1031">[ date ]</a>
+              <a href="thread.html#1031">[ thread ]</a>
+              <a href="subject.html#1031">[ subject ]</a>
+              <a href="author.html#1031">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

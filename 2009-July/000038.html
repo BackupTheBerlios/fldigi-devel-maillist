@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> MT63 bug fix pushed to pu/df
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20MT63%20bug%20fix%20pushed%20to%20pu/df&In-Reply-To=%3C4A68F479.5070209%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000037.html">
+   <LINK REL="Next"  HREF="000039.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>MT63 bug fix pushed to pu/df</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20MT63%20bug%20fix%20pushed%20to%20pu/df&In-Reply-To=%3C4A68F479.5070209%40bellsouth.net%3E"
+       TITLE="MT63 bug fix pushed to pu/df">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Fri Jul 24 01:38:33 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000037.html">[GIT] fldigi branch, master,	updated: 52fb02e33dd649a49cbbc44af67ea6ba9859017c
+</A></li>
+        <LI>Next message: <A HREF="000039.html">[GIT] fldigi branch, maint/3.12,	created: 762729fcbf9d9df2a38640d22c68be79d2f9931b
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#38">[ date ]</a>
+              <a href="thread.html#38">[ thread ]</a>
+              <a href="subject.html#38">[ subject ]</a>
+              <a href="author.html#38">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>commit 904ecba4289d4f2ace7c12024196a6cd0847d641
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Jul 23 18:30:25 2009 -0500
+
+    MT63 transmit bug fix
+    
+        1. MT63 tx buffer was not correctly initialized at the start
+           of each transmission.
+        2. Added Rx Integration length selector to MT63 configuration.
+        3. Added lowest / highest preamble tones as a signal acquisition
+           aid.  User can enable lowest, both or none.
+
+This bug has been with since the original conversion of gMFSK modem 
+structures to fldigi modem classes.  The bug caused erroneous characters 
+to be transmitted before the onset of the desired text.
+
+This fix is important enough to be retrofit to the 3.12 release.
+
+Stelios, you said it would not be long before a 3.12.1 maintenance 
+release would be issued.  Sigh.  Would you like to create the 3.12 
+maintenance branch?
+
+Dave
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20090723/a4211f66/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20090723/a4211f66/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000037.html">[GIT] fldigi branch, master,	updated: 52fb02e33dd649a49cbbc44af67ea6ba9859017c
+</A></li>
+	<LI>Next message: <A HREF="000039.html">[GIT] fldigi branch, maint/3.12,	created: 762729fcbf9d9df2a38640d22c68be79d2f9931b
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#38">[ date ]</a>
+              <a href="thread.html#38">[ thread ]</a>
+              <a href="subject.html#38">[ subject ]</a>
+              <a href="author.html#38">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

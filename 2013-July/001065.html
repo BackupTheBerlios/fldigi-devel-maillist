@@ -1,0 +1,435 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fwd: fldigi / flamp - New Releases
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fwd%3A%20fldigi%20/%20flamp%20-%20New%20Releases&In-Reply-To=%3C51F6DCCE.8000403%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001064.html">
+   <LINK REL="Next"  HREF="001068.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fwd: fldigi / flamp - New Releases</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fwd%3A%20fldigi%20/%20flamp%20-%20New%20Releases&In-Reply-To=%3C51F6DCCE.8000403%40bellsouth.net%3E"
+       TITLE="Fwd: fldigi / flamp - New Releases">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Mon Jul 29 23:21:18 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001064.html">[GIT] fldigi branch, maint/3.21,	updated: d375106fc5858fae4962614b6fc70ef2a38b60be
+</A></li>
+        <LI>Next message: <A HREF="001068.html">Doxygen HOWTO
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1065">[ date ]</a>
+              <a href="thread.html#1065">[ thread ]</a>
+              <a href="subject.html#1065">[ subject ]</a>
+              <a href="author.html#1065">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+
+fldigi version 3.21.73
+
+flamp version 2.1.00
+
+available at <A HREF="http://www.w1hkj.com/">http://www.w1hkj.com/</A>
+
+Changes in each application outlined in the attached.
+
+Updating your system to flamp-2.1.00 also requires that you update
+fldigi to 3.21.73.
+
+On line help for these versions
+
+<A HREF="http://www.w1hkj.com/FldigiHelp-3.21/index.html">http://www.w1hkj.com/FldigiHelp-3.21/index.html</A>
+
+<A HREF="http://www.w1hkj.com/flamp2.1-help/index.html">http://www.w1hkj.com/flamp2.1-help/index.html</A>
+
+Also pushed to berlios
+
+  * maint/3.21
+  * tmp/flamp/master
+
+Dave, W1HKJ
+
+
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130729/4b26be35/attachment-0001.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130729/4b26be35/attachment-0001.html</A>&gt;
+-------------- next part --------------
+Version 2.1.00
+
+  Unproto ARQ/Flmsg command filtering
+
+    * Filter ARQ/Flmsg commands with character substitution.
+    * Append notice to unproto message indicating character substitution.
+    * Fix unproto configure load state.
+    * Move Unproto routines to cAmp Class.
+    * Update Unproto support functions in file_io.cxx
+    * Add Code to transmit CALL ID on cancel
+    * Add mutex_lock/unlock to make LOG_XXXX functions thread safe.
+
+  TxRx Interval Timer/Header Modem
+
+    * Add Mode/Character transmit time table.
+    * Thread TxRx interval handler.
+    * Modify cAmp to handle data segments.
+    * Modify UI to support Header modem/Interval Timer.
+    * Multi use UI xmit&lt;-&gt;cancel button.
+    * Use time table for transmit time estimation.
+    * Add two files to makefile.am. time_table.cxx/.h.
+    * Add support functions in xml_io.cxx
+    * Add User selectable transmit on REPORT option.
+    * Force compression on ARQ command escape sequence
+      located in file(s) (&quot;&lt;/cmd&gt;&quot;).
+    * Add clearing of fetch block on transmit configurable.
+    * Add UI/Code to inhibit header modem during block fills.
+    * Change logic on &quot;PREAMBLE&quot; reports for Header modem use.
+    * Add command line switches for user selectable ARQ/XML_IO server
+      address and port numbers.
+    * Reordered Thread running logic.
+    * Make use of Fl:awake in thread when changing button label.
+    * Avoid Double Click Xmit/Xmt ALL button crash by
+      deactivating during Transmit.
+    * Moved deactivation code to a better location.
+    * Add mutex locks/unlocks on multiple xml_io calls.
+    * Add mutex locks/unlocks to ARQ Tx/Rx routines. Correct crashing condition.
+    * Add unproto (plain text) transmission mode, filter functions, and modified GUI
+      behavior in support of.
+    * Minor change to time table generator. Adjusted correction factor for modem
+      PSK63RC5
+
+  MXE build
+
+    * mods to build using Mxe-mingw32
+
+  Binary build
+
+    * Changed build script to correctly build bin.tgz
+
+
+-------------- next part --------------
+Version 3.21.73
+
+  Maintenance / Update release
+
+  qrunner mod
+
+    * changed mutex and conditional to static in req_sync
+
+  Pskmail-test
+
+    * continued search for pskmail program hang
+
+  Rigcat Thread
+
+    * Changed thread close down process.  Deprecated
+        use of pthread_mutex_lock during time when main
+        thread is blocking with a pthread_join on the same
+        mutex variable.
+
+  Doxygen for fldigi
+
+     * Added scripts to generate Doxygen documentation from fldigi git repository / source
+     * Also executes &quot;cppcheck&quot; and includes those results on Doxygen page (if installed on system)
+     * Generates patches and log for the last 125 commits: includes links on Doxygen page
+
+  CPPcheck errors
+
+    * fix errors found by cppcheck
+
+  Modem class
+
+    * Removed morse as base class of modem
+    * Added element to modem which is of class cMorse
+
+  Missing header
+
+    * Some builds reported missing header
+
+  fldigi-shell
+
+    * Corrected unitialized variable warning
+
+  Fl::focus on OS X
+
+    * Correct a Fl::focus error on OS X
+        - Fl::focus returns an erroneous pointer to a
+          window not owned by fldigi when the OS X
+          &quot;About This Mac&quot; dialog display in front of the
+          main fldigi dialog.  The ATM dialog is forced to
+          front focus.  Calls like w-&gt;window() then points
+          to memory outside of the application allocation.
+        - correct solution is to use named_window-&gt;contains(w)
+          where named_window is an existing fldigi widget and
+          w is the widget returned by Fl::focus().
+        - contains returns 1 if named_window or any of it's
+          child windows are in that window &quot;group&quot;
+
+  KML thread
+
+    * Changed thread exit implementation to conditional compile
+        -- used for building the OS X dmg
+
+  Data files
+
+    * updated location of download data files for kml / synop
+
+  Fl::flush
+
+    * removed calls to Fl::flush that occur outside of the
+        main fltk thread
+
+  ADIF_RW thread
+
+    * Added missing call to ADIF_RW_close() when
+        exiting program [clean_exit(bool)]
+
+  trx semaphore
+
+    * deprecated call to trx_wait_state when changing modem
+        types
+        - caused semaphore locked condition when running with
+          pskmail server
+
+  Digiscope buffer
+
+    * prevent computed buffer index from exceeding MAX_LEN
+        of buffer
+
+  Portaudio exceptions
+
+    * Ignore exceptions &gt;= 0
+
+  mxe-win32 regex
+
+    * inhibit use of mxe-win32 regex library
+
+  Thor update
+
+    * Changes to insure that array boundaries are not exceeded
+    * Moved large array from stack to static store.
+    * Added cmd line parameter --debug-audio to enable audio
+        debug events.  default is off.
+
+  record_loader fix
+
+    * test for existence of dialog before trying to access it!
+
+  KML/Synop/RTTY/Navtex
+
+    * Synop decoding in RTTY mode in reception buffer, in red.
+    * Creation of KML file for Synop data.
+    * Creation of KML file for Navtex messages.
+    * User locator displayed in KML.
+    * Multiline Synop and Navtex messages displayed in Adif logs.
+    * Added flsynop program as stand alone Synop decoder.
+    * Fixed Navtex default stations filename and Italian stations.
+    * Fixed Navtex frequency error.
+    * Added KML tab in configuration menu.
+    * Added parameters files for Synop decoding.
+    * Fixed CoordinateT type for different deserialization.
+    * Less logging messages from subthreads, because they might crash.
+    * Added try/catch blocks in main program.
+    * Can reload previous KML files at startup.
+    * Named WMO code tables in Synop decoding.
+    * Synop data can be logged to Adif files.
+    * flsynop can load kml files from one dir and save them elsewhere.
+    * Added strreplace and strcapitalize.
+    * Added Levenshtein distance for future use.
+    * Added class QsoHelper to ease Adif logging.
+    * East longitude positive, West negative. Fixes Navtex detection.
+    * Chars '=' or ';' used as a Synop end-of-section marker.
+    * Added option command in KML tab executed on KML file save.
+    * Reverse mode now saved in configuration.
+    * Comments in DOxygen syntax.
+    * Kml snippet stored once only per placemark.
+    * Code more compatible with Eclipse parsing.
+    * Synop decoded text can be interleaved with 5-digits groups.
+    * KML balloons can be in simple tables, matrices or plain text.
+    * Adif messages are saved in the main thread.
+    * Starts external command only if KML file was saved.
+    * Maximum KML data retention time is ten years, default 0 is no limit.
+    * Do not reload KML files when changing KML parameters.
+    * User kml file does not grow at each fldigi start.
+    * Relative humidity always parsed with Celsius temperature.
+    * Empty KML files are created on startup if not there.
+    * Prepared porting processes functions to Mingw.
+    * Added script for FTP transfer of KML files.
+    * Added synop_tool
+    * Navtex now has reverse mode.
+    * Data files can be updated from the Internet.
+    * HTTP load without anymore because crash in Wine
+
+  PSKMAIL/ARQ socket
+
+    * rewrite of arq_io.cxx with assistance of Remi
+        - more clearly define use of various variable mutex
+        - added mutex blocks to TLF interface
+        - changed from ::lock ::unlock to
+          guard_lock usage.
+    * added command line switch
+          --debug-pskmail
+        which enables verbose time-tagged logging for
+        ARQ and PSKMAIL events
+    * added guard_lock to debug methods
+
+  Code cleanup
+
+    * fldigi.cxx/fldigi.h
+        - Changed scope of variables to static if not accessed
+          outside of fl_digi.cxx
+        - added gettext precompiler notation where needed
+    * Removed unused variables / code
+        - src/compat/getsysinfo.c
+        - src/widgets/Fl_Text_Display_mod_1_3.cxx
+        - src/xmlrpcpp/XmlRpcSource.cpp
+
+  Pskmail Notify RsID
+
+    * Call to socket not within a REQ(...) inter-thread
+        message - possible cause of random failure when
+        running with pskmail server
+
+  MFSK shut down
+
+    * Added code to prevent MFSK shuttting down until transmit
+        terminates.
+
+  Cwidth test for zero
+
+    * cwidth tested for zero to avoid divide-by-zero fault
+    * cwidth == 0 caused by corrupted font file on OS X
+        potential for same to occur on other OS.
+
+  MXE compile
+
+    * Mxe-ming32 compatibility changes
+
+  XMLRPC
+
+    * removed references to external xmlrpc-c library
+
+  RTTY decoder
+
+    * filter update
+
+  RigCAT user commands
+
+    * Added user definable RigCAT user strings as Macros
+        &lt;RIGCAT: hex hex:retnbr&gt;
+        &lt;RIGCAT: &quot;string&quot;:retnbr&gt;
+        where:
+          hex hex ... are sequential hexadecimal values
+          string is Ascii char sequence
+          retnbr is number of bytes in xcvr response
+          ':retnbr' is optional; retnbr set to 0 if missing
+
+  TX state
+
+    * Change method of reporting trx_state variable to xmlrpc request
+        TX, RX, OTHER
+
+  pskmail events
+
+    * changed INFO event reporting to be like DEBUG level report
+    * added event reports to provide additional program flow
+
+  * Changed extended rsid iaw doc/rsid_codes.gnumeric
+
+  Port to MXE / MingW
+
+    * Wefax destination directory now ended by one slash only.
+    * Use PRId64 for printing long long.
+    * Set right pthread library for mingw.
+    * Fixed include files in debug build mode.
+    * This commit does not include modifications specific to
+        SYNOP commit, due to reordering of commits submitted by
+        Remi during branch merging.
+
+  QSL VIA
+
+    * Added QSL_VIA field in ADIF files.
+
+  XML parser
+
+    * Removed use of REGEX in configuration_def.xml parser
+
+  ARQ support changes
+
+    * ARQ changes chasing down the elusive pskmail server fault
+    * Added &lt;cmd&gt;abort&lt;/cmd&gt; ARQ command string
+        - immediately clears all ARQ buffers and returns fldigi to
+          Rx mode
+        - sends the 0x06 acknowledgment character back to ARQ client.
+    * Added AbortARQ call for xmlrpc main.abort command
+
+  xmlrpcpp
+
+    * Fixes for uncaught exceptions in xmlrpc.cxx
+    * Changes required by recent change from xmlrpc_c
+        to xmlrpcpp library
+
+  PortAudio
+
+    * Added throw exception statement and loop test to PortAudio
+        Read and Write while blocks
+    * Potentially cause of reported faults and unresponsive behavior
+        by both Linux and Windows users.
+
+  SysV ARQ interface
+
+    * Removed SysV from ARQ implementation.
+    * Changed event logging to INFO for most ARQ reports
+
+  METAR format
+
+    * Added user definable METAR end-of-header search string
+        - Default is &quot;Connecton close&quot;, but may vary depending on
+          selected METAR station
+
+  RSID logic
+
+    * Corrected tool tips on ID config tab
+    * Changed logic used for RsID conditionals
+    * Original patch submitted by: Kamal Mostafa &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kamal at whence.com</A>&gt;
+        - BugLink: <A HREF="http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=705431">http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=705431</A>
+
+
+</PRE>
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001064.html">[GIT] fldigi branch, maint/3.21,	updated: d375106fc5858fae4962614b6fc70ef2a38b60be
+</A></li>
+	<LI>Next message: <A HREF="001068.html">Doxygen HOWTO
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1065">[ date ]</a>
+              <a href="thread.html#1065">[ thread ]</a>
+              <a href="subject.html#1065">[ subject ]</a>
+              <a href="author.html#1065">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

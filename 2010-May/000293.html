@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.20,	updated: 22908ca71be6d73372bc13056df0b385c9406157
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.20%2C%0A%09updated%3A%2022908ca71be6d73372bc13056df0b385c9406157&In-Reply-To=%3C201005181354.o4IDs5dC022204%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000292.html">
+   <LINK REL="Next"  HREF="000294.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.20,	updated: 22908ca71be6d73372bc13056df0b385c9406157</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.20%2C%0A%09updated%3A%2022908ca71be6d73372bc13056df0b385c9406157&In-Reply-To=%3C201005181354.o4IDs5dC022204%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.20,	updated: 22908ca71be6d73372bc13056df0b385c9406157">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Tue May 18 15:54:05 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000292.html">Flrig QSK Function?
+</A></li>
+        <LI>Next message: <A HREF="000294.html">hfkernel ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#293">[ date ]</a>
+              <a href="thread.html#293">[ thread ]</a>
+              <a href="subject.html#293">[ subject ]</a>
+              <a href="author.html#293">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.20 has been updated
+       via  22908ca71be6d73372bc13056df0b385c9406157 (commit)
+       via  2f3aa34441f8c11e1fd8c884cec7ebd9bdabf827 (commit)
+       via  d8a519eb248ffb8e4a9ef4d304a6fafaac1106b2 (commit)
+       via  63762857942223564478a6ce8a3de85db69a4e6a (commit)
+       via  453ca217fa72de6b31d26ed97941010a0687e346 (commit)
+      from  ed574fbf97681bd6f2977560862280051fea43b1 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=22908ca71be6d73372bc13056df0b385c9406157">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=22908ca71be6d73372bc13056df0b385c9406157</A>
+
+commit 22908ca71be6d73372bc13056df0b385c9406157
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue May 18 08:33:11 2010 -0500
+
+    Version 3.20.12
+    
+      Maintenance release
+
+ 2 files changed, 17 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=2f3aa34441f8c11e1fd8c884cec7ebd9bdabf827">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=2f3aa34441f8c11e1fd8c884cec7ebd9bdabf827</A>
+
+commit 2f3aa34441f8c11e1fd8c884cec7ebd9bdabf827
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat May 15 23:39:15 2010 -0500
+
+    Pulse audio
+    
+      flush blocking
+        Deleted call to pa_simple_drain.
+        pa_simple_drain caused long delays on Ubuntu 9.04, 9.10 and
+        10.04 due to blocking by pulse audio library
+        Added SCBLOCKSIZE delay interval followed by call to
+        pa_simple_flush
+
+ 1 files changed, 4 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=d8a519eb248ffb8e4a9ef4d304a6fafaac1106b2">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=d8a519eb248ffb8e4a9ef4d304a6fafaac1106b2</A>
+
+commit d8a519eb248ffb8e4a9ef4d304a6fafaac1106b2
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri May 14 18:40:09 2010 -0500
+
+    PSK RSID
+    
+      Disabled signal search on init of psk modem types
+      Prevents jumping off of RSID detected frequency
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog               |   17 ++++++++++++++++-
+ configure.ac            |    2 +-
+ src/dialogs/fl_digi.cxx |    5 +++++
+ src/include/fl_digi.h   |    1 +
+ src/misc/timeops.cxx    |   14 ++++++++++++--
+ src/psk/psk.cxx         |    1 +
+ src/rsid/rsid.cxx       |   11 ++++++++---
+ src/soundcard/sound.cxx |    6 ++++--
+ 8 files changed, 48 insertions(+), 9 deletions(-)
+   5.7% src/dialogs/
+  23.6% src/misc/
+  24.0% src/rsid/
+  16.4% src/soundcard/
+   3.9% src/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000292.html">Flrig QSK Function?
+</A></li>
+	<LI>Next message: <A HREF="000294.html">hfkernel ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#293">[ date ]</a>
+              <a href="thread.html#293">[ thread ]</a>
+              <a href="subject.html#293">[ subject ]</a>
+              <a href="author.html#293">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

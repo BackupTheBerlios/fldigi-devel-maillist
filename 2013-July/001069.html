@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Autotools error
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Autotools%20error&In-Reply-To=%3CCAPRqYUVzSDovPBOvKZKzSVPxLE0gx%3DJmecFJs4iu_0tpKp0uUA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001068.html">
+   <LINK REL="Next"  HREF="001071.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Autotools error</H1>
+    <B>John Phelps</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Autotools%20error&In-Reply-To=%3CCAPRqYUVzSDovPBOvKZKzSVPxLE0gx%3DJmecFJs4iu_0tpKp0uUA%40mail.gmail.com%3E"
+       TITLE="Autotools error">kl4yfd at gmail.com
+       </A><BR>
+    <I>Tue Jul 30 14:28:23 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001068.html">Doxygen HOWTO
+</A></li>
+        <LI>Next message: <A HREF="001071.html">Autotools error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1069">[ date ]</a>
+              <a href="thread.html#1069">[ thread ]</a>
+              <a href="subject.html#1069">[ subject ]</a>
+              <a href="author.html#1069">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Dave, Hi Claude,
+
+Very-new versions of Autotools will give an Autoconf error and exit,
+breaking compilation. This is a known issue/change with autotools (change
+happened in version x.12, x.13, or x.14).
+
+
+To see how other projects are dealing with the &quot;autotools transition&quot; see:
+<A HREF="https://www.google.com/search?btnG=1&amp;pws=0&amp;q=%22error%3A+using+">https://www.google.com/search?btnG=1&amp;pws=0&amp;q=%22error%3A+using+</A>'%24(srcdir)'+in+TESTS+is+currently+broken%3A%22
+
+
+
+*Here is the patch/fix/workaround for Makefile.am that I previously posted
+to the mailing-list*
+
+diff --git a/src/Makefile.am b/src/Makefile.am
+index 45236f1..6502a2e 100644
+--- a/src/Makefile.am
++++ b/src/Makefile.am
+@@ -248,7 +248,9 @@ hamlib-static: $(fldigi_OBJECTS)
+ endif
+ endif
+
+-TESTS = $(srcdir)/../scripts/tests/config-h.sh
+$(srcdir)/../scripts/tests/cr.sh
++
++tmp_srcdir_var=$(srcdir)
++TESTS = $(tmp_srcdir_var)/../scripts/tests/config-h.sh
+$(tmp_srcdir_var)/../scripts/tests/cr.sh
+
+ if HAVE_ASCIIDOC
+ $(builddir)/../doc/guide.html: $(builddir)/../doc/guide.txt
+-- 
+1.8.1.2
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130730/0b3f1da2/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130730/0b3f1da2/attachment.html</A>&gt;
+</PRE>
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001068.html">Doxygen HOWTO
+</A></li>
+	<LI>Next message: <A HREF="001071.html">Autotools error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1069">[ date ]</a>
+              <a href="thread.html#1069">[ thread ]</a>
+              <a href="subject.html#1069">[ subject ]</a>
+              <a href="author.html#1069">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

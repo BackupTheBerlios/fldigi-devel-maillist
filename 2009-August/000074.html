@@ -1,0 +1,117 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-shell
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-shell&In-Reply-To=%3C4A8C9D38.3040901%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000073.html">
+   <LINK REL="Next"  HREF="000075.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-shell</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-shell&In-Reply-To=%3C4A8C9D38.3040901%40bellsouth.net%3E"
+       TITLE="fldigi-shell">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Thu Aug 20 02:47:52 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000073.html">fldigi-shell
+</A></li>
+        <LI>Next message: <A HREF="000075.html">K3.xml pauses fixed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#74">[ date ]</a>
+              <a href="thread.html#74">[ thread ]</a>
+              <a href="subject.html#74">[ subject ]</a>
+              <a href="author.html#74">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Stelios Bounanos wrote:
+&gt;<i> The search_up and search_down functions are only implemented for PSK and
+</I>&gt;<i> RTTY; in other modems they do nothing.  Perhaps some of the other modems
+</I>&gt;<i> could get this feature too -- Dave will know :)
+</I>&gt;<i>   
+</I>Domino and Thor would be good candidates for an automated search.  MFSK 
+and Olivia have too much latency in the decoding path to allow a search 
+acquisition to work.  They also require very accurate tuning.  MT63, if 
+used as intended, only transmits on increments of 500 Hz.  Signal 
+acquisition only requires that the decoder be within +/- 100 Hz of the 
+actual transmitted center frequency.  Throb might also be a candidate 
+for a search algorithm.  Feld is a quasi FAX mode and very visual.  You 
+would probably not benefit from trying to implement automatic search for 
+any of the Feld modes.
+&gt;<i>   
+</I>&gt;&gt;<i> 4.  When tuning in psk signals it would be handy to have an audible 
+</I>&gt;&gt;<i> indication of the carrier frequency.  I had my receive audio on so I 
+</I>&gt;&gt;<i> could hear the signals but I didn't know which signal was being decoded. 
+</I>&gt;&gt;<i> Because I am not currently transmitting I used the main.tune function to 
+</I>&gt;&gt;<i> generate a carrier through the soundcard to help me identify the current 
+</I>&gt;&gt;<i> carrier frequency.  This approach is just a hack until I begin 
+</I>&gt;&gt;<i> transmitting.  A better approach would be to generate a tone through the 
+</I>&gt;&gt;<i> soundcard without activating the ptt or send it to a different soundcard 
+</I>&gt;&gt;<i> or possibly to the pc speaker.
+</I>&gt;&gt;<i>     
+</I>Are you tuning the psk signal by matching the TUNE carrier with the 
+received signal Chris?  Would the
+
+modem.get_carrier
+modem.inc_carrier (by a plus or minus amount)
+
+shell commands be useful to you?
+
+How are you using the shell commands Chris?  Are you using Stelios' 
+fldigi-shell perl script or have you developed your own interface?  If 
+your own are you using a script language?
+&gt;&gt;<i> 5.  fldigi config files: Aside from running fldigi under a standard X 
+</I>&gt;&gt;<i> server and using the graphical UI to configure the program, are there 
+</I>&gt;&gt;<i> any utilities to create an xml config file which could be edited by 
+</I>&gt;&gt;<i> hand?  
+</I>&gt;<i> the config writer could be
+</I>&gt;<i> extended to include comment strings (which would be defined in
+</I>&gt;<i> configuration.h along with the other bits).  The XML reader ought to be
+</I>&gt;<i> able to ignore &lt;!-- comments --&gt;, I'm sure Leigh will know.
+</I>&gt;<i>   
+</I>I agree with Stelios on the possible modification to the xml definition 
+file.
+&gt;<i> And of course do let us know if you would like to join the project as a
+</I>&gt;<i> developer.
+</I>&gt;<i>   
+</I>I would like also extend an invitation to join the developer staff Chris.
+
+Dave, W1HKJ
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20090819/80d01372/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20090819/80d01372/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000073.html">fldigi-shell
+</A></li>
+	<LI>Next message: <A HREF="000075.html">K3.xml pauses fixed
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#74">[ date ]</a>
+              <a href="thread.html#74">[ thread ]</a>
+              <a href="subject.html#74">[ subject ]</a>
+              <a href="author.html#74">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

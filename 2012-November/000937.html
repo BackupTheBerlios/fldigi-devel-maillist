@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> how to &quot;reset&quot; fldigi (was Re: I killed it)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20how%20to%20%22reset%22%20fldigi%20%28was%20Re%3A%20I%20killed%20it%29&In-Reply-To=%3C1353085906.8325.27.camel%40fourier%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000936.html">
+   <LINK REL="Next"  HREF="000938.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>how to &quot;reset&quot; fldigi (was Re: I killed it)</H1>
+    <B>Kamal Mostafa</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20how%20to%20%22reset%22%20fldigi%20%28was%20Re%3A%20I%20killed%20it%29&In-Reply-To=%3C1353085906.8325.27.camel%40fourier%3E"
+       TITLE="how to &quot;reset&quot; fldigi (was Re: I killed it)">kamal at whence.com
+       </A><BR>
+    <I>Fri Nov 16 18:11:46 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000936.html">I killed it
+</A></li>
+        <LI>Next message: <A HREF="000938.html">Synop + KML + Navtex : New version. Stable ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#937">[ date ]</a>
+              <a href="thread.html#937">[ thread ]</a>
+              <a href="subject.html#937">[ subject ]</a>
+              <a href="author.html#937">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Thu, 2012-11-15 at 20:21 -0500, Lynn Chadbourne wrote:
+&gt;<i> fldigi quit working. It will not load. I have removed and reinstalled
+</I>&gt;<i> but it will not load.
+</I>&gt;<i> Can you help me remove &amp; reinstal?
+</I>
+Hi Lynn-
+
+As Ed pointed out, its probably a good idea to update to a newer version
+of fldigi.  The bug causing it to crash may have been fixed already.
+But that said...
+
+For any version of fldigi, if its crashing on startup but the same
+version used to work fine for you, you can often resolve the problem by
+pushing your &quot;.fldigi&quot; configuration directory aside (rename it to
+something else) and starting with a fresh configuration.  Fldigi will
+create a fresh new .fldigi directory for you when it starts up and
+doesn't find an existing one.   Of course, you'll then need to re-enter
+your callsign, rig control setup, macro configuration, etc. -- or
+carefully copy those bits from the old .flgidi/ directory to the new.
+
+Example of this procedure:
+
+        <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kamal at fourier</A>:~$ cd $HOME
+        <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kamal at fourier</A>:~$ mv .fldigi my-maybe-broken-dot-fldigi-dir
+
+... then try starting up fldigi again.
+
+Note also that your saved log files are in .fldigi/logs/...  If you
+rename your .flgidi directory, its a good idea to poke around in the old
+directory for log files and/or other interesting files that you may have
+saved there.
+
+73 de KA6MAL
+
+ -Kamal
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20121116/faaa1871/attachment.pgp">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20121116/faaa1871/attachment.pgp</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000936.html">I killed it
+</A></li>
+	<LI>Next message: <A HREF="000938.html">Synop + KML + Navtex : New version. Stable ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#937">[ date ]</a>
+              <a href="thread.html#937">[ thread ]</a>
+              <a href="subject.html#937">[ subject ]</a>
+              <a href="author.html#937">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

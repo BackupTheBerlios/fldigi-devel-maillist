@@ -1,0 +1,304 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 590e04076bd4e76d12587eba050aab7e0343315d
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20590e04076bd4e76d12587eba050aab7e0343315d&In-Reply-To=%3C201003012209.o21M92bD032609%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000230.html">
+   <LINK REL="Next"  HREF="000232.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 590e04076bd4e76d12587eba050aab7e0343315d</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%20590e04076bd4e76d12587eba050aab7e0343315d&In-Reply-To=%3C201003012209.o21M92bD032609%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 590e04076bd4e76d12587eba050aab7e0343315d">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Mon Mar  1 23:09:02 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000230.html">[fldigi] #9: Failed exit, 3.12.5 Mac OS X 10.6.2
+</A></li>
+        <LI>Next message: <A HREF="000232.html">[GIT] fldigi branch, master,	updated: cc957f37cf89cecd167db8ef6c72486b5ef5a103
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#231">[ date ]</a>
+              <a href="thread.html#231">[ thread ]</a>
+              <a href="subject.html#231">[ subject ]</a>
+              <a href="author.html#231">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  590e04076bd4e76d12587eba050aab7e0343315d (commit)
+       via  cc957f37cf89cecd167db8ef6c72486b5ef5a103 (commit)
+       via  a9b976a7b67ffa780f7215c939570880b2b9e81a (commit)
+       via  2e78ec6bb022b848b09533cdbecbad40379e1646 (commit)
+       via  995c34e41b4fa9c876a24d8d4fbf73f18f8d11f3 (commit)
+       via  dcbfb7d59d304562df583cadc8ff817de6396688 (commit)
+       via  8cea906f79eb95f57d6d4266ee2c97dfce2597d3 (commit)
+       via  ed30b5b0fa9478d21d3f31f9c3f7fc9a39662eaf (commit)
+       via  5a3d0abc7f9b61fa95933de56b98fe078f3ba7a7 (commit)
+      from  a6769cbe87295910126820d4eceb8a443941f9ad (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=590e04076bd4e76d12587eba050aab7e0343315d">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=590e04076bd4e76d12587eba050aab7e0343315d</A>
+
+commit 590e04076bd4e76d12587eba050aab7e0343315d
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Mar 1 16:07:58 2010 -0600
+
+    Version 3.20.0b1 - fldigi
+    Version 4.3.0b1  - flarq
+    
+        Beta release
+
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ AUTHORS                         |   11 +-
+ COPYING                         |  912 ++++++++++++++++++++++++++-------------
+ configure.ac                    |    6 +-
+ data/win32/fldigi.nsi           |    1 +
+ doc/Makefile.am                 |    1 +
+ doc/flarq.1.txt                 |    2 +-
+ doc/fldigi.1.txt                |    2 +-
+ doc/guide.txt                   |    2 +-
+ src/Makefile.am                 |    5 +-
+ src/blank/blank.cxx             |   15 +-
+ src/blank/blank.h               |    9 +-
+ src/combo/combo.cxx             |   22 +
+ src/common.rc                   |    2 +-
+ src/compat/mingw.c              |   59 +---
+ src/cw_rtty/cw.cxx              |   11 +-
+ src/cw_rtty/morse.cxx           |   12 +-
+ src/cw_rtty/rtty.cxx            |   11 +-
+ src/dialogs/Viewer.cxx          |   25 +-
+ src/dialogs/confdialog.cxx      |  291 +++++++------
+ src/dialogs/confdialog.fl       |  168 +++++---
+ src/dialogs/fl_digi.cxx         |   46 ++-
+ src/dialogs/font_browser.cxx    |   31 +-
+ src/dialogs/guide.cxx           |    2 +-
+ src/dialogs/htmlstrings.cxx     |   13 +-
+ src/dominoex/dominoex.cxx       |   20 +-
+ src/dominoex/dominovar.cxx      |   12 +-
+ src/feld/feld.cxx               |   13 +-
+ src/fileselector/fileselect.cxx |   23 +
+ src/filters/fftfilt.cxx         |   19 +-
+ src/filters/filters.cxx         |   37 +-
+ src/filters/viterbi.cxx         |   14 +-
+ src/flarq-src/arq.cxx           |   14 +-
+ src/flarq-src/arqhelp.cxx       |   22 +
+ src/flarq-src/flarq.cxx         |   22 +
+ src/flarq-src/flarqenv.cxx      |   29 ++-
+ src/flarq-src/include/arq.h     |   17 +-
+ src/globals/globals.cxx         |   16 +-
+ src/include/Combo_Box.h         |  116 -----
+ src/include/Combo_List.h        |   51 ---
+ src/include/FTextRXTX.h         |   22 +
+ src/include/FTextView.h         |    6 +-
+ src/include/Fl_Tile_Check.h     |   22 +
+ src/include/FreqControl.h       |   32 +-
+ src/include/analysis.h          |   13 +-
+ src/include/arq_io.h            |    4 +-
+ src/include/ascii.h             |   16 +-
+ src/include/compat.h            |   23 -
+ src/include/complex.h           |   22 +-
+ src/include/confdialog.h        |   17 +-
+ src/include/configuration.h     |   30 ++
+ src/include/cw.h                |   11 +-
+ src/include/digiscope.h         |    9 +-
+ src/include/dominoex.h          |   11 +-
+ src/include/dominovar.h         |   11 +-
+ src/include/dsp.h               |   12 +-
+ src/include/dxcc.h              |   22 +
+ src/include/feld.h              |   15 +-
+ src/include/fileselect.h        |   23 +
+ src/include/filters.h           |   28 +-
+ src/include/fl_digi.h           |   13 +-
+ src/include/fldigi-config.h     |   14 +-
+ src/include/flmisc.h            |   22 +
+ src/include/font_browser.h      |   33 +-
+ src/include/fontdef.h           |   12 +-
+ src/include/gettext.h           |   15 +-
+ src/include/globals.h           |   13 +-
+ src/include/htmlstrings.h       |    9 +-
+ src/include/icons.h             |   22 +
+ src/include/interleave.h        |    9 +-
+ src/include/logger.h            |   28 +-
+ src/include/main.h              |    2 +-
+ src/include/mfsk.h              |   27 ++-
+ src/include/mfskvaricode.h      |   11 +-
+ src/include/misc.h              |   11 +-
+ src/include/mixer.h             |    9 +-
+ src/include/modem.h             |    7 +
+ src/include/morse.h             |   11 +-
+ src/include/mt63.h              |   16 +-
+ src/include/mt63base.h          |   11 +-
+ src/include/olivia.h            |   20 +-
+ src/include/picture.h           |    9 +-
+ src/include/psk.h               |   16 +-
+ src/include/pskeval.h           |    9 +-
+ src/include/pskvaricode.h       |    9 +-
+ src/include/ptt.h               |   15 +-
+ src/include/qrunner.h           |    2 +-
+ src/include/raster.h            |   11 +-
+ src/include/re.h                |    2 +-
+ src/include/ringbuffer.h        |    2 +-
+ src/include/rsid.h              |    9 +-
+ src/include/rtty.h              |    9 +-
+ src/include/rx_extract.h        |   24 +-
+ src/include/socket.h            |    2 +-
+ src/include/sound.h             |    9 +-
+ src/include/speak.h             |   26 +-
+ src/include/spot.h              |    2 +-
+ src/include/strutil.h           |   22 +
+ src/include/thor.h              |   20 +-
+ src/include/thorvaricode.h      |   11 +-
+ src/include/threads.h           |   22 +
+ src/include/throb.h             |   11 +-
+ src/include/trx.h               |   13 +-
+ src/include/util.h              |   23 +-
+ src/include/viewpsk.h           |   12 +-
+ src/include/viterbi.h           |    9 +-
+ src/include/waterfall.h         |   40 +-
+ src/include/wwv.h               |    9 +-
+ src/logbook/date.cxx            |   41 +-
+ src/logbook/logsupport.cxx      |   24 +
+ src/logbook/qso_db.cxx          |   22 +
+ src/logbook/textio.cxx          |   20 +
+ src/logger/logger.cxx           |   33 +-
+ src/logger/rx_extract.cxx       |   29 +-
+ src/logger/speak.cxx            |   27 +-
+ src/main.cxx                    |   37 +-
+ src/mfsk/interleave.cxx         |   11 +-
+ src/mfsk/mfsk-pic.cxx           |   11 +-
+ src/mfsk/mfsk.cxx               |   49 ++-
+ src/mfsk/mfskvaricode.cxx       |   13 +-
+ src/misc/arq_io.cxx             |   67 +++-
+ src/misc/ascii.cxx              |   13 +-
+ src/misc/benchmark.cxx          |    2 +-
+ src/misc/configuration.cxx      |   26 ++
+ src/misc/debug.cxx              |    2 +-
+ src/misc/dxcc.cxx               |   22 +
+ src/misc/log.cxx                |   24 +-
+ src/misc/lookupcall.cxx         |   14 +-
+ src/misc/macroedit.cxx          |   24 +
+ src/misc/macros.cxx             |   37 ++-
+ src/misc/misc.cxx               |   11 +-
+ src/misc/network.cxx            |   22 +
+ src/misc/newinstall.cxx         |   27 +-
+ src/misc/nls.cxx                |   22 +
+ src/misc/qrzlib.cxx             |   33 +-
+ src/misc/re.cxx                 |    2 +-
+ src/misc/socket.cxx             |    2 +-
+ src/misc/status.cxx             |   24 +
+ src/misc/strutil.cxx            |   22 +
+ src/misc/threads.cxx            |   22 +
+ src/misc/timeops.cxx            |    2 +-
+ src/misc/util.cxx               |   24 +
+ src/misc/xmlrpc.cxx             |    4 +-
+ src/mt63/alias_1k.dat           |   11 +-
+ src/mt63/alias_2k.dat           |   11 +-
+ src/mt63/alias_k5.dat           |   11 +-
+ src/mt63/dsp.cxx                |   23 +-
+ src/mt63/mt63.cxx               |   31 +-
+ src/mt63/mt63base.cxx           |   18 +-
+ src/mt63/mt63intl.dat           |   11 +-
+ src/mt63/symbol.dat             |   11 +-
+ src/olivia/olivia.cxx           |   20 +-
+ src/psk/psk.cxx                 |   86 +++-
+ src/psk/pskeval.cxx             |   12 +-
+ src/psk/pskvaricode.cxx         |    9 +-
+ src/psk/viewpsk.cxx             |   14 +-
+ src/qrunner/fqueue.h            |    2 +-
+ src/qrunner/qrunner.cxx         |    2 +-
+ src/rigcontrol/FreqControl.cxx  |   32 +-
+ src/rigcontrol/hamlib.cxx       |   24 +-
+ src/rigcontrol/ptt.cxx          |   15 +-
+ src/rigcontrol/rigMEM.cxx       |   25 +-
+ src/rigcontrol/rigclass.cxx     |   22 +
+ src/rigcontrol/rigio.cxx        |   23 +-
+ src/rigcontrol/rigsupport.cxx   |   24 +-
+ src/rigcontrol/rigxml.cxx       |   22 +-
+ src/rigcontrol/serial.cxx       |   22 +-
+ src/rsid/rsid.cxx               |   17 +-
+ src/soundcard/mixer.cxx         |    9 +-
+ src/soundcard/sound.cxx         |   13 +-
+ src/soundcard/soundconf.cxx     |   22 +
+ src/spot/notify.cxx             |    2 +-
+ src/spot/pskrep.cxx             |    2 +-
+ src/spot/spot.cxx               |    2 +-
+ src/thor/thor.cxx               |   47 ++-
+ src/thor/thorvaricode.cxx       |   11 +-
+ src/throb/throb.cxx             |   13 +-
+ src/trx/modem.cxx               |   32 ++-
+ src/trx/trx.cxx                 |   15 +-
+ src/trx/tune.cxx                |   13 +-
+ src/waterfall/colorbox.cxx      |   22 +
+ src/waterfall/digiscope.cxx     |   13 +-
+ src/waterfall/raster.cxx        |   11 +-
+ src/waterfall/waterfall.cxx     |   34 +-
+ src/widgets/FTextRXTX.cxx       |   11 +-
+ src/widgets/FTextView.cxx       |   10 +-
+ src/widgets/Fl_Tile_Check.cxx   |   22 +
+ src/widgets/flinput2.cxx        |   22 +
+ src/widgets/flmisc.cxx          |   22 +
+ src/widgets/picture.cxx         |   15 +-
+ src/wwv/analysis.cxx            |   13 +-
+ src/wwv/wwv.cxx                 |   13 +-
+ 191 files changed, 3004 insertions(+), 1744 deletions(-)
+   9.4% src/dialogs/
+  24.5% src/include/
+   8.7% src/misc/
+   3.4% src/mt63/
+   4.4% src/rigcontrol/
+  26.3% src/
+ delete mode 100644 src/include/Combo_Box.h
+ delete mode 100644 src/include/Combo_List.h
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000230.html">[fldigi] #9: Failed exit, 3.12.5 Mac OS X 10.6.2
+</A></li>
+	<LI>Next message: <A HREF="000232.html">[GIT] fldigi branch, master,	updated: cc957f37cf89cecd167db8ef6c72486b5ef5a103
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#231">[ date ]</a>
+              <a href="thread.html#231">[ thread ]</a>
+              <a href="subject.html#231">[ subject ]</a>
+              <a href="author.html#231">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

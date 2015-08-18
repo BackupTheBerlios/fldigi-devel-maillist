@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Technical information about XmlRpc++ and xmlrpc-c on fldigi
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Technical%20information%20about%20XmlRpc%2B%2B%20and%20xmlrpc-c%20on%20fldigi&In-Reply-To=%3CCACMWOgvUWV5q8%3DtBRGfq_hhhhLnZXchc6AemX6Agg%3Dy1a7cv6w%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000992.html">
+   <LINK REL="Next"  HREF="000995.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Technical information about XmlRpc++ and xmlrpc-c on fldigi</H1>
+    <B>Remi Chateauneu</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Technical%20information%20about%20XmlRpc%2B%2B%20and%20xmlrpc-c%20on%20fldigi&In-Reply-To=%3CCACMWOgvUWV5q8%3DtBRGfq_hhhhLnZXchc6AemX6Agg%3Dy1a7cv6w%40mail.gmail.com%3E"
+       TITLE="Technical information about XmlRpc++ and xmlrpc-c on fldigi">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Thu Mar 28 13:33:21 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000992.html">Technical information about XmlRpc++ and xmlrpc-c on fldigi
+</A></li>
+        <LI>Next message: <A HREF="000995.html">Technical information about XmlRpc++ and xmlrpc-c on fldigi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#993">[ date ]</a>
+              <a href="thread.html#993">[ thread ]</a>
+              <a href="subject.html#993">[ subject ]</a>
+              <a href="author.html#993">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Greg,
+
+On Thu, Mar 28, 2013 at 11:51 AM, Greg Troxel &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">gdt at work.lexort.com</A>&gt; wrote:
+&gt;<i>
+</I>&gt;<i> Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt; writes:
+</I>&gt;<i>
+</I>&gt;&gt;<i> Agreed with you Greg. The problem that I try to solve here has to do
+</I>&gt;&gt;<i> with cross-compilation.
+</I>&gt;<i>
+</I>&gt;&gt;<i> I wish to build fldigi on several platforms and for this I tried MXE
+</I>&gt;&gt;<i> <A HREF="http://mxe.cc">http://mxe.cc</A> which comes with many libraries.
+</I>&gt;<i>
+</I>&gt;<i> I see.  What platforms are you building for?  I'm curious if these are
+</I>&gt;<i> systems that run something POSIXy, something Windows-y, or an
+</I>&gt;<i> unhosted/small environment like an arduino (but presumably without a
+</I>&gt;<i> display, at least parts of it would be left out).
+</I>
+Windows.
+
+&gt;<i> For background, I work on pkgsrc and NetBSD.  NetBSD's system builds are
+</I>&gt;<i> always cross (so you can build the entire OS for a Raspberry Pi on
+</I>&gt;<i> desktop, such as a mac).  pkgsrc doesn't really support cross yet, but
+</I>&gt;<i> it's not so far away and someone is working on it.  It supports many
+</I>&gt;<i> systems, even cygwin now.  At work we have made various other programs
+</I>&gt;<i> build cross, using the NetBSD compiler toolchain, building on amd64 and
+</I>&gt;<i> compiling for an embedded processor ship (not a Pi, but not so different
+</I>&gt;<i> for this discussion).
+</I>
+Ah ah, sounds great. I will have a serious look.
+
+&gt;&gt;<i> It worked without any problem for hamlib 3.0 ( Which is API compatible
+</I>&gt;&gt;<i> with the other versions ). But MXE cannot build xmlrpc-c apparently
+</I>&gt;&gt;<i> (But maybe I did things wrong ).
+</I>&gt;<i>
+</I>&gt;<i> It seems there's been a trend away from autoconf as people claim it's
+</I>&gt;<i> too complicated and messy, but it does do a good job of supporting
+</I>&gt;<i> cross.
+</I>
+I would tend to say it is not obvious to understand what it does and
+what it is made for. What makes things more complicated is that
+releases are not stable and packagers force people to use the latest
+autotools/autoconf/autoreconf/automake version. Error messages are not
+very clear too. On top of that, there are not many people to
+understand how it works.
+
+&gt;<i> It seems xmprpc-c uses automake, so I'd expect it to be not so hard to
+</I>&gt;<i> get it to cross build.  Perhaps you can post (or send to me privately,
+</I>&gt;<i> if others find this not interesting) the build script and what failed.
+</I>
+Very simple (It's a development mailing list about fldigi isn't it):
+(1) Install mxe. It is funny to see it downloading and compiling code.
+Takes hours but it is easy to fix things nearly on-the-fly.
+(2) Download and untar xmlrpc-c
+(3) ./configure --host=i686-pc-mingw32 PlusOtherIgnoredOptions
+
+I try to see which options should be used.
+
+&gt;&gt;<i> As I remember that Stelios wanted to get rid of this library
+</I>&gt;&gt;<i> dependency, we would get easier cross-compiling at the same time.
+</I>&gt;<i>
+</I>&gt;<i> Sure, if it's really &quot;gotten rid of&quot;.  My point was that folding it in
+</I>&gt;<i> trades one set of problems for another.
+</I>&gt;<i>
+</I>&gt;&gt;<i> Until things progress on this side, I will try to build fldigi with
+</I>&gt;&gt;<i> MXE, but without XML-RPC support.
+</I>&gt;<i>
+</I>&gt;<i> Presumably that just drops qrz lookups?
+</I>
+Not sure of this is the case but it would be sad !
+
+My goal is just to temporarily test new features with development
+versions, not to deliver a new public version.
+
+For example I wish to test that a new piece of code I wrote will more
+or less work on a PC, enough so that it can be shown and we can
+discuss about it.
+
+Thanks.
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000992.html">Technical information about XmlRpc++ and xmlrpc-c on fldigi
+</A></li>
+	<LI>Next message: <A HREF="000995.html">Technical information about XmlRpc++ and xmlrpc-c on fldigi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#993">[ date ]</a>
+              <a href="thread.html#993">[ thread ]</a>
+              <a href="subject.html#993">[ subject ]</a>
+              <a href="author.html#993">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

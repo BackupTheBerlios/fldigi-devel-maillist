@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> patches pushed to pu/df
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20patches%20pushed%20to%20pu/df&In-Reply-To=%3C4C6D87E3.5080508%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000344.html">
+   <LINK REL="Next"  HREF="000346.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>patches pushed to pu/df</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20patches%20pushed%20to%20pu/df&In-Reply-To=%3C4C6D87E3.5080508%40bellsouth.net%3E"
+       TITLE="patches pushed to pu/df">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Thu Aug 19 21:37:07 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000344.html">Fldigi 3.20.xx problems on ubuntu 10.04 LTS
+</A></li>
+        <LI>Next message: <A HREF="000346.html">[GIT] fldigi branch, maint/3.20,	updated: e3b587760509b94f0fe0ad6ba88dfbec8762ad39
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#345">[ date ]</a>
+              <a href="thread.html#345">[ thread ]</a>
+              <a href="subject.html#345">[ subject ]</a>
+              <a href="author.html#345">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>commit 62ea548647a798a457c853c5ffdf5be743815591
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Aug 19 07:24:34 2010 -0500
+
+    Logbook Field Sizes
+    
+      * Removed size restrictions on qso_db record fields
+
+commit 72d78b1e11c4a47b0d0631725c281dc969fc8772
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Aug 11 06:36:17 2010 -0500
+
+    Macro Mode Change
+    
+      Change init_modem_sync(...) to init_modem(...) call in macro
+      execute.  Macros are executed from main fltk thread.  The
+      sem_wait call in _sync caused main thread to lock up.
+
+commit 70ef8dbc6fd29b7d75af2e1458f7ffe8707ea7f8
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Aug 3 18:31:49 2010 -0500
+
+    Combo widget
+    
+      Changed vertical size computation for combo box popup
+
+Please take a look at 62ea5486 at your convenience.
+There is also a stand alone logbook application, fllog, which uses these 
+updated qso_db and qso_rec classes.
+
+<A HREF="http://www.w1hkj.com/alpha/fllog/">http://www.w1hkj.com/alpha/fllog/</A>
+
+
+Thanks,
+
+Dave
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20100819/b1fe341e/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20100819/b1fe341e/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000344.html">Fldigi 3.20.xx problems on ubuntu 10.04 LTS
+</A></li>
+	<LI>Next message: <A HREF="000346.html">[GIT] fldigi branch, maint/3.20,	updated: e3b587760509b94f0fe0ad6ba88dfbec8762ad39
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#345">[ date ]</a>
+              <a href="thread.html#345">[ thread ]</a>
+              <a href="subject.html#345">[ subject ]</a>
+              <a href="author.html#345">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

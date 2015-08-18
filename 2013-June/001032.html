@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Hamlib-developer] A proposal for a Hamlib++
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BHamlib-developer%5D%20A%20proposal%20for%20a%20Hamlib%2B%2B&In-Reply-To=%3C51C58346.2060008%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001030.html">
+   <LINK REL="Next"  HREF="001033.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Hamlib-developer] A proposal for a Hamlib++</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BHamlib-developer%5D%20A%20proposal%20for%20a%20Hamlib%2B%2B&In-Reply-To=%3C51C58346.2060008%40gmail.com%3E"
+       TITLE="[Hamlib-developer] A proposal for a Hamlib++">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Sat Jun 22 12:58:14 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001030.html">[Hamlib-developer] A proposal for a Hamlib++
+</A></li>
+        <LI>Next message: <A HREF="001033.html">[Hamlib-developer] A proposal for a Hamlib++
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1032">[ date ]</a>
+              <a href="thread.html#1032">[ thread ]</a>
+              <a href="subject.html#1032">[ subject ]</a>
+              <a href="author.html#1032">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>See the code in register.c, it probably boils down to a directory 
+wrongly set:
+
+  * rig_load_backend
+  * Dynamically load a rig backend through dlopen mechanism
+
+Printf the directory where hamlib tries to load the dlls from: It is 
+probably not the right one. No need to break the whole stuff just for this.
+
+	/*
+	 * lt_dlinit may be called several times
+	 *
+	 * FIXME: make static build seamless
+	 */
+
+	/*
+	 * external module not found? try dlopenself for backends
+	 * compiled in static
+	 */
+
+If you want to get rid of dynamic loading but still keep most of the 
+code, I suggest two solutions:
+* you just need to build at compile time a list of all rigs
+* Or you replace the macro MAKE_VERSIONED_FN, so that it will 
+self-register its function at startup when not in a DLL (GCC functions 
+called before main() with 'constructor' attribute). After the 
+application startup, all these functions will have registered their 
+adresses and dlopen will not be necessary. Example:
+
+
+#define DECLARE_INITRIG_BACKEND(backend) \
+void startup ## ABI_VERSION ## _ ## backend(void) __attribute__ 
+((constructor))
+{
+  GlobalRegister( initrigs ## ABI_VERSION ## _ ## backend, #backend );\
+}\
+EXTERN_C BACKEND_EXPORT(int) MAKE_VERSIONED_FN(initrigs, ABI_VERSION, 
+backend(void *be_handle))
+
+The function GlobalRegister will simply do before main() is called, what 
+the function rig_load_backed() does when scanning the shared libraries.
+
+
+Doing this, you do not need to change the backends.
+
+This kind of technique called &quot;Factory pattern&quot; is massively used. Read 
+this before breaking nice code which works in 99% of cases. Yes it is 
+complicated but once this is done it does not need to be changed:
+
+<A HREF="http://forums.codeguru.com/showthread.php?475696-Factory-pattern-how-to-make-factory-self-registering">http://forums.codeguru.com/showthread.php?475696-Factory-pattern-how-to-make-factory-self-registering</A>
+<A HREF="http://stackoverflow.com/questions/1096700/instantiate-class-from-name">http://stackoverflow.com/questions/1096700/instantiate-class-from-name</A>
+<A HREF="http://www.gamedev.net/topic/612598-self-registering-factory-in-c/">http://www.gamedev.net/topic/612598-self-registering-factory-in-c/</A>
+
+Remi
+
+
+Le 22.06.2013 04:10, Nate Bargmann a &#233;crit :
+&gt;<i> * On 2013 21 Jun 21:30 -0500, Dave Wright wrote:
+</I>&gt;&gt;<i> Ultimately, if hamlib can't easily be made to work with Fldigi and the
+</I>&gt;&gt;<i> hamlib community is not willing to make changes to make building easier,
+</I>&gt;&gt;<i> then dropping support for hamlib seems to be the only course of action;
+</I>&gt;&gt;<i> anything else requires too much effort that could be better focused on
+</I>&gt;&gt;<i> Fldigi development.
+</I>&gt;<i>
+</I>&gt;<i> Hi Dave.
+</I>&gt;<i>
+</I>&gt;<i> The issue is a structural one.  The present design of Hamlib is such
+</I>&gt;<i> that the &quot;front end&quot; library is loaded when the program, such as Fldigi
+</I>&gt;<i> or CQRlog or many more, starts.  The program will at some point
+</I>&gt;<i> initialize Hamlib and tell Hamlib which radio to load.  At that point
+</I>&gt;<i> the front end loads the needed &quot;back end&quot; library.  Normally this is
+</I>&gt;<i> done using shared libraries of a &quot;plugin&quot; nature for the backends and a
+</I>&gt;<i> given backend is loaded on demand.  This has the advantage of not
+</I>&gt;<i> wasting uneeded memory.  This is probably not too much of an issue today
+</I>&gt;<i> when many GB of RAM is the norm, but Hamlib was originally designed when
+</I>&gt;<i> RAM was at more of a premium, and memory savings are still important on
+</I>&gt;<i> older computers often used by hams and on small computers such as the
+</I>&gt;<i> Raspberry Pi.
+</I>&gt;<i>
+</I>&gt;<i> To do this loading we rely on a tool from the GNU project, Libtool,
+</I>&gt;<i> which includes a dynamic loader library.  The good thing about Libtool
+</I>&gt;<i> is that it handles the details between loading a library on Linux versus
+</I>&gt;<i> MS Windows, for example.  As the packaging maintainer for Hamlib, I am
+</I>&gt;<i> thankful for the ease it brings to my life.  Unfortunately, it seems to
+</I>&gt;<i> fail only in the case where Hamlib is statically linked into Fldigi.  In
+</I>&gt;<i> this instance the loader library is &quot;faking it&quot; (for lack of a better
+</I>&gt;<i> term--hey, if tuners can &quot;fool&quot; a radio...) and presenting a normal
+</I>&gt;<i> dynamic loading sequence to the program.  Somewhere in all that it falls
+</I>&gt;<i> down and the Libtool folks don't seem too concerned about it.  Perhaps
+</I>&gt;<i> I've yet to present them with a good demonstration.
+</I>&gt;<i>
+</I>&gt;<i> The reason Hamlib versions later than 1.2.12 no longer work for Dave is
+</I>&gt;<i> due to a security advisory against the version of Libtool included in
+</I>&gt;<i> that release and older releases.  Now we rely on newer versions provided
+</I>&gt;<i> by the Linux distribution I build the Hamlib releases on.
+</I>&gt;<i>
+</I>&gt;<i> To get away from the current design of Hamlib would require a complete
+</I>&gt;<i> rethink of its current architecture.  Perhaps a good way to accomplish
+</I>&gt;<i> this is to start over with a fresh design that more mirrors the way
+</I>&gt;<i> RigCAT works with flat text definition files for radio and other device
+</I>&gt;<i> models so that no knowledge of programming languages or programming
+</I>&gt;<i> would be required to contribute.  I am not the guy to do that, however,
+</I>&gt;<i> I am a self-taught hobbyist programmer and my skill set doesn't go too
+</I>&gt;<i> far.
+</I>&gt;<i>
+</I>&gt;<i> All that said, I have been building and making available a binary
+</I>&gt;<i> release for MS Windows that includes the front end and all the back ends
+</I>&gt;<i> as DLLs.  Perhaps there is a technical issue why these DLLs could not be
+</I>&gt;<i> included with and linked from Fldigi.  I don't know.
+</I>&gt;<i>
+</I>&gt;<i> I hope this helps everyone understand the issues involved.
+</I>&gt;<i>
+</I>&gt;<i> 73, de Nate&gt;&gt;
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001030.html">[Hamlib-developer] A proposal for a Hamlib++
+</A></li>
+	<LI>Next message: <A HREF="001033.html">[Hamlib-developer] A proposal for a Hamlib++
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1032">[ date ]</a>
+              <a href="thread.html#1032">[ thread ]</a>
+              <a href="subject.html#1032">[ subject ]</a>
+              <a href="author.html#1032">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

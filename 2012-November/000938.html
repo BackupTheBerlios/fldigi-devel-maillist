@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Synop + KML + Navtex : New version. Stable ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Synop%20%2B%20KML%20%2B%20Navtex%20%3A%20New%20version.%20Stable%20%3F&In-Reply-To=%3C50A8A76A.9040604%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000937.html">
+   <LINK REL="Next"  HREF="000939.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Synop + KML + Navtex : New version. Stable ?</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Synop%20%2B%20KML%20%2B%20Navtex%20%3A%20New%20version.%20Stable%20%3F&In-Reply-To=%3C50A8A76A.9040604%40gmail.com%3E"
+       TITLE="Synop + KML + Navtex : New version. Stable ?">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Sun Nov 18 10:16:26 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000937.html">how to &quot;reset&quot; fldigi (was Re: I killed it)
+</A></li>
+        <LI>Next message: <A HREF="000939.html">[GIT] fldigi branch, maint/3.21,	updated: 94850183cea3c03c82a559b3c0e66e2e28956a60
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#938">[ date ]</a>
+              <a href="thread.html#938">[ thread ]</a>
+              <a href="subject.html#938">[ subject ]</a>
+              <a href="author.html#938">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+New version and many fixes to the Synop decoder and KML display for 
+Synop and Navtex.
+
+On branch pu/rc
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commit;h=a433fcf26f0e8c9d8c7c341e8c9c2355aa0a13d8">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commit;h=a433fcf26f0e8c9d8c7c341e8c9c2355aa0a13d8</A>
+
+Synop+Navtex+KML
+
+* Removed names and email addresses from WMO stations file.
+* Fixed Italian stations in Navtex stations file (Thanks Franco !).
+* Speedup of KML files IO.
+* Fixed WMO station names ambiguity (Conception in Latin America)
+* KML placemarks names are shorter if possible.
+* East longitude positive, West negative. Fixes bad Navtex detection.
+* Better ship name detection vs WMO identifier.
+* Better Synop decoding: 4Esss, 55jjj, 9SSss,
+* Char '=' used as a Synop end-of-section marker.
+* Added option command in KML tab executed on KML file save.
+* Comments and code cleanup.
+* Better filtering of XML forbidden chars in KML files.
+
+Among other things, it is possible to start a shell command when KML 
+files are saved. This allows for example to start automatically Google 
+Earth, or call GPSBabel to convert KML files to GPS format GPX. Commands 
+are not restarted as long as their process id is still there, which 
+makes that GoogleEarth is restartd only if it crashes, but a GPSBabel 
+conversion will be called each time.
+
+Any idea/remark/critics warmly welcome. When things will be approved I 
+will (try to) squash all related commits into a single one, ideally 
+applicable to version 3.21.
+
+Many thanks for those who have helped a lot with their tests and comments.
+
+R
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000937.html">how to &quot;reset&quot; fldigi (was Re: I killed it)
+</A></li>
+	<LI>Next message: <A HREF="000939.html">[GIT] fldigi branch, maint/3.21,	updated: 94850183cea3c03c82a559b3c0e66e2e28956a60
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#938">[ date ]</a>
+              <a href="thread.html#938">[ thread ]</a>
+              <a href="subject.html#938">[ subject ]</a>
+              <a href="author.html#938">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

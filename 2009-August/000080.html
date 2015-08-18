@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.13AD posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AD%20posted&In-Reply-To=%3C4A8F66B7.3010007%40WA5ZNU.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000079.html">
+   <LINK REL="Next"  HREF="000095.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.13AD posted</H1>
+    <B>Leigh L. Klotz, Jr WA5ZNU</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%203.13AD%20posted&In-Reply-To=%3C4A8F66B7.3010007%40WA5ZNU.org%3E"
+       TITLE="fldigi 3.13AD posted">Leigh at WA5ZNU.org
+       </A><BR>
+    <I>Sat Aug 22 05:32:07 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000079.html">fldigi 3.13AD posted
+</A></li>
+        <LI>Next message: <A HREF="000095.html">fldigi 3.13AD posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#80">[ date ]</a>
+              <a href="thread.html#80">[ thread ]</a>
+              <a href="subject.html#80">[ subject ]</a>
+              <a href="author.html#80">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>There's definitely some kind of issue with unexpected rigcat responses.
+Maybe something got more strict recently.
+
+SO my removal of the OK response from SETFREQ merely masked the problem.
+
+I'm still looking at it.
+Leigh/WA5ZNU
+
+E: hexout: read fail, 0 bytes, retry # 0
+
+Breakpoint 2, rigCAT_getfreq () at rigcontrol/rigio.cxx:379
+
+379              LOG_WARN(&quot;failed pre data string test @ %&quot; PRIuSZ, i);
+
+(gdb) print strCmd.c_str()
+
+$3 = 0x8dc5de4 &quot;FA;&quot;
+
+(gdb) print replybuff
+
+$4 = &quot;014080000;MD2;&quot;, '\0' &lt;repeats 185 times&gt;
+
+(gdb) quit
+
+The program is running.  Exit anyway? (y or n) y
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">klotz at pinstripe</A>:~/src/fldigi-3.13AD/src$ 
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000079.html">fldigi 3.13AD posted
+</A></li>
+	<LI>Next message: <A HREF="000095.html">fldigi 3.13AD posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#80">[ date ]</a>
+              <a href="thread.html#80">[ thread ]</a>
+              <a href="subject.html#80">[ subject ]</a>
+              <a href="author.html#80">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

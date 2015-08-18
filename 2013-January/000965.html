@@ -1,0 +1,379 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> errors after tried update of fldigi to 3.21.65
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20errors%20after%20tried%20update%20of%20fldigi%20to%203.21.65&In-Reply-To=%3C48257.80.108.232.138.1357169598.bloek%40pwebmail5.utanet.at%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000966.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>errors after tried update of fldigi to 3.21.65</H1>
+    <B>Rainer Kirsch</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20errors%20after%20tried%20update%20of%20fldigi%20to%203.21.65&In-Reply-To=%3C48257.80.108.232.138.1357169598.bloek%40pwebmail5.utanet.at%3E"
+       TITLE="errors after tried update of fldigi to 3.21.65">rk_news at netway.at
+       </A><BR>
+    <I>Thu Jan  3 00:33:18 CET 2013</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000966.html">errors after tried update of fldigi to 3.21.65
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#965">[ date ]</a>
+              <a href="thread.html#965">[ thread ]</a>
+              <a href="subject.html#965">[ subject ]</a>
+              <a href="author.html#965">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE># after getting errors trying to add
+# according lines to /etc/apt/sources.lst
+deb <A HREF="http://ppa.launchpad.net/kamalmostafa/fldigi/ubuntu">http://ppa.launchpad.net/kamalmostafa/fldigi/ubuntu</A> quantal main
+deb-src <A HREF="http://ppa.launchpad.net/kamalmostafa/fldigi/ubuntu">http://ppa.launchpad.net/kamalmostafa/fldigi/ubuntu</A> quantal main
+
+m14-32 ~ # add-apt-repository ppa:gwibber-daily/ppa
+You are about to add the following PPA to your system:
+ Daily builds of Gwibber trunk
+ More info: <A HREF="https://launchpad.net/~gwibber-daily/+archive/ppa">https://launchpad.net/~gwibber-daily/+archive/ppa</A>
+Press [ENTER] to continue or ctrl-c to cancel adding it
+
+gpg: keyring `/tmp/tmph8h6p6/secring.gpg' created
+gpg: keyring `/tmp/tmph8h6p6/pubring.gpg' created
+gpg: requesting key 72D340A3 from hkp server keyserver.ubuntu.com
+gpg: /tmp/tmph8h6p6/trustdb.gpg: trustdb created
+gpg: key 72D340A3: public key &quot;Launchpad PPA for gwibber-daily&quot; imported
+gpg: Total number processed: 1
+gpg:               imported: 1  (RSA: 1)
+OK
+
+m14-32 ~ # apt-get update
+# ... (several lines deleted) ...
+W: GPG error: <A HREF="http://ppa.launchpad.net">http://ppa.launchpad.net</A> quantal Release: The following
+signatures couldn't be verified because the public key is not available:
+NO_PUBKEY E0319082F37F3AB0
+W: Failed to fetch
+<A HREF="http://ppa.launchpad.net/gwibber-daily/ppa/ubuntu/dists/quantal/main/source/Sources">http://ppa.launchpad.net/gwibber-daily/ppa/ubuntu/dists/quantal/main/source/Sources</A>
+ 404  Not Found
+
+W: Failed to fetch
+<A HREF="http://ppa.launchpad.net/gwibber-daily/ppa/ubuntu/dists/quantal/main/binary-i386/Packages">http://ppa.launchpad.net/gwibber-daily/ppa/ubuntu/dists/quantal/main/binary-i386/Packages</A>
+ 404  Not Found
+
+E: Some index files failed to download. They have been ignored, or old
+ones used instead.
+
+# I commented out the two sources.lst lines and
+# added manually downloaded apt package
+m14-32 ~ # dpkg -i
+~rainer/Downloads/AF/fldigi/fldigi_3.21.65-1~kamal~quantal_i386.deb
+
+# trying to start it I got:
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">rainer at m14-32</A> ~ $ fldigi
+I: main: appname: fldigi
+I: main: Test file (nil)
+I: main: NBEMS.DIR not present
+I: main: HomeDir: /home/rainer/.fldigi/
+I: main: RigsDir: /home/rainer/.fldigi/rigs/
+I: main: ScriptsDir: /home/rainer/.fldigi/scripts/
+I: main: PalettesDir: /home/rainer/.fldigi/palettes/
+I: main: LogsDir: /home/rainer/.fldigi/logs/
+I: main: PicsDir: /home/rainer/.fldigi/images/
+I: main: HelpDir: /home/rainer/.fldigi/help/
+I: main: MacrosDir: /home/rainer/.fldigi/macros/
+I: main: WrapDir: /home/rainer/.fldigi/wrap/
+I: main: TalkDir: /home/rainer/.fldigi/talk/
+I: main: TempDir: /home/rainer/.fldigi/temp/
+I: main: PskMailDir: /home/rainer/
+I: main: NBEMS_dir: /home/rainer/.nbems/
+I: main: ARQ_dir: /home/rainer/.nbems/ARQ/
+I: main: ARQ_files_dir: /home/rainer/.nbems/ARQ/files/
+I: main: ARQ_recv_dir: /home/rainer/.nbems/ARQ/recv/
+I: main: ARQ_send: /home/rainer/.nbems/ARQ/send/
+I: main: WRAP_dir: /home/rainer/.nbems/WRAP/
+I: main: WRAP_recv_dir: /home/rainer/.nbems/WRAP/recv/
+I: main: WRAP_send_dir: /home/rainer/.nbems/WRAP/send/
+I: main: WRAP_auto_dir: /home/rainer/.nbems/WRAP/auto/
+I: main: ICS_dir: /home/rainer/.nbems/ICS/
+I: main: ICS_msg_dir: /home/rainer/.nbems/ICS/messages/
+I: main: ICS_tmp_dir: /home/rainer/.nbems/ICS/templates/
+I: main: FLMSG_dir: /home/rainer/.nbems/
+I: main: FLMSG_dir_default: /home/rainer/.nbems/
+I: main: FLMSG_WRAP_dir: /home/rainer/.nbems/WRAP/
+I: main: FLMSG_WRAP_recv_dir: /home/rainer/.nbems/WRAP/recv/
+I: main: FLMSG_WRAP_send_dir: /home/rainer/.nbems/WRAP/send/
+I: main: FLMSG_WRAP_auto_dir: /home/rainer/.nbems/WRAP/auto/
+I: main: FLMSG_ICS_dir: /home/rainer/.nbems/ICS/
+I: main: FLMSG_ICS_msg_dir: /home/rainer/.nbems/ICS/messages/
+I: main: FLMSG_ICS_tmp_dir: /home/rainer/.nbems/ICS/templates/
+I: main: CPU speed factor=171.251497: setting slowcpu=false,
+sample_converter=&quot;Best Sinc Interpolator&quot;
+I: testCommPorts: Found serial port /dev/ttyS0
+I: testCommPorts: Found serial port /dev/ttyS1
+I: testCommPorts: Found serial port /dev/ttyS2
+I: testCommPorts: Found serial port /dev/ttyS3
+I: testCommPorts: Found serial port /dev/ttyS4
+I: testCommPorts: Found serial port /dev/ttyS5
+I: testCommPorts: Found serial port /dev/ttyS6
+I: testCommPorts: Found serial port /dev/ttyS7
+I: testCommPorts: Found serial port /dev/ttyS8
+I: testCommPorts: Found serial port /dev/ttyS9
+I: testCommPorts: Found serial port /dev/ttyUSB0
+I: testCommPorts: Found serial port /dev/ttyUSB1
+I: testCommPorts: Found serial port /dev/ttyS10
+I: testCommPorts: Found serial port /dev/ttyS11
+I: testCommPorts: Found serial port /dev/ttyS12
+I: testCommPorts: Found serial port /dev/ttyS13
+I: testCommPorts: Found serial port /dev/ttyS14
+I: testCommPorts: Found serial port /dev/ttyS15
+I: testCommPorts: Found serial port /dev/ttyS16
+I: testCommPorts: Found serial port /dev/ttyS17
+I: testCommPorts: Found serial port /dev/ttyS18
+I: testCommPorts: Found serial port /dev/ttyS19
+I: testCommPorts: Found serial port /dev/ttyS20
+I: testCommPorts: Found serial port /dev/ttyS21
+I: testCommPorts: Found serial port /dev/ttyS22
+I: testCommPorts: Found serial port /dev/ttyS23
+I: testCommPorts: Found serial port /dev/ttyS24
+I: testCommPorts: Found serial port /dev/ttyS25
+I: testCommPorts: Found serial port /dev/ttyS26
+I: testCommPorts: Found serial port /dev/ttyS27
+I: testCommPorts: Found serial port /dev/ttyS28
+I: testCommPorts: Found serial port /dev/ttyS29
+I: testCommPorts: Found serial port /dev/ttyS30
+I: testCommPorts: Found serial port /dev/ttyS31
+I: loadDefault: macro file name: /home/rainer/.fldigi/macros/macros.mdf
+I: loadDefault: loading: /home/rainer/.fldigi/macros/macros.mdf
+ALSA lib pcm.c:2217:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.rear
+ALSA lib pcm.c:2217:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.center_lfe
+ALSA lib pcm.c:2217:(snd_pcm_open_noupdate) Unknown PCM cards.pcm.side
+ALSA lib audio/pcm_bluetooth.c:1614:(audioservice_expect)
+BT_GET_CAPABILITIES failed : Input/output error(5)
+ALSA lib audio/pcm_bluetooth.c:1614:(audioservice_expect)
+BT_GET_CAPABILITIES failed : Input/output error(5)
+ALSA lib audio/pcm_bluetooth.c:1614:(audioservice_expect)
+BT_GET_CAPABILITIES failed : Input/output error(5)
+ALSA lib audio/pcm_bluetooth.c:1614:(audioservice_expect)
+BT_GET_CAPABILITIES failed : Input/output error(5)
+ALSA lib pcm_dmix.c:957:(snd_pcm_dmix_open) The dmix plugin supports only
+playback stream
+Cannot connect to server socket err = No such file or directory
+Cannot connect to server request channel
+jack server is not running or cannot be started
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+fldigi[0x816f81b]
+fldigi[0x816fa0c]
+[0xb778f400]
+fldigi[0x81dbe8e]
+fldigi[0x81e934b]
+fldigi[0x81a2bc1]
+/lib/i386-linux-gnu/libpthread.so.0(+0x6d4c)[0xb7735d4c]
+/lib/i386-linux-gnu/libc.so.6(clone+0x5e)[0xb7010d3e]
+
+****** Version information:
+fldigi 3.21.65
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi
+Chateauneu, and others.
+License GPLv3+: GNU GPL version 3 or later
+&lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+  built          : Tue Jan  1 00:24:39 UTC 2013 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">buildd at dubnium</A> on
+i686-pc-linux-gnu for i686-pc-linux-gnu
+
+  configure flags: '--build=i686-linux-gnu' '--prefix=/usr'
+'--includedir=${prefix}/include' '--mandir=${prefix}/share/man'
+'--infodir=${prefix}/share/info' '--sysconfdir=/etc'
+'--localstatedir=/var' '--libexecdir=${prefix}/lib/fldigi'
+'--disable-maintainer-mode' '--disable-dependency-tracking' 'CFLAGS=-g
+-O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat
+-Werror=format-security' 'CPPFLAGS=-D_FORTIFY_SOURCE=2' 'CXXFLAGS=-g -O2
+-fstack-protector --param=ssp-buffer-size=4 -Wformat
+-Werror=format-security' 'FFLAGS=-g -O2'
+'LDFLAGS=-Wl,-Bsymbolic-functions -Wl,-z,relro' '--disable-silent-rules'
+'build_alias=i686-linux-gnu'
+
+  compiler       : gcc version 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1)
+
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+-I$(srcdir)/libtiniconv -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp
+-pthread -I/usr/include/cairo -I/usr/include/glib-2.0
+-I/usr/lib/i386-linux-gnu/glib-2.0/include -I/usr/include/pixman-1
+-I/usr/include/freetype2 -I/usr/include/libpng12
+-I/usr/include/freetype2 -I/usr/include/cairo -I/usr/include/glib-2.0
+-I/usr/lib/i386-linux-gnu/glib-2.0/include -I/usr/include/pixman-1
+-I/usr/include/freetype2 -I/usr/include/libpng12 -D_LARGEFILE_SOURCE
+-D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_THREAD_SAFE -D_REENTRANT
+-D_REENTRANT -I/usr/include/libpng12 -I/usr/include -pipe -Wall
+-fexceptions -O2 -ffast-math -finline-functions -DNDEBUG
+
+  linker flags   : -lportaudio -lasound -lm -lpthread
+-L/usr/lib/i386-linux-gnu -Wl,-Bsymbolic-functions -lfltk_images -lfltk
+-lX11 -lsndfile -lsamplerate -lpulse-simple -lpulse -lhamlib -lm -lpng12
+-L/usr/lib -lxmlrpc_server_abyss++ -lxmlrpc_server++
+-lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss -lxmlrpc++ -lxmlrpc
+-lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -ldl -lrt -lpthread
+
+  libraries      : FLTK 1.3.0
+                   libsamplerate 0.1.8
+                   libsndfile 1.0.25
+                   PortAudio 19
+                   PulseAudio 2.1
+                   Hamlib 1.2.15.2
+                   XMLRPC-C 1.16.33
+
+
+Runtime information:
+  system         : Linux m14-32 3.5.0-17-generic #28-Ubuntu SMP Tue Oct 9
+19:32:08 UTC 2012 i686
+
+  libraries      : libsamplerate-0.1.8 (c) 2002-2008 Erik de Castro Lopo
+                   libsndfile-1.0.25
+                   PortAudio V19-devel (built Oct  8 2012 16:25:16) 1899
+                   Pulseaudio 2.1.0
+                   Hamlib 1.2.15.2
+[1]+  Done                    gvim /home/rainer/Documents/tagebuch.txt
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">rainer at m14-32</A> ~ $ dp
+dpkg                     dpkg-divert              dpkg-preconfigure       
+dpkg-reconfigure         dpkg-statoverride        dprofpp
+dpkg-deb                 dpkg-maintscript-helper  dpkg-query              
+dpkg-split               dpkg-trigger
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">rainer at m14-32</A> ~ $ dpkg-query -l xmlrp*
+Desired=Unknown/Install/Remove/Purge/Hold
+|<i>
+</I>Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|<i>/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+</I>||<i>/ Name                                 Version                
+</I>Architecture            Description
++++-====================================-=======================-=======================-==============================================================================
+ii  xmlrpc-api-utils                     1.16.33-3.1ubuntu6      i386     
+              Generate C++ wrapper classes for XML-RPC servers
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">rainer at m14-32</A> ~ $ dpkg-query -l xml*
+Desired=Unknown/Install/Remove/Purge/Hold
+|<i>
+</I>Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|<i>/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+</I>||<i>/ Name                                 Version                
+</I>Architecture            Description
++++-====================================-=======================-=======================-==============================================================================
+ii  xml-core                             0.13+nmu1               all      
+              XML infrastructure and XML catalog file support
+un  xml-i18n-tools                       &lt;none&gt;                           
+              (no description available)
+un  xml-rpc-api2cpp                      &lt;none&gt;                           
+              (no description available)
+un  xml-rpc-api2txt                      &lt;none&gt;                           
+              (no description available)
+un  xml-twig-tools                       &lt;none&gt;                           
+              (no description available)
+ii  xmlrpc-api-utils                     1.16.33-3.1ubuntu6      i386     
+              Generate C++ wrapper classes for XML-RPC servers
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">rainer at m14-32</A> ~ $ dpkg-query -l libxml*
+Desired=Unknown/Install/Remove/Purge/Hold
+|<i>
+</I>Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|<i>/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+</I>||<i>/ Name                                 Version                
+</I>Architecture            Description
++++-====================================-=======================-=======================-==============================================================================
+ii  libxml-commons-external-java         1.4.01-2build1          all      
+              XML Commons external code - DOM, SAX, and JAXP, etc
+ii  libxml-commons-resolver1.1-java      1.2-7build1             all      
+              XML entity and URI resolver library
+un  libxml-commons-resolver1.1-java-doc  &lt;none&gt;                           
+              (no description available)
+un  libxml-libxml-perl                   &lt;none&gt;                           
+              (no description available)
+un  libxml-parser-lite-tree-perl         &lt;none&gt;                           
+              (no description available)
+ii  libxml-parser-perl                   2.41-1build2            i386     
+              Perl module for parsing XML files
+un  libxml-simple-perl                   &lt;none&gt;                           
+              (no description available)
+ii  libxml-twig-perl                     1:3.39-1ubuntu1         all      
+              Perl module for processing huge XML documents in tree mode
+ii  libxml-xpath-perl                    1.13-7                  all      
+              Perl module for processing XPath
+un  libxml-xpathengine-perl              &lt;none&gt;                           
+              (no description available)
+ii  libxml2:i386                         2.8.0+dfsg1-5ubuntu2.1  i386     
+              GNOME XML library
+un  libxml2-utils                        &lt;none&gt;                           
+              (no description available)
+ii  libxmlrpc-c++4                       1.16.33-3.1ubuntu6      i386     
+              lightweight RPC library based on XML and HTTP [C++ runtime
+libraries]
+un  libxmlrpc-c3                         &lt;none&gt;                           
+              (no description available)
+un  libxmlrpc-c3-0                       &lt;none&gt;                           
+              (no description available)
+ii  libxmlrpc-core-c3                    1.16.33-3.1ubuntu6      i386     
+              lightweight RPC library based on XML and HTTP [C runtime
+libraries]
+un  libxmlrpc-core-c3-0                  &lt;none&gt;                           
+              (no description available)
+
+m14-32 ~ # uname -a
+Linux m14-32 3.5.0-17-generic #28-Ubuntu SMP Tue Oct 9 19:32:08 UTC 2012
+i686 i686 i686 GNU/Linux
+
+m14-32 ~ # cat /etc/apt/sources.list
+deb <A HREF="http://tux.rainside.sk/mint/packages/">http://tux.rainside.sk/mint/packages/</A> nadia main upstream import
+deb <A HREF="http://archive.ubuntu.com/ubuntu/">http://archive.ubuntu.com/ubuntu/</A> quantal main restricted universe
+multiverse
+deb <A HREF="http://archive.ubuntu.com/ubuntu/">http://archive.ubuntu.com/ubuntu/</A> quantal-updates main restricted
+universe multiverse
+deb <A HREF="http://security.ubuntu.com/ubuntu/">http://security.ubuntu.com/ubuntu/</A> quantal-security main restricted
+universe multiverse
+deb <A HREF="http://archive.canonical.com/ubuntu/">http://archive.canonical.com/ubuntu/</A> quantal partner
+deb <A HREF="http://packages.medibuntu.org/">http://packages.medibuntu.org/</A> quantal free non-free
+
+# deb <A HREF="http://archive.getdeb.net/ubuntu">http://archive.getdeb.net/ubuntu</A> quantal-getdeb apps
+# deb <A HREF="http://archive.getdeb.net/ubuntu">http://archive.getdeb.net/ubuntu</A> quantal-getdeb games
+
+# deb <A HREF="http://ppa.launchpad.net/kamalmostafa/fldigi/ubuntu">http://ppa.launchpad.net/kamalmostafa/fldigi/ubuntu</A> quantal main
+# deb-src <A HREF="http://ppa.launchpad.net/kamalmostafa/fldigi/ubuntu">http://ppa.launchpad.net/kamalmostafa/fldigi/ubuntu</A> quantal main
+
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000966.html">errors after tried update of fldigi to 3.21.65
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#965">[ date ]</a>
+              <a href="thread.html#965">[ thread ]</a>
+              <a href="subject.html#965">[ subject ]</a>
+              <a href="author.html#965">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

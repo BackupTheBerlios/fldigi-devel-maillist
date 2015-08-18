@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Special test request
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Special%20test%20request&In-Reply-To=%3CFD6DAE59-C628-4859-B6D7-1F295573C0FF%40att.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000773.html">
+   <LINK REL="Next"  HREF="000776.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Special test request</H1>
+    <B>Dick Kriss</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Special%20test%20request&In-Reply-To=%3CFD6DAE59-C628-4859-B6D7-1F295573C0FF%40att.net%3E"
+       TITLE="Special test request">aa5vu at att.net
+       </A><BR>
+    <I>Tue Jan  3 03:41:53 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000773.html">Special test request
+</A></li>
+        <LI>Next message: <A HREF="000776.html">Special test request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#774">[ date ]</a>
+              <a href="thread.html#774">[ thread ]</a>
+              <a href="subject.html#774">[ subject ]</a>
+              <a href="author.html#774">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+On Jan 2, 2012, at 7:21 PM, w1hkj wrote:
+
+&gt;<i> I've tested the OS X dmgs on both a G4 mini-mac (Motorola chip) and a G4-Intel machine.  Both load very fast, so the dmg is providing native code.  Let me know if you see otherwise.
+</I>
+As you know I am not an flrig user; however, I downloaded and ran flrig-1.2.6.dmg. It worked with no issues. I then restarted fldigi-3.22.0BM and it reverted to the Arial 18 font again.  There is something flakey with how the new code saves or read the user selected font.
+
+I just opened my fldigi_def.xml file and noted
+
+&lt;!-- type: std::string; default: &quot;&quot;
+RX text font name --&gt;
+&lt;RXFONTNAME&gt;Arial&lt;/RXFONTNAME&gt;
+
+I have never selected Arial so there may be an issue with how the new fldigi saves the user font slections
+
+Dick AA5VU
+
+As a footnote I save the configuration again this time it worked.  
+
+&lt;!-- type: std::string; default: &quot;&quot;
+RX text font name --&gt;
+&lt;RXFONTNAME&gt;Bitstream Vera Sans Mono Bold Oblique&lt;/RXFONTNAME&gt;
+
+I suspect it changed with went from RigCAT to XML-RC to be able to test flrig-1.2.6.  My fldigi_def.xml file now works with fldigi-3.21.33 and 3.22.0BM
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120102/5332cf20/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120102/5332cf20/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000773.html">Special test request
+</A></li>
+	<LI>Next message: <A HREF="000776.html">Special test request
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#774">[ date ]</a>
+              <a href="thread.html#774">[ thread ]</a>
+              <a href="subject.html#774">[ subject ]</a>
+              <a href="author.html#774">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

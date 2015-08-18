@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fwd: Fldigi support for microKeyer (and other microHam products)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fwd%3A%20Fldigi%20support%20for%20microKeyer%20%28and%20other%20microHam%20products%29&In-Reply-To=%3C4D36FD3F.3070703%40microham-usa.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000510.html">
+   <LINK REL="Next"  HREF="000511.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fwd: Fldigi support for microKeyer (and other microHam products)</H1>
+    <B>Joe Subich, W4TV</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fwd%3A%20Fldigi%20support%20for%20microKeyer%20%28and%20other%20microHam%20products%29&In-Reply-To=%3C4D36FD3F.3070703%40microham-usa.com%3E"
+       TITLE="Fwd: Fldigi support for microKeyer (and other microHam products)">W4TV at microham-usa.com
+       </A><BR>
+    <I>Wed Jan 19 16:03:27 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000510.html">Fwd: Fldigi support for microKeyer (and other microHam products)
+</A></li>
+        <LI>Next message: <A HREF="000511.html">fldigi-3.21.0BD posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#515">[ date ]</a>
+              <a href="thread.html#515">[ thread ]</a>
+              <a href="subject.html#515">[ subject ]</a>
+              <a href="author.html#515">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Dave,
+
+I have heard from Jozef regarding documentation for you and he
+does not require an NDA.  However, he has one condition before
+I forward you the internal protocol document.
+
+&gt;<i> I have no problem if final source code is public, from source code is
+</I>&gt;<i> very hard if not impossible to make different, software compatible
+</I>&gt;<i> product. Of course if protocol document isn't 1:1 copied in the
+</I>&gt;<i> source files :-)
+</I>
+In other words, you are free to make the source public under the terms
+of GPL but the protocol document (or even substantial parts of it) may
+not be included in the source or released to others beyond the limited
+number of persons with a direct need to know.
+
+&gt;<i> All of the microHAM products are first class. I think that Josef is
+</I>&gt;<i> ignoring a large (and growing) part of the ham community by not
+</I>&gt;<i> providing Linux / OS X support.
+</I>
+OS-X seems to be covered adequately by Chen, Don Agro (MacLogger DX),
+and Tom Lindner (DL2RUM).  Jozef has always believed that LINUX support
+would be nice but he has been burned by the LINUX developer community on 
+several previous occasions when promises of support have turned into
+dead silence.
+
+microHAM's programming resources are already stretched to the limit
+in supporting the existing/planned hardware development and Windows user 
+base.  From Jozef's perspective, LINUX is a very small minority market 
+that does not justify the expense of adding another full-time
+programmer to the development staff for what most estimates consider
+to be at best 15% of the amateur market.
+
+73,
+
+    ... Joe Subich, W4TV
+        microHAM America, LLC.
+        <A HREF="http://www.microHAM-USA.com">http://www.microHAM-USA.com</A>
+        <A HREF="http://groups.yahoo.com/group/microHAM">http://groups.yahoo.com/group/microHAM</A>
+
+
+PS. USB Interface III should work in the LINUX environment without
+     any special support software.  Both the sound card and USB to
+     serial converter are standard hardware (no embedded processor
+     to support) with manufacturer supplied drivers.  I have used
+     it in both OS-X and Windows without Chen's uH Router or the
+     microHAM Router package.
+
+
+On 1/18/2011 10:37 AM, w1hkj wrote:
+&gt;<i> Hello Joe, Comments in the text.
+</I>&gt;<i>
+</I>&gt;<i> Joe Subich, W4TV wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Dave,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> First, it is not my position to release any of micoHAM's IP.
+</I>&gt;&gt;<i> However, after one case of misappropriation of the IP by another
+</I>&gt;&gt;<i> software development team which lead directly to the development of
+</I>&gt;&gt;<i> an infringing product, I do not blame Josef for keeping microHAM's
+</I>&gt;&gt;<i> internals close to the vest.
+</I>&gt;<i> All of the microHAM products are first class. I think that Josef is
+</I>&gt;<i> ignoring a large (and growing) part of the ham community by not
+</I>&gt;<i> providing Linux / OS X support. He can do that and still remain
+</I>&gt;<i> proprietary. That is what many of the video card manufacturer's do.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I don't believe there is a conflict between GPL and protecting
+</I>&gt;&gt;<i> microHAM's IP. Chen's code is fully public but he does not
+</I>&gt;&gt;<i> release the microHAM documentation and your team could certainly do
+</I>&gt;&gt;<i> the same.
+</I>&gt;<i> There is a very fundamental difference between uRouter and the fl---
+</I>&gt;<i> line of applications. These have all been licensed under either the GPL
+</I>&gt;<i> or the LGPL, both of which require complete disclosure of all code that
+</I>&gt;<i> is used in the application. fldigi has a parentage that reaches back
+</I>&gt;<i> through several generations of code, all of which were GPL. Chen has
+</I>&gt;<i> basically published his uRouter and other applications with NO LICENSE.
+</I>&gt;<i> He is therefore free to disclose as much or as little as he chooses.
+</I>&gt;<i> Another developer can use as much or as little of his code as they want,
+</I>&gt;<i> but they assume full responsibility for any disclosure (inadvertent or
+</I>&gt;<i> otherwise) of proprietary or copyrighted material.
+</I>&gt;<i>
+</I>&gt;<i> Please keep the fldigi developers in mind should Josef ever decide to
+</I>&gt;<i> open up the specifications.
+</I>&gt;<i>
+</I>&gt;<i> 73, Dave
+</I>&gt;<i> W1HKJ
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-- 
+
+73,
+
+    ... Joe Subich, W4TV
+        microHAM America, LLC.
+        <A HREF="http://www.microHAM-USA.com">http://www.microHAM-USA.com</A>
+        <A HREF="http://groups.yahoo.com/group/microHAM">http://groups.yahoo.com/group/microHAM</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000510.html">Fwd: Fldigi support for microKeyer (and other microHam products)
+</A></li>
+	<LI>Next message: <A HREF="000511.html">fldigi-3.21.0BD posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#515">[ date ]</a>
+              <a href="thread.html#515">[ thread ]</a>
+              <a href="subject.html#515">[ subject ]</a>
+              <a href="author.html#515">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

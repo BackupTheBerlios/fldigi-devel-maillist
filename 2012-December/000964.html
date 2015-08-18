@@ -1,0 +1,224 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.21,	updated: 0e27f1ce2f0fdb205cdaf2c15f31d924482f7bc2
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%200e27f1ce2f0fdb205cdaf2c15f31d924482f7bc2&In-Reply-To=%3C20121231220233.6432055B0C%40scm.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000963.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.21,	updated: 0e27f1ce2f0fdb205cdaf2c15f31d924482f7bc2</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%200e27f1ce2f0fdb205cdaf2c15f31d924482f7bc2&In-Reply-To=%3C20121231220233.6432055B0C%40scm.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.21,	updated: 0e27f1ce2f0fdb205cdaf2c15f31d924482f7bc2">herrfreese at scm.berlios.de
+       </A><BR>
+    <I>Mon Dec 31 23:02:32 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000963.html">New Modes and Extended RsID
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#964">[ date ]</a>
+              <a href="thread.html#964">[ thread ]</a>
+              <a href="subject.html#964">[ subject ]</a>
+              <a href="author.html#964">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.21 has been updated
+       via  0e27f1ce2f0fdb205cdaf2c15f31d924482f7bc2 (commit)
+       via  7680b0512eac0f06ba4d9a638e5826f746c299a3 (commit)
+       via  282886b97774d5c00424d7b811dc90b49552233d (commit)
+      from  51b719fb70af1d87f59ad979a4707c0b6e61dfea (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=0e27f1ce2f0fdb205cdaf2c15f31d924482f7bc2">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=0e27f1ce2f0fdb205cdaf2c15f31d924482f7bc2</A>
+
+commit 0e27f1ce2f0fdb205cdaf2c15f31d924482f7bc2
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Dec 28 14:56:20 2012 -0600
+
+    Version 3.21.65
+    
+      * Maintenance / update release
+
+ 2 files changed, 10 insertions(+), 6 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=7680b0512eac0f06ba4d9a638e5826f746c299a3">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=7680b0512eac0f06ba4d9a638e5826f746c299a3</A>
+
+commit 7680b0512eac0f06ba4d9a638e5826f746c299a3
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Dec 27 08:24:20 2012 -0600
+
+    High Speed / Multi-Carrier Modems
+    
+      * This commit contributed to by:
+        - John Douyere &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vk2eta at gmail.com</A>&gt;
+        - Dave Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+        - John Phelps &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kl4yfd at gmail.com</A>&gt;
+        - Andrej Lajovic &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">s57ln at hamradio.si</A>&gt;
+      * New high speed and multi carrier modems
+        - psk, pskr
+        - DominoEX
+        - Thor
+      * Added separate modem initialization for
+        Olivia tone / bandwidth pairs:
+        - 4/250, 8/250
+        - 4/500, 8/500, 16/500
+        - 8/1000, 16/1000, 32/1000
+        - 64/2000
+      * RSID changes
+        - Added secondary RsID code set
+        - RsID code 263 enables detection of the secondary
+          RsID code burst.
+      * MFSK UTF-8 tx
+        - corrected transmit of two-byte UTF-8 characters
+      * PSK-UTF-8 tx
+        - corrected transmit of two-byte UTF-8 characters
+      * Changed PSK multicarrier bandwidth markers to show full
+        extent of signal in the waterfall.
+      * THOR modem updates
+        - Added Thor high speed modes
+          25x4, 50, 50x2, 100 Baud, all &lt; 1800 Hz bandwidth
+        - IFK+ Softdecode function for THOR
+          dynamically detects and suppresses CWI
+          Rx printing is disabled when &quot;File IO only&quot; is selected for
+          soundcard.  Decoder uses puncture in this condition.
+        - THOR FEC confidence indicator
+          Uses the actual path-metrics from the Viterbi decoder.
+          Displays next to the S/N in the main dialog.
+
+ 32 files changed, 2260 insertions(+), 689 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=282886b97774d5c00424d7b811dc90b49552233d">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=282886b97774d5c00424d7b811dc90b49552233d</A>
+
+commit 282886b97774d5c00424d7b811dc90b49552233d
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Dec 30 14:18:18 2012 -0600
+
+    User configurable items
+    
+      * View Browser Colors
+        - Added configurable colors to signal view browser
+      *Logbook browser font
+        - Added set font code for logbook browser
+
+ 21 files changed, 1305 insertions(+), 1073 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                          |   10 +-
+ configure.ac                       |    2 +-
+ src/Makefile.am                    |    1 +
+ src/dialogs/Viewer.cxx             |   69 +-
+ src/dialogs/colorsfonts.cxx        |  228 +++----
+ src/dialogs/confdialog.cxx         | 1265 ++++++++++++++++++++----------------
+ src/dialogs/confdialog.fl          |  202 ++++--
+ src/dialogs/fl_digi.cxx            |  313 +++++----
+ src/dialogs/notifydialog.cxx       |  114 ++--
+ src/dominoex/dominoex.cxx          |   34 +-
+ src/flarq-src/arqdialogs.cxx       |  146 ++---
+ src/flarq-src/include/arqdialogs.h |    2 +-
+ src/globals/globals.cxx            |   60 +-
+ src/include/Viewer.h               |    1 +
+ src/include/colorsfonts.h          |    2 +-
+ src/include/confdialog.h           |    9 +-
+ src/include/configuration.h        |   26 +-
+ src/include/dominoex.h             |    6 +-
+ src/include/globals.h              |   65 +-
+ src/include/interleave.h           |    2 +-
+ src/include/lgbook.h               |    2 +-
+ src/include/mfsk.h                 |    5 +-
+ src/include/modem.h                |   57 +-
+ src/include/notifydialog.h         |    2 +-
+ src/include/olivia.h               |    2 +-
+ src/include/psk.h                  |   26 +-
+ src/include/psk_browser.h          |   17 +-
+ src/include/pskeval.h              |    2 +-
+ src/include/qrunner.h              |    4 +-
+ src/include/rsid.h                 |   30 +-
+ src/include/table.h                |   12 +
+ src/include/thor.h                 |   26 +-
+ src/include/viterbi.h              |    2 +-
+ src/logbook/lgbook.cxx             |  344 +++++-----
+ src/logbook/table.cxx              |   11 +-
+ src/mfsk/interleave.cxx            |   23 +-
+ src/mfsk/mfsk.cxx                  |   79 ++-
+ src/misc/configuration.cxx         |    3 +
+ src/misc/macros.cxx                |   42 +-
+ src/olivia/olivia.cxx              |   81 ++-
+ src/psk/psk.cxx                    |  733 ++++++++++++++++-----
+ src/psk/pskeval.cxx                |    2 +-
+ src/qrunner/qrunner.cxx            |    3 +-
+ src/rsid/rsid.cxx                  |  498 +++++++-------
+ src/rsid/rsid_defs.cxx             |  262 ++++++++
+ src/thor/thor.cxx                  |  402 ++++++++++--
+ src/trx/modem.cxx                  |   54 +-
+ src/waterfall/waterfall.cxx        |    2 -
+ src/widgets/flmisc.cxx             |    2 +-
+ src/widgets/psk_browser.cxx        |   50 +-
+ 50 files changed, 3571 insertions(+), 1764 deletions(-)
+  41.0% src/dialogs/
+   5.5% src/include/
+   6.6% src/logbook/
+  13.7% src/psk/
+  14.2% src/rsid/
+   7.5% src/thor/
+  10.9% src/
+  50.8% src/dialogs/
+   3.4% src/flarq-src/
+   3.6% src/include/
+   8.0% src/logbook/
+   8.7% src/psk/
+  14.5% src/rsid/
+   4.1% src/thor/
+   6.4% src/
+ create mode 100644 src/rsid/rsid_defs.cxx
+
+
+hooks/post-receive
+-- 
+fldigi
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000963.html">New Modes and Extended RsID
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#964">[ date ]</a>
+              <a href="thread.html#964">[ thread ]</a>
+              <a href="subject.html#964">[ subject ]</a>
+              <a href="author.html#964">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

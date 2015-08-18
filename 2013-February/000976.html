@@ -1,0 +1,237 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.21,	updated: 719452f2534173d94d68e5cb65c192f151bc21d6
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%20719452f2534173d94d68e5cb65c192f151bc21d6&In-Reply-To=%3C20130201012240.589D055B0C%40scm.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000977.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.21,	updated: 719452f2534173d94d68e5cb65c192f151bc21d6</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%20719452f2534173d94d68e5cb65c192f151bc21d6&In-Reply-To=%3C20130201012240.589D055B0C%40scm.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.21,	updated: 719452f2534173d94d68e5cb65c192f151bc21d6">herrfreese at scm.berlios.de
+       </A><BR>
+    <I>Fri Feb  1 02:22:39 CET 2013</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000977.html">[GIT] fldigi branch, master,	updated: 8917c866875cec401c2f2f48dc71d0d365d7e142
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#976">[ date ]</a>
+              <a href="thread.html#976">[ thread ]</a>
+              <a href="subject.html#976">[ subject ]</a>
+              <a href="author.html#976">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.21 has been updated
+       via  719452f2534173d94d68e5cb65c192f151bc21d6 (commit)
+       via  0d4d55dcb2e6eafa7e26cadf07714758ef132daa (commit)
+       via  645acabc56da36f48e84df04d342523fca4d6e22 (commit)
+       via  63323a4bbb7f1904d841b094c2543b80d6bec5f2 (commit)
+       via  f3abd4ce71e9ae82bfbaf4ebf72cb122036bad84 (commit)
+       via  4af6dcd5b4ff60fd45b62d9d01876bc7c11d2908 (commit)
+       via  b8fd4db511631f8b2206ad934195753f55c9c21c (commit)
+      from  a0f04f29a682306fa8245d2a310e89c45787fd4e (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=719452f2534173d94d68e5cb65c192f151bc21d6">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=719452f2534173d94d68e5cb65c192f151bc21d6</A>
+
+commit 719452f2534173d94d68e5cb65c192f151bc21d6
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Jan 29 12:46:16 2013 -0600
+
+    Version 3.21.67
+    
+      * Maintenance release
+
+ 2 files changed, 15 insertions(+), 5 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=0d4d55dcb2e6eafa7e26cadf07714758ef132daa">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=0d4d55dcb2e6eafa7e26cadf07714758ef132daa</A>
+
+commit 0d4d55dcb2e6eafa7e26cadf07714758ef132daa
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Jan 21 12:08:33 2013 -0600
+
+    RTTY FSK modem
+    
+      * This patch contributed to by
+        W1HKJ, Dave Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+        DO2SMF, Stefan Fendt &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">smfendt at gmail.com</A>&gt;
+      * Waveshaped FSK modem for classic RTTY using raised cosine
+        matched filters
+      * Kahn demodulator
+      * RTTY scope based on separate mark / space filter outputs
+      * Corrected s/n estimator
+      * Change RTTY browser to new demodulator
+      * Fixed missing browser highlight for callsign detection
+      * Bypass Viewer signal processing if viewer(s) are not visible
+        - significantly reduces % CPU use
+      * Separated psk-rtty range/value pairs for viewer squelch
+        control.
+
+ 19 files changed, 1384 insertions(+), 677 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=645acabc56da36f48e84df04d342523fca4d6e22">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=645acabc56da36f48e84df04d342523fca4d6e22</A>
+
+commit 645acabc56da36f48e84df04d342523fca4d6e22
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Jan 29 03:53:55 2013 -0600
+
+    PSK viewer
+    
+      * Suppress psk viewer decoding if neither viewer
+        is visible.
+
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=63323a4bbb7f1904d841b094c2543b80d6bec5f2">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=63323a4bbb7f1904d841b094c2543b80d6bec5f2</A>
+
+commit 63323a4bbb7f1904d841b094c2543b80d6bec5f2
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat Jan 26 15:11:00 2013 -0600
+
+    Contest fields
+    
+      * increased size of contest fields
+
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=f3abd4ce71e9ae82bfbaf4ebf72cb122036bad84">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=f3abd4ce71e9ae82bfbaf4ebf72cb122036bad84</A>
+
+commit f3abd4ce71e9ae82bfbaf4ebf72cb122036bad84
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jan 25 07:48:00 2013 -0600
+
+    RigCAT INIT/CLOSE
+    
+      * This modification submitted by:
+        Arvo Jarve, ES1JA, &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">arvo at softshark.ee</A>&gt;
+      * Added CLOSE port rigcat command
+      * Added user control to enable/disable restortation
+        of serial port status bits when closing port
+        - use &lt;RESTORE&gt;bool_value&lt;/RESTORE&gt; in xml definition
+          file.
+
+ 9 files changed, 77 insertions(+), 20 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=4af6dcd5b4ff60fd45b62d9d01876bc7c11d2908">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=4af6dcd5b4ff60fd45b62d9d01876bc7c11d2908</A>
+
+commit 4af6dcd5b4ff60fd45b62d9d01876bc7c11d2908
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Jan 24 22:03:19 2013 -0600
+
+    Olivia FEC reset
+    
+      * Added user control to enable/disable automatic reset of
+        FEC integration depth when BW / Tones are changed either
+        by user or via RsID reception.
+
+ 5 files changed, 33 insertions(+), 7 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=b8fd4db511631f8b2206ad934195753f55c9c21c">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=b8fd4db511631f8b2206ad934195753f55c9c21c</A>
+
+commit b8fd4db511631f8b2206ad934195753f55c9c21c
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Jan 17 22:03:54 2013 -0600
+
+    Status / Tx Level Controls
+    
+      * increased horizontal dimension to 120 pixels
+
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                   |  18 +-
+ configure.ac                |   2 +-
+ src/cw_rtty/rtty.cxx        | 678 +++++++++++++++++++++++++++++++++-----------
+ src/cw_rtty/view_rtty.cxx   | 230 +++++++++------
+ src/dialogs/Viewer.cxx      |  30 +-
+ src/dialogs/confdialog.cxx  | 408 +++++++++++++++-----------
+ src/dialogs/confdialog.fl   | 297 ++++++++++---------
+ src/dialogs/fl_digi.cxx     |  43 ++-
+ src/filters/fftfilt.cxx     |  63 ++++
+ src/include/confdialog.h    |  21 +-
+ src/include/configuration.h |  27 +-
+ src/include/digiscope.h     |   3 -
+ src/include/fftfilt.h       |   1 +
+ src/include/fldigi-config.h |   6 +-
+ src/include/rigxml.h        |   2 +
+ src/include/rtty.h          | 123 ++++++--
+ src/include/serial.h        |   8 +
+ src/include/status.h        |   4 +-
+ src/include/view_rtty.h     |  73 +++--
+ src/misc/configuration.cxx  |   1 -
+ src/misc/status.cxx         |  34 ++-
+ src/psk/psk.cxx             |   8 +-
+ src/psk/viewpsk.cxx         |   4 +-
+ src/rigcontrol/rigio.cxx    |  15 +-
+ src/rigcontrol/rigxml.cxx   |  10 +
+ src/rigcontrol/serial.cxx   |  10 +-
+ src/waterfall/digiscope.cxx |  88 ++----
+ src/widgets/psk_browser.cxx |  29 +-
+ 28 files changed, 1520 insertions(+), 716 deletions(-)
+  40.6% src/cw_rtty/
+  34.7% src/dialogs/
+  11.9% src/include/
+   3.9% src/waterfall/
+   7.7% src/
+  41.7% src/cw_rtty/
+  37.3% src/dialogs/
+   9.4% src/include/
+  10.8% src/
+
+
+hooks/post-receive
+-- 
+fldigi
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000977.html">[GIT] fldigi branch, master,	updated: 8917c866875cec401c2f2f48dc71d0d365d7e142
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#976">[ date ]</a>
+              <a href="thread.html#976">[ thread ]</a>
+              <a href="subject.html#976">[ subject ]</a>
+              <a href="author.html#976">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

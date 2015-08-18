@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> compile errors on Mac OS X 10.7 (Lion)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20compile%20errors%20on%20Mac%20OS%20X%2010.7%20%28Lion%29&In-Reply-To=%3C65FBD8FC-807A-4653-9100-FE334A28D1DE%40amsat.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000843.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>compile errors on Mac OS X 10.7 (Lion)</H1>
+    <B>Gerrit Polder</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20compile%20errors%20on%20Mac%20OS%20X%2010.7%20%28Lion%29&In-Reply-To=%3C65FBD8FC-807A-4653-9100-FE334A28D1DE%40amsat.org%3E"
+       TITLE="compile errors on Mac OS X 10.7 (Lion)">pa3bya at amsat.org
+       </A><BR>
+    <I>Fri Apr 20 13:59:33 CEST 2012</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000843.html">[GIT] fldigi branch, master,	updated: 4986fcd8682b4513cb9a252cfb911b00ca0375fd
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#842">[ date ]</a>
+              <a href="thread.html#842">[ thread ]</a>
+              <a href="subject.html#842">[ subject ]</a>
+              <a href="author.html#842">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'm trying to compile fldigi on Mac OS X 10.7 (Lion) but get stuck on fileselector/MAC_chooser.cxx.
+All dependencies are installed from macports, but since fltk doesn't work in 64 bit Lion, I installed fltk-devel (fltk 10.3) instead.
+Now when I'm running make I get the following errors:
+
+  CXX    fldigi-Fl_Native_File_Chooser.o
+In file included from fileselector/MAC_chooser.cxx:27,
+                 from fileselector/Fl_Native_File_Chooser.cxx:46:
+fileselector/FL/MAC_chooser.h:53: error: &#8216;NavDialogCreationOptions&#8217; does not name a type
+fileselector/FL/MAC_chooser.h:57: error: &#8216;NavDialogRef&#8217; does not name a type
+fileselector/FL/MAC_chooser.h:58: error: &#8216;NavActionState&#8217; does not name a type
+fileselector/FL/MAC_chooser.h:59: error: &#8216;NavMenuItemSpec&#8217; does not name a type
+fileselector/FL/MAC_chooser.h:86: error: &#8216;NavReplyRecord&#8217; does not name a type
+fileselector/FL/MAC_chooser.h:90: error: &#8216;NavDialogRef&#8217; has not been declared
+fileselector/FL/MAC_chooser.h:100: error: &#8216;NavDialogRef&#8217; has not been declared
+fileselector/FL/MAC_chooser.h:101: error: &#8216;NavDialogRef&#8217; has not been declared
+fileselector/FL/MAC_chooser.h:102: error: &#8216;NavEventCallbackMessage&#8217; has not been declared
+fileselector/FL/MAC_chooser.h:103: error: &#8216;NavCBRecPtr&#8217; has not been declared
+fileselector/FL/MAC_chooser.h:108: error: &#8216;NavFilterModes&#8217; has not been declared
+fileselector/FL/MAC_chooser.h:109: error: &#8216;NavFilterModes&#8217; has not been declared
+In file included from fileselector/Fl_Native_File_Chooser.cxx:46:
+fileselector/MAC_chooser.cxx: In function &#8216;int AEDescToFSSpec(const AEDesc*, FSSpec*)&#8217;:
+fileselector/MAC_chooser.cxx:40: error: &#8216;typeFSS&#8217; was not declared in this scope
+fileselector/MAC_chooser.cxx: In function &#8216;void FSSpecToPath(const FSSpec&amp;, char*, int)&#8217;:
+fileselector/MAC_chooser.cxx:55: error: &#8216;FSpMakeFSRef&#8217; was not declared in this scope
+fileselector/MAC_chooser.cxx: In destructor &#8216;MAC_chooser::NavReply::~NavReply()&#8217;:
+fileselector/MAC_chooser.cxx:86: error: &#8216;_reply&#8217; was not declared in this scope
+fileselector/MAC_chooser.cxx:86: error: &#8216;NavDisposeReply&#8217; was not declared in this scope
+fileselector/MAC_chooser.cxx: At global scope:
+fileselector/MAC_chooser.cxx:91: error: &#8216;int MAC_chooser::NavReply::get_reply&#8217; is not a static member of &#8216;class MAC_chooser::NavReply&#8217;
+fileselector/MAC_chooser.cxx:91: error: &#8216;NavDialogRef&#8217; was not declared in this scope
+fileselector/MAC_chooser.cxx:91: error: &#8216;ref&#8217; was not declared in this scope
+fileselector/MAC_chooser.cxx:91: error: expected &#8216;,&#8217; or &#8216;;&#8217; before &#8216;{&#8217; token
+In file included from /usr/include/c++/4.2.1/bits/c++io.h:43,
+                 from /usr/include/c++/4.2.1/iosfwd:46,
+                 from /usr/include/c++/4.2.1/bits/stl_algobase.h:70,
+                 from /usr/include/c++/4.2.1/bits/char_traits.h:46,
+                 from /usr/include/c++/4.2.1/string:47,
+                 from fileselector/MAC_chooser.cxx:642,
+                 from fileselector/Fl_Native_File_Chooser.cxx:46:
+/usr/include/c++/4.2.1/bits/gthr.h:33: error: expected declaration before end of line
+make[2]: *** [fldigi-Fl_Native_File_Chooser.o] Error 1
+make[1]: *** [all] Error 2
+make: *** [all-recursive] Error 1
+
+
+so any idea how to fix this?
+thanks,
+Gerrit.
+
+
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000843.html">[GIT] fldigi branch, master,	updated: 4986fcd8682b4513cb9a252cfb911b00ca0375fd
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#842">[ date ]</a>
+              <a href="thread.html#842">[ thread ]</a>
+              <a href="subject.html#842">[ subject ]</a>
+              <a href="author.html#842">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

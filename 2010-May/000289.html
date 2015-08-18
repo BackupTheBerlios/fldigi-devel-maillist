@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Flrig Elecraft K2 Back End Questions
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-May/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Flrig%20Elecraft%20K2%20Back%20End%20Questions&In-Reply-To=%3CBLU0-SMTP68DAB794FAFB8210B909D9C7F90%40phx.gbl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000290.html">
+   <LINK REL="Next"  HREF="000291.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Flrig Elecraft K2 Back End Questions</H1>
+    <B>Kent Haase</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Flrig%20Elecraft%20K2%20Back%20End%20Questions&In-Reply-To=%3CBLU0-SMTP68DAB794FAFB8210B909D9C7F90%40phx.gbl%3E"
+       TITLE="Flrig Elecraft K2 Back End Questions">pb232641 at mts.net
+       </A><BR>
+    <I>Mon May 10 03:11:22 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000290.html">Wefax: Add filenames to logbook ?
+</A></li>
+        <LI>Next message: <A HREF="000291.html">[fldigi] #15: Caught signal 11
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#289">[ date ]</a>
+              <a href="thread.html#289">[ thread ]</a>
+              <a href="subject.html#289">[ subject ]</a>
+              <a href="author.html#289">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'm working on the Flrig back end for the Elecraft K2 (and the FT-817),
+and my C++ skills aren't that sharp.  So I've got some questions that
+I'd like to ask, here, to save me from looking through all the source
+code.
+
+1) Which transceiver parameters are queried on start up (assuming that
+the function has been defined)?
+
+2) What is the range for the variable that stores the values
+for slider adjustable controls (e.g volume_control, power_control,
+etc)?  What is the range for the slider control scale?  I'm only able
+to increase the set_power_control to 100W, although the K2 is capable of
+slightly more than that.  Perhaps I'm not understanding the function
+correctly...
+
+3) Is there a place to find the complete list of functions available in
+the GUI?  I've already added, to the K2, an initialize function and a
+set_noise function (although the set_noise function isn't properly
+implemented), both of which I copied from other rig files.
+
+4) FEATURE REQUEST: Make the Flrig Memory box persistently resizable.
+Even with the scroll bar, the memory &quot;mode&quot; is partially cut off.
+
+5) ANOTHER POSSIBLE FEATURE REQUEST: The K2 has 2 dimensions to the NB
+control: width and depth (I guess three, if you count OFF).  Is there an
+existing NB function, from another rig, that can accommodate the K2?
+
+
+Aside from a completely working power control, and a correctly working
+noise blanker, I've got everything working on the K2 back end for which
+controls exist (that I know of).
+-- 
+Kent VE4KEH
+<A HREF="http://www.mts.net/~ijeh99/ve4keh.htm">http://www.mts.net/~ijeh99/ve4keh.htm</A>
+<A HREF="http://identi.ca/ve4keh">http://identi.ca/ve4keh</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000290.html">Wefax: Add filenames to logbook ?
+</A></li>
+	<LI>Next message: <A HREF="000291.html">[fldigi] #15: Caught signal 11
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#289">[ date ]</a>
+              <a href="thread.html#289">[ thread ]</a>
+              <a href="subject.html#289">[ subject ]</a>
+              <a href="author.html#289">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

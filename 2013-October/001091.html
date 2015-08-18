@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Patch to use raspberry pi GPIO with fldigi ptt
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Patch%20to%20use%20raspberry%20pi%20GPIO%20with%20fldigi%20ptt&In-Reply-To=%3C1381984657.89736.YahooMailNeo%40web162401.mail.bf1.yahoo.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="001092.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Patch to use raspberry pi GPIO with fldigi ptt</H1>
+    <B>Lior Elazary</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Patch%20to%20use%20raspberry%20pi%20GPIO%20with%20fldigi%20ptt&In-Reply-To=%3C1381984657.89736.YahooMailNeo%40web162401.mail.bf1.yahoo.com%3E"
+       TITLE="Patch to use raspberry pi GPIO with fldigi ptt">lelazary at yahoo.com
+       </A><BR>
+    <I>Thu Oct 17 06:37:37 CEST 2013</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="001092.html">fldigi 3.21.76 / RSID false positives
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1091">[ date ]</a>
+              <a href="thread.html#1091">[ thread ]</a>
+              <a href="subject.html#1091">[ subject ]</a>
+              <a href="author.html#1091">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hey guys, I just added&#160; code to enable PTT via GPIO on the raspberry pi. There is now an option in the PTT setting to set GPIO and set it to the pin that you want. I have it running with &quot;Easy Digi&quot; sound card interface (<A HREF="http://www.ebay.com/itm/EASY-DIGI-Sound-Card-Interface-PSK-RTTY-SSTV-NBEMS-JT-65-PCB-KIT-/321046670079?pt=LH_DefaultDomain_0&amp;hash=item4abfdf6aff">http://www.ebay.com/itm/EASY-DIGI-Sound-Card-Interface-PSK-RTTY-SSTV-NBEMS-JT-65-PCB-KIT-/321046670079?pt=LH_DefaultDomain_0&amp;hash=item4abfdf6aff</A>) , which works great. 
+The code uses file handles so no need to import any library. However, the GPIO needs be exported first before running fldigi. I did not add the GPIO export code inside fldigi to avoid running fldigi as root. 
+To setup the GPIO I have a script that sets it up during boot. 
+
+
+#!/bin/sh
+echo 17 &gt; /sys/class/gpio/export
+echo out&gt; /sys/class/gpio/gpio17/direction
+echo 0 &gt; /sys/class/gpio/gpio17/value
+chown pi /sys/class/gpio/gpio17/value
+
+Lior.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20131016/31c9b40c/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20131016/31c9b40c/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: fldigi-3.21.76_gpio.patch.gz
+Type: application/x-gzip
+Size: 5251 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20131016/31c9b40c/attachment.bin">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20131016/31c9b40c/attachment.bin</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="001092.html">fldigi 3.21.76 / RSID false positives
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1091">[ date ]</a>
+              <a href="thread.html#1091">[ thread ]</a>
+              <a href="subject.html#1091">[ subject ]</a>
+              <a href="author.html#1091">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

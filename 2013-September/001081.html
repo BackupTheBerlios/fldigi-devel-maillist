@@ -1,0 +1,195 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.21,	updated: 2fb302026be17108905e974a5297e1415f03903e
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%202fb302026be17108905e974a5297e1415f03903e&In-Reply-To=%3C20130902232724.2881755B0C%40scm.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="001082.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.21,	updated: 2fb302026be17108905e974a5297e1415f03903e</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.21%2C%0A%09updated%3A%202fb302026be17108905e974a5297e1415f03903e&In-Reply-To=%3C20130902232724.2881755B0C%40scm.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.21,	updated: 2fb302026be17108905e974a5297e1415f03903e">herrfreese at scm.berlios.de
+       </A><BR>
+    <I>Tue Sep  3 01:27:23 CEST 2013</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="001082.html">Occasional spectral inversion of transmitted Olivia signal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1081">[ date ]</a>
+              <a href="thread.html#1081">[ thread ]</a>
+              <a href="subject.html#1081">[ subject ]</a>
+              <a href="author.html#1081">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.21 has been updated
+       via  2fb302026be17108905e974a5297e1415f03903e (commit)
+       via  30915e45f2d588580b7b0bbd871c4fa680e431d9 (commit)
+       via  fce76543ac2c8048dab7cd9d4abfc29726e243d6 (commit)
+       via  7037ad69343efc3ed6756d0b2088b5072dc90666 (commit)
+       via  433ec860447f72f229c7a971943f6e4b7445c3f9 (commit)
+       via  263f540aa082eeb090d2d2fda637fb93b02fcd39 (commit)
+      from  4a7c26e739874f1740c2b34c0a5c6c55303629cc (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=2fb302026be17108905e974a5297e1415f03903e">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=2fb302026be17108905e974a5297e1415f03903e</A>
+
+commit 2fb302026be17108905e974a5297e1415f03903e
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sun Sep 1 14:21:01 2013 -0500
+
+    Version 3.21.75
+    
+      * Maintenance release
+
+ 2 files changed, 8 insertions(+), 3 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=30915e45f2d588580b7b0bbd871c4fa680e431d9">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=30915e45f2d588580b7b0bbd871c4fa680e431d9</A>
+
+commit 30915e45f2d588580b7b0bbd871c4fa680e431d9
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Aug 27 14:20:29 2013 -0500
+
+    xmlrpcpp methods
+    
+      * fix several remaining xmlrpc-c to xmlrpcpp port issues.
+        - text.get_rx
+        - modem.set_bandwidth
+        - modem.inc_bandwidth
+        - modem.get_bandwidth
+      * Corrected pass/fail testing in xmlrpc library
+        - bool XmlRpcValue::fromXml(
+            std::string const&amp; valueXml, int* offset)
+
+ 2 files changed, 44 insertions(+), 30 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                                |    9 +-
+ configure.ac                             |    2 +-
+ src/Makefile.am                          |   32 +-
+ src/dialogs/confdialog.cxx               |   34 +-
+ src/dialogs/confdialog.fl                |   32 +-
+ src/dialogs/fl_digi.cxx                  |   39 -
+ src/fileselector/Native_File_Chooser.cxx |   18 -
+ src/fileselector/fileselect.cxx          |  212 +-
+ src/fileselector/fileselect_1_1.cxx      |  171 --
+ src/fileselector/fileselect_1_3.cxx      |  228 --
+ src/flarq-src/arqhelp.cxx                |   11 +-
+ src/flarq-src/flarq.cxx                  |   11 +-
+ src/include/Fl_Text_Buffer_mod.H         |  796 ++++++-
+ src/include/Fl_Text_Buffer_mod_1_1.H     |  263 ---
+ src/include/Fl_Text_Buffer_mod_1_3.H     |  793 -------
+ src/include/Fl_Text_Display_mod.H        |  495 +++-
+ src/include/Fl_Text_Display_mod_1_1.H    |  304 ---
+ src/include/Fl_Text_Display_mod_1_3.H    |  492 ----
+ src/include/Fl_Text_Editor_mod.H         |  144 +-
+ src/include/Fl_Text_Editor_mod_1_1.H     |  110 -
+ src/include/Fl_Text_Editor_mod_1_3.H     |  141 --
+ src/include/confdialog.h                 |    2 +
+ src/include/configuration.h              |    4 +
+ src/include/main.h                       |    1 +
+ src/include/rsid.h                       |   34 +-
+ src/include/sound.h                      |   27 +-
+ src/main.cxx                             |   81 +-
+ src/misc/configuration.cxx               |   37 +-
+ src/misc/macros.cxx                      |   25 -
+ src/misc/record_loader.cxx               |    3 +-
+ src/misc/utf8file_io.cxx                 |   13 -
+ src/misc/util.cxx                        |   14 +-
+ src/misc/xmlrpc.cxx                      |   43 +-
+ src/rsid/rsid.cxx                        |  431 ++--
+ src/rsid/rsid_defs.cxx                   |    7 +-
+ src/soundcard/sound.cxx                  |  362 ++-
+ src/trx/trx.cxx                          |    2 +
+ src/widgets/FTextRXTX.cxx                |  114 -
+ src/widgets/FTextView.cxx                |   16 -
+ src/widgets/Fl_Text_Buffer_mod.cxx       | 1884 ++++++++++++++-
+ src/widgets/Fl_Text_Buffer_mod_1_1.cxx   | 2457 -------------------
+ src/widgets/Fl_Text_Buffer_mod_1_3.cxx   | 1879 ---------------
+ src/widgets/Fl_Text_Display_mod.cxx      | 3813 +++++++++++++++++++++++++++++-
+ src/widgets/Fl_Text_Display_mod_1_1.cxx  | 3269 -------------------------
+ src/widgets/Fl_Text_Display_mod_1_3.cxx  | 3808 -----------------------------
+ src/widgets/Fl_Text_Editor_mod.cxx       |  656 ++++-
+ src/widgets/Fl_Text_Editor_mod_1_1.cxx   |  494 ----
+ src/widgets/Fl_Text_Editor_mod_1_3.cxx   |  651 -----
+ src/widgets/Panel.cxx                    |   28 -
+ src/widgets/flslider2.cxx                |   66 -
+ src/widgets/missing_strings.c            |  106 -
+ src/widgets/missing_strings.h            |  120 -
+ src/widgets/psk_browser.cxx              |    4 -
+ src/xmlrpcpp/XmlRpcValue.cpp             |   31 +-
+ 54 files changed, 8567 insertions(+), 16252 deletions(-)
+  14.5% src/include/
+  78.0% src/widgets/
+   7.4% src/
+  16.1% src/include/
+  77.0% src/widgets/
+   6.7% src/
+ delete mode 100644 src/fileselector/fileselect_1_1.cxx
+ delete mode 100644 src/fileselector/fileselect_1_3.cxx
+ delete mode 100644 src/include/Fl_Text_Buffer_mod_1_1.H
+ delete mode 100644 src/include/Fl_Text_Buffer_mod_1_3.H
+ delete mode 100644 src/include/Fl_Text_Display_mod_1_1.H
+ delete mode 100644 src/include/Fl_Text_Display_mod_1_3.H
+ delete mode 100644 src/include/Fl_Text_Editor_mod_1_1.H
+ delete mode 100644 src/include/Fl_Text_Editor_mod_1_3.H
+ delete mode 100644 src/widgets/Fl_Text_Buffer_mod_1_1.cxx
+ delete mode 100644 src/widgets/Fl_Text_Buffer_mod_1_3.cxx
+ delete mode 100644 src/widgets/Fl_Text_Display_mod_1_1.cxx
+ delete mode 100644 src/widgets/Fl_Text_Display_mod_1_3.cxx
+ delete mode 100644 src/widgets/Fl_Text_Editor_mod_1_1.cxx
+ delete mode 100644 src/widgets/Fl_Text_Editor_mod_1_3.cxx
+ delete mode 100644 src/widgets/missing_strings.c
+ delete mode 100644 src/widgets/missing_strings.h
+
+
+hooks/post-receive
+-- 
+fldigi
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="001082.html">Occasional spectral inversion of transmitted Olivia signal
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1081">[ date ]</a>
+              <a href="thread.html#1081">[ thread ]</a>
+              <a href="subject.html#1081">[ subject ]</a>
+              <a href="author.html#1081">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

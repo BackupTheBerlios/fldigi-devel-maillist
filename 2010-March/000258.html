@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 30c247d71de633d1ab60850d0b2bb9cdb1111525
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%2030c247d71de633d1ab60850d0b2bb9cdb1111525&In-Reply-To=%3C201003190107.o2J17gTR015441%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000257.html">
+   <LINK REL="Next"  HREF="000259.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 30c247d71de633d1ab60850d0b2bb9cdb1111525</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%2030c247d71de633d1ab60850d0b2bb9cdb1111525&In-Reply-To=%3C201003190107.o2J17gTR015441%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 30c247d71de633d1ab60850d0b2bb9cdb1111525">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Fri Mar 19 02:07:42 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000257.html">commit pushed to pu/df
+</A></li>
+        <LI>Next message: <A HREF="000259.html">[GIT] fldigi branch, master,	updated: 2b97698bffa664b4eaba8363d6ffe8942c3a704d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#258">[ date ]</a>
+              <a href="thread.html#258">[ thread ]</a>
+              <a href="subject.html#258">[ subject ]</a>
+              <a href="author.html#258">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  30c247d71de633d1ab60850d0b2bb9cdb1111525 (commit)
+       via  2715366c6dfe1295e99c02eeef514b17b9814d8c (commit)
+       via  4ed6c1c0e38972d3e42486225be1d6bf02adc9f6 (commit)
+       via  735dba2196063f140cc3b839e225e1b556f98b28 (commit)
+       via  5a1cf7dd84d669cdcef158481e4cc0e876d4779e (commit)
+       via  bdcca8c39fb04b100ae211d5d71f7d8d883c4ec4 (commit)
+       via  b66e4565bcfa4860edf0368f95a1c52607c90bd8 (commit)
+       via  40ae07fd45a53fb646ef20244f4ea9ac30815283 (commit)
+      from  a61d9257279d4bed09a96dff10f7877d71554f99 (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=30c247d71de633d1ab60850d0b2bb9cdb1111525">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=30c247d71de633d1ab60850d0b2bb9cdb1111525</A>
+
+commit 30c247d71de633d1ab60850d0b2bb9cdb1111525
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Mar 18 15:31:32 2010 -0500
+
+    Version 3.20.0b6
+    
+       Beta Release
+
+ 2 files changed, 12 insertions(+), 2 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                          |   12 +-
+ configure.ac                       |    2 +-
+ src/Makefile.am                    |    4 +
+ src/dialogs/Viewer.cxx             |  226 ++++----
+ src/dialogs/colorsfonts.cxx        |   72 ++--
+ src/dialogs/colorsfonts.fl         |   81 ++--
+ src/dialogs/confdialog.cxx         | 1124 +++++++++++++++++++++++++++---------
+ src/dialogs/confdialog.fl          |  210 ++++++--
+ src/dialogs/fl_digi.cxx            |   22 +-
+ src/dialogs/font_browser.cxx       |   88 +++-
+ src/dialogs/notifydialog.cxx       |   45 ++-
+ src/dialogs/notifydialog.fl        |    6 +
+ src/flarq-src/arqdialogs.cxx       |   85 ++-
+ src/flarq-src/arqdialogs.fl        |    8 +
+ src/flarq-src/include/arqdialogs.h |   12 +-
+ src/include/Viewer.h               |    3 -
+ src/include/colorsfonts.h          |    3 +-
+ src/include/confdialog.h           |  129 ++--
+ src/include/fl_digi.h              |   10 +-
+ src/include/flslider2.h            |   72 +++
+ src/include/font_browser.h         |   13 +-
+ src/include/notifydialog.h         |    8 +-
+ src/misc/macroedit.cxx             |   29 +-
+ src/misc/macros.cxx                |   43 +-
+ src/misc/xmlrpc.cxx                |    7 -
+ src/rigcontrol/rigio.cxx           |    2 +-
+ src/rigcontrol/rigsupport.cxx      |   11 +-
+ src/waterfall/waterfall.cxx        |   13 -
+ src/widgets/flslider2.cxx          |   82 +++
+ 29 files changed, 1726 insertions(+), 696 deletions(-)
+  83.6% src/dialogs/
+   4.1% src/flarq-src/
+   6.8% src/include/
+   4.8% src/
+ create mode 100644 src/include/flslider2.h
+ create mode 100644 src/widgets/flslider2.cxx
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000257.html">commit pushed to pu/df
+</A></li>
+	<LI>Next message: <A HREF="000259.html">[GIT] fldigi branch, master,	updated: 2b97698bffa664b4eaba8363d6ffe8942c3a704d
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#258">[ date ]</a>
+              <a href="thread.html#258">[ thread ]</a>
+              <a href="subject.html#258">[ subject ]</a>
+              <a href="author.html#258">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

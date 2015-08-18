@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> PA3GWH patch to fl_vasprint.c works
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20PA3GWH%20patch%20to%20fl_vasprint.c%20works&In-Reply-To=%3C38845.192.168.2.101.1338640668.squirrel%40webmail.pa3gwh.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000854.html">
+   <LINK REL="Next"  HREF="000856.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>PA3GWH patch to fl_vasprint.c works</H1>
+    <B>pa3gwh at pa3gwh.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20PA3GWH%20patch%20to%20fl_vasprint.c%20works&In-Reply-To=%3C38845.192.168.2.101.1338640668.squirrel%40webmail.pa3gwh.com%3E"
+       TITLE="PA3GWH patch to fl_vasprint.c works">pa3gwh at pa3gwh.com
+       </A><BR>
+    <I>Sat Jun  2 14:37:48 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000854.html">PA3GWH patch to fl_vasprint.c works
+</A></li>
+        <LI>Next message: <A HREF="000856.html">PA3GWH patch to fl_vasprint.c works
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#855">[ date ]</a>
+              <a href="thread.html#855">[ thread ]</a>
+              <a href="subject.html#855">[ subject ]</a>
+              <a href="author.html#855">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Peter,
+
+Oops, sorry to hear that, were you able to compile before and was it good
+then? I am not seeing this on OpenSuSE 12.1 64bit and have Fldigi running
+since last night (first 43AB then 43AC) with KDE with this &quot;fix&quot;.
+But this is the only system I tested it on, Josh, are you seeing this too?
+
+Perhaps it is good to sit this one out until Dave fixes things!
+I just wanted to compile 43AB to have a look at the CW improvements and
+came up with this and it works for me, sorry it did not work for you.
+
+73 de Richard PA3GWH
+
+&gt;<i>  &gt; I have no idea what I broke by applying the patch :-)
+</I>&gt;<i>
+</I>&gt;<i> It broke my otherwise stable Debian Squeeze AMD64 system spectacularly!
+</I>&gt;<i> The
+</I>&gt;<i> window manager (Gnome) froze completely after fldigi's status log reached:
+</I>&gt;<i>
+</I>&gt;<i> &quot;I: main: FLMSG_ICS_tmp_dir: /home/g4vlc/.nbems/ICS/templates/&quot;
+</I>&gt;<i>
+</I>&gt;<i> (i.e. just before the &quot;I: testCommPorts: &quot; section)
+</I>&gt;<i>
+</I>&gt;<i> Then after a few seconds X crashed, leaving in /var/log/Xorg.0.log:
+</I>&gt;<i>
+</I>&gt;<i> Backtrace:
+</I>&gt;<i> 0: /usr/bin/Xorg (xorg_backtrace+0x28) [0x4667b8]
+</I>&gt;<i> 1: /usr/bin/Xorg (0x400000+0x67d49) [0x467d49]
+</I>&gt;<i> 2: /lib/libpthread.so.0 (0x7fa555561000+0xeff0) [0x7fa55556fff0]
+</I>&gt;<i> 3: /usr/lib/libXfont.so.1 (0x7fa555324000+0x1e2dc) [0x7fa5553422dc]
+</I>&gt;<i> 4: /usr/lib/libXfont.so.1 (BitmapOpenScalable+0x1517) [0x7fa555344207]
+</I>&gt;<i> 5: /usr/lib/libXfont.so.1 (FontFileOpenFont+0x569) [0x7fa555332b49]
+</I>&gt;<i> 6: /usr/bin/Xorg (0x400000+0x5a308) [0x45a308]
+</I>&gt;<i> 7: /usr/bin/Xorg (OpenFont+0x157) [0x45a7d7]
+</I>&gt;<i> 8: /usr/bin/Xorg (0x400000+0x4b03d) [0x44b03d]
+</I>&gt;<i> 9: /usr/bin/Xorg (0x400000+0x4c734) [0x44c734]
+</I>&gt;<i> 10: /usr/bin/Xorg (0x400000+0x25c35) [0x425c35]
+</I>&gt;<i> 11: /lib/libc.so.6 (__libc_start_main+0xfd) [0x7fa554064c8d]
+</I>&gt;<i> 12: /usr/bin/Xorg (0x400000+0x257e9) [0x4257e9]
+</I>&gt;<i> Segmentation fault at address 0x7fa483bf8e74
+</I>&gt;<i>
+</I>&gt;<i> Fatal server error:
+</I>&gt;<i> Caught signal 11 (Segmentation fault). Server aborting
+</I>
+
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000854.html">PA3GWH patch to fl_vasprint.c works
+</A></li>
+	<LI>Next message: <A HREF="000856.html">PA3GWH patch to fl_vasprint.c works
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#855">[ date ]</a>
+              <a href="thread.html#855">[ thread ]</a>
+              <a href="subject.html#855">[ subject ]</a>
+              <a href="author.html#855">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

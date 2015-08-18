@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Debugging flrig for TS-870S on Mac OS X
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Debugging%20flrig%20for%20TS-870S%20on%20Mac%20OS%20X&In-Reply-To=%3C4F9E7D35.6090807%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000844.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Debugging flrig for TS-870S on Mac OS X</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Debugging%20flrig%20for%20TS-870S%20on%20Mac%20OS%20X&In-Reply-To=%3C4F9E7D35.6090807%40bellsouth.net%3E"
+       TITLE="Debugging flrig for TS-870S on Mac OS X">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Mon Apr 30 13:53:25 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000844.html">Debugging flrig for TS-870S on Mac OS X
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#845">[ date ]</a>
+              <a href="thread.html#845">[ thread ]</a>
+              <a href="subject.html#845">[ subject ]</a>
+              <a href="author.html#845">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Brian,
+
+Dave Baxter, (G8KBV) &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at g8kbv.demon.co.uk</A>&gt;, has provided very recent 
+updates to the TS870S.  These are not in the flrig public release code, 
+but are in the current alpha version which is close to being released.  
+Please look at the code
+
+http:://www.w1hkj.com/alpha/flrig/
+
+and base any changes you make on that source tree.  I would recommend 
+that you coordinate your changes with G8KBV.
+
+Good luck on the code changes and ask for help if you need any.  See 
+comments within your original email below.
+
+73, Dave, W1HKJ
+
+
+On 04/29/2012 10:12 PM, BRIAN MIEZEJEWSKI wrote:
+&gt;<i> Hi all,
+</I>&gt;<i>
+</I>&gt;<i> I would like to start looking at the flrig code to get it working on OS X 64 Lion with my TS-870S. I may also want to add rig for my PCR1000 if I can find the energy.
+</I>&gt;<i>
+</I>&gt;<i> I have been looking at the code and my first thought is to add some more instrumentation to better debug the traffic between flrig and the rig. I would like to extend the current debug object and send the output to the status_log.txt file. My thoughts were to:
+</I>&gt;<i>
+</I>&gt;<i> 1) Replace the current variable based synchronization with a pthread mutex.
+</I>I'm not sure what benefit that would provide
+&gt;<i> 2) Modify the --debug parameter to include --debug=N were N is a number indicating the level of debug.
+</I>Very simple to add to the command line parameters.  The flrig debug code 
+is based on the same code (simplified) that is in fldigi.  It is a 
+simplified model since there are fewer threads in flrig.
+&gt;<i> 3) Adding the instrumentation.
+</I>Dave, G0WBX, may have already added some of the commands / queries that 
+you want to work on.
+&gt;<i> Does this sound like a good approach? Is there something in the fldigi code that would be better and make this more consistent across the suite? I have only looked at the flrig code in detail.
+</I>&gt;<i>
+</I>&gt;<i> If this makes sense, is there any particular functions I should instrument based on the experiences of the group?
+</I>&gt;<i>
+</I>&gt;<i> I am currently disabled so I probably will not get this done too fast, but I have been doing C++ for 25 years so I have a little experience.
+</I>It sounds like you would be an asset to the development team.  We would 
+welcome your contribution.
+
+Dave
+&gt;<i> Cheers,
+</I>&gt;<i> Brian
+</I>&gt;<i> k5hfi
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120430/3066d6c3/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120430/3066d6c3/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000844.html">Debugging flrig for TS-870S on Mac OS X
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#845">[ date ]</a>
+              <a href="thread.html#845">[ thread ]</a>
+              <a href="subject.html#845">[ subject ]</a>
+              <a href="author.html#845">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

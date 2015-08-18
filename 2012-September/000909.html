@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> TX panel backspace problem [PATCH]
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20TX%20panel%20backspace%20problem%20%5BPATCH%5D&In-Reply-To=%3Calpine.LNX.2.00.1209010114050.21573%40sunlight%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000910.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>TX panel backspace problem [PATCH]</H1>
+    <B>Andrej Lajovic - S57LN</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20TX%20panel%20backspace%20problem%20%5BPATCH%5D&In-Reply-To=%3Calpine.LNX.2.00.1209010114050.21573%40sunlight%3E"
+       TITLE="TX panel backspace problem [PATCH]">s57ln at hamradio.si
+       </A><BR>
+    <I>Sat Sep  1 01:43:25 CEST 2012</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000910.html">fldigi-devel Digest, Vol 42, Issue 1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#909">[ date ]</a>
+              <a href="thread.html#909">[ thread ]</a>
+              <a href="subject.html#909">[ subject ]</a>
+              <a href="author.html#909">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+I have found a bug concerning the handling of backspace in Fldigi 3.21.50.
+
+Reproducible: Always
+
+Steps to reproduce:
+1. clear the TX field
+2. press backspace
+3. type in some text
+4. initiate the transmission
+
+(In fact, any scenario that involves pressing backspace at the beginning of
+the transmit buffer reproduces the problem.)
+
+Actual results:
+Fldigi starts the modem, but instead of sending out the text in the TX 
+buffer, it just continuously transmits an idle signal.
+
+Expected results:
+Fldigi starts transmitting the text typed in step 3.
+
+A patch to fix the issue is attached below (it is based on the current HEAD
+in the git repository).
+
+
+Kind regards,
+
+Andrej
+S57LN
+
+
+diff --git a/src/widgets/FTextRXTX.cxx b/src/widgets/FTextRXTX.cxx
+index b79530b..5fd936e 100644
+--- a/src/widgets/FTextRXTX.cxx
++++ b/src/widgets/FTextRXTX.cxx
+@@ -1108,7 +1108,7 @@ int FTextTX::handle_key(int key)
+  	{
+  		int ipos = insert_position();
+  #if FLDIGI_FLTK_API_MAJOR == 1 &amp;&amp; FLDIGI_FLTK_API_MINOR == 3
+-		if (utf8_txpos == ipos) {
++		if (utf8_txpos &gt; 0 &amp;&amp; utf8_txpos == ipos) {
+  			bkspaces++;
+  			if (tbuf-&gt;byte_at(ipos - 1) &amp; 0x80) utf8_txpos -= 2;
+  			else utf8_txpos--;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000910.html">fldigi-devel Digest, Vol 42, Issue 1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#909">[ date ]</a>
+              <a href="thread.html#909">[ thread ]</a>
+              <a href="subject.html#909">[ subject ]</a>
+              <a href="author.html#909">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

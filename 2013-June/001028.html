@@ -1,0 +1,231 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> A proposal for a Hamlib++
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20A%20proposal%20for%20a%20Hamlib%2B%2B&In-Reply-To=%3CCAOctvfWKHKx_nGpAS_14AiY7C9pKak-1jenoonbEjwRzm8s%3D1A%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001027.html">
+   <LINK REL="Next"  HREF="001029.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>A proposal for a Hamlib++</H1>
+    <B>Dave Wright</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20A%20proposal%20for%20a%20Hamlib%2B%2B&In-Reply-To=%3CCAOctvfWKHKx_nGpAS_14AiY7C9pKak-1jenoonbEjwRzm8s%3D1A%40mail.gmail.com%3E"
+       TITLE="A proposal for a Hamlib++">hfradiopro at gmail.com
+       </A><BR>
+    <I>Fri Jun 21 23:40:12 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001027.html">A proposal for a Hamlib++
+</A></li>
+        <LI>Next message: <A HREF="001029.html">[Hamlib-developer] A proposal for a Hamlib++
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1028">[ date ]</a>
+              <a href="thread.html#1028">[ thread ]</a>
+              <a href="subject.html#1028">[ subject ]</a>
+              <a href="author.html#1028">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>&gt;<i>From an outsider on the development process and one that knew nothing about
+</I>this until Remi's recent email, I think one of the questions that needs to
+be answered on this is &quot;what is lost if we lose rig support via hamlib?&quot;
+
+Looking at it in detail, comparing hamlib's AMATEUR RADIO support to Flrig
+and RigCAT's support for many rigs (one could argue that it is the MAJORITY
+of ham rigs in use), I don't see the loss of hamlib support being a major
+deal...except perhaps on Linux where I'd bet that a large percentage still
+use it out of a sense of tradition or to support other software.
+
+Ultimately, if hamlib can't easily be made to work with Fldigi and the
+hamlib community is not willing to make changes to make building easier,
+then dropping support for hamlib seems to be the only course of action;
+anything else requires too much effort that could be better focused on
+Fldigi development.
+
+73
+
+Dave
+K3DCW
+www.k3dcw.net
+
+&quot;Real radio bounces off the sky&quot;
+
+
+On Fri, Jun 21, 2013 at 5:24 PM, Dick Kriss &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">aa5vu at att.net</A>&gt; wrote:
+
+&gt;<i> I am not sure I understand the issue. As a long time Mac OS X user I had
+</I>&gt;<i> no issues with the hamlib integrated into fldigi when I used the Kenwood
+</I>&gt;<i> TS-570D and TS-570S; however, when I upgraded to the Kenwood TS-590S, the
+</I>&gt;<i> Hamlib option in fldigi no longer worked.  The problem as I recall was the
+</I>&gt;<i> backend needed to be updated and Dave W1HKJ was not able compile the hamlib
+</I>&gt;<i> updates for all three platforms supported by fldigi.  Dave manually hacked
+</I>&gt;<i> hamlib v1.2.12 to hamlib v1.2.12S.  This &quot;Special&quot; version of hamlib worked
+</I>&gt;<i> with the Kenwood TS-590S; however, none of the subsequent hamlib updates
+</I>&gt;<i> have incorporated into fldigi.  While the old special version hamlib
+</I>&gt;<i> 1.2.12S currently used in the fldigi-3.21.72 works with my Kenwood TS-590S,
+</I>&gt;<i> I changed over to RigCAT a long time ago. RigCAT works fine with the
+</I>&gt;<i> Kenwood TS-590S.
+</I>&gt;<i>
+</I>&gt;<i> It is unfortunate the format of updates to hamlib cannot be compiled for
+</I>&gt;<i> use in fldigi and I understand the decision to remove hamlib in future
+</I>&gt;<i> fldigi updates.
+</I>&gt;<i>
+</I>&gt;<i> 73 Dick AA5VU
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Jun 21, 2013, at 3:13 PM, &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&quot; &lt;
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i> &gt; Hi Robert,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Thanks for your email and for your work.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I make this conversation open to anyone because others might be
+</I>&gt;<i> interested. This is an open-source project after all.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Several remarks and ideas:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; * When I started to use MXE, I insisted that only Hamlib3 worked out of
+</I>&gt;<i> the box. (Hamlib 1.x made libltdl problems) I could build fldigi without
+</I>&gt;<i> serious difficulty. This is why I suggested to use it. I would have been
+</I>&gt;<i> happy to help, instead of seeing hamlib removed.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; * I understand that MacOS with Hamlib makes problems, but MacOS makes
+</I>&gt;<i> about 5% of fldigi users maximum. Hard to believe that 95% of users must
+</I>&gt;<i> suffer for Macintoshes.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; * There is a fldigi configure option which completely avoids Hamlib. It
+</I>&gt;<i> would have been a simple choice for Windows and OsMac users.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; * I understand that token_t is also defined in MacIntosh, but again it
+</I>&gt;<i> is 3% of users; and it is perfectly possible to make a version of Hamlib
+</I>&gt;<i> where this type is renamed. Indeed, the Hamlib development team should
+</I>&gt;<i> react immediately to fix this problem. But if we were stuck, we could have
+</I>&gt;<i> our own temporary version of hamlib. After all, this was done with xmlrpc_c
+</I>&gt;<i> during years, because this library is not supported at all (This is why I
+</I>&gt;<i> removed it). Please see the wiki, xmlrpc_c had to be deeply patched. So why
+</I>&gt;<i> not doing that temporarily with Hamlib ?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; You and Dave have taken the decision to remove Hamlib, and I am not
+</I>&gt;<i> convinced by the reasons you give. Naively, this is not what I expect from
+</I>&gt;<i> an open-source development team, but I respect your choice, and wish you
+</I>&gt;<i> good luck and much fun!
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Remi
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Le 21.06.2013 16:59, Robert Stiles a &#233;crit :
+</I>&gt;<i> &gt;&gt; Remi,
+</I>&gt;<i> &gt;&gt; The three issues that precipitated this event are (at least on my side):
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; MacOSX libltdl is broken when searching for dynamic libs in non standard
+</I>&gt;<i> &gt;&gt; places, The attached patch allow me to search directly for the .so
+</I>&gt;<i> files.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Setting ALL environment variable related to Library search fails on the
+</I>&gt;<i> &gt;&gt; Macintosh. Because libltdl is renaming the file extensions from the load
+</I>&gt;<i> &gt;&gt; path to .dylib. Which is what you want in most cases, but not in our
+</I>&gt;<i> &gt;&gt; case. The initial assigned search path is unaltered by libltdl.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; The token_t variable used in hamlib is in conflict with system header
+</I>&gt;<i> &gt;&gt; files on the Macintosh since version 10.7. Changing all of the token_t
+</I>&gt;<i> &gt;&gt; variables to r_token_t in hamlib would fix this issue.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; I have made it work on the macintosh when the DLL and .so file are
+</I>&gt;<i> &gt;&gt; stored in the Application bundle by #ifdef the system header files , and
+</I>&gt;<i> &gt;&gt; apply the patch to register.c file.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; So far I'm unable to create DLL using MXE on the windows side. The build
+</I>&gt;<i> &gt;&gt; system is messing withlibltdl creation.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Since we have to use DLL's (current hamlib) I'm currently unable to
+</I>&gt;<i> &gt;&gt; create a windows version.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Robert
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; ------------------------------------------------------------------------
+</I>&gt;<i> &gt;&gt; *From:* Nate Bargmann &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">n0nb at n0nb.us</A>&gt;
+</I>&gt;<i> &gt;&gt; *To:* &quot;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt;
+</I>&gt;<i> &gt;&gt; *Cc:* w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>&gt;; Stephane Fillod &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">f8cfe at free.fr</A>&gt;;
+</I>&gt;<i> &gt;&gt; Kamal Mostafa &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kamal at whence.com</A>&gt;; Robert Stiles &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kk5vd at yahoo.com</A>&gt;
+</I>&gt;<i> &gt;&gt; *Sent:* Thursday, June 20, 2013 9:04 PM
+</I>&gt;<i> &gt;&gt; *Subject:* Re: A proposal for a Hamlib++
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; * On 2013 20 Jun 16:49 -0500, <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>
+</I>&gt;<i> &gt;&gt; &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt; wrote:
+</I>&gt;<i> &gt;&gt; &gt; Oh, big change.
+</I>&gt;<i> &gt;&gt; &gt;
+</I>&gt;<i> &gt;&gt; &gt; Sorry for that, but I am not interested to work this way on this
+</I>&gt;<i> project.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Hi Remi.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; As always, your efforts for both Hamlib and Fldigi have been
+</I>&gt;<i> appreciated.
+</I>&gt;<i> &gt;&gt; Please don't end your work with either project. This was a technical
+</I>&gt;<i> &gt;&gt; problem that we have been unable to resolve. Dave's decision is based
+</I>&gt;<i> &gt;&gt; on the technical merits of the issue and I respect that. There are no
+</I>&gt;<i> &gt;&gt; hard feelings on my part, so everyone please continue to write good
+</I>&gt;<i> &gt;&gt; software that benefits the amateur radio community.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; 73, de Nate &gt;&gt;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; --
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; &quot;The optimist proclaims that we live in the best of all
+</I>&gt;<i> &gt;&gt; possible worlds. The pessimist fears this is true.&quot;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Ham radio, Linux, bikes, and more: <A HREF="http://www.n0nb.us">http://www.n0nb.us</A> &lt;
+</I>&gt;<i> <A HREF="http://www.n0nb.us/">http://www.n0nb.us/</A>&gt;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; fldigi-alpha mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-alpha mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130621/066c59b5/attachment-0001.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130621/066c59b5/attachment-0001.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001027.html">A proposal for a Hamlib++
+</A></li>
+	<LI>Next message: <A HREF="001029.html">[Hamlib-developer] A proposal for a Hamlib++
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1028">[ date ]</a>
+              <a href="thread.html#1028">[ thread ]</a>
+              <a href="subject.html#1028">[ subject ]</a>
+              <a href="author.html#1028">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

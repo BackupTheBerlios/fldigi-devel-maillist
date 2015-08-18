@@ -1,0 +1,157 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi not working
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20not%20working&In-Reply-To=%3C201111092230.59643.wilsonc4%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000713.html">
+   <LINK REL="Next"  HREF="000716.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi not working</H1>
+    <B>Wilson Costrino</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20not%20working&In-Reply-To=%3C201111092230.59643.wilsonc4%40gmail.com%3E"
+       TITLE="fldigi not working">wilsonc4 at gmail.com
+       </A><BR>
+    <I>Thu Nov 10 01:30:59 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000713.html">Wefax detection using statistical correlation
+</A></li>
+        <LI>Next message: <A HREF="000716.html">[GIT] fldigi branch, maint/3.21,	updated: 7bae7afae421e920a04c4ca6e37d34d037915c55
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#715">[ date ]</a>
+              <a href="thread.html#715">[ thread ]</a>
+              <a href="subject.html#715">[ subject ]</a>
+              <a href="author.html#715">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>debian 64 bits 2.6.32.5-amd64
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+./fldigi[0x4ee540]
+/lib/libpthread.so.0(+0xef60)[0x7fbcd1183f60]
+/lib/libc.so.6(+0x7bb52)[0x7fbccf2e4b52]
+/usr/lib/libfltk.so.1.1(_ZN2Fl9set_fontsEPKc+0x22b)[0x7fbcd0d3ec2b]
+./fldigi[0x4a06f5]
+/lib/libc.so.6(__libc_start_main+0xfd)[0x7fbccf287c4d]
+./fldigi[0x413a49]
+
+****** Version information:
+fldigi 3.21.23
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi 
+Chateauneu, and others.
+License GPLv3+: GNU GPL version 3 or later 
+&lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+  built          : Wed Nov  9 22:21:02 BRST 2011 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">wcostrino at desktop</A> on 
+x86_64-unknown-linux-gnu for x86_64-unknown-linux-gnu
+
+  configure flags: 
+
+  compiler       : gcc version 4.4.5 (Debian 4.4.5-8) 
+
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml -
+I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -pthread -I/usr/include/freetype2 
+-g -O2 -D_THREAD_SAFE -D_REENTRANT -I/usr/include/libpng12 -pipe -Wall -
+fexceptions -O2 -ffast-math -finline-functions -DNDEBUG
+
+  linker flags   : -lportaudio -lm -lpthread -lfltk_images -lfltk -lX11 -lsndfile 
+-lsamplerate -lpng12 -ldl -lrt -lpthread
+
+  libraries      : FLTK 1.1.10
+                   libsamplerate 0.1.7
+                   libsndfile 1.0.21
+                   PortAudio 19
+
+Runtime information:
+  system         : Linux desktop 2.6.32-5-amd64 #1 SMP Mon Oct 3 03:59:20 UTC 
+2011 x86_64
+
+  libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                   libsndfile-1.0.21
+                   PortAudio V19-devel (built Nov 25 2010) 1899
+
+-------------
+        linux-vdso.so.1 =&gt;  (0x00007fffc11ff000)
+        libportaudio.so.2 =&gt; /usr/lib/libportaudio.so.2 (0x00007fac79659000)
+        libpthread.so.0 =&gt; /lib/libpthread.so.0 (0x00007fac7943d000)
+        libfltk_images.so.1.1 =&gt; /usr/lib/libfltk_images.so.1.1 
+(0x00007fac7922c000)
+        libfltk.so.1.1 =&gt; /usr/lib/libfltk.so.1.1 (0x00007fac78f7a000)
+        libX11.so.6 =&gt; /usr/lib/libX11.so.6 (0x00007fac78c3f000)
+        libsndfile.so.1 =&gt; /usr/lib/libsndfile.so.1 (0x00007fac789d9000)
+        libsamplerate.so.0 =&gt; /usr/lib/libsamplerate.so.0 (0x00007fac7866e000)
+        libpng12.so.0 =&gt; /lib/libpng12.so.0 (0x00007fac78448000)
+        libdl.so.2 =&gt; /lib/libdl.so.2 (0x00007fac78243000)
+        librt.so.1 =&gt; /lib/librt.so.1 (0x00007fac7803b000)
+        libstdc++.so.6 =&gt; /usr/lib/libstdc++.so.6 (0x00007fac77d27000)
+        libm.so.6 =&gt; /lib/libm.so.6 (0x00007fac77aa4000)
+        libgcc_s.so.1 =&gt; /lib/libgcc_s.so.1 (0x00007fac7788e000)
+        libc.so.6 =&gt; /lib/libc.so.6 (0x00007fac7752d000)
+        libasound.so.2 =&gt; /usr/lib/libasound.so.2 (0x00007fac77247000)
+        /lib64/ld-linux-x86-64.so.2 (0x00007fac798ad000)
+        libjpeg.so.62 =&gt; /usr/lib/libjpeg.so.62 (0x00007fac77024000)
+        libXft.so.2 =&gt; /usr/lib/libXft.so.2 (0x00007fac76e10000)
+        libfontconfig.so.1 =&gt; /usr/lib/libfontconfig.so.1 (0x00007fac76bda000)
+        libXinerama.so.1 =&gt; /usr/lib/libXinerama.so.1 (0x00007fac769d8000)
+        libxcb.so.1 =&gt; /usr/lib/libxcb.so.1 (0x00007fac767bc000)
+        libFLAC.so.8 =&gt; /usr/lib/libFLAC.so.8 (0x00007fac76570000)
+        libvorbisenc.so.2 =&gt; /usr/lib/libvorbisenc.so.2 (0x00007fac760a2000)
+        libvorbis.so.0 =&gt; /usr/lib/libvorbis.so.0 (0x00007fac75e76000)
+        libogg.so.0 =&gt; /usr/lib/libogg.so.0 (0x00007fac75c6f000)
+        libz.so.1 =&gt; /usr/lib/libz.so.1 (0x00007fac75a58000)
+        libfreetype.so.6 =&gt; /usr/lib/libfreetype.so.6 (0x00007fac757cf000)
+        libXrender.so.1 =&gt; /usr/lib/libXrender.so.1 (0x00007fac755c5000)
+        libexpat.so.1 =&gt; /usr/lib/libexpat.so.1 (0x00007fac7539d000)
+        libXext.so.6 =&gt; /usr/lib/libXext.so.6 (0x00007fac7518a000)
+        libXau.so.6 =&gt; /usr/lib/libXau.so.6 (0x00007fac74f87000)
+        libXdmcp.so.6 =&gt; /usr/lib/libXdmcp.so.6 (0x00007fac74d82000)
+
+
+
+
+koko ni bokura ga deatta wake wa
+kanarazu aru no dakara
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000713.html">Wefax detection using statistical correlation
+</A></li>
+	<LI>Next message: <A HREF="000716.html">[GIT] fldigi branch, maint/3.21,	updated: 7bae7afae421e920a04c4ca6e37d34d037915c55
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#715">[ date ]</a>
+              <a href="thread.html#715">[ thread ]</a>
+              <a href="subject.html#715">[ subject ]</a>
+              <a href="author.html#715">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

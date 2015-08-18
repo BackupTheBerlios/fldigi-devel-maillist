@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi hanging in debug::log ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20hanging%20in%20debug%3A%3Alog%20%3F&In-Reply-To=%3C4EB64911.8020009%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000710.html">
+   <LINK REL="Next"  HREF="000714.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi hanging in debug::log ?</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20hanging%20in%20debug%3A%3Alog%20%3F&In-Reply-To=%3C4EB64911.8020009%40gmail.com%3E"
+       TITLE="fldigi hanging in debug::log ?">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Sun Nov  6 09:45:05 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000710.html">[GIT] fldigi branch, maint/3.21,	updated: 7a87f22dc7a5b34c017f789d1519957b96592b65
+</A></li>
+        <LI>Next message: <A HREF="000714.html">fldigi hanging in debug::log ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#711">[ date ]</a>
+              <a href="thread.html#711">[ thread ]</a>
+              <a href="subject.html#711">[ subject ]</a>
+              <a href="author.html#711">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+At the moment, I am testing some changes on fldigi and noticed that it 
+stays stuck with 200% CPU (I have atwo-cores processors). Here is where 
+the threads are stuck:
+
+(gdb) info thr
+   7 Thread -1229739120 (LWP 18961)  0xffffe410 in __kernel_vsyscall ()
+   6 Thread -1240515696 (LWP 18962)  0x0820f3e9 in elapse_timeouts ()
+   5 Thread -1252582512 (LWP 18963)  0xffffe410 in __kernel_vsyscall ()
+   4 Thread -1260975216 (LWP 18964)  0xffffe410 in __kernel_vsyscall ()
+   3 Thread -1269367920 (LWP 18965)  0xffffe410 in __kernel_vsyscall ()
+   2 Thread -1277760624 (LWP 18966)  0xffffe410 in __kernel_vsyscall ()
+   1 Thread -1215514912 (LWP 18957)  0x0820f3e9 in elapse_timeouts ()
+
+(gdb) thr 1
+[Switching to thread 1 (Thread -1215514912 (LWP 18957))]#0  0x0820f3e9 
+in elapse_timeouts ()
+(gdb) where
+#0  0x0820f3e9 in elapse_timeouts ()
+#1  0x0820f486 in Fl::wait ()
+#2  0x0820f635 in Fl::run ()
+#3  0x080fe35e in main (argc=1, argv=0xbf8485e4) at main.cxx:409
+
+(gdb) thr 2
+[Switching to thread 2 (Thread -1277760624 (LWP 18966))]#0  0xffffe410 
+in __kernel_vsyscall ()
+(gdb) where
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0xb7e92598 in accept () from /lib/i686/libpthread.so.0
+#2  0xb7ca19fd in std::ios_base::Init::~Init () at ctype_members.cc:52
+#3  0x0000001a in ?? ()
+#4  0xb7ca134b in SocketAccept () from /usr/lib/libxmlrpc_abyss.so.3
+#5  0xb7c9f3ad in ServerRun () from /usr/lib/libxmlrpc_abyss.so.3
+#6  0xb7cb72e8 in xmlrpc_c::serverAbyss::run () from 
+/usr/lib/libxmlrpc_server_abyss++.so.3
+#7  0x08056e0c in XML_RPC_Server::thread_func () at misc/xmlrpc.cxx:175
+#8  0xb7e8b4e2 in start_thread () from /lib/i686/libpthread.so.0
+#9  0xb7ad047e in clone () from /lib/i686/libc.so.6
+
+(gdb) thr 3
+[Switching to thread 3 (Thread -1269367920 (LWP 18965))]#0  0xffffe410 
+in __kernel_vsyscall ()
+(gdb) where
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0xb7e92b96 in nanosleep () from /lib/i686/libpthread.so.0
+#2  0x0815cdd0 in MilliSleep (msecs=50) at misc/util.cxx:341
+#3  0x0814a8c5 in arq_loop (args=0x0) at misc/arq_io.cxx:671
+#4  0xb7e8b4e2 in start_thread () from /lib/i686/libpthread.so.0
+#5  0xb7ad047e in clone () from /lib/i686/libc.so.6
+
+(gdb) thr 4
+[Switching to thread 4 (Thread -1260975216 (LWP 18964))]#0  0xffffe410 
+in __kernel_vsyscall ()
+(gdb) where
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0xb7e92598 in accept () from /lib/i686/libpthread.so.0
+#2  0x08158439 in Socket::accept (this=0xb575a530) at misc/socket.cxx:625
+#3  0x081457df in ARQ_SOCKET_Server::thread_func () at misc/arq_io.cxx:516
+#4  0xb7e8b4e2 in start_thread () from /lib/i686/libpthread.so.0
+#5  0xb7ad047e in clone () from /lib/i686/libc.so.6
+
+(gdb) thr 5
+[Switching to thread 5 (Thread -1252582512 (LWP 18963))]#0  0xffffe410 
+in __kernel_vsyscall ()
+(gdb) where
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0xb7ac8d51 in select () from /lib/i686/libc.so.6
+#2  0xb7eb526b in std::ios_base::Init::~Init () at ctype_members.cc:52
+#3  0xb7e8b4e2 in start_thread () from /lib/i686/libpthread.so.0
+#4  0xb7ad047e in clone () from /lib/i686/libc.so.6
+
+(gdb) thr 6
+[Switching to thread 6 (Thread -1240515696 (LWP 18962))]#0  0x0820f3e9 
+in elapse_timeouts ()
+(gdb) where
+#0  0x0820f3e9 in elapse_timeouts ()
+#1  0x0820f44f in Fl::add_timeout ()
+#2  0x0812c010 in debug::log (level=debug::INFO_LEVEL, func=0x827d524 
+&quot;set_state&quot;, srcf=0x8279916 &quot;wefax/wefax.cxx&quot;,
+     line=638, format=0x8279b1a &quot;Correlation: Reset to stop&quot;) at 
+misc/debug.cxx:196
+#3  0x0810f8dd in fax_implementation::decode (this=0x873c868, 
+buf=0xb60f2a00, nb_samples=512) at wefax/wefax.cxx:638
+#4  0x0810ff6b in fax_implementation::rx_new_samples (this=0x873c868, 
+audio_ptr=0xb7788008, audio_sz=512)
+     at wefax/wefax.cxx:1548
+#5  0x081100e3 in wefax::rx_process (this=0xb61f6008, buf=0xb7788008, 
+len=512) at wefax/wefax.cxx:1979
+#6  0x0873c868 in ?? ()
+#7  0xb7788008 in ?? ()
+#8  0x00000200 in ?? ()
+#9  0x086d54b0 in ?? ()
+#10 0x00000000 in ?? ()
+
+(gdb) thr 7
+[Switching to thread 7 (Thread -1229739120 (LWP 18961))]#0  0xffffe410 
+in __kernel_vsyscall ()
+(gdb) where
+#0  0xffffe410 in __kernel_vsyscall ()
+#1  0xb7e92b96 in nanosleep () from /lib/i686/libpthread.so.0
+#2  0x0815cdd0 in MilliSleep (msecs=100) at misc/util.cxx:341
+#3  0x08053d74 in hamlib_loop (args=0x0) at rigcontrol/hamlib.cxx:493
+#4  0xb7e8b4e2 in start_thread () from /lib/i686/libpthread.so.0
+#5  0xb7ad047e in clone () from /lib/i686/libc.so.6
+
+It seems to happen when a program makes a lot of debug::log calls .
+
+Any idea please ?
+
+Thanks
+
+Remi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000710.html">[GIT] fldigi branch, maint/3.21,	updated: 7a87f22dc7a5b34c017f789d1519957b96592b65
+</A></li>
+	<LI>Next message: <A HREF="000714.html">fldigi hanging in debug::log ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#711">[ date ]</a>
+              <a href="thread.html#711">[ thread ]</a>
+              <a href="subject.html#711">[ subject ]</a>
+              <a href="author.html#711">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

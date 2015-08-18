@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi-3.21.76AU posted
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.76AU%20posted&In-Reply-To=%3CCAH-RX43QkkqKWyE-GtxMDxrLuy0KWO3LvhWPLXDSmcpLdF%3D-5w%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001097.html">
+   <LINK REL="Next"  HREF="001100.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi-3.21.76AU posted</H1>
+    <B>Josh Rovero</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi-3.21.76AU%20posted&In-Reply-To=%3CCAH-RX43QkkqKWyE-GtxMDxrLuy0KWO3LvhWPLXDSmcpLdF%3D-5w%40mail.gmail.com%3E"
+       TITLE="fldigi-3.21.76AU posted">josh.rovero at gmail.com
+       </A><BR>
+    <I>Wed Oct 30 00:01:03 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001097.html">fldigi-3.21.76AU posted
+</A></li>
+        <LI>Next message: <A HREF="001100.html">fldigi-3.21.76AU posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1098">[ date ]</a>
+              <a href="thread.html#1098">[ thread ]</a>
+              <a href="subject.html#1098">[ subject ]</a>
+              <a href="author.html#1098">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Builds fine on FC19 x86_64, but crashes on run.
+Will run in debugger.
+
+Punts around:
+
+
+
+
+On Tue, Oct 29, 2013 at 2:50 PM, w1hkj &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at bellsouth.net</A>&gt; wrote:
+
+&gt;<i> at <A HREF="http://www.w1hkj.com/alpha/**fldigi/v3.21/&lt;http://www.w1hkj.com/alpha/fldigi/v3.21/">http://www.w1hkj.com/alpha/**fldigi/v3.21/&lt;http://www.w1hkj.com/alpha/fldigi/v3.21/</A>&gt;
+</I>&gt;<i>
+</I>&gt;<i> and pushed (-f) to berlios/tmp/df/fldigi-3.21
+</I>&gt;<i>
+</I>
+ I: rigCAT_init: Passed serial port test # 5
+I: InitParams: dir=/home/josh/.fldigi/kml/ merge_distance=10000.000000
+retention_delay=0 refresh_interval=120 balloon_style=2
+I: CreateMainKmlFile: Creating baseFil=/home/josh/.fldigi/kml/fldigi.kml
+I: CopyStyleFileIfNotExists: Style file /home/josh/.fldigi/kml/styles.kml
+not altered
+I: ReloadSingleKmlFile: kmlFilNam=/home/josh/.fldigi/kml/User.kml
+m_merge_dist=10000.000000
+I: ReloadSingleKmlFile: kmlFilNam=/home/josh/.fldigi/kml/User.kml loaded
+sz=1
+I: ReloadSingleKmlFile: kmlFilNam=/home/josh/.fldigi/kml/Synop.kml
+m_merge_dist=10000.000000
+I: ReloadSingleKmlFile: kmlFilNam=/home/josh/.fldigi/kml/Synop.kml loaded
+sz=0
+I: ReloadSingleKmlFile: kmlFilNam=/home/josh/.fldigi/kml/Navtex.kml
+m_merge_dist=10000.000000
+I: ReloadSingleKmlFile: kmlFilNam=/home/josh/.fldigi/kml/Navtex.kml loaded
+sz=0
+I: Broadcast: 'Niantic, CT USA' sz=1 time=Permanent nb_broad=1
+m_merge_dist=10000.000000
+I: init_modem_sync: Call init_modem 39, 0
+I: init_modem: mode: 39, freq: 0
+I: init_modem_sync: Waited 0.01 sec for RX state
+I: ADIF_RW_init: Starting logbook r/w thread
+I: do_readfile: Reading /home/josh/.fldigi/logs/logbook.adif
+I: do_readfile: Reading 984366 bytes from logbook.adif
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+./fldigi(_Z9diediediev+0xcf)[0x79c143]
+./fldigi(_Z13handle_signali+0x1f)[0x79c36c]
+/lib64/libpthread.so.0[0x38c460efa0]
+./fldigi(_ZN6WFdisp16update_waterfallEv+0x1bd)[0x85a341]
+./fldigi(_ZN6WFdisp11drawcolorWFEv+0x2e)[0x85ada8]
+./fldigi(_ZN6WFdisp4drawEv+0x6e)[0x85bb24]
+./fldigi(_ZNK8Fl_Group12update_childER9Fl_Widget+0x40)[0x8b1ba0]
+./fldigi(_ZN8Fl_Group13draw_childrenEv+0xc3)[0x8b1df7]
+./fldigi(_ZNK8Fl_Group12update_childER9Fl_Widget+0x40)[0x8b1ba0]
+./fldigi(_ZN8Fl_Group13draw_childrenEv+0xc3)[0x8b1df7]
+./fldigi(_ZNK8Fl_Group12update_childER9Fl_Widget+0x40)[0x8b1ba0]
+./fldigi(_ZN7Fl_Pack4drawEv+0x27c)[0x8c0dcc]
+./fldigi(_ZNK8Fl_Group12update_childER9Fl_Widget+0x40)[0x8b1ba0]
+./fldigi(_ZN8Fl_Group13draw_childrenEv+0xc3)[0x8b1df7]
+./fldigi(_ZN16Fl_Double_Window5flushEi+0x1de)[0x8acf76]
+./fldigi(_ZN2Fl5flushEv+0x5f)[0x8a3783]
+./fldigi(_ZN2Fl4waitEd+0x12a)[0x8a4890]
+./fldigi(_ZN2Fl3runEv+0x11)[0x8a4919]
+./fldigi(main+0x159a)[0x71fc4b]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x38c3a21b75]
+./fldigi[0x61764d]
+
+****** Version information:
+fldigi 3.21.76AU
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi
+Chateauneu, and others.
+License GPLv3+: GNU GPL version 3 or later &lt;
+<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+  built          : Tue Oct 29 22:41:04 UTC 2013 by
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">josh at simoom.rovero.neton</A> x86_64-unknown-linux-gnu for
+x86_64-unknown-linux-gnu
+
+  configure flags: '--enable-debug'
+
+  compiler       : gcc version 4.8.1 20130603 (Red Hat 4.8.1-1) (GCC)
+
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+-I$(srcdir)/libtiniconv -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp
+-pthread -I/usr/include/alsa -I/usr/local/include -I/usr/include/freetype2
+-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_THREAD_SAFE -D_REENTRANT
+-D_REENTRANT -I/usr/include/libpng15 -pipe -Wall -fexceptions -O2
+-ffast-math -finline-functions -O0 -fno-inline-functions -ggdb3 -Wall
+-UNDEBUG
+
+  linker flags   : -rdynamic -lportaudio -lm -lpthread -lasound
+-L/usr/local/lib -lfltk_images -lpng -lz -ljpeg -lfltk -lXext -lXft
+-lfontconfig -lXinerama -lpthread -ldl -lm -lX11 -lX11 -lsamplerate
+-lpulse-simple -lpulse -lhamlib -lm -lpng15 -ldl -lpthread
+
+  libraries      : FLTK 1.3.0
+                   libsamplerate 0.1.8
+                   PortAudio 19
+                   PulseAudio 3.0
+                   Hamlib 1.2.15.3
+
+Runtime information:
+  system         : Linux simoom.rovero.net 3.11.6-200.fc19.x86_64 #1 SMP
+Fri Oct 18 22:34:18 UTC 2013 x86_64
+
+  libraries      : libsamplerate-0.1.8 (c) 2002-2008 Erik de Castro Lopo
+                   PortAudio V19-devel (built May  4 2013 13:59:07) 1899
+                   Pulseaudio 3.0.0
+                   Hamlib 1.2.15.3
+I: do_readfile: Read 3845 records in 0.08 seconds
+
+
+
+
+-- 
+P.J. &quot;Josh&quot; Rovero                   Ham Radio: KK1D
+<A HREF="http://www.roveroresearch.org">http://www.roveroresearch.org</A>   <A HREF="http://www.roveroresearch.info">http://www.roveroresearch.info</A>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20131029/a84826f0/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20131029/a84826f0/attachment.html</A>&gt;
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001097.html">fldigi-3.21.76AU posted
+</A></li>
+	<LI>Next message: <A HREF="001100.html">fldigi-3.21.76AU posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1098">[ date ]</a>
+              <a href="thread.html#1098">[ thread ]</a>
+              <a href="subject.html#1098">[ subject ]</a>
+              <a href="author.html#1098">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

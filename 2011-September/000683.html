@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [PATCH 2/2] Files automatically modified by make maintainer-clean
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BPATCH%202/2%5D%20Files%20automatically%20modified%20by%20make%20maintainer-clean&In-Reply-To=%3C1315656056-19262-2-git-send-email-pf%40tippete.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000684.html">
+   <LINK REL="Next"  HREF="000685.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[PATCH 2/2] Files automatically modified by make maintainer-clean</H1>
+    <B>Pierfrancesco Caci</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BPATCH%202/2%5D%20Files%20automatically%20modified%20by%20make%20maintainer-clean&In-Reply-To=%3C1315656056-19262-2-git-send-email-pf%40tippete.net%3E"
+       TITLE="[PATCH 2/2] Files automatically modified by make maintainer-clean">pf at tippete.net
+       </A><BR>
+    <I>Sat Sep 10 14:00:56 CEST 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000684.html">[PATCH 1/2] Sync italian translation to 3.22.0AL
+</A></li>
+        <LI>Next message: <A HREF="000685.html">[GIT] fldigi branch, master,	updated: bb6da4a9d5495c9ffe68de14172dd3da928287ba
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#683">[ date ]</a>
+              <a href="thread.html#683">[ thread ]</a>
+              <a href="subject.html#683">[ subject ]</a>
+              <a href="author.html#683">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>---
+ po/es.po      |   14 +++++++-------
+ po/fldigi.pot |   15 +++++++--------
+ po/fr.po      |   14 +++++++-------
+ 3 files changed, 21 insertions(+), 22 deletions(-)
+
+diff --git a/po/es.po b/po/es.po
+index 5667bbc..742e1a1 100644
+--- a/po/es.po
++++ b/po/es.po
+@@ -8,14 +8,14 @@ msgid &quot;&quot;
+ msgstr &quot;&quot;
+ &quot;Project-Id-Version: fldigi 3.21.1\n&quot;
+ &quot;Report-Msgid-Bugs-To: w1hkj AT w1hkj DOT com\n&quot;
+-&quot;POT-Creation-Date: 2011-09-06 05:46-0500\n&quot;
++&quot;POT-Creation-Date: 2011-09-10 13:50+0200\n&quot;
+ &quot;PO-Revision-Date: 2011-02-18 19:01-0500\n&quot;
+ &quot;Last-Translator: Pavel Milanes Costa &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">co7wt at frcuba.co.cu</A>&gt;\n&quot;
+ &quot;Language-Team: Spanish (Pavel Milanes Costa) &lt;pavelmc AT gmail DOT com&gt;\n&quot;
+-&quot;Language: \n&quot;
+ &quot;MIME-Version: 1.0\n&quot;
+ &quot;Content-Type: text/plain; charset=UTF-8\n&quot;
+ &quot;Content-Transfer-Encoding: 8bit\n&quot;
++&quot;Language: \n&quot;
+ &quot;X-Poedit-Language: Spanish\n&quot;
+ &quot;X-Poedit-Country: CUBA\n&quot;
+ 
+@@ -26,8 +26,8 @@ msgstr &quot;%s log iniciado a %s&quot;
+ 
+ #: src/main.cxx:889
+ msgid &quot;&quot;
+-&quot;License GPLv3+: GNU GPL version 3 or later &lt;<A HREF="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</A>&quot;
+-&quot;gpl-3.0.html&gt;\n&quot;
++&quot;License GPLv3+: GNU GPL version 3 or later &lt;<A HREF="http://www.gnu.org/licenses/gpl-">http://www.gnu.org/licenses/gpl-</A>&quot;
++&quot;3.0.html&gt;\n&quot;
+ &quot;This is free software: you are free to change and redistribute it.\n&quot;
+ &quot;There is NO WARRANTY, to the extent permitted by law.\n&quot;
+ msgstr &quot;&quot;
+@@ -1371,15 +1371,15 @@ msgstr &quot;Etiqueta del bot&#195;&#179;n de macro&quot;
+ msgid &quot;Macro editor - &quot;
+ msgstr &quot;Editor de  macros - &quot;
+ 
+-#: src/misc/macros.cxx:1422
++#: src/misc/macros.cxx:1617
+ msgid &quot;Open macro file&quot;
+ msgstr &quot;Abrir fichero de macro&quot;
+ 
+-#: src/misc/macros.cxx:1422 src/misc/macros.cxx:1434
++#: src/misc/macros.cxx:1617 src/misc/macros.cxx:1629
+ msgid &quot;Fldigi macro definition file\t*.mdf&quot;
+ msgstr &quot;Fichero de definici&#195;&#179;n de macro para Fldigi\t*.mdf&quot;
+ 
+-#: src/misc/macros.cxx:1434
++#: src/misc/macros.cxx:1629
+ msgid &quot;Save macro file&quot;
+ msgstr &quot;Salvar fichero macro&quot;
+ 
+diff --git a/po/fldigi.pot b/po/fldigi.pot
+index da77f50..c1a4419 100644
+--- a/po/fldigi.pot
++++ b/po/fldigi.pot
+@@ -6,13 +6,12 @@
+ #, fuzzy
+ msgid &quot;&quot;
+ msgstr &quot;&quot;
+-&quot;Project-Id-Version: fldigi 3.22.0AJ\n&quot;
++&quot;Project-Id-Version: fldigi 3.22.0AL\n&quot;
+ &quot;Report-Msgid-Bugs-To: w1hkj AT w1hkj DOT com\n&quot;
+-&quot;POT-Creation-Date: 2011-09-06 05:46-0500\n&quot;
++&quot;POT-Creation-Date: 2011-09-10 13:50+0200\n&quot;
+ &quot;PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n&quot;
+ &quot;Last-Translator: FULL NAME &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">EMAIL at ADDRESS</A>&gt;\n&quot;
+ &quot;Language-Team: LANGUAGE &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">LL at li.org</A>&gt;\n&quot;
+-&quot;Language: \n&quot;
+ &quot;MIME-Version: 1.0\n&quot;
+ &quot;Content-Type: text/plain; charset=CHARSET\n&quot;
+ &quot;Content-Transfer-Encoding: 8bit\n&quot;
+@@ -24,8 +23,8 @@ msgstr &quot;&quot;
+ 
+ #: src/main.cxx:889
+ msgid &quot;&quot;
+-&quot;License GPLv3+: GNU GPL version 3 or later &lt;<A HREF="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</A>&quot;
+-&quot;gpl-3.0.html&gt;\n&quot;
++&quot;License GPLv3+: GNU GPL version 3 or later &lt;<A HREF="http://www.gnu.org/licenses/gpl-">http://www.gnu.org/licenses/gpl-</A>&quot;
++&quot;3.0.html&gt;\n&quot;
+ &quot;This is free software: you are free to change and redistribute it.\n&quot;
+ &quot;There is NO WARRANTY, to the extent permitted by law.\n&quot;
+ msgstr &quot;&quot;
+@@ -1312,15 +1311,15 @@ msgstr &quot;&quot;
+ msgid &quot;Macro editor - &quot;
+ msgstr &quot;&quot;
+ 
+-#: src/misc/macros.cxx:1422
++#: src/misc/macros.cxx:1617
+ msgid &quot;Open macro file&quot;
+ msgstr &quot;&quot;
+ 
+-#: src/misc/macros.cxx:1422 src/misc/macros.cxx:1434
++#: src/misc/macros.cxx:1617 src/misc/macros.cxx:1629
+ msgid &quot;Fldigi macro definition file\t*.mdf&quot;
+ msgstr &quot;&quot;
+ 
+-#: src/misc/macros.cxx:1434
++#: src/misc/macros.cxx:1629
+ msgid &quot;Save macro file&quot;
+ msgstr &quot;&quot;
+ 
+diff --git a/po/fr.po b/po/fr.po
+index f7bb9ee..a0af999 100644
+--- a/po/fr.po
++++ b/po/fr.po
+@@ -8,14 +8,14 @@ msgid &quot;&quot;
+ msgstr &quot;&quot;
+ &quot;Project-Id-Version: fldigi 3.11\n&quot;
+ &quot;Report-Msgid-Bugs-To: w1hkj AT w1hkj DOT com\n&quot;
+-&quot;POT-Creation-Date: 2011-09-06 05:46-0500\n&quot;
++&quot;POT-Creation-Date: 2011-09-10 13:50+0200\n&quot;
+ &quot;PO-Revision-Date: 2010-03-06 13:04+0200\n&quot;
+ &quot;Last-Translator: Stephane Fillod &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fillods at users.sourceforge.net</A>&gt;\n&quot;
+ &quot;Language-Team: French\n&quot;
+-&quot;Language: \n&quot;
+ &quot;MIME-Version: 1.0\n&quot;
+ &quot;Content-Type: text/plain; charset=UTF-8\n&quot;
+ &quot;Content-Transfer-Encoding: 8bit\n&quot;
++&quot;Language: \n&quot;
+ &quot;Plural-Forms: nplurals=2; plural=(n &gt; 1);\n&quot;
+ 
+ #: src/main.cxx:248
+@@ -25,8 +25,8 @@ msgstr &quot;%s log d&#195;&#169;marr&#195;&#169; le %s&quot;
+ 
+ #: src/main.cxx:889
+ msgid &quot;&quot;
+-&quot;License GPLv3+: GNU GPL version 3 or later &lt;<A HREF="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</A>&quot;
+-&quot;gpl-3.0.html&gt;\n&quot;
++&quot;License GPLv3+: GNU GPL version 3 or later &lt;<A HREF="http://www.gnu.org/licenses/gpl-">http://www.gnu.org/licenses/gpl-</A>&quot;
++&quot;3.0.html&gt;\n&quot;
+ &quot;This is free software: you are free to change and redistribute it.\n&quot;
+ &quot;There is NO WARRANTY, to the extent permitted by law.\n&quot;
+ msgstr &quot;&quot;
+@@ -1355,15 +1355,15 @@ msgstr &quot;&quot;
+ msgid &quot;Macro editor - &quot;
+ msgstr &quot;&#195;&#137;diteur de macro - &quot;
+ 
+-#: src/misc/macros.cxx:1422
++#: src/misc/macros.cxx:1617
+ msgid &quot;Open macro file&quot;
+ msgstr &quot;Ouvrir fichier macros&quot;
+ 
+-#: src/misc/macros.cxx:1422 src/misc/macros.cxx:1434
++#: src/misc/macros.cxx:1617 src/misc/macros.cxx:1629
+ msgid &quot;Fldigi macro definition file\t*.mdf&quot;
+ msgstr &quot;Fichier de d&#195;&#169;finition macro Fldigi\t*.mdf&quot;
+ 
+-#: src/misc/macros.cxx:1434
++#: src/misc/macros.cxx:1629
+ msgid &quot;Save macro file&quot;
+ msgstr &quot;Enregistrer fichier macros&quot;
+ 
+-- 
+1.7.0.4
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000684.html">[PATCH 1/2] Sync italian translation to 3.22.0AL
+</A></li>
+	<LI>Next message: <A HREF="000685.html">[GIT] fldigi branch, master,	updated: bb6da4a9d5495c9ffe68de14172dd3da928287ba
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#683">[ date ]</a>
+              <a href="thread.html#683">[ thread ]</a>
+              <a href="subject.html#683">[ subject ]</a>
+              <a href="author.html#683">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

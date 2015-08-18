@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Technical information about XmlRpc++ and xmlrpc-c on fldigi
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Technical%20information%20about%20XmlRpc%2B%2B%20and%20xmlrpc-c%20on%20fldigi&In-Reply-To=%3C515380E6.5060708%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000987.html">
+   <LINK REL="Next"  HREF="000989.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Technical information about XmlRpc++ and xmlrpc-c on fldigi</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Technical%20information%20about%20XmlRpc%2B%2B%20and%20xmlrpc-c%20on%20fldigi&In-Reply-To=%3C515380E6.5060708%40gmail.com%3E"
+       TITLE="Technical information about XmlRpc++ and xmlrpc-c on fldigi">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Thu Mar 28 00:29:42 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000987.html">Error running FLDigi
+</A></li>
+        <LI>Next message: <A HREF="000989.html">Technical information about XmlRpc++ and xmlrpc-c on fldigi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#988">[ date ]</a>
+              <a href="thread.html#988">[ thread ]</a>
+              <a href="subject.html#988">[ subject ]</a>
+              <a href="author.html#988">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+At the moment, fldigi uses the external library xmlrpc_c to create a 
+XML-RPC server ( <A HREF="http://xmlrpc-c.sourceforge.net/">http://xmlrpc-c.sourceforge.net/</A> )
+
+This is fine but I remember that Stelios Bounanos,one of the main 
+developers of fldigi, told that he added to fldigi, the sources of 
+another xmlrpc server, that is <A HREF="http://xmlrpcpp.sourceforge.net/">http://xmlrpcpp.sourceforge.net/</A>
+
+As far as I remember (Not sure), his intention was to get rid to 
+xmlrpc-c and use instead xmlrpccpp. The consequence would have been:
+
+* Easier to port fldigi to other platforms because at least two external 
+libraries are not needed ( xmlrpc-c and curl )
+* Possibility to taylor the XMLRPC server to our own needs if necessary 
+because all the sources are local.
+* Potentially better performance.
+
+What do you think of this ? is it necessary to do this change ?
+
+Thanks
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000987.html">Error running FLDigi
+</A></li>
+	<LI>Next message: <A HREF="000989.html">Technical information about XmlRpc++ and xmlrpc-c on fldigi
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#988">[ date ]</a>
+              <a href="thread.html#988">[ thread ]</a>
+              <a href="subject.html#988">[ subject ]</a>
+              <a href="author.html#988">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

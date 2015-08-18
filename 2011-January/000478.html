@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Removing delay loops for playback - software defined radio project
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2011-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Removing%20delay%20loops%20for%20playback%20-%20software%20defined%20radio%20project&In-Reply-To=%3C428C7B00B03E6C45AA850C87DC9DF3C6214019D210%40EXCHANGE1.ad.nottingham.ac.uk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000475.html">
+   <LINK REL="Next"  HREF="000476.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Removing delay loops for playback - software defined radio project</H1>
+    <B>Laurence Blaxter</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Removing%20delay%20loops%20for%20playback%20-%20software%20defined%20radio%20project&In-Reply-To=%3C428C7B00B03E6C45AA850C87DC9DF3C6214019D210%40EXCHANGE1.ad.nottingham.ac.uk%3E"
+       TITLE="Removing delay loops for playback - software defined radio project">eexlb2 at nottingham.ac.uk
+       </A><BR>
+    <I>Sun Jan  2 23:26:06 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000475.html">3.21.0AX pushed to berlios/master
+</A></li>
+        <LI>Next message: <A HREF="000476.html">fldigi-3.21.0AX posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#478">[ date ]</a>
+              <a href="thread.html#478">[ thread ]</a>
+              <a href="subject.html#478">[ subject ]</a>
+              <a href="author.html#478">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>First of all apologies this was sent to the wrong fldigi mailing list, and thanks for the replies. In answer to some of the suggestions received so far,
+I don't think the file seek operation is the source of the problem - looking at strace the named pipe is closed when i deselect my &quot;stream&quot; checkbox,
+so there shouldn't be any file seek. After some more tests with strace I've found that I get +++ killed by SIGFPE +++ at the end of the log, after the 
+named pipe has been closed, but only if fldigi is not started  from the command line. I've attatched the strace log recoded when starting fldigi from 
+outside the command line, starting playback without delays from the SDR hardware, then unchecking the &quot;Stream&quot; checkbox, causing fldigi to quit.   
+
+&lt;copy of my previous email follows below&gt;
+
+ I am working on a project to add support for a cheap software defined radio based on a chipcon cc1020 to fldigi. There are details of the project here
+
+ <A HREF="http://ukhas.org.uk/guides:chipcon_cc1020_software_define_radio">http://ukhas.org.uk/guides:chipcon_cc1020_software_define_radio</A>
+
+<A HREF="https://github.com/Laurenceb/dl-fldigi">https://github.com/Laurenceb/dl-fldigi</A>
+
+The existing playback in vanilla fldigi uses a delay function that inevitably delays for slightly longer than necessary, this created a problem for my application,
+as data would back up in the named pipe used to pass the resampled data to fldigi in wav format. I have attempted to add support for a new &quot;stream&quot; function
+that eliminates all delays. Unfortunately this has resulted in a weird bug that I have been unable to fix; when the stream checkbox is unselected the UI stays
+responsive, but it appears the backend processing in fldigi hangs, as the waterfall display stops scrolling and cannot be restarted.
+ This only occurs when using named pipes, if i attempt to open a .wav file with the new stream checkbox, there are no apparent problems - it is possible to
+ start and stop playback at any point (although the data is processed extremely quickly using 100% cpu - as would be expected as the reads never block).
+It is however possible to use the SDR without issue (apart from the obvious buildup of data in the pipe) using playback. So to sum up, this bug only appears
+when unchecking the new stream checkbox after having used it to playback from a named pipe. It should also be borne in mind that the named pipe is
+immediately closed for writing as soon as my resampling program receives SIGPIPE - indicating that fldigi has closed the pipe for reading. I have attempted
+to use strace to debug, and it appears that the UI along with file open and close is still working after the waterfall hangs - i can reboot my SDR hardware and
+ attempt to reconnect to the named pipe with fldigi and the file open appears in the strace log, but the waterfall never restarts and no data comes out of the
+ modem. At no point is fldigi using excessive cpu either.
+ I am not a c++ developer, and am not familiar with the fldigi source, so I though someone here might be able to offer their assistance.
+ Thankyou for your time
+
+Laurence Blaxter
+
+This message and any attachment are intended solely for the addressee and may contain confidential information. If you have received this message in error, please send it back to me, and immediately delete it.   Please do not use, copy or disclose the information contained in this message or in any attachment.  Any views or opinions expressed by the author of this email do not necessarily reflect the views of the University of Nottingham.
+
+This message has been checked for viruses but the contents of an attachment
+may still contain software viruses which could damage your computer system:
+you are advised to perform your own checks. Email communications with the
+University of Nottingham may be monitored as permitted by UK legislation.
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: debug_tst.zip
+Type: application/zip
+Size: 82217 bytes
+Desc: debug_tst.zip
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20110102/2033ee4a/attachment.zip">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20110102/2033ee4a/attachment.zip</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000475.html">3.21.0AX pushed to berlios/master
+</A></li>
+	<LI>Next message: <A HREF="000476.html">fldigi-3.21.0AX posted
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#478">[ date ]</a>
+              <a href="thread.html#478">[ thread ]</a>
+              <a href="subject.html#478">[ subject ]</a>
+              <a href="author.html#478">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> several commits pushed to pu/df (-f)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20several%20commits%20pushed%20to%20pu/df%20%28-f%29&In-Reply-To=%3C4BB6434E.1080601%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000271.html">
+   <LINK REL="Next"  HREF="000273.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>several commits pushed to pu/df (-f)</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20several%20commits%20pushed%20to%20pu/df%20%28-f%29&In-Reply-To=%3C4BB6434E.1080601%40bellsouth.net%3E"
+       TITLE="several commits pushed to pu/df (-f)">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Fri Apr  2 21:19:42 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000271.html">pushed to pu/df
+</A></li>
+        <LI>Next message: <A HREF="000273.html">Peter Martinez on Distortion cancellation in PSK31 transmitters
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#272">[ date ]</a>
+              <a href="thread.html#272">[ thread ]</a>
+              <a href="subject.html#272">[ subject ]</a>
+              <a href="author.html#272">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>commit 4d838e46bd346e5f033625be409e4d38dcb286f7
+    SSB modem
+    
+       Receive only SSB modem added to allow occassional logging
+       of a voice contact :&gt;)
+
+commit 6b10d6fa675b2d2f816b250a6855cbc4515f67d6
+    RX_ONLY Modem type
+    
+      Added rx_only_ boolean to allow creation of modems that are
+      receive only, such as WWV, Analysis.  Default modem type is
+      to allow both rx and tx.
+
+commit 374fa72b6808607490ffe593112271fe8f055b00
+    Text Display Error Trap
+    
+       Change from Fl::error to LOG_DEBUG reporting in file
+       Fl_TextDisplay_mod.cxx.  Fl::error locks up computer on
+       Windows XP
+
+commit 4c526f40d23d95837ddad1ad6b99cd39737a6ab9
+    QSY Lock disable
+    
+      Changed QSY/LOCK behavior to disable Tx Lock before QSY.
+
+commit ff52dda2814e25c12bbf81c1ffb49be6571e0c80
+    Contestia
+    
+      Added Contestia modem with Rx/Tx support of RSID.  This mode is
+      not suitable for use with flarq, flwrap or flics.  It is very
+      suitable for contesting or conversational QSOs.
+
+commit 7ca0e800830698e78af06950f198250ae6bfe4e6
+    Freq Analysis Init
+    
+      * Reset filters on start or waterfall &quot;tuning&quot;
+      * Saved data file format change
+          . Radio Frequency, Sideband, Audio Tracking freq recorded
+            on restart or waterfall tune.
+          . Tracked difference frequency, derived RF frequency recorded
+
+Dave
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20100402/3e33f126/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20100402/3e33f126/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000271.html">pushed to pu/df
+</A></li>
+	<LI>Next message: <A HREF="000273.html">Peter Martinez on Distortion cancellation in PSK31 transmitters
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#272">[ date ]</a>
+              <a href="thread.html#272">[ thread ]</a>
+              <a href="subject.html#272">[ subject ]</a>
+              <a href="author.html#272">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

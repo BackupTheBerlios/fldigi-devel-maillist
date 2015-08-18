@@ -1,0 +1,174 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> notes from Sweepstakes for fldigi
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20notes%20from%20Sweepstakes%20for%20fldigi&In-Reply-To=%3C4CD7F1BF.4060801%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000375.html">
+   <LINK REL="Next"  HREF="000377.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>notes from Sweepstakes for fldigi</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20notes%20from%20Sweepstakes%20for%20fldigi&In-Reply-To=%3C4CD7F1BF.4060801%40bellsouth.net%3E"
+       TITLE="notes from Sweepstakes for fldigi">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Mon Nov  8 13:49:03 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000375.html">notes from Sweepstakes for fldigi
+</A></li>
+        <LI>Next message: <A HREF="000377.html">changes for consideration pushed to berlios/pu/df
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#376">[ date ]</a>
+              <a href="thread.html#376">[ thread ]</a>
+              <a href="subject.html#376">[ subject ]</a>
+              <a href="author.html#376">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Leigh L. Klotz, Jr WA5ZNU wrote:
+&gt;<i> I used fldigi to operate in the ARRL CW sweepstakes and here are some 
+</I>&gt;<i> notes in the form of bugs and feature/enhancement requests.
+</I>&gt;<i>
+</I>&gt;<i> 1. BUG: When all fields and contest fields are enabled AZ doesn't show. 
+</I>&gt;<i> I have rotor control macros which pass in $FLDIGI_AZ and if it's not 
+</I>&gt;<i> display I don't know if my rotor control macros will work.
+</I>&gt;<i> I had to switch out of fldigi or toggle the contest fields see.
+</I>&gt;<i> When the menu says show all fields, it ought to show them all.
+</I>&gt;<i> So I request that AZ show when Show All is set and Contest Fields is 
+</I>&gt;<i> checked.
+</I>On the short list
+&gt;<i>
+</I>&gt;<i> 2. FER: &lt;clearlog&gt; macro
+</I>&gt;<i> I'd like to clear the log after &lt;log&gt; without setting that optionally 
+</I>&gt;<i> globally in config.  I'd like &lt;clearlog&gt; macro so I can do 
+</I>&gt;<i> &lt;log&gt;&lt;clearlog&gt;.
+</I>Reasonable
+&gt;<i>
+</I>&gt;<i> 3. BUG: intermittent right mouse copy-to-log behavior #1
+</I>&gt;<i> I've had consistent problems with right mouse selection over the years 
+</I>&gt;<i> and I suspect it's because there's something about it at odds with 
+</I>&gt;<i> fltk and the workaround keeps getting broken.  So perhaps I should 
+</I>&gt;<i> retrain myself.  But the symptom is that I right mouse on a callsign 
+</I>&gt;<i> and select CALL and it fails to copy.  The heuristic 
+</I>&gt;<i> click-and-auto-insert for call never fails.
+</I>This and the double click will fail most often when the Rx pane is 
+scrolling upward between the time you click and the time that the 
+x-y-to-text parser executes.
+&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> 4. BUG: intermittent right mouse copy-to-log behavior #2
+</I>&gt;<i> Another intermittent failure is the same with highlighted region: I 
+</I>&gt;<i> left-drag to highlight the RX exchange and get a red highlight.  Right 
+</I>&gt;<i> mouse on Exchange then does nothing.  If I do the right mouse Exchange 
+</I>&gt;<i> again, the highlighting turns pink and it works.  I don't know what 
+</I>&gt;<i> the operation model is here but I'm not understanding it, or it's not 
+</I>&gt;<i> consistent. 
+</I>I'll have to look at that behavior
+&gt;<i>
+</I>&gt;<i> 5. FER: two lines of macro buttons
+</I>&gt;<i> I'd like to be able to select two lines of macros, for example:
+</I>&gt;<i>
+</I>&gt;<i> ANS  / EXCHANGE /  Log QSO / CQ       NR! / PRC! / CK! / SEC!       
+</I>&gt;<i> CALL! / AGN! / Stepper / ROTOR
+</I>&gt;<i>                                       NR? / PRC? / CK? / SEC?       
+</I>&gt;<i> CALL? / AGN? / QSL
+</I>&gt;<i>
+</I>&gt;<i> In this example, line 1 is used mostly for hunt and pounce (NR! 
+</I>&gt;<i> re-sends my serial number, for example).  Line 2 is used for asking 
+</I>&gt;<i> for fills myself and responding QSL when done.
+</I>&gt;<i>
+</I>&gt;<i> I took a look at it but the static fltk layout would have to change to 
+</I>&gt;<i> allow this so it's not easily done as an option or a startup option.
+</I>&gt;<i> I doubt most people want two lines of macros for normal operation, but 
+</I>&gt;<i> for this SS contest with its many-part exchange, it would have been 
+</I>&gt;<i> useful.
+</I>&gt;<i> Perhaps there are other needs for more visible macros as well, at 
+</I>&gt;<i> least temporarily.
+</I>How would you map the function keys to the macro button layout?
+&gt;<i>
+</I>&gt;<i> 6. Bug or FER: Spaces in macros
+</I>&gt;<i> The &lt;exec&gt; call seems to insert a space in the TX buffer after use.  
+</I>&gt;<i> Perhaps it's &lt;exec&gt;'s fault, but I'd still like a way to clear the TX 
+</I>&gt;<i> buffer in macros.
+</I>&gt;<i> We have RX clear but not TX clear. That way ANS, EXCHANGE, etc, would 
+</I>&gt;<i> start with TX Clear.  The spaces introduce delays after you press one 
+</I>&gt;<i> of the macros and that can disturb contest timing.
+</I>I'll look at the macro insert / execution code.
+&gt;<i>
+</I>&gt;<i> 7. Bug: View Logbook
+</I>&gt;<i> If I have just entered a log entry and do View Logbook it shows at the 
+</I>&gt;<i> bottom.
+</I>&gt;<i> Other times if I do View Logbook it show the most recent entry at the top.
+</I>&gt;<i> It seems the sort order of View Log sometimes reverses.
+</I>I've never seen it change, but it is dependent on the last state of the 
+logbook view browser.  That is determined by the button column headers 
+in the logbook browser pane.
+&gt;<i>
+</I>&gt;<i> 7. Bug: Logbook out of order in logbook.adif
+</I>&gt;<i> A QSO which started at 2359 and ended at 0001 showed up in the logbook 
+</I>&gt;<i> in the wrong spot.  It was qso #71, and appeared between #19 and #20.
+</I>&gt;<i> There was a gap between #70 and #72 where the W4RM qso belonged.  The 
+</I>&gt;<i> QSO started on 20101107 2359 and ended at 20101108 000.   It 
+</I>&gt;<i> improperly sorted as if it had started at 20101107 0001.
+</I>Was this with 3.20.29?  This maintenance update had QSO_DATE_OFF added.  
+ADIF entries in the logbook look like this:
+
+&lt;BAND:3&gt;80m&lt;CALL:6&gt;K2EN/2&lt;COUNTRY:13&gt;United States
+&lt;FREQ:8&gt;3.581798&lt;GRIDSQUARE:6&gt;FN12rf&lt;MODE:5&gt;PSK31
+&lt;NAME:4&gt;Rich&lt;NOTES:30&gt;at a hunting camp - bow season
+*&lt;QSO_DATE:8&gt;20101107&lt;QSO_DATE_OFF:8&gt;20101107*
+&lt;QTH:8&gt;Canisteo&lt;RST_RCVD:3&gt;599&lt;RST_SENT:3&gt;599&lt;STATE:2&gt;NY
+*&lt;TIME_OFF:4&gt;0010&lt;TIME_ON:4&gt;0004*&lt;TX_PWR:2&gt;24&lt;EOR&gt;
+
+QSO_DATE / TIME_ON are paired
+QSO_DATE_OFF / TIME_OFF are paired
+
+versus what you report
+
+&lt;BAND:3&gt;15m&lt;CALL:4&gt;n4uc&lt;FREQ:9&gt;21.050802
+&lt;MODE:2&gt;CW&lt;STX_STRING:23&gt;n4uc 18 U wa5znu 69 SCV
+&lt;QSO_DATE:8&gt;20101106
+&lt;STX:3&gt; 19
+&lt;TIME_OFF:4&gt;2355&lt;TIME_ON:4&gt;2353
+&lt;SRX_STRING:15&gt;11 a n4uc 67 al&lt;EOR&gt;
+
+Was this an export line or actual logbook line?  I will check to be sure 
+that the sort order is being computed correctly.
+
+Dave
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20101108/e8f1187c/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20101108/e8f1187c/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000375.html">notes from Sweepstakes for fldigi
+</A></li>
+	<LI>Next message: <A HREF="000377.html">changes for consideration pushed to berlios/pu/df
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#376">[ date ]</a>
+              <a href="thread.html#376">[ thread ]</a>
+              <a href="subject.html#376">[ subject ]</a>
+              <a href="author.html#376">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

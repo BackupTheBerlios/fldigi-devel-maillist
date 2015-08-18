@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Cross-compiling fldigi under Linux with mingw32
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Cross-compiling%20fldigi%20under%20Linux%20with%20mingw32&In-Reply-To=%3C50915337.3060501%40bellsouth.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000927.html">
+   <LINK REL="Next"  HREF="000929.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Cross-compiling fldigi under Linux with mingw32</H1>
+    <B>w1hkj</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Cross-compiling%20fldigi%20under%20Linux%20with%20mingw32&In-Reply-To=%3C50915337.3060501%40bellsouth.net%3E"
+       TITLE="Cross-compiling fldigi under Linux with mingw32">w1hkj at bellsouth.net
+       </A><BR>
+    <I>Wed Oct 31 17:35:03 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000927.html">Cross-compiling fldigi under Linux with mingw32
+</A></li>
+        <LI>Next message: <A HREF="000929.html">Cross-compiling fldigi under Linux with mingw32
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#928">[ date ]</a>
+              <a href="thread.html#928">[ thread ]</a>
+              <a href="subject.html#928">[ subject ]</a>
+              <a href="author.html#928">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>A small bulb ... I build on Ubuntu 11.10 ... no change in mingw32 
+environment since change to fltk-1.3.0
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev</A>:~/dev.git/all$ gcc --version
+gcc (Ubuntu/Linaro 4.6.1-9ubuntu3) 4.6.1
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev</A>:~/dev.git/all$ echo $CROSSCFG
+--build=i686-pc-linux-gnu --host=i586-mingw32msvc
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev</A>:~/dev.git/all$ echo $PKGCFG
+PKG_CONFIG=/usr/local/win32/bin/i586-mingw32msvc-pkg-config
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev</A>:~/dev.git/all$ echo $PREFIX
+/usr/local/win32
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev</A>:~/dev.git/all$ /usr/local/win32/bin/fltk-config --version
+1.3.0
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev</A>:~/dev.git/all$ ./configure $CROSSCFG $PKGCFG 
+FLTK_CONFIG=$PREFIX/bin/fltk-config --with-ptw32=$PREFIX/ptw32 
+XMLRPC_C_CONFIG=$PREFIX/bin/xmlrpc-c-config
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev</A>:~/dev.git/all$ make
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev</A>:~/dev.git/all$ i586-mingw32msvc-strip src/flmsg.exe
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev</A>:~/dev.git/all$ make nsisinst
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev</A>:~/dev.git/all$ mv src/*setup*exe .
+
+73, Dave, W1HKJ
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000927.html">Cross-compiling fldigi under Linux with mingw32
+</A></li>
+	<LI>Next message: <A HREF="000929.html">Cross-compiling fldigi under Linux with mingw32
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#928">[ date ]</a>
+              <a href="thread.html#928">[ thread ]</a>
+              <a href="subject.html#928">[ subject ]</a>
+              <a href="author.html#928">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

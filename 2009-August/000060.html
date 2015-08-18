@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 65000dba31914693c28f6bc9b7b110a34463044f
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-August/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%2065000dba31914693c28f6bc9b7b110a34463044f&In-Reply-To=%3C200908151018.n7FAIgCL026090%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000059.html">
+   <LINK REL="Next"  HREF="000061.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 65000dba31914693c28f6bc9b7b110a34463044f</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%2065000dba31914693c28f6bc9b7b110a34463044f&In-Reply-To=%3C200908151018.n7FAIgCL026090%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 65000dba31914693c28f6bc9b7b110a34463044f">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Sat Aug 15 12:18:42 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000059.html">arq_io seg fault fix pushed to pu/df
+</A></li>
+        <LI>Next message: <A HREF="000061.html">[GIT] fldigi branch, master,	updated: 788489b32f818da2ea08d6b74482531593eedf65
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#60">[ date ]</a>
+              <a href="thread.html#60">[ thread ]</a>
+              <a href="subject.html#60">[ subject ]</a>
+              <a href="author.html#60">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  65000dba31914693c28f6bc9b7b110a34463044f (commit)
+       via  18b8702695fa214d4cacee7ade8d0643370abb9d (commit)
+       via  62608ea68bedcbb2e62a9e39964d1179458134c7 (commit)
+       via  bf164ebe96dcf78116678e551d0dedbdfdfc80f1 (commit)
+       via  3e6a5c48fd06b1b9d360e081e31985c5df808767 (commit)
+      from  09e4a1603a06f9cba32b47e4857f676fb81e473e (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+commit 65000dba31914693c28f6bc9b7b110a34463044f
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Aug 14 15:29:28 2009 -0500
+
+    arq_io seg fault bug fix
+    
+        Fixed failure to use mutex during access to thread data
+        Seg fault appeared primarily on slow XP computers.
+
+commit 18b8702695fa214d4cacee7ade8d0643370abb9d
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Aug 12 08:29:23 2009 -0500
+
+    Olivia 8/1000 standard mode
+    
+        Added 8/1000 to the menu system as a standard mode.
+        Used by Army MARS
+
+commit 62608ea68bedcbb2e62a9e39964d1179458134c7
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Wed Aug 12 07:38:45 2009 -0500
+
+    PKS mailserver mod
+    
+        Changes to psk mail server signal acquisition allow operator to
+        compensate for QRM.
+
+commit bf164ebe96dcf78116678e551d0dedbdfdfc80f1
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Tue Aug 4 13:07:31 2009 -0500
+
+    rigMEM modification
+    
+       bug fix based on recent reports from Kachina / rigMEM users
+
+commit 3e6a5c48fd06b1b9d360e081e31985c5df808767
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jul 31 09:33:20 2009 -0500
+
+    WRAP file extract
+    
+        Added seconds to the file date-time stamp.
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ src/dialogs/confdialog.cxx  |  101 ++++++++++++++++++++++++-------
+ src/dialogs/confdialog.fl   |   66 ++++++++++++++------
+ src/dialogs/fl_digi.cxx     |   37 +++++++----
+ src/include/confdialog.h    |    5 +-
+ src/include/configuration.h |    5 +-
+ src/logger/rx_extract.cxx   |    2 +-
+ src/misc/arq_io.cxx         |   82 ++++++++++++++-----------
+ src/psk/psk.cxx             |   27 ++++++---
+ src/rigcontrol/rigMEM.cxx   |  142 ++++++++++++++++++++++---------------------
+ 9 files changed, 294 insertions(+), 173 deletions(-)
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000059.html">arq_io seg fault fix pushed to pu/df
+</A></li>
+	<LI>Next message: <A HREF="000061.html">[GIT] fldigi branch, master,	updated: 788489b32f818da2ea08d6b74482531593eedf65
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#60">[ date ]</a>
+              <a href="thread.html#60">[ thread ]</a>
+              <a href="subject.html#60">[ subject ]</a>
+              <a href="author.html#60">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

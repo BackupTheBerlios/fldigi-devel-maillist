@@ -1,0 +1,343 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi for VHF/UHF FM data
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20for%20VHF/UHF%20FM%20data&In-Reply-To=%3C51F6E7D5.4060401%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001063.html">
+   <LINK REL="Next"  HREF="001064.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi for VHF/UHF FM data</H1>
+    <B>rc_gmail_imap</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20for%20VHF/UHF%20FM%20data&In-Reply-To=%3C51F6E7D5.4060401%40gmail.com%3E"
+       TITLE="Fldigi for VHF/UHF FM data">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Tue Jul 30 00:08:21 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001063.html">Fldigi for VHF/UHF FM data
+</A></li>
+        <LI>Next message: <A HREF="001064.html">[GIT] fldigi branch, maint/3.21,	updated: d375106fc5858fae4962614b6fc70ef2a38b60be
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1066">[ date ]</a>
+              <a href="thread.html#1066">[ thread ]</a>
+              <a href="subject.html#1066">[ subject ]</a>
+              <a href="author.html#1066">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Naive question: Could we port the AX-25 stack of Linux (Written in plain 
+C) to fldigi, so that it could use any of fldigi modems ? Then this 
+AX-25 stack would create a pseudo-tty on Linux, or a COM interface on 
+Windows  etc...
+
+Remi
+
+Le 28.07.2013 22:11, Charles Brabham a &#233;crit :
+&gt;<i> AX25 allows more efficient use of spectrum, as more than two stations 
+</I>&gt;<i> may use the same frequency at the same time.
+</I>&gt;<i>
+</I>&gt;<i> Some of care about spectrum-sharing more than others... Those of us 
+</I>&gt;<i> who do would like to see more modes available for AX25 operation.
+</I>&gt;<i>
+</I>&gt;<i> 73 DE Charles, N5PVL
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> ----- Original Message ----- From: &quot;Alberto Guglielmo&quot; 
+</I>&gt;<i> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">a.guglielmo at tcpsas.com</A>&gt;
+</I>&gt;<i> To: &quot;Remi Chateauneu&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>&gt;
+</I>&gt;<i> Cc: &quot;John Phelps&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kl4yfd at gmail.com</A>&gt;; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-alpha at lists.berlios.de</A>&gt;; 
+</I>&gt;<i> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">linuxham at yahoogroups.com</A>&gt;; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>&gt;
+</I>&gt;<i> Sent: Sunday, July 28, 2013 10:02 AM
+</I>&gt;<i> Subject: Re: Fldigi for VHF/UHF FM data
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> I want to emphasize Remi's words. Nothing prohibits to have the
+</I>&gt;<i> same functionalities on Windows, only the willingness, and time and
+</I>&gt;<i> ability, to implement some little intermediate level.
+</I>&gt;<i> But I think the development by now has gone his way in the direction
+</I>&gt;<i> of some form of &quot;proprietary&quot; network with little or no interoperability
+</I>&gt;<i> with the existing networking. Or no networking at all.
+</I>&gt;<i> And maybe for this reason noboby is interested in connecting one of
+</I>&gt;<i> the new modems to the &quot;old&quot; ax25, just to make happy the &quot;oldtimers&quot;
+</I>&gt;<i> with the new toy ;-)
+</I>&gt;<i> Me first, I'm unable to accomplish this task.
+</I>&gt;<i> Regards all
+</I>&gt;<i>
+</I>&gt;<i> IK1CHE Alberto
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On 07/28/13 16:35, Remi Chateauneu wrote:
+</I>&gt;&gt;<i> Quite understandable. But my only frustration is that I admire how on 
+</I>&gt;&gt;<i> Linux
+</I>&gt;&gt;<i> one could create a AX25 port with soundmodem (A software packet 
+</I>&gt;&gt;<i> modem), then
+</I>&gt;&gt;<i> mount on top of this, a TCP/IP interface.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> At this moment, you can use any TCP/IP program on top of your rig: 
+</I>&gt;&gt;<i> Everything
+</I>&gt;&gt;<i> works without change. I really find that great but unfortunately it 
+</I>&gt;&gt;<i> works
+</I>&gt;&gt;<i> only on Linux and, as you point out, the performance of AX25 in HF 
+</I>&gt;&gt;<i> does not
+</I>&gt;&gt;<i> seem fantastic (Although there are enhancements apparently, like
+</I>&gt;&gt;<i> <A HREF="https://lists.develer.com/pipermail/bertos/2010-December/002949.html">https://lists.develer.com/pipermail/bertos/2010-December/002949.html</A> or
+</I>&gt;&gt;<i> <A HREF="http://en.wikipedia.org/wiki/FX.25_Forward_Error_Correction">http://en.wikipedia.org/wiki/FX.25_Forward_Error_Correction</A> )
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This does not mean that I criticize your solution of course, because 
+</I>&gt;&gt;<i> indeed
+</I>&gt;&gt;<i> it works well. It is simply that I loved the technical simplicity and
+</I>&gt;&gt;<i> elegance of the AX25 implementation on Linux, and I always hoped this 
+</I>&gt;&gt;<i> would
+</I>&gt;&gt;<i> be possible to have the same but with PSK or any other modem.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thanks
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Remi
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Sat, Jul 27, 2013 at 1:53 PM, Rein Couperus &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">rein at couperus.com</A>
+</I>&gt;&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">rein at couperus.com</A>&gt;&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     First, AX25 is not the protocol you would develop for use on HF. Its
+</I>&gt;&gt;<i>     headers are killing your
+</I>&gt;&gt;<i>     throughput. That&#180;s why the pskmail protocol was developed by 
+</I>&gt;&gt;<i> K9PS, and
+</I>&gt;&gt;<i>     empirically optimized an extended by PA0R.
+</I>&gt;&gt;<i>     Also, the TCP protocol is unfit for use at HF, because of its speed
+</I>&gt;&gt;<i>     requirements.
+</I>&gt;&gt;<i>     The PSKmail servers act as a gateway between the air interface 
+</I>&gt;&gt;<i> protocol
+</I>&gt;&gt;<i>     and TCP/IP,
+</I>&gt;&gt;<i>     taking care of timing requirements of both networks and ARQ on 
+</I>&gt;&gt;<i> the air
+</I>&gt;&gt;<i>     interface
+</I>&gt;&gt;<i>     protocol. Because some of the modes used (PSK, PSKxxR, MFSK and 
+</I>&gt;&gt;<i> THOR)
+</I>&gt;&gt;<i>     use varicode, the timing requirement of the air interface is 
+</I>&gt;&gt;<i> non-trivial.
+</I>&gt;&gt;<i>     Also, because of the difficult channel conditions on HF and the QRM
+</I>&gt;&gt;<i>     genereated
+</I>&gt;&gt;<i>     by the fact that we use shared frequencies, it was necessary to 
+</I>&gt;&gt;<i> develop
+</I>&gt;&gt;<i>     adaptive, asymmetrical
+</I>&gt;&gt;<i>     mode switching. Try this with TCP.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     It is very easy to add services to the servers, they are 
+</I>&gt;&gt;<i> progrtammed in PERL.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     Rein PA0R
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     --
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     &quot;Available services are POP, SMTP, web access&quot;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     Simply based on TCP/IP or is there a dedicated socket for each 
+</I>&gt;&gt;<i> protocol ?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     Thanks
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     R
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     On Sat, Jul 27, 2013 at 11:41 AM, Rein Couperus &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">rein at couperus.com</A>
+</I>&gt;&gt;<i> &lt;<A HREF="http://rein@couperus.com">http://rein@couperus.com</A>&gt;&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         Yes, it is working with HF transceivers as well.
+</I>&gt;&gt;<i>         Tested with a FT857... of course you will need a frquency 
+</I>&gt;&gt;<i> with 2.5
+</I>&gt;&gt;<i>         kHz bandwidth.
+</I>&gt;&gt;<i>         (does not work on 30m in Region 1). We prefer staying within 
+</I>&gt;&gt;<i> 500 Hz
+</I>&gt;&gt;<i>         bw on HF,
+</I>&gt;&gt;<i>         to be a &#180;good citizen&#180; on these shared frequencies... We 
+</I>&gt;&gt;<i> reach 32
+</I>&gt;&gt;<i>         characters/second
+</I>&gt;&gt;<i>         ARQ with PSK500 on a clear channel, sending 512 bytes per 
+</I>&gt;&gt;<i> frame in
+</I>&gt;&gt;<i>         500 Hz bw
+</I>&gt;&gt;<i>         (52 cps compressed).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         Available services are POP, SMTP, web access (text, forms), grib
+</I>&gt;&gt;<i>         files, NOAA wx charts,
+</I>&gt;&gt;<i>         Twitter, full APRS compatibility (with socket for Xastir an 
+</I>&gt;&gt;<i> UIview),
+</I>&gt;&gt;<i>         file up/download and telnet.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         Rein PA0R
+</I>&gt;&gt;<i>         (Info: <A HREF="http://pskmail.org">http://pskmail.org</A>)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         Will it be usable on a &quot;normal&quot; radio such as FT817 ?
+</I>&gt;&gt;<i>         Also, at 2400 bauds, it might be nice to add a Hayes-compatible
+</I>&gt;&gt;<i>         pseudo-tty interface. It is fast enough to do a telnet 
+</I>&gt;&gt;<i> connection.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         Remi
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         On Sat, Jul 27, 2013 at 7:06 AM, Guy Story KC5GOI 
+</I>&gt;&gt;<i> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kc5goi at gmail.com</A>
+</I>&gt;&gt;<i> &lt;<A HREF="http://kc5goi@gmail.com">http://kc5goi@gmail.com</A>&gt;&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>             John, we have been using the multi-carrier PSK modes in 
+</I>&gt;&gt;<i> Denton
+</I>&gt;&gt;<i>             County on our bi-weekly net with good results for roughly a
+</I>&gt;&gt;<i>             year.  I have to go looking for it but we found on our 
+</I>&gt;&gt;<i> repeater
+</I>&gt;&gt;<i>             that lower frequency audio get more emphasis and 
+</I>&gt;&gt;<i> gradually rolls
+</I>&gt;&gt;<i>             off the higher in frequency you go.  I have graphs of the 
+</I>&gt;&gt;<i> data
+</I>&gt;&gt;<i>             but I need to dig for it.  I can to that tomorrow during 
+</I>&gt;&gt;<i> the VOA
+</I>&gt;&gt;<i>             Radiogram.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>             73
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>             Guy
+</I>&gt;&gt;<i>             KC5GOI
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>             On Fri, Jul 26, 2013 at 12:47 PM, John Phelps 
+</I>&gt;&gt;<i> &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kl4yfd at gmail.com</A>
+</I>&gt;&gt;<i> &lt;<A HREF="http://kl4yfd@gmail.com">http://kl4yfd@gmail.com</A>&gt;&gt; wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>                 Hello all,
+</I>&gt;&gt;<i>                 Apologies for the number of mailing-lists this 
+</I>&gt;&gt;<i> touches, but
+</I>&gt;&gt;<i>                 am taking a bit of a survey:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>                 Want see how many people would be interested in using,
+</I>&gt;&gt;<i>                 developing, and/or testing Fldigi for &quot;high speed&quot; 
+</I>&gt;&gt;<i> data over
+</I>&gt;&gt;<i>                 FM audio and/or FM-audio repeaters. In my testing so 
+</I>&gt;&gt;<i> far, it
+</I>&gt;&gt;<i>                 appears the speed would be somewhere in the 3 Kb/s to 
+</I>&gt;&gt;<i> 4 Kb/s
+</I>&gt;&gt;<i>                 range, possibly higher.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>                 Since the goal is fast data, audio coupling is out: 
+</I>&gt;&gt;<i> faster
+</I>&gt;&gt;<i>                 speeds simply require a direct-audio connection. My
+</I>&gt;&gt;<i>                 inexpensive solution here was to interface a Baofeng 
+</I>&gt;&gt;<i> UV-5R to
+</I>&gt;&gt;<i>                 a soundcard: see attached file for details (for good
+</I>&gt;&gt;<i>                 engineering practice, 1:1 isolation transformers 
+</I>&gt;&gt;<i> should be
+</I>&gt;&gt;<i>                 added to isolate the radio form the soundcard).
+</I>&gt;&gt;<i>                 Conveniently, Baofeng and other radios contain an 
+</I>&gt;&gt;<i> inbuilt VOX
+</I>&gt;&gt;<i>                 circuit to control PTT. No additional interface 
+</I>&gt;&gt;<i> needed (I
+</I>&gt;&gt;<i>                 recently purchased 3 for this project, hihi)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>                 I saw some testing months ago for a mode that could 
+</I>&gt;&gt;<i> be used
+</I>&gt;&gt;<i>                 over FM repeaters.
+</I>&gt;&gt;<i>                 Here I am proposing a new digital mode: NBEMS-FM
+</I>&gt;&gt;<i>                 This not a mode that I am making, but rather one I 
+</I>&gt;&gt;<i> think we
+</I>&gt;&gt;<i>                 all should contribute to and discuss together. This will
+</I>&gt;&gt;<i>                 result in a better overall design.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>                 The details of the NBEMS-FM mode should be, in my 
+</I>&gt;&gt;<i> opinion:
+</I>&gt;&gt;<i>                  * 2 Speeds: one for Uplink / Reliability, one for 
+</I>&gt;&gt;<i> Downlink /
+</I>&gt;&gt;<i>                 Backhaul
+</I>&gt;&gt;<i>                  * No options to accidentally mis-configure
+</I>&gt;&gt;<i>                  * Modem uses a set-frequency (no AFC to be 
+</I>&gt;&gt;<i> mis-adjusted)
+</I>&gt;&gt;<i>                  * Little-to-no FEC overhead
+</I>&gt;&gt;<i>                  * Use PSK instead of QAM, to better allow for drastic
+</I>&gt;&gt;<i>                 audio-level mis-adjustments to still decode
+</I>&gt;&gt;<i>                  * Common-sense balance of speed and reliability
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>                 In my testing here, it appears 8PSK is the highest
+</I>&gt;&gt;<i>                 constellation that is reliable over FM audio. I have 
+</I>&gt;&gt;<i> tested
+</I>&gt;&gt;<i>                 on-air patches for fldigi that reliably transmitted data
+</I>&gt;&gt;<i>                 using two 8PSK carriers at 500 Baud, for a datarate 
+</I>&gt;&gt;<i> (raw and
+</I>&gt;&gt;<i>                 net) of 3Kbps. Will work on porting those patches 
+</I>&gt;&gt;<i> forward to
+</I>&gt;&gt;<i>                 the recent Fldigi versions.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>                 First thing that is required is the common audio 
+</I>&gt;&gt;<i> upper and
+</I>&gt;&gt;<i>                 lower &quot;cutoff frequencies&quot; of amateur repeaters and 
+</I>&gt;&gt;<i> radios.
+</I>&gt;&gt;<i> &gt;From the previous testing, what was the consensus?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>                 Responses and opinions  appreciated at: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kl4yfd at gmail.com</A>
+</I>&gt;&gt;<i> &lt;<A HREF="http://kl4yfd@gmail.com">http://kl4yfd@gmail.com</A>&gt;, or on the mailing list.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>                 John
+</I>&gt;&gt;<i>                 KL4YFD
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>                 _______________________________________________
+</I>&gt;&gt;<i>                 fldigi-alpha mailing list
+</I>&gt;&gt;<i>                 <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;&gt;<i> &lt;<A HREF="http://fldigi-alpha@lists.berlios.de">http://fldigi-alpha@lists.berlios.de</A>&gt;
+</I>&gt;&gt;<i>                 <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>             --
+</I>&gt;&gt;<i>             73
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>             Guy Story KC5GOI
+</I>&gt;&gt;<i>             <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">kc5goi at gmail.com</A> &lt;<A HREF="http://kc5goi@gmail.com">http://kc5goi@gmail.com</A>&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>             _______________________________________________
+</I>&gt;&gt;<i>             fldigi-alpha mailing list
+</I>&gt;&gt;<i>             <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-alpha at lists.berlios.de</A> 
+</I>&gt;&gt;<i> &lt;<A HREF="http://fldigi-alpha@lists.berlios.de">http://fldigi-alpha@lists.berlios.de</A>&gt;
+</I>&gt;&gt;<i>             <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> fldigi-alpha mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-alpha at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-alpha">https://lists.berlios.de/mailman/listinfo/fldigi-alpha</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+</PRE>
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001063.html">Fldigi for VHF/UHF FM data
+</A></li>
+	<LI>Next message: <A HREF="001064.html">[GIT] fldigi branch, maint/3.21,	updated: d375106fc5858fae4962614b6fc70ef2a38b60be
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1066">[ date ]</a>
+              <a href="thread.html#1066">[ thread ]</a>
+              <a href="subject.html#1066">[ subject ]</a>
+              <a href="author.html#1066">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

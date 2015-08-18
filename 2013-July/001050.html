@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi for VHF/UHF FM data
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-July/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20for%20VHF/UHF%20FM%20data&In-Reply-To=%3CCAPRqYUXu%3DBZChEHa0OQMTpa6g-QQYRCao7yf9vD1Xg%2BPh4XEXA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001072.html">
+   <LINK REL="Next"  HREF="001053.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi for VHF/UHF FM data</H1>
+    <B>John Phelps</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20for%20VHF/UHF%20FM%20data&In-Reply-To=%3CCAPRqYUXu%3DBZChEHa0OQMTpa6g-QQYRCao7yf9vD1Xg%2BPh4XEXA%40mail.gmail.com%3E"
+       TITLE="Fldigi for VHF/UHF FM data">kl4yfd at gmail.com
+       </A><BR>
+    <I>Sat Jul 27 00:30:03 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001072.html">Fldigi for VHF/UHF FM data
+</A></li>
+        <LI>Next message: <A HREF="001053.html">3.21.72BX pushed to berlios/pu/df/
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1050">[ date ]</a>
+              <a href="thread.html#1050">[ thread ]</a>
+              <a href="subject.html#1050">[ subject ]</a>
+              <a href="author.html#1050">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Larry,
+
+Glad to see other hams interested in VHF/UHF FM/SSB high-speed data modes.
+:<i>-)
+</I>Thank you for the reports, those real-world reports are useful information.
+
+*About a high-speed SSB mode:*
+I have already some code here that extends the fldigi RTTY modem to support
+speeds of 600,1200, and 2400 baud minimum-shift-keying for use on SSB.
+Since you asked ;-) I will work on porting this code forward for people to
+use on both SSB and FM while the faster (and therefore more complex) mode
+is being constructed. The use of SSB over FM would definitely increase the
+data signal's range.
+
+Due to the frequency inaccuracy of SSB, I found this  RTTY/MSK modem to be
+far better suited. The high-speed FM mode by-design requires high frequency
+accuracy and therefore will perform terribly on SSB, if at all.
+
+My original intention with these RTTY/MSK 600, 1200, &amp; 2400 baud modes was
+to use them on 10-meter and 6-meter SSB / FM. They will work even better on
+2m / 70cm SSB and/or FM.
+
+I will work on getting the &quot;high-speed SSB-or-FM RTTY/MSK modes&quot; patch
+together, and push for its inclusion in the 3.21.74 release so others can
+join in on the fun, hihi.
+
+*Note*: For the SSB-or-FM-data modes: I am not adding new modes, but am
+just extending the &quot;custom RTTY&quot; panel to include 3 new baudrates (600,
+1200, 2400) and 3 new shifts (300,600,1200).
+
+End goal of this is, for me personally, is to use flarq at 1200/2400 baud
+on VHF/UHF.
+Hopefully others will find something interesting to do with it also.
+
+~ John
+KL4YFD
+
+ =======================
+
+On Fri, Jul 26, 2013 at 2:13 PM, Larry Jennings &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">jenninle2 at gmail.com</A>&gt; wrote:
+
+&gt;<i> John,
+</I>&gt;<i> I just read your message on linuxham about faster data speeds.  I don't
+</I>&gt;<i> know
+</I>&gt;<i> if this would count or not, but a friend and I tried using
+</I>&gt;<i> FM simplex over a path of about 17 miles on 2 meters.  I had a 5 element
+</I>&gt;<i> beam and he had a gain vertical at his end.  We were both
+</I>&gt;<i> Using FLDIGI at each end.  We were able to transmit test pages over that
+</I>&gt;<i> link using the PSK500 -  that's probably not any record
+</I>&gt;<i> or anything special, but were both using audio coupling between our rigs
+</I>&gt;<i> and
+</I>&gt;<i> our computers with audio transformers between the two.
+</I>&gt;<i> Our signals were full-quieting at both ends.
+</I>&gt;<i>
+</I>&gt;<i> I've also had another thought - could we use SSB on 2 meters and FLDIGI to
+</I>&gt;<i> extend the distance we could send data via VHF or UHF.
+</I>&gt;<i> Some of the modes supported by FLDIGI are designed to work at HF with QRM,
+</I>&gt;<i> QRN and bad propagation.  So maybe that would work
+</I>&gt;<i> also.
+</I>&gt;<i> There is also no reason not to use more that one audio carrier to transfer
+</I>&gt;<i> data - such as one at 1 KHz and another at 2 KHz simultaneously.
+</I>&gt;<i>
+</I>&gt;<i> Just a couple of things to think about.  Hope you can come up with
+</I>&gt;<i> something
+</I>&gt;<i> original.
+</I>&gt;<i>
+</I>&gt;<i> 73's es GUD LUCK
+</I>&gt;<i> Larry Jennings
+</I>&gt;<i> WB5IZL
+</I>&gt;<i> Greenville, Tx.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130726/df0d05ae/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130726/df0d05ae/attachment.html</A>&gt;
+</PRE>
+
+
+
+
+
+
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001072.html">Fldigi for VHF/UHF FM data
+</A></li>
+	<LI>Next message: <A HREF="001053.html">3.21.72BX pushed to berlios/pu/df/
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1050">[ date ]</a>
+              <a href="thread.html#1050">[ thread ]</a>
+              <a href="subject.html#1050">[ subject ]</a>
+              <a href="author.html#1050">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

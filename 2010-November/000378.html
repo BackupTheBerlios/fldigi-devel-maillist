@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> abort on insert file
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20abort%20on%20insert%20file&In-Reply-To=%3CAANLkTikyufYwFfYapwceXOasuYyDyE3rE9NLOgw3QWMH%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000380.html">
+   <LINK REL="Next"  HREF="000379.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>abort on insert file</H1>
+    <B>Andrew Hart</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20abort%20on%20insert%20file&In-Reply-To=%3CAANLkTikyufYwFfYapwceXOasuYyDyE3rE9NLOgw3QWMH%40mail.gmail.com%3E"
+       TITLE="abort on insert file">andylhart at gmail.com
+       </A><BR>
+    <I>Wed Nov 10 17:52:43 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000380.html">changes for consideration pushed to berlios/pu/df
+</A></li>
+        <LI>Next message: <A HREF="000379.html">[fldigi] #28: iKcaj
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#378">[ date ]</a>
+              <a href="thread.html#378">[ thread ]</a>
+              <a href="subject.html#378">[ subject ]</a>
+              <a href="author.html#378">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Received the following when trying to run an inserted file from a macro:
+
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">andy at andy-K7S5A</A>:~/Downloads$ ./fldigi
+I: testCommPorts: Found serial port /dev/ttyS0
+I: testCommPorts: Found serial port /dev/ttyS1
+I: testCommPorts: Found serial port /dev/ttyS2
+I: testCommPorts: Found serial port /dev/ttyS3
+I: testCommPorts: Found serial port /dev/ttyUSB0
+bt_audio_service_open: connect() failed: Connection refused (111)
+bt_audio_service_open: connect() failed: Connection refused (111)
+bt_audio_service_open: connect() failed: Connection refused (111)
+bt_audio_service_open: connect() failed: Connection refused (111)
+Expression 'snd_pcm_hw_params_set_format( pcm, hwParams, Pa2AlsaFormat(
+hostFormat ) )' failed in 'src/hostapi/alsa/pa_linux_alsa.c', line: 1077
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+Expression 'snd_pcm_hw_params_set_rate( pcm, hwParams, approx, dir )' failed
+in 'src/hostapi/alsa/pa_linux_alsa.c', line: 2470
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+./fldigi[0x813a4b1]
+[0xbd4400]
+/lib/libc.so.6(getc+0x1d)[0x7af7ad]
+./fldigi[0x812382a]
+./fldigi[0x81250aa]
+./fldigi[0x81255b2]
+./fldigi[0x80ac311]
+./fldigi[0x80a06b7]
+./fldigi[0x81cd8da]
+./fldigi[0x81c904b]
+./fldigi[0x81c9ba6]
+./fldigi[0x81f7d57]
+./fldigi[0x81f7db2]
+./fldigi[0x81f7f67]
+./fldigi[0x81ca536]
+./fldigi[0x81ca5b3]
+./fldigi[0x80ff13a]
+/lib/libc.so.6(__libc_start_main+0xe7)[0x765ce7]
+./fldigi[0x80535b1]
+
+****** Version information:
+fldigi 3.20.28
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, and
+others.
+License GPLv3+: GNU GPL version 3 or later &lt;
+<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+  built          : Sun Sep  5 06:54:44 CDT 2010 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">dave at linux-dev</A> on
+i686-pc-linux-gnu for i686-pc-linux-gnu
+
+  configure flags: '--enable-static' '--without-asciidoc' '--disable-tls'
+'--prefix=/tmp/fldigi-build'
+
+  compiler       : gcc version 4.3.3 (Ubuntu 4.3.3-5ubuntu4)
+
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+-I$(srcdir)/fileselector -pthread -I/usr/local/include -I/usr/local/include
+-I/usr/include/freetype2 -D_THREAD_SAFE -D_REENTRANT -I/usr/local/include
+-D_REENTRANT -I/usr/local/include -I/usr/include/libpng12
+-I/usr/local/include -pipe -Wall -fexceptions -O2 -ffast-math
+-finline-functions -DNDEBUG
+
+  linker flags   : -L/usr/local/lib -lportaudio -lm -lpthread
+/usr/local/lib/libfltk_images.a -lpng -lz -ljpeg /usr/local/lib/libfltk.a
+-lXft -lpthread -ldl -lm -lXext -lX11 -lX11 -L/usr/local/lib -lsndfile
+-lsamplerate -lpulse-simple -lpulse -L/usr/local/lib -lhamlib -lm -lpng12
+-Wl,-Bstatic -L/usr/local/lib -lxmlrpc_server_abyss++ -lxmlrpc_server++
+-lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss -lpthread -lxmlrpc++
+-lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -Wl,-Bdynamic -ldl
+-lrt -lpthread
+
+  libraries      : FLTK 1.2.0
+                   libsamplerate 0.1.4
+                   libsndfile 1.0.21
+                   PortAudio 19
+                   PulseAudio 0.9.14
+                   Hamlib 1.2.10
+                   XMLRPC-C 1.06.31
+
+
+Runtime information:
+  system         : Linux andy-K7S5A 2.6.35-22-generic #35-Ubuntu SMP Sat Oct
+16 20:36:48 UTC 2010 i686
+
+  libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                   libsndfile-1.0.21
+                   PortAudio V19-devel (built Aug  3 2010 05:16:18) 1899
+                   Pulseaudio 0.9.21-63-gd3efa-dirty
+                   Hamlib 1.2.12
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">andy at andy-K7S5A</A>:~/Downloads$
+
+===============================
+Here is the macro:-
+&lt;TX&gt;
+ test insert file
+ &lt;FILE:~/test.txt&gt;
+ end of test
+&lt;RX&gt;
+The macro crashes immediately without sending the test insert file line. If
+the macro is edited to not include a file name, e &lt;FILE:&gt; it runs correctly,
+sending the line before and after where the file should be inserted.
+===============================
+This is the inserted file test.txt (one line)
+
+this is an inserted file
+
+===============================
+
+This error is repeatable
+
+
+
+-- 
+Andrew Hart C.Eng. MRINA
+amateur radio call G8VTV / VE3NVK
+
+28, Chimo Drive, Kanata, ON, K2L 1A5 Canada
+
+tel: 613 592 5043
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20101110/39042ca2/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20101110/39042ca2/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000380.html">changes for consideration pushed to berlios/pu/df
+</A></li>
+	<LI>Next message: <A HREF="000379.html">[fldigi] #28: iKcaj
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#378">[ date ]</a>
+              <a href="thread.html#378">[ thread ]</a>
+              <a href="subject.html#378">[ subject ]</a>
+              <a href="author.html#378">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

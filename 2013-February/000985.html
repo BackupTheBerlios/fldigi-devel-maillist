@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Error running FLDigi
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Error%20running%20FLDigi&In-Reply-To=%3C512FDA6A.4090102%40madryndigital.com.ar%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000984.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Error running FLDigi</H1>
+    <B>GGLL</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Error%20running%20FLDigi&In-Reply-To=%3C512FDA6A.4090102%40madryndigital.com.ar%3E"
+       TITLE="Error running FLDigi">nagato at madryndigital.com.ar
+       </A><BR>
+    <I>Thu Feb 28 23:30:02 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000984.html">synop+KML rejected ?
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#985">[ date ]</a>
+              <a href="thread.html#985">[ thread ]</a>
+              <a href="subject.html#985">[ subject ]</a>
+              <a href="author.html#985">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Good evening sirs, I'm starting to use FLDigi, first time. I'm running 
+Debian Squeeze updated.
+
+The problem is, I can start FLdigi and configure it running as root, but 
+cannot when running as user.
+
+Running as user, it starts briefly, shows a second or two the initial 
+configuration window, then close.
+
+I've attached a text capture.
+
+I have no interface installed yet, just starting to learn the use of Fldigi.
+
+TIA
+Regards
+Guillermo - LU5WE.
+-------------- next part --------------
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">guillermo at Escarlata</A>:~$ fldigi
+I: main: CPU speed factor=104.322523: setting slowcpu=false, sample_converter=&quot;Medium Sinc Interpolator&quot;
+I: testCommPorts: Found serial port /dev/ttyS0
+I: testCommPorts: Found serial port /dev/ttyS1
+I: testCommPorts: Found serial port /dev/ttyS2
+I: testCommPorts: Found serial port /dev/ttyS3
+Cannot connect to server socket err = No existe el fichero o el directorio
+Cannot connect to server socket
+jack server is not running or cannot be started
+
+Caught signal 11
+Aborting fldigi due to a fatal error.
+Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+****** Stack trace:
+fldigi[0x8135e9c]
+[0xb770e400]
+fldigi[0x818a230]
+fldigi[0x8192f82]
+fldigi[0x8158aa4]
+/lib/libpthread.so.0(+0x57b0)[0xb76bf7b0]
+/lib/libc.so.6(clone+0x5e)[0xb7050cde]
+
+****** Version information:
+fldigi 3.20.20
+Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, and others.
+License GPLv3+: GNU GPL version 3 or later &lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+****** Build information:
+Build information:
+  built          : Fri Jul 23 14:55:33 UTC 2010 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">buildd at biber</A> on i486-pc-linux-gnu for i486-pc-linux-gnu
+
+  configure flags: '--build=i486-linux-gnu' '--prefix=/usr' '--includedir=${prefix}/include' '--mandir=${prefix}/share/man' '--infodir=${prefix}/share/info' '--sysconfdir=/etc' '--localstatedir=/var' '--libexecdir=${prefix}/lib/fldigi' '--disable-maintainer-mode' '--disable-dependency-tracking' 'build_alias=i486-linux-gnu' 'CXXFLAGS=-g -O2' 'LDFLAGS=' 'CPPFLAGS=' 'CFLAGS=-g -O2'
+
+  compiler       : gcc version 4.4.4 (Debian 4.4.4-7) 
+
+  compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml -I$(srcdir)/fileselector -pthread -I/usr/include/freetype2 -g -O2 -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT -I/usr/include/libpng12 -I/usr/include -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions -DNDEBUG
+
+  linker flags   : -lportaudio -lm -lpthread -lfltk_images -lfltk -lX11 -lsndfile -lsamplerate -lpulse-simple -lpulse -lhamlib -lm -lpng12 -L/usr/lib -lxmlrpc_server_abyss++ -lxmlrpc_server++ -lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss -lpthread -lxmlrpc++ -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -ldl -lrt -lpthread
+
+  libraries      : FLTK 1.1.10
+                   libsamplerate 0.1.7
+                   libsndfile 1.0.21
+                   PortAudio 19
+                   PulseAudio 0.9.21-rebootstrapped-dirty
+                   Hamlib 1.2.11
+                   XMLRPC-C 1.06.27
+
+
+Runtime information:
+  system         : Linux Escarlata 2.6.32-5-686 #1 SMP Mon Feb 25 01:04:36 UTC 2013 i686
+
+  libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+                   libsndfile-1.0.21
+                   PortAudio V19-devel (built Nov 25 2010) 1899
+                   Pulseaudio 0.9.21-rebootstrapped-dirty
+                   Hamlib 1.2.11
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">guillermo at Escarlata</A>:~$ 
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000984.html">synop+KML rejected ?
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#985">[ date ]</a>
+              <a href="thread.html#985">[ thread ]</a>
+              <a href="subject.html#985">[ subject ]</a>
+              <a href="author.html#985">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

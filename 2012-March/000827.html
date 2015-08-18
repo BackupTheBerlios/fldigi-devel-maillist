@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> RSA host key
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20RSA%20host%20key&In-Reply-To=%3C4F514CDB.8030907%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000828.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>RSA host key</H1>
+    <B>remi.chateauneu at gmail.com</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20RSA%20host%20key&In-Reply-To=%3C4F514CDB.8030907%40gmail.com%3E"
+       TITLE="RSA host key">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Fri Mar  2 23:42:35 CET 2012</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000828.html">NBEMS software suite and NBEMSham
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#827">[ date ]</a>
+              <a href="thread.html#827">[ thread ]</a>
+              <a href="subject.html#827">[ subject ]</a>
+              <a href="author.html#827">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+Yes !!!
+
+[<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">rchateau at DuoLnx</A> fldigi]$ git fetch -f berlios
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@       WARNING: POSSIBLE DNS SPOOFING DETECTED!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+The RSA host key for git.berlios.de has changed,
+and the key for the according IP address 193.175.135.86
+is unknown. This could either mean that
+DNS SPOOFING is happening or the IP address for the host
+and its host key have changed at the same time.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+It is also possible that the RSA host key has just been changed.
+The fingerprint for the RSA key sent by the remote host is
+13:e1:50:2f:e1:10:4b:2a:bd:46:e6:f5:2d:5b:68:34.
+Please contact your system administrator.
+Add correct host key in /home/rchateau/.ssh/known_hosts to get rid of 
+this message.
+Offending key in /home/rchateau/.ssh/known_hosts:16
+Password authentication is disabled to avoid man-in-the-middle attacks.
+Keyboard-interactive authentication is disabled to avoid 
+man-in-the-middle attacks.
+X11 forwarding is disabled to avoid man-in-the-middle attacks.
+Permission denied (publickey,password).
+fatal: The remote end hung up unexpectedly
+
+Le 29.02.2012 16:23, w1hkj a &#233;crit :
+&gt;<i> Anyone else seeing this kind of message when pushing to your public branch?
+</I>&gt;<i>
+</I>&gt;<i> Dave
+</I>&gt;<i>
+</I>&gt;<i> git push berlios HEAD:pu/df
+</I>&gt;<i> @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</I>&gt;<i> @ WARNING: POSSIBLE DNS SPOOFING DETECTED! @
+</I>&gt;<i> @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</I>&gt;<i> The RSA host key for git.berlios.de has changed,
+</I>&gt;<i> and the key for the corresponding IP address 193.175.135.86
+</I>&gt;<i> is unknown. This could either mean that
+</I>&gt;<i> DNS SPOOFING is happening or the IP address for the host
+</I>&gt;<i> and its host key have changed at the same time.
+</I>&gt;<i> @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</I>&gt;<i> @ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @
+</I>&gt;<i> @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+</I>&gt;<i> IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+</I>&gt;<i> Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+</I>&gt;<i> It is also possible that the RSA host key has just been changed.
+</I>&gt;<i> The fingerprint for the RSA key sent by the remote host is
+</I>&gt;<i> 13:e1:50:2f:e1:10:4b:2a:bd:46:e6:f5:2d:5b:68:34.
+</I>&gt;<i> Please contact your system administrator.
+</I>&gt;<i> Add correct host key in /home/dave/.ssh/known_hosts to get rid of this
+</I>&gt;<i> message.
+</I>&gt;<i> Offending key in /home/dave/.ssh/known_hosts:8
+</I>&gt;<i> RSA host key for git.berlios.de has changed and you have requested
+</I>&gt;<i> strict checking.
+</I>&gt;<i> Host key verification failed.
+</I>&gt;<i> fatal: The remote end hung up unexpectedly
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000828.html">NBEMS software suite and NBEMSham
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#827">[ date ]</a>
+              <a href="thread.html#827">[ thread ]</a>
+              <a href="subject.html#827">[ subject ]</a>
+              <a href="author.html#827">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

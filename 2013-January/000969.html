@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Starting a Shell command, testing if a process is running
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Starting%20a%20Shell%20command%2C%20testing%20if%20a%20process%20is%20running&In-Reply-To=%3CCACMWOgtfJU9Wk1YfRjce9VHT73VQhGcgkQtKWNKwek_aqvzqcA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000968.html">
+   <LINK REL="Next"  HREF="000970.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Starting a Shell command, testing if a process is running</H1>
+    <B>Remi Chateauneu</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Starting%20a%20Shell%20command%2C%20testing%20if%20a%20process%20is%20running&In-Reply-To=%3CCACMWOgtfJU9Wk1YfRjce9VHT73VQhGcgkQtKWNKwek_aqvzqcA%40mail.gmail.com%3E"
+       TITLE="Starting a Shell command, testing if a process is running">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Sun Jan 13 23:54:41 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000968.html">[GIT] fldigi branch, maint/3.21,	updated: a0f04f29a682306fa8245d2a310e89c45787fd4e
+</A></li>
+        <LI>Next message: <A HREF="000970.html">Starting a Shell command, testing if a process is running
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#969">[ date ]</a>
+              <a href="thread.html#969">[ thread ]</a>
+              <a href="subject.html#969">[ subject ]</a>
+              <a href="author.html#969">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+While working of the SYNOP decoder, I need to start a process with a
+given Shell command, returning its process id. I need also to test if
+a process with a given PID is running or not, and created for this a
+function which works on Linux only:
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commit;h=4de01c3b2f0108d563b47f6cd8124f894bc61eb0">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commit;h=4de01c3b2f0108d563b47f6cd8124f894bc61eb0</A>
+
+Any idea is warmly welcome about the most appropriate way to properly
+port these two functions on other operating systems.
+
+Thanks !
+
+// Tests if a process is running and returns -1 if the test could not be made.
+int test_process(int pid)
+{
+#ifdef __MINGW32__
+	return -1 ;
+#else
+	char buf[32];
+	sprintf(buf,&quot;/proc/%d/cmdline&quot;,pid);
+	FILE * tmpF = fopen( buf, &quot;r&quot; );
+	if( tmpF != NULL ) {
+		fclose(tmpF);
+		return 1 ;
+	}
+	return 0 ;
+#endif
+}
+
+// Starts a process and returns its process id, and -1 if error.
+// Returns 0 if this cannot be made.
+int fork_process( const char * cmd )
+{
+#ifdef __MINGW32__
+	// This is not an error
+	return 0 ;
+#else
+	pid_t newpid = fork();
+	switch(newpid) {
+	case -1:
+		return -1 ;
+	case 0:
+		execl(&quot;/bin/sh&quot;, &quot;sh&quot;, &quot;-c&quot;, cmd, NULL );
+		perror(&quot;execl&quot;);
+		exit(EXIT_FAILURE);
+	}
+	return newpid ;
+#endif
+}
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000968.html">[GIT] fldigi branch, maint/3.21,	updated: a0f04f29a682306fa8245d2a310e89c45787fd4e
+</A></li>
+	<LI>Next message: <A HREF="000970.html">Starting a Shell command, testing if a process is running
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#969">[ date ]</a>
+              <a href="thread.html#969">[ thread ]</a>
+              <a href="subject.html#969">[ subject ]</a>
+              <a href="author.html#969">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,215 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Fldigi crashreport
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-September/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20crashreport&In-Reply-To=%3C522B0C4F.1020608%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001087.html">
+   <LINK REL="Next"  HREF="001089.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Fldigi crashreport</H1>
+    <B>kayvax</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Fldigi%20crashreport&In-Reply-To=%3C522B0C4F.1020608%40gmail.com%3E"
+       TITLE="Fldigi crashreport">kayvax at gmail.com
+       </A><BR>
+    <I>Sat Sep  7 13:21:51 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001087.html">Fldigi crashreport
+</A></li>
+        <LI>Next message: <A HREF="001089.html">Fldigi crashreport
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1088">[ date ]</a>
+              <a href="thread.html#1088">[ thread ]</a>
+              <a href="subject.html#1088">[ subject ]</a>
+              <a href="author.html#1088">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear fldigi Devs,
+yesterday during debugging I have produced segfault results from
+different fonts. I have managed to find few packages after searching
+through what font files they contain where listed in backtrace log of
+fldigi debug:
+
+  * media-fonts/intlfonts
+  * media-fonts/artwiz-aleczapka-en
+  * media-fonts/font-cursor-misc
+
+I have cleared my OS from them and purged all other fonts. That lead to
+backtrace with file from my local ~/.fonts folder, which I purged.
+
+Today, to test this issue again I have reinstalled all fonts that I have
+purged yesterday and run fldigi. There was no segfault. I have moved
+~/.fonts back in place and run fldigi again resulting with segfault.
+
+I am quite at lost now. I am certain that during yestarday debug I have
+identified font files from listed above packages. I am certain that one
+of my local fonts causes segfault. Today I can not reproduce results
+from yesterday with any font package from OS repository (portage).
+
+It may be that I roused false alarm with my findings. I did not make a
+copy of font files that came from repository so I can not test them
+again. It may be that during some update they corrupted or even during
+their installation some process went wrong and due to frequent updates
+of font managing software it was resolved  but I have just not
+reinstalled them to correct that issue.
+
+Please forgive my rapid assuptions that xft and fltk were source of
+issue. And please forgive that I caused such a stir.
+
+Best regards
+Mikolaj
+
+W dniu 06.09.2013 21:22, kayvax pisze:
+&gt;<i> Dear Sir,
+</I>&gt;<i> thank you for your advice. I have narrowed issue to xft implementation
+</I>&gt;<i> in fltk library after following your suggestion.
+</I>&gt;<i>
+</I>&gt;<i> There is some kind of weird behaviour of fltk while using xft to
+</I>&gt;<i> manage fonts. As in backtrace here:
+</I>&gt;<i>
+</I>&gt;<i>     /Program received signal SIGSEGV, Segmentation fault./
+</I>&gt;<i>     /0x00000000009156cf in make_raw_name (raw=0x7fffffffd120 &quot; Zin&quot;, /
+</I>&gt;<i>     /    pretty=0xdf30e0 &quot;f3367536&quot;) at fl_set_fonts_xft.cxx:85/
+</I>&gt;<i>     /85      char *last = style + strlen(style) - 2;/
+</I>&gt;<i>     /(gdb) bt/
+</I>&gt;<i>     /#0  0x00000000009156cf in make_raw_name (raw=0x7fffffffd120 &quot; Zin&quot;, /
+</I>&gt;<i>     /    pretty=0xdf30e0 &quot;f3367536&quot;) at fl_set_fonts_xft.cxx:85/
+</I>&gt;<i>     /#1  0x0000000000915bc2 in Fl::set_fonts (pattern_name=0x0)/
+</I>&gt;<i>     /    at fl_set_fonts_xft.cxx:318/
+</I>&gt;<i>     /#2  0x0000000000720899 in main (argc=3, argv=0x7fffffffdc88) at
+</I>&gt;<i>     main.cxx:410/
+</I>&gt;<i>
+</I>&gt;<i> Fltk is using libXft in line 85 of /*fl_set_fonts_xft.cxx*. /There is
+</I>&gt;<i> partial font name/*pretty=0xdf30e0 &quot;f3367536&quot;*//. /I had such font in
+</I>&gt;<i> ~/.fonts .// I have looked it up and there is hardcoded part:
+</I>&gt;<i>
+</I>&gt;<i>     /...
+</I>&gt;<i>     static void make_raw_name(char *raw, char *pretty)//
+</I>&gt;<i>     //{//
+</I>&gt;<i>     //  // Input name will be &quot;Some Name:style = Bold Italic&quot; or
+</I>&gt;<i>     whatever//
+</I>&gt;<i>     //  // The plan is <A HREF="this://">this://</A>
+</I>&gt;<i>     //  // - the first char in the &quot;raw&quot; name becomes either I, B, P
+</I>&gt;<i>     or &quot; &quot; for//
+</I>&gt;<i>     //  //   italic, bold, bold italic or normal - this seems to be
+</I>&gt;<i>     the fltk way...//
+</I>&gt;<i>     //
+</I>&gt;<i>     //  char *style = strchr(pretty, ':');//
+</I>&gt;<i>     //  *char *last = style + strlen(style) - 2;*//*// line 85 from
+</I>&gt;<i>     upper backtrace*
+</I>&gt;<i>     //
+</I>&gt;<i>     //  if (style)//
+</I>&gt;<i>     //  {//
+</I>&gt;<i>     //    *style = 0; // Terminate &quot;name&quot; string//
+</I>&gt;<i>     //    style ++;   // point to start of style section//
+</I>&gt;<i>     //  }//
+</I>&gt;<i>     ...
+</I>&gt;<i>     /
+</I>&gt;<i>
+</I>&gt;<i> Which is not working when fonts in os are named in different way than
+</I>&gt;<i> stated. Developer of this code thought that every font will be named
+</I>&gt;<i> /&quot;Some Name:style = Bold Italic&quot;  /what is false. So, there has to be
+</I>&gt;<i> error in line 85 when such occurance happened.  Thus after removing
+</I>&gt;<i> all fonts from my os that do not comply with said code I have managed
+</I>&gt;<i> to run fldigi.
+</I>&gt;<i>
+</I>&gt;<i> The question is why fltk uses such unresponsible behaviour to discover
+</I>&gt;<i> OS fonts. None of my other software had ever an issue with fonts but
+</I>&gt;<i> for fldigi. I have read few more tickets on Fldigi site and some of
+</I>&gt;<i> them may have this origin as there is no clear indication that fltk
+</I>&gt;<i> has problems with font file - so segfault. Thanks to your suggestion I
+</I>&gt;<i> was able to spot partial font names in backtrace and after test of
+</I>&gt;<i> removing font file (another popped in backtrace), I discovered all I
+</I>&gt;<i> had wrote earlier
+</I>&gt;<i>
+</I>&gt;<i> Another issue is that fldigi users may want to have some other than
+</I>&gt;<i> core fonts on their system, what is just natural. I would have never
+</I>&gt;<i> imagined having such issue after getting some fancy fonts for
+</I>&gt;<i> LibreOffice. Making a list of &quot;allowed&quot; fonts for fltk seems hilarious.
+</I>&gt;<i>
+</I>&gt;<i> Best regards,
+</I>&gt;<i> Mikolaj
+</I>&gt;<i>
+</I>&gt;<i> W dniu 06.09.2013 16:49, w1hkj pisze:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On 09/06/2013 03:47 AM, kayvax wrote:
+</I>&gt;&gt;&gt;<i> Program received signal SIGSEGV, Segmentation fault.
+</I>&gt;&gt;&gt;<i> __strlen_sse2 () at ../sysdeps/x86_64/multiarch/../strlen.S:32
+</I>&gt;&gt;&gt;<i> 32	../sysdeps/x86_64/multiarch/../strlen.S: Nie ma takiego pliku ani katalogu.
+</I>&gt;&gt;&gt;<i> (gdb) bt
+</I>&gt;&gt;&gt;<i> #0  __strlen_sse2 () at ../sysdeps/x86_64/multiarch/../strlen.S:32
+</I>&gt;&gt;&gt;<i> #1  0x00007ffff6b79a36 in Fl::set_fonts(char const*) () from /usr/lib64/fltk-1/libfltk.so.1.3
+</I>&gt;&gt;&gt;<i> #2  0x00000000006fa239 in main (argc=1, argv=0x7fffffffdca8) at main.cxx:410
+</I>&gt;&gt;&gt;<i> (gdb) 
+</I>&gt;&gt;<i> Mikolaj,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This seems to be an issue within the the Fast Light Toolkit itself. 
+</I>&gt;&gt;<i> I suggest that you rebuild the fltk-1.3.2 library using static vice
+</I>&gt;&gt;<i> shared.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> cd to your fltk-1.3.2 source tree
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> $ ./configure --disable-shared --enable-debug
+</I>&gt;&gt;<i> $ make
+</I>&gt;&gt;<i> $ sudo make install
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Then rebuild the fldigi-3.21.75 source tree
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> $ ./configure --enable-static
+</I>&gt;&gt;<i> $ make
+</I>&gt;&gt;<i> $ gdb src/fldigi
+</I>&gt;&gt;<i> $ r --config-dir font_test
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This will create a new fldigi files directory in the pwd.  If and
+</I>&gt;&gt;<i> when the seg fault occurs you should be able to back trace into the
+</I>&gt;&gt;<i> fltk library code.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Let me know if this provides you with the needed assistance.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Dave
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> fldigi-devel mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>&gt;<i>
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130907/444d185b/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130907/444d185b/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001087.html">Fldigi crashreport
+</A></li>
+	<LI>Next message: <A HREF="001089.html">Fldigi crashreport
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1088">[ date ]</a>
+              <a href="thread.html#1088">[ thread ]</a>
+              <a href="subject.html#1088">[ subject ]</a>
+              <a href="author.html#1088">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

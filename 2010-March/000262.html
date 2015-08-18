@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master, updated:	56c8b66c129c15c447f700eac8f1fa1c06e03201
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%20updated%3A%0A%0956c8b66c129c15c447f700eac8f1fa1c06e03201&In-Reply-To=%3C20100321135126.GG2612%40charybde.local%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000261.html">
+   <LINK REL="Next"  HREF="000263.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master, updated:	56c8b66c129c15c447f700eac8f1fa1c06e03201</H1>
+    <B>Stephane Fillod</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%20updated%3A%0A%0956c8b66c129c15c447f700eac8f1fa1c06e03201&In-Reply-To=%3C20100321135126.GG2612%40charybde.local%3E"
+       TITLE="[GIT] fldigi branch, master, updated:	56c8b66c129c15c447f700eac8f1fa1c06e03201">f8cfe at free.fr
+       </A><BR>
+    <I>Sun Mar 21 14:51:26 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000261.html">[GIT] fldigi branch, master, updated:	56c8b66c129c15c447f700eac8f1fa1c06e03201
+</A></li>
+        <LI>Next message: <A HREF="000263.html">[SOLVED] Re: [GIT] fldigi branch, master, updated:	56c8b66c129c15c447f700eac8f1fa1c06e03201
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#262">[ date ]</a>
+              <a href="thread.html#262">[ thread ]</a>
+              <a href="subject.html#262">[ subject ]</a>
+              <a href="author.html#262">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sorry for the previous empty mail I just sent. PLBKAC.
+
+I have trouble to compile the version 3.20.0b8 (from git repo).
+Were does this Fl_Spinner2 come from?
+
+dialogs/notifydialog.cxx:58: error: expected constructor, destructor, or type conversion before &#8216;*&#8217; token
+dialogs/notifydialog.cxx:66: error: expected constructor, destructor, or type conversion before &#8216;*&#8217; token
+dialogs/notifydialog.cxx:72: error: expected constructor, destructor, or type conversion before &#8216;*&#8217; token
+dialogs/notifydialog.cxx: In function &#8216;Fl_Double_Window* make_notify_window()&#8217;:
+dialogs/notifydialog.cxx:173: error: expected type-specifier before &#8216;Fl_Spinner2&#8217;
+dialogs/notifydialog.cxx:173: error: cannot convert &#8216;int*&#8217; to &#8216;Fl_Spinner*&#8217; in assignment
+dialogs/notifydialog.cxx:173: error: expected &#8216;;&#8217; before &#8216;Fl_Spinner2&#8217;
+dialogs/notifydialog.cxx:198: error: expected type-specifier before &#8216;Fl_Spinner2&#8217;
+dialogs/notifydialog.cxx:198: error: cannot convert &#8216;int*&#8217; to &#8216;Fl_Spinner*&#8217; in assignment
+dialogs/notifydialog.cxx:198: error: expected &#8216;;&#8217; before &#8216;Fl_Spinner2&#8217;
+dialogs/notifydialog.cxx:228: error: expected type-specifier before &#8216;Fl_Spinner2&#8217;
+dialogs/notifydialog.cxx:228: error: cannot convert &#8216;int*&#8217; to &#8216;Fl_Spinner*&#8217; in assignment
+dialogs/notifydialog.cxx:228: error: expected &#8216;;&#8217; before &#8216;Fl_Spinner2&#8217;
+
+It looks like #include &quot;flslider2.h&quot; is missing from notifydialog.h.
+But, then:
+dialogs/notifydialog.cxx:58: error: conflicting declaration &#8216;Fl_Spinner2* cntNotifyDupTime&#8217;
+dialogs/notifydialog.h:32: error: &#8216;cntNotifyDupTime&#8217; has a previous declaration as &#8216;Fl_Spinner* cntNotifyDupTime&#8217;
+dialogs/notifydialog.cxx:66: error: conflicting declaration &#8216;Fl_Spinner2* cntNotifyActionLimit&#8217;
+dialogs/notifydialog.h:36: error: &#8216;cntNotifyActionLimit&#8217; has a previous declaration as &#8216;Fl_Spinner* cntNotifyActionLimit&#8217;
+dialogs/notifydialog.cxx:72: error: conflicting declaration &#8216;Fl_Spinner2* cntNotifyActionDialogTimeout&#8217;
+dialogs/notifydialog.h:39: error: &#8216;cntNotifyActionDialogTimeout&#8217; has a previous declaration as &#8216;Fl_Spinner* cntNotifyActionDialogTimeout&#8217;
+
+Could it be some files were missed during the commit?
+-- 
+Stephane - F8CFE
+
+herrfreese at BerliOS skribis:
+&gt;<i> This is an automated email from the git hooks/post-receive script. It was
+</I>&gt;<i> generated because a ref change was pushed to the repository containing
+</I>&gt;<i> the project &quot;fldigi&quot;.
+</I>&gt;<i> 
+</I>&gt;<i> The branch, master has been updated
+</I>&gt;<i>        via  56c8b66c129c15c447f700eac8f1fa1c06e03201 (commit)
+</I>&gt;<i>        via  3b63d8f33ead523ed088e7fd7821e34e606cfa64 (commit)
+</I>&gt;<i>        via  1fb42ac9c13a8e0bbabb37772a8fc3db389b9706 (commit)
+</I>&gt;<i>        via  e0c62c243ca3f5e82adf02e5748f067f0a963eb8 (commit)
+</I>&gt;<i>        via  cdd4457f0dbd1d616090ac596a14f4498201fdb5 (commit)
+</I>&gt;<i>        via  cff61120bce14833810fa296848439363b0af0c4 (commit)
+</I>&gt;<i>       from  2b97698bffa664b4eaba8363d6ffe8942c3a704d (commit)
+</I>&gt;<i> 
+</I>&gt;<i> Those revisions listed above that are new to this repository have
+</I>&gt;<i> not appeared on any other notification email; so we list those
+</I>&gt;<i> revisions in full, below.
+</I>&gt;<i> 
+</I>&gt;<i> - Log -----------------------------------------------------------------
+</I>&gt;<i> <A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=56c8b66c129c15c447f700eac8f1fa1c06e03201">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=56c8b66c129c15c447f700eac8f1fa1c06e03201</A>
+</I>&gt;<i> 
+</I>&gt;<i> commit 56c8b66c129c15c447f700eac8f1fa1c06e03201
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Sun Mar 21 05:45:30 2010 -0500
+</I>&gt;<i> 
+</I>&gt;<i>     Version 3.20.0b8
+</I>&gt;<i>     
+</I>&gt;<i>         Beta release
+</I>&gt;<i> 
+</I>&gt;<i>  2 files changed, 17 insertions(+), 3 deletions(-)
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> -----------------------------------------------------------------------
+</I>&gt;<i> 
+</I>&gt;<i> Summary of changes:
+</I>&gt;<i>  ChangeLog                   |   18 +++++++-
+</I>&gt;<i>  configure.ac                |    2 +-
+</I>&gt;<i>  src/cw_rtty/cw.cxx          |    7 ++-
+</I>&gt;<i>  src/dialogs/confdialog.cxx  |    1 +
+</I>&gt;<i>  src/dialogs/confdialog.fl   |    1 +
+</I>&gt;<i>  src/dialogs/fl_digi.cxx     |   74 ++++++++++++++++++++++++++++++
+</I>&gt;<i>  src/include/cw.h            |    1 +
+</I>&gt;<i>  src/include/fl_digi.h       |    5 ++
+</I>&gt;<i>  src/include/olivia.h        |   13 ++++-
+</I>&gt;<i>  src/include/waterfall.h     |    7 ++-
+</I>&gt;<i>  src/misc/macroedit.cxx      |   28 +++++++++++-
+</I>&gt;<i>  src/misc/macros.cxx         |  106 +++++++++++++++++++++++++++++++++++++++++--
+</I>&gt;<i>  src/misc/xmlrpc.cxx         |   28 -----------
+</I>&gt;<i>  src/olivia/olivia.cxx       |   76 ++++++++++---------------------
+</I>&gt;<i>  src/waterfall/waterfall.cxx |    9 ++--
+</I>&gt;<i>  src/widgets/flslider2.cxx   |    3 +-
+</I>&gt;<i>  16 files changed, 276 insertions(+), 103 deletions(-)
+</I>&gt;<i>   15.6% src/dialogs/
+</I>&gt;<i>    6.0% src/include/
+</I>&gt;<i>   39.6% src/misc/
+</I>&gt;<i>   24.8% src/olivia/
+</I>&gt;<i>    5.0% src/waterfall/
+</I>&gt;<i>    4.0% src/
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> hooks/post-receive
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000261.html">[GIT] fldigi branch, master, updated:	56c8b66c129c15c447f700eac8f1fa1c06e03201
+</A></li>
+	<LI>Next message: <A HREF="000263.html">[SOLVED] Re: [GIT] fldigi branch, master, updated:	56c8b66c129c15c447f700eac8f1fa1c06e03201
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#262">[ date ]</a>
+              <a href="thread.html#262">[ thread ]</a>
+              <a href="subject.html#262">[ subject ]</a>
+              <a href="author.html#262">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

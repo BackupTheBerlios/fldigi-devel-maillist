@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi 3.21.44 fails to build with fltk1.1
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.44%20fails%20to%20build%20with%20fltk1.1&In-Reply-To=%3C1339802316.5302.90.camel%40fourier%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000877.html">
+   <LINK REL="Next"  HREF="000879.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi 3.21.44 fails to build with fltk1.1</H1>
+    <B>Kamal Mostafa</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%203.21.44%20fails%20to%20build%20with%20fltk1.1&In-Reply-To=%3C1339802316.5302.90.camel%40fourier%3E"
+       TITLE="fldigi 3.21.44 fails to build with fltk1.1">kamal at whence.com
+       </A><BR>
+    <I>Sat Jun 16 01:18:36 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000877.html">[GIT] fldigi branch, maint/3.21,	updated: a64d11f9f7017bd908e190d9bf1ee14f2193fa1c
+</A></li>
+        <LI>Next message: <A HREF="000879.html">[GIT] fldigi branch, maint/3.21,	updated: 5425fb28c9afa245a738bf54cd8e52fdd1ca14f1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#878">[ date ]</a>
+              <a href="thread.html#878">[ thread ]</a>
+              <a href="subject.html#878">[ subject ]</a>
+              <a href="author.html#878">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Fri, 2012-06-15 at 22:57 +0200, herrfreese at BerliOS wrote:
+&gt;<i> commit a64d11f9f7017bd908e190d9bf1ee14f2193fa1c
+</I>&gt;<i> Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+</I>&gt;<i> Date:   Wed Jun 13 06:33:45 2012 -0500
+</I>&gt;<i> 
+</I>&gt;<i>     Version 3.21.44
+</I>&gt;<i>     
+</I>&gt;<i>       * Maintenance release
+</I>
+Ooops...  fldigi 3.21.44 fails to build on platforms which provide only
+fltk1.1 (whereas the previous fldigi .43 builds fine with fltk1.1).
+
+
+make[3]: Entering directory `/build/buildd/fldigi-3.21.44/src'
+  CXX    fldigi-hamlib.o
+g++ -DHAVE_CONFIG_H -I.  -DBUILD_FLDIGI -DLOCALEDIR=\&quot;/usr/share/locale\&quot; -I. -I./include -I./irrxml -I./fileselector -I./xmlrpcpp -DPKGDATADIR=\&quot;/usr/share/fldigi\&quot;  -pthread    -I/usr/include/freetype2   -D_THREAD_SAFE -D_REENTRANT       -D_REENTRANT     -I/usr/include/libpng12   -I/usr/include      -pipe -Wall -fexceptions -O2 -ffast-math -finline-functions  -DNDEBUG -g -O2 -c -o fldigi-hamlib.o `test -f 'rigcontrol/hamlib.cxx' || echo './'`rigcontrol/hamlib.cxx
+In file included from ./include/waterfall.h:36:0,
+                 from ./include/configuration.h:31,
+                 from rigcontrol/hamlib.cxx:33:
+./include/flslider2.h:89:3: error: 'Fl_Fontsize' does not name a type
+./include/flslider2.h:139:3: error: 'Fl_Fontsize' does not name a type
+./include/flslider2.h:141:17: error: 'Fl_Fontsize' has not been declared
+./include/flslider2.h: In member function 'void My_Counter::textsize(int)':
+./include/flslider2.h:141:33: error: 'textsize_' was not declared in this scope
+make[3]: *** [fldigi-hamlib.o] Error 1
+
+
+Full failed build log:
+<A HREF="https://launchpadlibrarian.net/107724092/buildlog_ubuntu-natty-i386.fldigi_3.21.44-1~kamal~natty_FAILEDTOBUILD.txt.gz">https://launchpadlibrarian.net/107724092/buildlog_ubuntu-natty-i386.fldigi_3.21.44-1~kamal~natty_FAILEDTOBUILD.txt.gz</A>
+
+
+
+The problem only affects older platforms (for Ubuntu, it affects Ubuntu
+11.04 and earlier).  This latest fldigi.44 builds fine on platforms
+which provide the more modern fltk1.3.
+
+ -Kamal
+
+
+
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: signature.asc
+Type: application/pgp-signature
+Size: 836 bytes
+Desc: This is a digitally signed message part
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120615/43d96a5d/attachment.pgp">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20120615/43d96a5d/attachment.pgp</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000877.html">[GIT] fldigi branch, maint/3.21,	updated: a64d11f9f7017bd908e190d9bf1ee14f2193fa1c
+</A></li>
+	<LI>Next message: <A HREF="000879.html">[GIT] fldigi branch, maint/3.21,	updated: 5425fb28c9afa245a738bf54cd8e52fdd1ca14f1
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#878">[ date ]</a>
+              <a href="thread.html#878">[ thread ]</a>
+              <a href="subject.html#878">[ subject ]</a>
+              <a href="author.html#878">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

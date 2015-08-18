@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Cross-compiling fldigi under Linux with mingw32
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-October/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Cross-compiling%20fldigi%20under%20Linux%20with%20mingw32&In-Reply-To=%3C50914526.7000000%40isnix.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000926.html">
+   <LINK REL="Next"  HREF="000928.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Cross-compiling fldigi under Linux with mingw32</H1>
+    <B>Thomas 'tom' Malkus</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Cross-compiling%20fldigi%20under%20Linux%20with%20mingw32&In-Reply-To=%3C50914526.7000000%40isnix.de%3E"
+       TITLE="Cross-compiling fldigi under Linux with mingw32">tom at isnix.de
+       </A><BR>
+    <I>Wed Oct 31 16:35:02 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000926.html">[GIT] fldigi branch, maint/3.21,	updated: eaf28092e30dac47db7ad30a47f6f77412ec774e
+</A></li>
+        <LI>Next message: <A HREF="000928.html">Cross-compiling fldigi under Linux with mingw32
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#927">[ date ]</a>
+              <a href="thread.html#927">[ thread ]</a>
+              <a href="subject.html#927">[ subject ]</a>
+              <a href="author.html#927">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi!
+
+which is the current mingw32 compiler to cross-compile fldigi under 
+Linux? I got always errors with the missing gmtime_r and localtime_r
+
+Or is there a pthreads-w32 release with this functions?
+
+Which version of FLKT is correct? FLTK 1.3 has a problem with double 
+defined struct dirent. I found an old hint to add !defined(__MINGW32__) 
+to FL/filename.H, this is ok for me, but is that right?
+
+<A HREF="https://fedorahosted.org/fldigi/wiki/Documentation/HOWTO/BuildOnMinGW">https://fedorahosted.org/fldigi/wiki/Documentation/HOWTO/BuildOnMinGW</A>
+is not very helpfully on this errors and I ask myself which versions are 
+used to build the Win32 version of fldigi?
+
+Could someone switch the lamp on? ;-)
+
+73, Tom
+
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: smime.p7s
+Type: application/pkcs7-signature
+Size: 3872 bytes
+Desc: S/MIME Kryptografische Unterschrift
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20121031/8e161283/attachment.bin">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20121031/8e161283/attachment.bin</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000926.html">[GIT] fldigi branch, maint/3.21,	updated: eaf28092e30dac47db7ad30a47f6f77412ec774e
+</A></li>
+	<LI>Next message: <A HREF="000928.html">Cross-compiling fldigi under Linux with mingw32
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#927">[ date ]</a>
+              <a href="thread.html#927">[ thread ]</a>
+              <a href="subject.html#927">[ subject ]</a>
+              <a href="author.html#927">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

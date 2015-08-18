@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [fldigi] #13: fldigi (compiled from source) dies upon invocation
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5Bfldigi%5D%20%2313%3A%20fldigi%20%28compiled%20from%20source%29%20dies%20upon%20invocation&In-Reply-To=%3C053.04d44128171312cdaa3e883243eb92af%40fedorahosted.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000277.html">
+   <LINK REL="Next"  HREF="000279.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[fldigi] #13: fldigi (compiled from source) dies upon invocation</H1>
+    <B>fldigi</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5Bfldigi%5D%20%2313%3A%20fldigi%20%28compiled%20from%20source%29%20dies%20upon%20invocation&In-Reply-To=%3C053.04d44128171312cdaa3e883243eb92af%40fedorahosted.org%3E"
+       TITLE="[fldigi] #13: fldigi (compiled from source) dies upon invocation">trac at fedorahosted.org
+       </A><BR>
+    <I>Sun Apr 25 07:07:26 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000277.html">4800 bps GMSK?
+</A></li>
+        <LI>Next message: <A HREF="000279.html">[GIT] fldigi branch, master,	updated: 00addd8c1135d354e2dee85c3bf9b517dc38b127
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#278">[ date ]</a>
+              <a href="thread.html#278">[ thread ]</a>
+              <a href="subject.html#278">[ subject ]</a>
+              <a href="author.html#278">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>#13: fldigi (compiled from source) dies upon invocation
+-----------------------+----------------------------------------------------
+ Reporter:  anonymous  |        Type:  defect
+   Status:  new        |   Milestone:        
+Component:  general    |     Version:        
+ Severity:  normal     |    Keywords:        
+-----------------------+----------------------------------------------------
+ <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">jim at aether</A>:~&gt; fldigi &amp;
+ [1] 24433
+ <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">jim at aether</A>:~&gt;
+ Caught signal 11
+ Aborting fldigi due to a fatal error.
+ Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+ or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+
+ ****** Stack trace:
+ fldigi[0x811b781]
+ [0xffffe400]
+ fldigi[0x809fd82]
+ fldigi[0x80a055b]
+ fldigi[0x80671d7]
+ fldigi[0x80df0c0]
+ /lib/libc.so.6(__libc_start_main+0xe5)[0xb70b5705]
+ fldigi[0x8057311]
+
+ ****** Version information:
+ fldigi 3.20.0bA
+ Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, and
+ others.
+ License GPLv3+: GNU GPL version 3 or later
+ &lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+ This is free software: you are free to change and redistribute it.
+ There is NO WARRANTY, to the extent permitted by law.
+
+ ****** Build information:
+ Build information:
+   built          : Sat Apr 24 23:48:09 CDT 2010 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">root at aether</A> on i686-pc-
+ linux-gnu for i686-pc-linux-gnu
+
+   configure flags:
+
+   compiler       : gcc version 4.3.2 [gcc-4_3-branch revision 141291]
+ (SUSE Linux)
+
+   compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml
+ -I$(srcdir)/fileselector -pthread -march=i586 -mtune=i686 -fmessage-
+ length=0 -O2 -Wall -D_FORTIFY_SOURCE=2 -fstack-protector -funwind-tables
+ -fasynchronous-unwind-tables -g -fno-strict-aliasing -D_THREAD_SAFE
+ -D_REENTRANT -I/usr/include/libpng12 -pipe -Wall -fexceptions -O2 -ffast-
+ math -finline-functions -DNDEBUG
+
+   linker flags   : -lportaudio -lm -lpthread -lfltk_images -lpng -lz
+ -ljpeg -lfltk -lpthread -ldl -lm -lXext -lX11 -lX11 -lsamplerate -lpng12
+ -ldl -lrt -lpthread
+
+   libraries      : FLTK 1.1.9
+                    libsamplerate 0.1.4
+                    PortAudio 19
+
+ Runtime information:
+   system         : Linux aether 2.6.27.45-0.1-pae #1 SMP 2010-02-22
+ 16:49:47 +0100 i686
+
+   libraries      : libsamplerate-0.1.4 (c) 2002-2008 Erik de Castro Lopo
+                    PortAudio V19-devel (built Dec  3 2008) 1899
+
+-- 
+Ticket URL: &lt;<A HREF="https://fedorahosted.org/fldigi/ticket/13">https://fedorahosted.org/fldigi/ticket/13</A>&gt;
+fldigi &lt;<A HREF="http://www.w1hkj.com/Fldigi.html">http://www.w1hkj.com/Fldigi.html</A>&gt;
+Digital modem program for radio amateurs
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000277.html">4800 bps GMSK?
+</A></li>
+	<LI>Next message: <A HREF="000279.html">[GIT] fldigi branch, master,	updated: 00addd8c1135d354e2dee85c3bf9b517dc38b127
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#278">[ date ]</a>
+              <a href="thread.html#278">[ thread ]</a>
+              <a href="subject.html#278">[ subject ]</a>
+              <a href="author.html#278">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

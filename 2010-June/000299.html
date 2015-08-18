@@ -1,0 +1,291 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, master,	updated: 7aab2d5c5080138ead5caba4045d373946059c4d
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%207aab2d5c5080138ead5caba4045d373946059c4d&In-Reply-To=%3C201006051730.o55HUEN0003422%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000298.html">
+   <LINK REL="Next"  HREF="000300.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, master,	updated: 7aab2d5c5080138ead5caba4045d373946059c4d</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20master%2C%0A%09updated%3A%207aab2d5c5080138ead5caba4045d373946059c4d&In-Reply-To=%3C201006051730.o55HUEN0003422%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, master,	updated: 7aab2d5c5080138ead5caba4045d373946059c4d">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Sat Jun  5 19:30:14 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000298.html">[fldigi] #5: fldigi crash
+</A></li>
+        <LI>Next message: <A HREF="000300.html">fldigi and QSK
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#299">[ date ]</a>
+              <a href="thread.html#299">[ thread ]</a>
+              <a href="subject.html#299">[ subject ]</a>
+              <a href="author.html#299">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, master has been updated
+       via  7aab2d5c5080138ead5caba4045d373946059c4d (commit)
+       via  6e617cf2f0ea526cd6d73edf6c288258c49dedd8 (commit)
+       via  d46b8a410832a68ae10ed475da83a3bfadae5f64 (commit)
+       via  03f1ba743c17a9d88c95bab743d89f2e11365cbb (commit)
+       via  0790350480a77d959a18483b566e32f16373c870 (commit)
+       via  f6f0ea930335e1d6beae5746c3c803364b61125b (commit)
+       via  669ee37ecfaca6f0275431f8f894a46296486834 (commit)
+       via  e9d7520f93c747dbac4509b7b934712157c756c3 (commit)
+       via  d7d19f07bc597adc23f175a67101dabf02cf6a0e (commit)
+       via  c3fbd31a8a7ed4fc5f1a9f9a3dd29963a3cf4e6d (commit)
+       via  e36afb0304eb8de1533c84b8bb7d944de9431670 (commit)
+       via  1387fbed95e23be3ac8adcbc5a0b6137289a5e9d (commit)
+      from  2508852b03696e8c430f7d13081645ba19eb371b (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=7aab2d5c5080138ead5caba4045d373946059c4d">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=7aab2d5c5080138ead5caba4045d373946059c4d</A>
+
+commit 7aab2d5c5080138ead5caba4045d373946059c4d
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat Jun 5 12:29:36 2010 -0500
+
+    Version 3.21.0AB
+    
+      Alpha release
+
+ 2 files changed, 32 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=6e617cf2f0ea526cd6d73edf6c288258c49dedd8">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=6e617cf2f0ea526cd6d73edf6c288258c49dedd8</A>
+
+commit 6e617cf2f0ea526cd6d73edf6c288258c49dedd8
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jun 4 18:43:12 2010 -0500
+
+    TX Wrap disable
+    
+      Disable word wrap when file insert or drag-n-drop operation
+      is performed.  Restore word wrap to former state after TX
+      is finished or TX panel is cleared.
+
+ 5 files changed, 44 insertions(+), 3 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=d46b8a410832a68ae10ed475da83a3bfadae5f64">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=d46b8a410832a68ae10ed475da83a3bfadae5f64</A>
+
+commit d46b8a410832a68ae10ed475da83a3bfadae5f64
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Fri Jun 4 18:33:44 2010 -0500
+
+    RSID squelch
+    
+      * Added user setting in seconds to allow RSID to open squelch in
+        decoder.
+      * Changed default to Extended Characters for Olivia, Contestia
+        and MT63
+      * Change default to &quot;Capture wrapped messages&quot;
+
+ 5 files changed, 101 insertions(+), 58 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=03f1ba743c17a9d88c95bab743d89f2e11365cbb">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=03f1ba743c17a9d88c95bab743d89f2e11365cbb</A>
+
+commit 03f1ba743c17a9d88c95bab743d89f2e11365cbb
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu Jun 3 06:38:17 2010 -0500
+
+    RSID tx suppression
+    
+      Suppress RsID transmit for unsupported RTTY, OLIVIA and
+      CONTESTIA modes.
+
+ 1 files changed, 3 insertions(+), 3 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=0790350480a77d959a18483b566e32f16373c870">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=0790350480a77d959a18483b566e32f16373c870</A>
+
+commit 0790350480a77d959a18483b566e32f16373c870
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat May 15 07:16:33 2010 -0500
+
+    Pulse audio
+    
+      flush blocking
+        Deleted call to pa_simple_drain.
+        pa_simple_drain caused long delays on Ubuntu 9.04, 9.10 and
+        10.04 due to blocking by pulse audio library
+
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=f6f0ea930335e1d6beae5746c3c803364b61125b">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=f6f0ea930335e1d6beae5746c3c803364b61125b</A>
+
+commit f6f0ea930335e1d6beae5746c3c803364b61125b
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">rchateau at DuoLnx.</A>(none)&gt;
+Date:   Sat May 15 07:16:31 2010 -0500
+
+    WEFAX bug fixes
+    
+      * The logbook is updated when sending/receiving a file.
+      * Speed-up when displaying.
+      * Does not hang when switching to another mode with a macro.
+      * Code cleanup.
+      * Less loss of input audio frames.
+      * Fax transmit is re-enabled.
+
+ 4 files changed, 136 insertions(+), 57 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=669ee37ecfaca6f0275431f8f894a46296486834">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=669ee37ecfaca6f0275431f8f894a46296486834</A>
+
+commit 669ee37ecfaca6f0275431f8f894a46296486834
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">rchateau at DuoLnx.</A>(none)&gt;
+Date:   Sat May 15 07:16:30 2010 -0500
+
+    WEFAX additions
+    
+      * Added more input filters.
+      * Detect lost frames and attempt to compensate.
+      * Less CPU used for signal/noise detection.
+
+ 2 files changed, 259 insertions(+), 100 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e9d7520f93c747dbac4509b7b934712157c756c3">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e9d7520f93c747dbac4509b7b934712157c756c3</A>
+
+commit e9d7520f93c747dbac4509b7b934712157c756c3
+Author: Remi Chateauneu &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">rchateau at DuoLnx.</A>(none)&gt;
+Date:   Sat May 15 07:16:28 2010 -0500
+
+    WEFAX image size
+    
+      * Initial image height is bigger.
+      * Adjusted the size of some widgets.
+
+ 1 files changed, 4 insertions(+), 4 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=d7d19f07bc597adc23f175a67101dabf02cf6a0e">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=d7d19f07bc597adc23f175a67101dabf02cf6a0e</A>
+
+commit d7d19f07bc597adc23f175a67101dabf02cf6a0e
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Sat May 15 07:16:26 2010 -0500
+
+    PSK RSID
+    
+      Disabled signal search on init of psk modem types
+      Prevents jumping off of RSID detected frequency
+
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=c3fbd31a8a7ed4fc5f1a9f9a3dd29963a3cf4e6d">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=c3fbd31a8a7ed4fc5f1a9f9a3dd29963a3cf4e6d</A>
+
+commit c3fbd31a8a7ed4fc5f1a9f9a3dd29963a3cf4e6d
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu May 13 14:30:17 2010 -0500
+
+    RSID DomEX-FEC
+    
+      Resolve RSID for DominoEX / DominoEX-FEC modes
+
+ 3 files changed, 14 insertions(+), 3 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e36afb0304eb8de1533c84b8bb7d944de9431670">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=e36afb0304eb8de1533c84b8bb7d944de9431670</A>
+
+commit e36afb0304eb8de1533c84b8bb7d944de9431670
+Author: Stelios Bounanos &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">vcs at enotty.net</A>&gt;
+Date:   Thu May 13 14:30:07 2010 -0500
+
+    Implement CLOCK_MONOTONIC on OS X
+
+ 1 files changed, 12 insertions(+), 2 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=1387fbed95e23be3ac8adcbc5a0b6137289a5e9d">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=1387fbed95e23be3ac8adcbc5a0b6137289a5e9d</A>
+
+commit 1387fbed95e23be3ac8adcbc5a0b6137289a5e9d
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Thu May 13 14:29:50 2010 -0500
+
+    WEFAX MINGW32
+    
+      Fix for usleep call in wefax-pic.cxx, incompatible with MINGW32
+
+ 1 files changed, 11 insertions(+), 0 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                   |   32 +++-
+ configure.ac                |    2 +-
+ src/dialogs/confdialog.cxx  |   76 +++++---
+ src/dialogs/confdialog.fl   |   63 ++++---
+ src/dialogs/fl_digi.cxx     |   22 +++
+ src/include/FTextView.h     |    4 +-
+ src/include/confdialog.h    |    1 +
+ src/include/configuration.h |   11 +-
+ src/include/fl_digi.h       |    2 +
+ src/include/wefax.h         |    3 +
+ src/misc/timeops.cxx        |   14 ++-
+ src/psk/psk.cxx             |    1 +
+ src/rsid/rsid.cxx           |   25 ++-
+ src/soundcard/sound.cxx     |    4 +-
+ src/wefax/wefax-pic.cxx     |   52 ++++--
+ src/wefax/wefax.cxx         |  436 ++++++++++++++++++++++++++++++++-----------
+ src/widgets/FTextRXTX.cxx   |   11 +-
+ src/widgets/FTextView.cxx   |   14 ++
+ src/widgets/picture.cxx     |   46 +++--
+ 19 files changed, 602 insertions(+), 217 deletions(-)
+  28.7% src/dialogs/
+   4.5% src/include/
+  52.3% src/wefax/
+   6.7% src/widgets/
+   4.8% src/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000298.html">[fldigi] #5: fldigi crash
+</A></li>
+	<LI>Next message: <A HREF="000300.html">fldigi and QSK
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#299">[ date ]</a>
+              <a href="thread.html#299">[ thread ]</a>
+              <a href="subject.html#299">[ subject ]</a>
+              <a href="author.html#299">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

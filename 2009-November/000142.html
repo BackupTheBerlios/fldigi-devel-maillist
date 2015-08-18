@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Compiling fldigi and flrig - kudos and quirks
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Compiling%20fldigi%20and%20flrig%20-%20kudos%20and%20quirks&In-Reply-To=%3CBLU0-SMTP173739D8DEFAB73672878A86B00%40phx.gbl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000141.html">
+   <LINK REL="Next"  HREF="000143.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Compiling fldigi and flrig - kudos and quirks</H1>
+    <B>Andrew Hart</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Compiling%20fldigi%20and%20flrig%20-%20kudos%20and%20quirks&In-Reply-To=%3CBLU0-SMTP173739D8DEFAB73672878A86B00%40phx.gbl%3E"
+       TITLE="Compiling fldigi and flrig - kudos and quirks">Andrew.hart at bell.net
+       </A><BR>
+    <I>Thu Nov  5 20:17:42 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000141.html">[GIT] fldigi branch, master,	updated: ec7ef1eb3d5922d91894799e969bbe07e37564aa
+</A></li>
+        <LI>Next message: <A HREF="000143.html">[GIT] fldigi branch, master,	updated: 2d95d82047f4fb2bb45bfc5d47319fd5148a412b
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#142">[ date ]</a>
+              <a href="thread.html#142">[ thread ]</a>
+              <a href="subject.html#142">[ subject ]</a>
+              <a href="author.html#142">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Last week I upgraded my Ubuntu 9.04 jaunty to 9.10 karmic, what a mess. When
+I tried to run fldigi none of the required library files (*.so) were found
+as shown by running the ldd command against fldigi, and some other
+programmes. These programmes had worked on the 9.04. Yes, they were all
+there in the right place. 
+
+ 
+
+So yesterday I reinstalled from clean and everything worked again
+eventually. I had problems in that the clean install broke my grub
+multi-boot environment, but that was easily fixed. I then decided just for
+the fun of it to compile both fldigi and flrig.
+
+ 
+
+No problems with fldigi, the instructions on the web site were excellent and
+all of the necessary libraries were found with synaptic. Compiled and ran
+perfectly.
+
+ 
+
+Not quite so easy for flrig as the library requirements are not stated.
+After a number of makes I determined that the libraries needed are:-
+
+               libxft-dev
+
+               libxinerama-dev
+
+               libcurlocaml-dev
+
+ 
+
+I hope I got those names spelt right.
+
+ 
+
+After compiling and no more errors, there is however one little problem with
+flrig, [version 0.9.956] the left mouse button does not increase the
+frequency but the right one lowers it. (the mouse buttons work correctly in
+fldigi).
+
+ 
+
+Before I go plunging into the code, has anyone seen this behaviour before in
+Ubuntu? Note, I have not tried the precompiled version yet to see if that
+mimics this behaviour, I somehow do not expect it to.
+
+ 
+
+n.b. this is the first time I have compiled and done anything like this in
+about a decade so it was all a new experience. So the instructions were very
+good as far as I was concerned, and I am not a programmer but a naval
+architect.
+
+ 
+
+Thanks,  
+
+ 
+
+Andy - VE3NVK
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20091105/72b03f36/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20091105/72b03f36/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000141.html">[GIT] fldigi branch, master,	updated: ec7ef1eb3d5922d91894799e969bbe07e37564aa
+</A></li>
+	<LI>Next message: <A HREF="000143.html">[GIT] fldigi branch, master,	updated: 2d95d82047f4fb2bb45bfc5d47319fd5148a412b
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#142">[ date ]</a>
+              <a href="thread.html#142">[ thread ]</a>
+              <a href="subject.html#142">[ subject ]</a>
+              <a href="author.html#142">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

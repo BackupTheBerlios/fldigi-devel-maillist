@@ -1,0 +1,181 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Building Hamlib with MXE
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-April/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Building%20Hamlib%20with%20MXE&In-Reply-To=%3CCACMWOgvmkffdVKiRwdz090g2nb1WOhOdHpzSGgU7X_uq9tGLLw%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="001001.html">
+   <LINK REL="Next"  HREF="001003.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Building Hamlib with MXE</H1>
+    <B>Remi Chateauneu</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Building%20Hamlib%20with%20MXE&In-Reply-To=%3CCACMWOgvmkffdVKiRwdz090g2nb1WOhOdHpzSGgU7X_uq9tGLLw%40mail.gmail.com%3E"
+       TITLE="Building Hamlib with MXE">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Wed Apr 17 14:10:59 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="001001.html">[GIT] fldigi branch, maint/3.21,	updated: d052e147e17fba99a05e0c740e87e42c5fc4981c
+</A></li>
+        <LI>Next message: <A HREF="001003.html">fldigi: Report about abnormal termination
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1002">[ date ]</a>
+              <a href="thread.html#1002">[ thread ]</a>
+              <a href="subject.html#1002">[ subject ]</a>
+              <a href="author.html#1002">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Lars,
+
+&quot;Could you claim which aspects of fidigi have had to be tweaked?&quot;
+
+These small tweaks are necessary only because of the newer Mingw version
+which comes with MXE. There is nothing critical at all because the porting
+to Mingw has already been made, this is basically just another Mingw
+flavour. I do not have all of them in mind but for example:
+
+(1) printf(&quot;%lld&quot;,X); must be replaced by printf(&quot;%&quot; PRId64, X );
+
+(2) An M4 script does not detect correctly if the platform has
+sem_timedwait() because now sem_timedwait comes with libpthread.dll but
+pthreadGC2.dll is obsolete (Not sure, that's the idea).
+
+(3) Unused variables etc...
+
+(4) Do not configure XML-RPC that I could not build yet (It will come).
+Again, once you have the correct ./configure parameters, it is extremely
+simple to build fldigi with MXE.
+
+
+&quot;How did you include hamlib3 into mxe&quot;
+
+I did not include it into MXE. I cross-compiled, linked and installed as a
+Windows library, in the MXE environment. That is:
+
+(1) I downloaded Hamlib3
+
+(2) tar -xzf
+
+(3) ./configure --the-parameters-for-mxe-in-my-previous-emails
+
+(4) make
+
+(5) sudo make install
+
+&quot;Et voila&quot;, I can build any hamlib-based application for Windows, including
+fldigi.
+
+
+&quot;Could you explain what would be the manual step? ... If hamlib3 would not
+work with our project code, I would concider to tweak the existing hamlib2&quot;
+I think it is about changing the make infrastructure.
+
+ Probably the very best is to contact Nate or Stephane.
+
+73 de Remi
+
+
+
+On Wed, Apr 17, 2013 at 12:21 PM, Lars &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">mail at dl5rcw.de</A>&gt; wrote:
+
+&gt;<i> Hello Remi,
+</I>&gt;<i>
+</I>&gt;<i> great that you already walked through all those steps.
+</I>&gt;<i> Could you claim which aspects of fidigi have had to be tweaked? This
+</I>&gt;<i> could give me a clue if those would impact to existing projects, too.
+</I>&gt;<i>
+</I>&gt;<i> How did you include hamlib3 into mxe? Did you write a hamlib3.mk file
+</I>&gt;<i> and typed 'make' within the mxe directory, or which steps did you do? Is
+</I>&gt;<i> there a release date for hamlib3 and could it then be officially
+</I>&gt;<i> included to mxe?
+</I>&gt;<i>
+</I>&gt;<i> &gt; It might be possible to build the existing version of Hamlib, but an
+</I>&gt;<i> extra manual step is
+</I>&gt;<i> &gt; necessary which is really not worth.
+</I>&gt;<i> Could you explain what would be the manual step? Would we have to change
+</I>&gt;<i> code of hamlib2.x or is it just a 'patch' thing?
+</I>&gt;<i>
+</I>&gt;<i> If hamlib3 would not work with our project code, I would concider to
+</I>&gt;<i> tweak the existing hamlib2. Generally I think it would be great to
+</I>&gt;<i> include hamlib2 as well as hamlib3 to the mxe project to make it easier
+</I>&gt;<i> for projects to use this great library! :D
+</I>&gt;<i> We already tested rigControl with hamlib2 during 6 contests and it
+</I>&gt;<i> worked fine for us.
+</I>&gt;<i>
+</I>&gt;<i> 73z de Lars
+</I>&gt;<i>
+</I>&gt;<i> Am 16.04.2013 23:19, schrieb <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">remi.chateauneu at gmail.com</A>:
+</I>&gt;<i> &gt; Hi,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Short recap after this conversation about how to build Hamlib3 with
+</I>&gt;<i> &gt; MXE. Confirmation from Hamlib developers are warmly welcome :):) !!
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Summary here:
+</I>&gt;<i> &gt; <A HREF="http://permalink.gmane.org/gmane.linux.hams.hamlib.devel/4012">http://permalink.gmane.org/gmane.linux.hams.hamlib.devel/4012</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Note: This applies only with Hamlib3. The command I use to build
+</I>&gt;<i> &gt; Hamlib3 with MXE is:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; ./configure --host=i686-pc-mingw32
+</I>&gt;<i> &gt; --prefix=/opt/mxe/usr/i686-pc-mingw32/ --with-included-ltdl
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; This other option does not change anything, because the static libs
+</I>&gt;<i> &gt; are already built.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; ./configure --host=i686-pc-mingw32
+</I>&gt;<i> &gt; --prefix=/opt/mxe/usr/i686-pc-mingw32/ --with-included-ltdl
+</I>&gt;<i> &gt; --enable-static
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; This is actually tested with fldigi also built with MXE (But the code
+</I>&gt;<i> &gt; must be tweaked).
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; It might be possible to build the existing version of Hamlib, but an
+</I>&gt;<i> &gt; extra manual step is necessary which is really not worth.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Many extra options are not tested yet with MXE, such as libusb, usrp,
+</I>&gt;<i> &gt; winradio etc... It all depends on the libraries which are already
+</I>&gt;<i> &gt; available in MXE of course.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Thanks
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Remi F4ECW
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130417/16f9f3d7/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130417/16f9f3d7/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="001001.html">[GIT] fldigi branch, maint/3.21,	updated: d052e147e17fba99a05e0c740e87e42c5fc4981c
+</A></li>
+	<LI>Next message: <A HREF="001003.html">fldigi: Report about abnormal termination
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#1002">[ date ]</a>
+              <a href="thread.html#1002">[ thread ]</a>
+              <a href="subject.html#1002">[ subject ]</a>
+              <a href="author.html#1002">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

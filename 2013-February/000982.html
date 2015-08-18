@@ -1,0 +1,191 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi sometimes crashes when going into RTTY-45 mode
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-February/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20sometimes%20crashes%20when%20going%20into%20RTTY-45%20mode&In-Reply-To=%3C5113B9CC.4010606%40conas.cu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000980.html">
+   <LINK REL="Next"  HREF="000981.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi sometimes crashes when going into RTTY-45 mode</H1>
+    <B>Ing. Pavel Milanes Costa</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20sometimes%20crashes%20when%20going%20into%20RTTY-45%20mode&In-Reply-To=%3C5113B9CC.4010606%40conas.cu%3E"
+       TITLE="fldigi sometimes crashes when going into RTTY-45 mode">pavel at conas.cu
+       </A><BR>
+    <I>Thu Feb  7 15:27:24 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000980.html">fldigi sometimes crashes when going into RTTY-45 mode
+</A></li>
+        <LI>Next message: <A HREF="000981.html">resize crash in fldigi-3.21.67 on ubuntu 11.10
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#982">[ date ]</a>
+              <a href="thread.html#982">[ thread ]</a>
+              <a href="subject.html#982">[ subject ]</a>
+              <a href="author.html#982">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I just talk to Dave about this recently...
+
+But the fail is no 100% reproducible in my setup, just like you mention.
+
+Try changing the options on the RTTY modem tab...
+
+73
+
+El 06/02/13 18:40, John Andrews escribi&#243;:
+&gt;<i> Caught signal 11
+</I>&gt;<i> Aborting fldigi due to a fatal error.
+</I>&gt;<i> Please report this to: <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+</I>&gt;<i>
+</I>&gt;<i> ****** Stack trace:
+</I>&gt;<i> fldigi[0x8172ecb]
+</I>&gt;<i> fldigi[0x81730bc]
+</I>&gt;<i> [0xb76e0400]
+</I>&gt;<i> fldigi[0x80e9c53]
+</I>&gt;<i> fldigi[0x8088c8b]
+</I>&gt;<i> fldigi[0x80892de]
+</I>&gt;<i> fldigi[0x80be34d]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(_ZN8Fl_Menu_6pickedEPK12Fl_Menu_Item+0x69)[0xb7592b29]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(_ZN11Fl_Menu_Bar6handleEi+0x91)[0xb7593481]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(+0x42d34)[0xb757cd34]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(_ZN8Fl_Group6handleEi+0x112)[0xb757d182]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(+0x42d34)[0xb757cd34]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(_ZN8Fl_Group6handleEi+0x112)[0xb757d182]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(_ZN9Fl_Window6handleEi+0x3f)[0xb756625f]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(+0x2ac7b)[0xb7564c7b]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(_ZN2Fl7handle_EiP9Fl_Window+0x3c9)[0xb7565cc9]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(_ZN2Fl6handleEiP9Fl_Window+0x4c)[0xb7565fec]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(_Z9fl_handleRK7_XEvent+0xd0)[0xb75c79d0]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(+0x8f106)[0xb75c9106]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(_Z7fl_waitd+0x1c7)[0xb75c9367]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(_ZN2Fl4waitEd+0x10c)[0xb7566b5c]
+</I>&gt;<i> /usr/lib/i386-linux-gnu/libfltk.so.1.3(_ZN2Fl3runEv+0x2e)[0xb7566cde]
+</I>&gt;<i> fldigi[0x805beaa]
+</I>&gt;<i> /lib/i386-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0xb6e864d3]
+</I>&gt;<i> fldigi[0x80608cd]
+</I>&gt;<i>
+</I>&gt;<i> ****** Version information:
+</I>&gt;<i> fldigi 3.21.67
+</I>&gt;<i> Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, 
+</I>&gt;<i> Remi Chateauneu, and others.
+</I>&gt;<i> License GPLv3+: GNU GPL version 3 or later 
+</I>&gt;<i> &lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+</I>&gt;<i> This is free software: you are free to change and redistribute it.
+</I>&gt;<i> There is NO WARRANTY, to the extent permitted by law.
+</I>&gt;<i>
+</I>&gt;<i> ****** Build information:
+</I>&gt;<i> Build information:
+</I>&gt;<i>   built          : Sat Feb  2 20:40:13 UTC 2013 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">buildd at iridium</A> on 
+</I>&gt;<i> i686-pc-linux-gnu for i686-pc-linux-gnu
+</I>&gt;<i>
+</I>&gt;<i>   configure flags: '--build=i686-linux-gnu' '--prefix=/usr' 
+</I>&gt;<i> '--includedir=${prefix}/include' '--mandir=${prefix}/share/man' 
+</I>&gt;<i> '--infodir=${prefix}/share/info' '--sysconfdir=/etc' 
+</I>&gt;<i> '--localstatedir=/var' '--libexecdir=${prefix}/lib/fldigi' 
+</I>&gt;<i> '--disable-maintainer-mode' '--disable-dependency-tracking' 'CFLAGS=-g 
+</I>&gt;<i> -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat 
+</I>&gt;<i> -Werror=format-security' 'CPPFLAGS=-D_FORTIFY_SOURCE=2' 'CXXFLAGS=-g 
+</I>&gt;<i> -O2 -fstack-protector --param=ssp-buffer-size=4 -Wformat 
+</I>&gt;<i> -Werror=format-security' 'FFLAGS=-g -O2' 
+</I>&gt;<i> 'LDFLAGS=-Wl,-Bsymbolic-functions -Wl,-z,relro' 
+</I>&gt;<i> '--disable-silent-rules' 'build_alias=i686-linux-gnu'
+</I>&gt;<i>
+</I>&gt;<i>   compiler       : gcc version 4.7.2 (Ubuntu/Linaro 4.7.2-2ubuntu1)
+</I>&gt;<i>
+</I>&gt;<i>   compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml 
+</I>&gt;<i> -I$(srcdir)/libtiniconv -I$(srcdir)/fileselector -I$(srcdir)/xmlrpcpp 
+</I>&gt;<i> -pthread -I/usr/include/cairo -I/usr/include/glib-2.0 
+</I>&gt;<i> -I/usr/lib/i386-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 
+</I>&gt;<i> -I/usr/include/freetype2 -I/usr/include/libpng12 
+</I>&gt;<i> -I/usr/include/freetype2 -I/usr/include/cairo -I/usr/include/glib-2.0 
+</I>&gt;<i> -I/usr/lib/i386-linux-gnu/glib-2.0/include -I/usr/include/pixman-1 
+</I>&gt;<i> -I/usr/include/freetype2 -I/usr/include/libpng12 -D_LARGEFILE_SOURCE 
+</I>&gt;<i> -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64 -D_THREAD_SAFE 
+</I>&gt;<i> -D_REENTRANT -D_REENTRANT -I/usr/include/libpng12 -I/usr/include -pipe 
+</I>&gt;<i> -Wall -fexceptions -O2 -ffast-math -finline-functions -DNDEBUG
+</I>&gt;<i>
+</I>&gt;<i>   linker flags   : -lportaudio -lasound -lm -lpthread 
+</I>&gt;<i> -L/usr/lib/i386-linux-gnu -Wl,-Bsymbolic-functions -lfltk_images 
+</I>&gt;<i> -lfltk -lX11 -lsndfile -lsamplerate -lpulse-simple -lpulse -lhamlib 
+</I>&gt;<i> -lm -lpng12 -L/usr/lib -lxmlrpc_server_abyss++ -lxmlrpc_server++ 
+</I>&gt;<i> -lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss -lxmlrpc++ 
+</I>&gt;<i> -lxmlrpc -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -ldl -lrt 
+</I>&gt;<i> -lpthread
+</I>&gt;<i>
+</I>&gt;<i>   libraries      : FLTK 1.3.0
+</I>&gt;<i>                    libsamplerate 0.1.8
+</I>&gt;<i>                    libsndfile 1.0.25
+</I>&gt;<i>                    PortAudio 19
+</I>&gt;<i>                    PulseAudio 2.1
+</I>&gt;<i>                    Hamlib 1.2.15.2
+</I>&gt;<i>                    XMLRPC-C 1.16.33
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Runtime information:
+</I>&gt;<i>   system         : Linux hamshack 3.5.0-23-generic #35-Ubuntu SMP Thu 
+</I>&gt;<i> Jan 24 13:05:29 UTC 2013 i686
+</I>&gt;<i>
+</I>&gt;<i>   libraries      : libsamplerate-0.1.8 (c) 2002-2008 Erik de Castro Lopo
+</I>&gt;<i>                    libsndfile-1.0.25
+</I>&gt;<i>                    PortAudio V19-devel (built Oct  8 2012 16:25:16) 1899
+</I>&gt;<i>                    Pulseaudio 2.1.0
+</I>&gt;<i>                    Hamlib 1.2.15.2
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> John Andrews
+</I>&gt;<i> Andrews Attic
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">john at andrewsattic.com</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">john at andrewsattic.com</A>&gt;
+</I>&gt;<i> <A HREF="http://www.andrewsattic.com">http://www.andrewsattic.com</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130207/641e64a0/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130207/641e64a0/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: pavel.vcf
+Type: text/x-vcard
+Size: 906 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130207/641e64a0/attachment.vcf">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20130207/641e64a0/attachment.vcf</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000980.html">fldigi sometimes crashes when going into RTTY-45 mode
+</A></li>
+	<LI>Next message: <A HREF="000981.html">resize crash in fldigi-3.21.67 on ubuntu 11.10
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#982">[ date ]</a>
+              <a href="thread.html#982">[ thread ]</a>
+              <a href="subject.html#982">[ subject ]</a>
+              <a href="author.html#982">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

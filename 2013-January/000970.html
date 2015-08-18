@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> Starting a Shell command, testing if a process is running
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2013-January/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Starting%20a%20Shell%20command%2C%20testing%20if%20a%20process%20is%20running&In-Reply-To=%3C20130114095809.GJ3061%40charybde.local%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000969.html">
+   <LINK REL="Next"  HREF="000971.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>Starting a Shell command, testing if a process is running</H1>
+    <B>Stephane Fillod</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20Starting%20a%20Shell%20command%2C%20testing%20if%20a%20process%20is%20running&In-Reply-To=%3C20130114095809.GJ3061%40charybde.local%3E"
+       TITLE="Starting a Shell command, testing if a process is running">f8cfe at free.fr
+       </A><BR>
+    <I>Mon Jan 14 10:58:09 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000969.html">Starting a Shell command, testing if a process is running
+</A></li>
+        <LI>Next message: <A HREF="000971.html">Starting a Shell command, testing if a process is running
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#970">[ date ]</a>
+              <a href="thread.html#970">[ thread ]</a>
+              <a href="subject.html#970">[ subject ]</a>
+              <a href="author.html#970">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Salut Remi,
+
+dim, Jan 13, 2013, Remi Chateauneu skribis:
+&gt;<i> While working of the SYNOP decoder, I need to start a process with a
+</I>&gt;<i> given Shell command, returning its process id. I need also to test if
+</I>&gt;<i> a process with a given PID is running or not, and created for this a
+</I>&gt;<i> function which works on Linux only:
+</I>&gt;<i> 
+</I>&gt;<i> <A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commit;h=4de01c3b2f0108d563b47f6cd8124f894bc61eb0">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commit;h=4de01c3b2f0108d563b47f6cd8124f894bc61eb0</A>
+</I>&gt;<i> 
+</I>&gt;<i> Any idea is warmly welcome about the most appropriate way to properly
+</I>&gt;<i> port these two functions on other operating systems.
+</I>
+You might also want to look at this solution, less Linux centric,
+based on kill(2) system call with 0 as the signal.
+
+  <A HREF="http://stackoverflow.com/questions/9152979/check-if-process-exists-given-its-pid">http://stackoverflow.com/questions/9152979/check-if-process-exists-given-its-pid</A>
+
+Note this method is not safe to watch for child lifespan.
+In this case, waitpid(2) is your friend, or playing with SIGCHLD.
+-- 
+Stephane - F8CFE
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000969.html">Starting a Shell command, testing if a process is running
+</A></li>
+	<LI>Next message: <A HREF="000971.html">Starting a Shell command, testing if a process is running
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#970">[ date ]</a>
+              <a href="thread.html#970">[ thread ]</a>
+              <a href="subject.html#970">[ subject ]</a>
+              <a href="author.html#970">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

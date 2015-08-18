@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> fldigi aborts - will not open &quot;Caught signal 11&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2012-December/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20aborts%20-%20will%20not%20open%20%22Caught%20signal%2011%22&In-Reply-To=%3CCACMWOgupKwLGmDwdb24icz75eU8iwWqP6TXwBj7CjS1Agpgq0A%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000943.html">
+   <LINK REL="Next"  HREF="000945.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>fldigi aborts - will not open &quot;Caught signal 11&quot;</H1>
+    <B>Remi Chateauneu</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20fldigi%20aborts%20-%20will%20not%20open%20%22Caught%20signal%2011%22&In-Reply-To=%3CCACMWOgupKwLGmDwdb24icz75eU8iwWqP6TXwBj7CjS1Agpgq0A%40mail.gmail.com%3E"
+       TITLE="fldigi aborts - will not open &quot;Caught signal 11&quot;">remi.chateauneu at gmail.com
+       </A><BR>
+    <I>Thu Dec  6 16:24:50 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000943.html">fldigi aborts - will not open &quot;Caught signal 11&quot;
+</A></li>
+        <LI>Next message: <A HREF="000945.html">fldigi aborts - will not open &quot;Caught signal 11&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#944">[ date ]</a>
+              <a href="thread.html#944">[ thread ]</a>
+              <a href="subject.html#944">[ subject ]</a>
+              <a href="author.html#944">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Did it run once before ?
+
+Do you please have the possibility to rerun it under gdb (Debugger) or set
+the environment variable  FLDIGI_COREDUMP so that fldigi will create a core
+dump at the next crash ?
+
+
+On Thu, Dec 6, 2012 at 3:16 PM, Lynn Chadbourne &lt;
+<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">lynnchadbourne at earthlink.net</A>&gt; wrote:
+
+&gt;<i>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">lynn at lynn-Mint</A> ~ $ fldigi
+</I>&gt;<i>
+</I>&gt;<i> Caught signal 11
+</I>&gt;<i> Aborting fldigi due to a fatal error.
+</I>&gt;<i> Please report this to:   <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> or file a bug report at: <A HREF="https://fedorahosted.org/fldigi/newticket">https://fedorahosted.org/fldigi/newticket</A>
+</I>&gt;<i>
+</I>&gt;<i> ****** Stack trace:
+</I>&gt;<i> fldigi[0x81447e2]
+</I>&gt;<i> fldigi[0x81449ca]
+</I>&gt;<i> [0xd85400]
+</I>&gt;<i> fldigi[0x811bdec]
+</I>&gt;<i> fldigi[0x8059228]
+</I>&gt;<i> /lib/i386-linux-gnu/libc.so.6(__libc_start_main+0xf3)[0xac2113]
+</I>&gt;<i> fldigi[0x805c91d]
+</I>&gt;<i>
+</I>&gt;<i> ****** Version information:
+</I>&gt;<i> fldigi 3.21.13
+</I>&gt;<i> Copyright (C) 2007-2010 Dave Freese, Stelios Bounanos, Leigh Klotz, Remi
+</I>&gt;<i> Chateauneu, and others.
+</I>&gt;<i> License GPLv3+: GNU GPL version 3 or later
+</I>&gt;<i> &lt;<A HREF="http://www.gnu.org/licenses/gpl-3.0.html">http://www.gnu.org/licenses/gpl-3.0.html</A>&gt;
+</I>&gt;<i> This is free software: you are free to change and redistribute it.
+</I>&gt;<i> There is NO WARRANTY, to the extent permitted by law.
+</I>&gt;<i>
+</I>&gt;<i> ****** Build information:
+</I>&gt;<i> Build information:
+</I>&gt;<i>   built          : Thu Aug 11 12:54:30 UTC 2011 by <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">buildd at palmer</A> on
+</I>&gt;<i> i686-pc-linux-gnu for i686-pc-linux-gnu
+</I>&gt;<i>
+</I>&gt;<i>   configure flags: '--build=i686-linux-gnu' '--prefix=/usr'
+</I>&gt;<i> '--includedir=${prefix}/include' '--mandir=${prefix}/share/man'
+</I>&gt;<i> '--infodir=${prefix}/share/info' '--sysconfdir=/etc'
+</I>&gt;<i> '--localstatedir=/var' '--libexecdir=${prefix}/lib/fldigi'
+</I>&gt;<i> '--disable-maintainer-mode' '--disable-dependency-tracking'
+</I>&gt;<i> 'build_alias=i686-linux-gnu' 'CXXFLAGS=-g -O2'
+</I>&gt;<i> 'LDFLAGS=-Wl,-Bsymbolic-functions' 'CPPFLAGS=' 'CFLAGS=-g -O2'
+</I>&gt;<i>
+</I>&gt;<i>   compiler       : gcc version 4.6.1 (Ubuntu/Linaro 4.6.1-6ubuntu2)
+</I>&gt;<i>
+</I>&gt;<i>   compiler flags : -I$(srcdir) -I$(srcdir)/include -I$(srcdir)/irrxml -I
+</I>&gt;<i> $(srcdir)/fileselector -I$(srcdir)/xmlrpcpp -pthread
+</I>&gt;<i> -I/usr/include/freetype2 -D_THREAD_SAFE -D_REENTRANT -D_REENTRANT
+</I>&gt;<i> -I/usr/include/libpng12 -I/usr/include -pipe -Wall -fexceptions -O2
+</I>&gt;<i> -ffast-math -finline-functions -DNDEBUG
+</I>&gt;<i>
+</I>&gt;<i>   linker flags   : -lportaudio -lasound -lm -lpthread
+</I>&gt;<i> -L/usr/lib/i386-linux-gnu -Wl,-Bsymbolic-functions -lfltk_images -lfltk
+</I>&gt;<i> -lX11 -lsndfile -lsamplerate -lpulse-simple -lpulse -lhamlib -lm -lpng12
+</I>&gt;<i> -L/usr/lib -lxmlrpc_server_abyss++ -lxmlrpc_server++
+</I>&gt;<i> -lxmlrpc_server_abyss -lxmlrpc_server -lxmlrpc_abyss -lxmlrpc++ -lxmlrpc
+</I>&gt;<i> -lxmlrpc_util -lxmlrpc_xmlparse -lxmlrpc_xmltok -ldl -lrt -lpthread
+</I>&gt;<i>
+</I>&gt;<i>   libraries      : FLTK 1.1.10
+</I>&gt;<i>                    libsamplerate 0.1.7
+</I>&gt;<i>                    libsndfile 1.0.24
+</I>&gt;<i>                    PortAudio 19
+</I>&gt;<i>                    PulseAudio 0.9.23
+</I>&gt;<i>                    Hamlib 1.2.14
+</I>&gt;<i>                    XMLRPC-C 1.16.32
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Runtime information:
+</I>&gt;<i>   system         : Linux lynn-Mint 3.0.0-12-generic #20-Ubuntu SMP Fri
+</I>&gt;<i> Oct 7 14:50:42 UTC 2011 i686
+</I>&gt;<i>
+</I>&gt;<i>   libraries      : libsamplerate-0.1.7 (c) 2002-2008 Erik de Castro Lopo
+</I>&gt;<i>                    libsndfile-1.0.24
+</I>&gt;<i>                    PortAudio V19-devel (built Jul 27 2011 11:30:44) 1899
+</I>&gt;<i>                    Pulseaudio 1.0.0
+</I>&gt;<i>                    Hamlib 1.2.14
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">lynn at lynn-Mint</A> ~ $ ^C
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> fldigi-devel mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">fldigi-devel at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">https://lists.berlios.de/mailman/listinfo/fldigi-devel</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/fldigi-devel/attachments/20121206/944760e1/attachment.html">https://lists.berlios.de/pipermail/fldigi-devel/attachments/20121206/944760e1/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000943.html">fldigi aborts - will not open &quot;Caught signal 11&quot;
+</A></li>
+	<LI>Next message: <A HREF="000945.html">fldigi aborts - will not open &quot;Caught signal 11&quot;
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#944">[ date ]</a>
+              <a href="thread.html#944">[ thread ]</a>
+              <a href="subject.html#944">[ subject ]</a>
+              <a href="author.html#944">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>

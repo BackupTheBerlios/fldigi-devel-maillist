@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [GIT] fldigi branch, maint/3.20,	updated: 9c71708f01ea5bc53d1e1ca54937f2953fa3fa0b
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/fldigi-devel/2010-June/index.html" >
+   <LINK REL="made" HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.20%2C%0A%09updated%3A%209c71708f01ea5bc53d1e1ca54937f2953fa3fa0b&In-Reply-To=%3C20100630115413.5A04E480A90%40sheep.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000331.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[GIT] fldigi branch, maint/3.20,	updated: 9c71708f01ea5bc53d1e1ca54937f2953fa3fa0b</H1>
+    <B>herrfreese at BerliOS</B> 
+    <A HREF="mailto:fldigi-devel%40lists.berlios.de?Subject=Re%3A%20%5BGIT%5D%20fldigi%20branch%2C%20maint/3.20%2C%0A%09updated%3A%209c71708f01ea5bc53d1e1ca54937f2953fa3fa0b&In-Reply-To=%3C20100630115413.5A04E480A90%40sheep.berlios.de%3E"
+       TITLE="[GIT] fldigi branch, maint/3.20,	updated: 9c71708f01ea5bc53d1e1ca54937f2953fa3fa0b">herrfreese at mail.berlios.de
+       </A><BR>
+    <I>Wed Jun 30 13:54:13 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000331.html">[GIT] fldigi branch, master,	updated: 5f10e417a114e3c7ee3693c0336d55b46596ec2f
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#332">[ date ]</a>
+              <a href="thread.html#332">[ thread ]</a>
+              <a href="subject.html#332">[ subject ]</a>
+              <a href="author.html#332">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is an automated email from the git hooks/post-receive script. It was
+generated because a ref change was pushed to the repository containing
+the project &quot;fldigi&quot;.
+
+The branch, maint/3.20 has been updated
+       via  9c71708f01ea5bc53d1e1ca54937f2953fa3fa0b (commit)
+       via  800eac722861a014fb7a7e278f844ad7e6e2de21 (commit)
+       via  f21cbca683d6021557be49a898eebfe0c0feaeaa (commit)
+       via  f673f21c46c7fb87eea57351631c771a3dde658a (commit)
+       via  c8ea4dfd8a88f1abb8d4be638a0c5109be47f4b1 (commit)
+       via  1c1f0596d9eae3cdccfcda0ec07599b0502117e5 (commit)
+       via  2c941585904e1e09eb64a1155bbccf1b5812e809 (commit)
+       via  fde3cce228a3decacc0de4543a5cd3a3e290eb41 (commit)
+       via  8bff92189846149ca7d40508b27d5312cc76b665 (commit)
+      from  d22359a5c40f26fa692943295e7a6d052237530e (commit)
+
+Those revisions listed above that are new to this repository have
+not appeared on any other notification email; so we list those
+revisions in full, below.
+
+- Log -----------------------------------------------------------------
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=9c71708f01ea5bc53d1e1ca54937f2953fa3fa0b">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=9c71708f01ea5bc53d1e1ca54937f2953fa3fa0b</A>
+
+commit 9c71708f01ea5bc53d1e1ca54937f2953fa3fa0b
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Jun 28 16:16:22 2010 -0500
+
+    Version 3.20.18
+    
+      Maintenance release
+
+ 2 files changed, 14 insertions(+), 8 deletions(-)
+
+
+<A HREF="http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=800eac722861a014fb7a7e278f844ad7e6e2de21">http://git.berlios.de/cgi-bin/gitweb.cgi?p=fldigi;a=commitdiff;h=800eac722861a014fb7a7e278f844ad7e6e2de21</A>
+
+commit 800eac722861a014fb7a7e278f844ad7e6e2de21
+Author: David Freese &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/fldigi-devel">w1hkj at w1hkj.com</A>&gt;
+Date:   Mon Jun 28 15:35:37 2010 -0500
+
+    Mode prefs
+    
+      * Changed to named store of last used mode in prefs file
+      * Added Contestia, Olivia, RTTY baud/bw values to prefs
+        file.
+
+ 3 files changed, 224 insertions(+), 6 deletions(-)
+
+
+-----------------------------------------------------------------------
+
+Summary of changes:
+ ChangeLog                   |   26 ++-
+ configure.ac                |    2 +-
+ doc/guide.txt               |   13 +-
+ src/cw_rtty/cw.cxx          |   46 +++-
+ src/cw_rtty/morse.cxx       |  218 +++++++-------
+ src/dialogs/confdialog.cxx  |  258 +++++++++++++++-
+ src/dialogs/confdialog.fl   |  222 ++++++++++++--
+ src/dialogs/fl_digi.cxx     |   10 +-
+ src/globals/globals.cxx     |  144 +++++-----
+ src/include/confdialog.h    |    4 +
+ src/include/configuration.h |   14 +-
+ src/include/cw.h            |    1 -
+ src/include/fl_digi.h       |    4 +-
+ src/include/globals.h       |    1 +
+ src/include/modem.h         |   13 +-
+ src/include/morse.h         |   23 +-
+ src/include/status.h        |   35 +++
+ src/logbook/logsupport.cxx  |    2 +-
+ src/misc/configuration.cxx  |   20 ++-
+ src/misc/macroedit.cxx      |    2 +-
+ src/misc/status.cxx         |  191 +++++++++++-
+ src/psk/viewpsk.cxx         |    9 +-
+ src/rsid/rsid.cxx           |   46 ++-
+ src/trx/modem.cxx           |  713 +++++++++++++++++--------------------------
+ 24 files changed, 1296 insertions(+), 721 deletions(-)
+   8.9% src/cw_rtty/
+  21.0% src/dialogs/
+   5.9% src/globals/
+   3.6% src/include/
+   8.7% src/misc/
+  46.8% src/trx/
+   3.1% src/
+
+
+hooks/post-receive
+-- 
+fldigi
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000331.html">[GIT] fldigi branch, master,	updated: 5f10e417a114e3c7ee3693c0336d55b46596ec2f
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#332">[ date ]</a>
+              <a href="thread.html#332">[ thread ]</a>
+              <a href="subject.html#332">[ subject ]</a>
+              <a href="author.html#332">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/fldigi-devel">More information about the fldigi-devel
+mailing list</a><br>
+</body></html>
